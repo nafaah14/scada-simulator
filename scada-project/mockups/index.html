@@ -117,14 +117,19 @@ function enginePages(overrides){
 
 const UNITS = {
   Common: COMMON_PAGES,
-  G1: enginePages({ temp:"screens/g1-temp.html", fuel:"screens/g1-fuel.html" }),
+  // All built engine screens live under G1 for now, regardless of which
+  // genset they were originally designed against (Control was designed as
+  // G4). Once G2-G6 get their own screens, split these back out per unit.
+  G1: enginePages({ temp:"screens/g1-temp.html", fuel:"screens/g1-fuel.html", control:"screens/g4-control.html" }),
   G2: enginePages({}),
   G3: enginePages({}),
-  G4: enginePages({ control:"screens/g4-control.html" }),
+  G4: enginePages({}),
   G5: enginePages({}),
   G6: enginePages({}),
 };
-const UNIT_ORDER = ["Common","G1","G2","G3","G4","G5","G6"];
+// G2-G6 hidden until they get real screens; flip this back to the full
+// list ["Common","G1","G2","G3","G4","G5","G6"] once that work starts.
+const UNIT_ORDER = ["Common","G1"];
 
 /* ================= STATE ================= */
 let currentTopTab = "Processes";
