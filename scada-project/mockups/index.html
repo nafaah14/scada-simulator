@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STELCO Hulhumale SCADA Simulator — Mockups</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0b1220;
+    --panel: #111a2e;
+    --border: #24304a;
+    --text: #e6ecf7;
+    --muted: #93a2c0;
+    --accent: #4da3ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .sub { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+  .status {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(77,163,255,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(77,163,255,0.4);
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 2rem 0 0.75rem;
+  }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+  a.card {
+    display: block;
+    padding: 0.9rem 1.1rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  a.card:hover { border-color: var(--accent); }
+  a.card .name { font-weight: 600; }
+  a.card .desc { color: var(--muted); font-size: 0.85rem; margin-top: 0.15rem; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.8rem; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>STELCO Hulhumale SCADA Training Simulator</h1>
+    <p class="sub">Wärtsilä WOIS HMI reference mockups — approved visual design, not yet wired to a live tag database or simulation engine.</p>
+    <span class="status">Design/reference phase</span>
+
+    <h2>Screens</h2>
+    <ul>
+      <li><a class="card" href="screens/g4-control.html">
+        <div class="name">G4 — Control</div>
+        <div class="desc">Engine control panel, sequence stepper, mode selection.</div>
+      </a></li>
+      <li><a class="card" href="screens/common-overview.html">
+        <div class="name">Common — Overview</div>
+        <div class="desc">Fuel system, feeder/booster pumps, electrical single-line.</div>
+      </a></li>
+      <li><a class="card" href="screens/common-fuel.html">
+        <div class="name">Common — Fuel</div>
+        <div class="desc">Feeder pump unit detail and popup.</div>
+      </a></li>
+      <li><a class="card" href="screens/g1-temp.html">
+        <div class="name">G1 — Temp</div>
+        <div class="desc">Engine cross-section, cylinder and bearing temperatures.</div>
+      </a></li>
+      <li><a class="card" href="screens/g1-fuel.html">
+        <div class="name">G1 — Fuel</div>
+        <div class="desc">Engine fuel booster module flow diagram.</div>
+      </a></li>
+    </ul>
+
+    <h2>Components</h2>
+    <ul>
+      <li><a class="card" href="components/sensor-popup.html">
+        <div class="name">Sensor popup</div>
+        <div class="desc">Click-a-value detail: trend, value, sensor fault, editable alarm/shutdown limits.</div>
+      </a></li>
+    </ul>
+
+    <footer>
+      Source and data model: see <code>docs/ARCHITECTURE.md</code> and <code>data/tags/genset-tags.json</code> in the project repo.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>WOIS - Stelco 5th | Common - Fuel</title>
+<style>
+  :root{ font-size:14px; }
+  :root{ --green:#2fa84f; --red:#e5484d; --amber:#d99418; --orange:#f47b20; --blue:#3f8fce; }
+  html[data-theme="light"]{ --bg-app:#eef1f4; --bg-panel:#ffffff; --bg-panel-head:#f2f4f6; --bg-field:#f6f8f9; --border:#d7dce2; --border-light:#c3cad2; --text:#3a4753; --text-dim:#7c8896; --text-bright:#172029; --pipe:#8a2f2f; }
+  html[data-theme="dark"]{ --bg-app:#0b0f14; --bg-panel:#131a22; --bg-panel-head:#1a222c; --bg-field:#0e141b; --border:#2b3542; --border-light:#3a4553; --text:#c8d2dc; --text-dim:#8994a1; --text-bright:#eef3f7; --pipe:#b45050; }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;background:var(--bg-app);color:var(--text);font-family:"Segoe UI",Arial,sans-serif;overflow:hidden;}
+  .num{font-family:"Consolas","SF Mono",monospace;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(#161d25,#12181f);border-bottom:1px solid #232c36;padding:4px 10px;height:32px;}
+  .topbar-left{display:flex;align-items:center;gap:14px;}
+  .brand{display:flex;align-items:center;gap:8px;color:#8a94a0;font-weight:600;font-size:12px;}
+  .brand .mark{width:18px;height:18px;border-radius:50%;border:2px solid #8a94a0;}
+  .toptabs{display:flex;gap:18px;}
+  .toptabs span{font-size:12.5px;color:#8a94a0;padding-bottom:4px;}
+  .toptabs span.active{color:var(--orange);border-bottom:2px solid var(--orange);font-weight:600;}
+  .topbar-right{display:flex;align-items:center;gap:16px;font-size:12px;color:#8a94a0;}
+  .engdots{display:flex;gap:3px;align-items:center;}
+  .engdots i{width:6px;height:14px;background:#2fa84f;display:inline-block;border-radius:1px;}
+  .engdots i:nth-child(1){height:8px;} .engdots i:nth-child(6){height:16px;}
+  .wois-title{color:#e7ecf1;font-weight:600;font-size:13px;}
+  .user{color:#8a94a0;font-size:11.5px;}
+  .unitbar,.pagebar{display:flex;align-items:center;gap:8px;background:#0f151b;border-bottom:1px solid #232c36;padding:3px 10px;height:26px;}
+  .unitbar span,.pagebar span{font-size:12px;color:#8a94a0;padding:2px 9px;border-radius:2px;cursor:pointer;}
+  .unitbar span.active{background:var(--orange);color:#1a1005;font-weight:700;}
+  .pagebar span.active{color:var(--orange);border-bottom:2px solid var(--orange);font-weight:600;}
+
+  .canvas{height:calc(100% - 32px - 26px - 26px - 24px);padding:14px 18px;overflow:auto;background:var(--bg-app);position:relative;}
+  .grid{display:grid; grid-template-columns: 130px 150px 1fr; gap:0 20px; align-items:start;}
+
+  .box{background:var(--bg-panel);border:1px solid var(--border-light);}
+  .tank{width:124px;cursor:pointer;margin-bottom:10px;}
+  .tank:hover{border-color:var(--blue);}
+  .tank.selected{border-color:var(--green);border-width:2px;}
+  .tank .row{display:flex;justify-content:space-between;padding:2px 6px;font-size:11px;border-bottom:1px dashed var(--border);}
+  .tank .row:last-child{border-bottom:none;}
+  .tank .pct{font-weight:700;color:var(--text-bright);}
+  .tank-label{font-size:9px;color:var(--text-dim);text-align:center;padding:2px 0;background:var(--bg-field);}
+  .select-label{font-size:9.5px;color:var(--text-dim);text-align:center;margin-bottom:2px;}
+
+  .pump-unit{margin-bottom:12px;}
+  .pump-row{display:flex;align-items:center;gap:6px;font-size:11px;}
+  .pump-circle{width:20px;height:20px;border-radius:50%;border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--blue);flex:none;cursor:pointer;}
+  .pump-tri{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--green);}
+  .amp-box{background:var(--bg-field);border:1px solid var(--border-light);padding:2px 6px;font-size:11px;cursor:pointer;text-align:right;flex:1;}
+  .amp-box:hover{border-color:var(--blue);}
+  .unit-label{font-size:10px;color:var(--text-dim);margin:4px 0 2px;}
+  .tagbox{background:var(--bg-field);border:1px solid var(--border-light);font-size:9.5px;text-align:center;padding:4px;color:var(--text-dim);width:90px;}
+
+  .daily-areas{display:flex;gap:16px;}
+  .day-area{border:1px dashed var(--border-light);padding:16px 10px 8px;position:relative;}
+  .day-area .arealabel{position:absolute;top:-9px;left:8px;background:var(--bg-app);font-size:10px;color:var(--text-dim);padding:0 4px;}
+  .day-area .pbf-tag{position:absolute;top:-9px;right:8px;background:var(--bg-panel-head);font-size:9.5px;color:var(--text-dim);padding:1px 5px;border:1px solid var(--border-light);}
+  .day-tank{width:100px;margin-bottom:8px;cursor:pointer;}
+  .day-tank:hover{border-color:var(--blue);}
+
+  .feeder-section{grid-column:2 / span 2;margin-top:20px;border:1px dashed var(--border-light);padding:16px;position:relative;}
+  .feeder-section .arealabel{position:absolute;top:-9px;left:8px;background:var(--bg-app);font-size:10px;color:var(--text-dim);padding:0 4px;}
+  .feeder-title{font-size:11px;font-weight:700;color:var(--text-bright);margin-bottom:2px;cursor:pointer;}
+  .feeder-tagid{font-size:9.5px;color:var(--text-dim);margin-bottom:10px;font-family:Consolas,monospace;}
+  .feeder-body{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+  .chk-row{display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:6px;}
+  .chk{width:11px;height:11px;border:1px solid var(--border-light);flex:none;}
+  .chk.on{background:var(--green);border-color:var(--green);}
+  .pct-box{background:var(--bg-field);border:1px solid var(--border-light);padding:3px 10px;font-size:12px;font-weight:700;}
+  .heating-pair{display:flex;flex-direction:column;gap:4px;}
+  .heating-row{display:flex;align-items:center;gap:6px;font-size:10.5px;}
+  .pressure-out{display:flex;flex-direction:column;gap:4px;font-size:11px;}
+  .ro-box{background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;text-align:right;cursor:pointer;}
+  .ro-box:hover{border-color:var(--blue);}
+  .to-genset{font-size:11px;color:var(--text-dim);margin-left:10px;}
+
+  .sludge{margin-top:20px;display:flex;gap:14px;align-items:flex-start;}
+  .sludge-tank{width:90px;}
+
+  .statusbar{display:flex;align-items:center;gap:14px;background:var(--bg-panel-head);border-top:1px solid var(--border);padding:3px 10px;height:24px;font-size:11.5px;color:var(--text-dim);position:relative;}
+  .toolsbtn{width:20px;height:18px;border:1px solid var(--border-light);background:var(--bg-field);color:var(--text-dim);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;}
+  .statusbar .alarm-icon{width:14px;height:14px;border-radius:2px;background:var(--red);display:inline-block;}
+  .statusbar .alarm-text{color:var(--red);font-weight:600;flex:1;}
+  .statusbar .tag{color:var(--text-bright);font-family:"Consolas",monospace;}
+  .ackbtn{background:var(--bg-field);border:1px solid var(--border-light);color:var(--text-bright);font-size:11px;padding:2px 12px;cursor:pointer;}
+  .onbtn{background:#e4f3e6;border:1px solid var(--green);color:var(--green);font-size:11px;padding:2px 12px;}
+  html[data-theme="dark"] .onbtn{background:#16301c;}
+  .settings-popup{position:absolute;bottom:26px;left:10px;width:210px;background:var(--bg-panel);border:1px solid var(--border-light);box-shadow:0 4px 18px rgba(0,0,0,.35);display:none;flex-direction:column;font-size:12px;color:var(--text);z-index:50;}
+  .settings-popup.open{display:flex;}
+  .settings-popup .sp-head{background:var(--bg-panel-head);padding:7px 10px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border);}
+  .settings-popup .sp-body{padding:10px;}
+  .theme-toggle{display:flex;border:1px solid var(--border-light);overflow:hidden;}
+  .theme-toggle button{flex:1;padding:6px 0;background:var(--bg-field);border:none;color:var(--text-dim);cursor:pointer;font-size:11.5px;}
+  .theme-toggle button.active{background:var(--orange);color:#1a1005;font-weight:700;}
+
+  /* generic value popup */
+  .tagpop{position:fixed;width:250px;background:var(--bg-panel);border:2px solid var(--text-bright);box-shadow:4px 4px 16px rgba(0,0,0,.4);z-index:100;display:none;font-size:12px;}
+  .tagpop.open{display:block;}
+  .tagpop .tp-head{background:var(--bg-panel-head);padding:5px 8px;font-size:11px;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);}
+  .tagpop .tp-body{padding:10px;}
+  .tp-desc{font-weight:700;margin-bottom:2px;}
+  .tp-id{color:var(--text-dim);font-family:Consolas,monospace;font-size:11px;margin-bottom:8px;}
+  .tp-value{font-size:16px;font-weight:700;color:var(--text-bright);margin-bottom:8px;}
+  .tp-limits{display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:11px;}
+  .tp-limits input{width:60px;font-family:Consolas,monospace;text-align:right;border:1px solid var(--border-light);background:var(--bg-field);padding:2px 4px;color:var(--text-bright);}
+  .tp-close{margin-top:8px;background:var(--bg-field);border:1px solid var(--border-light);padding:3px 10px;font-size:11px;cursor:pointer;}
+
+  /* feeder pump control popup (matches Image 3) */
+  .pumppop{position:fixed;width:230px;background:var(--bg-panel);border:2px solid var(--text-bright);box-shadow:4px 4px 16px rgba(0,0,0,.4);z-index:100;display:none;font-size:12px;}
+  .pumppop.open{display:block;}
+  .pumppop .pp-head{background:var(--bg-panel-head);padding:6px 8px;font-size:11.5px;font-weight:700;border-bottom:1px solid var(--border);}
+  .pumppop .pp-tagid{font-size:10px;color:var(--text-dim);font-family:Consolas,monospace;padding:4px 8px 0;}
+  .pumppop .pp-body{padding:10px;}
+  .pp-btn-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;}
+  .pp-btn{background:var(--bg-field);border:1px solid var(--border-light);padding:6px 4px;text-align:center;font-size:11px;cursor:pointer;}
+  .pp-btn small{display:block;color:var(--text-dim);font-size:9px;}
+  .pp-btn:hover{border-color:var(--blue);}
+  .pp-section-label{font-size:10px;color:var(--text-dim);text-transform:uppercase;margin-bottom:4px;}
+  .pp-pump-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px;}
+  .pp-footer{display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:8px;}
+  .pp-icon-btn{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:var(--text-dim);cursor:pointer;}
+  .pp-icon-btn .ico{width:26px;height:22px;background:var(--bg-field);border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="brand"><span class="mark"></span>WÄRTSILÄ</div>
+    <div class="toptabs"><span class="active">Processes</span><span>Alarms</span><span>Trends</span><span>Reports</span></div>
+  </div>
+  <div class="topbar-right">
+    <span class="num">30.3 °C</span>
+    <div class="engdots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="num">39.5 MW</span>
+    <span class="wois-title">WOIS - Stelco 5th</span>
+    <span class="user">User: Operator2</span>
+  </div>
+</div>
+<div class="unitbar"><span class="active">Common</span><span>G1</span><span>G2</span><span>G3</span><span>G4</span><span>G5</span><span>G6</span></div>
+<div class="pagebar">
+  <span>Overview</span><span>Electrical 1</span><span>Electrical 2</span><span class="active">Fuel</span>
+  <span>Start air</span><span>Oily water</span><span>Cooling</span><span>Water</span>
+  <span>Automation 1</span><span>Automation 2</span>
+</div>
+
+<div class="canvas">
+  <div class="grid">
+    <!-- Storage tanks column -->
+    <div>
+      <div class="select-label">Select for primary tank</div>
+      <div class="tank" data-tag="PAF901_LEVEL">
+        <div class="row"><span class="pct">19 %</span><span>L</span></div>
+        <div class="row"><span>34 °C</span></div><div class="row"><span>33 °C</span></div><div class="row"><span>32 °C</span></div><div class="row"><span>29 °C</span></div>
+        <div class="tank-label">LFO storage tank<br>PAF 901 · 800 m³</div>
+      </div>
+      <div class="select-label">Select for primary tank</div>
+      <div class="tank" data-tag="PAF902_LEVEL">
+        <div class="row"><span class="pct">49 %</span><span>L</span></div>
+        <div class="row"><span>33 °C</span></div><div class="row"><span>33 °C</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>30 °C</span></div>
+        <div class="tank-label">LFO storage tank<br>PAF 902 · 800 m³</div>
+      </div>
+      <div class="select-label">Select for primary tank</div>
+      <div class="tank" data-tag="PAF903_LEVEL">
+        <div class="row"><span class="pct">83 %</span><span>L</span></div>
+        <div class="row"><span>33 °C</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>30 °C</span></div>
+        <div class="tank-label">LFO storage tank<br>PAF 903 · 800 m³</div>
+      </div>
+      <div class="tank selected" data-tag="PAE904_LEVEL">
+        <div class="row"><span class="pct">29 %</span><span>L</span></div>
+        <div class="row"><span>33 °C</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>29 °C</span></div><div class="row"><span>29 °C</span></div>
+        <div class="tank-label">LFO storage tank<br>PAE 904 (primary)</div>
+      </div>
+    </div>
+
+    <!-- Transfer pumps column -->
+    <div>
+      <div class="pump-unit">
+        <div class="unit-label">Select for main</div>
+        <div class="pump-row"><span class="pump-circle" data-tag="COMMON_PAF901_PUMP_A">P</span><span class="pump-tri"></span><div class="amp-box" data-tag="COMMON_PAF901_PUMP_A">0.0 A</div></div>
+        <div class="tagbox">LFO transfer pump unit<br>PAF 901</div>
+      </div>
+      <div class="pump-unit">
+        <div class="unit-label">Select for main</div>
+        <div class="pump-row"><span class="pump-circle" data-tag="COMMON_PAF902_PUMP_A">P</span><span class="pump-tri"></span><div class="amp-box" data-tag="COMMON_PAF902_PUMP_A">0.0 A</div></div>
+        <div class="tagbox">LFO transfer pump unit<br>PAF 902</div>
+      </div>
+      <div class="pump-unit">
+        <div class="pump-row"><span class="pump-circle" data-tag="COMMON_MAIN_PUMP_A">P</span><span class="pump-tri"></span><div class="amp-box" data-tag="COMMON_MAIN_PUMP_A">0.0 A</div></div>
+        <div class="tagbox">Main pump</div>
+      </div>
+      <div class="ro-box" style="margin:10px 0;width:90px;" data-tag="COMMON_MAIN_FLOW">0.0 m³/h</div>
+      <div class="pump-unit">
+        <div class="pump-row"><span class="pump-circle">1</span><span class="pump-circle">2</span></div>
+        <div class="tagbox">LFO unloading pump unit<br>PAD 901</div>
+      </div>
+      <div class="tagbox">Control Panel<br>BJC 951</div>
+    </div>
+
+    <!-- Daily tank areas -->
+    <div class="daily-areas">
+      <div class="day-area">
+        <span class="arealabel">Daily tank area 01</span><span class="pbf-tag">PBF901</span>
+        <div class="day-tank" data-tag="PBF901_LEVEL"><div class="row"><span class="pct">78 %</span><span>L</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>30 °C</span></div><div class="tank-label">LFO day tank<br>PBF 901 · 25 m³</div></div>
+        <div class="day-tank" data-tag="PBF902_LEVEL"><div class="row"><span class="pct">80 %</span><span>L</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>31 °C</span></div><div class="tank-label">LFO day tank<br>PBF 902 · 25 m³</div></div>
+        <div class="day-tank" data-tag="PBF903_LEVEL"><div class="row"><span class="pct">61 %</span><span>L</span></div><div class="row"><span>32 °C</span></div><div class="row"><span>30 °C</span></div><div class="tank-label">LFO day tank<br>PBF 903 · 25 m³</div></div>
+      </div>
+      <div class="day-area">
+        <span class="arealabel">Daily tank area 02</span><span class="pbf-tag">PBF904</span>
+        <div class="day-tank" data-tag="PBF904_LEVEL"><div class="row"><span class="pct">61 %</span><span>L</span></div><div class="row"><span>33 °C</span></div><div class="row"><span>30 °C</span></div><div class="tank-label">LFO day tank<br>PBF 904 · 25 m³</div></div>
+        <div class="day-tank" data-tag="PBF905_LEVEL"><div class="row"><span class="pct">78 %</span><span>L</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>31 °C</span></div><div class="tank-label">LFO day tank<br>PBF 905 · 25 m³</div></div>
+        <div class="day-tank" data-tag="PBF906_LEVEL"><div class="row"><span class="pct">80 %</span><span>L</span></div><div class="row"><span>30 °C</span></div><div class="row"><span>30 °C</span></div><div class="tank-label">LFO day tank<br>PBF 906 · 25 m³</div></div>
+      </div>
+    </div>
+
+    <!-- Feeder unit -->
+    <div class="feeder-section">
+      <span class="arealabel">Feeder unit</span>
+      <div class="feeder-title" data-tag="COMMON_PCA901_FEEDER_CMD" id="feederTitle">Feeder unit PCA901</div>
+      <div class="feeder-tagid">PCA901 — click title to open control popup</div>
+      <div class="feeder-body">
+        <div>
+          <div class="chk-row"><span class="chk"></span>Slow start ctrl. active</div>
+          <div class="chk-row"><span class="chk on"></span>Control voltage</div>
+        </div>
+        <div class="pct-box" data-tag="COMMON_PCA901_SPEED_PCT">50 %</div>
+        <div class="heating-pair">
+          <div class="heating-row"><span class="chk"></span>Motor heating<div class="ro-box" data-tag="PCA901_PRESS" style="margin-left:6px;">4.6 bar</div></div>
+          <div class="heating-row"><span class="chk"></span>Motor heating<div class="ro-box" data-tag="PCA901_PRESS" style="margin-left:6px;">4.6 bar</div></div>
+        </div>
+        <div class="pressure-out">
+          <div class="ro-box" data-tag="PCA901_PRESS">4.5 bar</div>
+          <div class="ro-box" data-tag="PCA901_PRESS">4.5 bar</div>
+        </div>
+        <div class="ro-box" data-tag="COMMON_PCA901_FLOW">9.4 m³/h</div>
+        <div class="to-genset">&#8594; LFO to genset booster units<br><span style="font-size:9.5px;">(feeds the Booster system rows on the Overview screen)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sludge">
+    <div class="sludge-tank tank" data-tag="COMMON_DDB901_LEVEL">
+      <div class="row"><span>30 °C</span></div>
+      <div class="row"><span>3 m³</span></div>
+      <div class="tank-label">Sludge tank<br>DDB 901</div>
+    </div>
+    <div class="pump-circle" data-tag="COMMON_DDD901_PUMP" style="margin-top:14px;">K</div>
+    <div class="tagbox" style="margin-top:14px;">Sludge loading<br>pump unit DDD 901</div>
+  </div>
+</div>
+
+<div class="statusbar">
+  <div class="toolsbtn" id="toolsBtn">&#9881;</div>
+  <div class="settings-popup" id="settingsPopup">
+    <div class="sp-head">Settings</div>
+    <div class="sp-body"><div style="margin-bottom:6px;color:var(--text-dim);">Theme</div>
+      <div class="theme-toggle"><button id="btnLight" class="active">Light</button><button id="btnDark">Dark</button></div>
+    </div>
+  </div>
+  <span id="clockLeft" class="num">08/10/2021 14:38:13</span>
+  <span class="alarm-icon"></span>
+  <span id="clockRight" class="num">08/10/2021 12:15:13.983</span>
+  <span class="tag">Genset_4</span>
+  <span class="alarm-text">ALM, Fuel oil inlet pressure low</span>
+  <span class="tag">SCA041PT101AL</span>
+  <button class="ackbtn">ACK</button>
+  <button class="onbtn">ON</button>
+</div>
+
+<!-- generic value popup -->
+<div class="tagpop" id="tagPop">
+  <div class="tp-head"><span id="tpDesc">Tag</span><span style="cursor:pointer;" id="tpCloseX">&#10006;</span></div>
+  <div class="tp-body">
+    <div class="tp-id" id="tpId">TAG_ID</div>
+    <div class="tp-value" id="tpValue">0</div>
+    <div class="tp-limits" id="tpLimits"></div>
+    <button class="tp-close" id="tpCloseBtn">Close</button>
+  </div>
+</div>
+
+<!-- feeder pump control popup, matches Image 3 -->
+<div class="pumppop" id="pumpPop">
+  <div class="pp-head">LFO feeder pump unit</div>
+  <div class="pp-tagid">PCA901</div>
+  <div class="pp-body">
+    <div class="pp-btn-row">
+      <div class="pp-btn" id="ppStart">Start<small>Ctrl+Shift+1</small></div>
+      <div class="pp-btn" id="ppStop">Stop<small>Ctrl+Shift+2</small></div>
+      <div class="pp-btn" id="ppReset">Reset<small>Ctrl+Shift+3</small></div>
+    </div>
+    <div class="pp-section-label">Change pump</div>
+    <div class="pp-pump-row">
+      <div class="pp-btn" id="ppPump1">Pump 1<small>Shift+1</small></div>
+      <div class="pp-btn" id="ppPump2">Pump 2<small>Shift+2</small></div>
+    </div>
+    <div class="pp-footer">
+      <div class="pp-icon-btn"><div class="ico">&#128221;</div>Ctrl+N</div>
+      <div class="pp-icon-btn" id="ppClose"><div class="ico" style="color:#c0392b;">&#10006;</div>Ctrl+X</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const html = document.documentElement;
+function setTheme(t){ html.setAttribute('data-theme', t); document.getElementById('btnLight').classList.toggle('active', t==='light'); document.getElementById('btnDark').classList.toggle('active', t==='dark'); }
+document.getElementById('btnLight').addEventListener('click', ()=>setTheme('light'));
+document.getElementById('btnDark').addEventListener('click', ()=>setTheme('dark'));
+const toolsBtn = document.getElementById('toolsBtn'), settingsPopup = document.getElementById('settingsPopup');
+toolsBtn.addEventListener('click', e=>{ settingsPopup.classList.toggle('open'); e.stopPropagation(); });
+
+const tags = {
+  PAF901_LEVEL:{desc:"LFO storage tank level (PAF 901)", val:"19 %", limits:{lo:"10.0", lolo:"5.0"}},
+  PAF902_LEVEL:{desc:"LFO storage tank level (PAF 902)", val:"49 %", limits:{lo:"10.0", lolo:"5.0"}},
+  PAF903_LEVEL:{desc:"LFO storage tank level (PAF 903)", val:"83 %", limits:{lo:"10.0", lolo:"5.0"}},
+  PAE904_LEVEL:{desc:"LFO storage tank level (PAE 904) — primary", val:"29 %", limits:{lo:"10.0", lolo:"5.0"}},
+  PBF901_LEVEL:{desc:"LFO day tank level (PBF 901)", val:"78 %", limits:{lo:"20.0", lolo:"5.0"}},
+  PBF902_LEVEL:{desc:"LFO day tank level (PBF 902)", val:"80 %", limits:{lo:"20.0", lolo:"5.0"}},
+  PBF903_LEVEL:{desc:"LFO day tank level (PBF 903)", val:"61 %", limits:{lo:"20.0", lolo:"5.0"}},
+  PBF904_LEVEL:{desc:"LFO day tank level (PBF 904)", val:"61 %", limits:{lo:"20.0", lolo:"5.0"}},
+  PBF905_LEVEL:{desc:"LFO day tank level (PBF 905)", val:"78 %", limits:{lo:"20.0", lolo:"5.0"}},
+  PBF906_LEVEL:{desc:"LFO day tank level (PBF 906)", val:"80 %", limits:{lo:"20.0", lolo:"5.0"}},
+  COMMON_PAF901_PUMP_A:{desc:"LFO transfer pump PAF901 current", val:"0.0 A", limits:{hi:"N/A"}},
+  COMMON_PAF902_PUMP_A:{desc:"LFO transfer pump PAF902 current", val:"0.0 A", limits:{hi:"N/A"}},
+  COMMON_MAIN_PUMP_A:{desc:"Main pump current", val:"0.0 A", limits:{hi:"N/A"}},
+  COMMON_MAIN_FLOW:{desc:"Main pump flow", val:"0.0 m³/h", limits:{}},
+  PCA901_PRESS:{desc:"LFO feeder unit discharge pressure", val:"4.6 bar", limits:{lo:"3.5", hi:"N/A"}},
+  COMMON_PCA901_SPEED_PCT:{desc:"Feeder unit PCA901 speed", val:"50 %", limits:{}},
+  COMMON_PCA901_FLOW:{desc:"LFO to genset booster units — flow", val:"9.4 m³/h", limits:{}},
+  COMMON_DDB901_LEVEL:{desc:"Sludge tank level (DDB 901)", val:"3 m³ / 30 °C", limits:{}},
+  COMMON_DDD901_PUMP:{desc:"Sludge loading pump status", val:"OFF", limits:{}}
+};
+
+const tagPop = document.getElementById('tagPop');
+const pumpPop = document.getElementById('pumpPop');
+
+document.addEventListener('click', (e)=>{
+  if(e.target.closest('#feederTitle')){
+    const rect = e.target.closest('#feederTitle').getBoundingClientRect();
+    pumpPop.style.left = (rect.left)+'px'; pumpPop.style.top = (rect.bottom+8)+'px';
+    pumpPop.classList.add('open'); tagPop.classList.remove('open');
+    e.stopPropagation(); return;
+  }
+  const el = e.target.closest('[data-tag]');
+  if(!el){
+    if(!tagPop.contains(e.target)) tagPop.classList.remove('open');
+    if(!pumpPop.contains(e.target) && !e.target.closest('#feederTitle')) pumpPop.classList.remove('open');
+    return;
+  }
+  const t = tags[el.dataset.tag];
+  if(!t) return;
+  document.getElementById('tpDesc').textContent = t.desc;
+  document.getElementById('tpId').textContent = el.dataset.tag;
+  document.getElementById('tpValue').textContent = t.val;
+  const limitsEl = document.getElementById('tpLimits'); limitsEl.innerHTML = '';
+  Object.entries(t.limits||{}).forEach(([k,v])=>{ limitsEl.innerHTML += `<span>${k.toUpperCase()}:</span><input value="${v}">`; });
+  const rect = el.getBoundingClientRect();
+  let left = rect.right + 10, top = rect.top;
+  if(left + 260 > window.innerWidth) left = rect.left - 260;
+  if(top + 200 > window.innerHeight) top = window.innerHeight - 210;
+  tagPop.style.left = left+'px'; tagPop.style.top = top+'px';
+  tagPop.classList.add('open'); pumpPop.classList.remove('open');
+  e.stopPropagation();
+});
+document.getElementById('tpCloseBtn').addEventListener('click', ()=>tagPop.classList.remove('open'));
+document.getElementById('tpCloseX').addEventListener('click', ()=>tagPop.classList.remove('open'));
+document.getElementById('ppClose').addEventListener('click', ()=>pumpPop.classList.remove('open'));
+
+function updateClock(){
+  const now = new Date();
+  const str = now.toLocaleDateString('en-GB') + " " + now.toLocaleTimeString('en-GB');
+  document.getElementById('clockLeft').textContent = str;
+  document.getElementById('clockRight').textContent = str+"."+String(now.getMilliseconds()).padStart(3,'0');
+}
+setInterval(updateClock, 500); updateClock();
+</script>
+</body>
+</html>

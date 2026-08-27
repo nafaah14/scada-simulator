@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sensor Popup Component — Reference</title>
+<style>
+  body{ margin:0; background:#c9cdd2; font-family:"Segoe UI",Arial,sans-serif; height:100vh; display:flex; align-items:center; justify-content:center; }
+  .demo-hint{ position:fixed; top:10px; left:10px; font-size:12px; color:#333; background:#fff; padding:6px 10px; border:1px solid #999; }
+  .popup{
+    width:340px; background:#eef0f2; border:2px solid #1a1a1a; box-shadow:4px 4px 14px rgba(0,0,0,.4);
+    font-size:12.5px; color:#1a1a1a;
+  }
+  .popup-titlebar{
+    background:linear-gradient(#2c3e50,#1a2530); color:#fff; padding:4px 8px; font-size:11px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .popup-body{ padding:10px; }
+  .popup-tagname{ font-weight:700; font-size:12.5px; margin-bottom:2px; }
+  .popup-tagid{ color:#555; font-family:Consolas,monospace; font-size:11.5px; margin-bottom:8px; }
+  .trend-box{ background:#fff; border:1px solid #8a8f96; height:90px; position:relative; margin-bottom:8px; }
+  .trend-box svg{ width:100%; height:100%; }
+  .trend-axis-label{ position:absolute; font-size:9px; color:#666; }
+  .value-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+  .value-row .lbl{ color:#333; }
+  .value-row .val{ font-weight:700; font-family:Consolas,monospace; }
+  .sensor-fault{ color:#c0392b; font-weight:700; font-size:11px; margin-bottom:8px; }
+  .limits-grid{ display:grid; grid-template-columns:auto 1fr 1fr; gap:3px 8px; margin-bottom:10px; font-size:11.5px; }
+  .limits-grid .hdr{ font-weight:700; color:#333; }
+  .limits-grid input{
+    width:60px; font-family:Consolas,monospace; font-size:11.5px; text-align:right;
+    border:1px solid #9aa0a6; background:#fff; padding:2px 4px;
+  }
+  .limits-grid input.na{ color:#999; font-style:italic; }
+  .limits-grid input:focus{ outline:2px solid #3f8fce; }
+  .popup-actions{ display:flex; justify-content:space-between; align-items:center; border-top:1px solid #b7bcc1; padding-top:8px;}
+  .popup-btn{ display:flex; flex-direction:column; align-items:center; gap:2px; font-size:9.5px; color:#333; cursor:pointer; }
+  .popup-btn .ico{ width:26px;height:22px; background:#fff; border:1px solid #9aa0a6; display:flex; align-items:center; justify-content:center; font-size:13px; }
+  .popup-btn:hover .ico{ border-color:#3f8fce; }
+  .save-note{ font-size:10px; color:#3f8fce; margin-top:6px; display:none; }
+</style>
+</head>
+<body>
+<div class="demo-hint">Reference component — edit HiHi/Hi/Lo/LoLo, click away, "saved" note appears (stand-in for backend write)</div>
+
+<div class="popup" id="popup">
+  <div class="popup-titlebar">
+    <span>Analog In/Out</span>
+    <span>&#9587;</span>
+  </div>
+  <div class="popup-body">
+    <div class="popup-tagname" id="tagDesc">Fuel oil inlet temp</div>
+    <div class="popup-tagid" id="tagId">SCA011TE101PV</div>
+
+    <div class="trend-box">
+      <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+        <line x1="0" y1="45" x2="300" y2="45" stroke="#e74c3c" stroke-dasharray="4,3" stroke-width="1"/>
+        <line x1="150" y1="0" x2="150" y2="90" stroke="#3f8fce" stroke-width="1"/>
+        <polyline points="0,50 40,49 80,50 120,48 150,49 190,49 230,50 270,49 300,50" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>
+      </svg>
+      <span class="trend-axis-label" style="left:4px;bottom:2px;">14:55:30</span>
+      <span class="trend-axis-label" style="right:4px;bottom:2px;">14:56:00</span>
+      <span class="trend-axis-label" style="left:4px;top:2px;">160.0</span>
+      <span class="trend-axis-label" style="left:4px;bottom:16px;">0.0</span>
+    </div>
+
+    <div class="value-row"><span class="lbl">Value:</span><span class="val" id="liveValue">40.20 °C</span></div>
+    <div class="sensor-fault" id="sensorFault" style="visibility:hidden;">Sensor fault</div>
+
+    <div class="limits-grid">
+      <span></span><span class="hdr">Alarm limits</span><span class="hdr">Shutdown limits</span>
+      <span>HiHi:</span><input type="text" id="alm_hihi" value="N/A" class="na"><input type="text" id="sd_hihi" value="N/A" class="na">
+      <span>Hi:</span><input type="text" id="alm_hi" value="50.00"><span></span>
+      <span>Lo:</span><input type="text" id="alm_lo" value="N/A" class="na"><span></span>
+      <span>LoLo:</span><input type="text" id="alm_lolo" value="N/A" class="na"><input type="text" id="sd_lolo" value="N/A" class="na">
+    </div>
+
+    <div class="popup-actions">
+      <div class="popup-btn"><div class="ico">&#128200;</div><span>Ctrl+T<br>Trend</span></div>
+      <div class="popup-btn"><div class="ico" style="color:#c0392b;">&#10006;</div><span>Ctrl+X<br>Close</span></div>
+    </div>
+    <div class="save-note" id="saveNote">&#10003; Limit change staged — backend should persist to tag DB &amp; broadcast to other screens.</div>
+  </div>
+</div>
+
+<script>
+// Reference behavior only — in the real app, these inputs write to the
+// shared tag record (see /data/tags/genset-tags.json + SCHEMA.md) and any
+// other screen currently rendering this tag_id should reactively update.
+document.querySelectorAll('.limits-grid input').forEach(inp=>{
+  inp.addEventListener('focus', ()=>{ if(inp.value==='N/A'){ inp.value=''; inp.classList.remove('na'); } });
+  inp.addEventListener('blur', ()=>{
+    if(inp.value.trim()===''){ inp.value='N/A'; inp.classList.add('na'); }
+    document.getElementById('saveNote').style.display='block';
+  });
+});
+</script>
+</body>
+</html>

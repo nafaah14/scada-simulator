@@ -1,0 +1,53 @@
+{
+  "Common.Overview": {
+    "layout": "process-flow-diagram",
+    "tags": [
+      "PBF901_LEVEL", "PBF902_LEVEL", "PBF903_LEVEL",
+      "PBF904_LEVEL", "PBF905_LEVEL", "PBF906_LEVEL",
+      "G01_BOOSTER_FLOW", "G02_BOOSTER_FLOW", "G03_BOOSTER_FLOW",
+      "G04_BOOSTER_FLOW", "G05_BOOSTER_FLOW", "G06_BOOSTER_FLOW",
+      "SCA011PW104PV", "G02_KW", "G03_KW", "G04_KW", "G05_KW", "G06_KW",
+      "COMMON_PLANT_MW", "COMMON_PLANT_MVAR", "COMMON_BUSBAR1_FREQ"
+    ],
+    "note": "Fuel oil system (6 day tanks, 2 areas of 3) + Feeder/Booster (1 per genset) + Electrical single-line (6 units across 2 busbars + bus tie). G04 shown stopped/breaker-open by design, matching the G4.Control mockup's default state — same unit, same story across screens."
+  },
+  "Common.Fuel": {
+    "layout": "process-flow-diagram",
+    "tags": [
+      "PAF901_LEVEL", "PAF902_LEVEL", "PAF903_LEVEL", "PAE904_LEVEL",
+      "COMMON_PAF901_PUMP_A", "COMMON_PAF902_PUMP_A", "COMMON_MAIN_PUMP_A",
+      "PBF901_LEVEL", "PBF902_LEVEL", "PBF903_LEVEL",
+      "PBF904_LEVEL", "PBF905_LEVEL", "PBF906_LEVEL",
+      "PCA901_PRESS", "COMMON_PCA901_FLOW", "COMMON_PCA901_FEEDER_CMD"
+    ],
+    "popups": ["feeder-pump-unit"],
+    "note": "Day tank tags (PBF901-906) are the exact same tags used on Common.Overview — proves the shared-tag mechanism across two different screens, not just within one."
+  },
+  "G1.Temp": {
+    "layout": "engine-cross-section",
+    "tags": [
+      "G01_TCB_SPEED", "G01_TCA_SPEED", "G01_CYL_B_EXH_1",
+      "G01_GEN_WINDING_U", "G01_RUNNING_HOURS", "SCA011ST103PV",
+      "SCA011PW104PV", "G01_GEN_REACTIVE_POWER", "G01_MAX_AVAIL_POWER"
+    ],
+    "note": "Full cylinder grid (~80 tags) not yet in the shared DB — mockup uses a generated tag-id pattern for the other cylinder cells. See G01_CYL_B_EXH_1's note for the naming convention to extend when this screen is finalized."
+  },
+  "G1.Control": {
+    "layout": "control-page",
+    "tags": ["SCA011PT102PV", "SCA011ST103PV", "SCA011PW104PV", "COMMON_BUSBAR1_FREQ"]
+  },
+  "G1.Fuel": {
+    "layout": "process-flow-diagram",
+    "tags": [
+      "SCA011ST103PV", "SCA011PW104PV", "COMMON_PCA901_SPEED_PCT", "PCA901_PRESS",
+      "G01_MIXTANK_PRESS", "G01_MIXTANK_FLOW", "G01_ENGINE_INLET_TEMP", "G01_ENGINE_INLET_PRESS",
+      "G01_CLEANLEAK_FLOW"
+    ],
+    "note": "Engine-local fuel booster loop (PCA011), downstream of the plant-wide Common.Fuel screen. Two tag-duplication issues flagged for backend cleanup: G01_MIXTANK_FLOW vs G01_BOOSTER_FLOW_RATE, and G01_ENGINE_INLET_PRESS vs SCA011PT102PV — same physical points, currently modeled twice because each screen was designed independently."
+  },
+  "G4.Control": {
+    "layout": "control-page",
+    "tags": ["SCA041PT101A", "COMMON_BUSBAR1_FREQ"],
+    "note": "Full G4 control page tag list lives in genset-04-wartsila-tag-list.md until fully migrated into this JSON."
+  }
+}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>WOIS - Stelco 5th | Common - Overview</title>
+<style>
+  :root{ font-size:14px; }
+  :root{ --green:#2fa84f; --red:#e5484d; --amber:#d99418; --orange:#f47b20; --blue:#3f8fce; }
+  html[data-theme="light"]{
+    --bg-app:#eef1f4; --bg-panel:#ffffff; --bg-panel-head:#f2f4f6; --bg-field:#f6f8f9;
+    --border:#d7dce2; --border-light:#c3cad2; --text:#3a4753; --text-dim:#7c8896; --text-bright:#172029;
+    --pipe:#8a2f2f;
+  }
+  html[data-theme="dark"]{
+    --bg-app:#0b0f14; --bg-panel:#131a22; --bg-panel-head:#1a222c; --bg-field:#0e141b;
+    --border:#2b3542; --border-light:#3a4553; --text:#c8d2dc; --text-dim:#8994a1; --text-bright:#eef3f7;
+    --pipe:#b45050;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;background:var(--bg-app);color:var(--text);font-family:"Segoe UI",Arial,sans-serif;overflow:hidden;}
+  .num{font-family:"Consolas","SF Mono",monospace;}
+
+  /* top banners - always dark */
+  .topbar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(#161d25,#12181f);border-bottom:1px solid #232c36;padding:4px 10px;height:32px;}
+  .topbar-left{display:flex;align-items:center;gap:14px;}
+  .brand{display:flex;align-items:center;gap:8px;color:#8a94a0;font-weight:600;font-size:12px;}
+  .brand .mark{width:18px;height:18px;border-radius:50%;border:2px solid #8a94a0;}
+  .toptabs{display:flex;gap:18px;}
+  .toptabs span{font-size:12.5px;color:#8a94a0;cursor:pointer;padding-bottom:4px;}
+  .toptabs span.active{color:var(--orange);border-bottom:2px solid var(--orange);font-weight:600;}
+  .topbar-right{display:flex;align-items:center;gap:16px;font-size:12px;color:#8a94a0;}
+  .engdots{display:flex;gap:3px;align-items:center;}
+  .engdots i{width:6px;height:14px;background:#2fa84f;display:inline-block;border-radius:1px;}
+  .engdots i:nth-child(1){height:8px;} .engdots i:nth-child(6){height:16px;}
+  .wois-title{color:#e7ecf1;font-weight:600;font-size:13px;}
+  .user{color:#8a94a0;font-size:11.5px;}
+  .unitbar,.pagebar{display:flex;align-items:center;gap:8px;background:#0f151b;border-bottom:1px solid #232c36;padding:3px 10px;height:26px;}
+  .unitbar span,.pagebar span{font-size:12px;color:#8a94a0;padding:2px 9px;border-radius:2px;cursor:pointer;}
+  .unitbar span.active{background:var(--orange);color:#1a1005;font-weight:700;}
+  .pagebar span.active{color:var(--orange);border-bottom:2px solid var(--orange);font-weight:600;}
+  .navnote{margin-left:auto;font-size:10px;color:#5c6a78;}
+
+  /* canvas */
+  .canvas{height:calc(100% - 32px - 26px - 26px - 24px);padding:12px 16px;display:flex;gap:0;position:relative;overflow:auto;background:var(--bg-app);}
+  .zone{border-right:1px dashed var(--border-light);padding:18px 16px 10px;position:relative;flex:none;}
+  .zone:last-child{border-right:none;flex:1;}
+  .zone-label{position:absolute;top:-2px;left:16px;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;background:var(--bg-app);padding:0 4px;}
+
+  /* fuel tanks */
+  .tank-zone{width:250px;}
+  .tank-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
+  .tank{background:var(--bg-panel);border:1px solid var(--border-light);width:108px;cursor:pointer;}
+  .tank:hover{border-color:var(--blue);}
+  .tank .row{display:flex;justify-content:space-between;padding:2px 6px;font-size:11px;border-bottom:1px dashed var(--border);}
+  .tank .row:last-child{border-bottom:none;}
+  .tank .pct{font-weight:700;color:var(--text-bright);}
+  .tank .lvlbar{height:4px;background:var(--border);position:relative;}
+  .tank .lvlbar i{position:absolute;left:0;top:0;bottom:0;background:var(--blue);}
+  .tank-label{font-size:9.5px;color:var(--text-dim);text-align:center;padding:2px 0;background:var(--bg-field);}
+
+  /* feeder zone - simple connector lines */
+  .feeder-zone{width:70px;display:flex;align-items:center;justify-content:center;}
+  .feeder-line{width:2px;background:var(--pipe);height:210px;position:relative;}
+  .feeder-line i{position:absolute;left:-14px;width:30px;height:2px;background:var(--pipe);}
+  .valve{width:8px;height:8px;background:var(--green);border-radius:1px;position:absolute;left:-4px;}
+
+  /* booster zone */
+  .booster-zone{width:170px;}
+  .unit-row{display:flex;align-items:center;gap:8px;height:36px;}
+  .unit-row.gap-before{margin-top:18px;}
+  .pump-ic{width:20px;height:20px;border-radius:50%;border:2px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--green);flex:none;}
+  .pump-ic.stopped{border-color:var(--blue);color:var(--blue);}
+  .flow-box{background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;font-size:11.5px;cursor:pointer;flex:1;text-align:right;}
+  .flow-box:hover{border-color:var(--blue);}
+
+  /* electrical zone */
+  .elec-zone{flex:1;min-width:520px;}
+  .elec-row{display:flex;align-items:center;gap:10px;height:36px;}
+  .elec-row.gap-before{margin-top:18px;}
+  .engine-ic{width:64px;height:22px;border-radius:3px;background:repeating-linear-gradient(90deg,#2fa84f,#2fa84f 4px,#218040 4px,#218040 8px);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;flex:none;}
+  .engine-ic.stopped{background:repeating-linear-gradient(90deg,#3f8fce,#3f8fce 4px,#2c6ea0 4px,#2c6ea0 8px);}
+  .brk{width:14px;height:14px;background:var(--green);border:1px solid #1c6b32;flex:none;cursor:default;}
+  .brk.open{background:var(--bg-field);border-color:var(--border-light);}
+  .readout-cluster{display:flex;gap:6px;}
+  .ro-box{background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;font-size:11.5px;text-align:right;cursor:pointer;min-width:70px;}
+  .ro-box:hover{border-color:var(--blue);}
+  .bus-label{font-size:11px;color:var(--text-dim);margin-left:auto;}
+  .bustie{width:14px;height:14px;background:var(--green);border:1px solid #1c6b32;margin:6px auto;}
+  .plant-output{display:flex;gap:10px;margin-top:24px;align-items:center;}
+  .plant-output .ro-box{min-width:90px;font-weight:700;color:var(--text-bright);}
+  .maint-btn{margin-top:10px;background:var(--bg-field);border:1px solid var(--border-light);padding:6px 14px;font-size:11.5px;cursor:pointer;}
+
+  /* status bar */
+  .statusbar{display:flex;align-items:center;gap:14px;background:var(--bg-panel-head);border-top:1px solid var(--border);padding:3px 10px;height:24px;font-size:11.5px;color:var(--text-dim);position:relative;}
+  .toolsbtn{width:20px;height:18px;border:1px solid var(--border-light);background:var(--bg-field);color:var(--text-dim);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;}
+  .statusbar .alarm-icon{width:14px;height:14px;border-radius:2px;background:var(--red);display:inline-block;}
+  .statusbar .alarm-text{color:var(--red);font-weight:600;flex:1;}
+  .statusbar .tag{color:var(--text-bright);font-family:"Consolas",monospace;}
+  .ackbtn{background:var(--bg-field);border:1px solid var(--border-light);color:var(--text-bright);font-size:11px;padding:2px 12px;cursor:pointer;}
+  .onbtn{background:#e4f3e6;border:1px solid var(--green);color:var(--green);font-size:11px;padding:2px 12px;}
+  html[data-theme="dark"] .onbtn{background:#16301c;}
+  .settings-popup{position:absolute;bottom:26px;left:10px;width:210px;background:var(--bg-panel);border:1px solid var(--border-light);box-shadow:0 4px 18px rgba(0,0,0,.35);display:none;flex-direction:column;font-size:12px;color:var(--text);z-index:50;}
+  .settings-popup.open{display:flex;}
+  .settings-popup .sp-head{background:var(--bg-panel-head);padding:7px 10px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border);}
+  .settings-popup .sp-body{padding:10px;display:flex;flex-direction:column;gap:10px;}
+  .theme-toggle{display:flex;border:1px solid var(--border-light);overflow:hidden;}
+  .theme-toggle button{flex:1;padding:6px 0;background:var(--bg-field);border:none;color:var(--text-dim);cursor:pointer;font-size:11.5px;}
+  .theme-toggle button.active{background:var(--orange);color:#1a1005;font-weight:700;}
+
+  /* tag popup */
+  .tagpop{position:fixed;width:250px;background:var(--bg-panel);border:2px solid var(--text-bright);box-shadow:4px 4px 16px rgba(0,0,0,.4);z-index:100;display:none;font-size:12px;}
+  .tagpop.open{display:block;}
+  .tagpop .tp-head{background:var(--bg-panel-head);padding:5px 8px;font-size:11px;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);}
+  .tagpop .tp-body{padding:10px;}
+  .tp-desc{font-weight:700;margin-bottom:2px;}
+  .tp-id{color:var(--text-dim);font-family:Consolas,monospace;font-size:11px;margin-bottom:8px;}
+  .tp-value{font-size:16px;font-weight:700;color:var(--text-bright);margin-bottom:8px;}
+  .tp-limits{display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:11px;}
+  .tp-limits input{width:60px;font-family:Consolas,monospace;text-align:right;border:1px solid var(--border-light);background:var(--bg-field);padding:2px 4px;color:var(--text-bright);}
+  .tp-close{margin-top:8px;background:var(--bg-field);border:1px solid var(--border-light);padding:3px 10px;font-size:11px;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="brand"><span class="mark"></span>WÄRTSILÄ</div>
+    <div class="toptabs">
+      <span class="active">Processes</span><span>Alarms</span><span>Trends</span><span>Reports</span>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span class="num">30.5 °C</span>
+    <div class="engdots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="num">39.5 MW</span>
+    <span class="wois-title">WOIS - Stelco 5th</span>
+    <span class="user">User: Operator2</span>
+  </div>
+</div>
+
+<div class="unitbar">
+  <span class="active">Common</span><span>G1</span><span>G2</span><span>G3</span><span>G4</span><span>G5</span><span>G6</span>
+</div>
+<div class="pagebar">
+  <span class="active">Overview</span><span>Electrical 1</span><span>Electrical 2</span><span>Fuel</span>
+  <span>Start air</span><span>Oily water</span><span>Cooling</span><span>Water</span>
+  <span>Automation 1</span><span>Automation 2</span>
+  <span class="navnote">Cross-screen nav wires up once ported into the real app</span>
+</div>
+
+<div class="canvas">
+  <div class="zone tank-zone">
+    <div class="zone-label">Fuel oil system</div>
+    <div class="tank-cols" id="tankGrid"></div>
+  </div>
+
+  <div class="zone feeder-zone">
+    <div class="zone-label">Feeder system</div>
+    <div class="feeder-line" id="feederLine"></div>
+  </div>
+
+  <div class="zone booster-zone">
+    <div class="zone-label">Booster system</div>
+    <div id="boosterRows"></div>
+    <button class="maint-btn">Maintenance</button>
+  </div>
+
+  <div class="zone elec-zone">
+    <div class="zone-label">Electrical system</div>
+    <div id="elecRows"></div>
+    <div class="plant-output">
+      <div class="ro-box" data-tag="COMMON_PLANT_MW">39.5 MW</div>
+      <div class="ro-box" data-tag="COMMON_PLANT_MVAR">1.6 MVAr</div>
+      <div class="ro-box" data-tag="COMMON_BUSBAR1_FREQ">50.00 Hz</div>
+    </div>
+  </div>
+</div>
+
+<div class="statusbar">
+  <div class="toolsbtn" id="toolsBtn">&#9881;</div>
+  <div class="settings-popup" id="settingsPopup">
+    <div class="sp-head">Settings</div>
+    <div class="sp-body">
+      <div>
+        <div style="margin-bottom:6px;color:var(--text-dim);">Theme</div>
+        <div class="theme-toggle"><button id="btnLight" class="active">Light</button><button id="btnDark">Dark</button></div>
+      </div>
+    </div>
+  </div>
+  <span id="clockLeft" class="num">08/10/2021 14:35:50</span>
+  <span class="alarm-icon"></span>
+  <span id="clockRight" class="num">08/10/2021 12:15:13.983</span>
+  <span class="tag">Genset_4</span>
+  <span class="alarm-text">ALM, Fuel oil inlet pressure low</span>
+  <span class="tag">SCA041PT101AL</span>
+  <button class="ackbtn">ACK</button>
+  <button class="onbtn">ON</button>
+</div>
+
+<div class="tagpop" id="tagPop">
+  <div class="tp-head"><span id="tpDesc">Tag</span><span style="cursor:pointer;" id="tpCloseX">&#10006;</span></div>
+  <div class="tp-body">
+    <div class="tp-id" id="tpId">TAG_ID</div>
+    <div class="tp-value" id="tpValue">0</div>
+    <div class="tp-limits" id="tpLimits"></div>
+    <button class="tp-close" id="tpCloseBtn">Close</button>
+  </div>
+</div>
+
+<script>
+/* ============ THEME (same pattern as G4 control) ============ */
+const html = document.documentElement;
+function setTheme(t){ html.setAttribute('data-theme', t); document.getElementById('btnLight').classList.toggle('active', t==='light'); document.getElementById('btnDark').classList.toggle('active', t==='dark'); }
+document.getElementById('btnLight').addEventListener('click', ()=>setTheme('light'));
+document.getElementById('btnDark').addEventListener('click', ()=>setTheme('dark'));
+const toolsBtn = document.getElementById('toolsBtn'), settingsPopup = document.getElementById('settingsPopup');
+toolsBtn.addEventListener('click', e=>{ settingsPopup.classList.toggle('open'); e.stopPropagation(); });
+document.addEventListener('click', e=>{ if(!settingsPopup.contains(e.target) && e.target!==toolsBtn) settingsPopup.classList.remove('open'); });
+
+/* ============ TAG DATA (mirrors data/tags/genset-tags.json subset) ============ */
+const tags = {
+  PBF901_LEVEL:{desc:"LFO day tank level (PBF 901)", val:"78.4 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
+  PBF902_LEVEL:{desc:"LFO day tank level (PBF 902)", val:"80.1 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
+  PBF903_LEVEL:{desc:"LFO day tank level (PBF 903)", val:"60.7 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
+  PBF904_LEVEL:{desc:"LFO day tank level (PBF 904)", val:"61.3 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
+  PBF905_LEVEL:{desc:"LFO day tank level (PBF 905)", val:"78.1 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
+  PBF906_LEVEL:{desc:"LFO day tank level (PBF 906)", val:"80.1 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
+  G01_BOOSTER_FLOW:{desc:"Booster unit flow (G1)", val:"1479 kg/h", limits:{hi:"N/A", lo:"N/A"}},
+  G02_BOOSTER_FLOW:{desc:"Booster unit flow (G2)", val:"1519 kg/h", limits:{hi:"N/A", lo:"N/A"}},
+  G03_BOOSTER_FLOW:{desc:"Booster unit flow (G3)", val:"1562 kg/h", limits:{hi:"N/A", lo:"N/A"}},
+  G04_BOOSTER_FLOW:{desc:"Booster unit flow (G4) — stopped", val:"0 kg/h", limits:{hi:"N/A", lo:"N/A"}},
+  G05_BOOSTER_FLOW:{desc:"Booster unit flow (G5)", val:"1450 kg/h", limits:{hi:"N/A", lo:"N/A"}},
+  G06_BOOSTER_FLOW:{desc:"Booster unit flow (G6)", val:"1506 kg/h", limits:{hi:"N/A", lo:"N/A"}},
+  SCA011PW104PV:{desc:"Gen. active power (G1)", val:"7887 kW", limits:{}},
+  G02_KW:{desc:"Gen. active power (G2)", val:"7883 kW", limits:{}},
+  G03_KW:{desc:"Gen. active power (G3)", val:"7890 kW", limits:{}},
+  G04_KW:{desc:"Gen. active power (G4) — breaker open", val:"0 kW", limits:{}},
+  G05_KW:{desc:"Gen. active power (G5)", val:"7875 kW", limits:{}},
+  G06_KW:{desc:"Gen. active power (G6)", val:"7894 kW", limits:{}},
+  COMMON_PLANT_MW:{desc:"Plant output — active power", val:"39.5 MW", limits:{}},
+  COMMON_PLANT_MVAR:{desc:"Plant output — reactive power", val:"1.6 MVAr", limits:{}},
+  COMMON_BUSBAR1_FREQ:{desc:"Busbar 1 frequency", val:"50.00 Hz", limits:{hihi:"51.5", lolo:"48.5"}}
+};
+
+/* ============ BUILD TANKS ============ */
+const tankGrid = document.getElementById('tankGrid');
+const tankData = [
+  {id:"PBF901_LEVEL", pct:78.4, t:[33,30,30], label:"LFO day tank\nPBF 901"},
+  {id:"PBF904_LEVEL", pct:61.3, t:[33,30,30], label:"LFO day tank\nPBF 904"},
+  {id:"PBF902_LEVEL", pct:80.1, t:[30,31,30], label:"LFO day tank\nPBF 902"},
+  {id:"PBF905_LEVEL", pct:78.1, t:[30,30,30], label:"LFO day tank\nPBF 905"},
+  {id:"PBF903_LEVEL", pct:60.7, t:[32,30,30], label:"LFO day tank\nPBF 903"},
+  {id:"PBF906_LEVEL", pct:80.1, t:[30,30,30], label:"LFO day tank\nPBF 906"},
+];
+tankData.forEach(t=>{
+  const el = document.createElement('div'); el.className='tank'; el.dataset.tag=t.id;
+  el.innerHTML = `
+    <div class="row"><span class="pct">${t.pct} %</span><span>L</span></div>
+    <div class="row"><span>${t.t[0]} °C</span></div>
+    <div class="row"><span>${t.t[1]} °C</span></div>
+    <div class="row"><span>${t.t[2]} °C</span></div>
+    <div class="lvlbar"><i style="width:${t.pct}%"></i></div>
+    <div class="tank-label">${t.label.replace('\n','<br>')}</div>`;
+  tankGrid.appendChild(el);
+});
+
+/* ============ FEEDER connector ticks ============ */
+const feederLine = document.getElementById('feederLine');
+[0,36,72,108,144,180].forEach((top,i)=>{
+  const v = document.createElement('i'); v.style.top = top+'px'; feederLine.appendChild(v);
+});
+
+/* ============ BOOSTER rows ============ */
+const boosterRows = document.getElementById('boosterRows');
+const boosterData = [
+  {tag:"G01_BOOSTER_FLOW", flow:"1479 kg/h", stopped:false},
+  {tag:"G02_BOOSTER_FLOW", flow:"1519 kg/h", stopped:false},
+  {tag:"G03_BOOSTER_FLOW", flow:"1562 kg/h", stopped:false},
+  {tag:"G04_BOOSTER_FLOW", flow:"0 kg/h", stopped:true},
+  {tag:"G05_BOOSTER_FLOW", flow:"1450 kg/h", stopped:false},
+  {tag:"G06_BOOSTER_FLOW", flow:"1506 kg/h", stopped:false},
+];
+boosterData.forEach((b,i)=>{
+  const row = document.createElement('div'); row.className='unit-row'+(i===3?' gap-before':'');
+  row.innerHTML = `<div class="pump-ic ${b.stopped?'stopped':''}">${i+1}</div><div class="flow-box" data-tag="${b.tag}">${b.flow}</div>`;
+  boosterRows.appendChild(row);
+});
+
+/* ============ ELECTRICAL rows ============ */
+const elecRows = document.getElementById('elecRows');
+const elecData = [
+  {n:1, kwTag:"SCA011PW104PV", kw:"7887 kW", kvar:"335 kVAr", closed:true, bus:"Busbar 1"},
+  {n:2, kwTag:"G02_KW", kw:"7883 kW", kvar:"299 kVAr", closed:true, bus:""},
+  {n:3, kwTag:"G03_KW", kw:"7890 kW", kvar:"323 kVAr", closed:true, bus:""},
+  {n:4, kwTag:"G04_KW", kw:"0 kW", kvar:"0 kVAr", closed:false, bus:"", stopped:true},
+  {n:5, kwTag:"G05_KW", kw:"7875 kW", kvar:"315 kVAr", closed:true, bus:"Busbar 2"},
+  {n:6, kwTag:"G06_KW", kw:"7894 kW", kvar:"307 kVAr", closed:true, bus:""},
+];
+elecData.forEach((e,i)=>{
+  const row = document.createElement('div'); row.className='elec-row'+(i===3?' gap-before':'');
+  row.innerHTML = `
+    <div class="engine-ic ${e.stopped?'stopped':''}">${e.n}</div>
+    <div class="brk ${e.closed?'':'open'}"></div>
+    <div class="readout-cluster">
+      <div class="ro-box" data-tag="${e.kwTag}">${e.kw}</div>
+      <div class="ro-box">${e.kvar}</div>
+      <div class="ro-box">1.00 cos phi</div>
+    </div>
+    ${e.bus?`<span class="bus-label">${e.bus}</span>`:''}
+  `;
+  elecRows.appendChild(row);
+  if(i===2){
+    const tie = document.createElement('div'); tie.style.display='flex'; tie.style.justifyContent='flex-end'; tie.style.paddingRight='60px';
+    tie.innerHTML = `<div class="bustie" title="Bus tie breaker"></div>`;
+    elecRows.appendChild(tie);
+  }
+});
+
+/* ============ TAG POPUP ============ */
+const tagPop = document.getElementById('tagPop');
+document.addEventListener('click', (e)=>{
+  const el = e.target.closest('[data-tag]');
+  if(!el){ if(!tagPop.contains(e.target)) tagPop.classList.remove('open'); return; }
+  const t = tags[el.dataset.tag];
+  if(!t) return;
+  document.getElementById('tpDesc').textContent = t.desc;
+  document.getElementById('tpId').textContent = el.dataset.tag;
+  document.getElementById('tpValue').textContent = t.val;
+  const limitsEl = document.getElementById('tpLimits');
+  limitsEl.innerHTML = '';
+  Object.entries(t.limits||{}).forEach(([k,v])=>{
+    limitsEl.innerHTML += `<span>${k.toUpperCase()}:</span><input value="${v}">`;
+  });
+  const rect = el.getBoundingClientRect();
+  let left = rect.right + 10, top = rect.top;
+  if(left + 260 > window.innerWidth) left = rect.left - 260;
+  if(top + 200 > window.innerHeight) top = window.innerHeight - 210;
+  tagPop.style.left = left+'px'; tagPop.style.top = top+'px';
+  tagPop.classList.add('open');
+  e.stopPropagation();
+});
+document.getElementById('tpCloseBtn').addEventListener('click', ()=>tagPop.classList.remove('open'));
+document.getElementById('tpCloseX').addEventListener('click', ()=>tagPop.classList.remove('open'));
+
+/* ============ CLOCK ============ */
+function updateClock(){
+  const now = new Date();
+  const str = now.toLocaleDateString('en-GB') + " " + now.toLocaleTimeString('en-GB');
+  document.getElementById('clockLeft').textContent = str;
+  document.getElementById('clockRight').textContent = str+"."+String(now.getMilliseconds()).padStart(3,'0');
+}
+setInterval(updateClock, 500); updateClock();
+</script>
+</body>
+</html>

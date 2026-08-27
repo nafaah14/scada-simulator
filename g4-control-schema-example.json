@@ -1,0 +1,112 @@
+{
+  "screen_id": "G4.Control",
+  "title": "G4 - Control",
+  "layout": "grid",
+  "panels": [
+    {
+      "type": "panel",
+      "id": "starting_conditions",
+      "title": "Starting Conditions",
+      "grid_area": "col1",
+      "children": [
+        { "type": "status_led", "bind": { "value": "G04_PERM_LOPRESS" }, "props": { "shape": "dot", "label": "LO press > 0.3 bar or Prelube in Auto" } },
+        { "type": "status_led", "bind": { "value": "G04_PERM_FUELPRESS" }, "props": { "shape": "dot", "label": "Fuel oil inlet pressure > 4.0 bar", "false_is_alarm": true } },
+        { "type": "status_led", "bind": { "value": "G04_PERM_STARTAIR" }, "props": { "shape": "dot", "label": "Starting air pressure > 16 bar", "false_is_alarm": true } },
+        { "type": "status_led", "bind": { "value": "G04_PERM_AVR_MCB" }, "props": { "shape": "dot", "label": "AVR MCB closed" } }
+      ],
+      "_note": "Full 18-item list in genset-04-wartsila-tag-list.md — abbreviated here to show the pattern, not truncate the real screen."
+    },
+    {
+      "type": "panel",
+      "id": "start_stop_sequence",
+      "title": "Start/Stop Sequence",
+      "grid_area": "col2",
+      "children": [
+        {
+          "type": "sequence_stepper",
+          "bind": { "state": "G04_SEQ_STATE" },
+          "props": {
+            "steps": [
+              { "id": "ready", "label": "Engine ready for start" },
+              { "id": "prep", "label": "Start preparation" },
+              { "id": "starting", "label": "Starting" },
+              { "id": "idle", "label": "Idle running" },
+              { "id": "sync", "label": "Synchronizing" },
+              { "id": "loading", "label": "Loading" },
+              { "id": "normal", "label": "Normal operation" },
+              { "id": "unloading", "label": "Unloading" },
+              { "id": "cooling", "label": "Cooling run" },
+              { "id": "stopped", "label": "Engine stopped" }
+            ],
+            "buttons": [
+              { "after_step_id": "ready", "command_button": { "bind": { "command": "G04_CMD_START_ORDER" }, "props": { "label": "Start order", "shortcut": "Ctrl+Insert" } } },
+              { "after_step_id": "prep", "command_button": { "bind": { "command": "G04_CMD_EXEC" }, "props": { "label": "Exec", "shortcut": null } } },
+              { "after_step_id": "normal", "command_button": { "bind": { "command": "G04_CMD_STOP_ORDER" }, "props": { "label": "Stop order", "shortcut": "Ctrl+Delete" } } },
+              { "after_step_id": "stopped", "command_button": { "bind": { "command": "G04_CMD_SHUTDOWN_RESET" }, "props": { "label": "Shutdown reset", "shortcut": "Ctrl+End" } } }
+            ]
+          }
+        },
+        { "type": "readout", "bind": { "value": "G04_AI_ENGSPEED" }, "props": { "label": "Engine speed", "editable_on_click": false } }
+      ]
+    },
+    {
+      "type": "panel",
+      "id": "breaker",
+      "title": "Breaker",
+      "grid_area": "col3",
+      "children": [
+        { "type": "status_led", "bind": { "value": "G04_BRK_PARALLEL" }, "props": { "shape": "square", "label": "Paral. with grid" } },
+        { "type": "breaker_symbol", "bind": { "status": "G04_BRK_STATUS" }, "props": { "style": "line-drawn" } },
+        { "type": "status_led", "bind": { "value": "G04_AVR_EXCITATION" }, "props": { "shape": "square", "label": "AVR excitation" } },
+        { "type": "status_led", "bind": { "value": "G04_TRIP_CIRCUIT_HEALTHY" }, "props": { "shape": "square", "label": "Trp. circuit healthy" } },
+        { "type": "status_led", "bind": { "value": "G04_BRK_SPRING_CHARGED" }, "props": { "shape": "square", "label": "Breaker spring charged" } },
+        { "type": "status_led", "bind": { "value": "G04_BRK_AVAILABLE" }, "props": { "shape": "dot", "label": "CB available" } },
+        { "type": "command_button", "bind": { "command": "G04_CMD_BRK_TRIP_RESET" }, "props": { "label": "Breaker trip reset", "shortcut": "Ctrl+Home" } }
+      ]
+    },
+    {
+      "type": "panel",
+      "id": "generator_measurements",
+      "title": "Generator Measurements",
+      "grid_area": "col4",
+      "children": [
+        { "type": "gauge_bar", "bind": { "value": "G04_AI_KW", "max_marker": "G04_AI_KW_MAXAVAIL" }, "props": { "label": "P / Active Power" } },
+        { "type": "gauge_bar", "bind": { "value": "G04_AI_KVAR" }, "props": { "label": "Q / Reactive Power" } },
+        { "type": "gauge_bar", "bind": { "value": "G04_AI_CURR_L1" }, "props": { "label": "L1" } },
+        { "type": "gauge_bar", "bind": { "value": "G04_AI_CURR_L2" }, "props": { "label": "L2" } },
+        { "type": "gauge_bar", "bind": { "value": "G04_AI_CURR_L3" }, "props": { "label": "L3" } },
+        { "type": "gauge_bar", "bind": { "value": "G04_AI_VOLT_U12" }, "props": { "label": "U12" } },
+        { "type": "readout", "bind": { "value": "G04_AI_FREQ" }, "props": { "label": "Frequency" } },
+        { "type": "readout", "bind": { "value": "G04_AI_RUNHOURS" }, "props": { "label": "Running hours", "editable_on_click": false } }
+      ]
+    },
+    {
+      "type": "panel",
+      "id": "mode",
+      "title": "Mode",
+      "grid_area": "col5-top",
+      "children": [
+        { "type": "mode_selector_group", "bind": { "value": "G04_MODE_AUTOMAN" }, "props": { "options": [{ "value": "AUTO", "label": "Auto" }, { "value": "MANUAL", "label": "Manual" }], "exclusive": true } },
+        { "type": "mode_selector_group", "bind": { "value": "G04_MODE_REMLOC" }, "props": { "options": [{ "value": "REMOTE", "label": "Remote" }, { "value": "LOCAL", "label": "Local" }], "exclusive": true } },
+        { "type": "mode_selector_group", "bind": { "value": "G04_MODE_GRIDISLAND" }, "props": { "options": [{ "value": "GRID", "label": "Grid mode" }, { "value": "ISLAND", "label": "Island mode" }], "exclusive": true } },
+        { "type": "mode_selector_group", "bind": { "value": "G04_ENGCTRL_MODE" }, "props": { "options": [{ "value": "KW", "label": "kW" }, { "value": "DROOP", "label": "Speed droop" }], "exclusive": true } },
+        { "type": "mode_selector_group", "bind": { "value": "G04_GENCTRL_MODE" }, "props": { "options": [{ "value": "PF", "label": "pf" }, { "value": "VOLT_DROOP", "label": "Voltage droop" }, { "value": "VDC", "label": "VDC" }], "exclusive": true } }
+      ]
+    },
+    {
+      "type": "panel",
+      "id": "protection",
+      "title": "Protection, Monitoring and Control",
+      "grid_area": "col5-bottom",
+      "children": [
+        { "type": "relay_tile", "bind": { "status": "G04_PROT_VAMP210" }, "props": { "label": "VAMP210" } },
+        { "type": "relay_tile", "bind": { "status": "G04_PROT_VAMP265" }, "props": { "label": "VAMP265" } },
+        { "type": "relay_tile", "bind": { "status": "G04_PROT_VAMP260" }, "props": { "label": "VAMP260" } },
+        { "type": "relay_tile", "bind": { "status": "G04_PROT_P127" }, "props": { "label": "P127" } },
+        { "type": "status_led", "bind": { "value": "G04_ALM_SYNC_FAILURE" }, "props": { "shape": "square", "label": "Synchronizing failure", "false_is_alarm": true } },
+        { "type": "status_led", "bind": { "value": "G04_ALM_BUSBAR_VOLT_SUPV" }, "props": { "shape": "square", "label": "Busbar Voltage superv." } }
+      ],
+      "_note": "Full 17-item Miscellaneous list in genset-04-wartsila-tag-list.md — same status_led pattern, abbreviated here."
+    }
+  ]
+}

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>WOIS - Stelco 5th | Genset 4 Control</title>
+<style>
+  :root{ font-size: 14px; }
+  /* ---- status / accent colors: constant across themes ---- */
+  :root{
+    --green: #2fa84f;
+    --red: #e5484d;
+    --amber: #d99418;
+    --orange: #f47b20;
+    --blue-glow: #3f8fce;
+  }
+  /* ---- LIGHT THEME (default) ---- */
+  html[data-theme="light"]{
+    --bg-app: #eef1f4;
+    --bg-panel: #ffffff;
+    --bg-panel-head: #f2f4f6;
+    --bg-field: #f6f8f9;
+    --border: #d7dce2;
+    --border-light: #c3cad2;
+    --text: #3a4753;
+    --text-dim: #7c8896;
+    --text-bright: #172029;
+  }
+  /* ---- DARK THEME ---- */
+  html[data-theme="dark"]{
+    --bg-app: #0b0f14;
+    --bg-panel: #131a22;
+    --bg-panel-head: #1a222c;
+    --bg-field: #0e141b;
+    --border: #2b3542;
+    --border-light: #3a4553;
+    --text: #c8d2dc;
+    --text-dim: #8994a1;
+    --text-bright: #eef3f7;
+  }
+  * { box-sizing: border-box; }
+  html,body{
+    margin:0; padding:0; height:100%;
+    background: var(--bg-app);
+    color: var(--text);
+    font-family: "Segoe UI", "Arial", sans-serif;
+    overflow: hidden;
+  }
+  .num { font-family: "Consolas", "SF Mono", monospace; }
+
+  /* ============ TOP BANNERS (always dark, 3 rows) ============ */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    background: linear-gradient(#161d25,#12181f);
+    border-bottom: 1px solid #232c36;
+    padding: 4px 10px; height: 32px;
+  }
+  .topbar-left{ display:flex; align-items:center; gap:14px; }
+  .brand{ display:flex; align-items:center; gap:8px; color:#8a94a0; font-weight:600; letter-spacing:0.5px; font-size:12px;}
+  .brand .mark{ width:18px;height:18px;border-radius:50%;border:2px solid #8a94a0; }
+  .toptabs{ display:flex; gap:18px; }
+  .toptabs span{ font-size:12.5px; color:#8a94a0; cursor:pointer; padding-bottom:4px; }
+  .toptabs span.active{ color: var(--orange); border-bottom:2px solid var(--orange); font-weight:600; }
+  .topbar-right{ display:flex; align-items:center; gap:16px; font-size:12px; color:#8a94a0; }
+  .engdots{ display:flex; gap:3px; align-items:center; }
+  .engdots i{ width:6px;height:14px; background:#2fa84f; display:inline-block; border-radius:1px; }
+  .engdots i:nth-child(1){height:8px;} .engdots i:nth-child(6){height:16px;}
+  .wois-title{ color:#e7ecf1; font-weight:600; font-size:13px;}
+  .user{ color:#8a94a0; font-size:11.5px; }
+
+  .unitbar, .pagebar{
+    display:flex; align-items:center; gap:8px;
+    background:#0f151b; border-bottom:1px solid #232c36;
+    padding: 3px 10px; height:26px;
+  }
+  .unitbar span, .pagebar span{
+    font-size:12px; color:#8a94a0; padding:2px 9px; border-radius:2px; cursor:pointer;
+  }
+  .unitbar span.active{ background:var(--orange); color:#1a1005; font-weight:700;}
+  .pagebar span.active{ color:var(--orange); border-bottom:2px solid var(--orange); font-weight:600;}
+  .unitbar span:hover, .pagebar span:hover{ color:#e7ecf1; }
+  .bartag{ color:#5c6a78; font-size:10.5px; margin-left:auto; }
+
+  /* ============ MAIN GRID (theme-driven) ============ */
+  .main{
+    display:grid;
+    grid-template-columns: 1.35fr 1.15fr 1.05fr 1.35fr 1.25fr;
+    gap:6px; padding:6px;
+    height: calc(100% - 32px - 26px - 26px - 24px);
+  }
+  .placeholder-main{
+    display:flex; align-items:center; justify-content:center;
+    height: calc(100% - 32px - 26px - 26px - 24px);
+    color: var(--text-dim); font-size:14px; background:var(--bg-app);
+  }
+  .panel{
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    display:flex; flex-direction:column; overflow:hidden;
+  }
+  .panel-head{
+    background: var(--bg-panel-head);
+    color:var(--text-bright); font-weight:700; font-size:11.5px; letter-spacing:0.6px;
+    padding:5px 8px; border-bottom:1px solid var(--border); text-transform:uppercase;
+  }
+  .panel-body{ padding:8px; overflow-y:auto; flex:1; }
+  .stack{ display:flex; flex-direction:column; gap:6px; }
+
+  /* Starting Conditions */
+  .cond-row{ display:flex; align-items:center; gap:8px; padding:2.5px 0; font-size:12px; }
+  .dot{ width:11px; height:11px; border-radius:50%; flex:none; background:var(--bg-field); border:1px solid var(--border-light); }
+  .dot.on{ background: var(--green); border-color: var(--green); }
+  .dot.bad{ background: var(--red); border-color: var(--red); }
+
+  /* Start/Stop sequence */
+  .seq{ display:flex; flex-direction:column; }
+  .seq-step{ display:flex; align-items:center; gap:8px; padding:5px 0; font-size:12.5px; }
+  .seq-step .bar{ width:6px; height:22px; background:var(--border-light); border-radius:1px; }
+  .seq-step.active .bar{ background: var(--green); }
+  .seq-step.done .bar{ background:#5590c9; opacity:.6; }
+  .seq-extra{ margin: 2px 0 8px 14px; }
+  .seq-btn{
+    background:var(--bg-field); border:1px solid var(--border-light); color:var(--text-bright);
+    font-size:11.5px; padding:6px 10px; cursor:pointer; width:150px; text-align:left;
+  }
+  .seq-btn:hover{ border-color:var(--blue-glow); }
+  .seq-btn small{ display:block; color:var(--text-dim); font-size:9.5px; }
+  .seq-inline-row{ display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+  .seq-chk-label{ display:flex; flex-direction:column; font-size:11px; color:var(--text-dim); }
+  .seq-chk-label span.title{ color: var(--text); }
+  .field-box{
+    background: var(--bg-field); border:1px solid var(--border-light);
+    padding:5px 8px; font-size:13px; color:var(--text-bright); text-align:right;
+  }
+  .field-label{ font-size:11px; color:var(--text-dim); margin-top:10px; }
+
+  /* Breaker */
+  .brk-diagram{ display:flex; flex-direction:column; align-items:center; padding:6px 0 10px; }
+  .brk-line{ width:2px; height:14px; background:var(--border-light); }
+  .brk-sym{ width:34px; height:16px; border:2px solid var(--green); background:transparent; }
+  .brk-sym.open{ border-color:var(--border-light); }
+  .gen-circle{
+    width:44px; height:44px; border-radius:50%; border:2px solid var(--blue-glow);
+    display:flex; align-items:center; justify-content:center; color:var(--blue-glow); font-weight:700; font-size:13px;
+    margin:4px 0;
+  }
+  .chk-row{ display:flex; align-items:center; gap:7px; font-size:11.5px; padding:2px 0; }
+  .chk{ width:11px;height:11px; border:1px solid var(--border-light); flex:none; }
+  .chk.on{ background:var(--green); border-color:var(--green); }
+
+  /* Generator Measurements */
+  .gm-row{ display:flex; gap:10px; }
+  .gauge-col{ display:flex; flex-direction:column; align-items:center; flex:1; }
+  .gauge{
+    width:26px; height:100px; background:var(--bg-field); border:1px solid var(--border-light);
+    position:relative; display:flex; align-items:flex-end; overflow:hidden;
+  }
+  .gauge .fill{ width:100%; background: linear-gradient(#4d9fe0,#2c6ea0); }
+  .gauge .maxline{ position:absolute; left:-3px; right:-3px; height:2px; background:var(--amber); }
+  .gauge-label{ font-size:9.5px; color:var(--text-dim); margin-top:4px; text-align:center;}
+  .readout-mini{ font-size:12px; color:var(--text-bright); text-align:center; }
+  .curr-volt-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:8px;}
+  .cv-bar-wrap{ display:flex; flex-direction:column; align-items:center; }
+  .cv-bar{ width:16px; height:60px; background:var(--bg-field); border:1px solid var(--border-light); display:flex; align-items:flex-end; }
+  .cv-bar .fill{ width:100%; background:linear-gradient(#3fb950,#256b31); }
+  .cv-label{ font-size:10px; color:var(--text-dim); margin-top:3px; }
+  .cv-val{ font-size:11px; color:var(--text-bright); }
+  .measure-field{ display:flex; justify-content:space-between; font-size:11.5px; padding:3px 0; border-bottom:1px dashed var(--border); }
+  .measure-field b{ color:var(--text-bright); font-weight:600;}
+
+  /* Mode */
+  .mode-grid{ display:grid; grid-template-columns:1fr 1fr; gap:6px 10px; margin-bottom:8px;}
+  .mode-btn{
+    display:flex; align-items:center; gap:6px; font-size:11px; padding:4px 6px;
+    background:var(--bg-field); border:1px solid var(--border-light);
+  }
+  .mode-btn.active{ border-color:var(--green); color: var(--text-bright); }
+  .mode-btn .sq{ width:10px;height:10px; background:var(--bg-field); border:1px solid var(--border-light); flex:none;}
+  .mode-btn.active .sq{ background:var(--green); border-color:var(--green);}
+  .mode-section-label{ font-size:10px; color:var(--text-dim); text-transform:uppercase; margin:8px 0 4px; letter-spacing:0.5px;}
+
+  /* Protection */
+  .relay-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:10px;}
+  .relay-tile{ background:var(--bg-field); border:1px solid var(--border-light); padding:6px 4px; text-align:center; }
+  .relay-tile .icon{ width:22px;height:22px; margin:0 auto 4px; border-radius:3px; background:var(--bg-panel); border:1px solid var(--green); }
+  .relay-tile span{ font-size:9.5px; color:var(--text-dim); }
+  .misc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px 10px; font-size:10.8px;}
+  .misc-row{ display:flex; align-items:center; gap:6px; padding:1.5px 0; color:var(--text-dim);}
+
+  /* ============ BOTTOM STATUS BAR (theme-driven) ============ */
+  .statusbar{
+    display:flex; align-items:center; gap:14px;
+    background:var(--bg-panel-head); border-top:1px solid var(--border);
+    padding:3px 10px; height:24px; font-size:11.5px; color:var(--text-dim); position:relative;
+  }
+  .toolsbtn{
+    width:20px;height:18px; border:1px solid var(--border-light); background:var(--bg-field);
+    color:var(--text-dim); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:12px;
+  }
+  .toolsbtn:hover{ border-color:var(--blue-glow); color:var(--text-bright); }
+  .statusbar .alarm-icon{ width:14px;height:14px; border-radius:2px; background:var(--red); display:inline-block; }
+  .statusbar .alarm-text{ color:var(--red); font-weight:600; flex:1; }
+  .statusbar .tag{ color:var(--text-bright); font-family:"Consolas",monospace; }
+  .ackbtn{ background:var(--bg-field); border:1px solid var(--border-light); color:var(--text-bright); font-size:11px; padding:2px 12px; cursor:pointer; }
+  .ackbtn.acked{ background:#e4f3e6; border-color:var(--green); color:var(--green); }
+  html[data-theme="dark"] .ackbtn.acked{ background:#16301c; }
+  .onbtn{ background:#e4f3e6; border:1px solid var(--green); color:var(--green); font-size:11px; padding:2px 12px; }
+  html[data-theme="dark"] .onbtn{ background:#16301c; }
+
+  /* Settings popup (Start-menu style) */
+  .settings-popup{
+    position:absolute; bottom:26px; left:10px; width:210px;
+    background:var(--bg-panel); border:1px solid var(--border-light);
+    box-shadow:0 4px 18px rgba(0,0,0,.35); display:none; flex-direction:column;
+    font-size:12px; color:var(--text); z-index:50;
+  }
+  .settings-popup.open{ display:flex; }
+  .settings-popup .sp-head{
+    background:var(--bg-panel-head); padding:7px 10px; font-weight:700; font-size:11px;
+    letter-spacing:0.5px; text-transform:uppercase; border-bottom:1px solid var(--border);
+  }
+  .settings-popup .sp-body{ padding:10px; display:flex; flex-direction:column; gap:10px; }
+  .theme-toggle{ display:flex; border:1px solid var(--border-light); overflow:hidden; }
+  .theme-toggle button{
+    flex:1; padding:6px 0; background:var(--bg-field); border:none; color:var(--text-dim); cursor:pointer; font-size:11.5px;
+  }
+  .theme-toggle button.active{ background:var(--orange); color:#1a1005; font-weight:700; }
+  .sp-note{ font-size:10.5px; color:var(--text-dim); }
+
+  ::-webkit-scrollbar{ width:8px; }
+  ::-webkit-scrollbar-thumb{ background:var(--border-light); }
+</style>
+</head>
+<body>
+
+<!-- ROW 1: top-level nav -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="brand"><span class="mark"></span>WÄRTSILÄ</div>
+    <div class="toptabs" id="topTabs">
+      <span class="active" data-tab="Processes">Processes</span>
+      <span data-tab="Alarms">Alarms</span>
+      <span data-tab="Trends">Trends</span>
+      <span data-tab="Reports">Reports</span>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span class="num">30.2 °C</span>
+    <div class="engdots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="num">39.9 MW</span>
+    <span class="wois-title">WOIS - Stelco 5th</span>
+    <span class="user">User: Operator2</span>
+  </div>
+</div>
+
+<!-- ROW 2: unit/process selector -->
+<div class="unitbar" id="unitBar">
+  <span data-unit="Common">Common</span>
+  <span data-unit="G1">G1</span>
+  <span data-unit="G2">G2</span>
+  <span data-unit="G3">G3</span>
+  <span class="active" data-unit="G4">G4</span>
+  <span data-unit="G5">G5</span>
+  <span data-unit="G6">G6</span>
+  <span class="bartag" id="unitBarNote">Unit selector — depends on Processes tab</span>
+</div>
+
+<!-- ROW 3: page tabs within selected unit -->
+<div class="pagebar" id="pageBar"></div>
+
+<div id="mainArea"></div>
+
+<div class="statusbar">
+  <div class="toolsbtn" id="toolsBtn" title="Settings">&#9881;</div>
+  <div class="settings-popup" id="settingsPopup">
+    <div class="sp-head">Settings</div>
+    <div class="sp-body">
+      <div>
+        <div style="margin-bottom:6px;color:var(--text-dim);">Theme</div>
+        <div class="theme-toggle">
+          <button id="btnLight" class="active">Light</button>
+          <button id="btnDark">Dark</button>
+        </div>
+      </div>
+      <div class="sp-note">Top banners always stay dark regardless of theme.</div>
+    </div>
+  </div>
+  <span id="clockLeft" class="num">08/10/2021 14:45:54</span>
+  <span class="alarm-icon" id="alarmIcon"></span>
+  <span id="clockRight" class="num">08/10/2021 12:15:13.983</span>
+  <span class="tag" id="statusUnitTag">Genset_4</span>
+  <span class="alarm-text" id="alarmText">ALM, Fuel oil inlet pressure low</span>
+  <span class="tag" id="alarmTagId">SCA041PT101A</span>
+  <button class="ackbtn" id="ackBtn">ACK</button>
+  <button class="onbtn">ON</button>
+</div>
+
+<script>
+/* ================= THEME ================= */
+const html = document.documentElement;
+function setTheme(t){
+  html.setAttribute('data-theme', t);
+  document.getElementById('btnLight').classList.toggle('active', t==='light');
+  document.getElementById('btnDark').classList.toggle('active', t==='dark');
+}
+document.getElementById('btnLight').addEventListener('click', ()=>setTheme('light'));
+document.getElementById('btnDark').addEventListener('click', ()=>setTheme('dark'));
+
+const toolsBtn = document.getElementById('toolsBtn');
+const settingsPopup = document.getElementById('settingsPopup');
+toolsBtn.addEventListener('click', (e)=>{
+  settingsPopup.classList.toggle('open');
+  e.stopPropagation();
+});
+document.addEventListener('click', (e)=>{
+  if(!settingsPopup.contains(e.target) && e.target!==toolsBtn){ settingsPopup.classList.remove('open'); }
+});
+
+/* ================= ROW2 / ROW3 TAB DEPENDENCY ================= */
+const engineSubtabs = ["Temp","Control","Fuel","Lube","Cooling","Exh. gas","Exh. gas"];
+const commonSubtabs = ["Overview","Loads","Busbars","Utilities"];
+let currentUnit = "G4";
+let currentPage = "Control";
+
+const unitBar = document.getElementById('unitBar');
+const pageBar = document.getElementById('pageBar');
+const mainArea = document.getElementById('mainArea');
+const statusUnitTag = document.getElementById('statusUnitTag');
+
+unitBar.querySelectorAll('span[data-unit]').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    unitBar.querySelectorAll('span[data-unit]').forEach(s=>s.classList.remove('active'));
+    el.classList.add('active');
+    currentUnit = el.dataset.unit;
+    currentPage = (currentUnit === "Common") ? commonSubtabs[0] : "Control";
+    renderPageBar();
+    renderMain();
+  });
+});
+
+function renderPageBar(){
+  pageBar.innerHTML = "";
+  const tabs = currentUnit === "Common" ? commonSubtabs : engineSubtabs;
+  tabs.forEach((t,i)=>{
+    const span = document.createElement('span');
+    span.textContent = t;
+    span.dataset.page = t;
+    if(t === currentPage && (i===0 || t !== "Exh. gas" || tabs.indexOf(t)===i)) {}
+    span.addEventListener('click', ()=>{
+      pageBar.querySelectorAll('span').forEach(s=>s.classList.remove('active'));
+      span.classList.add('active');
+      currentPage = t;
+      renderMain();
+    });
+    pageBar.appendChild(span);
+  });
+  const noteSpan = document.createElement('span');
+  noteSpan.className = 'bartag';
+  noteSpan.textContent = currentUnit === "Common" ? "Common view — differs from engine pages" : "Engine page — depends on unit selected";
+  pageBar.appendChild(noteSpan);
+  // mark first matching page active
+  const active = [...pageBar.querySelectorAll('span[data-page]')].find(s=>s.dataset.page===currentPage);
+  if(active) active.classList.add('active');
+}
+
+function renderMain(){
+  statusUnitTag.textContent = "Genset_" + (currentUnit==="Common" ? "-" : currentUnit.replace("G",""));
+  if(currentUnit === "Common"){
+    mainArea.innerHTML = `<div class="placeholder-main">Common process view (${currentPage}) — not modeled in this mockup yet.</div>`;
+    return;
+  }
+  if(currentPage !== "Control"){
+    mainArea.innerHTML = `<div class="placeholder-main">${currentUnit} — ${currentPage} view — not modeled in this mockup yet.</div>`;
+    return;
+  }
+  mainArea.innerHTML = controlPageHTML(currentUnit);
+  wireControlPage(currentUnit);
+}
+
+/* ================= CONTROL PAGE MARKUP ================= */
+function controlPageHTML(unit){
+  return `
+  <div class="main">
+    <div class="panel">
+      <div class="panel-head">Starting Conditions</div>
+      <div class="panel-body" id="condList"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Start/Stop Sequence</div>
+      <div class="panel-body">
+        <div class="seq" id="seqList">
+          <div class="seq-step" id="seqstep-0"><div class="bar"></div><span>Engine ready for start</span></div>
+          <div class="seq-extra">
+            <button class="seq-btn" id="btnStart">Start order<small>Ctrl+Insert</small></button>
+          </div>
+
+          <div class="seq-step" id="seqstep-1"><div class="bar"></div><span>Start preparation</span></div>
+          <div class="seq-extra">
+            <div class="seq-inline-row">
+              <div class="seq-chk-label"><span class="title">Safety stop system</span><span>Ready</span></div>
+              <button class="seq-btn" id="btnExec" style="width:70px;">Exec</button>
+            </div>
+            <div class="cond-row"><span class="dot" id="prevFailedDot"></span><span style="font-size:11px;color:var(--text-dim);">Previous failed</span></div>
+          </div>
+
+          <div class="seq-step" id="seqstep-2"><div class="bar"></div><span>Starting</span></div>
+          <div class="seq-step" id="seqstep-3"><div class="bar"></div><span>Idle running</span></div>
+          <div class="seq-step" id="seqstep-4"><div class="bar"></div><span>Synchronizing</span></div>
+          <div class="seq-step" id="seqstep-5"><div class="bar"></div><span>Loading</span></div>
+          <div class="seq-step" id="seqstep-6"><div class="bar"></div><span>Normal operation</span></div>
+          <div class="seq-extra">
+            <button class="seq-btn" id="btnStop">Stop order<small>Ctrl+Delete</small></button>
+          </div>
+
+          <div class="seq-step" id="seqstep-7"><div class="bar"></div><span>Unloading</span></div>
+          <div class="seq-step" id="seqstep-8"><div class="bar"></div><span>Cooling run</span></div>
+          <div class="seq-step" id="seqstep-9"><div class="bar"></div><span>Engine stopped</span></div>
+          <div class="seq-extra">
+            <button class="seq-btn" id="btnShutdownReset">Shutdown reset<small>Ctrl+End</small></button>
+          </div>
+        </div>
+        <div class="field-label">Engine speed</div>
+        <div class="field-box num" id="engSpeed">0 rpm</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Breaker</div>
+      <div class="panel-body">
+        <div class="chk-row"><span class="chk" id="chkParallel"></span>Paral. with grid</div>
+        <div class="brk-diagram">
+          <div class="brk-line"></div>
+          <div class="brk-sym open" id="brkSym"></div>
+          <div class="brk-line"></div>
+          <div class="gen-circle">${unit}</div>
+          <div class="brk-line" style="height:20px;"></div>
+        </div>
+        <div class="chk-row"><span class="chk" id="chkAvr"></span>AVR excitation</div>
+        <div class="chk-row"><span class="chk" id="chkVoltSup"></span>Gen. voltage superv.</div>
+        <div class="chk-row"><span class="chk" id="chkTripHealthy"></span>Trp. circuit healthy</div>
+        <div class="chk-row"><span class="chk on" id="chkSpring"></span>Breaker spring charged</div>
+        <div class="chk-row"><span class="dot on" id="dotCbAvail"></span>CB available</div>
+        <div class="field-label">Main AVR</div>
+        <div class="field-box num" style="text-align:left;">
+          <div id="avrA">0.0 A</div><div id="avrV">0 V</div><div id="avrPf">1.00</div>
+        </div>
+        <button class="seq-btn" id="btnBrkReset" style="width:100%;margin-top:8px;">Breaker trip reset<small>Ctrl+Home</small></button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Generator Measurements</div>
+      <div class="panel-body">
+        <div class="gm-row">
+          <div class="gauge-col">
+            <div class="gauge-label">P / Active Power</div>
+            <div class="gauge"><div class="maxline" style="bottom:75%"></div><div class="fill" id="pFill" style="height:0%"></div></div>
+            <div class="readout-mini num" id="pKw">0 kW</div>
+            <div class="readout-mini" style="color:var(--text-dim);font-size:9.5px;">Max avail 6980kW</div>
+          </div>
+          <div class="gauge-col">
+            <div class="gauge-label">Q / Reactive Power</div>
+            <div class="gauge"><div class="fill" id="qFill" style="height:50%;background:linear-gradient(#d99418,#8a5c10);"></div></div>
+            <div class="readout-mini num" id="qKvar">0 kVAr</div>
+            <div class="readout-mini" style="color:var(--text-dim);font-size:9.5px;">pf 1.00</div>
+          </div>
+        </div>
+
+        <div class="curr-volt-grid">
+          <div class="cv-bar-wrap"><div class="cv-bar"><div class="fill" id="curL1" style="height:0%"></div></div><div class="cv-label">L1</div><div class="cv-val num" id="curL1v">0 A</div></div>
+          <div class="cv-bar-wrap"><div class="cv-bar"><div class="fill" id="curL2" style="height:0%"></div></div><div class="cv-label">L2</div><div class="cv-val num" id="curL2v">0 A</div></div>
+          <div class="cv-bar-wrap"><div class="cv-bar"><div class="fill" id="curL3" style="height:0%"></div></div><div class="cv-label">L3</div><div class="cv-val num" id="curL3v">0 A</div></div>
+        </div>
+        <div class="curr-volt-grid">
+          <div class="cv-bar-wrap"><div class="cv-bar"><div class="fill" id="voltU12" style="height:0%;background:linear-gradient(#4d9fe0,#2c6ea0);"></div></div><div class="cv-label">U12</div><div class="cv-val num" id="voltU12v">0.0 kV</div></div>
+          <div class="cv-bar-wrap"><div class="cv-bar"><div class="fill" id="voltU23" style="height:0%;background:linear-gradient(#4d9fe0,#2c6ea0);"></div></div><div class="cv-label">U23</div><div class="cv-val num" id="voltU23v">0.0 kV</div></div>
+          <div class="cv-bar-wrap"><div class="cv-bar"><div class="fill" id="voltU31" style="height:0%;background:linear-gradient(#4d9fe0,#2c6ea0);"></div></div><div class="cv-label">U31</div><div class="cv-val num" id="voltU31v">0.0 kV</div></div>
+        </div>
+
+        <div class="measure-field"><span>Frequency</span><b class="num" id="freq">45.00 Hz</b></div>
+        <div class="measure-field"><span>Active energy</span><b class="num" id="engyActive">40936294 kWh</b></div>
+        <div class="measure-field"><span>Reactive energy export</span><b class="num" id="engyRexp">3896540 kVArh</b></div>
+        <div class="measure-field"><span>Reactive energy import</span><b class="num" id="engyRimp">397369 kVArh</b></div>
+        <div class="measure-field"><span>Running hours</span><b class="num" id="runHours">7005 h</b></div>
+      </div>
+    </div>
+
+    <div class="stack" style="gap:6px;overflow:hidden;">
+      <div class="panel" style="flex:1;">
+        <div class="panel-head">Mode</div>
+        <div class="panel-body">
+          <div class="mode-grid">
+            <div class="mode-btn active">Auto</div><div class="mode-btn">Manual</div>
+            <div class="mode-btn active">Remote</div><div class="mode-btn">Local</div>
+            <div class="mode-btn active">Grid mode</div><div class="mode-btn">Island mode</div>
+          </div>
+          <div class="mode-section-label">Engine control</div>
+          <div class="mode-grid">
+            <div class="mode-btn active"><span class="sq"></span>kW</div>
+            <div class="mode-btn"><span class="sq"></span>Speed droop</div>
+          </div>
+          <div class="mode-section-label">Generator control</div>
+          <div class="mode-grid">
+            <div class="mode-btn active"><span class="sq"></span>pf</div>
+            <div class="mode-btn"><span class="sq"></span>Voltage droop</div>
+            <div class="mode-btn"><span class="sq"></span>VDC</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" style="flex:1.4;">
+        <div class="panel-head">Protection, Monitoring and Control</div>
+        <div class="panel-body">
+          <div class="relay-grid">
+            <div class="relay-tile"><div class="icon"></div><span>VAMP210</span></div>
+            <div class="relay-tile"><div class="icon"></div><span>VAMP265</span></div>
+            <div class="relay-tile"><div class="icon"></div><span>VAMP260</span></div>
+            <div class="relay-tile"><div class="icon"></div><span>P127</span></div>
+          </div>
+          <div class="mode-section-label">Miscellaneous</div>
+          <div class="misc-grid" id="miscList"></div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ================= WIRE UP CONTROL PAGE LOGIC ================= */
+function wireControlPage(unit){
+  const startConditions = [
+    {label:"LO press > 0.3 bar or Prelube in Auto", ok:true},
+    {label:"Fuel oil inlet pressure > 4.0 bar", ok:false},
+    {label:"HT- water temperature > 16 °C", ok:true},
+    {label:"Starting air pressure > 16 bar", ok:false},
+    {label:"Control air pressure > 16 bar", ok:true},
+    {label:"AVR MCB closed", ok:true},
+    {label:"Turning gear disengaged", ok:true},
+    {label:"Stop lever in running position", ok:true},
+    {label:"Breaker conditions", ok:true},
+    {label:"Engine stopped", ok:true},
+    {label:"ESM stop/shd. and autostop inactive", ok:true},
+    {label:"Engine room emerg. stop inactive", ok:true},
+    {label:"Control room emerg. stop inactive", ok:true},
+    {label:"Power plant emerg. stop inactive", ok:true},
+    {label:"Breaker trip alarm inactive", ok:true},
+    {label:"Engine shutdown alarm inactive", ok:true},
+    {label:"Start failure inactive", ok:true},
+    {label:"Soft energizing not active", ok:true},
+  ];
+  const miscFlags = [
+   "MCB open in CFC","MCB open in CFE","MCB open in BJA","MCB open in main AVR circuit",
+   "Synchronizing not activated","Synchronizing failure","Excitation failure","Diff. prot. relay eng. shutdown",
+   "Gen. prot. relay breaker trip","Tripped to speed droop","AVR synch. disabled","AVR overvoltage",
+   "Diode monitor trip","Control voltage fault","LV circuit breaker open","Engine idling too long"
+  ];
+
+  const condList = document.getElementById('condList');
+  startConditions.forEach(c=>{
+    const row = document.createElement('div'); row.className='cond-row';
+    row.innerHTML = `<span class="dot ${c.ok?'on':'bad'}"></span><span>${c.label}</span>`;
+    condList.appendChild(row);
+  });
+
+  const miscList = document.getElementById('miscList');
+  miscFlags.forEach(m=>{
+    const row = document.createElement('div'); row.className='misc-row';
+    row.innerHTML = `<span class="dot"></span><span>${m}</span>`;
+    miscList.appendChild(row);
+  });
+  const busbarRow = document.createElement('div'); busbarRow.className='misc-row';
+  busbarRow.innerHTML = `<span class="dot on"></span><span>Busbar Voltage superv.</span>`;
+  miscList.appendChild(busbarRow);
+
+  let seqIndex = 0;
+  function renderSeq(){
+    for(let i=0;i<10;i++){
+      const el = document.getElementById('seqstep-'+i);
+      if(!el) continue;
+      el.classList.remove('active','done');
+      if(i < seqIndex) el.classList.add('done');
+      if(i === seqIndex) el.classList.add('active');
+    }
+  }
+  renderSeq();
+
+  let state = "STOPPED";
+  let rpm=0, kw=0, kvar=0, curr=0, volt=0, freq=0;
+  const RATED_RPM=750, RATED_KW=6980, RATED_KVAR=2200, RATED_CURR=1050, RATED_VOLT=11;
+  function setText(id, val){ const el=document.getElementById(id); if(el) el.textContent = val; }
+
+  function tick(){
+    if(state==="STARTING"){
+      rpm = Math.min(RATED_RPM, rpm + 60);
+      if(rpm>=RATED_RPM){ state="IDLE"; seqIndex=3; setTimeout(()=>{ if(state==="IDLE"){ state="SYNC"; seqIndex=4; } },1200); }
+    } else if(state==="SYNC"){
+      freq = 49.6 + Math.random()*0.8;
+    } else if(state==="LOADING"){
+      kw = Math.min(RATED_KW*0.62, kw + 350);
+      kvar = Math.min(RATED_KVAR*0.3, kvar + 60);
+      if(kw >= RATED_KW*0.6){ state="NORMAL"; seqIndex=6; }
+    } else if(state==="NORMAL"){
+      kw += (Math.random()-0.5)*80; kw = Math.max(RATED_KW*0.55, Math.min(RATED_KW*0.7, kw));
+      kvar += (Math.random()-0.5)*20;
+    } else if(state==="UNLOAD"){
+      kw = Math.max(0, kw-400); kvar = Math.max(0,kvar-100);
+      if(kw<=0){ state="COOLDOWN"; seqIndex=8; setTimeout(()=>{ if(state==="COOLDOWN") state="STOPPING"; },1500); }
+    } else if(state==="STOPPING"){
+      rpm = Math.max(0, rpm-80);
+      if(rpm<=0){ state="STOPPED"; seqIndex=9; }
+    }
+    if(state==="NORMAL" || state==="LOADING"){
+      curr = RATED_CURR * (kw/RATED_KW) + (Math.random()-0.5)*10;
+      volt = RATED_VOLT + (Math.random()-0.5)*0.05;
+      freq = 50 + (Math.random()-0.5)*0.15;
+    } else if(state==="STOPPED" || state==="STARTING" || state==="IDLE"){
+      curr=0; volt = state==="STOPPED" ? 0 : RATED_VOLT*0.98;
+      freq = state==="STOPPED" ? 0 : 50;
+    }
+    renderSeq(); renderMeasurements();
+  }
+
+  function renderMeasurements(){
+    setText('engSpeed', Math.round(rpm)+" rpm");
+    setText('pKw', Math.round(kw)+" kW");
+    setText('qKvar', Math.round(kvar)+" kVAr");
+    const pFill=document.getElementById('pFill'); if(pFill) pFill.style.height = Math.min(100,(kw/RATED_KW*100))+"%";
+    const qFill=document.getElementById('qFill'); if(qFill) qFill.style.height = Math.min(100,50+(kvar/RATED_KVAR*50))+"%";
+    const curPct = Math.min(100, curr/RATED_CURR*100);
+    ['curL1','curL2','curL3'].forEach(id=>{const el=document.getElementById(id); if(el) el.style.height=curPct+"%";});
+    const cVal = Math.round(curr);
+    setText('curL1v', cVal+" A"); setText('curL2v', cVal+" A"); setText('curL3v', cVal+" A");
+    const vPct = Math.min(100, volt/RATED_VOLT*100);
+    ['voltU12','voltU23','voltU31'].forEach(id=>{const el=document.getElementById(id); if(el) el.style.height=vPct+"%";});
+    const vVal = volt.toFixed(2);
+    setText('voltU12v', vVal+" kV"); setText('voltU23v', vVal+" kV"); setText('voltU31v', vVal+" kV");
+    setText('freq', freq.toFixed(2)+" Hz");
+    const closed = (state==="NORMAL"||state==="LOADING"||state==="UNLOAD");
+    const brk = document.getElementById('brkSym'); if(brk) brk.classList.toggle('open', !closed);
+    const cp=document.getElementById('chkParallel'); if(cp) cp.classList.toggle('on', closed);
+    const ca=document.getElementById('chkAvr'); if(ca) ca.classList.toggle('on', state!=="STOPPED");
+    const cv=document.getElementById('chkVoltSup'); if(cv) cv.classList.toggle('on', state!=="STOPPED");
+    const ct=document.getElementById('chkTripHealthy'); if(ct) ct.classList.toggle('on', true);
+    setText('avrA', curr.toFixed(1)+" A");
+    setText('avrV', (volt*1000).toFixed(0)+" V");
+  }
+
+  const timer = setInterval(()=>{
+    if(!document.body.contains(document.getElementById('engSpeed'))){ clearInterval(timer); return; }
+    tick();
+  }, 900);
+
+  const btnStart = document.getElementById('btnStart');
+  if(btnStart) btnStart.addEventListener('click', ()=>{
+    const allOk = startConditions.every(c=>c.ok);
+    if(!allOk){ flashAlarm("ALM, Start conditions not met", "G0"+unit.replace("G","")+"_ALM_START_BLOCKED"); return; }
+    if(state==="STOPPED"){
+      state="STARTING"; seqIndex=2;
+      setTimeout(()=>{ if(state==="SYNC"){ state="LOADING"; seqIndex=5; } }, 3500);
+    }
+  });
+  const btnStop = document.getElementById('btnStop');
+  if(btnStop) btnStop.addEventListener('click', ()=>{ if(state==="NORMAL"||state==="LOADING"){ state="UNLOAD"; seqIndex=7; } });
+  const btnReset = document.getElementById('btnShutdownReset');
+  if(btnReset) btnReset.addEventListener('click', ()=>{
+    state="STOPPED"; seqIndex=0; rpm=0; kw=0; kvar=0; curr=0; volt=0; freq=0;
+    renderMeasurements(); renderSeq();
+  });
+  const btnBrkReset = document.getElementById('btnBrkReset');
+  if(btnBrkReset) btnBrkReset.addEventListener('click', ()=>{
+    flashAlarm("Breaker trip reset issued", "G0"+unit.replace("G","")+"_CMD_BRK_TRIP_RESET");
+  });
+  const btnExec = document.getElementById('btnExec');
+  if(btnExec) btnExec.addEventListener('click', ()=>{
+    flashAlarm("Safety stop system reset", "G0"+unit.replace("G","")+"_CMD_EXEC");
+  });
+  const ackBtn = document.getElementById('ackBtn');
+  ackBtn.onclick = ()=>{ ackBtn.classList.add('acked'); document.getElementById('alarmIcon').style.opacity = 0.35; };
+
+  function flashAlarm(text, tag){
+    setText('alarmText', text); setText('alarmTagId', tag);
+    ackBtn.classList.remove('acked'); document.getElementById('alarmIcon').style.opacity = 1;
+  }
+
+  setTimeout(()=>{
+    startConditions[1].ok = true; startConditions[3].ok = true;
+    document.querySelectorAll('#condList .cond-row .dot').forEach((el,i)=>{
+      el.classList.remove('on','bad'); el.classList.add(startConditions[i].ok ? 'on':'bad');
+    });
+  }, 6000);
+
+  renderMeasurements();
+}
+
+/* ================= CLOCK ================= */
+function updateClock(){
+  const now = new Date();
+  const str = now.toLocaleDateString('en-GB') + " " + now.toLocaleTimeString('en-GB');
+  const cl=document.getElementById('clockLeft'); if(cl) cl.textContent = str;
+  const cr=document.getElementById('clockRight'); if(cr) cr.textContent = str+"."+String(now.getMilliseconds()).padStart(3,'0');
+}
+setInterval(updateClock, 500);
+updateClock();
+
+/* ================= INIT ================= */
+renderPageBar();
+renderMain();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SCADA Trainer Screen Definition",
+  "type": "object",
+  "required": ["screen_id", "title", "layout", "panels"],
+  "properties": {
+    "screen_id": { "type": "string", "description": "e.g. G4.Control, Common.Overview" },
+    "title": { "type": "string" },
+    "layout": { "enum": ["grid", "canvas"] },
+    "panels": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/container" }
+    }
+  },
+  "definitions": {
+    "container": {
+      "type": "object",
+      "required": ["type", "children"],
+      "properties": {
+        "type": { "enum": ["panel", "zone"] },
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "label": { "type": "string" },
+        "grid_area": { "type": "string" },
+        "children": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "$ref": "#/definitions/container" },
+              { "$ref": "#/definitions/symbol" }
+            ]
+          }
+        }
+      }
+    },
+    "symbol": {
+      "type": "object",
+      "required": ["type", "bind"],
+      "properties": {
+        "type": {
+          "enum": [
+            "readout", "status_led", "gauge_bar", "tank_widget", "pump_icon",
+            "breaker_symbol", "sequence_stepper", "mode_selector_group",
+            "relay_tile", "engine_icon", "command_button", "cylinder_grid"
+          ]
+        },
+        "bind": {
+          "type": "object",
+          "description": "Named inputs mapped to tag_ids from data/tags/genset-tags.json. Required keys vary by type — see docs/SYMBOL-LIBRARY.md.",
+          "minProperties": 1
+        },
+        "props": {
+          "type": "object",
+          "description": "Static, non-tag configuration for this symbol instance."
+        }
+      }
+    }
+  }
+}
