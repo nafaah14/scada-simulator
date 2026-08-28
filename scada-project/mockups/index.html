@@ -1,49 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>WOIS - Stelco 5th</title>
+<link rel="stylesheet" href="../shared/symbols.css">
 <style>
   :root{ font-size:14px; }
-  * { box-sizing: border-box; }
+  :root{
+    --green:#2fa84f; --red:#e5484d; --amber:#d99418; --orange:#f47b20; --blue:#3f8fce;
+    --purple:#8a5cd6;
+    --bg-app:#eef1f4; --bg-panel:#ffffff; --bg-panel-head:#f2f4f6; --bg-field:#f6f8f9;
+    --border:#d7dce2; --border-light:#c3cad2; --text:#3a4753; --text-dim:#7c8896;
+    --text-bright:#172029; --pipe:#8a2f2f; --vessel:#c7ccd1;
+  }
+  :root[data-theme="dark"]{
+    --bg-app:#0b0f14; --bg-panel:#131a22; --bg-panel-head:#1a222c; --bg-field:#0e141b;
+    --border:#2b3542; --border-light:#3a4553; --text:#c8d2dc; --text-dim:#8994a1;
+    --text-bright:#eef3f7; --pipe:#b45050; --vessel:#3a4350;
+  }
+  *{ box-sizing:border-box; }
   html,body{
     margin:0; padding:0; height:100%;
-    background:#eef1f4;
-    color:#3a4753;
-    font-family:"Segoe UI","Arial",sans-serif;
-    overflow:hidden;
+    background:var(--bg-app); color:var(--text);
+    font-family:"Segoe UI","Arial",sans-serif; overflow:hidden;
   }
-  .num{ font-family:"Consolas","SF Mono",monospace; }
+  .num{ font-family:"Consolas","SF Mono",monospace; font-variant-numeric:tabular-nums; }
+  button{ font-family:inherit; cursor:pointer; color:inherit; }
 
   /* ============ ROW 1: top-level nav ============ */
   .topbar{
     display:flex; align-items:center; justify-content:space-between;
     background: linear-gradient(#161d25,#12181f);
     border-bottom: 1px solid #232c36;
-    padding: 4px 10px; height: 32px;
+    padding: 4px 10px; height: 32px; flex:none;
   }
   .topbar-left{ display:flex; align-items:center; gap:14px; }
-  .brand{ display:flex; align-items:center; gap:8px; color:#8a94a0; font-weight:600; letter-spacing:0.5px; font-size:12px;}
+  .brand{ display:flex; align-items:center; gap:8px; color:#8a94a0; font-weight:600;
+    letter-spacing:0.5px; font-size:12px;}
   .brand .mark{ width:18px;height:18px;border-radius:50%;border:2px solid #8a94a0; }
   .toptabs{ display:flex; gap:18px; }
   .toptabs span{ font-size:12.5px; color:#8a94a0; cursor:pointer; padding-bottom:4px; }
   .toptabs span.active{ color:#f47b20; border-bottom:2px solid #f47b20; font-weight:600; }
-  .topbar-right{ display:flex; align-items:center; gap:16px; font-size:12px; color:#8a94a0; }
+  .toptabs span .badge{
+    background:var(--red); color:#fff; font-size:9.5px; font-weight:700;
+    border-radius:8px; padding:0 5px; margin-left:5px; display:none;
+  }
+  .toptabs span .badge.on{ display:inline-block; }
+  .topbar-right{ display:flex; align-items:center; gap:14px; font-size:12px; color:#8a94a0; }
+  .engdots{ display:flex; gap:3px; align-items:center; }
+  .engdots i{ width:6px; height:14px; background:#3a4553; display:inline-block; border-radius:1px; }
+  .engdots i.run{ background:var(--green); }
   .wois-title{ color:#e7ecf1; font-weight:600; font-size:13px;}
   .user{ color:#8a94a0; font-size:11.5px; }
-  .editor-link{ color:#8a94a0; font-size:11.5px; text-decoration:none;
-    border:1px solid #2b3542; background:#1c242e; padding:3px 9px; border-radius:3px; }
-  .editor-link:hover{ color:#e7ecf1; border-color:#3a4553; }
+  .link-btn{
+    color:#8a94a0; font-size:11.5px; text-decoration:none;
+    border:1px solid #2b3542; background:#1c242e; padding:3px 9px; border-radius:3px;
+  }
+  .link-btn:hover{ color:#e7ecf1; border-color:#3a4553; }
+  .conn{ font-size:10.5px; display:flex; align-items:center; gap:5px; }
+  .conn i{ width:7px; height:7px; border-radius:50%; background:#6f7d8b; display:block; }
+  .conn.live i{ background:var(--green); }
+  .conn.static i{ background:var(--amber); }
 
   /* ============ ROW 2 / ROW 3 ============ */
   .unitbar, .pagebar{
     display:flex; align-items:center; gap:8px;
     background:#0f151b; border-bottom:1px solid #232c36;
-    padding: 3px 10px; height:26px;
+    padding: 3px 10px; height:26px; flex:none;
   }
   .unitbar span, .pagebar span{
-    font-size:12px; color:#8a94a0; padding:2px 9px; border-radius:2px; cursor:pointer; white-space:nowrap;
+    font-size:12px; color:#8a94a0; padding:2px 9px; border-radius:2px;
+    cursor:pointer; white-space:nowrap;
   }
   .unitbar span.active{ background:#f47b20; color:#1a1005; font-weight:700;}
   .pagebar span.active{ color:#f47b20; border-bottom:2px solid #f47b20; font-weight:600;}
@@ -51,103 +79,270 @@
   .pagebar{ overflow-x:auto; }
   .bartag{ color:#5c6a78; font-size:10.5px; margin-left:auto; white-space:nowrap; }
 
-  /* ============ CONTENT AREA ============ */
-  #contentArea{ height: calc(100% - 32px); }
-  #contentArea.with-subnav{ height: calc(100% - 32px - 26px - 26px); }
+  /* ============ CONTENT ============ */
+  .app{ display:flex; flex-direction:column; height:100%; }
+  #contentArea{ flex:1; min-height:0; overflow:auto; position:relative; background:var(--bg-app); }
   #screenFrame{ width:100%; height:100%; border:none; display:block; }
+  .canvas-host{ transform-origin:0 0; position:relative; }
   .placeholder-main{
     display:flex; align-items:center; justify-content:center;
-    height:100%; color:#7c8896; font-size:14px; background:#eef1f4;
+    height:100%; color:var(--text-dim); font-size:14px; padding:30px; text-align:center;
   }
+
+  /* clickable live values */
+  #contentArea .el[data-tag]:not([data-tag=""]){ cursor:pointer; }
+  #contentArea .el[data-tag]:not([data-tag=""]):hover .s-readout{ outline:1.5px solid var(--blue); }
+
+  /* ============ ALARMS PAGE ============ */
+  .alarm-page{ padding:14px 18px; height:100%; overflow:auto; }
+  .alarm-toolbar{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .alarm-toolbar h2{ font-size:14px; margin:0; color:var(--text-bright); }
+  .btn{
+    background:var(--bg-field); border:1px solid var(--border-light);
+    padding:5px 12px; font-size:11.5px; border-radius:2px;
+  }
+  .btn:hover{ border-color:var(--blue); }
+  table.alarms{ width:100%; border-collapse:collapse; font-size:11.5px; }
+  table.alarms th{
+    text-align:left; font-size:10px; text-transform:uppercase; letter-spacing:.5px;
+    color:var(--text-dim); border-bottom:1px solid var(--border); padding:5px 8px;
+    position:sticky; top:0; background:var(--bg-app);
+  }
+  table.alarms td{ padding:5px 8px; border-bottom:1px solid var(--bg-panel-head); }
+  table.alarms tr.sev-4 td, table.alarms tr.sev-3 td{ color:var(--red); font-weight:600; }
+  table.alarms tr.sev-1 td{ color:var(--amber); }
+  table.alarms tr.returned td{ opacity:.55; }
+  .pill{
+    font-size:9.5px; font-weight:700; padding:1px 6px; border-radius:8px;
+    background:var(--bg-field); border:1px solid var(--border-light); color:var(--text-dim);
+  }
+  .pill.active{ background:#fdecec; border-color:var(--red); color:var(--red); }
+  :root[data-theme="dark"] .pill.active{ background:#3a1c1e; }
+
+  /* ============ STATUS BAR ============ */
+  .statusbar{
+    display:flex; align-items:center; gap:14px; flex:none;
+    background:var(--bg-panel-head); border-top:1px solid var(--border);
+    padding:3px 10px; height:26px; font-size:11.5px; color:var(--text-dim); position:relative;
+  }
+  .toolsbtn{
+    width:20px; height:18px; border:1px solid var(--border-light); background:var(--bg-field);
+    color:var(--text-dim); display:flex; align-items:center; justify-content:center; font-size:12px;
+  }
+  .statusbar .alarm-icon{ width:14px;height:14px;border-radius:2px;background:#9aa2ab;display:inline-block; }
+  .statusbar .alarm-icon.on{ background:var(--red); }
+  .statusbar .alarm-text{ color:var(--text-dim); font-weight:600; flex:1;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .statusbar .alarm-text.on{ color:var(--red); }
+  .statusbar .tag{ color:var(--text-bright); font-family:"Consolas",monospace; }
+  .ackbtn{ background:var(--bg-field); border:1px solid var(--border-light);
+    color:var(--text-bright); font-size:11px; padding:2px 12px; }
+  .settings-popup{
+    position:absolute; bottom:28px; left:10px; width:210px; background:var(--bg-panel);
+    border:1px solid var(--border-light); box-shadow:0 4px 18px rgba(0,0,0,.35);
+    display:none; flex-direction:column; font-size:12px; color:var(--text); z-index:50;
+  }
+  .settings-popup.open{ display:flex; }
+  .settings-popup .sp-head{
+    background:var(--bg-panel-head); padding:7px 10px; font-weight:700; font-size:11px;
+    letter-spacing:.5px; text-transform:uppercase; border-bottom:1px solid var(--border);
+  }
+  .settings-popup .sp-body{ padding:10px; display:flex; flex-direction:column; gap:10px; }
+  .theme-toggle{ display:flex; border:1px solid var(--border-light); overflow:hidden; }
+  .theme-toggle button{ flex:1; padding:6px 0; background:var(--bg-field); border:none;
+    color:var(--text-dim); font-size:11.5px; }
+  .theme-toggle button.active{ background:var(--orange); color:#1a1005; font-weight:700; }
+
+  /* ============ SENSOR POPUP ============ */
+  .tagpop{
+    position:fixed; width:280px; background:var(--bg-panel);
+    border:2px solid var(--text-bright); box-shadow:4px 4px 18px rgba(0,0,0,.4);
+    z-index:100; display:none; font-size:12px;
+  }
+  .tagpop.open{ display:block; }
+  .tp-head{
+    background:var(--bg-panel-head); padding:6px 9px; font-size:11px;
+    display:flex; justify-content:space-between; gap:8px;
+    border-bottom:1px solid var(--border); font-weight:700;
+  }
+  .tp-head .x{ cursor:pointer; color:var(--text-dim); }
+  .tp-body{ padding:10px; }
+  .tp-id{ color:var(--text-dim); font-family:Consolas,monospace; font-size:10.5px; margin-bottom:7px; }
+  .tp-value{ font-size:20px; font-weight:700; color:var(--text-bright); margin-bottom:2px; }
+  .tp-state{ font-size:10.5px; margin-bottom:9px; }
+  .tp-state.alarm{ color:var(--red); font-weight:700; }
+  .tp-state.warn{ color:var(--amber); font-weight:700; }
+  .tp-spark{ width:100%; height:44px; background:var(--bg-field);
+    border:1px solid var(--border); margin-bottom:9px; display:block; }
+  .tp-grid{ display:grid; grid-template-columns:auto 1fr auto 1fr; gap:4px 6px;
+    align-items:center; font-size:10.5px; }
+  .tp-grid label{ color:var(--text-dim); }
+  .tp-grid input{
+    width:100%; font-family:Consolas,monospace; text-align:right; font-size:11px;
+    border:1px solid var(--border-light); background:var(--bg-field);
+    padding:2px 4px; color:var(--text-bright);
+  }
+  .tp-sec{ font-size:9.5px; text-transform:uppercase; letter-spacing:.5px;
+    color:var(--text-dim); margin:10px 0 5px; font-weight:700; }
+  .tp-actions{ display:flex; gap:6px; margin-top:11px; }
+  .tp-actions button{ flex:1; background:var(--bg-field); border:1px solid var(--border-light);
+    padding:4px 8px; font-size:11px; }
+  .tp-actions button.primary{ background:var(--orange); border-color:var(--orange);
+    color:#1a1005; font-weight:700; }
+  .tp-note{ font-size:10px; color:var(--text-dim); margin-top:8px; line-height:1.5; }
 </style>
 </head>
 <body>
+<div class="app">
 
-<!-- ROW 1: top-level nav -->
-<div class="topbar">
-  <div class="topbar-left">
-    <div class="brand"><span class="mark"></span>WÄRTSILÄ</div>
-    <div class="toptabs" id="topTabs">
-      <span class="active" data-tab="Processes">Processes</span>
-      <span data-tab="Alarms">Alarms</span>
-      <span data-tab="Trends">Trends</span>
-      <span data-tab="Reports">Reports</span>
+  <!-- ROW 1 -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="brand"><span class="mark"></span>WÄRTSILÄ</div>
+      <div class="toptabs" id="topTabs">
+        <span class="active" data-tab="Processes">Processes</span>
+        <span data-tab="Alarms">Alarms<span class="badge" id="alarmBadge">0</span></span>
+        <span data-tab="Trends">Trends</span>
+        <span data-tab="Reports">Reports</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="num" id="hdrTemp">—</span>
+      <div class="engdots" id="engDots"></div>
+      <span class="num" id="hdrMW">—</span>
+      <span class="conn" id="connBadge"><i></i><span>connecting…</span></span>
+      <a class="link-btn" href="../editor/" title="Open the screen layout editor">Editor</a>
+      <span class="wois-title">WOIS - Stelco 5th</span>
+      <span class="user">User: Operator2</span>
     </div>
   </div>
-  <div class="topbar-right">
-    <a class="editor-link" href="../editor/" title="Open the screen layout editor">Editor</a>
-    <span class="wois-title">WOIS - Stelco 5th</span>
-    <span class="user">User: Operator2</span>
+
+  <!-- ROW 2 / 3 -->
+  <div class="unitbar" id="unitBar"></div>
+  <div class="pagebar" id="pageBar"></div>
+
+  <div id="contentArea"></div>
+
+  <!-- STATUS -->
+  <div class="statusbar">
+    <div class="toolsbtn" id="toolsBtn">&#9881;</div>
+    <div class="settings-popup" id="settingsPopup">
+      <div class="sp-head">Settings</div>
+      <div class="sp-body">
+        <div>
+          <div style="margin-bottom:6px;color:var(--text-dim);">Theme</div>
+          <div class="theme-toggle">
+            <button id="btnLight" class="active">Light</button>
+            <button id="btnDark">Dark</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span id="clockLeft" class="num"></span>
+    <span class="alarm-icon" id="alarmIcon"></span>
+    <span class="num" id="alarmTime"></span>
+    <span class="tag" id="alarmUnit"></span>
+    <span class="alarm-text" id="alarmText">No active alarms</span>
+    <span class="tag" id="alarmTag"></span>
+    <button class="ackbtn" id="ackBtn">ACK</button>
   </div>
 </div>
 
-<!-- ROW 2: unit/process selector (Processes tab only) -->
-<div class="unitbar" id="unitBar" style="display:none;"></div>
+<!-- SENSOR POPUP -->
+<div class="tagpop" id="tagPop">
+  <div class="tp-head"><span id="tpDesc">Tag</span><span class="x" id="tpCloseX">&#10006;</span></div>
+  <div class="tp-body">
+    <div class="tp-id" id="tpId">TAG_ID</div>
+    <div class="tp-value" id="tpValue">—</div>
+    <div class="tp-state" id="tpState"></div>
+    <canvas class="tp-spark" id="tpSpark" width="258" height="44"></canvas>
+    <div class="tp-sec">Alarm limits</div>
+    <div class="tp-grid">
+      <label>HiHi</label><input id="lim_hihi" type="text">
+      <label>Hi</label><input id="lim_hi" type="text">
+      <label>Lo</label><input id="lim_lo" type="text">
+      <label>LoLo</label><input id="lim_lolo" type="text">
+    </div>
+    <div class="tp-sec">Shutdown limits</div>
+    <div class="tp-grid">
+      <label>Hi</label><input id="sd_hi" type="text">
+      <label>Lo</label><input id="sd_lo" type="text">
+    </div>
+    <div class="tp-actions">
+      <button id="tpFault">Sensor fault</button>
+      <button class="primary" id="tpSave">Save limits</button>
+    </div>
+    <div class="tp-note" id="tpNote"></div>
+  </div>
+</div>
 
-<!-- ROW 3: page tabs within selected unit (Processes tab only) -->
-<div class="pagebar" id="pageBar" style="display:none;"></div>
-
-<div id="contentArea"></div>
-
+<script src="../shared/renderer.js"></script>
+<script src="../shared/store.js"></script>
 <script>
-/* ================= SCREEN REGISTRY =================
-   Only entries with a `file` are built. Everything else renders
-   as a "not modeled yet" placeholder until it's designed and ported.
-*/
+/* =====================================================================
+   APP SHELL
+   ---------------------------------------------------------------------
+   Renders screens from JSON documents through the shared renderer, and
+   streams live tag values in over the store's WebSocket. Screens that
+   haven't been converted to JSON yet still load as legacy HTML in an
+   iframe, so the port can happen one screen at a time.
+   ===================================================================== */
+
+const $ = id => document.getElementById(id);
+
+/* ---------------- screen registry ----------------------------------
+   `screen:` — a JSON document rendered by the shared renderer.
+   `file:`   — a legacy standalone HTML mockup, shown in an iframe.
+   Neither  — not modelled yet.                                       */
 const COMMON_PAGES = [
-  { id:"overview",     label:"Overview",      file:"screens/common-overview.html" },
-  { id:"electrical1",  label:"Electrical 1" },
-  { id:"electrical2",  label:"Electrical 2" },
-  { id:"fuel",         label:"Fuel",          file:"screens/common-fuel.html" },
-  { id:"startair",     label:"Start air" },
-  { id:"oilywater",    label:"Oily water" },
-  { id:"cooling",      label:"Cooling" },
-  { id:"water",        label:"Water" },
-  { id:"automation1",  label:"Automation 1" },
-  { id:"automation2",  label:"Automation 2" },
+  { id:"overview",    label:"Overview",     file:"screens/common-overview.html" },
+  { id:"electrical1", label:"Electrical 1" },
+  { id:"electrical2", label:"Electrical 2" },
+  { id:"fuel",        label:"Fuel",         file:"screens/common-fuel.html" },
+  { id:"startair",    label:"Start air" },
+  { id:"oilywater",   label:"Oily water" },
+  { id:"cooling",     label:"Cooling" },
+  { id:"water",       label:"Water" },
+  { id:"automation1", label:"Automation 1" },
+  { id:"automation2", label:"Automation 2" },
 ];
 
 function enginePages(overrides){
   const base = [
-    { id:"temp",     label:"Temp" },
-    { id:"control",  label:"Control" },
-    { id:"fuel",     label:"Fuel" },
-    { id:"lube",     label:"Lube" },
-    { id:"cooling",  label:"Cooling" },
-    { id:"exhaust",  label:"Exh. gas" },
+    { id:"temp",    label:"Temp" },
+    { id:"control", label:"Control" },
+    { id:"fuel",    label:"Fuel" },
+    { id:"lube",    label:"Lube" },
+    { id:"cooling", label:"Cooling" },
+    { id:"exhaust", label:"Exh. gas" },
   ];
-  return base.map(p => overrides[p.id] ? { ...p, file: overrides[p.id] } : p);
+  return base.map(p => overrides[p.id] ? { ...p, ...overrides[p.id] } : p);
 }
 
 const UNITS = {
   Common: COMMON_PAGES,
-  // All built engine screens live under G1 for now, regardless of which
-  // genset they were originally designed against (Control was designed as
-  // G4). Once G2-G6 get their own screens, split these back out per unit.
-  G1: enginePages({ temp:"screens/g1-temp.html", fuel:"screens/g1-fuel.html", control:"screens/g4-control.html" }),
-  G2: enginePages({}),
-  G3: enginePages({}),
-  G4: enginePages({}),
-  G5: enginePages({}),
-  G6: enginePages({}),
+  G1: enginePages({
+    temp:    { screen:"G1.Temp" },                  // ported to JSON
+    fuel:    { file:"screens/g1-fuel.html" },
+    control: { file:"screens/g4-control.html" }
+  }),
 };
-// G2-G6 hidden until they get real screens; flip this back to the full
-// list ["Common","G1","G2","G3","G4","G5","G6"] once that work starts.
 const UNIT_ORDER = ["Common","G1"];
 
-/* ================= STATE ================= */
+/* ---------------- state --------------------------------------------- */
 let currentTopTab = "Processes";
 let currentUnit = "Common";
 let currentPage = "overview";
+let activeScreen = null;      // loaded JSON doc, when the page is a canvas screen
+let activeAlarms = [];
+let trend = new Map();        // tag_id -> recent values, for the popup sparkline
 
-const topTabs = document.getElementById('topTabs');
-const unitBar = document.getElementById('unitBar');
-const pageBar = document.getElementById('pageBar');
-const contentArea = document.getElementById('contentArea');
+const contentArea = $('contentArea');
 
-topTabs.querySelectorAll('span[data-tab]').forEach(el=>{
+/* ---------------- nav ------------------------------------------------ */
+$('topTabs').querySelectorAll('span[data-tab]').forEach(el=>{
   el.addEventListener('click', ()=>{
-    topTabs.querySelectorAll('span').forEach(s=>s.classList.remove('active'));
+    $('topTabs').querySelectorAll('span').forEach(s=>s.classList.remove('active'));
     el.classList.add('active');
     currentTopTab = el.dataset.tab;
     renderAll();
@@ -155,67 +350,383 @@ topTabs.querySelectorAll('span[data-tab]').forEach(el=>{
 });
 
 function renderUnitBar(){
-  unitBar.innerHTML = "";
+  const bar = $('unitBar');
+  bar.innerHTML = "";
   UNIT_ORDER.forEach(u=>{
     const span = document.createElement('span');
     span.textContent = u;
-    span.dataset.unit = u;
     if(u === currentUnit) span.classList.add('active');
     span.addEventListener('click', ()=>{
       currentUnit = u;
       currentPage = UNITS[u][0].id;
       renderAll();
     });
-    unitBar.appendChild(span);
+    bar.appendChild(span);
   });
 }
 
 function renderPageBar(){
-  pageBar.innerHTML = "";
-  const pages = UNITS[currentUnit];
-  pages.forEach(p=>{
+  const bar = $('pageBar');
+  bar.innerHTML = "";
+  UNITS[currentUnit].forEach(p=>{
     const span = document.createElement('span');
     span.textContent = p.label;
     if(p.id === currentPage) span.classList.add('active');
-    span.addEventListener('click', ()=>{
-      currentPage = p.id;
-      renderAll();
-    });
-    pageBar.appendChild(span);
+    span.addEventListener('click', ()=>{ currentPage = p.id; renderAll(); });
+    bar.appendChild(span);
   });
   const note = document.createElement('span');
   note.className = 'bartag';
-  note.textContent = currentUnit === "Common" ? "Common view — shared across all gensets" : "Engine page — specific to " + currentUnit + "'s tags";
-  pageBar.appendChild(note);
+  note.textContent = currentUnit === "Common"
+    ? "Common view — shared across all gensets"
+    : "Engine page — specific to " + currentUnit + "'s tags";
+  bar.appendChild(note);
 }
 
-function renderContent(){
+/* ---------------- content ------------------------------------------- */
+async function renderContent(){
+  activeScreen = null;
+
+  if(currentTopTab === "Alarms")  return renderAlarmPage();
   if(currentTopTab !== "Processes"){
-    contentArea.innerHTML = `<div class="placeholder-main">${currentTopTab} — not modeled in this reference build yet.</div>`;
+    contentArea.innerHTML =
+      `<div class="placeholder-main">${currentTopTab} — not modelled in this build yet.</div>`;
     return;
   }
+
   const page = UNITS[currentUnit].find(p => p.id === currentPage);
-  if(page && page.file){
-    contentArea.innerHTML = `<iframe id="screenFrame" src="${page.file}?embed=1" title="${currentUnit} ${page.label}"></iframe>`;
-  } else {
-    const label = page ? page.label : currentPage;
-    contentArea.innerHTML = `<div class="placeholder-main">${currentUnit} — ${label} — not modeled in this reference build yet.</div>`;
+  if(!page){ contentArea.innerHTML = ''; return; }
+
+  if(page.screen){
+    try{
+      const doc = await ScadaStore.loadScreen(page.screen);
+      activeScreen = doc;
+      contentArea.innerHTML = '';
+      const host = document.createElement('div');
+      host.className = 'canvas-host';
+      contentArea.appendChild(host);
+      Scada.renderScreen(host, doc, { tags: ScadaStore.tags, showAlarms: true });
+      fitScreen(host, doc);
+    }catch(e){
+      contentArea.innerHTML =
+        `<div class="placeholder-main">Could not load screen "${page.screen}"<br><br>
+         <span style="font-size:11px">${e.message}</span></div>`;
+    }
+    return;
+  }
+
+  if(page.file){
+    contentArea.innerHTML =
+      `<iframe id="screenFrame" src="${page.file}?embed=1" title="${currentUnit} ${page.label}"></iframe>`;
+    return;
+  }
+
+  contentArea.innerHTML =
+    `<div class="placeholder-main">${currentUnit} — ${page.label} — not modelled in this build yet.</div>`;
+}
+
+/* Scale a fixed-size screen down when the window is narrower than it. */
+function fitScreen(host, doc){
+  const avail = contentArea.clientWidth - 4;
+  const scale = Math.min(1, avail / doc.canvas.width);
+  host.style.transform = 'scale(' + scale + ')';
+  host.style.width  = (doc.canvas.width * scale) + 'px';
+  host.style.height = (doc.canvas.height * scale) + 'px';
+}
+window.addEventListener('resize', ()=>{
+  const host = contentArea.querySelector('.canvas-host');
+  if(host && activeScreen) fitScreen(host, activeScreen);
+});
+
+/* ---------------- alarms page ---------------------------------------- */
+function renderAlarmPage(){
+  const rows = activeAlarms.map(a=>`
+    <tr class="sev-${a.severity} ${a.returned_at?'returned':''}">
+      <td class="num">${fmtTime(a.raised_at)}</td>
+      <td>${a.unit||'—'}</td>
+      <td>${esc(a.label)}</td>
+      <td>${esc(a.description)}</td>
+      <td class="num">${a.value}${a.engineering_unit?' '+a.engineering_unit:''}</td>
+      <td class="num" style="font-size:10.5px">${esc(a.tag_id)}</td>
+      <td><span class="pill ${a.acknowledged?'':'active'}">${a.acknowledged?'ACK':'UNACK'}</span></td>
+      <td>${a.returned_at ? 'Returned' : 'Active'}</td>
+    </tr>`).join('');
+
+  contentArea.innerHTML = `
+    <div class="alarm-page">
+      <div class="alarm-toolbar">
+        <h2>Active alarms</h2>
+        <span class="pill">${activeAlarms.length}</span>
+        <button class="btn" id="ackAllBtn" style="margin-left:auto">Acknowledge all</button>
+      </div>
+      <table class="alarms">
+        <thead><tr>
+          <th>Raised</th><th>Unit</th><th>Type</th><th>Description</th>
+          <th>Value</th><th>Tag</th><th>Ack</th><th>State</th>
+        </tr></thead>
+        <tbody>${rows || '<tr><td colspan="8" style="padding:18px;color:var(--text-dim)">No active alarms.</td></tr>'}</tbody>
+      </table>
+    </div>`;
+  const btn = $('ackAllBtn');
+  if(btn) btn.addEventListener('click', async ()=>{
+    if(ScadaStore.mode !== 'live') return;
+    await fetch('/api/alarms/ack-all', {method:'POST'});
+  });
+}
+
+/* ---------------- live updates --------------------------------------- */
+ScadaStore.on('tags', updates=>{
+  // keep a short rolling history so the popup can draw a trend
+  updates.forEach(u=>{
+    if(typeof u.value !== 'number') return;
+    const arr = trend.get(u.tag_id) || [];
+    arr.push(u.value);
+    if(arr.length > 60) arr.shift();
+    trend.set(u.tag_id, arr);
+  });
+
+  if(activeScreen){
+    const host = contentArea.querySelector('.canvas-host');
+    if(host) patchScreen(host, updates);
+  }
+  updateHeader();
+  if(popTag) refreshPopup();
+});
+
+/* Repaint only the elements bound to tags that actually changed. */
+function patchScreen(host, updates){
+  const changed = new Set(updates.map(u=>u.tag_id));
+  activeScreen.elements.forEach(el=>{
+    const tagId = el.bind && el.bind.value;
+    if(!tagId || !changed.has(tagId)) return;
+    const node = host.querySelector('.el[data-id="'+el.id+'"]');
+    if(!node) return;
+    node.replaceWith(Scada.renderElement(el,
+      { tags: ScadaStore.tags, showAlarms: true }));
+  });
+}
+
+ScadaStore.on('alarms', list=>{
+  activeAlarms = list;
+  updateAlarmBanner();
+  if(currentTopTab === 'Alarms') renderAlarmPage();
+});
+
+ScadaStore.on('status', s=>{
+  const badge = $('connBadge');
+  badge.className = 'conn ' + (s.mode === 'live' ? (s.connected===false?'':'live') : 'static');
+  badge.querySelector('span').textContent =
+    s.mode === 'live'
+      ? (s.connected === false ? 'reconnecting…' : 'live')
+      : 'static data';
+  badge.title = s.mode === 'live'
+    ? 'Connected to the simulation server'
+    : 'No server — showing the committed snapshot. Run the server for live values.';
+});
+
+function updateHeader(){
+  const mw = ScadaStore.getTag('COMMON_PLANT_MW');
+  const kw = ScadaStore.getTag('SCA011PW104PV');
+  const plant = mw ? Number(mw.value) : (kw ? Number(kw.value)/1000 : null);
+  $('hdrMW').textContent = plant != null ? plant.toFixed(1)+' MW' : '—';
+  const amb = ScadaStore.getTag('G01_GEN_AIR_INTAKE');
+  $('hdrTemp').textContent = amb ? Number(amb.value).toFixed(1)+' °C' : '—';
+
+  const dots = $('engDots');
+  if(dots.children.length !== 6){
+    dots.innerHTML = '';
+    for(let i=0;i<6;i++) dots.appendChild(document.createElement('i'));
+  }
+  for(let i=1;i<=6;i++){
+    const t = ScadaStore.getTag('G0'+i+'_RUNNING');
+    dots.children[i-1].classList.toggle('run', !!(t && t.value));
   }
 }
 
+function updateAlarmBanner(){
+  const worst = activeAlarms[0];
+  const badge = $('alarmBadge');
+  const unacked = activeAlarms.filter(a=>!a.acknowledged).length;
+  badge.textContent = unacked;
+  badge.classList.toggle('on', unacked > 0);
+
+  $('alarmIcon').classList.toggle('on', !!worst);
+  $('alarmText').classList.toggle('on', !!worst);
+  if(!worst){
+    $('alarmText').textContent = 'No active alarms';
+    $('alarmTime').textContent = $('alarmUnit').textContent = $('alarmTag').textContent = '';
+    return;
+  }
+  $('alarmTime').textContent = fmtTime(worst.raised_at);
+  $('alarmUnit').textContent = worst.unit || '';
+  $('alarmText').textContent = worst.label + ', ' + worst.description;
+  $('alarmTag').textContent = worst.tag_id;
+}
+
+$('ackBtn').addEventListener('click', async ()=>{
+  if(ScadaStore.mode !== 'live') return;
+  await fetch('/api/alarms/ack-all', {method:'POST'});
+});
+
+/* ---------------- sensor popup ---------------------------------------- */
+let popTag = null;
+const tagPop = $('tagPop');
+
+contentArea.addEventListener('click', e=>{
+  const node = e.target.closest('.el[data-tag]');
+  if(!node || !node.dataset.tag) return;
+  openPopup(node.dataset.tag, node);
+  e.stopPropagation();
+});
+document.addEventListener('click', e=>{
+  if(!tagPop.contains(e.target) && !e.target.closest('.el[data-tag]')) closePopup();
+});
+$('tpCloseX').addEventListener('click', closePopup);
+function closePopup(){ tagPop.classList.remove('open'); popTag = null; }
+
+function openPopup(tagId, node){
+  const tag = ScadaStore.getTag(tagId);
+  if(!tag) return;
+  popTag = tagId;
+  refreshPopup();
+
+  const r = node.getBoundingClientRect();
+  let left = r.right + 10, top = r.top;
+  if(left + 290 > window.innerWidth) left = Math.max(8, r.left - 290);
+  if(top + 380 > window.innerHeight) top = Math.max(8, window.innerHeight - 390);
+  tagPop.style.left = left+'px'; tagPop.style.top = top+'px';
+  tagPop.classList.add('open');
+}
+
+function refreshPopup(){
+  const tag = ScadaStore.getTag(popTag);
+  if(!tag) return closePopup();
+  const state = Scada.alarmStateFor(tag);
+
+  $('tpDesc').textContent = tag.description || popTag;
+  $('tpId').textContent = popTag;
+  $('tpValue').textContent = (typeof tag.value === 'number'
+    ? Number(tag.value).toFixed(1) : tag.value) +
+    (tag.engineering_unit ? ' ' + tag.engineering_unit : '');
+
+  const st = $('tpState');
+  st.className = 'tp-state' +
+    (['shutdown','hihi','lolo','fault'].includes(state) ? ' alarm'
+      : (['hi','lo'].includes(state) ? ' warn' : ''));
+  st.textContent = state === 'normal' ? 'Normal'
+    : (state === 'fault' ? 'SENSOR FAULT' : state.toUpperCase() + ' limit exceeded');
+
+  const al = tag.alarm_limits||{}, sd = tag.shutdown_limits||{};
+  setVal('lim_hihi', al.hihi); setVal('lim_hi', al.hi);
+  setVal('lim_lo', al.lo);     setVal('lim_lolo', al.lolo);
+  setVal('sd_hi', sd.hi);      setVal('sd_lo', sd.lo);
+
+  $('tpFault').textContent = tag.sensor_fault ? 'Clear fault' : 'Sensor fault';
+  $('tpNote').textContent = ScadaStore.mode === 'live'
+    ? '' : 'No server connected — limit edits apply to this browser only.';
+  drawSpark(trend.get(popTag) || []);
+}
+function setVal(id, v){ $(id).value = (v==null ? 'N/A' : v); }
+function readVal(id){
+  const raw = $(id).value.trim();
+  if(!raw || raw.toUpperCase() === 'N/A') return null;
+  const n = parseFloat(raw);
+  return isNaN(n) ? null : n;
+}
+
+$('tpSave').addEventListener('click', async ()=>{
+  if(!popTag) return;
+  try{
+    await ScadaStore.updateLimits(popTag, {
+      alarm_limits: { hihi:readVal('lim_hihi'), hi:readVal('lim_hi'),
+                      lo:readVal('lim_lo'), lolo:readVal('lim_lolo') },
+      shutdown_limits: { hi:readVal('sd_hi'), lo:readVal('sd_lo') }
+    });
+    $('tpNote').textContent = 'Limits saved.';
+  }catch(e){ $('tpNote').textContent = e.message; }
+});
+$('tpFault').addEventListener('click', async ()=>{
+  if(!popTag) return;
+  const tag = ScadaStore.getTag(popTag);
+  try{
+    await ScadaStore.updateLimits(popTag, { sensor_fault: !tag.sensor_fault });
+    refreshPopup();
+  }catch(e){ $('tpNote').textContent = e.message; }
+});
+
+function drawSpark(values){
+  const c = $('tpSpark'), ctx = c.getContext('2d');
+  ctx.clearRect(0,0,c.width,c.height);
+  if(values.length < 2){
+    ctx.fillStyle = getCss('--text-dim');
+    ctx.font = '10px Segoe UI';
+    ctx.fillText('Collecting trend…', 8, 26);
+    return;
+  }
+  const min = Math.min(...values), max = Math.max(...values);
+  const span = (max - min) || 1;
+  const pad = 4;
+  ctx.beginPath();
+  values.forEach((v,i)=>{
+    const x = pad + (i/(values.length-1)) * (c.width - pad*2);
+    const y = c.height - pad - ((v-min)/span) * (c.height - pad*2);
+    i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+  });
+  ctx.strokeStyle = getCss('--blue');
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+}
+function getCss(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+/* ---------------- theme + clock ---------------------------------------- */
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  $('btnLight').classList.toggle('active', t==='light');
+  $('btnDark').classList.toggle('active', t==='dark');
+}
+$('btnLight').addEventListener('click', ()=>setTheme('light'));
+$('btnDark').addEventListener('click', ()=>setTheme('dark'));
+$('toolsBtn').addEventListener('click', e=>{
+  $('settingsPopup').classList.toggle('open'); e.stopPropagation();
+});
+document.addEventListener('click', e=>{
+  if(!$('settingsPopup').contains(e.target) && e.target !== $('toolsBtn'))
+    $('settingsPopup').classList.remove('open');
+});
+
+setInterval(()=>{
+  const now = new Date();
+  $('clockLeft').textContent =
+    now.toLocaleDateString('en-GB') + ' ' + now.toLocaleTimeString('en-GB');
+}, 500);
+
+function fmtTime(iso){
+  if(!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleTimeString('en-GB');
+}
+function esc(s){
+  return String(s==null?'':s).replace(/[&<>"]/g, m =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+}
+
+/* ---------------- boot -------------------------------------------------- */
 function renderAll(){
   const showSubnav = currentTopTab === "Processes";
-  unitBar.style.display = showSubnav ? "flex" : "none";
-  pageBar.style.display = showSubnav ? "flex" : "none";
-  contentArea.classList.toggle('with-subnav', showSubnav);
-  if(showSubnav){
-    renderUnitBar();
-    renderPageBar();
-  }
+  $('unitBar').style.display = showSubnav ? "flex" : "none";
+  $('pageBar').style.display = showSubnav ? "flex" : "none";
+  if(showSubnav){ renderUnitBar(); renderPageBar(); }
   renderContent();
 }
 
-renderAll();
+(async function init(){
+  await ScadaStore.init({ root: '..' });
+  ScadaStore.connect();
+  activeAlarms = await ScadaStore.getAlarms();
+  updateHeader();
+  updateAlarmBanner();
+  renderAll();
+})();
 </script>
 </body>
 </html>

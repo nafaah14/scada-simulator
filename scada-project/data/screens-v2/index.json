@@ -1,0 +1,18 @@
+[
+  {
+    "screen_id": "G1.Temp",
+    "title": "G1 — Temperatures",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-temp.json",
+    "elements": 214
+  },
+  {
+    "screen_id": "G4.Control",
+    "title": "G4 - Control",
+    "unit": null,
+    "layout": "grid",
+    "file": "g4-control.json",
+    "elements": 0
+  }
+]

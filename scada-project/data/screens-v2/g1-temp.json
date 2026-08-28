@@ -1,0 +1,4799 @@
+{
+  "screen_id": "G1.Temp",
+  "title": "G1 — Temperatures",
+  "unit": "G1",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1400,
+    "height": 700,
+    "background": "#d4d8dc"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "x": 200,
+      "y": 112,
+      "w": 568,
+      "h": 80,
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {
+        "bevel": true
+      },
+      "name": "Bank B head",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "x": 170,
+      "y": 192,
+      "w": 628,
+      "h": 212,
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {
+        "bevel": true
+      },
+      "name": "Engine block",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "x": 200,
+      "y": 404,
+      "w": 568,
+      "h": 80,
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {
+        "bevel": true
+      },
+      "name": "Bank A head",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "x": 798,
+      "y": 192,
+      "w": 62,
+      "h": 212,
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {
+        "bevel": true
+      },
+      "name": "Thrust housing",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "x": 860,
+      "y": 278,
+      "w": 44,
+      "h": 26,
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Coupling",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "x": 904,
+      "y": 186,
+      "w": 252,
+      "h": 196,
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {
+        "bevel": true
+      },
+      "name": "Alternator",
+      "locked": true
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "x": 890,
+      "y": 214,
+      "w": 14,
+      "h": 60,
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Alternator foot L",
+      "locked": true
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "x": 1156,
+      "y": 214,
+      "w": 14,
+      "h": 60,
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Alternator foot R",
+      "locked": true
+    },
+    {
+      "id": "s9",
+      "type": "turbo",
+      "x": 178,
+      "y": 126,
+      "w": 26,
+      "h": 50,
+      "bind": {
+        "value": "G01_TCB_SPEED"
+      },
+      "props": {
+        "running": true
+      },
+      "style": {
+        "fill": "#e7ebef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      },
+      "name": "TC B rotor"
+    },
+    {
+      "id": "s10",
+      "type": "turbo",
+      "x": 178,
+      "y": 418,
+      "w": 26,
+      "h": 50,
+      "bind": {
+        "value": "G01_TCA_SPEED"
+      },
+      "props": {
+        "running": true
+      },
+      "style": {
+        "fill": "#e7ebef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      },
+      "name": "TC A rotor"
+    },
+    {
+      "id": "s11",
+      "type": "text",
+      "x": 210,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B10"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s12",
+      "type": "readout",
+      "x": 210,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_10"
+      },
+      "props": {
+        "text": "408°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B10 exhaust"
+    },
+    {
+      "id": "s13",
+      "type": "readout",
+      "x": 210,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_10"
+      },
+      "props": {
+        "text": "116°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B10 liner 1"
+    },
+    {
+      "id": "s14",
+      "type": "readout",
+      "x": 210,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_10"
+      },
+      "props": {
+        "text": "112°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B10 liner 2"
+    },
+    {
+      "id": "s15",
+      "type": "readout",
+      "x": 210,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_10"
+      },
+      "props": {
+        "text": "79°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B10 big end"
+    },
+    {
+      "id": "s16",
+      "type": "text",
+      "x": 265,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B9"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s17",
+      "type": "readout",
+      "x": 265,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_9"
+      },
+      "props": {
+        "text": "405°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B9 exhaust"
+    },
+    {
+      "id": "s18",
+      "type": "readout",
+      "x": 265,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_9"
+      },
+      "props": {
+        "text": "115°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B9 liner 1"
+    },
+    {
+      "id": "s19",
+      "type": "readout",
+      "x": 265,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_9"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B9 liner 2"
+    },
+    {
+      "id": "s20",
+      "type": "readout",
+      "x": 265,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_9"
+      },
+      "props": {
+        "text": "80°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B9 big end"
+    },
+    {
+      "id": "s21",
+      "type": "text",
+      "x": 320,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B8"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s22",
+      "type": "readout",
+      "x": 320,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_8"
+      },
+      "props": {
+        "text": "395°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B8 exhaust"
+    },
+    {
+      "id": "s23",
+      "type": "readout",
+      "x": 320,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_8"
+      },
+      "props": {
+        "text": "115°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B8 liner 1"
+    },
+    {
+      "id": "s24",
+      "type": "readout",
+      "x": 320,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_8"
+      },
+      "props": {
+        "text": "114°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B8 liner 2"
+    },
+    {
+      "id": "s25",
+      "type": "readout",
+      "x": 320,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_8"
+      },
+      "props": {
+        "text": "78°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B8 big end"
+    },
+    {
+      "id": "s26",
+      "type": "text",
+      "x": 375,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B7"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s27",
+      "type": "readout",
+      "x": 375,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_7"
+      },
+      "props": {
+        "text": "407°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B7 exhaust"
+    },
+    {
+      "id": "s28",
+      "type": "readout",
+      "x": 375,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_7"
+      },
+      "props": {
+        "text": "114°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B7 liner 1"
+    },
+    {
+      "id": "s29",
+      "type": "readout",
+      "x": 375,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_7"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B7 liner 2"
+    },
+    {
+      "id": "s30",
+      "type": "readout",
+      "x": 375,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_7"
+      },
+      "props": {
+        "text": "78°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B7 big end"
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "x": 430,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B6"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s32",
+      "type": "readout",
+      "x": 430,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_6"
+      },
+      "props": {
+        "text": "398°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B6 exhaust"
+    },
+    {
+      "id": "s33",
+      "type": "readout",
+      "x": 430,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_6"
+      },
+      "props": {
+        "text": "115°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B6 liner 1"
+    },
+    {
+      "id": "s34",
+      "type": "readout",
+      "x": 430,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_6"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B6 liner 2"
+    },
+    {
+      "id": "s35",
+      "type": "readout",
+      "x": 430,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_6"
+      },
+      "props": {
+        "text": "83°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B6 big end"
+    },
+    {
+      "id": "s36",
+      "type": "text",
+      "x": 485,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B5"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s37",
+      "type": "readout",
+      "x": 485,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_5"
+      },
+      "props": {
+        "text": "398°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B5 exhaust"
+    },
+    {
+      "id": "s38",
+      "type": "readout",
+      "x": 485,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_5"
+      },
+      "props": {
+        "text": "115°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B5 liner 1"
+    },
+    {
+      "id": "s39",
+      "type": "readout",
+      "x": 485,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_5"
+      },
+      "props": {
+        "text": "112°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B5 liner 2"
+    },
+    {
+      "id": "s40",
+      "type": "readout",
+      "x": 485,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_5"
+      },
+      "props": {
+        "text": "81°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B5 big end"
+    },
+    {
+      "id": "s41",
+      "type": "text",
+      "x": 540,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B4"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s42",
+      "type": "readout",
+      "x": 540,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_4"
+      },
+      "props": {
+        "text": "397°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B4 exhaust"
+    },
+    {
+      "id": "s43",
+      "type": "readout",
+      "x": 540,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_4"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B4 liner 1"
+    },
+    {
+      "id": "s44",
+      "type": "readout",
+      "x": 540,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_4"
+      },
+      "props": {
+        "text": "110°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B4 liner 2"
+    },
+    {
+      "id": "s45",
+      "type": "readout",
+      "x": 540,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_4"
+      },
+      "props": {
+        "text": "79°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B4 big end"
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "x": 595,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B3"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s47",
+      "type": "readout",
+      "x": 595,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_3"
+      },
+      "props": {
+        "text": "407°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B3 exhaust"
+    },
+    {
+      "id": "s48",
+      "type": "readout",
+      "x": 595,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_3"
+      },
+      "props": {
+        "text": "112°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B3 liner 1"
+    },
+    {
+      "id": "s49",
+      "type": "readout",
+      "x": 595,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_3"
+      },
+      "props": {
+        "text": "112°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B3 liner 2"
+    },
+    {
+      "id": "s50",
+      "type": "readout",
+      "x": 595,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_3"
+      },
+      "props": {
+        "text": "80°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B3 big end"
+    },
+    {
+      "id": "s51",
+      "type": "text",
+      "x": 650,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s52",
+      "type": "readout",
+      "x": 650,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_2"
+      },
+      "props": {
+        "text": "408°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B2 exhaust"
+    },
+    {
+      "id": "s53",
+      "type": "readout",
+      "x": 650,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_2"
+      },
+      "props": {
+        "text": "117°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B2 liner 1"
+    },
+    {
+      "id": "s54",
+      "type": "readout",
+      "x": 650,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_2"
+      },
+      "props": {
+        "text": "117°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B2 liner 2"
+    },
+    {
+      "id": "s55",
+      "type": "readout",
+      "x": 650,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_2"
+      },
+      "props": {
+        "text": "78°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B2 big end"
+    },
+    {
+      "id": "s56",
+      "type": "text",
+      "x": 705,
+      "y": 118,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "B1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s57",
+      "type": "readout",
+      "x": 705,
+      "y": 136,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_EXH_1"
+      },
+      "props": {
+        "text": "405°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B1 exhaust"
+    },
+    {
+      "id": "s58",
+      "type": "readout",
+      "x": 705,
+      "y": 199,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER1_1"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B1 liner 1"
+    },
+    {
+      "id": "s59",
+      "type": "readout",
+      "x": 705,
+      "y": 221,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_LINER2_1"
+      },
+      "props": {
+        "text": "108°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B1 liner 2"
+    },
+    {
+      "id": "s60",
+      "type": "readout",
+      "x": 705,
+      "y": 243,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_B_BIGEND_1"
+      },
+      "props": {
+        "text": "77°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "B1 big end"
+    },
+    {
+      "id": "s61",
+      "type": "text",
+      "x": 300,
+      "y": 162,
+      "w": 220,
+      "h": 12,
+      "props": {
+        "text": "Exhaust gas temperatures [°C]"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s62",
+      "type": "readout",
+      "x": 182,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_11"
+      },
+      "props": {
+        "text": "88°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 11"
+    },
+    {
+      "id": "s63",
+      "type": "text",
+      "x": 182,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "11"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s64",
+      "type": "readout",
+      "x": 236,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_10"
+      },
+      "props": {
+        "text": "92°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 10"
+    },
+    {
+      "id": "s65",
+      "type": "text",
+      "x": 236,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "10"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s66",
+      "type": "readout",
+      "x": 290,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_9"
+      },
+      "props": {
+        "text": "93°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 9"
+    },
+    {
+      "id": "s67",
+      "type": "text",
+      "x": 290,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "9"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s68",
+      "type": "readout",
+      "x": 344,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_8"
+      },
+      "props": {
+        "text": "92°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 8"
+    },
+    {
+      "id": "s69",
+      "type": "text",
+      "x": 344,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "8"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s70",
+      "type": "readout",
+      "x": 398,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_7"
+      },
+      "props": {
+        "text": "92°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 7"
+    },
+    {
+      "id": "s71",
+      "type": "text",
+      "x": 398,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "7"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s72",
+      "type": "readout",
+      "x": 452,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_6"
+      },
+      "props": {
+        "text": "93°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 6"
+    },
+    {
+      "id": "s73",
+      "type": "text",
+      "x": 452,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "6"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s74",
+      "type": "readout",
+      "x": 506,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_5"
+      },
+      "props": {
+        "text": "90°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 5"
+    },
+    {
+      "id": "s75",
+      "type": "text",
+      "x": 506,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "5"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s76",
+      "type": "readout",
+      "x": 560,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_4"
+      },
+      "props": {
+        "text": "91°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 4"
+    },
+    {
+      "id": "s77",
+      "type": "text",
+      "x": 560,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "4"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s78",
+      "type": "readout",
+      "x": 614,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_3"
+      },
+      "props": {
+        "text": "92°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 3"
+    },
+    {
+      "id": "s79",
+      "type": "text",
+      "x": 614,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "3"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s80",
+      "type": "readout",
+      "x": 668,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_2"
+      },
+      "props": {
+        "text": "90°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 2"
+    },
+    {
+      "id": "s81",
+      "type": "text",
+      "x": 668,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "2"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s82",
+      "type": "readout",
+      "x": 722,
+      "y": 283,
+      "w": 48,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAIN_BRG_1"
+      },
+      "props": {
+        "text": "90°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Main bearing 1"
+    },
+    {
+      "id": "s83",
+      "type": "text",
+      "x": 722,
+      "y": 306,
+      "w": 48,
+      "h": 11,
+      "props": {
+        "text": "1"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s84",
+      "type": "readout",
+      "x": 210,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_10"
+      },
+      "props": {
+        "text": "83°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A10 big end"
+    },
+    {
+      "id": "s85",
+      "type": "readout",
+      "x": 210,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_10"
+      },
+      "props": {
+        "text": "112°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A10 liner 1"
+    },
+    {
+      "id": "s86",
+      "type": "readout",
+      "x": 210,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_10"
+      },
+      "props": {
+        "text": "111°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A10 liner 2"
+    },
+    {
+      "id": "s87",
+      "type": "readout",
+      "x": 210,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_10"
+      },
+      "props": {
+        "text": "398°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A10 exhaust"
+    },
+    {
+      "id": "s88",
+      "type": "text",
+      "x": 210,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A10"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s89",
+      "type": "readout",
+      "x": 265,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_9"
+      },
+      "props": {
+        "text": "86°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A9 big end"
+    },
+    {
+      "id": "s90",
+      "type": "readout",
+      "x": 265,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_9"
+      },
+      "props": {
+        "text": "114°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A9 liner 1"
+    },
+    {
+      "id": "s91",
+      "type": "readout",
+      "x": 265,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_9"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A9 liner 2"
+    },
+    {
+      "id": "s92",
+      "type": "readout",
+      "x": 265,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_9"
+      },
+      "props": {
+        "text": "393°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A9 exhaust"
+    },
+    {
+      "id": "s93",
+      "type": "text",
+      "x": 265,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A9"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s94",
+      "type": "readout",
+      "x": 320,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_8"
+      },
+      "props": {
+        "text": "82°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A8 big end"
+    },
+    {
+      "id": "s95",
+      "type": "readout",
+      "x": 320,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_8"
+      },
+      "props": {
+        "text": "117°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A8 liner 1"
+    },
+    {
+      "id": "s96",
+      "type": "readout",
+      "x": 320,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_8"
+      },
+      "props": {
+        "text": "114°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A8 liner 2"
+    },
+    {
+      "id": "s97",
+      "type": "readout",
+      "x": 320,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_8"
+      },
+      "props": {
+        "text": "383°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A8 exhaust"
+    },
+    {
+      "id": "s98",
+      "type": "text",
+      "x": 320,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A8"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s99",
+      "type": "readout",
+      "x": 375,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_7"
+      },
+      "props": {
+        "text": "84°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A7 big end"
+    },
+    {
+      "id": "s100",
+      "type": "readout",
+      "x": 375,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_7"
+      },
+      "props": {
+        "text": "120°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A7 liner 1"
+    },
+    {
+      "id": "s101",
+      "type": "readout",
+      "x": 375,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_7"
+      },
+      "props": {
+        "text": "115°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A7 liner 2"
+    },
+    {
+      "id": "s102",
+      "type": "readout",
+      "x": 375,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_7"
+      },
+      "props": {
+        "text": "409°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A7 exhaust"
+    },
+    {
+      "id": "s103",
+      "type": "text",
+      "x": 375,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A7"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s104",
+      "type": "readout",
+      "x": 430,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_6"
+      },
+      "props": {
+        "text": "84°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A6 big end"
+    },
+    {
+      "id": "s105",
+      "type": "readout",
+      "x": 430,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_6"
+      },
+      "props": {
+        "text": "116°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A6 liner 1"
+    },
+    {
+      "id": "s106",
+      "type": "readout",
+      "x": 430,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_6"
+      },
+      "props": {
+        "text": "113°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A6 liner 2"
+    },
+    {
+      "id": "s107",
+      "type": "readout",
+      "x": 430,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_6"
+      },
+      "props": {
+        "text": "391°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A6 exhaust"
+    },
+    {
+      "id": "s108",
+      "type": "text",
+      "x": 430,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A6"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s109",
+      "type": "readout",
+      "x": 485,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_5"
+      },
+      "props": {
+        "text": "80°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A5 big end"
+    },
+    {
+      "id": "s110",
+      "type": "readout",
+      "x": 485,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_5"
+      },
+      "props": {
+        "text": "119°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A5 liner 1"
+    },
+    {
+      "id": "s111",
+      "type": "readout",
+      "x": 485,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_5"
+      },
+      "props": {
+        "text": "117°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A5 liner 2"
+    },
+    {
+      "id": "s112",
+      "type": "readout",
+      "x": 485,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_5"
+      },
+      "props": {
+        "text": "399°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A5 exhaust"
+    },
+    {
+      "id": "s113",
+      "type": "text",
+      "x": 485,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A5"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s114",
+      "type": "readout",
+      "x": 540,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_4"
+      },
+      "props": {
+        "text": "79°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A4 big end"
+    },
+    {
+      "id": "s115",
+      "type": "readout",
+      "x": 540,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_4"
+      },
+      "props": {
+        "text": "116°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A4 liner 1"
+    },
+    {
+      "id": "s116",
+      "type": "readout",
+      "x": 540,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_4"
+      },
+      "props": {
+        "text": "114°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A4 liner 2"
+    },
+    {
+      "id": "s117",
+      "type": "readout",
+      "x": 540,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_4"
+      },
+      "props": {
+        "text": "399°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A4 exhaust"
+    },
+    {
+      "id": "s118",
+      "type": "text",
+      "x": 540,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A4"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s119",
+      "type": "readout",
+      "x": 595,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_3"
+      },
+      "props": {
+        "text": "86°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A3 big end"
+    },
+    {
+      "id": "s120",
+      "type": "readout",
+      "x": 595,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_3"
+      },
+      "props": {
+        "text": "114°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A3 liner 1"
+    },
+    {
+      "id": "s121",
+      "type": "readout",
+      "x": 595,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_3"
+      },
+      "props": {
+        "text": "110°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A3 liner 2"
+    },
+    {
+      "id": "s122",
+      "type": "readout",
+      "x": 595,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_3"
+      },
+      "props": {
+        "text": "405°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A3 exhaust"
+    },
+    {
+      "id": "s123",
+      "type": "text",
+      "x": 595,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A3"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s124",
+      "type": "readout",
+      "x": 650,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_2"
+      },
+      "props": {
+        "text": "90°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A2 big end"
+    },
+    {
+      "id": "s125",
+      "type": "readout",
+      "x": 650,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_2"
+      },
+      "props": {
+        "text": "119°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A2 liner 1"
+    },
+    {
+      "id": "s126",
+      "type": "readout",
+      "x": 650,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_2"
+      },
+      "props": {
+        "text": "118°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A2 liner 2"
+    },
+    {
+      "id": "s127",
+      "type": "readout",
+      "x": 650,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_2"
+      },
+      "props": {
+        "text": "395°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A2 exhaust"
+    },
+    {
+      "id": "s128",
+      "type": "text",
+      "x": 650,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s129",
+      "type": "readout",
+      "x": 705,
+      "y": 325,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_BIGEND_1"
+      },
+      "props": {
+        "text": "83°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A1 big end"
+    },
+    {
+      "id": "s130",
+      "type": "readout",
+      "x": 705,
+      "y": 347,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER1_1"
+      },
+      "props": {
+        "text": "111°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A1 liner 1"
+    },
+    {
+      "id": "s131",
+      "type": "readout",
+      "x": 705,
+      "y": 369,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_LINER2_1"
+      },
+      "props": {
+        "text": "112°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A1 liner 2"
+    },
+    {
+      "id": "s132",
+      "type": "readout",
+      "x": 705,
+      "y": 428,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_CYL_A_EXH_1"
+      },
+      "props": {
+        "text": "405°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "A1 exhaust"
+    },
+    {
+      "id": "s133",
+      "type": "text",
+      "x": 705,
+      "y": 452,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "A1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s134",
+      "type": "text",
+      "x": 300,
+      "y": 410,
+      "w": 220,
+      "h": 12,
+      "props": {
+        "text": "Exhaust gas temperatures [°C]"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s135",
+      "type": "text",
+      "x": 802,
+      "y": 262,
+      "w": 54,
+      "h": 12,
+      "props": {
+        "text": "Thrust"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s136",
+      "type": "readout",
+      "x": 804,
+      "y": 283,
+      "w": 50,
+      "h": 20,
+      "bind": {
+        "value": "G01_THRUST_BRG"
+      },
+      "props": {
+        "text": "80°C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Thrust bearing"
+    },
+    {
+      "id": "s137",
+      "type": "text",
+      "x": 804,
+      "y": 306,
+      "w": 50,
+      "h": 11,
+      "props": {
+        "text": "0"
+      },
+      "style": {
+        "color": "#2a3138",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s138",
+      "type": "text",
+      "x": 904,
+      "y": 194,
+      "w": 252,
+      "h": 15,
+      "props": {
+        "text": "Generator"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s139",
+      "type": "text",
+      "x": 990,
+      "y": 216,
+      "w": 80,
+      "h": 12,
+      "props": {
+        "text": "Winding U"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s140",
+      "type": "readout",
+      "x": 990,
+      "y": 230,
+      "w": 80,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_WINDING_U"
+      },
+      "props": {
+        "text": "92 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Winding U"
+    },
+    {
+      "id": "s141",
+      "type": "text",
+      "x": 916,
+      "y": 268,
+      "w": 72,
+      "h": 12,
+      "props": {
+        "text": "Bearing D"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s142",
+      "type": "readout",
+      "x": 916,
+      "y": 282,
+      "w": 72,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_BEARING_D"
+      },
+      "props": {
+        "text": "77 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Bearing D"
+    },
+    {
+      "id": "s143",
+      "type": "text",
+      "x": 996,
+      "y": 268,
+      "w": 72,
+      "h": 12,
+      "props": {
+        "text": "Winding V"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s144",
+      "type": "readout",
+      "x": 996,
+      "y": 282,
+      "w": 72,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_WINDING_V"
+      },
+      "props": {
+        "text": "95 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Winding V"
+    },
+    {
+      "id": "s145",
+      "type": "text",
+      "x": 1076,
+      "y": 268,
+      "w": 72,
+      "h": 12,
+      "props": {
+        "text": "Bearing ND"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s146",
+      "type": "readout",
+      "x": 1076,
+      "y": 282,
+      "w": 72,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_BEARING_ND"
+      },
+      "props": {
+        "text": "75 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Bearing ND"
+    },
+    {
+      "id": "s147",
+      "type": "text",
+      "x": 990,
+      "y": 318,
+      "w": 80,
+      "h": 12,
+      "props": {
+        "text": "Winding W"
+      },
+      "style": {
+        "color": "#22282e",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s148",
+      "type": "readout",
+      "x": 990,
+      "y": 332,
+      "w": 80,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_WINDING_W"
+      },
+      "props": {
+        "text": "93 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      },
+      "name": "Winding W"
+    },
+    {
+      "id": "s149",
+      "type": "text",
+      "x": 1176,
+      "y": 168,
+      "w": 60,
+      "h": 12,
+      "props": {
+        "text": "Air intake"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s150",
+      "type": "readout",
+      "x": 1176,
+      "y": 186,
+      "w": 60,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_AIR_INTAKE"
+      },
+      "props": {
+        "text": "36 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s151",
+      "type": "readout",
+      "x": 1176,
+      "y": 388,
+      "w": 60,
+      "h": 22,
+      "bind": {
+        "value": "G01_GEN_AIR_EXIT"
+      },
+      "props": {
+        "text": "59 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s152",
+      "type": "text",
+      "x": 1176,
+      "y": 410,
+      "w": 60,
+      "h": 12,
+      "props": {
+        "text": "Air exit"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s153",
+      "type": "rect",
+      "x": 1122,
+      "y": 346,
+      "w": 26,
+      "h": 26,
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Excitation"
+    },
+    {
+      "id": "s154",
+      "type": "rect",
+      "x": 906,
+      "y": 398,
+      "w": 40,
+      "h": 20,
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a94a0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Turn switch"
+    },
+    {
+      "id": "s155",
+      "type": "led",
+      "x": 921,
+      "y": 403,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_TURNING_GEAR"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Turn"
+    },
+    {
+      "id": "s156",
+      "type": "text",
+      "x": 906,
+      "y": 420,
+      "w": 40,
+      "h": 12,
+      "props": {
+        "text": "Turn"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s157",
+      "type": "rect",
+      "x": 952,
+      "y": 398,
+      "w": 40,
+      "h": 20,
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a94a0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "E-stop switch"
+    },
+    {
+      "id": "s158",
+      "type": "led",
+      "x": 967,
+      "y": 403,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_EMERGENCY_STOP"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "E-stop"
+    },
+    {
+      "id": "s159",
+      "type": "text",
+      "x": 952,
+      "y": 420,
+      "w": 40,
+      "h": 12,
+      "props": {
+        "text": "E-stop"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s160",
+      "type": "rect",
+      "x": 998,
+      "y": 398,
+      "w": 40,
+      "h": 20,
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a94a0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Lever switch"
+    },
+    {
+      "id": "s161",
+      "type": "led",
+      "x": 1013,
+      "y": 403,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STOP_LEVER"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Lever"
+    },
+    {
+      "id": "s162",
+      "type": "text",
+      "x": 998,
+      "y": 420,
+      "w": 40,
+      "h": 12,
+      "props": {
+        "text": "Lever"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s163",
+      "type": "led",
+      "x": 1050,
+      "y": 402,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": "G01_ALARM_MINOR"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Minor alarm"
+    },
+    {
+      "id": "s164",
+      "type": "led",
+      "x": 1072,
+      "y": 402,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": "G01_ALARM_MAJOR"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Major alarm"
+    },
+    {
+      "id": "s165",
+      "type": "led",
+      "x": 1094,
+      "y": 402,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": "G01_ALARM_SLOWDOWN"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Slow down"
+    },
+    {
+      "id": "s166",
+      "type": "led",
+      "x": 1116,
+      "y": 402,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": "G01_ALARM_LOADREDUCE"
+      },
+      "props": {
+        "shape": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Load reduction"
+    },
+    {
+      "id": "s167",
+      "type": "text",
+      "x": 30,
+      "y": 44,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "TC B"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s168",
+      "type": "readout",
+      "x": 30,
+      "y": 58,
+      "w": 90,
+      "h": 20,
+      "bind": {
+        "value": "G01_TCB_EXH_OUT"
+      },
+      "props": {
+        "text": "340 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s169",
+      "type": "text",
+      "x": 126,
+      "y": 58,
+      "w": 150,
+      "h": 20,
+      "props": {
+        "text": "Exh. gas temp outlet"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s170",
+      "type": "readout",
+      "x": 30,
+      "y": 80,
+      "w": 90,
+      "h": 20,
+      "bind": {
+        "value": "G01_TCB_EXH_IN"
+      },
+      "props": {
+        "text": "508 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s171",
+      "type": "text",
+      "x": 126,
+      "y": 80,
+      "w": 150,
+      "h": 20,
+      "props": {
+        "text": "Exh. gas temp inlet"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s172",
+      "type": "readout",
+      "x": 30,
+      "y": 102,
+      "w": 90,
+      "h": 20,
+      "bind": {
+        "value": "G01_TCB_SPEED"
+      },
+      "props": {
+        "text": "25160 rpm",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s173",
+      "type": "text",
+      "x": 126,
+      "y": 102,
+      "w": 150,
+      "h": 20,
+      "props": {
+        "text": "Speed"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s174",
+      "type": "readout",
+      "x": 30,
+      "y": 486,
+      "w": 90,
+      "h": 20,
+      "bind": {
+        "value": "G01_TCA_SPEED"
+      },
+      "props": {
+        "text": "25000 rpm",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s175",
+      "type": "text",
+      "x": 126,
+      "y": 486,
+      "w": 150,
+      "h": 20,
+      "props": {
+        "text": "Speed"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s176",
+      "type": "readout",
+      "x": 30,
+      "y": 508,
+      "w": 90,
+      "h": 20,
+      "bind": {
+        "value": "G01_TCA_EXH_IN"
+      },
+      "props": {
+        "text": "497 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s177",
+      "type": "text",
+      "x": 126,
+      "y": 508,
+      "w": 150,
+      "h": 20,
+      "props": {
+        "text": "Exh. gas temp inlet"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s178",
+      "type": "readout",
+      "x": 30,
+      "y": 530,
+      "w": 90,
+      "h": 20,
+      "bind": {
+        "value": "G01_TCA_EXH_OUT"
+      },
+      "props": {
+        "text": "336 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s179",
+      "type": "text",
+      "x": 126,
+      "y": 530,
+      "w": 150,
+      "h": 20,
+      "props": {
+        "text": "Exh. gas temp outlet"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s180",
+      "type": "text",
+      "x": 30,
+      "y": 552,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "TC A"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s181",
+      "type": "led",
+      "x": 778,
+      "y": 58,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s182",
+      "type": "text",
+      "x": 790,
+      "y": 56,
+      "w": 210,
+      "h": 14,
+      "props": {
+        "text": "Cylinder liner 2 temperature [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s183",
+      "type": "line",
+      "x": 640,
+      "y": 60,
+      "w": 130,
+      "h": 165,
+      "props": {
+        "dir": "tl-br",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s184",
+      "type": "led",
+      "x": 778,
+      "y": 76,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s185",
+      "type": "text",
+      "x": 790,
+      "y": 74,
+      "w": 210,
+      "h": 14,
+      "props": {
+        "text": "Cylinder liner 1 temperature [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s186",
+      "type": "line",
+      "x": 640,
+      "y": 78,
+      "w": 130,
+      "h": 127,
+      "props": {
+        "dir": "tl-br",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s187",
+      "type": "led",
+      "x": 778,
+      "y": 100,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s188",
+      "type": "text",
+      "x": 790,
+      "y": 98,
+      "w": 210,
+      "h": 14,
+      "props": {
+        "text": "Big end bearing temperatures [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s189",
+      "type": "line",
+      "x": 640,
+      "y": 102,
+      "w": 130,
+      "h": 148,
+      "props": {
+        "dir": "tl-br",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s190",
+      "type": "led",
+      "x": 778,
+      "y": 480,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s191",
+      "type": "text",
+      "x": 790,
+      "y": 478,
+      "w": 210,
+      "h": 14,
+      "props": {
+        "text": "Big end bearing temperatures [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s192",
+      "type": "line",
+      "x": 640,
+      "y": 332,
+      "w": 130,
+      "h": 154,
+      "props": {
+        "dir": "bl-tr",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s193",
+      "type": "led",
+      "x": 778,
+      "y": 502,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s194",
+      "type": "text",
+      "x": 790,
+      "y": 500,
+      "w": 210,
+      "h": 14,
+      "props": {
+        "text": "Cylinder liner 1 temperature [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s195",
+      "type": "line",
+      "x": 640,
+      "y": 352,
+      "w": 130,
+      "h": 154,
+      "props": {
+        "dir": "bl-tr",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s196",
+      "type": "led",
+      "x": 778,
+      "y": 524,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s197",
+      "type": "text",
+      "x": 790,
+      "y": 522,
+      "w": 210,
+      "h": 14,
+      "props": {
+        "text": "Cylinder liner 2 temperature [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s198",
+      "type": "line",
+      "x": 640,
+      "y": 374,
+      "w": 130,
+      "h": 154,
+      "props": {
+        "dir": "bl-tr",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s199",
+      "type": "led",
+      "x": 22,
+      "y": 290,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "shape": "square"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s200",
+      "type": "text",
+      "x": 34,
+      "y": 286,
+      "w": 160,
+      "h": 14,
+      "props": {
+        "text": "Bearing temperatures [°C]"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s201",
+      "type": "line",
+      "x": 150,
+      "y": 293,
+      "w": 32,
+      "h": 0,
+      "props": {
+        "dir": "h",
+        "dash": 0
+      },
+      "style": {
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s202",
+      "type": "readout",
+      "x": 430,
+      "y": 504,
+      "w": 66,
+      "h": 20,
+      "bind": {
+        "value": "G01_EXH_AVG_TEMP"
+      },
+      "props": {
+        "text": "400 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s203",
+      "type": "text",
+      "x": 502,
+      "y": 504,
+      "w": 180,
+      "h": 20,
+      "props": {
+        "text": "Exhaust gas avg. temp."
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s204",
+      "type": "rect",
+      "x": 150,
+      "y": 578,
+      "w": 600,
+      "h": 92,
+      "style": {
+        "fill": "#f2f4f6",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "props": {},
+      "name": "Summary panel"
+    },
+    {
+      "id": "s205",
+      "type": "text",
+      "x": 164,
+      "y": 592,
+      "w": 170,
+      "h": 16,
+      "props": {
+        "text": "Engine speed"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s206",
+      "type": "readout",
+      "x": 336,
+      "y": 590,
+      "w": 96,
+      "h": 20,
+      "bind": {
+        "value": "SCA011ST103PV"
+      },
+      "props": {
+        "text": "747 rpm",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s207",
+      "type": "text",
+      "x": 164,
+      "y": 616,
+      "w": 170,
+      "h": 16,
+      "props": {
+        "text": "Running hours"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s208",
+      "type": "readout",
+      "x": 336,
+      "y": 614,
+      "w": 96,
+      "h": 20,
+      "bind": {
+        "value": "G01_RUNNING_HOURS"
+      },
+      "props": {
+        "text": "5869 h",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s209",
+      "type": "text",
+      "x": 452,
+      "y": 592,
+      "w": 170,
+      "h": 16,
+      "props": {
+        "text": "Gen. active power"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s210",
+      "type": "readout",
+      "x": 624,
+      "y": 590,
+      "w": 110,
+      "h": 20,
+      "bind": {
+        "value": "SCA011PW104PV"
+      },
+      "props": {
+        "text": "8034 kW",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s211",
+      "type": "text",
+      "x": 452,
+      "y": 616,
+      "w": 170,
+      "h": 16,
+      "props": {
+        "text": "Gen. reactive power"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s212",
+      "type": "readout",
+      "x": 624,
+      "y": 614,
+      "w": 110,
+      "h": 20,
+      "bind": {
+        "value": "G01_GEN_REACTIVE_POWER"
+      },
+      "props": {
+        "text": "303 kVAr",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s213",
+      "type": "text",
+      "x": 452,
+      "y": 640,
+      "w": 170,
+      "h": 16,
+      "props": {
+        "text": "Max available eng. power"
+      },
+      "style": {
+        "color": "#3a4753",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s214",
+      "type": "readout",
+      "x": 624,
+      "y": 638,
+      "w": 110,
+      "h": 20,
+      "bind": {
+        "value": "G01_MAX_AVAIL_POWER"
+      },
+      "props": {
+        "text": "8924 kW",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#c3cad2",
+        "strokeWidth": 1,
+        "color": "#172029",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    }
+  ]
+}

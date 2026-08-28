@@ -1,0 +1,94 @@
+/* =====================================================================
+   Shared symbol styling — used by both the editor canvas and the
+   runtime app shell so a screen renders identically in both.
+   Colour tokens come from the host page's :root.
+   ===================================================================== */
+
+.el { position: absolute; }
+
+.s-rect { width: 100%; height: 100%; }
+
+.s-line { width: 100%; height: 100%; display: block; overflow: visible; }
+
+.s-text {
+  width: 100%; height: 100%;
+  display: flex; align-items: center;
+  white-space: pre; overflow: hidden;
+}
+
+.s-readout {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding: 0 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.s-led { width: 100%; height: 100%; }
+
+.s-pump {
+  width: 100%; height: 100%; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.s-pump .tri {
+  width: 0; height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.s-valve {
+  width: 100%; height: 100%;
+  clip-path: polygon(0 0, 50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0%);
+}
+
+.s-tank { width: 100%; height: 100%; position: relative; overflow: hidden; }
+.s-tank .roof {
+  height: 22%; background: var(--vessel, #c7ccd1);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  margin: 0 auto; width: 72%;
+}
+.s-tank .fillbar {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: var(--blue, #3f8fce); opacity: .5;
+}
+.s-tank .cap {
+  position: absolute; left: 0; right: 0; bottom: 2px;
+  text-align: center; font-size: 9px; color: var(--text-dim, #7c8896);
+}
+
+.s-engine {
+  width: 100%; height: 100%; border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700;
+}
+
+.s-turbo {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-around;
+  border-radius: 3px; padding: 2px;
+}
+.s-turbo i {
+  width: 70%; height: 42%; border-radius: 50%;
+  border: 1px solid #5a6068; display: block;
+}
+
+.s-brk { width: 100%; height: 100%; }
+
+.s-btn {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+
+/* A readout in alarm pulses so it reads at a glance across the room. */
+.el[data-alarm="shutdown"] .s-readout,
+.el[data-alarm="hihi"] .s-readout,
+.el[data-alarm="lolo"] .s-readout { animation: scada-alarm-pulse 1.1s ease-in-out infinite; }
+
+@keyframes scada-alarm-pulse {
+  0%, 100% { filter: none; }
+  50%      { filter: brightness(1.35); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .el[data-alarm] .s-readout { animation: none; }
+}

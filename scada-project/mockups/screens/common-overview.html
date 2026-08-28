@@ -44,7 +44,8 @@
   /* canvas */
   .canvas{height:calc(100% - 32px - 26px - 26px - 24px);padding:12px 16px;display:flex;gap:0;position:relative;overflow:auto;background:var(--bg-app);}
   html.embed .topbar, html.embed .unitbar, html.embed .pagebar { display:none; }
-  html.embed .canvas { height: calc(100% - 24px); }
+  html.embed .statusbar { display:none; }
+  html.embed .canvas { height: 100%; }
   .zone{border-right:1px dashed var(--border-light);padding:18px 0 10px 0;position:relative;flex:none;}
   .zone:last-child{border-right:none;flex:1;}
   .zone-label{position:absolute;top:-2px;left:6px;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;background:var(--bg-app);padding:0 4px;z-index:3;}

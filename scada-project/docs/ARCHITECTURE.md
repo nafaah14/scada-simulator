@@ -65,6 +65,34 @@ shared symbol bound to one tag ID, reused across screens, makes this class
 of bug structurally harder to introduce — Claude Code should reconcile
 these two pairs during backend wiring.
 
+## Status: the backend phase has started
+
+Built and working end to end:
+
+- `server/` — Express + WebSocket. Tag service, tick-loop simulation, alarm
+  engine with the WOIS active/returned/acknowledged lifecycle, and a
+  file-backed screen store. See `server/README.md`.
+- `shared/renderer.js` — **one** renderer used by both the app shell and the
+  editor, so a screen looks identical in both. Screens are canvas JSON
+  documents (`layout: "canvas"`), a flat paint-ordered element list.
+- `shared/store.js` — data access with automatic **live / static** fallback, so
+  the same pages work with or without the server running (GitHub Pages included).
+- `editor/` — canvas layout editor. Saves through the API into
+  `data/screens-v2/`, so a layout change is a reviewable git diff.
+- `G1.Temp` is fully ported: JSON screen + ~144 runtime tags + live simulation
+  + clickable sensor popup with editable limits.
+
+The remaining screens (`Common.Overview`, `Common.Fuel`, `G1.Fuel`,
+`G4.Control`) still render as legacy standalone HTML in an iframe and are not
+tag-driven. The shell's registry takes either form, so they can be ported one
+at a time.
+
+**Note on the frontend stack:** the handoff brief preferred React + Vite. We
+stayed with vanilla JS because the renderer was already built and approved,
+and because avoiding a build step keeps the static GitHub Pages deploy working
+from a plain `git push`. Screens being *data* means adding one is writing JSON,
+not writing components — which was the brief's actual goal.
+
 ## What's built so far (mockup phase — done in chat)
 
 - `mockups/screens/g4-control.html` — full G4 Control page, standalone,
