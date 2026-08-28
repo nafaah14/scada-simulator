@@ -114,6 +114,26 @@
       style: { fill: '#2fa84f', stroke: '#1c6b32', strokeWidth: 1 },
       fields: ['breakerState', 'strokeWidth']
     },
+    /* Switchgear primitives — these repeat dozens of times on a
+       single-line diagram, so they are symbols rather than drawings. */
+    relay: {
+      label: 'Relay / meter', group: 'Symbols', w: 38, h: 46, bind: true,
+      props: { kind: 'relay' },
+      style: { fill: '#c9ced3', stroke: '#3d4349', strokeWidth: 1 },
+      fields: ['relayKind', 'fill', 'stroke']
+    },
+    transformer: {
+      label: 'Transformer', group: 'Symbols', w: 40, h: 58,
+      props: { windings: 2 },
+      style: { stroke: '#3d4349', strokeWidth: 2, fill: 'transparent' },
+      fields: ['stroke', 'strokeWidth', 'fill']
+    },
+    isolator: {
+      label: 'Isolator / earth', group: 'Symbols', w: 30, h: 32, bind: true,
+      props: { closed: false, earth: true },
+      style: { stroke: '#3d4349', strokeWidth: 2 },
+      fields: ['closed', 'earth', 'stroke', 'strokeWidth']
+    },
     gauge: {
       label: 'Gauge bar', group: 'Symbols', w: 26, h: 90, bind: true,
       props: { min: 0, max: 100, value: 60, orientation: 'vertical', marker: null },
@@ -593,6 +613,79 @@
         d.title = 'Breaker — ' + b.label;
         break;
       }
+      /* Protection relay / power meter face. */
+      case 'relay': {
+        const svg = svgEl('svg', {
+          class: 's-shape', viewBox: '0 0 100 120',
+          preserveAspectRatio: 'none', width: '100%', height: '100%'
+        });
+        const fill = s.fill || '#c9ced3', stroke = s.stroke || '#3d4349';
+        const line = { stroke, 'stroke-width': 2, 'vector-effect': 'non-scaling-stroke' };
+        svg.appendChild(svgEl('rect', { x: 3, y: 3, width: 94, height: 114,
+          fill, ...line }));
+        svg.appendChild(svgEl('rect', { x: 12, y: 14, width: 76, height: 34,
+          fill: '#eceff1', ...line }));
+        // keypad — a meter has more buttons than a protection relay
+        const cols = p.kind === 'meter' ? 4 : 3;
+        for (let r = 0; r < 2; r++) {
+          for (let c = 0; c < cols; c++) {
+            svg.appendChild(svgEl('rect', {
+              x: 14 + c * (74 / cols), y: 58 + r * 26,
+              width: 74 / cols - 8, height: 18,
+              fill: '#8a929b', stroke, 'stroke-width': 1,
+              'vector-effect': 'non-scaling-stroke'
+            }));
+          }
+        }
+        d.appendChild(svg); break;
+      }
+
+      /* Two-winding transformer. */
+      case 'transformer': {
+        const svg = svgEl('svg', {
+          class: 's-shape', viewBox: '0 0 100 140',
+          preserveAspectRatio: 'none', width: '100%', height: '100%'
+        });
+        const attrs = {
+          fill: s.fill && s.fill !== 'transparent' ? s.fill : 'none',
+          stroke: s.stroke || '#3d4349',
+          'stroke-width': s.strokeWidth || 2,
+          'vector-effect': 'non-scaling-stroke'
+        };
+        svg.appendChild(svgEl('circle', { cx: 50, cy: 44, r: 40, ...attrs }));
+        svg.appendChild(svgEl('circle', { cx: 50, cy: 96, r: 40, ...attrs }));
+        d.appendChild(svg); break;
+      }
+
+      /* Isolator with its earthing switch — open blade unless closed. */
+      case 'isolator': {
+        const svg = svgEl('svg', {
+          class: 's-shape', viewBox: '0 0 100 100',
+          preserveAspectRatio: 'none', width: '100%', height: '100%'
+        });
+        const closed = resolveBool(el, tags, p.closed, opts);
+        const line = {
+          stroke: s.stroke || '#3d4349', 'stroke-width': s.strokeWidth || 2,
+          'vector-effect': 'non-scaling-stroke', fill: 'none'
+        };
+        svg.appendChild(svgEl('line', { x1: 20, y1: 0, x2: 20, y2: 32, ...line }));
+        // the blade stands off when open, meets the contact when closed
+        svg.appendChild(svgEl('line', {
+          x1: 20, y1: 32, x2: closed ? 20 : 56, y2: closed ? 74 : 34, ...line
+        }));
+        svg.appendChild(svgEl('line', { x1: 6, y1: 74, x2: 34, y2: 74, ...line }));
+        svg.appendChild(svgEl('line', { x1: 20, y1: 74, x2: 20, y2: 100, ...line }));
+        if (p.earth !== false) {
+          svg.appendChild(svgEl('line', { x1: 60, y1: 52, x2: 92, y2: 52, ...line }));
+          svg.appendChild(svgEl('line', { x1: 66, y1: 62, x2: 86, y2: 62, ...line }));
+          svg.appendChild(svgEl('line', { x1: 72, y1: 72, x2: 80, y2: 72, ...line }));
+          svg.appendChild(svgEl('line', { x1: 76, y1: 34, x2: 76, y2: 52, ...line }));
+        }
+        d.appendChild(svg);
+        d.dataset.state = closed ? 'closed' : 'open';
+        break;
+      }
+
       case 'gauge': {
         const i = div('s-gauge');
         i.style.background = 'var(--bg-field)';

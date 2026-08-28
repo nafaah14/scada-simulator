@@ -659,6 +659,11 @@ function buildField(el, f){
                            ['triangle-up','Triangle ▲'],['triangle-down','Triangle ▼'],
                            ['triangle-right','Triangle ▶'],['triangle-left','Triangle ◀']],
                           p.kind||'exchanger', set(p,'kind')));
+    case 'relayKind':   return field('Device', selectInput(
+                          [['relay','Protection relay'],['meter','Power meter']],
+                          p.kind||'relay', set(p,'kind')));
+    case 'earth':       return checkbox('Earthing switch', p.earth !== false,
+                          set(p,'earth'));
     case 'arrowDir':    return field('Direction', selectInput(
                           [['right','▶ right'],['left','◀ left'],
                            ['up','▲ up'],['down','▼ down']],

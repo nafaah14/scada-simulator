@@ -23,6 +23,7 @@ import { g1Exhaust } from './screens/g1-exhaust.mjs';
 import { commonOverview } from './screens/common-overview.mjs';
 import { commonFuel } from './screens/common-fuel.mjs';
 import { commonStartAir } from './screens/common-startair.mjs';
+import { commonElectrical1, commonElectrical2 } from './screens/common-electrical.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', 'data', 'screens-v2');
@@ -30,6 +31,8 @@ mkdirSync(OUT, { recursive: true });
 
 const ALL = [
   commonOverview(),
+  commonElectrical1(),
+  commonElectrical2(),
   commonFuel(),
   commonStartAir(),
   g1Temp(),

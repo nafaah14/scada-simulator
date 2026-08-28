@@ -1,0 +1,6229 @@
+{
+  "screen_id": "Common.Electrical1",
+  "title": "Common — Electrical 1 (Busbar 2)",
+  "unit": "COMMON",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1900,
+    "height": 1060,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "x": 20,
+      "y": 20,
+      "w": 66,
+      "h": 48,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#a80c0c",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Control panel CFA 901"
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "x": 22,
+      "y": 26,
+      "w": 62,
+      "h": 36,
+      "props": {
+        "text": "Control\nPanel\nCFA 901"
+      },
+      "style": {
+        "color": "#ffffff",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "x": 20,
+      "y": 78,
+      "w": 66,
+      "h": 48,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#a80c0c",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Control panel CFA 902"
+    },
+    {
+      "id": "s4",
+      "type": "text",
+      "x": 22,
+      "y": 84,
+      "w": 62,
+      "h": 36,
+      "props": {
+        "text": "Control\nPanel\nCFA 902"
+      },
+      "style": {
+        "color": "#ffffff",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "x": 24,
+      "y": 146,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s6",
+      "type": "text",
+      "x": 46,
+      "y": 145,
+      "w": 230,
+      "h": 13,
+      "props": {
+        "text": "MV-swg 2 MCM opn ctrl"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "x": 24,
+      "y": 170,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s8",
+      "type": "text",
+      "x": 46,
+      "y": 169,
+      "w": 230,
+      "h": 13,
+      "props": {
+        "text": "Parallel with grid"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s9",
+      "type": "led",
+      "x": 24,
+      "y": 194,
+      "w": 13,
+      "h": 13,
+      "bind": {
+        "value": "COMMON_BB2_ST2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s10",
+      "type": "text",
+      "x": 46,
+      "y": 193,
+      "w": 230,
+      "h": 13,
+      "props": {
+        "text": "Voltage on"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "x": 24,
+      "y": 218,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s12",
+      "type": "text",
+      "x": 46,
+      "y": 217,
+      "w": 230,
+      "h": 13,
+      "props": {
+        "text": "Remote sync. request"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s13",
+      "type": "led",
+      "x": 24,
+      "y": 242,
+      "w": 13,
+      "h": 13,
+      "bind": {
+        "value": "COMMON_BB2_ST4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s14",
+      "type": "text",
+      "x": 46,
+      "y": 241,
+      "w": 230,
+      "h": 13,
+      "props": {
+        "text": "Parallel with Male"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s15",
+      "type": "text",
+      "x": 290,
+      "y": 22,
+      "w": 132,
+      "h": 22,
+      "props": {
+        "text": "Interconnection\nPhase 2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s16",
+      "type": "text",
+      "x": 290,
+      "y": 44,
+      "w": 132,
+      "h": 13,
+      "props": {
+        "text": "BAO912"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s17",
+      "type": "led",
+      "x": 294,
+      "y": 60,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO912_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s18",
+      "type": "text",
+      "x": 311,
+      "y": 59,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s19",
+      "type": "led",
+      "x": 294,
+      "y": 77,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO912_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s20",
+      "type": "text",
+      "x": 311,
+      "y": 76,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s21",
+      "type": "led",
+      "x": 294,
+      "y": 94,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO912_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s22",
+      "type": "text",
+      "x": 311,
+      "y": 93,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s23",
+      "type": "led",
+      "x": 294,
+      "y": 111,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO912_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s24",
+      "type": "text",
+      "x": 311,
+      "y": 110,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s25",
+      "type": "readout",
+      "x": 298,
+      "y": 132,
+      "w": 112,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO912_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s26",
+      "type": "relay",
+      "x": 296,
+      "y": 158,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO912 P127"
+    },
+    {
+      "id": "s27",
+      "type": "text",
+      "x": 292,
+      "y": 148,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s28",
+      "type": "isolator",
+      "x": 342,
+      "y": 152,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAO912_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s29",
+      "type": "text",
+      "x": 288,
+      "y": 202,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s30",
+      "type": "relay",
+      "x": 292,
+      "y": 212,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO912 PM5560"
+    },
+    {
+      "id": "s31",
+      "type": "pipe",
+      "x": 349,
+      "y": 182,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s32",
+      "type": "breaker",
+      "x": 339,
+      "y": 216,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO912_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO912_CB"
+    },
+    {
+      "id": "s33",
+      "type": "pipe",
+      "x": 349,
+      "y": 238,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s34",
+      "type": "text",
+      "x": 438,
+      "y": 22,
+      "w": 132,
+      "h": 22,
+      "props": {
+        "text": "Outgoing feeder 1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "x": 438,
+      "y": 44,
+      "w": 132,
+      "h": 13,
+      "props": {
+        "text": "BAO911"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s36",
+      "type": "led",
+      "x": 442,
+      "y": 60,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO911_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s37",
+      "type": "text",
+      "x": 459,
+      "y": 59,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s38",
+      "type": "led",
+      "x": 442,
+      "y": 77,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO911_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s39",
+      "type": "text",
+      "x": 459,
+      "y": 76,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s40",
+      "type": "led",
+      "x": 442,
+      "y": 94,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO911_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s41",
+      "type": "text",
+      "x": 459,
+      "y": 93,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s42",
+      "type": "led",
+      "x": 442,
+      "y": 111,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO911_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s43",
+      "type": "text",
+      "x": 459,
+      "y": 110,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s44",
+      "type": "readout",
+      "x": 446,
+      "y": 132,
+      "w": 112,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO911_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s45",
+      "type": "relay",
+      "x": 444,
+      "y": 158,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO911 P127"
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "x": 440,
+      "y": 148,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s47",
+      "type": "isolator",
+      "x": 490,
+      "y": 152,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAO911_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s48",
+      "type": "text",
+      "x": 436,
+      "y": 202,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s49",
+      "type": "relay",
+      "x": 440,
+      "y": 212,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO911 PM5560"
+    },
+    {
+      "id": "s50",
+      "type": "pipe",
+      "x": 497,
+      "y": 182,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s51",
+      "type": "breaker",
+      "x": 487,
+      "y": 216,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO911_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO911_CB"
+    },
+    {
+      "id": "s52",
+      "type": "pipe",
+      "x": 497,
+      "y": 238,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s53",
+      "type": "text",
+      "x": 586,
+      "y": 22,
+      "w": 132,
+      "h": 22,
+      "props": {
+        "text": "Outgoing feeder 2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s54",
+      "type": "text",
+      "x": 586,
+      "y": 44,
+      "w": 132,
+      "h": 13,
+      "props": {
+        "text": "BAO910"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s55",
+      "type": "led",
+      "x": 590,
+      "y": 60,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO910_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s56",
+      "type": "text",
+      "x": 607,
+      "y": 59,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s57",
+      "type": "led",
+      "x": 590,
+      "y": 77,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO910_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s58",
+      "type": "text",
+      "x": 607,
+      "y": 76,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s59",
+      "type": "led",
+      "x": 590,
+      "y": 94,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO910_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s60",
+      "type": "text",
+      "x": 607,
+      "y": 93,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s61",
+      "type": "led",
+      "x": 590,
+      "y": 111,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO910_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s62",
+      "type": "text",
+      "x": 607,
+      "y": 110,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s63",
+      "type": "readout",
+      "x": 594,
+      "y": 132,
+      "w": 112,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO910_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s64",
+      "type": "relay",
+      "x": 592,
+      "y": 158,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO910 P127"
+    },
+    {
+      "id": "s65",
+      "type": "text",
+      "x": 588,
+      "y": 148,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s66",
+      "type": "isolator",
+      "x": 638,
+      "y": 152,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAO910_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s67",
+      "type": "text",
+      "x": 584,
+      "y": 202,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s68",
+      "type": "relay",
+      "x": 588,
+      "y": 212,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO910 PM5560"
+    },
+    {
+      "id": "s69",
+      "type": "pipe",
+      "x": 645,
+      "y": 182,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s70",
+      "type": "breaker",
+      "x": 635,
+      "y": 216,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO910_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO910_CB"
+    },
+    {
+      "id": "s71",
+      "type": "pipe",
+      "x": 645,
+      "y": 238,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s72",
+      "type": "text",
+      "x": 734,
+      "y": 22,
+      "w": 132,
+      "h": 22,
+      "props": {
+        "text": "Outgoing feeder 3"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s73",
+      "type": "text",
+      "x": 734,
+      "y": 44,
+      "w": 132,
+      "h": 13,
+      "props": {
+        "text": "BAO909"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s74",
+      "type": "led",
+      "x": 738,
+      "y": 60,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO909_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s75",
+      "type": "text",
+      "x": 755,
+      "y": 59,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s76",
+      "type": "led",
+      "x": 738,
+      "y": 77,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO909_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s77",
+      "type": "text",
+      "x": 755,
+      "y": 76,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s78",
+      "type": "led",
+      "x": 738,
+      "y": 94,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO909_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s79",
+      "type": "text",
+      "x": 755,
+      "y": 93,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s80",
+      "type": "led",
+      "x": 738,
+      "y": 111,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO909_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s81",
+      "type": "text",
+      "x": 755,
+      "y": 110,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s82",
+      "type": "readout",
+      "x": 742,
+      "y": 132,
+      "w": 112,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO909_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s83",
+      "type": "relay",
+      "x": 740,
+      "y": 158,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO909 P127"
+    },
+    {
+      "id": "s84",
+      "type": "text",
+      "x": 736,
+      "y": 148,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s85",
+      "type": "isolator",
+      "x": 786,
+      "y": 152,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAO909_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s86",
+      "type": "text",
+      "x": 732,
+      "y": 202,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s87",
+      "type": "relay",
+      "x": 736,
+      "y": 212,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO909 PM5560"
+    },
+    {
+      "id": "s88",
+      "type": "pipe",
+      "x": 793,
+      "y": 182,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s89",
+      "type": "breaker",
+      "x": 783,
+      "y": 216,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO909_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO909_CB"
+    },
+    {
+      "id": "s90",
+      "type": "pipe",
+      "x": 793,
+      "y": 238,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s91",
+      "type": "text",
+      "x": 882,
+      "y": 22,
+      "w": 132,
+      "h": 22,
+      "props": {
+        "text": "Outgoing feeder 4"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s92",
+      "type": "text",
+      "x": 882,
+      "y": 44,
+      "w": 132,
+      "h": 13,
+      "props": {
+        "text": "BAO908"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s93",
+      "type": "led",
+      "x": 886,
+      "y": 60,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO908_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s94",
+      "type": "text",
+      "x": 903,
+      "y": 59,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s95",
+      "type": "led",
+      "x": 886,
+      "y": 77,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO908_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s96",
+      "type": "text",
+      "x": 903,
+      "y": 76,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s97",
+      "type": "led",
+      "x": 886,
+      "y": 94,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO908_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s98",
+      "type": "text",
+      "x": 903,
+      "y": 93,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s99",
+      "type": "led",
+      "x": 886,
+      "y": 111,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO908_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s100",
+      "type": "text",
+      "x": 903,
+      "y": 110,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s101",
+      "type": "readout",
+      "x": 890,
+      "y": 132,
+      "w": 112,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO908_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s102",
+      "type": "relay",
+      "x": 888,
+      "y": 158,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO908 P127"
+    },
+    {
+      "id": "s103",
+      "type": "text",
+      "x": 884,
+      "y": 148,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s104",
+      "type": "isolator",
+      "x": 934,
+      "y": 152,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAO908_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s105",
+      "type": "text",
+      "x": 880,
+      "y": 202,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s106",
+      "type": "relay",
+      "x": 884,
+      "y": 212,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO908 PM5560"
+    },
+    {
+      "id": "s107",
+      "type": "pipe",
+      "x": 941,
+      "y": 182,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s108",
+      "type": "breaker",
+      "x": 931,
+      "y": 216,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO908_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO908_CB"
+    },
+    {
+      "id": "s109",
+      "type": "pipe",
+      "x": 941,
+      "y": 238,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s110",
+      "type": "text",
+      "x": 1030,
+      "y": 22,
+      "w": 132,
+      "h": 22,
+      "props": {
+        "text": "Outgoing feeder 5"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s111",
+      "type": "text",
+      "x": 1030,
+      "y": 44,
+      "w": 132,
+      "h": 13,
+      "props": {
+        "text": "BAO907"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s112",
+      "type": "led",
+      "x": 1034,
+      "y": 60,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO907_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s113",
+      "type": "text",
+      "x": 1051,
+      "y": 59,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s114",
+      "type": "led",
+      "x": 1034,
+      "y": 77,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO907_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s115",
+      "type": "text",
+      "x": 1051,
+      "y": 76,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s116",
+      "type": "led",
+      "x": 1034,
+      "y": 94,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO907_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s117",
+      "type": "text",
+      "x": 1051,
+      "y": 93,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s118",
+      "type": "led",
+      "x": 1034,
+      "y": 111,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAO907_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s119",
+      "type": "text",
+      "x": 1051,
+      "y": 110,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s120",
+      "type": "readout",
+      "x": 1038,
+      "y": 132,
+      "w": 112,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO907_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s121",
+      "type": "relay",
+      "x": 1036,
+      "y": 158,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO907 P127"
+    },
+    {
+      "id": "s122",
+      "type": "text",
+      "x": 1032,
+      "y": 148,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s123",
+      "type": "isolator",
+      "x": 1082,
+      "y": 152,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAO907_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s124",
+      "type": "text",
+      "x": 1028,
+      "y": 202,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s125",
+      "type": "relay",
+      "x": 1032,
+      "y": 212,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO907 PM5560"
+    },
+    {
+      "id": "s126",
+      "type": "pipe",
+      "x": 1089,
+      "y": 182,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s127",
+      "type": "breaker",
+      "x": 1079,
+      "y": 216,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAO907_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAO907_CB"
+    },
+    {
+      "id": "s128",
+      "type": "pipe",
+      "x": 1089,
+      "y": 238,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s129",
+      "type": "transformer",
+      "x": 1176,
+      "y": 178,
+      "w": 44,
+      "h": 62,
+      "props": {
+        "windings": 2
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2,
+        "fill": "transparent"
+      },
+      "name": "AET 902"
+    },
+    {
+      "id": "s130",
+      "type": "text",
+      "x": 1230,
+      "y": 188,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "AET 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s131",
+      "type": "text",
+      "x": 1230,
+      "y": 202,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "132 kV"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s132",
+      "type": "text",
+      "x": 1230,
+      "y": 216,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "11 kV"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s133",
+      "type": "pipe",
+      "x": 1197,
+      "y": 240,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s134",
+      "type": "pipe",
+      "x": 1198,
+      "y": 279,
+      "w": 260,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s135",
+      "type": "pipe",
+      "x": 1197,
+      "y": 280,
+      "w": 2,
+      "h": 26,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s136",
+      "type": "pipe",
+      "x": 1457,
+      "y": 280,
+      "w": 2,
+      "h": 26,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s137",
+      "type": "relay",
+      "x": 1152,
+      "y": 300,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAI902_A P127"
+    },
+    {
+      "id": "s138",
+      "type": "text",
+      "x": 1148,
+      "y": 290,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s139",
+      "type": "isolator",
+      "x": 1204,
+      "y": 296,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAI902_A_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s140",
+      "type": "breaker",
+      "x": 1187,
+      "y": 356,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAI902_A_CB"
+      },
+      "props": {
+        "state": "closed"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAI902_A_CB"
+    },
+    {
+      "id": "s141",
+      "type": "pipe",
+      "x": 1197,
+      "y": 326,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s142",
+      "type": "pipe",
+      "x": 1197,
+      "y": 378,
+      "w": 2,
+      "h": 42,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s143",
+      "type": "readout",
+      "x": 1138,
+      "y": 432,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BAI902_A_CURRENT"
+      },
+      "props": {
+        "text": "350 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s144",
+      "type": "led",
+      "x": 1140,
+      "y": 466,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_A_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s145",
+      "type": "text",
+      "x": 1157,
+      "y": 465,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s146",
+      "type": "led",
+      "x": 1140,
+      "y": 483,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_A_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s147",
+      "type": "text",
+      "x": 1157,
+      "y": 482,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s148",
+      "type": "led",
+      "x": 1140,
+      "y": 500,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_A_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s149",
+      "type": "text",
+      "x": 1157,
+      "y": 499,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s150",
+      "type": "led",
+      "x": 1140,
+      "y": 517,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_A_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s151",
+      "type": "text",
+      "x": 1157,
+      "y": 516,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s152",
+      "type": "relay",
+      "x": 1412,
+      "y": 300,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAI902_B P127"
+    },
+    {
+      "id": "s153",
+      "type": "text",
+      "x": 1408,
+      "y": 290,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s154",
+      "type": "isolator",
+      "x": 1464,
+      "y": 296,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BAI902_B_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s155",
+      "type": "breaker",
+      "x": 1447,
+      "y": 356,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BAI902_B_CB"
+      },
+      "props": {
+        "state": "closed"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BAI902_B_CB"
+    },
+    {
+      "id": "s156",
+      "type": "pipe",
+      "x": 1457,
+      "y": 326,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s157",
+      "type": "pipe",
+      "x": 1457,
+      "y": 378,
+      "w": 2,
+      "h": 42,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s158",
+      "type": "readout",
+      "x": 1398,
+      "y": 432,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BAI902_B_CURRENT"
+      },
+      "props": {
+        "text": "362 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s159",
+      "type": "led",
+      "x": 1400,
+      "y": 466,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_B_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s160",
+      "type": "text",
+      "x": 1417,
+      "y": 465,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s161",
+      "type": "led",
+      "x": 1400,
+      "y": 483,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_B_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s162",
+      "type": "text",
+      "x": 1417,
+      "y": 482,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s163",
+      "type": "led",
+      "x": 1400,
+      "y": 500,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_B_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s164",
+      "type": "text",
+      "x": 1417,
+      "y": 499,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s165",
+      "type": "led",
+      "x": 1400,
+      "y": 517,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BAI902_B_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s166",
+      "type": "text",
+      "x": 1417,
+      "y": 516,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s167",
+      "type": "rect",
+      "x": 1610,
+      "y": 20,
+      "w": 250,
+      "h": 232,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Soft energizing"
+    },
+    {
+      "id": "s168",
+      "type": "text",
+      "x": 1620,
+      "y": 30,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "Soft energizing"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s169",
+      "type": "shape",
+      "x": 1828,
+      "y": 28,
+      "w": 18,
+      "h": 18,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s170",
+      "type": "text",
+      "x": 1828,
+      "y": 32,
+      "w": 18,
+      "h": 13,
+      "props": {
+        "text": "S"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s171",
+      "type": "rect",
+      "x": 1622,
+      "y": 56,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s172",
+      "type": "text",
+      "x": 1642,
+      "y": 56,
+      "w": 210,
+      "h": 13,
+      "props": {
+        "text": "AET902 soft energizing request"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s173",
+      "type": "rect",
+      "x": 1622,
+      "y": 80,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s174",
+      "type": "text",
+      "x": 1642,
+      "y": 80,
+      "w": 210,
+      "h": 13,
+      "props": {
+        "text": "AET902 soft energizing enabled"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s175",
+      "type": "text",
+      "x": 1620,
+      "y": 112,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "Busbar B"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s176",
+      "type": "rect",
+      "x": 1622,
+      "y": 134,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s177",
+      "type": "text",
+      "x": 1642,
+      "y": 134,
+      "w": 210,
+      "h": 13,
+      "props": {
+        "text": "Soft energizing conditions"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s178",
+      "type": "rect",
+      "x": 1622,
+      "y": 158,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s179",
+      "type": "text",
+      "x": 1642,
+      "y": 158,
+      "w": 210,
+      "h": 13,
+      "props": {
+        "text": "Soft energizing active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s180",
+      "type": "text",
+      "x": 1620,
+      "y": 188,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "Busbar A&B"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s181",
+      "type": "rect",
+      "x": 1622,
+      "y": 210,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s182",
+      "type": "text",
+      "x": 1642,
+      "y": 210,
+      "w": 210,
+      "h": 13,
+      "props": {
+        "text": "Soft energising conditions"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s183",
+      "type": "rect",
+      "x": 1622,
+      "y": 234,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s184",
+      "type": "text",
+      "x": 1642,
+      "y": 234,
+      "w": 210,
+      "h": 13,
+      "props": {
+        "text": "Soft energising active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s185",
+      "type": "pipe",
+      "x": 0,
+      "y": 418.5,
+      "w": 1880,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s186",
+      "type": "text",
+      "x": 14,
+      "y": 392,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Busbar 2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s187",
+      "type": "text",
+      "x": 1780,
+      "y": 406,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "BAB902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s188",
+      "type": "arrow",
+      "x": 1758,
+      "y": 413,
+      "w": 14,
+      "h": 14,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s189",
+      "type": "relay",
+      "x": 150,
+      "y": 452,
+      "w": 34,
+      "h": 42,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BFB902 P127"
+    },
+    {
+      "id": "s190",
+      "type": "text",
+      "x": 146,
+      "y": 442,
+      "w": 42,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s191",
+      "type": "text",
+      "x": 142,
+      "y": 496,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s192",
+      "type": "relay",
+      "x": 146,
+      "y": 506,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BFB902 PM5560"
+    },
+    {
+      "id": "s193",
+      "type": "pipe",
+      "x": 219,
+      "y": 420,
+      "w": 2,
+      "h": 26,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s194",
+      "type": "breaker",
+      "x": 209,
+      "y": 446,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BFB902_CB"
+      },
+      "props": {
+        "state": "closed"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BFB902_CB"
+    },
+    {
+      "id": "s195",
+      "type": "isolator",
+      "x": 244,
+      "y": 442,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_BFB902_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s196",
+      "type": "readout",
+      "x": 36,
+      "y": 496,
+      "w": 104,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BFB902_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s197",
+      "type": "led",
+      "x": 300,
+      "y": 446,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BFB902_L1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s198",
+      "type": "text",
+      "x": 317,
+      "y": 445,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s199",
+      "type": "led",
+      "x": 300,
+      "y": 463,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BFB902_L2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s200",
+      "type": "text",
+      "x": 317,
+      "y": 462,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s201",
+      "type": "led",
+      "x": 300,
+      "y": 480,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BFB902_L3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s202",
+      "type": "text",
+      "x": 317,
+      "y": 479,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "TRP circ. health."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s203",
+      "type": "led",
+      "x": 300,
+      "y": 497,
+      "w": 11,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_BFB902_L4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": "#2fa84f",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s204",
+      "type": "text",
+      "x": 317,
+      "y": 496,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "CB Avail."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s205",
+      "type": "pipe",
+      "x": 219,
+      "y": 468,
+      "w": 2,
+      "h": 138,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s206",
+      "type": "transformer",
+      "x": 198,
+      "y": 606,
+      "w": 44,
+      "h": 62,
+      "props": {
+        "windings": 2
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2,
+        "fill": "transparent"
+      },
+      "name": "BFB 902"
+    },
+    {
+      "id": "s207",
+      "type": "text",
+      "x": 252,
+      "y": 610,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "BFB 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s208",
+      "type": "text",
+      "x": 252,
+      "y": 624,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "11 kV"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s209",
+      "type": "text",
+      "x": 252,
+      "y": 638,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "400 V"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s210",
+      "type": "led",
+      "x": 200,
+      "y": 682,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BFB902_VOLTAGE"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s211",
+      "type": "text",
+      "x": 220,
+      "y": 681,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Voltage on"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s212",
+      "type": "pipe",
+      "x": 219,
+      "y": 668,
+      "w": 2,
+      "h": 66,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s213",
+      "type": "breaker",
+      "x": 209,
+      "y": 734,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BFB902_LV_CB"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "COMMON_BFB902_LV_CB"
+    },
+    {
+      "id": "s214",
+      "type": "led",
+      "x": 254,
+      "y": 718,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BFB902_LV0"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s215",
+      "type": "text",
+      "x": 274,
+      "y": 717,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Selected to open"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s216",
+      "type": "led",
+      "x": 254,
+      "y": 738,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BFB902_LV1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s217",
+      "type": "text",
+      "x": 274,
+      "y": 737,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s218",
+      "type": "led",
+      "x": 254,
+      "y": 758,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BFB902_LV2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s219",
+      "type": "text",
+      "x": 274,
+      "y": 757,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s220",
+      "type": "led",
+      "x": 254,
+      "y": 778,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BFB902_LV3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s221",
+      "type": "text",
+      "x": 274,
+      "y": 777,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Rack in"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s222",
+      "type": "readout",
+      "x": 54,
+      "y": 738,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BFB902_LV_CURRENT"
+      },
+      "props": {
+        "text": "2 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s223",
+      "type": "shape",
+      "x": 212,
+      "y": 806,
+      "w": 18,
+      "h": 18,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s224",
+      "type": "text",
+      "x": 212,
+      "y": 810,
+      "w": 18,
+      "h": 13,
+      "props": {
+        "text": "S"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s225",
+      "type": "pipe",
+      "x": 519,
+      "y": 420,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s226",
+      "type": "breaker",
+      "x": 509,
+      "y": 454,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "G06_BREAKER_STATE"
+      },
+      "props": {
+        "state": "closed"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "G06_BREAKER_STATE"
+    },
+    {
+      "id": "s227",
+      "type": "isolator",
+      "x": 534,
+      "y": 450,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "G06_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s228",
+      "type": "pipe",
+      "x": 519,
+      "y": 476,
+      "w": 2,
+      "h": 26,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s229",
+      "type": "shape",
+      "x": 496,
+      "y": 502,
+      "w": 48,
+      "h": 48,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1d242b",
+        "strokeWidth": 2
+      },
+      "name": "G6"
+    },
+    {
+      "id": "s230",
+      "type": "text",
+      "x": 496,
+      "y": 516,
+      "w": 48,
+      "h": 13,
+      "props": {
+        "text": "G6"
+      },
+      "style": {
+        "color": "#ffffff",
+        "fontSize": 13,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s231",
+      "type": "pipe",
+      "x": 519,
+      "y": 550,
+      "w": 2,
+      "h": 22,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s232",
+      "type": "rect",
+      "x": 505,
+      "y": 572,
+      "w": 30,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "G6 NER"
+    },
+    {
+      "id": "s233",
+      "type": "pipe",
+      "x": 505,
+      "y": 584,
+      "w": 30,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s234",
+      "type": "pipe",
+      "x": 519,
+      "y": 598,
+      "w": 2,
+      "h": 24,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s235",
+      "type": "rect",
+      "x": 512,
+      "y": 622,
+      "w": 16,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s236",
+      "type": "pipe",
+      "x": 519,
+      "y": 648,
+      "w": 2,
+      "h": 14,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s237",
+      "type": "pipe",
+      "x": 506,
+      "y": 661,
+      "w": 28,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s238",
+      "type": "pipe",
+      "x": 510,
+      "y": 666,
+      "w": 20,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s239",
+      "type": "pipe",
+      "x": 514,
+      "y": 671,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s240",
+      "type": "readout",
+      "x": 460,
+      "y": 688,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G06_KW"
+      },
+      "props": {
+        "text": "7874 kW",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s241",
+      "type": "readout",
+      "x": 460,
+      "y": 713,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G06_KVAR"
+      },
+      "props": {
+        "text": "315 kVAr",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s242",
+      "type": "readout",
+      "x": 460,
+      "y": 738,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G06_PF"
+      },
+      "props": {
+        "text": "1.00",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s243",
+      "type": "readout",
+      "x": 460,
+      "y": 763,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G06_KW_SETPOINT"
+      },
+      "props": {
+        "text": "7585 kW",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s244",
+      "type": "readout",
+      "x": 460,
+      "y": 788,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G06_PF_SETPOINT"
+      },
+      "props": {
+        "text": "1.00",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s245",
+      "type": "pipe",
+      "x": 651,
+      "y": 420,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s246",
+      "type": "breaker",
+      "x": 641,
+      "y": 454,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "G05_BREAKER_STATE"
+      },
+      "props": {
+        "state": "closed"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "G05_BREAKER_STATE"
+    },
+    {
+      "id": "s247",
+      "type": "isolator",
+      "x": 666,
+      "y": 450,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "G05_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s248",
+      "type": "pipe",
+      "x": 651,
+      "y": 476,
+      "w": 2,
+      "h": 26,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s249",
+      "type": "shape",
+      "x": 628,
+      "y": 502,
+      "w": 48,
+      "h": 48,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1d242b",
+        "strokeWidth": 2
+      },
+      "name": "G5"
+    },
+    {
+      "id": "s250",
+      "type": "text",
+      "x": 628,
+      "y": 516,
+      "w": 48,
+      "h": 13,
+      "props": {
+        "text": "G5"
+      },
+      "style": {
+        "color": "#ffffff",
+        "fontSize": 13,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s251",
+      "type": "pipe",
+      "x": 651,
+      "y": 550,
+      "w": 2,
+      "h": 22,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s252",
+      "type": "rect",
+      "x": 637,
+      "y": 572,
+      "w": 30,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e5484d",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "G5 NER"
+    },
+    {
+      "id": "s253",
+      "type": "pipe",
+      "x": 637,
+      "y": 584,
+      "w": 30,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s254",
+      "type": "pipe",
+      "x": 651,
+      "y": 598,
+      "w": 2,
+      "h": 24,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s255",
+      "type": "rect",
+      "x": 644,
+      "y": 622,
+      "w": 16,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s256",
+      "type": "pipe",
+      "x": 651,
+      "y": 648,
+      "w": 2,
+      "h": 14,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s257",
+      "type": "pipe",
+      "x": 638,
+      "y": 661,
+      "w": 28,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s258",
+      "type": "pipe",
+      "x": 642,
+      "y": 666,
+      "w": 20,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s259",
+      "type": "pipe",
+      "x": 646,
+      "y": 671,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s260",
+      "type": "readout",
+      "x": 592,
+      "y": 688,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G05_KW"
+      },
+      "props": {
+        "text": "7938 kW",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s261",
+      "type": "readout",
+      "x": 592,
+      "y": 713,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G05_KVAR"
+      },
+      "props": {
+        "text": "299 kVAr",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s262",
+      "type": "readout",
+      "x": 592,
+      "y": 738,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G05_PF"
+      },
+      "props": {
+        "text": "1.00",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s263",
+      "type": "readout",
+      "x": 592,
+      "y": 763,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G05_KW_SETPOINT"
+      },
+      "props": {
+        "text": "6993 kW",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s264",
+      "type": "readout",
+      "x": 592,
+      "y": 788,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G05_PF_SETPOINT"
+      },
+      "props": {
+        "text": "1.00",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s265",
+      "type": "pipe",
+      "x": 783,
+      "y": 420,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s266",
+      "type": "breaker",
+      "x": 773,
+      "y": 454,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "G04_BREAKER_STATE"
+      },
+      "props": {
+        "state": "open"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "G04_BREAKER_STATE"
+    },
+    {
+      "id": "s267",
+      "type": "isolator",
+      "x": 798,
+      "y": 450,
+      "w": 28,
+      "h": 30,
+      "bind": {
+        "value": "G04_ISO"
+      },
+      "props": {
+        "closed": false,
+        "earth": true
+      },
+      "style": {
+        "stroke": "#3d4349",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s268",
+      "type": "pipe",
+      "x": 783,
+      "y": 476,
+      "w": 2,
+      "h": 26,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s269",
+      "type": "shape",
+      "x": 760,
+      "y": 502,
+      "w": 48,
+      "h": 48,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 2
+      },
+      "name": "G4"
+    },
+    {
+      "id": "s270",
+      "type": "text",
+      "x": 760,
+      "y": 516,
+      "w": 48,
+      "h": 13,
+      "props": {
+        "text": "G4"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 13,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s271",
+      "type": "pipe",
+      "x": 783,
+      "y": 550,
+      "w": 2,
+      "h": 22,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s272",
+      "type": "rect",
+      "x": 769,
+      "y": 572,
+      "w": 30,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "G4 NER"
+    },
+    {
+      "id": "s273",
+      "type": "pipe",
+      "x": 769,
+      "y": 584,
+      "w": 30,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s274",
+      "type": "pipe",
+      "x": 783,
+      "y": 598,
+      "w": 2,
+      "h": 24,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s275",
+      "type": "rect",
+      "x": 776,
+      "y": 622,
+      "w": 16,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s276",
+      "type": "pipe",
+      "x": 783,
+      "y": 648,
+      "w": 2,
+      "h": 14,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s277",
+      "type": "pipe",
+      "x": 770,
+      "y": 661,
+      "w": 28,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s278",
+      "type": "pipe",
+      "x": 774,
+      "y": 666,
+      "w": 20,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s279",
+      "type": "pipe",
+      "x": 778,
+      "y": 671,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s280",
+      "type": "readout",
+      "x": 724,
+      "y": 688,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G04_KW"
+      },
+      "props": {
+        "text": "0 kW",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s281",
+      "type": "readout",
+      "x": 724,
+      "y": 713,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G04_KVAR"
+      },
+      "props": {
+        "text": "0 kVAr",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s282",
+      "type": "readout",
+      "x": 724,
+      "y": 738,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G04_PF"
+      },
+      "props": {
+        "text": "1.00",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s283",
+      "type": "readout",
+      "x": 724,
+      "y": 763,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G04_KW_SETPOINT"
+      },
+      "props": {
+        "text": "6980 kW",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s284",
+      "type": "readout",
+      "x": 724,
+      "y": 788,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "G04_PF_SETPOINT"
+      },
+      "props": {
+        "text": "1.00",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s285",
+      "type": "rect",
+      "x": 900,
+      "y": 712,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s286",
+      "type": "text",
+      "x": 922,
+      "y": 711,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Synch. pulse G 4-6"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s287",
+      "type": "pipe",
+      "x": 959,
+      "y": 420,
+      "w": 2,
+      "h": 96,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s288",
+      "type": "arrow",
+      "x": 954,
+      "y": 522,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "dir": "down"
+      },
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s289",
+      "type": "text",
+      "x": 922,
+      "y": 548,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "BAM 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s290",
+      "type": "shape",
+      "x": 886,
+      "y": 570,
+      "w": 18,
+      "h": 18,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#eceff1",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s291",
+      "type": "text",
+      "x": 886,
+      "y": 574,
+      "w": 18,
+      "h": 13,
+      "props": {
+        "text": "S"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s292",
+      "type": "readout",
+      "x": 910,
+      "y": 566,
+      "w": 100,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BAM902_VOLTAGE"
+      },
+      "props": {
+        "text": "10.9 kV",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s293",
+      "type": "text",
+      "x": 906,
+      "y": 596,
+      "w": 50,
+      "h": 13,
+      "props": {
+        "text": "PM5560"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s294",
+      "type": "relay",
+      "x": 906,
+      "y": 606,
+      "w": 42,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "meter"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BAM902 PM5560"
+    },
+    {
+      "id": "s295",
+      "type": "text",
+      "x": 956,
+      "y": 596,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "P923"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 7.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s296",
+      "type": "relay",
+      "x": 956,
+      "y": 606,
+      "w": 38,
+      "h": 46,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "kind": "relay"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BAM902 P923"
+    },
+    {
+      "id": "s297",
+      "type": "rect",
+      "x": 1130,
+      "y": 650,
+      "w": 178,
+      "h": 128,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Synchronizer"
+    },
+    {
+      "id": "s298",
+      "type": "text",
+      "x": 1138,
+      "y": 658,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Synchronizer"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s299",
+      "type": "rect",
+      "x": 1140,
+      "y": 680,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s300",
+      "type": "text",
+      "x": 1158,
+      "y": 680,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Auto position"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s301",
+      "type": "rect",
+      "x": 1140,
+      "y": 700,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s302",
+      "type": "text",
+      "x": 1158,
+      "y": 700,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "On"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s303",
+      "type": "led",
+      "x": 1140,
+      "y": 724,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_SYNC_0"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s304",
+      "type": "text",
+      "x": 1158,
+      "y": 724,
+      "w": 140,
+      "h": 13,
+      "props": {
+        "text": "Isochronous mode"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s305",
+      "type": "led",
+      "x": 1140,
+      "y": 744,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_SYNC_1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s306",
+      "type": "text",
+      "x": 1158,
+      "y": 744,
+      "w": 140,
+      "h": 13,
+      "props": {
+        "text": "VDC control mode"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s307",
+      "type": "button",
+      "x": 1138,
+      "y": 768,
+      "w": 150,
+      "h": 30,
+      "props": {
+        "text": "Ctrl+Shift+B\nControl modes"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s308",
+      "type": "rect",
+      "x": 1316,
+      "y": 650,
+      "w": 232,
+      "h": 90,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Load shedding"
+    },
+    {
+      "id": "s309",
+      "type": "led",
+      "x": 1326,
+      "y": 660,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_LS_CONTROL_ACTIVE"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s310",
+      "type": "text",
+      "x": 1344,
+      "y": 660,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "LS Control active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s311",
+      "type": "rect",
+      "x": 1326,
+      "y": 684,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s312",
+      "type": "text",
+      "x": 1344,
+      "y": 684,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Load shedding stage 1 active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s313",
+      "type": "rect",
+      "x": 1326,
+      "y": 706,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s314",
+      "type": "text",
+      "x": 1344,
+      "y": 706,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Load shedding stage 2 active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s315",
+      "type": "button",
+      "x": 1324,
+      "y": 732,
+      "w": 150,
+      "h": 30,
+      "props": {
+        "text": "Ctrl+Shift+L\nLoad shedding"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s316",
+      "type": "pipe",
+      "x": 60,
+      "y": 898.5,
+      "w": 1800,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s317",
+      "type": "text",
+      "x": 90,
+      "y": 876,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "LV-SWG. Busbar 2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s318",
+      "type": "text",
+      "x": 1780,
+      "y": 886,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "BFA902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s319",
+      "type": "arrow",
+      "x": 1758,
+      "y": 893,
+      "w": 14,
+      "h": 14,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s320",
+      "type": "led",
+      "x": 420,
+      "y": 886,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_LV2_VOLTAGE"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s321",
+      "type": "text",
+      "x": 440,
+      "y": 885,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Voltage on"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s322",
+      "type": "pipe",
+      "x": 689,
+      "y": 900,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s323",
+      "type": "shape",
+      "x": 678,
+      "y": 930,
+      "w": 26,
+      "h": 26,
+      "props": {
+        "kind": "exchanger"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BEY 902"
+    },
+    {
+      "id": "s324",
+      "type": "text",
+      "x": 712,
+      "y": 934,
+      "w": 60,
+      "h": 13,
+      "props": {
+        "text": "BEY 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s325",
+      "type": "pipe",
+      "x": 689,
+      "y": 956,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s326",
+      "type": "arrow",
+      "x": 684,
+      "y": 986,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "dir": "down"
+      },
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s327",
+      "type": "readout",
+      "x": 644,
+      "y": 1006,
+      "w": 96,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BEY902_VOLTAGE"
+      },
+      "props": {
+        "text": "25 V",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s328",
+      "type": "readout",
+      "x": 848,
+      "y": 934,
+      "w": 116,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BLM901_CURRENT"
+      },
+      "props": {
+        "text": "0 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#dfe3e7",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s329",
+      "type": "breaker",
+      "x": 982,
+      "y": 934,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_BLM901_CB"
+      },
+      "props": {
+        "state": "closed"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s330",
+      "type": "pipe",
+      "x": 992,
+      "y": 900,
+      "w": 2,
+      "h": 34,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s331",
+      "type": "text",
+      "x": 912,
+      "y": 992,
+      "w": 60,
+      "h": 13,
+      "props": {
+        "text": "BLM 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s332",
+      "type": "pipe",
+      "x": 992,
+      "y": 956,
+      "w": 2,
+      "h": 60,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s333",
+      "type": "shape",
+      "x": 975,
+      "y": 1016,
+      "w": 36,
+      "h": 36,
+      "props": {
+        "kind": "circle"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 2
+      },
+      "name": "Standby generator"
+    },
+    {
+      "id": "s334",
+      "type": "text",
+      "x": 975,
+      "y": 1028,
+      "w": 36,
+      "h": 13,
+      "props": {
+        "text": "G"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s335",
+      "type": "text",
+      "x": 922,
+      "y": 1028,
+      "w": 46,
+      "h": 13,
+      "props": {
+        "text": "Local"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s336",
+      "type": "led",
+      "x": 1022,
+      "y": 924,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BLM901_ST0"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s337",
+      "type": "text",
+      "x": 1042,
+      "y": 923,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Voltage on"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s338",
+      "type": "led",
+      "x": 1022,
+      "y": 946,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BLM901_ST1"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s339",
+      "type": "text",
+      "x": 1042,
+      "y": 945,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Remote permit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s340",
+      "type": "led",
+      "x": 1022,
+      "y": 968,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BLM901_ST2"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s341",
+      "type": "text",
+      "x": 1042,
+      "y": 967,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s342",
+      "type": "led",
+      "x": 1022,
+      "y": 990,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BLM901_ST3"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s343",
+      "type": "text",
+      "x": 1042,
+      "y": 989,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Voltage on"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s344",
+      "type": "led",
+      "x": 1022,
+      "y": 1012,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BLM901_ST4"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s345",
+      "type": "text",
+      "x": 1042,
+      "y": 1011,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Standby ready"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s346",
+      "type": "rect",
+      "x": 1166,
+      "y": 934,
+      "w": 13,
+      "h": 13,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s347",
+      "type": "text",
+      "x": 1188,
+      "y": 933,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "Synch. pulse BS"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    }
+  ]
+}

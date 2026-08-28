@@ -180,6 +180,31 @@ export function builder() {
       ...(opt.name ? { name: opt.name } : {})
     }),
 
+    /* kind: relay | meter */
+    relay: (x, y, w, h, kind, opt = {}) => push({
+      type: 'relay', x, y, w, h,
+      bind: { value: opt.tag || '' },
+      props: { kind: kind || 'relay' },
+      style: { fill: opt.fill ?? '#c9ced3', stroke: '#3d4349', strokeWidth: 1 },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
+    transformer: (x, y, w, h, opt = {}) => push({
+      type: 'transformer', x, y, w, h,
+      props: { windings: 2 },
+      style: { stroke: opt.stroke ?? '#3d4349', strokeWidth: opt.strokeWidth ?? 2,
+               fill: opt.fill ?? 'transparent' },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
+    isolator: (x, y, w, h, tag, opt = {}) => push({
+      type: 'isolator', x, y, w, h,
+      bind: { value: tag || '' },
+      props: { closed: !!opt.closed, earth: opt.earth !== false },
+      style: { stroke: opt.stroke ?? '#3d4349', strokeWidth: opt.strokeWidth ?? 2 },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
     gauge: (x, y, w, h, tag, opt = {}) => push({
       type: 'gauge', x, y, w, h,
       bind: { value: tag || '' },

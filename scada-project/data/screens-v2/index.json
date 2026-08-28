@@ -1,19 +1,35 @@
 [
   {
-    "screen_id": "Common.Fuel",
-    "title": "Common — Fuel",
-    "unit": "COMMON",
-    "layout": "canvas",
-    "file": "common-fuel.json",
-    "elements": 210
-  },
-  {
     "screen_id": "Common.Overview",
     "title": "Common — Overview",
     "unit": "COMMON",
     "layout": "canvas",
     "file": "common-overview.json",
     "elements": 146
+  },
+  {
+    "screen_id": "Common.Electrical1",
+    "title": "Common — Electrical 1 (Busbar 2)",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-electrical1.json",
+    "elements": 347
+  },
+  {
+    "screen_id": "Common.Electrical2",
+    "title": "Common — Electrical 2 (Busbar 1)",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-electrical2.json",
+    "elements": 339
+  },
+  {
+    "screen_id": "Common.Fuel",
+    "title": "Common — Fuel",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-fuel.json",
+    "elements": 210
   },
   {
     "screen_id": "Common.StartAir",
@@ -24,12 +40,36 @@
     "elements": 109
   },
   {
+    "screen_id": "G1.Temp",
+    "title": "G1 — Temperatures",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-temp.json",
+    "elements": 214
+  },
+  {
+    "screen_id": "G1.Fuel",
+    "title": "G1 — Fuel",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-fuel.json",
+    "elements": 106
+  },
+  {
     "screen_id": "G1.Control",
     "title": "G1 — Control",
     "unit": "G1",
     "layout": "canvas",
     "file": "g1-control.json",
     "elements": 260
+  },
+  {
+    "screen_id": "G1.Lube",
+    "title": "G1 — Lube oil",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-lube.json",
+    "elements": 79
   },
   {
     "screen_id": "G1.Cooling",
@@ -46,29 +86,5 @@
     "layout": "canvas",
     "file": "g1-exhaust.json",
     "elements": 126
-  },
-  {
-    "screen_id": "G1.Fuel",
-    "title": "G1 — Fuel",
-    "unit": "G1",
-    "layout": "canvas",
-    "file": "g1-fuel.json",
-    "elements": 106
-  },
-  {
-    "screen_id": "G1.Lube",
-    "title": "G1 — Lube oil",
-    "unit": "G1",
-    "layout": "canvas",
-    "file": "g1-lube.json",
-    "elements": 79
-  },
-  {
-    "screen_id": "G1.Temp",
-    "title": "G1 — Temperatures",
-    "unit": "G1",
-    "layout": "canvas",
-    "file": "g1-temp.json",
-    "elements": 214
   }
 ]

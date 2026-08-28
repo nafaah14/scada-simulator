@@ -572,6 +572,145 @@ for (let n = 1; n <= 6; n++) {
     { unit: 'COMMON', screens: [...exh, ...cool] });
 }
 
+
+/* ---------------------------------------------------------------------
+   11 kV switchgear: incomers, outgoing feeders, generator bays, the
+   auxiliary transformers and the LV switchboard. Written per-bay so a
+   new feeder is one entry rather than eight hand-written tags.
+   ------------------------------------------------------------------ */
+{
+  const common = { unit: 'COMMON' };
+  const E1 = ['Common.Electrical1'], E2 = ['Common.Electrical2'];
+
+  const bay = (tag, desc, screens, amps) => {
+    for (let i = 1; i <= 4; i++) {
+      digital(`${tag}_L${i}`, `${desc} — status ${i}`, true, { ...common, screens });
+    }
+    analog(`${tag}_CURRENT`, `${desc} current`, 'A', amps, 'current',
+      { ...common, screens });
+    make({
+      tag_id: `${tag}_CB`, logical_name: `${tag}_CB`,
+      description: `${desc} breaker state`,
+      engineering_unit: null, data_type: 'enum', category: 'status',
+      value: 'CLOSED', states: ['CLOSED', 'OPEN', 'TRIP'],
+      ...common, screens, trend_enabled: false
+    });
+    digital(`${tag}_ISO`, `${desc} isolator closed`, false, { ...common, screens });
+  };
+
+  // outgoing feeders and interconnections
+  for (const [t, d, sc, a] of [
+    ['COMMON_BAO901', 'Outgoing feeder 6', E2, 103],
+    ['COMMON_BAO902', 'Outgoing feeder 7', E2, 0],
+    ['COMMON_BAO903', 'Outgoing feeder 8', E2, 0],
+    ['COMMON_BAO904', 'Outgoing feeder 9', E2, 280],
+    ['COMMON_BAO905', 'Outgoing feeder 10', E2, 300],
+    ['COMMON_BAO906', 'Interconnection Phase 2 (BAO906)', E2, 4],
+    ['COMMON_BAO907', 'Outgoing feeder 5', E1, 0],
+    ['COMMON_BAO908', 'Outgoing feeder 4', E1, 0],
+    ['COMMON_BAO909', 'Outgoing feeder 3', E1, 0],
+    ['COMMON_BAO910', 'Outgoing feeder 2', E1, 0],
+    ['COMMON_BAO911', 'Outgoing feeder 1', E1, 0],
+    ['COMMON_BAO912', 'Interconnection Phase 2 (BAO912)', E1, 0]
+  ]) bay(t, d, sc, a);
+
+  // transformer incomers
+  bay('COMMON_BAI901_A', 'AET 901 incomer A', E2, 346);
+  bay('COMMON_BAI901_B', 'AET 901 incomer B', E2, 343);
+  bay('COMMON_BAI902_A', 'AET 902 incomer A', E1, 350);
+  bay('COMMON_BAI902_B', 'AET 902 incomer B', E1, 362);
+
+  // generator bays — the machine tags already exist, these are the bay
+  for (let n = 1; n <= 6; n++) {
+    const p = `G0${n}`;
+    const sc = n <= 3 ? E2 : E1;
+    digital(`${p}_ISO`, `Generator ${n} isolator closed`, false, { ...common, screens: sc });
+    analog(`${p}_KW_SETPOINT`, `Generator ${n} kW setpoint`, 'kW', 7000, 'power',
+      { ...common, screens: sc });
+    analog(`${p}_PF_SETPOINT`, `Generator ${n} pf setpoint`, '', 1.0, 'power',
+      { ...common, screens: sc });
+  }
+
+  // auxiliary transformers and LV switchboard
+  for (const [t, sc, hv, lv] of [
+    ['COMMON_BFB901', E2, 38, 1028], ['COMMON_BFB902', E1, 0, 2]
+  ]) {
+    for (let i = 1; i <= 4; i++) {
+      digital(`${t}_L${i}`, `${t} status ${i}`, true, { ...common, screens: sc });
+    }
+    for (let i = 0; i < 4; i++) {
+      digital(`${t}_LV${i}`, `${t} LV breaker status ${i}`, true, { ...common, screens: sc });
+    }
+    analog(`${t}_CURRENT`, `${t} HV current`, 'A', hv, 'current', { ...common, screens: sc });
+    analog(`${t}_LV_CURRENT`, `${t} LV current`, 'A', lv, 'current',
+      { ...common, screens: sc });
+    digital(`${t}_ISO`, `${t} isolator closed`, false, { ...common, screens: sc });
+    digital(`${t}_VOLTAGE`, `${t} voltage on`, true, { ...common, screens: sc });
+    for (const suffix of ['_CB', '_LV_CB']) {
+      make({
+        tag_id: `${t}${suffix}`, logical_name: `${t}${suffix}`,
+        description: `${t}${suffix} breaker state`,
+        engineering_unit: null, data_type: 'enum', category: 'status',
+        value: 'CLOSED', states: ['CLOSED', 'OPEN', 'TRIP'],
+        ...common, screens: sc, trend_enabled: false
+      });
+    }
+  }
+
+  // busbar voltage metering
+  analog('COMMON_BAM901_VOLTAGE', 'Busbar 1 voltage', 'kV', 10.9, 'voltage',
+    { ...common, screens: E2, alarm_limits: { hihi: 12.1, hi: null, lo: null, lolo: 9.9 } });
+  analog('COMMON_BAM902_VOLTAGE', 'Busbar 2 voltage', 'kV', 10.9, 'voltage',
+    { ...common, screens: E1, alarm_limits: { hihi: 12.1, hi: null, lo: null, lolo: 9.9 } });
+
+  // LV distribution
+  for (const [t, sc, v] of [
+    ['COMMON_BEY914', E2, 117], ['COMMON_BEY913', E2, 119],
+    ['COMMON_BEY901', E2, 25], ['COMMON_BEY902', E1, 25]
+  ]) analog(`${t}_VOLTAGE`, `${t} output voltage`, 'V', v, 'voltage',
+    { ...common, screens: sc });
+  analog('COMMON_LV_TIE_CURRENT', 'LV bus tie current', 'A', 436, 'current',
+    { ...common, screens: E2 });
+  make({
+    tag_id: 'COMMON_LV_TIE_CB', logical_name: 'COMMON_LV_TIE_CB',
+    description: 'LV bus tie breaker state',
+    engineering_unit: null, data_type: 'enum', category: 'status',
+    value: 'CLOSED', states: ['CLOSED', 'OPEN', 'TRIP'],
+    ...common, screens: E2, trend_enabled: false
+  });
+  digital('COMMON_LV1_VOLTAGE', 'LV busbar 1 voltage on', true, { ...common, screens: E2 });
+  digital('COMMON_LV2_VOLTAGE', 'LV busbar 2 voltage on', true, { ...common, screens: E1 });
+
+  // standby set on LV busbar 2
+  analog('COMMON_BLM901_CURRENT', 'Standby generator current', 'A', 0, 'current',
+    { ...common, screens: E1 });
+  make({
+    tag_id: 'COMMON_BLM901_CB', logical_name: 'COMMON_BLM901_CB',
+    description: 'Standby generator breaker state',
+    engineering_unit: null, data_type: 'enum', category: 'status',
+    value: 'CLOSED', states: ['CLOSED', 'OPEN', 'TRIP'],
+    ...common, screens: E1, trend_enabled: false
+  });
+  for (let i = 0; i < 5; i++) {
+    digital(`COMMON_BLM901_ST${i}`, `Standby generator status ${i + 1}`, true,
+      { ...common, screens: E1 });
+  }
+
+  // switchgear-wide status and control panels
+  for (let i = 0; i < 5; i++) {
+    digital(`COMMON_BB1_ST${i}`, `Busbar 1 switchgear status ${i + 1}`, i === 2 || i === 4,
+      { ...common, screens: E2 });
+    digital(`COMMON_BB2_ST${i}`, `Busbar 2 switchgear status ${i + 1}`, i === 2 || i === 4,
+      { ...common, screens: E1 });
+  }
+  for (let i = 0; i < 2; i++) {
+    digital(`COMMON_SYNC_${i}`, `Synchronizer mode ${i + 1}`, true,
+      { ...common, screens: [...E1, ...E2] });
+  }
+  digital('COMMON_LS_CONTROL_ACTIVE', 'Load shedding control active', true,
+    { ...common, screens: [...E1, ...E2] });
+}
+
 const list = [...out.values()].sort((a, b) => a.tag_id.localeCompare(b.tag_id));
 writeFileSync(join(TAGS_DIR, 'tags.generated.json'), JSON.stringify(list, null, 2) + '\n');
 console.log(`wrote tags.generated.json — ${list.length} tags ` +
