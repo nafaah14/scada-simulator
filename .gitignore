@@ -8,3 +8,6 @@ dist/
 
 # runtime state written by the server (limits, alarm log)
 scada-project/data/runtime/
+
+# vendor IO-list PDFs are confidential — the extracted CSV is committed, the PDFs are not
+*.pdf

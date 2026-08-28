@@ -1,0 +1,646 @@
+cabinet,rack,slot,module,channel,plc_address,wois_address,tag,description,sensor_code,sensor_type,range,unit,scale,deadband,limit,event,tested,note,derived_from
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,0,Q10.0,M10.0,CFC0_1D007RNG,Engine running indication,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,1,Q10.1,M10.1,CFC0_1D008ING,Engine stopped indication,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,2,Q10.2,M10.2,CFC0_1D009CLO,Breaker closed indication,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,3,Q10.3,M10.3,CFC0_1D010OPN,Breaker open indication,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,4,Q10.4,M10.4,CFC0_1D011SDG,Engine shutdown indication,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,5,Q10.5,M10.5,CFC0_1D012TRG,Breaker trip indication,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,6,Q10.6,M10.6,CFC0_1D006STA,PLC synchronizing select,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,7,Q10.7,M10.7,CFC0_1D009INTL,Enable breaker closure,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,8,Q11.0,M11.0,CFC0_1D006INTL,Enable synchronizing control,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,10,Q11.2,M11.2,CFC0_1D013RNG,Engine running,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,11,Q11.3,M11.3,CFC0_1D013SEL,PLC synchronizing select for AVR,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,12,Q11.4,M11.4,BLQ0_1M001RO,Ventilation fan 1 control,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,13,Q11.5,M11.5,BLQ0_1M002RO,Ventilation fan 2 control,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,14,Q11.6,M11.6,BAN0_1Q000CLC,NGR open control,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,15,Q11.7,M11.7,BAN0_1Q0001PC,NGR closed control 1,,DO,,,,,,OUT,ok,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,16,Q12.0,M12.0,BAN0_1Q002OPC,NGR closed control 2,,DO,,,,,,OUT,oklast signal change 23.5.2017,,
+CFC,A1,5,Siemens 6ES7 422-1BL00-0AA0; 32 channels; 24VDC output,17,Q12.1,M12.1,CFC0_1NewAlm,Unacknowledged alarm,,DO,,,,,,OUT,okTo be used for control room horm,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,0,I40.0,"M140.0 DB300,X45.0",CFC0_1F000AG,MCB open in CFC0_1,,NC,,,,,,ALM,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,1,I40.1,M40.1,CFC0_1S001ACE,Auto mode operation,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,2,I40.2,M40.2,CFC0_1S002RNG,Engine control kw/ isoch. mode,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,3,I40.3,M40.3,CFC0_1S003RNG,Generator control P.F. mode,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,4,I40.4,M40.4,CFC0_1S004INC,Speed/ Load increase,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,5,I40.5,M40.5,CFC0_1S004DEC,Speed/ Load decrease,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,6,I40.6,M40.6,CFC0_1S005INC,Excitation increase,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,7,I40.7,M40.7,CFC0_1S005DEC,Excitation decrease,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,8,I41.0,M41.0,CFC0_1S006ING,Synchronizing select,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,9,I41.1,M41.1,CFC0_1S007STA,Engine start,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,10,I41.2,M41.2,CFC0_1S008STP,Engine stop,,NC,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,11,I41.3,M41.3,CFC0_1S010OPE,Breaker open,,NC,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,12,I41.4,M41.4,CFC0_1S011RST,Engine shutdown reset,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,13,I41.5,M41.5,CFC0_1S012RST,Breaker trip reset,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,14,I41.6,M41.6,CFC0_1S006MCE,Synchronizing in manual position,,NO,,,,,,CONT,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,15,I41.7,"M41.7 DB300,X164.7",CFC0_1S006ACE,Synchronizing in auto position,,NO,,,,,,IND,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,16,I42.0,"M142.0 DB300,X47.0",BAE0_1K001AG,Protection relay (VAMP210) fault,,NC,,,,,,ALM,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,17,I42.1,"M182.1 DB300,X87.1",CFC0_1D014TRG,Protection relay breaker trip,,NO,,,,,,TRP,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,18,I42.2,"M142.2 DB300,X47.2",BAE0_1K002AG,Protection relay (VAMP265) fault,,NC,,,,,,ALM,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,19,I42.3,"M189.3 DB300,X92.3",BAE0_1F87XSDH,Protection relay diff. current,,NO,,,,,,SHD,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,20,I42.4,"M142.4 DB300,X47.4",CFC0_1P011AG,Power monitoring unit (VAMP260) fault,,NC,,,,,,ALM,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,22,I42.6,"M42.6 DB300,X167.6",CFC0_1S021LOC,Control mode selector switch in local position,,NO,,,,,,IND,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,23,I42.7,"M42.7 DB300,X167.7",CFC0_1S021REM,Control mode selector switch in remote position,,NO,,,,,,IND,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,24,I43.0,"M187.7 DB300,X90.7",CFC0_1S020ESG,Emergency stop CFC0_1,,NC,,,,,,EMG,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,25,I43.1,"M43.1 DB300,X166.1",CFC0_1S014RNG,Generator voltage supervision,,NO,,,,,,IND,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,26,I43.2,"M43.2 DB300,X166.2",CFC0_1S034RNG,Busbar parallel with grid,,NO,,,,,,IND,okadd common electrical screen,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,27,I43.3,"M43.3 DB300,X166.3",CFC0_1S006RNG,Generating set synchronizing on,,NO,,,,,,IND,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,28,I43.4,"M43.4 DB300,X166.4",BAA0_1S014ING,Busbar voltage supervision,,NO,,,,,,IND,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,30,I43.6,"M143.6 DB300,X46.6",CFC0_1AF11AG,Firewall AF11 fault,,NC,,,,,,ALM,ok,,
+CFC,A1,6,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,31,I43.7,"M143.7 DB300,X46.7",CFC0_1AF01AG,Ethernet switch AF1 fault,,NC,,,,,,ALM,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,0,I44.0,"M144.0 DB300,X49.0",BAE0_1F000AG,Generator cubicle MCB open,,NC,,,,,,ALM,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,1,I44.1,"M144.1 DB300,X49.1",BAE0_1E001AL,Generator breaker SF6 pressure low,,NO,,,,,,ALM,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,2,I44.2,"M44.2 DB300,X169.2",BAE0_1Q000OPN,Generator breaker open,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,,,"M144.2 DB300,X49.2",BAE0_1Q000AG,Generator breaker pos. alarm,,,,,,,,ALM,ok,,BAE0_1Q000OPN
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,3,I44.3,"M44.3 DB300,X169.3",BAE0_1Q000CLO,Generator breaker closed,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,4,I44.4,"M44.4 DB300,X169.4",BAE0_1Q009OPN,Generator earthing switch open,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,,,"M144.4 DB300,X49.4",BAE0_1Q009AG,Generator earthing switch pos. alarm,,,,,,,,ALM,ok,,BAE0_1Q009OPN
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,5,I44.5,"M44.5 DB300,X169.5",BAE0_1Q009CLO,Generator earthing switch closed,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,6,I44.6,"M44.6 DB300,X169.6",BAE0_1Q001OPN,Generator breaker isolated from busbars,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,,,"M144.6 DB300,X49.6",BAE0_1Q001AG,Gen.breaker busbar connection status alarm,,,,,,,,ALM,ok,,BAE0_1Q001OPN
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,7,I44.7,"M44.7 DB300,X169.7",BAE0_1Q001CLO,Generator breaker connected to busbar,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,8,I45.0,"M45.0 DB300,X168.0",BAN0_1Q000OPN,Neutral point ground disc. open,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,,,"M145.0 DB300,X48.0",BAN0_1Q000AG,Neutral point ground disc. pos. alarm,,,,,,,,ALM,ok,,BAN0_1Q000OPN
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,9,I45.1,"M45.1 DB300,X168.1",BAN0_1Q000CLO,Neutral point ground disc. closed,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,10,I45.2,"M45.2 DB300,X168.2",BAA0_1Q000OPN,Busbar BB1 line disc. open,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,,,"M145.2 DB300,X48.2",BAA0_1Q000AG,Busbar BB1 line disc. pos. alarm,,,,,,,,ALM,ok,,BAA0_1Q000OPN
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,11,I45.3,"M45.3 DB300,X168.3",BAA0_1Q000CLO,Busbar BB1 line disc. closed,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,12,I45.4,"M45.4 DB300,X168.4",BAA0_2Q000OPN,Busbar BB2 line disc. open,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,,,"M145.4 DB300,X48.4",BAA0_2Q000AG,Busbar BB2 line disc. pos. alarm,,,,,,,,ALM,ok,,BAA0_2Q000OPN
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,13,I45.5,"M45.5 DB300,X168.5",BAA0_2Q000CLO,Busbar BB2 line disc. closed,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,16,I46.0,"M46.0 DB300,X171.0",BAE0_1S021LOC,Gen cubicle selector switch in local position,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,17,I46.1,"M46.1 DB300,X171.1",BAE0_1S021REM,Gen cubicle selector switch in remote position,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,30,I47.6,"M47.6 DB300,X170.6",BLQ0_1M001RNG,Ventilation fan 1 running,,NO,,,,,,IND,ok,,
+CFC,A1,7,Siemens 6ES7 421-1BL01-0AA0; 32 channels; 24VDC input,31,I47.7,"M47.7 DB300,X170.7",BLQ0_1M002RNG,Ventilation fan 2 running,,NO,,,,,,IND,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,0,I48.0,"M148.0 DB300,X53.0",CFE0_1F000AG,MCB open in CFE0_1,,NC,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,1,I48.1,"M188.0 DB300,X93.0",CFE0_1S020ESG,Emergency stop CFE0_1 (engine room),,NC,,,,,,EMG,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,2,I48.2,"M148.2 DB300,X53.2",CFE0_1S011SDG,Engine shutdown,,NC,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,3,I48.3,"M148.3 DB300,X53.3",CFE0_1S012TRG,Breaker trip,,NC,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,4,I48.4,"M48.4 DB300,X173.4",CFE0_1D007RNG,Engine running,,NO,,,,,,IND,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,5,I48.5,"M48.5 DB300,X173.5",CFE0_1S005RNG,Generator excitation on,,NO,,,,,,IND,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,6,I48.6,"M148.6 DB300,X53.6",CFE0_1F035AH,AVR overvoltage,,NC,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,7,I48.7,"M148.7 DB300,X53.7",CFE0_1K001ESG,Emergency stop safety relay operated,,NO,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,8,I49.0,"M149.0 DB300,X52.0",CFE0_1AF01AG,Ethernet switch AF1 fault,,NC,SS-,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,12,I49.4,"M189.4 DB300,X92.4",SCA0_1NS886SDG,Engine control system major failure,NS886,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,13,I49.5,M49.5,SCA0_1OS7602OPE,Generator breaker open command,OS7602,NO,,,,,,CONT,ok,Tested from terminals no permit to simulate,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,15,I49.7,"M149.7 DB300,X52.7",SCA0_1IS7331OPE,Tripped to speed droop,IS7331,NO,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,16,I50.0,"M150.0 DB300,X55.0",SCA0_1LS103AAH,FO leakage injection pipe A-bank,LS103A,NC,,,,,5 seconds delay,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,17,I50.1,"M150.1 DB300,X55.1",SCA0_1LS103BAH,FO leakage injection pipe B-bank,LS103B,NC,,,,,5 seconds delay,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,18,I50.2,"M150.2 DB300,X55.2",SCA0_1LS108AAH,FO leakage dirty fuel DE A-bank,LS108A,NC,,,,,5 seconds delay,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,19,I50.3,"M150.3 DB300,X55.3",SCA0_1LS108BAH,FO leakage dirty fuel DE B-bank,LS108B,NC,,,,,5 seconds delay,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,20,I50.4,"M150.4 DB300,X55.4",SCA0_1LS204AL,Lube oil low level wet sump,LS204,NC,,,,,5 seconds delay,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,21,I50.5,"M150.5 DB300,X55.5",SCA0_1GS171AG,Stop lever in stop position,GS171,NO,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,22,I50.6,"M150.6 DB300,X55.6",SCA0_1GS792AG,Turning gear engaged,GS792,NC,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,23,I50.7,"M150.7 DB300,X55.7",SCA0_1NS881AG,Engine control system minor alarm,NS881,NC,,,,,,ALM,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,24,I51.0,"M198.2 DB300,X103.2",SCA0_1IS4011SDH,ESM HT-water temp shutdown status,IS4011,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,25,I51.1,"M198.3 DB300,X103.3",SCA0_1IS2011SDL,ESM lube oil pressure shutdown status,IS2011,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,26,I51.2,"M198.4 DB300,X103.4",SCA0_1IS1741SDH,ESM overspeed shutdown 1 status,IS1741,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,27,I51.3,"M198.5 DB300,X103.5",SCA0_1IS1742SDH,ESM overspeed shutdown 2 status,IS1742,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,28,I51.4,"M198.6 DB300,X103.6",SCA0_1IB7324SDG,ESM shutdown status,IB7324,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,29,I51.5,"M198.0 DB300,X103.0",SCA0_1IS7309SDG,ESM external shutdown 1 status,IS7309,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,30,I51.6,"M198.1 DB300,X103.1",SCA0_1IS7305ESG,ESM external shutdown 4 status,IS7305,NC,,,,,,SHD,ok,,
+CFE,A1,1,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,31,I51.7,M51.7,SCA0_1IS7602SDG,ESM stop / shutdown status 1,IS7602,NC,,,,,,CONT,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,4,I52.4,"M152.4 DB300,X57.4",CFE0_1F001AG,MCB open in main AVR circuit,,NC,,,,,,ALM,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,5,I52.5,"M152.5 DB300,X57.5",CFE0_1F002AG,MCB open in redundant AVR circuit,,NC,,,,,,ALM,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,6,I52.6,"M152.6 DB300,X57.6",CFE0_1F003AG,Main AVR alarm,,NC,,,,,,ALM,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,12,I53.4,"M182.2 DB300,X87.2",CFE0_1K075TRP,"Diode monitoring, diode trip",,NC,,,,,,TRP,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,16,I54.0,"M154.0 DB300,X59.0",SHA0_1E007AG1,"Vibration control unit 1, warning",,NC,SS-,,,,,ALM,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,17,I54.1,"M154.1 DB300,X59.1",SHA0_1E007AG2,"Vibration control unit 1, alarm",,NC,SS-,,,,,ALM,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,18,I54.2,"M154.2 DB300,X59.2",SHA0_1E008AG1,"Vibration control unit 2, warning",,NC,SS-,,,,,ALM,ok,,
+CFE,A1,2,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,19,I54.3,"M154.3 DB300,X59.3",SHA0_1E008AG2,"Vibration control unit 2, alarm",,NC,SS-,,,,,ALM,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW100,"DB102,INT0",SCA0_1TE5011APV,Exh. gas temp. cyl. A1,TE5011A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.0 DB300,X5.0",SCA0_1TE5011ASF,,,,,,,,,SF,ok,,SCA0_1TE5011APV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW102,"DB102,INT2",SCA0_1TE5021APV,Exh. gas temp. cyl. A2,TE5021A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.1 DB300,X5.1",SCA0_1TE5021ASF,,,,,,,,,SF,ok,,SCA0_1TE5021APV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW104,"DB102,INT4",SCA0_1TE5031APV,Exh. gas temp. cyl. A3,TE5031A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.2 DB300,X5.2",SCA0_1TE5031ASF,,,,,,,,,SF,ok,,SCA0_1TE5031APV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW106,"DB102,INT78",SCA0_1TE702PV,Main bearing 2 temp.,TE702,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.4 DB300,X7.4",SCA0_1TE702SF,,,,,,,,,SF,ok,,SCA0_1TE702PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M126.4 DB300,X31.4",SCA0_1TE702AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE702PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.2 DB300,X123.2",SCA0_1TE702LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE702PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M186.4 DB300,X91.4",SCA0_1TE702SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE702PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW108,"DB102,INT6",SCA0_1TE5041APV,Exh. gas temp. cyl. A4,TE5041A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.3 DB300,X5.3",SCA0_1TE5041ASF,,,,,,,,,SF,ok,,SCA0_1TE5041APV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW110,"DB102,INT8",SCA0_1TE5051APV,Exh. gas temp. cyl. A5,TE5051A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.4 DB300,X5.4",SCA0_1TE5051ASF,,,,,,,,,SF,ok,,SCA0_1TE5051APV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW112,"DB102,INT10",SCA0_1TE5061APV,Exh. gas temp. cyl. A6,TE5061A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.5 DB300,X5.5",SCA0_1TE5061ASF,,,,,,,,,SF,ok,,SCA0_1TE5061APV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW114,"DB102,INT80",SCA0_1TE703PV,Main bearing 3 temp.,TE703,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.5 DB300,X7.5",SCA0_1TE703SF,,,,,,,,,SF,ok,,SCA0_1TE703PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M126.5 DB300,X31.5",SCA0_1TE703AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE703PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.3 DB300,X123.3",SCA0_1TE703LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE703PV
+CFE,A1,3,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M186.5 DB300,X91.5",SCA0_1TE703SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE703PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW116,"DB102,INT82",SCA0_1TE704PV,Main bearing 4 temp.,TE704,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.6 DB300,X7.6",SCA0_1TE704SF,,,,,,,,,SF,ok,,SCA0_1TE704PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M126.6 DB300,X31.6",SCA0_1TE704AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE704PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.4 DB300,X123.4",SCA0_1TE704LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE704PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M186.6 DB300,X91.6",SCA0_1TE704SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE704PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW118,"DB102,INT84",SCA0_1TE705PV,Main bearing 5 temp.,TE705,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.7 DB300,X7.7",SCA0_1TE705SF,,,,,,,,,SF,ok,,SCA0_1TE705PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M126.7 DB300,X31.7",SCA0_1TE705AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE705PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.5 DB300,X123.5",SCA0_1TE705LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE705PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M186.7 DB300,X91.7",SCA0_1TE705SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE705PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW120,"DB102,INT12",SCA0_1TE5071APV,Exh. gas temp. cyl. A7,TE5071A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.6 DB300,X5.6",SCA0_1TE5071ASF,,,,,,,,,SF,ok,,SCA0_1TE5071APV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW122,"DB102,INT14",SCA0_1TE5081APV,Exh. gas temp. cyl. A8,TE5081A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M100.7 DB300,X5.7",SCA0_1TE5081ASF,,,,,,,,,SF,ok,,SCA0_1TE5081APV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW124,"DB102,INT16",SCA0_1TE5091APV,Exh. gas temp. cyl. A9,TE5091A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.0 DB300,X4.0",SCA0_1TE5091ASF,,,,,,,,,SF,ok,,SCA0_1TE5091APV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW126,"DB102,INT476",SCA0_1TE5101APV,Exh. gas temp. cyl. A10,TE5101A,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M122.3 DB300,X27.3",SCA0_1TE5101ASF,,,,,,,,,SF,ok,,SCA0_1TE5101APV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW128,"DB102,INT86",SCA0_1TE706PV,Main bearing 6 temp.,TE706,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M103.0 DB300,X6.0",SCA0_1TE706SF,,,,,,,,,SF,ok,,SCA0_1TE706PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M127.0 DB300,X30.0",SCA0_1TE706AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE706PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.6 DB300,X123.6",SCA0_1TE706LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE706PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M187.0 DB300,X90.0",SCA0_1TE706SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE706PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW130,"DB102,INT88",SCA0_1TE707PV,Main bearing 7 temp.,TE707,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M103.1 DB300,X6.1",SCA0_1TE707SF,,,,,,,,,SF,ok,,SCA0_1TE707PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M127.1 DB300,X30.1",SCA0_1TE707AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE707PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.7 DB300,X123.7",SCA0_1TE707LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE707PV
+CFE,A1,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M187.1 DB300,X90.1",SCA0_1TE707SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE707PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW132,"DB102,INT90",SCA0_1TE708PV,Main bearing 8 temp.,TE708,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M103.2 DB300,X6.2",SCA0_1TE708SF,,,,,,,,,SF,ok,,SCA0_1TE708PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M127.2 DB300,X30.2",SCA0_1TE708AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE708PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M219.0 DB300,X122.0",SCA0_1TE708LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE708PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M187.2 DB300,X90.2",SCA0_1TE708SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE708PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW134,"DB102,INT92",SCA0_1TE709PV,Main bearing 9 temp.,TE709,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M103.3 DB300,X6.3",SCA0_1TE709SF,,,,,,,,,SF,ok,,SCA0_1TE709PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M127.3 DB300,X30.3",SCA0_1TE709AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE709PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M219.1 DB300,X122.1",SCA0_1TE709LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE709PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M187.3 DB300,X90.3",SCA0_1TE709SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE709PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW136,"DB102,INT94",SCA0_1TE710PV,Main bearing 10 temp.,TE710,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M103.4 DB300,X6.4",SCA0_1TE710SF,,,,,,,,,SF,ok,,SCA0_1TE710PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M127.4 DB300,X30.4",SCA0_1TE710AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE710PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M219.2 DB300,X122.2",SCA0_1TE710LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE710PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M187.4 DB300,X90.4",SCA0_1TE710SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE710PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW138,"DB102,INT508",SCA0_1TE711PV,Main bearing 11 temp.,TE711,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M123.5 DB300,X26.5",SCA0_1TE711SF,,,,,,,,,SF,ok,,SCA0_1TE711PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M178.4 DB300,X83.4",SCA0_1TE711AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE711PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M219.3 DB300,X122.3",SCA0_1TE711LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE711PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M199.7 DB300,X102.7",SCA0_1TE711SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE711PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW140,"DB102,INT18",SCA0_1TE5011BPV,Exh. gas temp. cyl. B1,TE5011B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.1 DB300,X4.1",SCA0_1TE5011BSF,,,,,,,,,SF,ok,,SCA0_1TE5011BPV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW142,"DB102,INT20",SCA0_1TE5021BPV,Exh. gas temp. cyl. B2,TE5021B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.2 DB300,X4.2",SCA0_1TE5021BSF,,,,,,,,,SF,ok,,SCA0_1TE5021BPV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW144,"DB102,INT22",SCA0_1TE5031BPV,Exh. gas temp. cyl. B3,TE5031B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.3 DB300,X4.3",SCA0_1TE5031BSF,,,,,,,,,SF,ok,,SCA0_1TE5031BPV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW146,"DB102,INT74",SCA0_1TE700PV,Main bearing 0 temp.,TE700,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.2 DB300,X7.2",SCA0_1TE700SF,,,,,,,,,SF,ok,,SCA0_1TE700PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M126.2 DB300,X31.2",SCA0_1TE700AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE700PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.0 DB300,X123.0",SCA0_1TE700LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE700PV
+CFE,A1,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M186.2 DB300,X91.2",SCA0_1TE700SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE700PV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW148,"DB102,INT24",SCA0_1TE5041BPV,Exh. gas temp. cyl. B4,TE5041B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.4 DB300,X4.4",SCA0_1TE5041BSF,,,,,,,,,SF,ok,,SCA0_1TE5041BPV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW150,"DB102,INT26",SCA0_1TE5051BPV,Exh. gas temp. cyl. B5,TE5051B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.5 DB300,X4.5",SCA0_1TE5051BSF,,,,,,,,,SF,ok,,SCA0_1TE5051BPV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW152,"DB102,INT28",SCA0_1TE5061BPV,Exh. gas temp. cyl. B6,TE5061B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.6 DB300,X4.6",SCA0_1TE5061BSF,,,,,,,,,SF,ok,,SCA0_1TE5061BPV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW154,"DB102,INT76",SCA0_1TE701PV,Main bearing 1 temp.,TE701,NiCrNi,0-160,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.3 DB300,X7.3",SCA0_1TE701SF,,,,,,,,,SF,ok,,SCA0_1TE701PV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M126.3 DB300,X31.3",SCA0_1TE701AH,,,,,,,,110+5s,AH,ok,,SCA0_1TE701PV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M218.1 DB300,X123.1",SCA0_1TE701LRH,,,,,,,,120+1s,LRH,ok,,SCA0_1TE701PV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M186.3 DB300,X91.3",SCA0_1TE701SDH,,,,,,,130+1s & 5+20s DEV,,SDH,ok,,SCA0_1TE701PV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW156,"DB102,INT30",SCA0_1TE5071BPV,Exh. gas temp. cyl. B7,TE5071B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M101.7 DB300,X4.7",SCA0_1TE5071BSF,,,,,,,,,SF,ok,,SCA0_1TE5071BPV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW158,"DB102,INT32",SCA0_1TE5081BPV,Exh. gas temp. cyl. B8,TE5081B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.0 DB300,X7.0",SCA0_1TE5081BSF,,,,,,,,,SF,ok,,SCA0_1TE5081BPV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW160,"DB102,INT34",SCA0_1TE5091BPV,Exh. gas temp. cyl. B9,TE5091B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M102.1 DB300,X7.1",SCA0_1TE5091BSF,,,,,,,,,SF,ok,,SCA0_1TE5091BPV
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW162,"DB102,INT478",SCA0_1TE5101BPV,Exh. gas temp. cyl. B10,TE5101B,NiCrNi,0-600,°C,1,,,MEAS,ok,,
+CFE,A1,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M122.4 DB300,X27.4",SCA0_1TE5101BSF,,,,,,,,,SF,ok,,SCA0_1TE5101BPV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW164,"DB102,INT182",SCA0_1TE511PV,Exh. gas temp. TC A inlet,TE511,NiCrNi,0-750,°C,1,5,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M109.0 DB300,X12.0",SCA0_1TE511SF,,,,,,,,,SF,ok,,SCA0_1TE511PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M133.0 DB300,X36.0",SCA0_1TE511AH,,,,,,,,580+10s,AH,ok,,SCA0_1TE511PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M189.5 DB300,X92.5",SCA0_1TE511SDH,,,,,,,,600+30s,SDH,ok,,SCA0_1TE511PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW166,"DB102,INT186",SCA0_1TE517PV,Exh. gas temp. TC A outlet,TE517,NiCrNi,0-750,°C,1,5,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M109.2 DB300,X12.2",SCA0_1TE517SF,,,,,,,,,SF,ok,,SCA0_1TE517PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M133.2 DB300,X36.2",SCA0_1TE517AH,,,,,,,,450+30s,AH,ok,,SCA0_1TE517PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M190.7 DB300,X95.7",SCA0_1TE517SDH,,,,,,,,500+30s,SDH,ok,,SCA0_1TE517PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW168,"DB102,INT184",SCA0_1TE521PV,Exh. gas temp. TC B inlet,TE521,NiCrNi,0-750,°C,1,5,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M109.1 DB300,X12.1",SCA0_1TE521SF,,,,,,,,,SF,ok,,SCA0_1TE521PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M133.1 DB300,X36.1",SCA0_1TE521AH,,,,,,,,580+10s,AH,ok,,SCA0_1TE521PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M189.6 DB300,X92.6",SCA0_1TE521SDH,,,,,,,,600+30s,SDH,ok,,SCA0_1TE521PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW170,"DB102,INT188",SCA0_1TE527PV,Exh. gas temp. TC B outlet,TE527,NiCrNi,0-750,°C,1,5,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M109.3 DB300,X12.3",SCA0_1TE527SF,,,,,,,,,SF,ok,,SCA0_1TE527PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M133.3 DB300,X36.3",SCA0_1TE527AH,,,,,,,,450+30s,AH,ok,,SCA0_1TE527PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.0 DB300,X94.0",SCA0_1TE527SDH,,,,,,,,500+30s,SDH,ok,,SCA0_1TE527PV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW172,"DB102,INT368",SCA0_1TE7011APV,Cylinder liner temp. cyl. A1 sensor 1,TE7011A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M115.5 DB300,X18.5",SCA0_1TE7011ASF,,,,,,,,,SF,ok,,SCA0_1TE7011APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M170.2 DB300,X75.2",SCA0_1TE7011AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7011APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.2 DB300,X94.2",SCA0_1TE7011ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7011APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW174,"DB102,INT404",SCA0_1TE7012APV,Cylinder liner temp. cyl. A1 sensor 2,TE7012A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.7 DB300,X20.7",SCA0_1TE7012ASF,,,,,,,,,SF,ok,,SCA0_1TE7012APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.4 DB300,X77.4",SCA0_1TE7012AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7012APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.4 DB300,X96.4",SCA0_1TE7012ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7012APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW176,"DB102,INT370",SCA0_1TE7021APV,Cylinder liner temp. cyl. A2 sensor 1,TE7021A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M115.6 DB300,X18.6",SCA0_1TE7021ASF,,,,,,,,,SF,ok,,SCA0_1TE7021APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M170.3 DB300,X75.3",SCA0_1TE7021AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7021APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.3 DB300,X94.3",SCA0_1TE7021ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7021APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW178,"DB102,INT406",SCA0_1TE7022APV,Cylinder liner temp. cyl. A2 sensor 2,TE7022A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.0 DB300,X23.0",SCA0_1TE7022ASF,,,,,,,,,SF,ok,,SCA0_1TE7022APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.5 DB300,X77.5",SCA0_1TE7022AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7022APV
+CFE,A1,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.5 DB300,X96.5",SCA0_1TE7022ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7022APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW180,"DB102,INT372",SCA0_1TE7031APV,Cylinder liner temp. cyl. A3 sensor 1,TE7031A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M115.7 DB300,X18.7",SCA0_1TE7031ASF,,,,,,,,,SF,ok,,SCA0_1TE7031APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M170.4 DB300,X75.4",SCA0_1TE7031AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7031APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.4 DB300,X94.4",SCA0_1TE7031ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7031APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW182,"DB102,INT408",SCA0_1TE7032APV,Cylinder liner temp. cyl. A3 sensor 2,TE7032A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.1 DB300,X23.1",SCA0_1TE7032ASF,,,,,,,,,SF,ok,,SCA0_1TE7032APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.6 DB300,X77.6",SCA0_1TE7032AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7032APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.6 DB300,X96.6",SCA0_1TE7032ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7032APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW184,"DB102,INT374",SCA0_1TE7041APV,Cylinder liner temp. cyl. A4 sensor 1,TE7041A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.0 DB300,X21.0",SCA0_1TE7041ASF,,,,,,,,,SF,ok,,SCA0_1TE7041APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M170.5 DB300,X75.5",SCA0_1TE7041AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7041APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.5 DB300,X94.5",SCA0_1TE7041ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7041APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW186,"DB102,INT410",SCA0_1TE7042APV,Cylinder liner temp. cyl. A4 sensor 2,TE7042A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.2 DB300,X23.2",SCA0_1TE7042ASF,,,,,,,,,SF,ok,,SCA0_1TE7042APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.7 DB300,X77.7",SCA0_1TE7042AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7042APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.7 DB300,X96.7",SCA0_1TE7042ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7042APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW188,"DB102,INT376",SCA0_1TE7051APV,Cylinder liner temp. cyl. A5 sensor 1,TE7051A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.1 DB300,X21.1",SCA0_1TE7051ASF,,,,,,,,,SF,ok,,SCA0_1TE7051APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M170.6 DB300,X75.6",SCA0_1TE7051AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7051APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.6 DB300,X94.6",SCA0_1TE7051ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7051APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW190,"DB102,INT412",SCA0_1TE7052APV,Cylinder liner temp. cyl. A5 sensor 2,TE7052A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.3 DB300,X23.3",SCA0_1TE7052ASF,,,,,,,,,SF,ok,,SCA0_1TE7052APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.0 DB300,X76.0",SCA0_1TE7052AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7052APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.0 DB300,X99.0",SCA0_1TE7052ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7052APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW192,"DB102,INT378",SCA0_1TE7061APV,Cylinder liner temp. cyl. A6 sensor 1,TE7061A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.2 DB300,X21.2",SCA0_1TE7061ASF,,,,,,,,,SF,ok,,SCA0_1TE7061APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M170.7 DB300,X75.7",SCA0_1TE7061AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7061APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M191.7 DB300,X94.7",SCA0_1TE7061ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7061APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW194,"DB102,INT414",SCA0_1TE7062APV,Cylinder liner temp. cyl. A6 sensor 2,TE7062A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.4 DB300,X23.4",SCA0_1TE7062ASF,,,,,,,,,SF,ok,,SCA0_1TE7062APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.1 DB300,X76.1",SCA0_1TE7062AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7062APV
+CFE,A1,8,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.1 DB300,X99.1",SCA0_1TE7062ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7062APV
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,0,Q14.0M14.0,,CFE0_1D007SO,Run/ stop,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,1,Q14.1M14.1,,SCA0_1OS163INC,Speed/ load increase,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,2,Q14.2M14.2,,SCA0_1OS164DEC,Speed/ load decrease,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,3,Q14.3M14.3,,SCA0_1OS7321RNG,Engine unload,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,4,Q14.4M14.4,,SCA0_1OS7329INTL,Isochronous loadsharing enable,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,5,Q14.5M14.5,,SCA0_1OS7328INTL,kW control enable,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,6,Q14.6M14.6,,SCA0_1GS799RNG,Busbar parallel with grid,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,7,Q14.7M14.7,,CFE0_1D005INC,Excitation increase,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,8,Q15.0M15.0,,CFE0_1D005DEC,Excitation decrease,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,9,Q15.1M15.1,,CFE0_1D003CG,Generator p.f. control,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,10,Q15.2M15.2,,CFE0_1D017CG,Select VDC control,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,11,Q15.3M15.3,,CFE0_1D009CLO,Generator breaker closed position,,DO,,,,,,OUT,oktest from k41,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,12,Q15.4M15.4,,CFE0_1D011SDG,Engine shutdown,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,13,Q15.5M15.5,,CFE0_1D011RST,Engine shutdown reset,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,14,Q15.6M15.6,,CFE0_1S010OO,Breaker open control,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,15,Q15.7M15.7,,CFE0_1D012TRG,Breaker trip,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,16,Q16.0M16.0,,CFE0_1D012RST,Breaker trip reset,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,17,Q16.1M16.1,,SCA0_1OS7308CG,Shutdown reset to ESM,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,18,Q16.2M16.2,,SCA0_1CV321CG,Starting air valve open,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,19,Q16.3M16.3,,SCA0_1OS7304CG,Engine stop to ESM,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,20,Q16.4M16.4,,CFE0_1D018AG,Alarm blink,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,21,Q16.5M16.5,,CFE0_1D029CG,Select remote p.f. reference,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,22,Q16.6M16.6,,CFE0_1D039ING,Secondary net,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,23,Q16.7M16.7,,SCA0_1GS771CLO,Busbar breaker status before,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,24,Q17.0M17.0,,SCA0_1GS772CLO,Busbar breaker status after,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,25,Q17.1M17.1,,CFE0_1D013SEL,PLC synchronizing select for AVR,,DO,,,,,,OUT,ok,,
+CFE,A1,9,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,26,Q17.2M17.2,,CFE0_1D040ING,Secondary net 2,,DO,SS-,,,,,OUT,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW244,"DB102,INT106",SCA0_1TE101PV,Fuel oil inlet temp,TE101,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M104.2 DB300,X9.2",SCA0_1TE101SF,,,,,,,,,SF,ok,,SCA0_1TE101PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M128.2 DB300,X33.2",SCA0_1TE101AH,,,,,,,,50+5s,AH,ok,,SCA0_1TE101PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW246,"DB102,INT112",SCA0_1TE201PV,Lube oil inlet temp,TE201,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M104.5 DB300,X9.5",SCA0_1TE201SF,,,,,,,,,SF,ok,,SCA0_1TE201PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M128.5 DB300,X33.5",SCA0_1TE201AH,,,,,,,,70+5s,AH,ok,,SCA0_1TE201PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M204.4 DB300,X109.4",SCA0_1TE201ASH,,,,,,,,80+5sASH,,ok,,SCA0_1TE201PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW248,"DB102,INT522",VCA0_1P005PV,Seawater press.heat exchanger inlet,P005,4-20 mA,0-XX,Bar,10,,,MEAS,ok,not installed/simulated,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M105.1 DB300,X8.1",VCA0_1P005SF,,,,,,,,,SF,ok,,VCA0_1P005PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M129.1 DB300,X32.1",VCA0_1P005AL,,,,,,,,1 + 3s,AL,ok,,VCA0_1P005PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,3,IW250,"DB102,INT122",SCA0_1TE401PV,HT-water temp. jacket inlet,TE401,Pt-100,0-160,°C,10,0.5,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M105.2 DB300,X8.2",SCA0_1TE401SF,,,,,,,,,SF,ok,,SCA0_1TE401PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M129.2 DB300,X32.2",SCA0_1TE401AL,,,,,,,,60+5s,AL,ok,,SCA0_1TE401PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,4,IW252,"DB102,INT126",SCA0_1TE402PV,HT-water temp. jacket outlet A bank,TE402,Pt-100,0-160,°C,10,0.5,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M105.4 DB300,X8.4",SCA0_1TE402SF,,,,,,,,,SF,ok,,SCA0_1TE402PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M129.4 DB300,X32.4",SCA0_1TE402AH,,,,,,,,105+5s,AH,ok,,SCA0_1TE402PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M188.2 DB300,X93.2",SCA0_1TE402SDH,,,,,,,,110+5s,SDH,ok,,SCA0_1TE402PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW254,"DB102,INT128",SCA0_1TE403PV,HT-water temp. jacket outlet B bank,TE403,Pt-100,0-160,°C,10,0.5,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M105.5 DB300,X8.5",SCA0_1TE403SF,,,,,,,,,SF,ok,,SCA0_1TE403PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M129.5 DB300,X32.5",SCA0_1TE403AH,,,,,,,,105+5s,AH,ok,,SCA0_1TE403PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M188.3 DB300,X93.3",SCA0_1TE403SDH,,,,,,,,110+5s,SDH,ok,,SCA0_1TE403PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW256,"DB102,INT134",SCA0_1TE432PV,HT-water temp. CAC outlet,TE452,Pt-100,0-160,°C,10,0.5,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M106.0 DB300,X11.0",SCA0_1TE432SF,,,,,,,,,SF,ok,,SCA0_1TE432PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,7,IW258,"DB102,INT226",SCA0_1TE471PV,LT-water temp. CAC inlet,TE471,Pt-100,0-160,°C,10,0.5,,MEAS,ok,,
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M111.6 DB300,X14.6",SCA0_1TE471SF,,,,,,,,,SF,ok,,SCA0_1TE471PV
+CFE,A1,10,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M135.6 DB300,X38.6",SCA0_1TE471AH,,,,,,,,54+30s,AH,ok,,SCA0_1TE471PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW260,"DB102,INT96",BAG0_1T001PV,Generator winding temp. phase  U,TE7503,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M103.5 DB300,X6.5",BAG0_1T001SF,,,,,,,,,SF,ok,,BAG0_1T001PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M127.5 DB300,X30.5",BAG0_1T001AH,,,,,,,,140+2s,AH,ok,,BAG0_1T001PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M204.0 DB300,X109.0",BAG0_1T001ASH,,,,,,,,150+15sASH,,ok,,BAG0_1T001PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW262,"DB102,INT98",BAG0_1T002PV,Generator winding temp. phase  V,TE7504,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M103.6 DB300,X6.6",BAG0_1T002SF,,,,,,,,,SF,ok,,BAG0_1T002PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M127.6 DB300,X30.6",BAG0_1T002AH,,,,,,,,140+2s,AH,ok,,BAG0_1T002PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M204.1 DB300,X109.1",BAG0_1T002ASH,,,,,,,,150+15sASH,,ok,,BAG0_1T002PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW264,"DB102,INT100",BAG0_1T003PV,Generator winding temp. phase  W,TE7505,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M103.7 DB300,X6.7",BAG0_1T003SF,,,,,,,,,SF,ok,,BAG0_1T003PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M127.7 DB300,X30.7",BAG0_1T003AH,,,,,,,,140+2s,AH,ok,,BAG0_1T003PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M204.2 DB300,X109.2",BAG0_1T003ASH,,,,,,,,150+15sASH,,ok,,BAG0_1T003PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,3,IW266,"DB102,INT102",BAG0_1T004PV,Generator D-end bearing temp.,TE7501,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M104.0 DB300,X9.0",BAG0_1T004SF,,,,,,,,,SF,ok,,BAG0_1T004PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M128.0 DB300,X33.0",BAG0_1T004AH,,,,,,,,90+2s,AH,ok,,BAG0_1T004PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M187.5 DB300,X90.5",BAG0_1T004SDH,,,,,,,,100+2s,SDH,ok,,BAG0_1T004PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,4,IW268,"DB102,INT104",BAG0_1T005PV,Generator ND-end bearing temp.,TE7502,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M104.1 DB300,X9.1",BAG0_1T005SF,,,,,,,,,SF,ok,,BAG0_1T005PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M128.1 DB300,X33.1",BAG0_1T005AH,,,,,,,,90+2s,AH,ok,,BAG0_1T005PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M187.6 DB300,X90.6",BAG0_1T005SDH,,,,,,,,100+2s,SDH,ok,,BAG0_1T005PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW270,"DB102,INT142",SCA0_1TE482PV,LT-water temp. after lube oil cooler,TE482,Pt-100,0-160,°C,10,0.5,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M106.4 DB300,X11.4",SCA0_1TE482SF,,,,,,,,,SF,ok,,SCA0_1TE482PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW272,"DB102,INT158",SCA0_1TE600PV,Charge air temp. TC A inlet,TE600,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M107.4 DB300,X10.4",SCA0_1TE600SF,,,,,,,,,SF,ok,,SCA0_1TE600PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,7,IW274,"DB102,INT150",SCA0_1TE601PV,Charge air temp. engine inlet,TE601,Pt-100,0-160,°C,10,0.2,,MEAS,ok,,
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M107.0 DB300,X10.0",SCA0_1TE601SF,,,,,,,,,SF,ok,,SCA0_1TE601PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M131.0 DB300,X34.0",SCA0_1TE601AH,,,,,,,,70+5s,AH,ok,,SCA0_1TE601PV
+CFE,A1,11,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M204.3 DB300,X109.3",SCA0_1TE601ASH,,,,,,,,75+10sASH,,ok,,SCA0_1TE601PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW276,"DB102,INT204",BAG0_1T006PV,"Generator cooling air temperature, inlet",TE7506,Pt-100,0-160,°C,10,0.2,,MEAS,ok,,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M110.3 DB300,X15.3",BAG0_1T006SF,,,,,,,,,SF,ok,,BAG0_1T006PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M134.3 DB300,X39.3",BAG0_1T006AH,,,,,,,,55+2s,AH,ok,,BAG0_1T006PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW278,"DB102,INT202",BAG0_1T007PV,"Generator cooling air temperature, outlet",TE7507,Pt-100,0-160,°C,10,,,MEAS,ok,,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M110.2 DB300,X15.2",BAG0_1T007SF,,,,,,,,,SF,ok,,BAG0_1T007PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M134.2 DB300,X39.2",BAG0_1T007AH,,,,,,,,85+2s,AH,ok,,BAG0_1T007PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW280,"DB102,INT524",VCA0_1T006PV,Seawater temp.heat exchanger  outlet,T006,4-20 mA,30-50,°C,10,,,MEAS,ok,not installed/simulated,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M111.0 DB300,X14.0",VCA0_1T006SF,,,,,,,,,SF,ok,,VCA0_1T006PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,3,IW282,"DB102,INT526",VCA0_1T005PV,Seawater temp.heat exchanger inlet,T005,4-20 mA,30-50,°C,10,,,MEAS,ok,not installed/simulated,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M111.1 DB300,X14.1",VCA0_1T005SF,,,,,,,,,SF,ok,,VCA0_1T005PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,4,IW284,"DB102,INT528",NGA0_1E002PV,Absolute humidity,,4-20 mA,0-40,g/kg,10,0.5,,MEAS,ok,,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M111.2 DB300,X14.2",NGA0_1E002SF,,,,,,,,,SF,ok,,NGA0_1E002PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW286,"DB102,INT530",NGA0_1T002PV,Outdoor temperature,,4-20 mA-40-60,,°C,10,0.5,,MEAS,ok,,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M111.3 DB300,X14.3",NGA0_1T002SF,,,,,,,,,SF,ok,,NGA0_1T002PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW288,"DB102,INT206",NGA0_1E001PV,Absolute humidity,,4-20 mA,0-40,g/kg,10,0.5,,MEAS,ok,,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M110.4 DB300,X15.4",NGA0_1E001SF,,,,,,,,,SF,ok,,NGA0_1E001PV
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,7,IW290,"DB102,INT228",NGA0_1T001PV,Outdoor temperature,,4-20 mA-40-60,,°C,10,0.5,,MEAS,ok,,
+CFE,A1,12,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M111.7 DB300,X14.7",NGA0_1T001SF,,,,,,,,,SF,ok,,NGA0_1T001PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW292,"DB102,INT108",SCA0_1PT101PV,Fuel oil inlet pressure,PT101,4-20 mA,0-16,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M104.3 DB300,X9.3",SCA0_1PT101SF,,,,,,,,,SF,ok,,SCA0_1PT101PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M128.3 DB300,X33.3",SCA0_1PT101AL,,,,,,,,5.5+5s,AL,ok,,SCA0_1PT101PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW294,"DB102,INT114",SCA0_1PT201PV,Lube oil inlet pressure,PT201,4-20 mA,0-10,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M104.6 DB300,X9.6",SCA0_1PT201SF,,,,,,,,,SF,ok,,SCA0_1PT201PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M128.6 DB300,X33.6",SCA0_1PT201AL,,,,,,,,3+5s,AL,ok,,SCA0_1PT201PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M189.2 DB300,X92.2",SCA0_1PT201SDL,,,,,,,,2.5+5s,SDL,ok,,SCA0_1PT201PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW296,"DB102,INT162",SCA0_1PDT243PV,Lube oil filter diff. pressure,PDT243,4-20 mA,0-2,bar,100,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M107.6 DB300,X10.6",SCA0_1PDT243SF,,,,,,,,,SF,ok,,SCA0_1PDT243PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M131.6 DB300,X34.6",SCA0_1PDT243AH,,,,,,,,1.2+5s,AH,ok,,SCA0_1PDT243PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,3,IW298,"DB102,INT178",SCA0_1PT271PV,Lube oil pressure TC A inlet,PT271,4-20 mA,0-10,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.6 DB300,X13.6",SCA0_1PT271SF,,,,,,,,,SF,ok,,SCA0_1PT271PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.6 DB300,X37.6",SCA0_1PT271AL,,,,,,,,1.3+10s,AL,ok,,SCA0_1PT271PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,4,IW300,"DB102,INT180",SCA0_1PT281PV,Lube oil pressure TC B inlet,PT281,4-20 mA,0-10,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.7 DB300,X13.7",SCA0_1PT281SF,,,,,,,,,SF,ok,,SCA0_1PT281PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.7 DB300,X37.7",SCA0_1PT281AL,,,,,,,,1.3+10s,AL,ok,,SCA0_1PT281PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW302,"DB102,INT166",SCA0_1PT301PV,Starting air pressure,PT301,4-20 mA,0-40,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.0 DB300,X13.0",SCA0_1PT301SF,,,,,,,,,SF,ok,,SCA0_1PT301PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.0 DB300,X37.0",SCA0_1PT301AL,,,,,,,,16+5s,AL,ok,,SCA0_1PT301PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW304,"DB102,INT168",SCA0_1PT311PV,Control air pressure,PT311,4-20 mA,0-40,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.1 DB300,X13.1",SCA0_1PT311SF,,,,,,,,,SF,ok,,SCA0_1PT311PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.1 DB300,X37.1",SCA0_1PT311AL,,,,,,,,16+5s,AL,ok,,SCA0_1PT311PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M205.1 DB300,X108.1",SCA0_1PT311ASL,,,,,,,,12+5sASL,,ok,,SCA0_1PT311PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,7,IW306,"DB102,INT124",SCA0_1PT401PV,HT-water pressure jacket inlet,PT401,4-20 mA,0-6,bar,10,,,MEAS,ok,,
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M105.3 DB300,X8.3",SCA0_1PT401SF,,,,,,,,,SF,ok,,SCA0_1PT401PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M129.3 DB300,X32.3",SCA0_1PT401AL,,,,,,,,2+5s,AL,ok,,SCA0_1PT401PV
+CFE,A2,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M189.0 DB300,X92.0",SCA0_1PT401SDL,,,,,,,,1.5+5s,SDL,ok,,SCA0_1PT401PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW308,"DB102,INT138",SCA0_1PT471PV,LT-water pressure CAC inlet,PT471,4-20 mA,0-6,bar,10,,,MEAS,ok,,
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M106.2 DB300,X11.2",SCA0_1PT471SF,,,,,,,,,SF,ok,,SCA0_1PT471PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M130.2 DB300,X35.2",SCA0_1PT471AL,,,,,,,,2+5s,AL,ok,,SCA0_1PT471PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M189.1 DB300,X92.1",SCA0_1PT471SDL,,,,,,,,1.5+5s,SDL,ok,,SCA0_1PT471PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW310,"DB102,INT152",SCA0_1PT601PV,CA pressure engine inlet,PT601,4-20 mA,0-6,bar,100,0.02,,MEAS,ok,,
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M107.1 DB300,X10.1",SCA0_1PT601SF,,,,,,,,,SF,ok,,SCA0_1PT601PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M131.1 DB300,X34.1",SCA0_1PT601AH,,,,,,,,3.65+5s,AH,ok,,SCA0_1PT601PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M200.3 DB300,X105.3",SCA0_1PT601LRH,,,,,,,,3.75+5s,LRH,ok,,SCA0_1PT601PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW312,"DB102,INT170",SCA0_1PT700PV,Crankcase pressure,PT700,4-20 mA-25-25,,mbar,10,,,MEAS,ok,,
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.2 DB300,X13.2",SCA0_1PT700SF,,,,,,,,,SF,ok,,SCA0_1PT700PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.2 DB300,X37.2",SCA0_1PT700AH,,,,,,,,4+5s,AH,ok,,SCA0_1PT700PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M188.7 DB300,X93.7",SCA0_1PT700SDH,,,,,,,,6+5s,SDH,ok,,SCA0_1PT700PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW318,"DB102,INT172",SCA0_1SI196PV,Engine speed,SI196,4-20 mA0-1200,,rpm,1,2,,MEAS,ok,,
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.3 DB300,X13.3",SCA0_1SI196SF,,,,,,,,,SF,ok,,SCA0_1SI196PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.3 DB300,X37.3",SCA0_1SI196AH,,,,,,,,1.15*n,AH,ok,,SCA0_1SI196PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW320,"DB102,INT174",SCA0_1SI518PV,Turbo A speed,SI518,4-20 mA0-75000rpm,,,0.1,10,,MEAS,ok,,
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.4 DB300,X13.4",SCA0_1SI518SF,,,,,,,,,SF,ok,,SCA0_1SI518PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.4 DB300,X37.4",SCA0_1SI518AH,,,,,,,,28390+5s,AH,ok,,SCA0_1SI518PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M200.4 DB300,X105.4",SCA0_1SI518LRH,,,,,,,,28680+5s,LRH,ok,,SCA0_1SI518PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,7,IW322,"DB102,INT176",SCA0_1SI528PV,Turbo B speed,SI528,4-20 mA0-75000rpm,,,0.1,10,,MEAS,ok,,
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M108.5 DB300,X13.5",SCA0_1SI528SF,,,,,,,,,SF,ok,,SCA0_1SI528PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M132.5 DB300,X37.5",SCA0_1SI528AH,,,,,,,,28390+5s,AH,ok,,SCA0_1SI528PV
+CFE,A2,2,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M200.5 DB300,X105.5",SCA0_1SI528LRH,,,,,,,,28680+5s,LRH,ok,,SCA0_1SI528PV
+CFE,A2,3,Siemens 6ES7 332-5HD01-0AB0; 4 channels; Analog output,0,QW400,,SCA0_1OT795CV,Engine kW reference,,4-20 mA0-10000,,kW,,,,,ok,,
+CFE,A2,3,Siemens 6ES7 332-5HD01-0AB0; 4 channels; Analog output,1,QW402,,CFE0_1D029CV,Power factor reference (AVR),,4-20 mA,-0.75-0.75,,,,,,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW324,"DB102,INT380",SCA0_1TE7071APV,Cylinder liner temp. cyl. A7 sensor 1,TE7071A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.3 DB300,X21.3",SCA0_1TE7071ASF,,,,,,,,,SF,ok,,SCA0_1TE7071APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.0 DB300,X74.0",SCA0_1TE7071AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7071APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.0 DB300,X97.0",SCA0_1TE7071ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7071APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW326,"DB102,INT416",SCA0_1TE7072APV,Cylinder liner temp. cyl. A7 sensor 2,TE7072A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.5 DB300,X23.5",SCA0_1TE7072ASF,,,,,,,,,SF,ok,,SCA0_1TE7072APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.2 DB300,X76.2",SCA0_1TE7072AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7072APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.2 DB300,X99.2",SCA0_1TE7072ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7072APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW328,"DB102,INT382",SCA0_1TE7081APV,Cylinder liner temp. cyl. A8 sensor 1,TE7081A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.4 DB300,X21.4",SCA0_1TE7081ASF,,,,,,,,,SF,ok,,SCA0_1TE7081APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.1 DB300,X74.1",SCA0_1TE7081AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7081APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.1 DB300,X97.1",SCA0_1TE7081ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7081APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW330,"DB102,INT418",SCA0_1TE7082APV,Cylinder liner temp. cyl. A8 sensor 2,TE7082A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.6 DB300,X23.6",SCA0_1TE7082ASF,,,,,,,,,SF,ok,,SCA0_1TE7082APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.3 DB300,X76.3",SCA0_1TE7082AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7082APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.3 DB300,X99.3",SCA0_1TE7082ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7082APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW332,"DB102,INT384",SCA0_1TE7091APV,Cylinder liner temp. cyl. A9 sensor 1,TE7091A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.5 DB300,X21.5",SCA0_1TE7091ASF,,,,,,,,,SF,ok,,SCA0_1TE7091APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.2 DB300,X74.2",SCA0_1TE7091AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7091APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.2 DB300,X97.2",SCA0_1TE7091ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7091APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW334,"DB102,INT420",SCA0_1TE7092APV,Cylinder liner temp. cyl. A9 sensor 2,TE7092A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M118.7 DB300,X23.7",SCA0_1TE7092ASF,,,,,,,,,SF,ok,,SCA0_1TE7092APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.4 DB300,X76.4",SCA0_1TE7092AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7092APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.4 DB300,X99.4",SCA0_1TE7092ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7092APV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW336,"DB102,INT386",SCA0_1TE7011BPV,Cylinder liner temp. cyl. B1 sensor 1,TE7011B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.6 DB300,X21.6",SCA0_1TE7011BSF,,,,,,,,,SF,ok,,SCA0_1TE7011BPV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.3 DB300,X74.3",SCA0_1TE7011BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7011BPV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.3 DB300,X97.3",SCA0_1TE7011BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7011BPV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW338,"DB102,INT422",SCA0_1TE7012BPV,Cylinder liner temp. cyl. B1 sensor 2,TE7012B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.0 DB300,X22.0",SCA0_1TE7012BSF,,,,,,,,,SF,ok,,SCA0_1TE7012BPV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.5 DB300,X76.5",SCA0_1TE7012BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7012BPV
+CFE,A2,4,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.5 DB300,X99.5",SCA0_1TE7012BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7012BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW340,"DB102,INT388",SCA0_1TE7021BPV,Cylinder liner temp. cyl. B2 sensor 1,TE7021B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M116.7 DB300,X21.7",SCA0_1TE7021BSF,,,,,,,,,SF,ok,,SCA0_1TE7021BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.4 DB300,X74.4",SCA0_1TE7021BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7021BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.4 DB300,X97.4",SCA0_1TE7021BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7021BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW342,"DB102,INT424",SCA0_1TE7022BPV,Cylinder liner temp. cyl. B2 sensor 2,TE7022B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.1 DB300,X22.1",SCA0_1TE7022BSF,,,,,,,,,SF,ok,,SCA0_1TE7022BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.6 DB300,X76.6",SCA0_1TE7022BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7022BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.6 DB300,X99.6",SCA0_1TE7022BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7022BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW344,"DB102,INT390",SCA0_1TE7031BPV,Cylinder liner temp. cyl. B3 sensor 1,TE7031B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.0 DB300,X20.0",SCA0_1TE7031BSF,,,,,,,,,SF,ok,,SCA0_1TE7031BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.5 DB300,X74.5",SCA0_1TE7031BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7031BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.5 DB300,X97.5",SCA0_1TE7031BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7031BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW346,"DB102,INT426",SCA0_1TE7032BPV,Cylinder liner temp. cyl. B3 sensor 2,TE7032B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.2 DB300,X22.2",SCA0_1TE7032BSF,,,,,,,,,SF,ok,,SCA0_1TE7032BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M173.7 DB300,X76.7",SCA0_1TE7032BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7032BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M194.7 DB300,X99.7",SCA0_1TE7032BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7032BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW348,"DB102,INT392",SCA0_1TE7041BPV,Cylinder liner temp. cyl. B4 sensor 1,TE7041B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.1 DB300,X20.1",SCA0_1TE7041BSF,,,,,,,,,SF,ok,,SCA0_1TE7041BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.6 DB300,X74.6",SCA0_1TE7041BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7041BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.6 DB300,X97.6",SCA0_1TE7041BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7041BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW350,"DB102,INT428",SCA0_1TE7042BPV,Cylinder liner temp. cyl. B4 sensor 2,TE7042B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.3 DB300,X22.3",SCA0_1TE7042BSF,,,,,,,,,SF,ok,,SCA0_1TE7042BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M174.0 DB300,X79.0",SCA0_1TE7042BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7042BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M195.0 DB300,X98.0",SCA0_1TE7042BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7042BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW352,"DB102,INT394",SCA0_1TE7051BPV,Cylinder liner temp. cyl. B5 sensor 1,TE7051B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.2 DB300,X20.2",SCA0_1TE7051BSF,,,,,,,,,SF,ok,,SCA0_1TE7051BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M171.7 DB300,X74.7",SCA0_1TE7051BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7051BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M192.7 DB300,X97.7",SCA0_1TE7051BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7051BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW354,"DB102,INT430",SCA0_1TE7052BPV,Cylinder liner temp. cyl. B5 sensor 2,TE7052B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.4 DB300,X22.4",SCA0_1TE7052BSF,,,,,,,,,SF,ok,,SCA0_1TE7052BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M174.1 DB300,X79.1",SCA0_1TE7052BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7052BPV
+CFE,A2,5,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M195.1 DB300,X98.1",SCA0_1TE7052BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7052BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW356,"DB102,INT396",SCA0_1TE7061BPV,Cylinder liner temp. cyl. B6 sensor 1,TE7061B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.3 DB300,X20.3",SCA0_1TE7061BSF,,,,,,,,,SF,ok,,SCA0_1TE7061BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.0 DB300,X77.0",SCA0_1TE7061BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7061BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.0 DB300,X96.0",SCA0_1TE7061BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7061BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW358,"DB102,INT432",SCA0_1TE7062BPV,Cylinder liner temp. cyl. B6 sensor 2,TE7062B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.5 DB300,X22.5",SCA0_1TE7062BSF,,,,,,,,,SF,ok,,SCA0_1TE7062BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M174.2 DB300,X79.2",SCA0_1TE7062BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7062BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M195.2 DB300,X98.2",SCA0_1TE7062BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7062BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW360,"DB102,INT398",SCA0_1TE7071BPV,Cylinder liner temp. cyl. B7 sensor 1,TE7071B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.4 DB300,X20.4",SCA0_1TE7071BSF,,,,,,,,,SF,ok,,SCA0_1TE7071BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.1 DB300,X77.1",SCA0_1TE7071BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7071BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.1 DB300,X96.1",SCA0_1TE7071BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7071BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW362,"DB102,INT434",SCA0_1TE7072BPV,Cylinder liner temp. cyl. B7 sensor 2,TE7072B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.6 DB300,X22.6",SCA0_1TE7072BSF,,,,,,,,,SF,ok,,SCA0_1TE7072BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M174.3 DB300,X79.3",SCA0_1TE7072BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7072BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M195.3 DB300,X98.3",SCA0_1TE7072BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7072BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,4,IW364,"DB102,INT400",SCA0_1TE7081BPV,Cylinder liner temp. cyl. B8 sensor 1,TE7081B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.5 DB300,X20.5",SCA0_1TE7081BSF,,,,,,,,,SF,ok,,SCA0_1TE7081BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.2 DB300,X77.2",SCA0_1TE7081BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7081BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.2 DB300,X96.2",SCA0_1TE7081BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7081BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,5,IW366,"DB102,INT436",SCA0_1TE7082BPV,Cylinder liner temp. cyl. B8 sensor 2,TE7082B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M119.7 DB300,X22.7",SCA0_1TE7082BSF,,,,,,,,,SF,ok,,SCA0_1TE7082BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M174.4 DB300,X79.4",SCA0_1TE7082BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7082BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M195.4 DB300,X98.4",SCA0_1TE7082BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7082BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,6,IW368,"DB102,INT402",SCA0_1TE7091BPV,Cylinder liner temp. cyl. B9 sensor 1,TE7091B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M117.6 DB300,X20.6",SCA0_1TE7091BSF,,,,,,,,,SF,ok,,SCA0_1TE7091BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M172.3 DB300,X77.3",SCA0_1TE7091BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7091BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M193.3 DB300,X96.3",SCA0_1TE7091BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7091BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,7,IW370,"DB102,INT438",SCA0_1TE7092BPV,Cylinder liner temp. cyl. B9 sensor 2,TE7092B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M120.0 DB300,X25.0",SCA0_1TE7092BSF,,,,,,,,,SF,ok,,SCA0_1TE7092BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M174.5 DB300,X79.5",SCA0_1TE7092BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7092BPV
+CFE,A2,6,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M195.5 DB300,X98.5",SCA0_1TE7092BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7092BPV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,0,IW372,"DB102,INT496",SCA0_1TE7101APV,Cylinder liner temp. cyl. A10 sensor 1,TE7101A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M122.7 DB300,X27.7",SCA0_1TE7101ASF,,,,,,,,,SF,ok,,SCA0_1TE7101APV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M177.6 DB300,X80.6",SCA0_1TE7101AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7101APV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M199.1 DB300,X102.1",SCA0_1TE7101ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7101APV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,1,IW374,"DB102,INT500",SCA0_1TE7102APV,Cylinder liner temp. cyl. A10 sensor 2,TE7102A,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M123.1 DB300,X26.1",SCA0_1TE7102ASF,,,,,,,,,SF,ok,,SCA0_1TE7102APV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M178.0 DB300,X83.0",SCA0_1TE7102AAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7102APV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M199.3 DB300,X102.3",SCA0_1TE7102ASDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7102APV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,2,IW376,"DB102,INT498",SCA0_1TE7101BPV,Cylinder liner temp. cyl. B10 sensor 1,TE7101B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M123.0 DB300,X26.0",SCA0_1TE7101BSF,,,,,,,,,SF,ok,,SCA0_1TE7101BPV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M177.7 DB300,X80.7",SCA0_1TE7101BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7101BPV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M199.2 DB300,X102.2",SCA0_1TE7101BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7101BPV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,3,IW378,"DB102,INT502",SCA0_1TE7102BPV,Cylinder liner temp. cyl. B10 sensor 2,TE7102B,NiCrNi,0-200,°C,1,,,MEAS,ok,,
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M123.2 DB300,X26.2",SCA0_1TE7102BSF,,,,,,,,,SF,ok,,SCA0_1TE7102BPV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M178.1 DB300,X83.1",SCA0_1TE7102BAH,,,,,,,,160+5s,AH,ok,,SCA0_1TE7102BPV
+CFE,A2,7,Siemens 6ES7 331-7PF11-0AB0; 8 channels; Thermocouple input,,,"M199.4 DB300,X102.4",SCA0_1TE7102BSDH,,,,,,,,180+1s,SDH,ok,,SCA0_1TE7102BPV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW388,"DB102,INT230",SCA0_1E001PV,"Vibration, base frame sensor 1",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.0 DB300,X17.0",SCA0_1E001SF,,,,,,,,,SF,ok,,SCA0_1E001PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.0 DB300,X41.0",SCA0_1E001AH,,,,,,,,28,AH,ok,,SCA0_1E001PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW390,"DB102,INT232",SCA0_1E002PV,"Vibration, base frame sensor 2",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.1 DB300,X17.1",SCA0_1E002SF,,,,,,,,,SF,ok,,SCA0_1E002PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.1 DB300,X41.1",SCA0_1E002AH,,,,,,,,28,AH,ok,,SCA0_1E002PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW392,"DB102,INT234",SCA0_1E003PV,"Vibration, base frame sensor 3",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.2 DB300,X17.2",SCA0_1E003SF,,,,,,,,,SF,ok,,SCA0_1E003PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.2 DB300,X41.2",SCA0_1E003AH,,,,,,,,28,AH,ok,,SCA0_1E003PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,3,IW394,"DB102,INT236",SCA0_1E004PV,"Vibration, base frame sensor 4",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.3 DB300,X17.3",SCA0_1E004SF,,,,,,,,,SF,ok,,SCA0_1E004PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.3 DB300,X41.3",SCA0_1E004AH,,,,,,,,28,AH,ok,,SCA0_1E004PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,4,IW396,"DB102,INT238",BAG0_1E005PV,"Vibration, generator sensor 1",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.4 DB300,X17.4",BAG0_1E005SF,,,,,,,,,SF,ok,,BAG0_1E005PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.4 DB300,X41.4",BAG0_1E005AH,,,,,,,,22,AH,ok,,BAG0_1E005PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW398,"DB102,INT240",BAG0_1E006PV,"Vibration, generator sensor 2",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.5 DB300,X17.5",BAG0_1E006SF,,,,,,,,,SF,ok,,BAG0_1E006PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.5 DB300,X41.5",BAG0_1E006AH,,,,,,,,22,AH,ok,,BAG0_1E006PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW400,"DB102,INT242",SHA0_1E007PV,"Vibration, turbocharger sensor 1",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.6 DB300,X17.6",SHA0_1E007SF,,,,,,,,,SF,ok,,SHA0_1E007PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.6 DB300,X41.6",SHA0_1E007AH,,,,,,,,22,AH,ok,,SHA0_1E007PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,7,IW402,"DB102,INT244",SHA0_1E008PV,"Vibration, turbocharger sensor 2",,4-20 mA,0-36 mm/s RMS,,10,,,MEAS,ok,,
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M112.7 DB300,X17.7",SHA0_1E008SF,,,,,,,,,SF,ok,,SHA0_1E008PV
+CFE,A2,8,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M136.7 DB300,X41.7",SHA0_1E008AH,,,,,,,,22,AH,ok,,SHA0_1E008PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,0,IW420,"DB102,INT144",MOD0_1T121PV,Cooling water temp from LT by-pass,T121,Pt-100,0-160,°C,10,,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M106.5 DB300,X11.5",MOD0_1T121SF,,,,,,,,,SF,ok,,MOD0_1T121PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,1,IW422,"DB102,INT146",MOD0_1T120PV,Cooling water temp from LT cooling,T120,Pt-100,0-80,°C,10,0.5,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M106.6 DB300,X11.6",MOD0_1T120SF,,,,,,,,,SF,ok,,MOD0_1T120PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,2,IW424,"DB102,INT212",PCA0_1T014PV,"FO temp, return to mixing tank",T014,Pt-100,0-160,°C,10,,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M110.7 DB300,X15.7",PCA0_1T014SF,,,,,,,,,SF,ok,,PCA0_1T014PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,3,IW426,"DB102,INT248",BJA0_1T010PV,Cabine temperature,T10,Pt-100,0-100,°C,10,,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M113.1 DB300,X16.1",BJA0_1T010SF,,,,,,,,,SF,ok,,BJA0_1T010PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,4,IW428,"DB102,INT208",PCE0_1P001PV,LFO Pressure 1 after LFO pump,P001,4..20 mA,0-10,bar,10,,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M110.5 DB300,X15.5",PCE0_1P001SF,,,,,,,,,SF,ok,,PCE0_1P001PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M134.5 DB300,X39.5",PCE0_1P001AH,,,,,,,,6,AH,ok,,PCE0_1P001PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M209.0 DB300,X112.0",PCE0_1P001AL,,,,,,,,2.5,AL,ok,,PCE0_1P001PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M190.0 DB300,X95.0",PCE0_1P001SDH,,,,,,,,7.5,SDH,ok,,PCE0_1P001PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,5,IW430,"DB102,INT210",PCE0_1P002PV,LFO Pressure 2 after LFO pump,P002,4..20 mA,0-10,bar,10,,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M110.6 DB300,X15.6",PCE0_1P002SF,,,,,,,,,SF,ok,,PCE0_1P002PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M134.6 DB300,X39.6",PCE0_1P002AH,,,,,,,,6,AH,ok,,PCE0_1P002PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M209.1 DB300,X112.1",PCE0_1P002AL,,,,,,,,2.5,AL,ok,,PCE0_1P002PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M190.1 DB300,X95.1",PCE0_1P002SDH,,,,,,,,7.5,SDH,ok,,PCE0_1P002PV
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,6,IW432,"DB102,INT246",PCA0_1P013PV,FO mixing tank pressure,P013,4..20 mA,0-10,bar,10,,,MEAS,ok,,
+BJA,A1,1,Siemens 6ES7 331-1KF02-0AB0; 8 channels; Analog input,,,"M113.0 DB300,X16.0",PCA0_1P013SF,,,,,,,,,SF,ok,,PCA0_1P013PV
+BJA,A1,2,Siemens 6ES7332-5HF00-0AB0; 8 channels; Analog output,0,QW420,,MOD0_1V001CV,LT-water  3-way valve control (4 mA=to rad),V001,4..20 mA,0-100,%,,,,,ok,,
+BJA,A1,2,Siemens 6ES7332-5HF00-0AB0; 8 channels; Analog output,1,QW422,,MOD0_1V002CV,HT-water 3-way valve control (4 mA=to rad),V002,4..20 mA,0-100,%,,,,,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,0,Q18.0,M18.0,BJA0_1D007RNG,Engine running indication,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,1,Q18.1,M18.1,SQA0_1M201RO,Prelube pump control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,2,Q18.2,M18.2,PCA0_1M002RO,Clean leak fuel pump control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,3,Q18.3,M18.3,PCA0_1V042CG,Dirty leak fuel pump control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,4,Q18.4,M18.4,BJA0_1S013CG,Dirty leak pump running indication,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,5,Q18.5,M18.5,PCA0_1M001RO,Fuel booster pump control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,10,Q19.2,M19.2,PCA0_1V007CG,FO safety shut-off valve control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,13,Q19.5,M19.5,VDA0_1B001CG,Water preheater control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,20,Q20.4,M20.4,NHC0_1V001CO,TCW unit water valve control,V001,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,21,Q20.5,M20.5,NHC0_1V002CO,TCW unit turbine wash valve control,V002,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,22,Q20.6,M20.6,NHC0_1V003CO,TCW unit air valve control,V003,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,23,Q20.7,M20.7,NHC0_1V004CO,TCW unit comp. air wash valve control,V004,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,24,Q21.0,M21.0,NHC0_1V005CO,TCW unit comp. air purge valve control,V005,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,25,Q21.1,M21.1,NHC0_1V006CO,TCW unit charge air purge valve control,V006,DO,,,,,,OUT,NOT AVAILABLE OLD MODEL,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,26,Q21.2,,BJA0_1K191,Spare,,DO,,,,,,,,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,27,Q21.3,M21.3,PCA0_1M004RO,Fuel cooling pump control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,29,Q21.5,M21.5,QBF0_1B001CG,Oil mist separator control,,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,30,Q21.6,M21.6,BJL0_1S001IND,LFO feeder pump 1 running (lamp control),,DO,,,,,,OUT,ok,,
+BJA,A1,3,Siemens 6ES7 322-1BL00-0AA0; 32 channels; 24VDC output,31,Q21.7,M21.7,BJL0_1S002IND,LFO feeder pump 2 running (lamp control),,DO,,,,,,OUT,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,0,I60.0,"M190.6 DB300,X95.6",BJA0_1S020ESG,Emergency stop BJA0_1,,NC,,,,,,EMG,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,1,I60.1,"M160.1 DB300,X65.1",BJA0_1F000AG,MCB open in BJA0_1,,NC,,,,,,ALM,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,2,I60.2,"M160.2 DB300,X65.2",BJA0_1F001AG,"Circuit breaker open, LV",,NO,,,,,,ALM,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,3,I60.3,"M160.3 DB300,X65.3",BJA0_1S027AG,Control voltage fault,,NC,,,,,,ALM,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,5,I60.5,"M160.5 DB300,X65.5",VDA0_1T001AH,Water preheater overheated,,NC,,,,,,ALM,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,6,I60.6,"M60.6 DB300,X185.6",PCA0_1L002INH,Clean leak fuel tank level high,,NC,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,7,I60.7,"M60.7 DB300,X185.7",PCA0_1L003INL,Clean leak fuel tank level low,,NC,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,8,I61.0,"M61.0 DB300,X184.0",PCA0_1L004INH,Dirty leak fuel tank level high,,NC,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,10,I61.2,"M161.2 DB300,X64.2",PCA0_1L001AL,FO mixing tank level low,,NC,,,,,,ALM,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,11,I61.3,"M161.3 DB300,X64.3",VDA0_1L001AL,Water preheater level low,,NC,,,,,,ALM,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,12,I61.4,"M61.4 DB300,X184.4",BJA0_1S002ACE,Prelube pump control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,13,I61.5,"M61.5 DB300,X184.5",SCA0_1M201RNG,Prelube pump running,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,15,I61.7,"M61.7 DB300,X184.7",BJA0_1S011ACE,Fuel booster pump control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,16,I62.0,"M62.0 DB300,X187.0",BJA0_1S011IN03,Fuel booster pump control switch in 1 pos.,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,17,I62.1,"M62.1 DB300,X187.1",PCA0_1M001RNG,Fuel booster pump running,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,18,I62.2,"M62.2 DB300,X187.2",VDA0_1M001RNG,Preheating circ. pump running,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,19,I62.3,"M62.3 DB300,X187.3",BJA0_1S012ACE,Clean leak fuel pump control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,20,I62.4,"M62.4 DB300,X187.4",PCA0_1M002RNG,Clean leak fuel pump running,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,21,I62.5,"M62.5 DB300,X187.5",BJA0_1S013ACE,Dirty leak fuel pump control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,22,I62.6,"M62.6 DB300,X187.6",BJA0_1S013IN03,Dirty leak fuel pump control switch in 1 pos.,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,28,I63.4,"M63.4 DB300,X186.4",PCA0_1V007OPN,Fuel oil safety shut off valve open,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,,,"M163.4 DB300,X66.4",PCA0_1V007AG,Fuel oil safety shut off valve pos. alarm,,,,,,,,ALM,ok,,PCA0_1V007OPN
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,29,I63.5,"M63.5 DB300,X186.5",PCA0_1V007CLO,Fuel oil safety shut off valve open,,NO,,,,,,IND,ok,,
+BJA,A1,4,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,30,I63.6,"M63.6 DB300,X186.6",BAG0_1B001RNG,Generator anticond. heaters ON,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,0,I64.0,"M164.0 DB300,X69.0",SCA0_1M782ING,Emergency stop turning gear indication,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,1,I64.1,"M164.1 DB300,X69.1",BJN0_1S035AG,Lube oil separator common alarm,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,2,I64.2,"M64.2 DB300,X189.2",QBB0_1M001RNG,Lube oil separator running,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,3,I64.3,"M64.3 DB300,X189.3",QBB0_1M002RNG,Lube oil separator feeder pump running,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,4,I64.4,"M64.4 DB300,X189.4",BLS0_1M001RNG,Oil mist separator FC running,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,5,I64.5,"M164.5 DB300,X69.5",BLS0_1S035AG,Oil mist separator FC fault,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,10,I65.2,"M165.2 DB300,X68.2",PCA0_1P002AH,FO filter diff. pressure high,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,12,I65.4,"M165.4 DB300,X68.4",VEA0_1L001AL,LT expansion vessel level low,,NO,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,13,I65.5,"M165.5 DB300,X68.5",BLU0_1P001AH,Charge air filter diff. pressure high,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,14,I65.6,"M165.6 DB300,X68.6",BLU0_1K001AG,Charge air filter rotation alarm,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,16,I66.0,"M66.0 DB300,X191.0",BJL0_1S001ACE,LFO feed pump 1 control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,17,I66.1,"M66.1 DB300,X191.1",BJL0_1S002ACE,LFO feed pump 2 control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,18,I66.2,"M66.2 DB300,X191.2",PCE0_1V001CLO,LFO inlet valve 1 closed,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,,,"M166.2 DB300,X71.2",PCE0_1V001AG,LFO inlet valve 1 pos. alarm,,,,,,,,ALM,ok,,PCE0_1V001CLO
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,19,I66.3,"M66.3 DB300,X191.3",PCE0_1V001OPN,LFO inlet valve 1 open,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,20,I66.4,"M66.4 DB300,X191.4",PCE0_1V002CLO,LFO inlet valve 2 closed,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,,,"M166.5 DB300,X71.5",PCE0_1V002AG,LFO inlet valve 2 pos. alarm,,,,,,,,ALM,ok,,PCE0_1V002CLO
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,21,I66.5,"M66.5 DB300,X191.5",PCE0_1V002OPN,LFO inlet valve 2 open,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,22,I66.6,"M166.6 DB300,X71.6",BJL0_1S035AG,LFO feeder common alarm,,NC,,,,,,ALM,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,24,I67.0,"M67.0 DB300,X190.0",BJA0_1S004ACE,Fuel cooling pump control switch in AUTO pos.,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,25,I67.1,"M67.1 DB300,X190.1",PCA0_1M004RNG,Fuel cooling pump running,,NO,,,,,,IND,ok,,
+BJA,A1,5,Siemens 6ES7 321-1BL00-0AA0; 32 channels; 24VDC input,26,I67.2,"M167.2 DB300,X70.2",SQA0_0S001ALI,Oil mist detector failure,,NC,,,,,,ALM,oknot installed yet/simulated,,
