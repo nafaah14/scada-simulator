@@ -49,7 +49,10 @@ editor falls back to saving in the browser — which still satisfies
 edit → save → view in one browser, but is not shared and is lost if site data
 is cleared.
 
-To bind it:
+Bound namespaces: production `SCREENS`, preview `SCREENS` (separate, so preview branches
+cannot overwrite production screens).
+
+To recreate them:
 
 ```bash
 npx wrangler kv namespace create SCREENS       # needs a token with Workers KV: Edit
