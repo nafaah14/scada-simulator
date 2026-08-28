@@ -832,6 +832,39 @@ for (let n = 1; n <= 6; n++) {
     { ...common, screens: OW, alarm_limits: { hihi: 15, hi: 10, lo: null, lolo: null } });
 }
 
+
+/* ---------------------------------------------------------------------
+   Automation network status and the derived exhaust-gas figures the
+   graph page reads. Deviation is computed by the simulation from the
+   same cylinder tags the Temp page shows, so the two views agree.
+   ------------------------------------------------------------------ */
+{
+  const common = { unit: 'COMMON' };
+  const A1 = ['Common.Automation1'];
+
+  for (const n of [1, 2]) {
+    digital(`COMMON_BEU90${n}_OK`, `BEU90${n} network bridge healthy`, true,
+      { ...common, screens: A1 });
+  }
+  analog('COMMON_DAYTANK_HI_LIMIT', 'Day tank filling high level limit', '%', 80, 'level',
+    { ...common, screens: A1 });
+  analog('COMMON_DAYTANK_LO_LIMIT', 'Day tank filling low level limit', '%', 35, 'level',
+    { ...common, screens: A1 });
+
+  // exhaust-gas graph: engine speed plus one deviation tag per cylinder
+  const EG = ['G1.ExhGraph'];
+  analog('G01_ENGINE_SPEED', 'Engine speed', 'rpm', 753, 'speed',
+    { unit: 'G1', screens: [...EG, 'G1.Control'] });
+  for (const bank of ['A', 'B']) {
+    for (let n = 1; n <= 10; n++) {
+      analog(`G01_CYL_${bank}_EXH_${n}_DEV`,
+        `Exh. gas temp. cyl. ${bank}${n} dev. from avg.`, '°C', 0, 'temperature',
+        { unit: 'G1', screens: EG,
+          alarm_limits: { hihi: null, hi: 66, lo: -66, lolo: null } });
+    }
+  }
+}
+
 const list = [...out.values()].sort((a, b) => a.tag_id.localeCompare(b.tag_id));
 writeFileSync(join(TAGS_DIR, 'tags.generated.json'), JSON.stringify(list, null, 2) + '\n');
 console.log(`wrote tags.generated.json — ${list.length} tags ` +

@@ -1,0 +1,2391 @@
+{
+  "screen_id": "Common.Automation1",
+  "title": "Common — Automation 1 (plant network)",
+  "unit": "COMMON",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1720,
+    "height": 980,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "pipe",
+      "x": 396,
+      "y": 61,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "x": 430,
+      "y": 56,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Ethernet"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s3",
+      "type": "pipe",
+      "x": 396,
+      "y": 79,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s4",
+      "type": "text",
+      "x": 430,
+      "y": 74,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Optical eth."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "x": 120,
+      "y": 64,
+      "w": 250,
+      "h": 470,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "CWC901",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "text",
+      "x": 128,
+      "y": 70,
+      "w": 100,
+      "h": 13,
+      "props": {
+        "text": "CWC901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s7",
+      "type": "text",
+      "x": 30,
+      "y": 60,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "Y"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 26,
+        "bold": true,
+        "align": "left"
+      },
+      "name": "Antenna"
+    },
+    {
+      "id": "s8",
+      "type": "pipe",
+      "x": 56,
+      "y": 95,
+      "w": 90,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s9",
+      "type": "pipe",
+      "x": 55,
+      "y": 74,
+      "w": 2,
+      "h": 22,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s10",
+      "type": "netswitch",
+      "x": 146,
+      "y": 86,
+      "w": 190,
+      "h": 22,
+      "props": {
+        "ports": 12,
+        "cols": 12
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWC901 router"
+    },
+    {
+      "id": "s11",
+      "type": "netswitch",
+      "x": 146,
+      "y": 140,
+      "w": 190,
+      "h": 26,
+      "props": {
+        "ports": 24,
+        "cols": 12
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWC901 switch 1"
+    },
+    {
+      "id": "s12",
+      "type": "netswitch",
+      "x": 146,
+      "y": 182,
+      "w": 190,
+      "h": 26,
+      "props": {
+        "ports": 24,
+        "cols": 12
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWC901 switch 2"
+    },
+    {
+      "id": "s13",
+      "type": "netswitch",
+      "x": 146,
+      "y": 224,
+      "w": 190,
+      "h": 26,
+      "props": {
+        "ports": 24,
+        "cols": 12
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWC901 switch 3"
+    },
+    {
+      "id": "s14",
+      "type": "netswitch",
+      "x": 146,
+      "y": 280,
+      "w": 190,
+      "h": 26,
+      "props": {
+        "ports": 12,
+        "cols": 6
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWC901 patch 1"
+    },
+    {
+      "id": "s15",
+      "type": "netswitch",
+      "x": 146,
+      "y": 316,
+      "w": 190,
+      "h": 26,
+      "props": {
+        "ports": 12,
+        "cols": 6
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWC901 patch 2"
+    },
+    {
+      "id": "s16",
+      "type": "netswitch",
+      "x": 190,
+      "y": 366,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BEU901"
+    },
+    {
+      "id": "s17",
+      "type": "led",
+      "x": 194,
+      "y": 372,
+      "w": 16,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BEU901_OK"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#00a000",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s18",
+      "type": "netswitch",
+      "x": 240,
+      "y": 366,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BEU902"
+    },
+    {
+      "id": "s19",
+      "type": "led",
+      "x": 244,
+      "y": 372,
+      "w": 16,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_BEU902_OK"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#00a000",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s20",
+      "type": "text",
+      "x": 160,
+      "y": 420,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "BEU901  BEU902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s21",
+      "type": "pipe",
+      "x": 215,
+      "y": 108,
+      "w": 2,
+      "h": 258,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s22",
+      "type": "text",
+      "x": 480,
+      "y": 100,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "WOIS Workstation 1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s23",
+      "type": "shape",
+      "x": 500,
+      "y": 120,
+      "w": 150,
+      "h": 116,
+      "props": {
+        "kind": "monitor"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWT901"
+    },
+    {
+      "id": "s24",
+      "type": "text",
+      "x": 500,
+      "y": 130,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "CWT901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s25",
+      "type": "netswitch",
+      "x": 460,
+      "y": 158,
+      "w": 22,
+      "h": 56,
+      "props": {
+        "ports": 6,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWT901 tower"
+    },
+    {
+      "id": "s26",
+      "type": "pipe",
+      "x": 336,
+      "y": 245,
+      "w": 135,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s27",
+      "type": "pipe",
+      "x": 470,
+      "y": 214,
+      "w": 2,
+      "h": 32,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s28",
+      "type": "text",
+      "x": 680,
+      "y": 100,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "WOIS Workstation 2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s29",
+      "type": "shape",
+      "x": 700,
+      "y": 120,
+      "w": 150,
+      "h": 116,
+      "props": {
+        "kind": "monitor"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWT902"
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "x": 700,
+      "y": 130,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "CWT902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s31",
+      "type": "netswitch",
+      "x": 660,
+      "y": 158,
+      "w": 22,
+      "h": 56,
+      "props": {
+        "ports": 6,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWT902 tower"
+    },
+    {
+      "id": "s32",
+      "type": "pipe",
+      "x": 336,
+      "y": 256,
+      "w": 335,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s33",
+      "type": "pipe",
+      "x": 670,
+      "y": 214,
+      "w": 2,
+      "h": 43,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s34",
+      "type": "text",
+      "x": 880,
+      "y": 100,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "WOIS Workstation 3"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s35",
+      "type": "shape",
+      "x": 900,
+      "y": 120,
+      "w": 150,
+      "h": 116,
+      "props": {
+        "kind": "monitor"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWT903"
+    },
+    {
+      "id": "s36",
+      "type": "text",
+      "x": 900,
+      "y": 130,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "CWT903"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s37",
+      "type": "netswitch",
+      "x": 860,
+      "y": 158,
+      "w": 22,
+      "h": 56,
+      "props": {
+        "ports": 6,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWT903 tower"
+    },
+    {
+      "id": "s38",
+      "type": "pipe",
+      "x": 336,
+      "y": 267,
+      "w": 535,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s39",
+      "type": "pipe",
+      "x": 870,
+      "y": 214,
+      "w": 2,
+      "h": 54,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s40",
+      "type": "text",
+      "x": 1080,
+      "y": 100,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "WOIS Workstation 4"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s41",
+      "type": "shape",
+      "x": 1100,
+      "y": 120,
+      "w": 150,
+      "h": 116,
+      "props": {
+        "kind": "monitor"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWT904"
+    },
+    {
+      "id": "s42",
+      "type": "text",
+      "x": 1100,
+      "y": 130,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "CWT904"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s43",
+      "type": "netswitch",
+      "x": 1060,
+      "y": 158,
+      "w": 22,
+      "h": 56,
+      "props": {
+        "ports": 6,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWT904 tower"
+    },
+    {
+      "id": "s44",
+      "type": "pipe",
+      "x": 336,
+      "y": 278,
+      "w": 735,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s45",
+      "type": "pipe",
+      "x": 1070,
+      "y": 214,
+      "w": 2,
+      "h": 65,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "x": 1280,
+      "y": 100,
+      "w": 180,
+      "h": 13,
+      "props": {
+        "text": "Report station"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s47",
+      "type": "shape",
+      "x": 1300,
+      "y": 120,
+      "w": 150,
+      "h": 116,
+      "props": {
+        "kind": "monitor"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWF901"
+    },
+    {
+      "id": "s48",
+      "type": "text",
+      "x": 1300,
+      "y": 130,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "CWF901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s49",
+      "type": "netswitch",
+      "x": 1260,
+      "y": 158,
+      "w": 22,
+      "h": 56,
+      "props": {
+        "ports": 6,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CWF901 tower"
+    },
+    {
+      "id": "s50",
+      "type": "pipe",
+      "x": 336,
+      "y": 289,
+      "w": 935,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s51",
+      "type": "pipe",
+      "x": 1270,
+      "y": 214,
+      "w": 2,
+      "h": 76,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s52",
+      "type": "pipe",
+      "x": 335,
+      "y": 246,
+      "w": 2,
+      "h": 44,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s53",
+      "type": "shape",
+      "x": 1530,
+      "y": 118,
+      "w": 64,
+      "h": 62,
+      "props": {
+        "kind": "printer"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWP901"
+    },
+    {
+      "id": "s54",
+      "type": "text",
+      "x": 1602,
+      "y": 138,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "CWP901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s55",
+      "type": "shape",
+      "x": 1530,
+      "y": 196,
+      "w": 64,
+      "h": 62,
+      "props": {
+        "kind": "printer"
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "CWP902"
+    },
+    {
+      "id": "s56",
+      "type": "text",
+      "x": 1602,
+      "y": 216,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "CWP902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s57",
+      "type": "text",
+      "x": 1508,
+      "y": 62,
+      "w": 220,
+      "h": 30,
+      "props": {
+        "text": "Report &\nHardcopy Printer"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s58",
+      "type": "pipe",
+      "x": 1271,
+      "y": 289,
+      "w": 291,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s59",
+      "type": "pipe",
+      "x": 1561,
+      "y": 180,
+      "w": 2,
+      "h": 110,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s60",
+      "type": "rect",
+      "x": 360,
+      "y": 300,
+      "w": 430,
+      "h": 560,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "CFA901",
+      "locked": true
+    },
+    {
+      "id": "s61",
+      "type": "text",
+      "x": 368,
+      "y": 306,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "CFA901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s62",
+      "type": "text",
+      "x": 428,
+      "y": 306,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s63",
+      "type": "netswitch",
+      "x": 432,
+      "y": 320,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF1"
+    },
+    {
+      "id": "s64",
+      "type": "text",
+      "x": 512,
+      "y": 306,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s65",
+      "type": "netswitch",
+      "x": 516,
+      "y": 320,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF2"
+    },
+    {
+      "id": "s66",
+      "type": "text",
+      "x": 596,
+      "y": 306,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF3"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s67",
+      "type": "netswitch",
+      "x": 600,
+      "y": 320,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF3"
+    },
+    {
+      "id": "s68",
+      "type": "text",
+      "x": 680,
+      "y": 306,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF4"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s69",
+      "type": "netswitch",
+      "x": 684,
+      "y": 320,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF4"
+    },
+    {
+      "id": "s70",
+      "type": "pipe",
+      "x": 336,
+      "y": 331,
+      "w": 96,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s71",
+      "type": "text",
+      "x": 1512,
+      "y": 306,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "CFC011"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s72",
+      "type": "pipe",
+      "x": 444,
+      "y": 313,
+      "w": 1064,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s73",
+      "type": "text",
+      "x": 258,
+      "y": 470,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "CFC061"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s74",
+      "type": "pipe",
+      "x": 352,
+      "y": 477,
+      "w": 92,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s75",
+      "type": "pipe",
+      "x": 443,
+      "y": 368,
+      "w": 2,
+      "h": 110,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s76",
+      "type": "text",
+      "x": 430,
+      "y": 430,
+      "w": 80,
+      "h": 13,
+      "props": {
+        "text": "Primary"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s77",
+      "type": "text",
+      "x": 546,
+      "y": 430,
+      "w": 80,
+      "h": 13,
+      "props": {
+        "text": "Standby"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s78",
+      "type": "bubble",
+      "x": 420,
+      "y": 450,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "▲",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "A0A active"
+    },
+    {
+      "id": "s79",
+      "type": "bubble",
+      "x": 536,
+      "y": 450,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "▶",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "A0B standby"
+    },
+    {
+      "id": "s80",
+      "type": "iorack",
+      "x": 432,
+      "y": 446,
+      "w": 84,
+      "h": 52,
+      "props": {
+        "title": "A0A",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "NC"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA901 A0A primary CPU"
+    },
+    {
+      "id": "s81",
+      "type": "iorack",
+      "x": 548,
+      "y": 446,
+      "w": 84,
+      "h": 52,
+      "props": {
+        "title": "A0B",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "NC"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA901 A0B standby CPU"
+    },
+    {
+      "id": "s82",
+      "type": "netswitch",
+      "x": 376,
+      "y": 560,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 MAF"
+    },
+    {
+      "id": "s83",
+      "type": "text",
+      "x": 372,
+      "y": 544,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "MAF"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s84",
+      "type": "iorack",
+      "x": 440,
+      "y": 600,
+      "w": 190,
+      "h": 54,
+      "props": {
+        "title": "A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA901 rack A1"
+    },
+    {
+      "id": "s85",
+      "type": "iorack",
+      "x": 440,
+      "y": 662,
+      "w": 190,
+      "h": 54,
+      "props": {
+        "title": "A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA901 rack A2"
+    },
+    {
+      "id": "s86",
+      "type": "iorack",
+      "x": 440,
+      "y": 724,
+      "w": 190,
+      "h": 54,
+      "props": {
+        "title": "A3",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DI",
+          "DI",
+          "DI",
+          "DI",
+          "DI",
+          "DI",
+          "DI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA901 rack A3"
+    },
+    {
+      "id": "s87",
+      "type": "text",
+      "x": 660,
+      "y": 528,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF7"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s88",
+      "type": "netswitch",
+      "x": 660,
+      "y": 542,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF7"
+    },
+    {
+      "id": "s89",
+      "type": "text",
+      "x": 660,
+      "y": 604,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF5"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s90",
+      "type": "netswitch",
+      "x": 660,
+      "y": 618,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF5"
+    },
+    {
+      "id": "s91",
+      "type": "text",
+      "x": 660,
+      "y": 680,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF6"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s92",
+      "type": "netswitch",
+      "x": 660,
+      "y": 694,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA901 AF6"
+    },
+    {
+      "id": "s93",
+      "type": "pipe",
+      "x": 455,
+      "y": 368,
+      "w": 2,
+      "h": 78,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s94",
+      "type": "pipe",
+      "x": 539,
+      "y": 368,
+      "w": 2,
+      "h": 78,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s95",
+      "type": "pipe",
+      "x": 623,
+      "y": 368,
+      "w": 2,
+      "h": 78,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s96",
+      "type": "pipe",
+      "x": 707,
+      "y": 368,
+      "w": 2,
+      "h": 78,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s97",
+      "type": "pipe",
+      "x": 456,
+      "y": 445,
+      "w": 28,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s98",
+      "type": "pipe",
+      "x": 540,
+      "y": 445,
+      "w": 32,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s99",
+      "type": "pipe",
+      "x": 624,
+      "y": 445,
+      "w": 84,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s100",
+      "type": "pipe",
+      "x": 387,
+      "y": 498,
+      "w": 2,
+      "h": 62,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s101",
+      "type": "pipe",
+      "x": 388,
+      "y": 497,
+      "w": 44,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s102",
+      "type": "pipe",
+      "x": 461,
+      "y": 498,
+      "w": 2,
+      "h": 102,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s103",
+      "type": "pipe",
+      "x": 399,
+      "y": 584,
+      "w": 2,
+      "h": 92,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s104",
+      "type": "pipe",
+      "x": 400,
+      "y": 583,
+      "w": 40,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s105",
+      "type": "pipe",
+      "x": 400,
+      "y": 675,
+      "w": 40,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s106",
+      "type": "pipe",
+      "x": 415,
+      "y": 640,
+      "w": 2,
+      "h": 108,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s107",
+      "type": "pipe",
+      "x": 416,
+      "y": 639,
+      "w": 24,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s108",
+      "type": "pipe",
+      "x": 416,
+      "y": 747,
+      "w": 24,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s109",
+      "type": "pipe",
+      "x": 630,
+      "y": 749,
+      "w": 30,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s110",
+      "type": "pipe",
+      "x": 659,
+      "y": 694,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s111",
+      "type": "rect",
+      "x": 806,
+      "y": 396,
+      "w": 220,
+      "h": 152,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "MV-SWG",
+      "locked": true
+    },
+    {
+      "id": "s112",
+      "type": "text",
+      "x": 814,
+      "y": 402,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "MV-SWG"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s113",
+      "type": "text",
+      "x": 848,
+      "y": 420,
+      "w": 140,
+      "h": 13,
+      "props": {
+        "text": "Micom A300"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s114",
+      "type": "device",
+      "x": 858,
+      "y": 438,
+      "w": 66,
+      "h": 62,
+      "props": {
+        "title": "",
+        "text": "",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "MV-SWG Micom A300"
+    },
+    {
+      "id": "s115",
+      "type": "pipe",
+      "x": 708,
+      "y": 439,
+      "w": 150,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s116",
+      "type": "pipe",
+      "x": 707,
+      "y": 368,
+      "w": 2,
+      "h": 72,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s117",
+      "type": "rect",
+      "x": 806,
+      "y": 604,
+      "w": 220,
+      "h": 128,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Feeder unit\nBLP",
+      "locked": true
+    },
+    {
+      "id": "s118",
+      "type": "text",
+      "x": 814,
+      "y": 610,
+      "w": 110,
+      "h": 26,
+      "props": {
+        "text": "Feeder unit\nBLP"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s119",
+      "type": "text",
+      "x": 812,
+      "y": 636,
+      "w": 30,
+      "h": 13,
+      "props": {
+        "text": "AF"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s120",
+      "type": "netswitch",
+      "x": 812,
+      "y": 650,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BLP AF"
+    },
+    {
+      "id": "s121",
+      "type": "device",
+      "x": 862,
+      "y": 646,
+      "w": 48,
+      "h": 52,
+      "props": {
+        "title": "",
+        "text": "FC1",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "Feeder drive FC1"
+    },
+    {
+      "id": "s122",
+      "type": "device",
+      "x": 924,
+      "y": 646,
+      "w": 48,
+      "h": 52,
+      "props": {
+        "title": "",
+        "text": "FC1",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "Feeder drive FC1"
+    },
+    {
+      "id": "s123",
+      "type": "pipe",
+      "x": 682,
+      "y": 663,
+      "w": 130,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s124",
+      "type": "pipe",
+      "x": 834,
+      "y": 667,
+      "w": 28,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s125",
+      "type": "pipe",
+      "x": 910,
+      "y": 667,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s126",
+      "type": "rect",
+      "x": 806,
+      "y": 748,
+      "w": 220,
+      "h": 208,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "CFA902",
+      "locked": true
+    },
+    {
+      "id": "s127",
+      "type": "text",
+      "x": 814,
+      "y": 754,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "CFA902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s128",
+      "type": "text",
+      "x": 824,
+      "y": 772,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s129",
+      "type": "netswitch",
+      "x": 824,
+      "y": 786,
+      "w": 24,
+      "h": 48,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFA902 AF1"
+    },
+    {
+      "id": "s130",
+      "type": "iorack",
+      "x": 872,
+      "y": 790,
+      "w": 150,
+      "h": 54,
+      "props": {
+        "title": "A1",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA902 rack A1"
+    },
+    {
+      "id": "s131",
+      "type": "iorack",
+      "x": 872,
+      "y": 862,
+      "w": 150,
+      "h": 54,
+      "props": {
+        "title": "A2",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFA902 rack A2"
+    },
+    {
+      "id": "s132",
+      "type": "pipe",
+      "x": 682,
+      "y": 799,
+      "w": 142,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s133",
+      "type": "pipe",
+      "x": 681,
+      "y": 618,
+      "w": 2,
+      "h": 182,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s134",
+      "type": "pipe",
+      "x": 682,
+      "y": 879,
+      "w": 142,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s135",
+      "type": "pipe",
+      "x": 681,
+      "y": 770,
+      "w": 2,
+      "h": 110,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s136",
+      "type": "pipe",
+      "x": 848,
+      "y": 815,
+      "w": 24,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s137",
+      "type": "pipe",
+      "x": 835,
+      "y": 834,
+      "w": 2,
+      "h": 54,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s138",
+      "type": "pipe",
+      "x": 836,
+      "y": 887,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s139",
+      "type": "rect",
+      "x": 1360,
+      "y": 434,
+      "w": 300,
+      "h": 176,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s140",
+      "type": "text",
+      "x": 1380,
+      "y": 452,
+      "w": 260,
+      "h": 13,
+      "props": {
+        "text": "Day tank filling limits to PLC"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s141",
+      "type": "text",
+      "x": 1380,
+      "y": 506,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "High level limit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s142",
+      "type": "readout",
+      "x": 1508,
+      "y": 500,
+      "w": 120,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_DAYTANK_HI_LIMIT"
+      },
+      "props": {
+        "text": "80 %",
+        "unit": "%",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 13,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s143",
+      "type": "text",
+      "x": 1380,
+      "y": 568,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Low level limit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s144",
+      "type": "readout",
+      "x": 1508,
+      "y": 562,
+      "w": 120,
+      "h": 30,
+      "bind": {
+        "value": "COMMON_DAYTANK_LO_LIMIT"
+      },
+      "props": {
+        "text": "35 %",
+        "unit": "%",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 13,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    }
+  ]
+}

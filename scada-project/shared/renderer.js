@@ -145,6 +145,44 @@
       style: { stroke: '#3d4349', strokeWidth: 2 },
       fields: ['closed', 'earth', 'stroke', 'strokeWidth']
     },
+    /* Automation-network primitives. The network pages are a hundred
+       near-identical cabinets, so a rack is data (its module list) and
+       not a hand-drawn group. */
+    iorack: {
+      label: 'PLC / IO rack', group: 'Automation', w: 150, h: 46,
+      props: { title: 'CFA901 A1', modules: ['PS', 'CPU', 'DO', 'DI', 'AI'], alarms: [] },
+      style: { fill: '#8d959e', stroke: '#1d242b', strokeWidth: 1,
+               headerFill: '#4a7fb5', color: '#f2e200' },
+      fields: ['title', 'modules', 'alarms', 'fill', 'stroke', 'headerFill', 'color']
+    },
+    netswitch: {
+      label: 'Network switch', group: 'Automation', w: 22, h: 44,
+      props: { ports: 8, cols: 2 },
+      style: { fill: '#c9ced3', stroke: '#3d4349', strokeWidth: 1 },
+      fields: ['ports', 'cols', 'fill', 'stroke']
+    },
+    /* Titled instrument box: VAMP relay, AVR, operator panel, drive. */
+    device: {
+      label: 'Field device', group: 'Automation', w: 56, h: 34,
+      props: { title: 'VAMP', text: '260', glyph: 'none' },
+      style: { fill: '#b9bfa8', stroke: '#1d242b', strokeWidth: 1,
+               headerFill: '#4a7fb5', color: '#1d242b', fontSize: 10 },
+      fields: ['title', 'text', 'glyph', 'fill', 'stroke', 'headerFill',
+               'color', 'fontSize']
+    },
+    /* Per-cylinder bar chart: the exhaust-gas page is this one element. */
+    barchart: {
+      label: 'Bar chart', group: 'Automation', w: 900, h: 500,
+      props: {
+        bars: [], min: 0, max: 600, unit: '°C', average: null,
+        alarmLine: null, shutdownLine: null, gridStep: 60, showAverage: true
+      },
+      style: { fill: '#00a000', stroke: '#1d242b', strokeWidth: 1,
+               plotFill: '#a9b0b6', color: '#1d242b', fontSize: 11 },
+      fields: ['bars', 'min', 'max', 'unit', 'average', 'alarmLine',
+               'shutdownLine', 'gridStep', 'showAverage', 'fill', 'plotFill',
+               'stroke', 'color', 'fontSize']
+    },
     gauge: {
       label: 'Gauge bar', group: 'Symbols', w: 26, h: 90, bind: true,
       props: { min: 0, max: 100, value: 60, orientation: 'vertical', marker: null },
@@ -223,9 +261,9 @@
         let v = t.value;
         if (typeof v === 'number') {
           const dp = row.decimals != null ? row.decimals : (Number.isInteger(v) ? 0 : 1);
-          v = v.toFixed(dp);
+          v = noNegZero(v.toFixed(dp));
         }
-        const unit = row.unit || t.engineering_unit || '';
+        const unit = row.unit === null ? '' : (row.unit || t.engineering_unit || '');
         return unit ? v + ' ' + unit : String(v);
       }
     }
@@ -270,9 +308,9 @@
       let v = tag.value;
       if (typeof v === 'number') {
         const dp = (p.decimals != null) ? p.decimals : inferDecimals(v);
-        v = v.toFixed(dp);
+        v = noNegZero(v.toFixed(dp));
       }
-      const unit = p.unit || tag.engineering_unit || '';
+      const unit = p.unit === null ? '' : (p.unit || tag.engineering_unit || '');
       return unit ? v + ' ' + unit : String(v);
     }
     return (p.text || '') + (p.unit ? ' ' + p.unit : '');
@@ -379,6 +417,22 @@
                 stroke, 'stroke-width': sw * 0.7, 'vector-effect': 'non-scaling-stroke'
               }));
             }
+            break;
+              case 'monitor':
+            // operator workstation — screen, stand, keyboard
+            svg.appendChild(svgEl('rect', { x: 4, y: 2, width: 92, height: 60, ...base }));
+            svg.appendChild(svgEl('rect', {
+              x: 11, y: 9, width: 78, height: 46, fill: '#e7ebef', stroke,
+              'stroke-width': sw * 0.6, 'vector-effect': 'non-scaling-stroke' }));
+            svg.appendChild(svgEl('rect', { x: 42, y: 62, width: 16, height: 10, ...base }));
+            svg.appendChild(svgEl('polygon', { points: '10,98 90,98 98,80 2,80', ...base }));
+            break;
+          case 'printer':
+            svg.appendChild(svgEl('rect', { x: 20, y: 2, width: 60, height: 26, ...base }));
+            svg.appendChild(svgEl('rect', { x: 2, y: 28, width: 96, height: 44, ...base }));
+            svg.appendChild(svgEl('rect', {
+              x: 22, y: 72, width: 56, height: 24, fill: '#e7ebef', stroke,
+              'stroke-width': sw * 0.6, 'vector-effect': 'non-scaling-stroke' }));
             break;
           case 'vessel':
             // upright cylinder — dosing tank, air receiver, filter pot
@@ -769,6 +823,144 @@
         i.style.fontSize = (s.fontSize || 11) + 'px';
         d.appendChild(i); break;
       }
+      /* A PLC or IO rack: name plate over a row of module cards, each
+         card carrying its type letters stacked vertically (PS, CPU, DI,
+         AO …). The module list is data, so a 13-slot rack and a 5-slot
+         rack are the same element with a different array. */
+      case 'iorack': {
+        const mods = Array.isArray(p.modules) ? p.modules : [];
+        const bad = new Set((p.alarms || []).map(Number));
+        const i = div('s-iorack');
+        i.style.border = '1px solid ' + (s.stroke || '#1d242b');
+
+        const head = div('ior-head');
+        head.textContent = p.title || '';
+        head.style.background = s.headerFill || '#4a7fb5';
+        i.appendChild(head);
+
+        const body = div('ior-body');
+        body.style.background = s.fill || '#8d959e';
+        mods.forEach((m, k) => {
+          const card = div('ior-mod' + (bad.has(k) ? ' alarm' : ''));
+          card.style.color = bad.has(k) ? '#ffffff' : (s.color || '#f2e200');
+          String(m).split('').forEach(ch => {
+            const l = div('ior-ch');
+            l.textContent = ch;
+            card.appendChild(l);
+          });
+          body.appendChild(card);
+        });
+        i.appendChild(body);
+        d.appendChild(i); break;
+      }
+      /* Ethernet switch / IO module — a card with its port dots. */
+      case 'netswitch': {
+        const i = div('s-netswitch');
+        i.style.background = s.fill || '#c9ced3';
+        i.style.border = '1px solid ' + (s.stroke || '#3d4349');
+        const grid = div('nsw-grid');
+        grid.style.gridTemplateColumns = 'repeat(' + Math.max(1, p.cols || 2) + ', 1fr)';
+        for (let k = 0; k < Math.max(0, p.ports || 0); k++) grid.appendChild(div('nsw-port'));
+        i.appendChild(grid);
+        d.appendChild(i); break;
+      }
+      /* Titled instrument box — VAMP relay, AVR, operator panel, drive. */
+      case 'device': {
+        const i = div('s-device');
+        i.style.background = s.fill || '#b9bfa8';
+        i.style.border = '1px solid ' + (s.stroke || '#1d242b');
+        i.style.fontSize = (s.fontSize || 10) + 'px';
+        if (p.title) {
+          const h = div('dev-head');
+          h.textContent = p.title;
+          h.style.background = s.headerFill || '#4a7fb5';
+          i.appendChild(h);
+        }
+        if (p.glyph && p.glyph !== 'none') {
+          const g = div('dev-glyph');
+          g.textContent = { wave: '∿∿', keys: '⠿', trend: '📈' }[p.glyph] || '';
+          i.appendChild(g);
+        }
+        if (p.text) {
+          const t = div('dev-text');
+          t.textContent = p.text;
+          t.style.color = s.color || '#1d242b';
+          i.appendChild(t);
+        }
+        d.appendChild(i); break;
+      }
+      /* Per-cylinder bar chart. Bars read their own tags, so the same
+         element serves the exhaust page live and in the editor. */
+      case 'barchart': {
+        const bars = Array.isArray(p.bars) ? p.bars : [];
+        const min = Number(p.min ?? 0), max = Number(p.max ?? 100);
+        const span = (max - min) || 1;
+        const vals = bars.map(b => {
+          const t = (opts.showAlarms && b.tag && tags) ? tags[b.tag] : null;
+          return (t && typeof t.value === 'number') ? t.value : Number(b.value || 0);
+        });
+        const avg = p.average != null ? Number(p.average)
+          : (vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0);
+        const pct = v => Math.max(0, Math.min(100, ((v - min) / span) * 100));
+
+        const i = div('s-barchart');
+        i.style.fontSize = (s.fontSize || 11) + 'px';
+        i.style.color = s.color || '#1d242b';
+
+        const plot = div('bc-plot');
+        plot.style.background = s.plotFill || '#a9b0b6';
+        plot.style.border = '1px solid ' + (s.stroke || '#1d242b');
+
+        // the band above the shutdown line is lighter — it is the zone
+        // the operator must never see a bar reach
+        if (p.shutdownLine != null) {
+          const danger = div('bc-danger');
+          danger.style.height = (100 - pct(Number(p.shutdownLine))) + '%';
+          plot.appendChild(danger);
+        }
+        const step = Number(p.gridStep || 0);
+        if (step > 0) {
+          for (let v = min + step; v < max; v += step) {
+            const g = div('bc-grid');
+            g.style.bottom = pct(v) + '%';
+            plot.appendChild(g);
+          }
+        }
+        [['alarm', p.alarmLine], ['shutdown', p.shutdownLine]].forEach(([cls, v]) => {
+          if (v == null) return;
+          const l = div('bc-limit ' + cls);
+          l.style.bottom = pct(Number(v)) + '%';
+          plot.appendChild(l);
+        });
+
+        const cols = div('bc-cols');
+        bars.forEach((b, k) => {
+          const col = div('bc-col');
+          const bar = div('bc-bar');
+          bar.style.height = pct(vals[k]) + '%';
+          bar.style.background = s.fill || '#00a000';
+          if (b.tag) bar.dataset.tag = b.tag;
+          col.appendChild(bar);
+          cols.appendChild(col);
+        });
+        plot.appendChild(cols);
+
+        if (p.showAverage !== false) {
+          const a = div('bc-avg');
+          a.style.bottom = pct(avg) + '%';
+          plot.appendChild(a);
+        }
+        i.appendChild(plot);
+
+        const axis = div('bc-axis');
+        bars.forEach(b => {
+          const l = div('bc-tick');
+          l.textContent = b.label || '';
+          axis.appendChild(l);
+        });
+        i.appendChild(axis);
+        d.appendChild(i); break;
+      }
       /* Lettered circle. Colour follows a bound digital when there is one,
          so an S bubble goes red on its alarm and an M goes green when the
          motor runs — which of those it means is props.onState. */
@@ -806,6 +998,10 @@
     }
     return resolveBool(el, tags, false, opts) ? (p.onState || 'alarm') : base;
   }
+
+  /* A deviation of -0.4 rounds to "-0", which reads as a fault on a
+     page whose whole point is the sign of the number. */
+  function noNegZero(str) { return /^-0(\.0*)?$/.test(str) ? str.slice(1) : str; }
 
   /* A boolean-ish symbol prefers its bound digital tag at runtime and
      falls back to the static prop when unbound or in the editor. */

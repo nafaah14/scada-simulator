@@ -303,8 +303,8 @@ const COMMON_PAGES = [
   { id:"oilywater",   label:"Oily water", screen:"Common.OilyWater" },
   { id:"cooling",     label:"Cooling", screen:"Common.Cooling" },
   { id:"water",       label:"Water" },
-  { id:"automation1", label:"Automation 1" },
-  { id:"automation2", label:"Automation 2" },
+  { id:"automation1", label:"Automation 1", screen:"Common.Automation1" },
+  { id:"automation2", label:"Automation 2", screen:"Common.Automation2" },
 ];
 
 function enginePages(overrides){
@@ -314,7 +314,8 @@ function enginePages(overrides){
     { id:"fuel",    label:"Fuel" },
     { id:"lube",    label:"Lube" },
     { id:"cooling", label:"Cooling" },
-    { id:"exhaust", label:"Exh. gas" },
+    { id:"exhaust",  label:"Exh. gas" },
+    { id:"exhgraph", label:"█▆█ Exh. gas" },
   ];
   return base.map(p => overrides[p.id] ? { ...p, ...overrides[p.id] } : p);
 }
@@ -327,7 +328,8 @@ const UNITS = {
     control: { screen:"G1.Control" },
     lube:    { screen:"G1.Lube" },
     cooling: { screen:"G1.Cooling" },
-    exhaust: { screen:"G1.Exhaust" }
+    exhaust:  { screen:"G1.Exhaust" },
+    exhgraph: { screen:"G1.ExhGraph" }
   }),
 };
 const UNIT_ORDER = ["Common","G1"];

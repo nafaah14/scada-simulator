@@ -125,6 +125,74 @@
   line-height: 1; box-sizing: border-box;
 }
 
+/* ---- automation network ---- */
+.s-iorack {
+  width: 100%; height: 100%; box-sizing: border-box;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.ior-head {
+  flex: 0 0 auto; padding: 1px 0; text-align: center;
+  font-size: 9px; font-weight: 700; color: #ffffff;
+  white-space: nowrap; overflow: hidden;
+}
+.ior-body { flex: 1 1 auto; display: flex; gap: 1px; padding: 1px; min-height: 0; }
+.ior-mod {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  background: #6f767e; border: 1px solid #454b52;
+  font-size: 7px; font-weight: 700; line-height: 1.05;
+}
+.ior-mod.alarm { background: #e01010; border-color: #a80c0c; }
+.ior-ch { pointer-events: none; }
+
+.s-netswitch { width: 100%; height: 100%; box-sizing: border-box; padding: 2px; }
+.nsw-grid {
+  width: 100%; height: 100%; display: grid; gap: 1px;
+  grid-auto-rows: 1fr; align-content: stretch;
+}
+.nsw-port { background: #3d4349; border-radius: 1px; }
+
+.s-device {
+  width: 100%; height: 100%; box-sizing: border-box;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.dev-head {
+  flex: 0 0 auto; padding: 1px 0; text-align: center;
+  font-weight: 700; color: #ffffff; font-size: 0.85em;
+  white-space: nowrap; overflow: hidden;
+}
+.dev-glyph {
+  flex: 1 1 auto; display: flex; align-items: center; justify-content: center;
+  font-size: 0.9em; color: #3d4349; min-height: 0; overflow: hidden;
+}
+.dev-text {
+  flex: 0 0 auto; text-align: center; font-weight: 700; padding-bottom: 1px;
+}
+
+/* ---- bar chart ---- */
+.s-barchart {
+  width: 100%; height: 100%; box-sizing: border-box;
+  display: flex; flex-direction: column;
+}
+.bc-plot { flex: 1 1 auto; position: relative; min-height: 0; overflow: hidden; }
+.bc-danger { position: absolute; left: 0; right: 0; top: 0; background: #c3c9ce; }
+.bc-grid {
+  position: absolute; left: 0; right: 0; height: 0;
+  border-top: 1px dashed rgba(29, 36, 43, .45);
+}
+.bc-limit { position: absolute; left: 0; right: 0; height: 0; }
+.bc-limit.alarm { border-top: 2px dashed #e01010; }
+.bc-limit.shutdown { border-top: 2px solid #1d242b; }
+.bc-avg { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid #1d242b; }
+.bc-cols {
+  position: absolute; inset: 0; display: flex; align-items: flex-end;
+}
+.bc-col { flex: 1 1 0; height: 100%; display: flex; align-items: flex-end;
+  justify-content: center; }
+.bc-bar { width: 62%; }
+.bc-axis { flex: 0 0 auto; display: flex; padding-top: 2px; }
+.bc-tick { flex: 1 1 0; text-align: center; font-weight: 700; }
+
 /* A readout in alarm pulses so it reads at a glance across the room. */
 .el[data-alarm="shutdown"] .s-readout,
 .el[data-alarm="hihi"] .s-readout,

@@ -56,6 +56,22 @@
     "elements": 352
   },
   {
+    "screen_id": "Common.Automation1",
+    "title": "Common — Automation 1 (plant network)",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-automation1.json",
+    "elements": 144
+  },
+  {
+    "screen_id": "Common.Automation2",
+    "title": "Common — Automation 2 (engine network)",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-automation2.json",
+    "elements": 319
+  },
+  {
     "screen_id": "G1.Temp",
     "title": "G1 — Temperatures",
     "unit": "G1",
@@ -102,5 +118,13 @@
     "layout": "canvas",
     "file": "g1-exhaust.json",
     "elements": 126
+  },
+  {
+    "screen_id": "G1.ExhGraph",
+    "title": "G1 — Exhaust gas temperatures",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-exhgraph.json",
+    "elements": 56
   }
 ]

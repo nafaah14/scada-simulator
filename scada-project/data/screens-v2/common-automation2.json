@@ -1,0 +1,5147 @@
+{
+  "screen_id": "Common.Automation2",
+  "title": "Common — Automation 2 (engine network)",
+  "unit": "COMMON",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1740,
+    "height": 930,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "pipe",
+      "x": 60,
+      "y": 65,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "x": 94,
+      "y": 60,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Ethernet"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s3",
+      "type": "pipe",
+      "x": 60,
+      "y": 83,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s4",
+      "type": "text",
+      "x": 94,
+      "y": 78,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Optical eth."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "x": 60,
+      "y": 258,
+      "w": 232,
+      "h": 244,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "netswitch",
+      "x": 250,
+      "y": 276,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC011 AF1"
+    },
+    {
+      "id": "s7",
+      "type": "text",
+      "x": 246,
+      "y": 260,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s8",
+      "type": "bubble",
+      "x": 92,
+      "y": 344,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "▶",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "CFC011 ring direction"
+    },
+    {
+      "id": "s9",
+      "type": "iorack",
+      "x": 106,
+      "y": 340,
+      "w": 104,
+      "h": 52,
+      "props": {
+        "title": "CFC011",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "DO",
+          "DI",
+          "AO",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFC011 protection station"
+    },
+    {
+      "id": "s10",
+      "type": "device",
+      "x": 222,
+      "y": 340,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "260",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC011 VAMP 260"
+    },
+    {
+      "id": "s11",
+      "type": "device",
+      "x": 222,
+      "y": 392,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "210",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC011 VAMP 210"
+    },
+    {
+      "id": "s12",
+      "type": "device",
+      "x": 222,
+      "y": 444,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "265",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC011 VAMP 265"
+    },
+    {
+      "id": "s13",
+      "type": "netswitch",
+      "x": 84,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC011 IO 1"
+    },
+    {
+      "id": "s14",
+      "type": "netswitch",
+      "x": 114,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC011 IO 2"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "x": 60,
+      "y": 546,
+      "w": 232,
+      "h": 190,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s16",
+      "type": "netswitch",
+      "x": 106,
+      "y": 560,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFE011 switch"
+    },
+    {
+      "id": "s17",
+      "type": "device",
+      "x": 72,
+      "y": 598,
+      "w": 40,
+      "h": 46,
+      "props": {
+        "title": "",
+        "text": "AVR",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE011 AVR"
+    },
+    {
+      "id": "s18",
+      "type": "iorack",
+      "x": 134,
+      "y": 556,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE011 A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE011 rack A1"
+    },
+    {
+      "id": "s19",
+      "type": "iorack",
+      "x": 134,
+      "y": 618,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE011 A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE011 rack A2"
+    },
+    {
+      "id": "s20",
+      "type": "device",
+      "x": 72,
+      "y": 676,
+      "w": 62,
+      "h": 48,
+      "props": {
+        "title": "",
+        "text": "E 1100",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE011 local panel"
+    },
+    {
+      "id": "s21",
+      "type": "rect",
+      "x": 60,
+      "y": 748,
+      "w": 232,
+      "h": 148,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s22",
+      "type": "netswitch",
+      "x": 106,
+      "y": 762,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA011 switch"
+    },
+    {
+      "id": "s23",
+      "type": "iorack",
+      "x": 144,
+      "y": 758,
+      "w": 116,
+      "h": 52,
+      "props": {
+        "title": "BJA011",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "BJA011 rack"
+    },
+    {
+      "id": "s24",
+      "type": "netswitch",
+      "x": 226,
+      "y": 826,
+      "w": 20,
+      "h": 40,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA011 field module"
+    },
+    {
+      "id": "s25",
+      "type": "shape",
+      "x": 260,
+      "y": 838,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f7f8a",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "F001 fibre 011"
+    },
+    {
+      "id": "s26",
+      "type": "text",
+      "x": 254,
+      "y": 822,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "F001"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s27",
+      "type": "pipe",
+      "x": 260,
+      "y": 320,
+      "w": 2,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s28",
+      "type": "pipe",
+      "x": 210,
+      "y": 339,
+      "w": 51,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s29",
+      "type": "pipe",
+      "x": 210,
+      "y": 355,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s30",
+      "type": "pipe",
+      "x": 215,
+      "y": 356,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s31",
+      "type": "pipe",
+      "x": 216,
+      "y": 411,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s32",
+      "type": "pipe",
+      "x": 215,
+      "y": 412,
+      "w": 2,
+      "h": 52,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s33",
+      "type": "pipe",
+      "x": 216,
+      "y": 463,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s34",
+      "type": "pipe",
+      "x": 95,
+      "y": 391,
+      "w": 11,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s35",
+      "type": "pipe",
+      "x": 94,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s36",
+      "type": "pipe",
+      "x": 124,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s37",
+      "type": "pipe",
+      "x": 106,
+      "y": 391,
+      "w": 19,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s38",
+      "type": "pipe",
+      "x": 128,
+      "y": 581,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s39",
+      "type": "pipe",
+      "x": 116,
+      "y": 604,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s40",
+      "type": "pipe",
+      "x": 117,
+      "y": 643,
+      "w": 17,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s41",
+      "type": "pipe",
+      "x": 112,
+      "y": 619,
+      "w": 22,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s42",
+      "type": "pipe",
+      "x": 102,
+      "y": 670,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s43",
+      "type": "pipe",
+      "x": 103,
+      "y": 699,
+      "w": 31,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s44",
+      "type": "pipe",
+      "x": 128,
+      "y": 783,
+      "w": 16,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s45",
+      "type": "pipe",
+      "x": 189,
+      "y": 810,
+      "w": 2,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s46",
+      "type": "pipe",
+      "x": 190,
+      "y": 845,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s47",
+      "type": "pipe",
+      "x": 246,
+      "y": 847,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s48",
+      "type": "rect",
+      "x": 328,
+      "y": 258,
+      "w": 232,
+      "h": 244,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s49",
+      "type": "netswitch",
+      "x": 518,
+      "y": 276,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC021 AF1"
+    },
+    {
+      "id": "s50",
+      "type": "text",
+      "x": 514,
+      "y": 260,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s51",
+      "type": "bubble",
+      "x": 360,
+      "y": 344,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "▶",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "CFC021 ring direction"
+    },
+    {
+      "id": "s52",
+      "type": "iorack",
+      "x": 374,
+      "y": 340,
+      "w": 104,
+      "h": 52,
+      "props": {
+        "title": "CFC021",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "DO",
+          "DI",
+          "AO",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFC021 protection station"
+    },
+    {
+      "id": "s53",
+      "type": "device",
+      "x": 490,
+      "y": 340,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "260",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC021 VAMP 260"
+    },
+    {
+      "id": "s54",
+      "type": "device",
+      "x": 490,
+      "y": 392,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "210",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC021 VAMP 210"
+    },
+    {
+      "id": "s55",
+      "type": "device",
+      "x": 490,
+      "y": 444,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "265",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC021 VAMP 265"
+    },
+    {
+      "id": "s56",
+      "type": "netswitch",
+      "x": 352,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC021 IO 1"
+    },
+    {
+      "id": "s57",
+      "type": "netswitch",
+      "x": 382,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC021 IO 2"
+    },
+    {
+      "id": "s58",
+      "type": "rect",
+      "x": 328,
+      "y": 546,
+      "w": 232,
+      "h": 190,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s59",
+      "type": "netswitch",
+      "x": 374,
+      "y": 560,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFE021 switch"
+    },
+    {
+      "id": "s60",
+      "type": "device",
+      "x": 340,
+      "y": 598,
+      "w": 40,
+      "h": 46,
+      "props": {
+        "title": "",
+        "text": "AVR",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE021 AVR"
+    },
+    {
+      "id": "s61",
+      "type": "iorack",
+      "x": 402,
+      "y": 556,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE021 A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE021 rack A1"
+    },
+    {
+      "id": "s62",
+      "type": "iorack",
+      "x": 402,
+      "y": 618,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE021 A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE021 rack A2"
+    },
+    {
+      "id": "s63",
+      "type": "device",
+      "x": 340,
+      "y": 676,
+      "w": 62,
+      "h": 48,
+      "props": {
+        "title": "",
+        "text": "E 1100",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE021 local panel"
+    },
+    {
+      "id": "s64",
+      "type": "rect",
+      "x": 328,
+      "y": 748,
+      "w": 232,
+      "h": 148,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s65",
+      "type": "netswitch",
+      "x": 374,
+      "y": 762,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA021 switch"
+    },
+    {
+      "id": "s66",
+      "type": "iorack",
+      "x": 412,
+      "y": 758,
+      "w": 116,
+      "h": 52,
+      "props": {
+        "title": "BJA021",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "BJA021 rack"
+    },
+    {
+      "id": "s67",
+      "type": "netswitch",
+      "x": 494,
+      "y": 826,
+      "w": 20,
+      "h": 40,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA021 field module"
+    },
+    {
+      "id": "s68",
+      "type": "shape",
+      "x": 528,
+      "y": 838,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f7f8a",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "F001 fibre 021"
+    },
+    {
+      "id": "s69",
+      "type": "text",
+      "x": 522,
+      "y": 822,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "F001"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s70",
+      "type": "pipe",
+      "x": 528,
+      "y": 320,
+      "w": 2,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s71",
+      "type": "pipe",
+      "x": 478,
+      "y": 339,
+      "w": 51,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s72",
+      "type": "pipe",
+      "x": 478,
+      "y": 355,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s73",
+      "type": "pipe",
+      "x": 483,
+      "y": 356,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s74",
+      "type": "pipe",
+      "x": 484,
+      "y": 411,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s75",
+      "type": "pipe",
+      "x": 483,
+      "y": 412,
+      "w": 2,
+      "h": 52,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s76",
+      "type": "pipe",
+      "x": 484,
+      "y": 463,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s77",
+      "type": "pipe",
+      "x": 363,
+      "y": 391,
+      "w": 11,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s78",
+      "type": "pipe",
+      "x": 362,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s79",
+      "type": "pipe",
+      "x": 392,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s80",
+      "type": "pipe",
+      "x": 374,
+      "y": 391,
+      "w": 19,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s81",
+      "type": "pipe",
+      "x": 396,
+      "y": 581,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s82",
+      "type": "pipe",
+      "x": 384,
+      "y": 604,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s83",
+      "type": "pipe",
+      "x": 385,
+      "y": 643,
+      "w": 17,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s84",
+      "type": "pipe",
+      "x": 380,
+      "y": 619,
+      "w": 22,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s85",
+      "type": "pipe",
+      "x": 370,
+      "y": 670,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s86",
+      "type": "pipe",
+      "x": 371,
+      "y": 699,
+      "w": 31,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s87",
+      "type": "pipe",
+      "x": 396,
+      "y": 783,
+      "w": 16,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s88",
+      "type": "pipe",
+      "x": 457,
+      "y": 810,
+      "w": 2,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s89",
+      "type": "pipe",
+      "x": 458,
+      "y": 845,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s90",
+      "type": "pipe",
+      "x": 514,
+      "y": 847,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s91",
+      "type": "rect",
+      "x": 596,
+      "y": 258,
+      "w": 232,
+      "h": 244,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s92",
+      "type": "netswitch",
+      "x": 786,
+      "y": 276,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC031 AF1"
+    },
+    {
+      "id": "s93",
+      "type": "text",
+      "x": 782,
+      "y": 260,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s94",
+      "type": "bubble",
+      "x": 628,
+      "y": 344,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "▶",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "CFC031 ring direction"
+    },
+    {
+      "id": "s95",
+      "type": "iorack",
+      "x": 642,
+      "y": 340,
+      "w": 104,
+      "h": 52,
+      "props": {
+        "title": "CFC031",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "DO",
+          "DI",
+          "AO",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFC031 protection station"
+    },
+    {
+      "id": "s96",
+      "type": "device",
+      "x": 758,
+      "y": 340,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "260",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC031 VAMP 260"
+    },
+    {
+      "id": "s97",
+      "type": "device",
+      "x": 758,
+      "y": 392,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "210",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC031 VAMP 210"
+    },
+    {
+      "id": "s98",
+      "type": "device",
+      "x": 758,
+      "y": 444,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "265",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC031 VAMP 265"
+    },
+    {
+      "id": "s99",
+      "type": "netswitch",
+      "x": 620,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC031 IO 1"
+    },
+    {
+      "id": "s100",
+      "type": "netswitch",
+      "x": 650,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC031 IO 2"
+    },
+    {
+      "id": "s101",
+      "type": "rect",
+      "x": 596,
+      "y": 546,
+      "w": 232,
+      "h": 190,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s102",
+      "type": "netswitch",
+      "x": 642,
+      "y": 560,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFE031 switch"
+    },
+    {
+      "id": "s103",
+      "type": "device",
+      "x": 608,
+      "y": 598,
+      "w": 40,
+      "h": 46,
+      "props": {
+        "title": "",
+        "text": "AVR",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE031 AVR"
+    },
+    {
+      "id": "s104",
+      "type": "iorack",
+      "x": 670,
+      "y": 556,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE031 A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE031 rack A1"
+    },
+    {
+      "id": "s105",
+      "type": "iorack",
+      "x": 670,
+      "y": 618,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE031 A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE031 rack A2"
+    },
+    {
+      "id": "s106",
+      "type": "device",
+      "x": 608,
+      "y": 676,
+      "w": 62,
+      "h": 48,
+      "props": {
+        "title": "",
+        "text": "E 1100",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE031 local panel"
+    },
+    {
+      "id": "s107",
+      "type": "rect",
+      "x": 596,
+      "y": 748,
+      "w": 232,
+      "h": 148,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s108",
+      "type": "netswitch",
+      "x": 642,
+      "y": 762,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA031 switch"
+    },
+    {
+      "id": "s109",
+      "type": "iorack",
+      "x": 680,
+      "y": 758,
+      "w": 116,
+      "h": 52,
+      "props": {
+        "title": "BJA031",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "BJA031 rack"
+    },
+    {
+      "id": "s110",
+      "type": "netswitch",
+      "x": 762,
+      "y": 826,
+      "w": 20,
+      "h": 40,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA031 field module"
+    },
+    {
+      "id": "s111",
+      "type": "shape",
+      "x": 796,
+      "y": 838,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f7f8a",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "F001 fibre 031"
+    },
+    {
+      "id": "s112",
+      "type": "text",
+      "x": 790,
+      "y": 822,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "F001"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s113",
+      "type": "pipe",
+      "x": 796,
+      "y": 320,
+      "w": 2,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s114",
+      "type": "pipe",
+      "x": 746,
+      "y": 339,
+      "w": 51,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s115",
+      "type": "pipe",
+      "x": 746,
+      "y": 355,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s116",
+      "type": "pipe",
+      "x": 751,
+      "y": 356,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s117",
+      "type": "pipe",
+      "x": 752,
+      "y": 411,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s118",
+      "type": "pipe",
+      "x": 751,
+      "y": 412,
+      "w": 2,
+      "h": 52,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s119",
+      "type": "pipe",
+      "x": 752,
+      "y": 463,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s120",
+      "type": "pipe",
+      "x": 631,
+      "y": 391,
+      "w": 11,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s121",
+      "type": "pipe",
+      "x": 630,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s122",
+      "type": "pipe",
+      "x": 660,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s123",
+      "type": "pipe",
+      "x": 642,
+      "y": 391,
+      "w": 19,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s124",
+      "type": "pipe",
+      "x": 664,
+      "y": 581,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s125",
+      "type": "pipe",
+      "x": 652,
+      "y": 604,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s126",
+      "type": "pipe",
+      "x": 653,
+      "y": 643,
+      "w": 17,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s127",
+      "type": "pipe",
+      "x": 648,
+      "y": 619,
+      "w": 22,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s128",
+      "type": "pipe",
+      "x": 638,
+      "y": 670,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s129",
+      "type": "pipe",
+      "x": 639,
+      "y": 699,
+      "w": 31,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s130",
+      "type": "pipe",
+      "x": 664,
+      "y": 783,
+      "w": 16,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s131",
+      "type": "pipe",
+      "x": 725,
+      "y": 810,
+      "w": 2,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s132",
+      "type": "pipe",
+      "x": 726,
+      "y": 845,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s133",
+      "type": "pipe",
+      "x": 782,
+      "y": 847,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s134",
+      "type": "rect",
+      "x": 864,
+      "y": 258,
+      "w": 232,
+      "h": 244,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s135",
+      "type": "netswitch",
+      "x": 1054,
+      "y": 276,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC041 AF1"
+    },
+    {
+      "id": "s136",
+      "type": "text",
+      "x": 1050,
+      "y": 260,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s137",
+      "type": "bubble",
+      "x": 896,
+      "y": 344,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "◀",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "CFC041 ring direction"
+    },
+    {
+      "id": "s138",
+      "type": "iorack",
+      "x": 910,
+      "y": 340,
+      "w": 104,
+      "h": 52,
+      "props": {
+        "title": "CFC041",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "DO",
+          "DI",
+          "AO",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFC041 protection station"
+    },
+    {
+      "id": "s139",
+      "type": "device",
+      "x": 1026,
+      "y": 340,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "260",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC041 VAMP 260"
+    },
+    {
+      "id": "s140",
+      "type": "device",
+      "x": 1026,
+      "y": 392,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "210",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC041 VAMP 210"
+    },
+    {
+      "id": "s141",
+      "type": "device",
+      "x": 1026,
+      "y": 444,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "265",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC041 VAMP 265"
+    },
+    {
+      "id": "s142",
+      "type": "netswitch",
+      "x": 888,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC041 IO 1"
+    },
+    {
+      "id": "s143",
+      "type": "netswitch",
+      "x": 918,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC041 IO 2"
+    },
+    {
+      "id": "s144",
+      "type": "rect",
+      "x": 864,
+      "y": 546,
+      "w": 232,
+      "h": 190,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s145",
+      "type": "netswitch",
+      "x": 910,
+      "y": 560,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFE041 switch"
+    },
+    {
+      "id": "s146",
+      "type": "device",
+      "x": 876,
+      "y": 598,
+      "w": 40,
+      "h": 46,
+      "props": {
+        "title": "",
+        "text": "AVR",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE041 AVR"
+    },
+    {
+      "id": "s147",
+      "type": "iorack",
+      "x": 938,
+      "y": 556,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE041 A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE041 rack A1"
+    },
+    {
+      "id": "s148",
+      "type": "iorack",
+      "x": 938,
+      "y": 618,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE041 A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE041 rack A2"
+    },
+    {
+      "id": "s149",
+      "type": "device",
+      "x": 876,
+      "y": 676,
+      "w": 62,
+      "h": 48,
+      "props": {
+        "title": "",
+        "text": "E 1100",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE041 local panel"
+    },
+    {
+      "id": "s150",
+      "type": "rect",
+      "x": 864,
+      "y": 748,
+      "w": 232,
+      "h": 148,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s151",
+      "type": "netswitch",
+      "x": 910,
+      "y": 762,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA041 switch"
+    },
+    {
+      "id": "s152",
+      "type": "iorack",
+      "x": 948,
+      "y": 758,
+      "w": 116,
+      "h": 52,
+      "props": {
+        "title": "BJA041",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "BJA041 rack"
+    },
+    {
+      "id": "s153",
+      "type": "netswitch",
+      "x": 1030,
+      "y": 826,
+      "w": 20,
+      "h": 40,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA041 field module"
+    },
+    {
+      "id": "s154",
+      "type": "shape",
+      "x": 1064,
+      "y": 838,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f7f8a",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "F001 fibre 041"
+    },
+    {
+      "id": "s155",
+      "type": "text",
+      "x": 1058,
+      "y": 822,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "F001"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s156",
+      "type": "pipe",
+      "x": 1064,
+      "y": 320,
+      "w": 2,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s157",
+      "type": "pipe",
+      "x": 1014,
+      "y": 339,
+      "w": 51,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s158",
+      "type": "pipe",
+      "x": 1014,
+      "y": 355,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s159",
+      "type": "pipe",
+      "x": 1019,
+      "y": 356,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s160",
+      "type": "pipe",
+      "x": 1020,
+      "y": 411,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s161",
+      "type": "pipe",
+      "x": 1019,
+      "y": 412,
+      "w": 2,
+      "h": 52,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s162",
+      "type": "pipe",
+      "x": 1020,
+      "y": 463,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s163",
+      "type": "pipe",
+      "x": 899,
+      "y": 391,
+      "w": 11,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s164",
+      "type": "pipe",
+      "x": 898,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s165",
+      "type": "pipe",
+      "x": 928,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s166",
+      "type": "pipe",
+      "x": 910,
+      "y": 391,
+      "w": 19,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s167",
+      "type": "pipe",
+      "x": 932,
+      "y": 581,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s168",
+      "type": "pipe",
+      "x": 920,
+      "y": 604,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s169",
+      "type": "pipe",
+      "x": 921,
+      "y": 643,
+      "w": 17,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s170",
+      "type": "pipe",
+      "x": 916,
+      "y": 619,
+      "w": 22,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s171",
+      "type": "pipe",
+      "x": 906,
+      "y": 670,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s172",
+      "type": "pipe",
+      "x": 907,
+      "y": 699,
+      "w": 31,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s173",
+      "type": "pipe",
+      "x": 932,
+      "y": 783,
+      "w": 16,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s174",
+      "type": "pipe",
+      "x": 993,
+      "y": 810,
+      "w": 2,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s175",
+      "type": "pipe",
+      "x": 994,
+      "y": 845,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s176",
+      "type": "pipe",
+      "x": 1050,
+      "y": 847,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s177",
+      "type": "rect",
+      "x": 1132,
+      "y": 258,
+      "w": 232,
+      "h": 244,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s178",
+      "type": "netswitch",
+      "x": 1322,
+      "y": 276,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC051 AF1"
+    },
+    {
+      "id": "s179",
+      "type": "text",
+      "x": 1318,
+      "y": 260,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s180",
+      "type": "bubble",
+      "x": 1164,
+      "y": 344,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "◀",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "CFC051 ring direction"
+    },
+    {
+      "id": "s181",
+      "type": "iorack",
+      "x": 1178,
+      "y": 340,
+      "w": 104,
+      "h": 52,
+      "props": {
+        "title": "CFC051",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "DO",
+          "DI",
+          "AO",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFC051 protection station"
+    },
+    {
+      "id": "s182",
+      "type": "device",
+      "x": 1294,
+      "y": 340,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "260",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC051 VAMP 260"
+    },
+    {
+      "id": "s183",
+      "type": "device",
+      "x": 1294,
+      "y": 392,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "210",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC051 VAMP 210"
+    },
+    {
+      "id": "s184",
+      "type": "device",
+      "x": 1294,
+      "y": 444,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "265",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC051 VAMP 265"
+    },
+    {
+      "id": "s185",
+      "type": "netswitch",
+      "x": 1156,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC051 IO 1"
+    },
+    {
+      "id": "s186",
+      "type": "netswitch",
+      "x": 1186,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC051 IO 2"
+    },
+    {
+      "id": "s187",
+      "type": "rect",
+      "x": 1132,
+      "y": 546,
+      "w": 232,
+      "h": 190,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s188",
+      "type": "netswitch",
+      "x": 1178,
+      "y": 560,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFE051 switch"
+    },
+    {
+      "id": "s189",
+      "type": "device",
+      "x": 1144,
+      "y": 598,
+      "w": 40,
+      "h": 46,
+      "props": {
+        "title": "",
+        "text": "AVR",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE051 AVR"
+    },
+    {
+      "id": "s190",
+      "type": "iorack",
+      "x": 1206,
+      "y": 556,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE051 A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE051 rack A1"
+    },
+    {
+      "id": "s191",
+      "type": "iorack",
+      "x": 1206,
+      "y": 618,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE051 A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE051 rack A2"
+    },
+    {
+      "id": "s192",
+      "type": "device",
+      "x": 1144,
+      "y": 676,
+      "w": 62,
+      "h": 48,
+      "props": {
+        "title": "",
+        "text": "E 1100",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE051 local panel"
+    },
+    {
+      "id": "s193",
+      "type": "rect",
+      "x": 1132,
+      "y": 748,
+      "w": 232,
+      "h": 148,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s194",
+      "type": "netswitch",
+      "x": 1178,
+      "y": 762,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA051 switch"
+    },
+    {
+      "id": "s195",
+      "type": "iorack",
+      "x": 1216,
+      "y": 758,
+      "w": 116,
+      "h": 52,
+      "props": {
+        "title": "BJA051",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "BJA051 rack"
+    },
+    {
+      "id": "s196",
+      "type": "netswitch",
+      "x": 1298,
+      "y": 826,
+      "w": 20,
+      "h": 40,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA051 field module"
+    },
+    {
+      "id": "s197",
+      "type": "shape",
+      "x": 1332,
+      "y": 838,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f7f8a",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "F001 fibre 051"
+    },
+    {
+      "id": "s198",
+      "type": "text",
+      "x": 1326,
+      "y": 822,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "F001"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s199",
+      "type": "pipe",
+      "x": 1332,
+      "y": 320,
+      "w": 2,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s200",
+      "type": "pipe",
+      "x": 1282,
+      "y": 339,
+      "w": 51,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s201",
+      "type": "pipe",
+      "x": 1282,
+      "y": 355,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s202",
+      "type": "pipe",
+      "x": 1287,
+      "y": 356,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s203",
+      "type": "pipe",
+      "x": 1288,
+      "y": 411,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s204",
+      "type": "pipe",
+      "x": 1287,
+      "y": 412,
+      "w": 2,
+      "h": 52,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s205",
+      "type": "pipe",
+      "x": 1288,
+      "y": 463,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s206",
+      "type": "pipe",
+      "x": 1167,
+      "y": 391,
+      "w": 11,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s207",
+      "type": "pipe",
+      "x": 1166,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s208",
+      "type": "pipe",
+      "x": 1196,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s209",
+      "type": "pipe",
+      "x": 1178,
+      "y": 391,
+      "w": 19,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s210",
+      "type": "pipe",
+      "x": 1200,
+      "y": 581,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s211",
+      "type": "pipe",
+      "x": 1188,
+      "y": 604,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s212",
+      "type": "pipe",
+      "x": 1189,
+      "y": 643,
+      "w": 17,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s213",
+      "type": "pipe",
+      "x": 1184,
+      "y": 619,
+      "w": 22,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s214",
+      "type": "pipe",
+      "x": 1174,
+      "y": 670,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s215",
+      "type": "pipe",
+      "x": 1175,
+      "y": 699,
+      "w": 31,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s216",
+      "type": "pipe",
+      "x": 1200,
+      "y": 783,
+      "w": 16,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s217",
+      "type": "pipe",
+      "x": 1261,
+      "y": 810,
+      "w": 2,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s218",
+      "type": "pipe",
+      "x": 1262,
+      "y": 845,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s219",
+      "type": "pipe",
+      "x": 1318,
+      "y": 847,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s220",
+      "type": "rect",
+      "x": 1400,
+      "y": 258,
+      "w": 232,
+      "h": 244,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s221",
+      "type": "netswitch",
+      "x": 1590,
+      "y": 276,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC061 AF1"
+    },
+    {
+      "id": "s222",
+      "type": "text",
+      "x": 1586,
+      "y": 260,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "AF1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s223",
+      "type": "bubble",
+      "x": 1432,
+      "y": 344,
+      "w": 14,
+      "h": 14,
+      "bind": {
+        "value": ""
+      },
+      "props": {
+        "text": "◀",
+        "state": "active",
+        "onState": "alarm"
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#1d242b",
+        "strokeWidth": 1.5,
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": true
+      },
+      "name": "CFC061 ring direction"
+    },
+    {
+      "id": "s224",
+      "type": "iorack",
+      "x": 1446,
+      "y": 340,
+      "w": 104,
+      "h": 52,
+      "props": {
+        "title": "CFC061",
+        "modules": [
+          "PS",
+          "CPU",
+          "CPU",
+          "DO",
+          "DI",
+          "AO",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFC061 protection station"
+    },
+    {
+      "id": "s225",
+      "type": "device",
+      "x": 1562,
+      "y": 340,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "260",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC061 VAMP 260"
+    },
+    {
+      "id": "s226",
+      "type": "device",
+      "x": 1562,
+      "y": 392,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "210",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC061 VAMP 210"
+    },
+    {
+      "id": "s227",
+      "type": "device",
+      "x": 1562,
+      "y": 444,
+      "w": 60,
+      "h": 44,
+      "props": {
+        "title": "VAMP",
+        "text": "265",
+        "glyph": "wave"
+      },
+      "style": {
+        "fill": "#b9bfa8",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFC061 VAMP 265"
+    },
+    {
+      "id": "s228",
+      "type": "netswitch",
+      "x": 1424,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC061 IO 1"
+    },
+    {
+      "id": "s229",
+      "type": "netswitch",
+      "x": 1454,
+      "y": 420,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 2,
+        "cols": 1
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFC061 IO 2"
+    },
+    {
+      "id": "s230",
+      "type": "rect",
+      "x": 1400,
+      "y": 546,
+      "w": 232,
+      "h": 190,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s231",
+      "type": "netswitch",
+      "x": 1446,
+      "y": 560,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "CFE061 switch"
+    },
+    {
+      "id": "s232",
+      "type": "device",
+      "x": 1412,
+      "y": 598,
+      "w": 40,
+      "h": 46,
+      "props": {
+        "title": "",
+        "text": "AVR",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE061 AVR"
+    },
+    {
+      "id": "s233",
+      "type": "iorack",
+      "x": 1474,
+      "y": 556,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE061 A1",
+        "modules": [
+          "PS",
+          "E",
+          "DO",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE061 rack A1"
+    },
+    {
+      "id": "s234",
+      "type": "iorack",
+      "x": 1474,
+      "y": 618,
+      "w": 148,
+      "h": 52,
+      "props": {
+        "title": "CFE061 A2",
+        "modules": [
+          "PS",
+          "E",
+          "DI",
+          "DI",
+          "DO",
+          "DO",
+          "DI",
+          "AI",
+          "AI",
+          "AI",
+          "AI",
+          "AI"
+        ],
+        "alarms": [
+          10
+        ]
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "CFE061 rack A2"
+    },
+    {
+      "id": "s235",
+      "type": "device",
+      "x": 1412,
+      "y": 676,
+      "w": 62,
+      "h": 48,
+      "props": {
+        "title": "",
+        "text": "E 1100",
+        "glyph": "keys"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#1d242b",
+        "fontSize": 10
+      },
+      "name": "CFE061 local panel"
+    },
+    {
+      "id": "s236",
+      "type": "rect",
+      "x": 1400,
+      "y": 748,
+      "w": 232,
+      "h": 148,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "zone",
+      "locked": true
+    },
+    {
+      "id": "s237",
+      "type": "netswitch",
+      "x": 1446,
+      "y": 762,
+      "w": 22,
+      "h": 44,
+      "props": {
+        "ports": 8,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA061 switch"
+    },
+    {
+      "id": "s238",
+      "type": "iorack",
+      "x": 1484,
+      "y": 758,
+      "w": 116,
+      "h": 52,
+      "props": {
+        "title": "BJA061",
+        "modules": [
+          "PS",
+          "E",
+          "AI",
+          "AI",
+          "AI",
+          "DO",
+          "DO"
+        ],
+        "alarms": []
+      },
+      "style": {
+        "fill": "#8d959e",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "headerFill": "#4a7fb5",
+        "color": "#f2e200"
+      },
+      "name": "BJA061 rack"
+    },
+    {
+      "id": "s239",
+      "type": "netswitch",
+      "x": 1566,
+      "y": 826,
+      "w": 20,
+      "h": 40,
+      "props": {
+        "ports": 4,
+        "cols": 2
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "BJA061 field module"
+    },
+    {
+      "id": "s240",
+      "type": "shape",
+      "x": 1600,
+      "y": 838,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f7f8a",
+        "stroke": "#1d242b",
+        "strokeWidth": 1
+      },
+      "name": "F001 fibre 061"
+    },
+    {
+      "id": "s241",
+      "type": "text",
+      "x": 1594,
+      "y": 822,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "F001"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s242",
+      "type": "pipe",
+      "x": 1600,
+      "y": 320,
+      "w": 2,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s243",
+      "type": "pipe",
+      "x": 1550,
+      "y": 339,
+      "w": 51,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s244",
+      "type": "pipe",
+      "x": 1550,
+      "y": 355,
+      "w": 12,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s245",
+      "type": "pipe",
+      "x": 1555,
+      "y": 356,
+      "w": 2,
+      "h": 56,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s246",
+      "type": "pipe",
+      "x": 1556,
+      "y": 411,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s247",
+      "type": "pipe",
+      "x": 1555,
+      "y": 412,
+      "w": 2,
+      "h": 52,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s248",
+      "type": "pipe",
+      "x": 1556,
+      "y": 463,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s249",
+      "type": "pipe",
+      "x": 1435,
+      "y": 391,
+      "w": 11,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s250",
+      "type": "pipe",
+      "x": 1434,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s251",
+      "type": "pipe",
+      "x": 1464,
+      "y": 392,
+      "w": 2,
+      "h": 28,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s252",
+      "type": "pipe",
+      "x": 1446,
+      "y": 391,
+      "w": 19,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s253",
+      "type": "pipe",
+      "x": 1468,
+      "y": 581,
+      "w": 6,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s254",
+      "type": "pipe",
+      "x": 1456,
+      "y": 604,
+      "w": 2,
+      "h": 40,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s255",
+      "type": "pipe",
+      "x": 1457,
+      "y": 643,
+      "w": 17,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s256",
+      "type": "pipe",
+      "x": 1452,
+      "y": 619,
+      "w": 22,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s257",
+      "type": "pipe",
+      "x": 1442,
+      "y": 670,
+      "w": 2,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s258",
+      "type": "pipe",
+      "x": 1443,
+      "y": 699,
+      "w": 31,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s259",
+      "type": "pipe",
+      "x": 1468,
+      "y": 783,
+      "w": 16,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s260",
+      "type": "pipe",
+      "x": 1529,
+      "y": 810,
+      "w": 2,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s261",
+      "type": "pipe",
+      "x": 1530,
+      "y": 845,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s262",
+      "type": "pipe",
+      "x": 1586,
+      "y": 847,
+      "w": 14,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s263",
+      "type": "text",
+      "x": 60,
+      "y": 138,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "From CFA901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s264",
+      "type": "pipe",
+      "x": 150,
+      "y": 145,
+      "w": 104,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s265",
+      "type": "pipe",
+      "x": 253,
+      "y": 146,
+      "w": 2,
+      "h": 112,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s266",
+      "type": "pipe",
+      "x": 267,
+      "y": 152,
+      "w": 2,
+      "h": 106,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s267",
+      "type": "pipe",
+      "x": 268,
+      "y": 151,
+      "w": 254,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s268",
+      "type": "pipe",
+      "x": 521,
+      "y": 152,
+      "w": 2,
+      "h": 106,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s269",
+      "type": "pipe",
+      "x": 535,
+      "y": 167,
+      "w": 2,
+      "h": 91,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s270",
+      "type": "pipe",
+      "x": 536,
+      "y": 166,
+      "w": 254,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s271",
+      "type": "pipe",
+      "x": 789,
+      "y": 167,
+      "w": 2,
+      "h": 91,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s272",
+      "type": "pipe",
+      "x": 803,
+      "y": 182,
+      "w": 2,
+      "h": 76,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s273",
+      "type": "pipe",
+      "x": 804,
+      "y": 181,
+      "w": 254,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s274",
+      "type": "pipe",
+      "x": 1057,
+      "y": 182,
+      "w": 2,
+      "h": 76,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s275",
+      "type": "pipe",
+      "x": 1071,
+      "y": 197,
+      "w": 2,
+      "h": 61,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s276",
+      "type": "pipe",
+      "x": 1072,
+      "y": 196,
+      "w": 254,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s277",
+      "type": "pipe",
+      "x": 1325,
+      "y": 197,
+      "w": 2,
+      "h": 61,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s278",
+      "type": "pipe",
+      "x": 1339,
+      "y": 212,
+      "w": 2,
+      "h": 46,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s279",
+      "type": "pipe",
+      "x": 1340,
+      "y": 211,
+      "w": 254,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s280",
+      "type": "pipe",
+      "x": 1593,
+      "y": 212,
+      "w": 2,
+      "h": 46,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s281",
+      "type": "pipe",
+      "x": 1607,
+      "y": 116,
+      "w": 2,
+      "h": 142,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s282",
+      "type": "pipe",
+      "x": 1608,
+      "y": 115,
+      "w": 120,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s283",
+      "type": "text",
+      "x": 1664,
+      "y": 96,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "To CFA901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s284",
+      "type": "pipe",
+      "x": 79,
+      "y": 320,
+      "w": 2,
+      "h": 244,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s285",
+      "type": "pipe",
+      "x": 80,
+      "y": 319,
+      "w": 181,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s286",
+      "type": "pipe",
+      "x": 80,
+      "y": 563,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s287",
+      "type": "pipe",
+      "x": 69,
+      "y": 582,
+      "w": 2,
+      "h": 194,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s288",
+      "type": "pipe",
+      "x": 70,
+      "y": 581,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s289",
+      "type": "pipe",
+      "x": 70,
+      "y": 775,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s290",
+      "type": "pipe",
+      "x": 347,
+      "y": 320,
+      "w": 2,
+      "h": 244,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s291",
+      "type": "pipe",
+      "x": 348,
+      "y": 319,
+      "w": 181,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s292",
+      "type": "pipe",
+      "x": 348,
+      "y": 563,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s293",
+      "type": "pipe",
+      "x": 337,
+      "y": 582,
+      "w": 2,
+      "h": 194,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s294",
+      "type": "pipe",
+      "x": 338,
+      "y": 581,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s295",
+      "type": "pipe",
+      "x": 338,
+      "y": 775,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s296",
+      "type": "pipe",
+      "x": 615,
+      "y": 320,
+      "w": 2,
+      "h": 244,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s297",
+      "type": "pipe",
+      "x": 616,
+      "y": 319,
+      "w": 181,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s298",
+      "type": "pipe",
+      "x": 616,
+      "y": 563,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s299",
+      "type": "pipe",
+      "x": 605,
+      "y": 582,
+      "w": 2,
+      "h": 194,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s300",
+      "type": "pipe",
+      "x": 606,
+      "y": 581,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s301",
+      "type": "pipe",
+      "x": 606,
+      "y": 775,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s302",
+      "type": "pipe",
+      "x": 883,
+      "y": 320,
+      "w": 2,
+      "h": 244,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s303",
+      "type": "pipe",
+      "x": 884,
+      "y": 319,
+      "w": 181,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s304",
+      "type": "pipe",
+      "x": 884,
+      "y": 563,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s305",
+      "type": "pipe",
+      "x": 873,
+      "y": 582,
+      "w": 2,
+      "h": 194,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s306",
+      "type": "pipe",
+      "x": 874,
+      "y": 581,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s307",
+      "type": "pipe",
+      "x": 874,
+      "y": 775,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s308",
+      "type": "pipe",
+      "x": 1151,
+      "y": 320,
+      "w": 2,
+      "h": 244,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s309",
+      "type": "pipe",
+      "x": 1152,
+      "y": 319,
+      "w": 181,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s310",
+      "type": "pipe",
+      "x": 1152,
+      "y": 563,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s311",
+      "type": "pipe",
+      "x": 1141,
+      "y": 582,
+      "w": 2,
+      "h": 194,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s312",
+      "type": "pipe",
+      "x": 1142,
+      "y": 581,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s313",
+      "type": "pipe",
+      "x": 1142,
+      "y": 775,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s314",
+      "type": "pipe",
+      "x": 1419,
+      "y": 320,
+      "w": 2,
+      "h": 244,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s315",
+      "type": "pipe",
+      "x": 1420,
+      "y": 319,
+      "w": 181,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s316",
+      "type": "pipe",
+      "x": 1420,
+      "y": 563,
+      "w": 26,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s317",
+      "type": "pipe",
+      "x": 1409,
+      "y": 582,
+      "w": 2,
+      "h": 194,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s318",
+      "type": "pipe",
+      "x": 1410,
+      "y": 581,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    },
+    {
+      "id": "s319",
+      "type": "pipe",
+      "x": 1410,
+      "y": 775,
+      "w": 36,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#3fb6c8"
+      }
+    }
+  ]
+}

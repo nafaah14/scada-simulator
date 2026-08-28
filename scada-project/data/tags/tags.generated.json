@@ -3369,6 +3369,58 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_BEU901_OK",
+    "logical_name": "COMMON_BEU901_OK",
+    "description": "BEU901 network bridge healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Automation1"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_BEU902_OK",
+    "logical_name": "COMMON_BEU902_OK",
+    "description": "BEU902 network bridge healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Automation1"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": true,
     "generated": true,
     "tag_id": "COMMON_BEY901_VOLTAGE",
@@ -4739,6 +4791,58 @@
     "unit": "COMMON",
     "screens": [
       "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_DAYTANK_HI_LIMIT",
+    "logical_name": "COMMON_DAYTANK_HI_LIMIT",
+    "description": "Day tank filling high level limit",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "level",
+    "value": 80,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Automation1"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_DAYTANK_LO_LIMIT",
+    "logical_name": "COMMON_DAYTANK_LO_LIMIT",
+    "description": "Day tank filling low level limit",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "level",
+    "value": 35,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Automation1"
     ]
   },
   {
@@ -12228,7 +12332,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12254,7 +12358,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12280,7 +12384,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 78,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12332,7 +12436,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12358,7 +12462,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 86,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12384,7 +12488,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12410,7 +12514,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12436,7 +12540,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12462,7 +12566,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 78,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12488,10 +12592,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 404,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_1_DEV",
+    "logical_name": "G01_CYL_A_EXH_1_DEV",
+    "description": "Exh. gas temp. cyl. A1 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12514,10 +12644,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 413,
+    "value": 396,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_10_DEV",
+    "logical_name": "G01_CYL_A_EXH_10_DEV",
+    "description": "Exh. gas temp. cyl. A10 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12540,10 +12696,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 405,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_2_DEV",
+    "logical_name": "G01_CYL_A_EXH_2_DEV",
+    "description": "Exh. gas temp. cyl. A2 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12566,10 +12748,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 406,
+    "value": 399,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_3_DEV",
+    "logical_name": "G01_CYL_A_EXH_3_DEV",
+    "description": "Exh. gas temp. cyl. A3 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12592,10 +12800,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 407,
+    "value": 401,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_4_DEV",
+    "logical_name": "G01_CYL_A_EXH_4_DEV",
+    "description": "Exh. gas temp. cyl. A4 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12618,10 +12852,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 414,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_5_DEV",
+    "logical_name": "G01_CYL_A_EXH_5_DEV",
+    "description": "Exh. gas temp. cyl. A5 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12644,10 +12904,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 398,
+    "value": 410,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_6_DEV",
+    "logical_name": "G01_CYL_A_EXH_6_DEV",
+    "description": "Exh. gas temp. cyl. A6 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12670,10 +12956,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 404,
+    "value": 408,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_7_DEV",
+    "logical_name": "G01_CYL_A_EXH_7_DEV",
+    "description": "Exh. gas temp. cyl. A7 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12696,10 +13008,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 410,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_8_DEV",
+    "logical_name": "G01_CYL_A_EXH_8_DEV",
+    "description": "Exh. gas temp. cyl. A8 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12722,10 +13060,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 407,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_A_EXH_9_DEV",
+    "logical_name": "G01_CYL_A_EXH_9_DEV",
+    "description": "Exh. gas temp. cyl. A9 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -12748,7 +13112,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12774,7 +13138,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12800,7 +13164,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12826,7 +13190,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12878,7 +13242,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12904,7 +13268,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12930,7 +13294,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12956,7 +13320,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12982,7 +13346,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13008,7 +13372,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13034,7 +13398,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 108,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13060,7 +13424,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 108,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13086,7 +13450,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13138,7 +13502,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13164,7 +13528,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13190,7 +13554,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13216,7 +13580,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13242,7 +13606,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 109,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13268,7 +13632,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13294,7 +13658,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 86,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13320,7 +13684,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13346,7 +13710,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13372,7 +13736,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 78,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13398,7 +13762,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13424,7 +13788,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13450,7 +13814,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 78,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13502,7 +13866,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13537,6 +13901,32 @@
   {
     "sensor_fault": false,
     "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_1_DEV",
+    "logical_name": "G01_CYL_B_EXH_1_DEV",
+    "description": "Exh. gas temp. cyl. B1 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
       "hihi": 550,
       "hi": 500,
       "lo": null,
@@ -13554,10 +13944,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 413,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_10_DEV",
+    "logical_name": "G01_CYL_B_EXH_10_DEV",
+    "description": "Exh. gas temp. cyl. B10 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13580,10 +13996,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 411,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_2_DEV",
+    "logical_name": "G01_CYL_B_EXH_2_DEV",
+    "description": "Exh. gas temp. cyl. B2 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13615,6 +14057,32 @@
   {
     "sensor_fault": false,
     "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_3_DEV",
+    "logical_name": "G01_CYL_B_EXH_3_DEV",
+    "description": "Exh. gas temp. cyl. B3 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
       "hihi": 550,
       "hi": 500,
       "lo": null,
@@ -13632,10 +14100,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 407,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_4_DEV",
+    "logical_name": "G01_CYL_B_EXH_4_DEV",
+    "description": "Exh. gas temp. cyl. B4 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13658,10 +14152,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 412,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_5_DEV",
+    "logical_name": "G01_CYL_B_EXH_5_DEV",
+    "description": "Exh. gas temp. cyl. B5 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13684,10 +14204,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 415,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_6_DEV",
+    "logical_name": "G01_CYL_B_EXH_6_DEV",
+    "description": "Exh. gas temp. cyl. B6 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13710,10 +14256,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 395,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_7_DEV",
+    "logical_name": "G01_CYL_B_EXH_7_DEV",
+    "description": "Exh. gas temp. cyl. B7 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13745,6 +14317,32 @@
   {
     "sensor_fault": false,
     "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_8_DEV",
+    "logical_name": "G01_CYL_B_EXH_8_DEV",
+    "description": "Exh. gas temp. cyl. B8 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
       "hihi": 550,
       "hi": 500,
       "lo": null,
@@ -13762,10 +14360,36 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 415,
+    "value": 408,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 66,
+      "lo": -66,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CYL_B_EXH_9_DEV",
+    "logical_name": "G01_CYL_B_EXH_9_DEV",
+    "description": "Exh. gas temp. cyl. B9 dev. from avg.",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 0,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph"
     ]
   },
   {
@@ -13788,7 +14412,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13814,7 +14438,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13840,7 +14464,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13866,7 +14490,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13892,7 +14516,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13918,7 +14542,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13944,7 +14568,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13970,7 +14594,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -13996,7 +14620,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14022,7 +14646,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14048,7 +14672,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 109,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14100,7 +14724,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14126,7 +14750,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14152,7 +14776,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 109,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14204,7 +14828,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14230,7 +14854,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14256,7 +14880,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14282,7 +14906,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 108,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -14443,6 +15067,33 @@
     ],
     "trend_enabled": true,
     "note": "Same measurement point as the SCA011TE101PV example in SCHEMA.md — this is the G1-specific instance of that pattern."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_ENGINE_SPEED",
+    "logical_name": "G01_ENGINE_SPEED",
+    "description": "Engine speed",
+    "engineering_unit": "rpm",
+    "data_type": "analog",
+    "category": "speed",
+    "value": 753,
+    "unit": "G1",
+    "screens": [
+      "G1.ExhGraph",
+      "G1.Control"
+    ]
   },
   {
     "sensor_fault": false,
@@ -15531,7 +16182,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 94,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15557,7 +16208,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 91,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15583,7 +16234,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 88,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15609,7 +16260,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15635,7 +16286,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 88,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15661,7 +16312,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15687,7 +16338,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 88,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15713,7 +16364,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 91,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15739,7 +16390,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -15765,7 +16416,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"

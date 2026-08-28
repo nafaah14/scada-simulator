@@ -26,6 +26,8 @@ import { commonStartAir } from './screens/common-startair.mjs';
 import { commonElectrical1, commonElectrical2 } from './screens/common-electrical.mjs';
 import { commonOilyWater } from './screens/common-oilywater.mjs';
 import { commonCooling } from './screens/common-cooling.mjs';
+import { commonAutomation1, commonAutomation2 } from './screens/common-automation.mjs';
+import { g1ExhGraph } from './screens/g1-exhgraph.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', 'data', 'screens-v2');
@@ -39,12 +41,15 @@ const ALL = [
   commonStartAir(),
   commonOilyWater(),
   commonCooling(),
+  commonAutomation1(),
+  commonAutomation2(),
   g1Temp(),
   g1Fuel(),
   g1Control(),
   g1Lube(),
   g1Cooling(),
-  g1Exhaust()
+  g1Exhaust(),
+  g1ExhGraph()
 ];
 
 const only = process.argv.slice(2);

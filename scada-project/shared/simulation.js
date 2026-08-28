@@ -267,6 +267,7 @@ export class Simulation {
       this._approach(`${p}_MIXTANK_PRESS`, running ? 4.0 : 0, 0.15, 0.05);
       this._approach(`${p}_CIRC_TEMP`, running ? 42 : 32, 0.06, 0.3);
       this._approach(`${p}_CTRLPANEL_TEMP`, 36, 0.05, 0.3);
+      this._set(`${p}_ENGINE_SPEED`, u.speed);
       this._approach(`${p}_ENGINE_INLET_TEMP`, running ? 40 : 32, 0.08, 0.3);
       this._approach(`${p}_ENGINE_INLET_PRESS`, running ? 8.8 : 0, 0.15, 0.08);
       this._approach(`${p}_CLEANLEAK_FLOW`, running ? 13 : 0, 0.05, 0.4);
@@ -294,7 +295,20 @@ export class Simulation {
         this._approach(`${p}_CYL_${bank}_BIGEND_${n}`, bigEndBase + bias * 0.6, 0.06, 0.6);
       }
     }
-    if (exhCount) this._set(`${p}_EXH_AVG_TEMP`, exhSum / exhCount);
+    /* Deviation from the bank average is what the exhaust-gas graph is
+       for: a misfiring cylinder shows as a column off the average long
+       before its absolute temperature trips anything. Derived here so
+       the graph and the readouts can never disagree. */
+    if (exhCount) {
+      const avg = exhSum / exhCount;
+      this._set(`${p}_EXH_AVG_TEMP`, avg);
+      for (const bank of ['A', 'B']) {
+        for (let n = 1; n <= 10; n++) {
+          this._set(`${p}_CYL_${bank}_EXH_${n}_DEV`,
+            this._get(`${p}_CYL_${bank}_EXH_${n}`) - avg);
+        }
+      }
+    }
 
     /* ---- main + thrust bearings ---- */
     for (let n = 1; n <= 11; n++) {

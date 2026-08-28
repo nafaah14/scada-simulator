@@ -1,0 +1,1451 @@
+{
+  "screen_id": "G1.ExhGraph",
+  "title": "G1 — Exhaust gas temperatures",
+  "unit": "G1",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1720,
+    "height": 840,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "pipe",
+      "x": 1360,
+      "y": 95,
+      "w": 40,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#e5484d"
+      }
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "x": 1406,
+      "y": 88,
+      "w": 70,
+      "h": 13,
+      "props": {
+        "text": "Alarm"
+      },
+      "style": {
+        "color": "#e5484d",
+        "fontSize": 11,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s3",
+      "type": "pipe",
+      "x": 1478,
+      "y": 95,
+      "w": 40,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s4",
+      "type": "text",
+      "x": 1524,
+      "y": 88,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "Shutdown"
+      },
+      "style": {
+        "color": "#e5484d",
+        "fontSize": 11,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "x": 1350,
+      "y": 80,
+      "w": 264,
+      "h": 26,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s6",
+      "type": "barchart",
+      "x": 300,
+      "y": 120,
+      "w": 1300,
+      "h": 560,
+      "props": {
+        "bars": [
+          {
+            "label": "A1",
+            "tag": "G01_CYL_A_EXH_1",
+            "value": 406
+          },
+          {
+            "label": "A2",
+            "tag": "G01_CYL_A_EXH_2",
+            "value": 394
+          },
+          {
+            "label": "A3",
+            "tag": "G01_CYL_A_EXH_3",
+            "value": 404
+          },
+          {
+            "label": "A4",
+            "tag": "G01_CYL_A_EXH_4",
+            "value": 399
+          },
+          {
+            "label": "A5",
+            "tag": "G01_CYL_A_EXH_5",
+            "value": 397
+          },
+          {
+            "label": "A6",
+            "tag": "G01_CYL_A_EXH_6",
+            "value": 390
+          },
+          {
+            "label": "A7",
+            "tag": "G01_CYL_A_EXH_7",
+            "value": 407
+          },
+          {
+            "label": "A8",
+            "tag": "G01_CYL_A_EXH_8",
+            "value": 382
+          },
+          {
+            "label": "A9",
+            "tag": "G01_CYL_A_EXH_9",
+            "value": 391
+          },
+          {
+            "label": "A10",
+            "tag": "G01_CYL_A_EXH_10",
+            "value": 398
+          },
+          {
+            "label": "B1",
+            "tag": "G01_CYL_B_EXH_1",
+            "value": 408
+          },
+          {
+            "label": "B2",
+            "tag": "G01_CYL_B_EXH_2",
+            "value": 405
+          },
+          {
+            "label": "B3",
+            "tag": "G01_CYL_B_EXH_3",
+            "value": 395
+          },
+          {
+            "label": "B4",
+            "tag": "G01_CYL_B_EXH_4",
+            "value": 397
+          },
+          {
+            "label": "B5",
+            "tag": "G01_CYL_B_EXH_5",
+            "value": 399
+          },
+          {
+            "label": "B6",
+            "tag": "G01_CYL_B_EXH_6",
+            "value": 396
+          },
+          {
+            "label": "B7",
+            "tag": "G01_CYL_B_EXH_7",
+            "value": 406
+          },
+          {
+            "label": "B8",
+            "tag": "G01_CYL_B_EXH_8",
+            "value": 394
+          },
+          {
+            "label": "B9",
+            "tag": "G01_CYL_B_EXH_9",
+            "value": 406
+          },
+          {
+            "label": "B10",
+            "tag": "G01_CYL_B_EXH_10",
+            "value": 406
+          }
+        ],
+        "min": 0,
+        "max": 600,
+        "unit": "°C",
+        "average": null,
+        "alarmLine": 500,
+        "shutdownLine": 540,
+        "gridStep": 50,
+        "showAverage": true
+      },
+      "style": {
+        "fill": "#00a000",
+        "stroke": "#1d242b",
+        "strokeWidth": 1,
+        "plotFill": "#a9b0b6",
+        "color": "#1d242b",
+        "fontSize": 11
+      },
+      "name": "Cylinder exhaust gas temperatures"
+    },
+    {
+      "id": "s7",
+      "type": "text",
+      "x": 180,
+      "y": 112,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "600 °C"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 14,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s8",
+      "type": "text",
+      "x": 180,
+      "y": 168,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "540 °C"
+      },
+      "style": {
+        "color": "#e5484d",
+        "fontSize": 14,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s9",
+      "type": "pipe",
+      "x": 1600,
+      "y": 307.09999999999997,
+      "w": 44,
+      "h": 1,
+      "props": {},
+      "style": {
+        "fill": "#1d242b"
+      }
+    },
+    {
+      "id": "s10",
+      "type": "readout",
+      "x": 1648,
+      "y": 293.59999999999997,
+      "w": 76,
+      "h": 26,
+      "bind": {
+        "value": "G01_EXH_AVG_TEMP"
+      },
+      "props": {
+        "text": "399",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "transparent",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 13,
+        "bold": true,
+        "align": "left",
+        "radius": 0
+      },
+      "name": "Bank average"
+    },
+    {
+      "id": "s11",
+      "type": "text",
+      "x": 120,
+      "y": 718,
+      "w": 170,
+      "h": 13,
+      "props": {
+        "text": "Temperature"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s12",
+      "type": "readout",
+      "x": 303,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_1"
+      },
+      "props": {
+        "text": "406",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s13",
+      "type": "readout",
+      "x": 368,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_2"
+      },
+      "props": {
+        "text": "394",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s14",
+      "type": "readout",
+      "x": 433,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_3"
+      },
+      "props": {
+        "text": "404",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s15",
+      "type": "readout",
+      "x": 498,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_4"
+      },
+      "props": {
+        "text": "399",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s16",
+      "type": "readout",
+      "x": 563,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_5"
+      },
+      "props": {
+        "text": "397",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s17",
+      "type": "readout",
+      "x": 628,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_6"
+      },
+      "props": {
+        "text": "390",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s18",
+      "type": "readout",
+      "x": 693,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_7"
+      },
+      "props": {
+        "text": "407",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s19",
+      "type": "readout",
+      "x": 758,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_8"
+      },
+      "props": {
+        "text": "382",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s20",
+      "type": "readout",
+      "x": 823,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_9"
+      },
+      "props": {
+        "text": "391",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s21",
+      "type": "readout",
+      "x": 888,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_10"
+      },
+      "props": {
+        "text": "398",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s22",
+      "type": "readout",
+      "x": 953,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_1"
+      },
+      "props": {
+        "text": "408",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s23",
+      "type": "readout",
+      "x": 1018,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_2"
+      },
+      "props": {
+        "text": "405",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s24",
+      "type": "readout",
+      "x": 1083,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_3"
+      },
+      "props": {
+        "text": "395",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s25",
+      "type": "readout",
+      "x": 1148,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_4"
+      },
+      "props": {
+        "text": "397",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s26",
+      "type": "readout",
+      "x": 1213,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_5"
+      },
+      "props": {
+        "text": "399",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s27",
+      "type": "readout",
+      "x": 1278,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_6"
+      },
+      "props": {
+        "text": "396",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s28",
+      "type": "readout",
+      "x": 1343,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_7"
+      },
+      "props": {
+        "text": "406",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s29",
+      "type": "readout",
+      "x": 1408,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_8"
+      },
+      "props": {
+        "text": "394",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s30",
+      "type": "readout",
+      "x": 1473,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_9"
+      },
+      "props": {
+        "text": "406",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s31",
+      "type": "readout",
+      "x": 1538,
+      "y": 710,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_10"
+      },
+      "props": {
+        "text": "406",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s32",
+      "type": "text",
+      "x": 120,
+      "y": 752,
+      "w": 170,
+      "h": 13,
+      "props": {
+        "text": "Deviation"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s33",
+      "type": "readout",
+      "x": 303,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_1_DEV"
+      },
+      "props": {
+        "text": "7",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s34",
+      "type": "readout",
+      "x": 368,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_2_DEV"
+      },
+      "props": {
+        "text": "-5",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s35",
+      "type": "readout",
+      "x": 433,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_3_DEV"
+      },
+      "props": {
+        "text": "5",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s36",
+      "type": "readout",
+      "x": 498,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_4_DEV"
+      },
+      "props": {
+        "text": "0",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s37",
+      "type": "readout",
+      "x": 563,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_5_DEV"
+      },
+      "props": {
+        "text": "-2",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s38",
+      "type": "readout",
+      "x": 628,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_6_DEV"
+      },
+      "props": {
+        "text": "-9",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s39",
+      "type": "readout",
+      "x": 693,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_7_DEV"
+      },
+      "props": {
+        "text": "8",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s40",
+      "type": "readout",
+      "x": 758,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_8_DEV"
+      },
+      "props": {
+        "text": "-17",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s41",
+      "type": "readout",
+      "x": 823,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_9_DEV"
+      },
+      "props": {
+        "text": "-8",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s42",
+      "type": "readout",
+      "x": 888,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_A_EXH_10_DEV"
+      },
+      "props": {
+        "text": "-1",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s43",
+      "type": "readout",
+      "x": 953,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_1_DEV"
+      },
+      "props": {
+        "text": "9",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s44",
+      "type": "readout",
+      "x": 1018,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_2_DEV"
+      },
+      "props": {
+        "text": "6",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s45",
+      "type": "readout",
+      "x": 1083,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_3_DEV"
+      },
+      "props": {
+        "text": "-4",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s46",
+      "type": "readout",
+      "x": 1148,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_4_DEV"
+      },
+      "props": {
+        "text": "-2",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s47",
+      "type": "readout",
+      "x": 1213,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_5_DEV"
+      },
+      "props": {
+        "text": "0",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s48",
+      "type": "readout",
+      "x": 1278,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_6_DEV"
+      },
+      "props": {
+        "text": "-3",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s49",
+      "type": "readout",
+      "x": 1343,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_7_DEV"
+      },
+      "props": {
+        "text": "7",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s50",
+      "type": "readout",
+      "x": 1408,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_8_DEV"
+      },
+      "props": {
+        "text": "-5",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s51",
+      "type": "readout",
+      "x": 1473,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_9_DEV"
+      },
+      "props": {
+        "text": "7",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s52",
+      "type": "readout",
+      "x": 1538,
+      "y": 744,
+      "w": 59,
+      "h": 30,
+      "bind": {
+        "value": "G01_CYL_B_EXH_10_DEV"
+      },
+      "props": {
+        "text": "7",
+        "unit": null,
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s53",
+      "type": "text",
+      "x": 120,
+      "y": 790,
+      "w": 170,
+      "h": 13,
+      "props": {
+        "text": "Active power"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s54",
+      "type": "readout",
+      "x": 300,
+      "y": 782,
+      "w": 150,
+      "h": 30,
+      "bind": {
+        "value": "G01_KW"
+      },
+      "props": {
+        "text": "7904 kW",
+        "unit": "kW",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s55",
+      "type": "text",
+      "x": 700,
+      "y": 790,
+      "w": 170,
+      "h": 13,
+      "props": {
+        "text": "Engine speed"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s56",
+      "type": "readout",
+      "x": 884,
+      "y": 782,
+      "w": 150,
+      "h": 30,
+      "bind": {
+        "value": "G01_ENGINE_SPEED"
+      },
+      "props": {
+        "text": "753 rpm",
+        "unit": "rpm",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    }
+  ]
+}

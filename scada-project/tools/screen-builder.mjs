@@ -89,7 +89,8 @@ export function builder() {
     ro: (x, y, w, h, text, tag, opt = {}) => push({
       type: 'readout', x, y, w, h,
       bind: { value: tag || '' },
-      props: { text, unit: opt.unit ?? '', decimals: opt.decimals ?? null },
+      props: { text, unit: opt.unit !== undefined ? opt.unit : '',
+               decimals: opt.decimals ?? null },
       style: {
         fill: opt.fill ?? '#f6f8f9', stroke: opt.stroke ?? '#8a929b',
         strokeWidth: opt.strokeWidth ?? 1, color: opt.color ?? '#111820',
@@ -213,6 +214,55 @@ export function builder() {
         orientation: opt.orientation ?? 'vertical', marker: opt.marker ?? null
       },
       style: { fill: opt.fill ?? '#2fa84f', stroke: '#8a929b', strokeWidth: 1 },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
+    /* ---- automation network ---- */
+
+    /* A PLC or IO rack. `modules` are the slot type letters, e.g.
+       ['PS','CPU','CPU','DO','DI','AO','AI']. */
+    iorack: (x, y, w, h, title, modules, opt = {}) => push({
+      type: 'iorack', x, y, w, h,
+      props: { title, modules, alarms: opt.alarms || [] },
+      style: {
+        fill: opt.fill ?? '#8d959e', stroke: opt.stroke ?? '#1d242b', strokeWidth: 1,
+        headerFill: opt.headerFill ?? '#4a7fb5', color: opt.color ?? '#f2e200'
+      },
+      ...(opt.name ? { name: opt.name } : { name: title })
+    }),
+
+    netswitch: (x, y, w, h, ports, opt = {}) => push({
+      type: 'netswitch', x, y, w, h,
+      props: { ports, cols: opt.cols ?? 2 },
+      style: { fill: opt.fill ?? '#c9ced3', stroke: opt.stroke ?? '#3d4349',
+               strokeWidth: 1 },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
+    device: (x, y, w, h, title, text, opt = {}) => push({
+      type: 'device', x, y, w, h,
+      props: { title, text, glyph: opt.glyph ?? 'none' },
+      style: {
+        fill: opt.fill ?? '#b9bfa8', stroke: opt.stroke ?? '#1d242b', strokeWidth: 1,
+        headerFill: opt.headerFill ?? '#4a7fb5', color: opt.color ?? '#1d242b',
+        fontSize: opt.size ?? 10
+      },
+      ...(opt.name ? { name: opt.name } : { name: [title, text].filter(Boolean).join(' ') })
+    }),
+
+    barchart: (x, y, w, h, bars, opt = {}) => push({
+      type: 'barchart', x, y, w, h,
+      props: {
+        bars, min: opt.min ?? 0, max: opt.max ?? 600, unit: opt.unit ?? '°C',
+        average: opt.average ?? null, alarmLine: opt.alarmLine ?? null,
+        shutdownLine: opt.shutdownLine ?? null, gridStep: opt.gridStep ?? 60,
+        showAverage: opt.showAverage !== false
+      },
+      style: {
+        fill: opt.fill ?? '#00a000', stroke: opt.stroke ?? '#1d242b', strokeWidth: 1,
+        plotFill: opt.plotFill ?? '#a9b0b6', color: opt.color ?? '#1d242b',
+        fontSize: opt.size ?? 11
+      },
       ...(opt.name ? { name: opt.name } : {})
     }),
 

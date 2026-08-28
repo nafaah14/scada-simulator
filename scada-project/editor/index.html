@@ -670,6 +670,43 @@ function buildField(el, f){
                            ['warn','Warning (yellow)']],
                           p.onState||'alarm', set(p,'onState')));
     case 'disabled':    return checkbox('Greyed out', !!p.disabled, set(p,'disabled'));
+    case 'title':       return field('Title', textInput(p.title||'', set(p,'title')));
+    case 'glyph':       return field('Glyph', selectInput(
+                          [['none','None'],['wave','Waveform'],['keys','Keypad'],
+                           ['trend','Trend']], p.glyph||'none', set(p,'glyph')));
+    case 'ports':       return field('Ports', numInput(p.ports ?? 8, set(p,'ports')));
+    case 'cols':        return field('Port columns', numInput(p.cols ?? 2, set(p,'cols')));
+    case 'headerFill':  return field('Header colour', colorInput(s.headerFill||'#4a7fb5',
+                          set(s,'headerFill')));
+    /* Slot letters, one module per comma-separated entry: PS,CPU,DI,AO */
+    case 'modules':     return field('Modules (comma separated)',
+                          textInput((p.modules||[]).join(','),
+                            v => set(p,'modules')(
+                              v.split(',').map(t=>t.trim()).filter(Boolean))));
+    case 'alarms':      return field('Modules in alarm (indexes)',
+                          textInput((p.alarms||[]).join(','),
+                            v => set(p,'alarms')(
+                              v.split(',').map(t=>parseInt(t,10))
+                                .filter(n=>!isNaN(n)))));
+    case 'bars':        return field('Bars (label:tag, comma separated)',
+                          textInput((p.bars||[]).map(b=>b.label+':'+(b.tag||'')).join(','),
+                            v => set(p,'bars')(
+                              v.split(',').map(t=>{
+                                const [label, tag] = t.split(':');
+                                return { label:(label||'').trim(), tag:(tag||'').trim() };
+                              }).filter(b=>b.label))));
+    case 'average':     return field('Average (blank = computed)',
+                          nullNumInput(p.average, set(p,'average')));
+    case 'alarmLine':   return field('Alarm line',
+                          nullNumInput(p.alarmLine, set(p,'alarmLine')));
+    case 'shutdownLine':return field('Shutdown line',
+                          nullNumInput(p.shutdownLine, set(p,'shutdownLine')));
+    case 'gridStep':    return field('Grid step', numInput(p.gridStep ?? 60,
+                          set(p,'gridStep')));
+    case 'showAverage': return checkbox('Show average line', p.showAverage !== false,
+                          set(p,'showAverage'));
+    case 'plotFill':    return field('Plot background', colorInput(s.plotFill||'#a9b0b6',
+                          set(s,'plotFill')));
     case 'relayKind':   return field('Device', selectInput(
                           [['relay','Protection relay'],['meter','Power meter']],
                           p.kind||'relay', set(p,'kind')));
@@ -718,6 +755,17 @@ function numInput(val, onChange, min, max, step){
   i.addEventListener('change', ()=>{
     const v = parseFloat(i.value);
     if(!isNaN(v)) onChange(v);
+  });
+  return i;
+}
+/* Numeric field that accepts an empty value, for limits that may be unset. */
+function nullNumInput(val, onChange){
+  const i = document.createElement('input');
+  i.type = 'text'; i.value = val == null ? '' : val;
+  i.placeholder = 'none';
+  i.addEventListener('change', ()=>{
+    const t = i.value.trim();
+    onChange(t === '' ? null : (isNaN(parseFloat(t)) ? null : parseFloat(t)));
   });
   return i;
 }
