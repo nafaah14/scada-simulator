@@ -813,7 +813,8 @@
       "w": 100,
       "h": 30,
       "props": {
-        "text": "Shift+F\nFuel data"
+        "text": "Shift+F\nFuel data",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -1417,7 +1418,8 @@
       "w": 54,
       "h": 18,
       "props": {
-        "text": "Start"
+        "text": "Start",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -1436,7 +1438,8 @@
       "w": 54,
       "h": 18,
       "props": {
-        "text": "Stop"
+        "text": "Stop",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",

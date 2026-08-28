@@ -711,6 +711,127 @@ for (let n = 1; n <= 6; n++) {
     { ...common, screens: [...E1, ...E2] });
 }
 
+
+/* ---------------------------------------------------------------------
+   Plant seawater cooling and the oily-water train. Both are per-machine
+   loops, so they are written from tables rather than tag by tag.
+   ------------------------------------------------------------------ */
+{
+  const common = { unit: 'COMMON' };
+  const CW = ['Common.Cooling'], OW = ['Common.OilyWater'];
+
+  // seawater intake basins and their band screens
+  for (const n of [1, 2]) {
+    analog(`COMMON_SW_BASIN${n}_LEVEL`, `Seawater basin ${n} level`, 'm', 3.0, 'level',
+      { ...common, screens: CW, alarm_limits: { hihi: null, hi: null, lo: 2.2, lolo: 1.8 } });
+    analog(`COMMON_SW_BASIN${n}_DEPTH`, `Seawater basin ${n} depth`, 'm', 4.1, 'level',
+      { ...common, screens: CW });
+    digital(`COMMON_SW_BASIN${n}_ALARM`, `Seawater basin ${n} low level switch`, false,
+      { ...common, screens: CW });
+  }
+
+  // the four seawater pumps
+  const SWP = [
+    { n: 1, run: false, amps: 0,   bar: 0.3, pct: 100, t: 32, b: 32 },
+    { n: 2, run: true,  amps: 244, bar: 3.5, pct: 100, t: 93, b: 91 },
+    { n: 3, run: false, amps: 0,   bar: 0.3, pct: 0,   t: 32, b: 32 },
+    { n: 4, run: true,  amps: 245, bar: 3.4, pct: 100, t: 89, b: 86 }
+  ];
+  for (const p of SWP) {
+    const tag = `COMMON_SWP${p.n}`;
+    for (let i = 1; i <= 5; i++) {
+      analog(`${tag}_T${i}`, `Seawater pump ${p.n} motor winding ${i} temperature`,
+        '°C', p.t, 'temperature',
+        { ...common, screens: CW, alarm_limits: { hihi: 130, hi: 115, lo: null, lolo: null } });
+      analog(`${tag}_B${i}`, `Seawater pump ${p.n} bearing ${i} temperature`,
+        '°C', p.b, 'temperature',
+        { ...common, screens: CW, alarm_limits: { hihi: 110, hi: 95, lo: null, lolo: null } });
+    }
+    digital(`${tag}_RUNNING`, `Seawater pump ${p.n} running`, p.run,
+      { ...common, screens: CW });
+    digital(`${tag}_RACK_IN`, `Seawater pump ${p.n} rack in`, true, { ...common, screens: CW });
+    digital(`${tag}_CTRL_POWER`, `Seawater pump ${p.n} control power`, true,
+      { ...common, screens: CW });
+    digital(`${tag}_PERMIT`, `Seawater pump ${p.n} start permit`, true,
+      { ...common, screens: CW });
+    digital(`${tag}_REMOTE`, `Seawater pump ${p.n} remote permit`, true,
+      { ...common, screens: CW });
+    digital(`${tag}_SUCT_VALVE`, `Seawater pump ${p.n} suction valve open`, true,
+      { ...common, screens: CW });
+    digital(`${tag}_DISCH_VALVE`, `Seawater pump ${p.n} discharge valve open`, p.run,
+      { ...common, screens: CW });
+    analog(`${tag}_CURRENT`, `Seawater pump ${p.n} current`, 'A', p.amps, 'current',
+      { ...common, screens: CW });
+    analog(`${tag}_PRESSURE`, `Seawater pump ${p.n} discharge pressure`, 'bar', p.bar,
+      'pressure',
+      { ...common, screens: CW });   // an idle pump must not raise a standing alarm
+    analog(`${tag}_SPEED`, `Seawater pump ${p.n} speed demand`, '%', p.pct, 'speed',
+      { ...common, screens: CW });
+  }
+
+  // seawater headers and the overboard line
+  analog('COMMON_SW_HEADER_PRESSURE', 'Seawater supply header pressure', 'bar', 2.9,
+    'pressure',
+    { ...common, screens: CW, alarm_limits: { hihi: null, hi: null, lo: 1.8, lolo: 1.2 } });
+  analog('COMMON_SW_HEADER_TEMP', 'Seawater supply header temperature', '°C', 29,
+    'temperature', { ...common, screens: CW });
+  analog('COMMON_SW_RETURN_TEMP', 'Seawater return header temperature', '°C', 44,
+    'temperature',
+    { ...common, screens: CW, alarm_limits: { hihi: 43, hi: null, lo: null, lolo: null } });
+  analog('COMMON_SW_OVERBOARD_TEMP', 'Seawater overboard temperature', '°C', 38,
+    'temperature', { ...common, screens: CW });
+  for (const t of ['COMMON_SW_BOOSTER1_RUNNING', 'COMMON_SW_BOOSTER2_RUNNING']) {
+    digital(t, t.replace(/_/g, ' ').toLowerCase(), true, { ...common, screens: CW });
+  }
+  for (const t of ['COMMON_SW_OUTLET1_PERMIT', 'COMMON_SW_OUTLET2_PERMIT',
+                   'COMMON_SW_OVERBOARD_PERMIT']) {
+    digital(t, 'Seawater outlet valve remote permit', true, { ...common, screens: CW });
+  }
+
+  // engine-room LT cooling modules
+  for (let n = 1; n <= 6; n++) {
+    const plate = `VHA0${n}1`;
+    digital(`COMMON_${plate}_MOTOR`, `${plate} LT pump motor running`, true,
+      { ...common, screens: CW });
+    digital(`COMMON_${plate}_ALARM`, `${plate} LT pump alarm`, n === 4,
+      { ...common, screens: CW });
+  }
+
+  // MED distillation units
+  for (const plate of ['CFA951', 'CFA952']) {
+    digital(`COMMON_${plate}_RUNNING`, `${plate} MED unit running`, false,
+      { ...common, screens: CW });
+    digital(`COMMON_${plate}_STOPPED`, `${plate} MED unit stopped`, true,
+      { ...common, screens: CW });
+  }
+
+  /* ---- oily water ---- */
+  analog('COMMON_DAB901_LEVEL', 'Oily wastewater regulating tank level', '%', 64, 'level',
+    { ...common, screens: OW, alarm_limits: { hihi: 92, hi: 85, lo: null, lolo: null } });
+  for (const n of [1, 2]) {
+    const tag = `COMMON_DAB901_P${n}`;
+    digital(`${tag}_RUNNING`, `Oily water feed pump ${n} running`, n === 1,
+      { ...common, screens: OW });
+    digital(`${tag}_SUCT`, `Oily water feed pump ${n} suction valve open`, true,
+      { ...common, screens: OW });
+    digital(`${tag}_DISCH`, `Oily water feed pump ${n} discharge valve open`, n === 1,
+      { ...common, screens: OW });
+  }
+  digital('COMMON_DBB901_INLET_VALVE', 'DBB 901 inlet valve open', true,
+    { ...common, screens: OW });
+  digital('COMMON_DBB901_FEED_VALVE', 'DBB 901 feed valve open', true,
+    { ...common, screens: OW });
+  for (const [t, d, v] of [
+    ['COMMON_DBB901_RUNNING', 'DBB 901 treatment unit running', false],
+    ['COMMON_DBB901_OILPUMP_RUNNING', 'DBB 901 separated oil pump running', false],
+    ['COMMON_DBB901_CIRC_RUNNING', 'DBB 901 circulating pump running', true],
+    ['COMMON_DBB901_DRAIN_RUNNING', 'DBB 901 drain pump running', false],
+    ['COMMON_DBB901_TRANSFER_RUNNING', 'DBB 901 transfer pump running', false]
+  ]) digital(t, d, v, { ...common, screens: OW });
+  analog('COMMON_DBB901_PPM', 'Treated water oil content', 'ppm', 1, 'quality',
+    { ...common, screens: OW, alarm_limits: { hihi: 15, hi: 10, lo: null, lolo: null } });
+}
+
 const list = [...out.values()].sort((a, b) => a.tag_id.localeCompare(b.tag_id));
 writeFileSync(join(TAGS_DIR, 'tags.generated.json'), JSON.stringify(list, null, 2) + '\n');
 console.log(`wrote tags.generated.json — ${list.length} tags ` +

@@ -2541,7 +2541,8 @@
       "w": 110,
       "h": 26,
       "props": {
-        "text": "Maintenance"
+        "text": "Maintenance",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",

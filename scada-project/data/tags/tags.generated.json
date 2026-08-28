@@ -4469,6 +4469,500 @@
     },
     "trend_enabled": false,
     "generated": true,
+    "tag_id": "COMMON_CFA951_RUNNING",
+    "logical_name": "COMMON_CFA951_RUNNING",
+    "description": "CFA951 MED unit running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_CFA951_STOPPED",
+    "logical_name": "COMMON_CFA951_STOPPED",
+    "description": "CFA951 MED unit stopped",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_CFA952_RUNNING",
+    "logical_name": "COMMON_CFA952_RUNNING",
+    "description": "CFA952 MED unit running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_CFA952_STOPPED",
+    "logical_name": "COMMON_CFA952_STOPPED",
+    "description": "CFA952 MED unit stopped",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 92,
+      "hi": 85,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_LEVEL",
+    "logical_name": "COMMON_DAB901_LEVEL",
+    "description": "Oily wastewater regulating tank level",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "level",
+    "value": 64,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_P1_DISCH",
+    "logical_name": "COMMON_DAB901_P1_DISCH",
+    "description": "Oily water feed pump 1 discharge valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_P1_RUNNING",
+    "logical_name": "COMMON_DAB901_P1_RUNNING",
+    "description": "Oily water feed pump 1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_P1_SUCT",
+    "logical_name": "COMMON_DAB901_P1_SUCT",
+    "description": "Oily water feed pump 1 suction valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_P2_DISCH",
+    "logical_name": "COMMON_DAB901_P2_DISCH",
+    "description": "Oily water feed pump 2 discharge valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_P2_RUNNING",
+    "logical_name": "COMMON_DAB901_P2_RUNNING",
+    "description": "Oily water feed pump 2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DAB901_P2_SUCT",
+    "logical_name": "COMMON_DAB901_P2_SUCT",
+    "description": "Oily water feed pump 2 suction valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_CIRC_RUNNING",
+    "logical_name": "COMMON_DBB901_CIRC_RUNNING",
+    "description": "DBB 901 circulating pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_DRAIN_RUNNING",
+    "logical_name": "COMMON_DBB901_DRAIN_RUNNING",
+    "description": "DBB 901 drain pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_FEED_VALVE",
+    "logical_name": "COMMON_DBB901_FEED_VALVE",
+    "description": "DBB 901 feed valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_INLET_VALVE",
+    "logical_name": "COMMON_DBB901_INLET_VALVE",
+    "description": "DBB 901 inlet valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_OILPUMP_RUNNING",
+    "logical_name": "COMMON_DBB901_OILPUMP_RUNNING",
+    "description": "DBB 901 separated oil pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 15,
+      "hi": 10,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_PPM",
+    "logical_name": "COMMON_DBB901_PPM",
+    "description": "Treated water oil content",
+    "engineering_unit": "ppm",
+    "data_type": "analog",
+    "category": "quality",
+    "value": 1,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_RUNNING",
+    "logical_name": "COMMON_DBB901_RUNNING",
+    "description": "DBB 901 treatment unit running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_DBB901_TRANSFER_RUNNING",
+    "logical_name": "COMMON_DBB901_TRANSFER_RUNNING",
+    "description": "DBB 901 transfer pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.OilyWater"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
     "tag_id": "COMMON_FEEDER_P1",
     "logical_name": "COMMON_FEEDER_P1",
     "description": "Feeder unit pump P1 running",
@@ -7637,6 +8131,2476 @@
     },
     "trend_enabled": false,
     "generated": true,
+    "tag_id": "COMMON_SW_BASIN1_ALARM",
+    "logical_name": "COMMON_SW_BASIN1_ALARM",
+    "description": "Seawater basin 1 low level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_BASIN1_DEPTH",
+    "logical_name": "COMMON_SW_BASIN1_DEPTH",
+    "description": "Seawater basin 1 depth",
+    "engineering_unit": "m",
+    "data_type": "analog",
+    "category": "level",
+    "value": 4.1,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 2.2,
+      "lolo": 1.8
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_BASIN1_LEVEL",
+    "logical_name": "COMMON_SW_BASIN1_LEVEL",
+    "description": "Seawater basin 1 level",
+    "engineering_unit": "m",
+    "data_type": "analog",
+    "category": "level",
+    "value": 3,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SW_BASIN2_ALARM",
+    "logical_name": "COMMON_SW_BASIN2_ALARM",
+    "description": "Seawater basin 2 low level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_BASIN2_DEPTH",
+    "logical_name": "COMMON_SW_BASIN2_DEPTH",
+    "description": "Seawater basin 2 depth",
+    "engineering_unit": "m",
+    "data_type": "analog",
+    "category": "level",
+    "value": 4.1,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 2.2,
+      "lolo": 1.8
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_BASIN2_LEVEL",
+    "logical_name": "COMMON_SW_BASIN2_LEVEL",
+    "description": "Seawater basin 2 level",
+    "engineering_unit": "m",
+    "data_type": "analog",
+    "category": "level",
+    "value": 3,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SW_BOOSTER1_RUNNING",
+    "logical_name": "COMMON_SW_BOOSTER1_RUNNING",
+    "description": "common sw booster1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SW_BOOSTER2_RUNNING",
+    "logical_name": "COMMON_SW_BOOSTER2_RUNNING",
+    "description": "common sw booster2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 1.8,
+      "lolo": 1.2
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_HEADER_PRESSURE",
+    "logical_name": "COMMON_SW_HEADER_PRESSURE",
+    "description": "Seawater supply header pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 2.9,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_HEADER_TEMP",
+    "logical_name": "COMMON_SW_HEADER_TEMP",
+    "description": "Seawater supply header temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 29,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SW_OUTLET1_PERMIT",
+    "logical_name": "COMMON_SW_OUTLET1_PERMIT",
+    "description": "Seawater outlet valve remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SW_OUTLET2_PERMIT",
+    "logical_name": "COMMON_SW_OUTLET2_PERMIT",
+    "description": "Seawater outlet valve remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SW_OVERBOARD_PERMIT",
+    "logical_name": "COMMON_SW_OVERBOARD_PERMIT",
+    "description": "Seawater outlet valve remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_OVERBOARD_TEMP",
+    "logical_name": "COMMON_SW_OVERBOARD_TEMP",
+    "description": "Seawater overboard temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 38,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 43,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SW_RETURN_TEMP",
+    "logical_name": "COMMON_SW_RETURN_TEMP",
+    "description": "Seawater return header temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 44,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_B1",
+    "logical_name": "COMMON_SWP1_B1",
+    "description": "Seawater pump 1 bearing 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_B2",
+    "logical_name": "COMMON_SWP1_B2",
+    "description": "Seawater pump 1 bearing 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_B3",
+    "logical_name": "COMMON_SWP1_B3",
+    "description": "Seawater pump 1 bearing 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_B4",
+    "logical_name": "COMMON_SWP1_B4",
+    "description": "Seawater pump 1 bearing 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_B5",
+    "logical_name": "COMMON_SWP1_B5",
+    "description": "Seawater pump 1 bearing 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_CTRL_POWER",
+    "logical_name": "COMMON_SWP1_CTRL_POWER",
+    "description": "Seawater pump 1 control power",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_CURRENT",
+    "logical_name": "COMMON_SWP1_CURRENT",
+    "description": "Seawater pump 1 current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 0,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_DISCH_VALVE",
+    "logical_name": "COMMON_SWP1_DISCH_VALVE",
+    "description": "Seawater pump 1 discharge valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_PERMIT",
+    "logical_name": "COMMON_SWP1_PERMIT",
+    "description": "Seawater pump 1 start permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_PRESSURE",
+    "logical_name": "COMMON_SWP1_PRESSURE",
+    "description": "Seawater pump 1 discharge pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 0.3,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_RACK_IN",
+    "logical_name": "COMMON_SWP1_RACK_IN",
+    "description": "Seawater pump 1 rack in",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_REMOTE",
+    "logical_name": "COMMON_SWP1_REMOTE",
+    "description": "Seawater pump 1 remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_RUNNING",
+    "logical_name": "COMMON_SWP1_RUNNING",
+    "description": "Seawater pump 1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_SPEED",
+    "logical_name": "COMMON_SWP1_SPEED",
+    "description": "Seawater pump 1 speed demand",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "speed",
+    "value": 100,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_SUCT_VALVE",
+    "logical_name": "COMMON_SWP1_SUCT_VALVE",
+    "description": "Seawater pump 1 suction valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_T1",
+    "logical_name": "COMMON_SWP1_T1",
+    "description": "Seawater pump 1 motor winding 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_T2",
+    "logical_name": "COMMON_SWP1_T2",
+    "description": "Seawater pump 1 motor winding 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_T3",
+    "logical_name": "COMMON_SWP1_T3",
+    "description": "Seawater pump 1 motor winding 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_T4",
+    "logical_name": "COMMON_SWP1_T4",
+    "description": "Seawater pump 1 motor winding 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP1_T5",
+    "logical_name": "COMMON_SWP1_T5",
+    "description": "Seawater pump 1 motor winding 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_B1",
+    "logical_name": "COMMON_SWP2_B1",
+    "description": "Seawater pump 2 bearing 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 91,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_B2",
+    "logical_name": "COMMON_SWP2_B2",
+    "description": "Seawater pump 2 bearing 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 91,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_B3",
+    "logical_name": "COMMON_SWP2_B3",
+    "description": "Seawater pump 2 bearing 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 91,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_B4",
+    "logical_name": "COMMON_SWP2_B4",
+    "description": "Seawater pump 2 bearing 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 91,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_B5",
+    "logical_name": "COMMON_SWP2_B5",
+    "description": "Seawater pump 2 bearing 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 91,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_CTRL_POWER",
+    "logical_name": "COMMON_SWP2_CTRL_POWER",
+    "description": "Seawater pump 2 control power",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_CURRENT",
+    "logical_name": "COMMON_SWP2_CURRENT",
+    "description": "Seawater pump 2 current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 244,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_DISCH_VALVE",
+    "logical_name": "COMMON_SWP2_DISCH_VALVE",
+    "description": "Seawater pump 2 discharge valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_PERMIT",
+    "logical_name": "COMMON_SWP2_PERMIT",
+    "description": "Seawater pump 2 start permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_PRESSURE",
+    "logical_name": "COMMON_SWP2_PRESSURE",
+    "description": "Seawater pump 2 discharge pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 3.5,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_RACK_IN",
+    "logical_name": "COMMON_SWP2_RACK_IN",
+    "description": "Seawater pump 2 rack in",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_REMOTE",
+    "logical_name": "COMMON_SWP2_REMOTE",
+    "description": "Seawater pump 2 remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_RUNNING",
+    "logical_name": "COMMON_SWP2_RUNNING",
+    "description": "Seawater pump 2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_SPEED",
+    "logical_name": "COMMON_SWP2_SPEED",
+    "description": "Seawater pump 2 speed demand",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "speed",
+    "value": 100,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_SUCT_VALVE",
+    "logical_name": "COMMON_SWP2_SUCT_VALVE",
+    "description": "Seawater pump 2 suction valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_T1",
+    "logical_name": "COMMON_SWP2_T1",
+    "description": "Seawater pump 2 motor winding 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 93,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_T2",
+    "logical_name": "COMMON_SWP2_T2",
+    "description": "Seawater pump 2 motor winding 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 93,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_T3",
+    "logical_name": "COMMON_SWP2_T3",
+    "description": "Seawater pump 2 motor winding 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 93,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_T4",
+    "logical_name": "COMMON_SWP2_T4",
+    "description": "Seawater pump 2 motor winding 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 93,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP2_T5",
+    "logical_name": "COMMON_SWP2_T5",
+    "description": "Seawater pump 2 motor winding 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 93,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_B1",
+    "logical_name": "COMMON_SWP3_B1",
+    "description": "Seawater pump 3 bearing 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_B2",
+    "logical_name": "COMMON_SWP3_B2",
+    "description": "Seawater pump 3 bearing 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_B3",
+    "logical_name": "COMMON_SWP3_B3",
+    "description": "Seawater pump 3 bearing 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_B4",
+    "logical_name": "COMMON_SWP3_B4",
+    "description": "Seawater pump 3 bearing 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_B5",
+    "logical_name": "COMMON_SWP3_B5",
+    "description": "Seawater pump 3 bearing 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_CTRL_POWER",
+    "logical_name": "COMMON_SWP3_CTRL_POWER",
+    "description": "Seawater pump 3 control power",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_CURRENT",
+    "logical_name": "COMMON_SWP3_CURRENT",
+    "description": "Seawater pump 3 current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 0,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_DISCH_VALVE",
+    "logical_name": "COMMON_SWP3_DISCH_VALVE",
+    "description": "Seawater pump 3 discharge valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_PERMIT",
+    "logical_name": "COMMON_SWP3_PERMIT",
+    "description": "Seawater pump 3 start permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_PRESSURE",
+    "logical_name": "COMMON_SWP3_PRESSURE",
+    "description": "Seawater pump 3 discharge pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 0.3,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_RACK_IN",
+    "logical_name": "COMMON_SWP3_RACK_IN",
+    "description": "Seawater pump 3 rack in",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_REMOTE",
+    "logical_name": "COMMON_SWP3_REMOTE",
+    "description": "Seawater pump 3 remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_RUNNING",
+    "logical_name": "COMMON_SWP3_RUNNING",
+    "description": "Seawater pump 3 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_SPEED",
+    "logical_name": "COMMON_SWP3_SPEED",
+    "description": "Seawater pump 3 speed demand",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "speed",
+    "value": 0,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_SUCT_VALVE",
+    "logical_name": "COMMON_SWP3_SUCT_VALVE",
+    "description": "Seawater pump 3 suction valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_T1",
+    "logical_name": "COMMON_SWP3_T1",
+    "description": "Seawater pump 3 motor winding 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_T2",
+    "logical_name": "COMMON_SWP3_T2",
+    "description": "Seawater pump 3 motor winding 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_T3",
+    "logical_name": "COMMON_SWP3_T3",
+    "description": "Seawater pump 3 motor winding 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_T4",
+    "logical_name": "COMMON_SWP3_T4",
+    "description": "Seawater pump 3 motor winding 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP3_T5",
+    "logical_name": "COMMON_SWP3_T5",
+    "description": "Seawater pump 3 motor winding 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_B1",
+    "logical_name": "COMMON_SWP4_B1",
+    "description": "Seawater pump 4 bearing 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 86,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_B2",
+    "logical_name": "COMMON_SWP4_B2",
+    "description": "Seawater pump 4 bearing 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 86,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_B3",
+    "logical_name": "COMMON_SWP4_B3",
+    "description": "Seawater pump 4 bearing 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 86,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_B4",
+    "logical_name": "COMMON_SWP4_B4",
+    "description": "Seawater pump 4 bearing 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 86,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 110,
+      "hi": 95,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_B5",
+    "logical_name": "COMMON_SWP4_B5",
+    "description": "Seawater pump 4 bearing 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 86,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_CTRL_POWER",
+    "logical_name": "COMMON_SWP4_CTRL_POWER",
+    "description": "Seawater pump 4 control power",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_CURRENT",
+    "logical_name": "COMMON_SWP4_CURRENT",
+    "description": "Seawater pump 4 current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 245,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_DISCH_VALVE",
+    "logical_name": "COMMON_SWP4_DISCH_VALVE",
+    "description": "Seawater pump 4 discharge valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_PERMIT",
+    "logical_name": "COMMON_SWP4_PERMIT",
+    "description": "Seawater pump 4 start permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_PRESSURE",
+    "logical_name": "COMMON_SWP4_PRESSURE",
+    "description": "Seawater pump 4 discharge pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 3.4,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_RACK_IN",
+    "logical_name": "COMMON_SWP4_RACK_IN",
+    "description": "Seawater pump 4 rack in",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_REMOTE",
+    "logical_name": "COMMON_SWP4_REMOTE",
+    "description": "Seawater pump 4 remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_RUNNING",
+    "logical_name": "COMMON_SWP4_RUNNING",
+    "description": "Seawater pump 4 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_SPEED",
+    "logical_name": "COMMON_SWP4_SPEED",
+    "description": "Seawater pump 4 speed demand",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "speed",
+    "value": 100,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_SUCT_VALVE",
+    "logical_name": "COMMON_SWP4_SUCT_VALVE",
+    "description": "Seawater pump 4 suction valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_T1",
+    "logical_name": "COMMON_SWP4_T1",
+    "description": "Seawater pump 4 motor winding 1 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 89,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_T2",
+    "logical_name": "COMMON_SWP4_T2",
+    "description": "Seawater pump 4 motor winding 2 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 89,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_T3",
+    "logical_name": "COMMON_SWP4_T3",
+    "description": "Seawater pump 4 motor winding 3 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 89,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_T4",
+    "logical_name": "COMMON_SWP4_T4",
+    "description": "Seawater pump 4 motor winding 4 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 89,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 130,
+      "hi": 115,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SWP4_T5",
+    "logical_name": "COMMON_SWP4_T5",
+    "description": "Seawater pump 4 motor winding 5 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 89,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
     "tag_id": "COMMON_SYNC_0",
     "logical_name": "COMMON_SYNC_0",
     "description": "Synchronizer mode 1",
@@ -7909,6 +10873,318 @@
     "unit": "COMMON",
     "screens": [
       "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA011_ALARM",
+    "logical_name": "COMMON_VHA011_ALARM",
+    "description": "VHA011 LT pump alarm",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA011_MOTOR",
+    "logical_name": "COMMON_VHA011_MOTOR",
+    "description": "VHA011 LT pump motor running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA021_ALARM",
+    "logical_name": "COMMON_VHA021_ALARM",
+    "description": "VHA021 LT pump alarm",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA021_MOTOR",
+    "logical_name": "COMMON_VHA021_MOTOR",
+    "description": "VHA021 LT pump motor running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA031_ALARM",
+    "logical_name": "COMMON_VHA031_ALARM",
+    "description": "VHA031 LT pump alarm",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA031_MOTOR",
+    "logical_name": "COMMON_VHA031_MOTOR",
+    "description": "VHA031 LT pump motor running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA041_ALARM",
+    "logical_name": "COMMON_VHA041_ALARM",
+    "description": "VHA041 LT pump alarm",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA041_MOTOR",
+    "logical_name": "COMMON_VHA041_MOTOR",
+    "description": "VHA041 LT pump motor running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA051_ALARM",
+    "logical_name": "COMMON_VHA051_ALARM",
+    "description": "VHA051 LT pump alarm",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA051_MOTOR",
+    "logical_name": "COMMON_VHA051_MOTOR",
+    "description": "VHA051 LT pump motor running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA061_ALARM",
+    "logical_name": "COMMON_VHA061_ALARM",
+    "description": "VHA061 LT pump alarm",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_VHA061_MOTOR",
+    "logical_name": "COMMON_VHA061_MOTOR",
+    "description": "VHA061 LT pump motor running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Cooling"
     ]
   },
   {
@@ -8952,7 +12228,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9004,7 +12280,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9030,7 +12306,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9056,7 +12332,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9082,7 +12358,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 86,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9108,7 +12384,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9186,7 +12462,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9212,7 +12488,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 415,
+    "value": 399,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9238,7 +12514,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 410,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9264,7 +12540,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 409,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9290,7 +12566,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 411,
+    "value": 406,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9316,7 +12592,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 404,
+    "value": 407,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9342,7 +12618,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 414,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9394,7 +12670,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 401,
+    "value": 404,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9420,7 +12696,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 410,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9446,7 +12722,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 414,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9472,7 +12748,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9498,7 +12774,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9524,7 +12800,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9550,7 +12826,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9576,7 +12852,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9602,7 +12878,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9628,7 +12904,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9654,7 +12930,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9680,7 +12956,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9732,7 +13008,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9758,7 +13034,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 108,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9784,7 +13060,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 108,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9836,7 +13112,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9862,7 +13138,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9888,7 +13164,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9914,7 +13190,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9940,7 +13216,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9966,7 +13242,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -9992,7 +13268,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10018,7 +13294,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 86,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10044,7 +13320,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10070,7 +13346,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10096,7 +13372,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 78,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10122,7 +13398,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10148,7 +13424,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10174,7 +13450,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 78,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10200,7 +13476,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10226,7 +13502,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10278,7 +13554,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 411,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10304,7 +13580,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 411,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10330,7 +13606,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 398,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10356,7 +13632,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 396,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10382,7 +13658,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 407,
+    "value": 412,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10408,7 +13684,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 411,
+    "value": 415,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10434,7 +13710,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 411,
+    "value": 395,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10460,7 +13736,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 410,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10486,7 +13762,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 395,
+    "value": 415,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10512,7 +13788,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10538,7 +13814,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10564,7 +13840,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10590,7 +13866,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10616,7 +13892,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10642,7 +13918,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10694,7 +13970,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10720,7 +13996,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10746,7 +14022,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10798,7 +14074,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10850,7 +14126,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10876,7 +14152,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10902,7 +14178,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 108,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10928,7 +14204,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10954,7 +14230,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 109,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -10980,7 +14256,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -11006,7 +14282,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 109,
+    "value": 108,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12255,7 +15531,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 91,
+    "value": 94,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12281,7 +15557,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12307,7 +15583,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 88,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12333,7 +15609,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12359,7 +15635,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12385,7 +15661,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 88,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12411,7 +15687,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 88,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12437,7 +15713,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12463,7 +15739,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 93,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12489,7 +15765,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -12515,7 +15791,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"

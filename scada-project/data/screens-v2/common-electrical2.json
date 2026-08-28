@@ -5487,7 +5487,8 @@
       "w": 150,
       "h": 30,
       "props": {
-        "text": "Ctrl+Shift+A\nControl modes"
+        "text": "Ctrl+Shift+A\nControl modes",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -5633,7 +5634,8 @@
       "w": 150,
       "h": 30,
       "props": {
-        "text": "Ctrl+Shift+L\nLoad shedding"
+        "text": "Ctrl+Shift+L\nLoad shedding",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",

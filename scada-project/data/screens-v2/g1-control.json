@@ -916,7 +916,8 @@
       "w": 118,
       "h": 20,
       "props": {
-        "text": "Start order"
+        "text": "Start order",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -1357,7 +1358,8 @@
       "w": 118,
       "h": 20,
       "props": {
-        "text": "Stop order"
+        "text": "Stop order",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -1532,7 +1534,8 @@
       "w": 118,
       "h": 20,
       "props": {
-        "text": "Shutdown reset"
+        "text": "Shutdown reset",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -1568,7 +1571,8 @@
       "w": 118,
       "h": 20,
       "props": {
-        "text": "Breaker trip reset"
+        "text": "Breaker trip reset",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -3394,7 +3398,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Auto"
+        "text": "Auto",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -3413,7 +3418,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Manual"
+        "text": "Manual",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3432,7 +3438,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Remote"
+        "text": "Remote",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -3451,7 +3458,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Local"
+        "text": "Local",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3470,7 +3478,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Grid mode"
+        "text": "Grid mode",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3489,7 +3498,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Island mode"
+        "text": "Island mode",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -3525,7 +3535,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "kW"
+        "text": "kW",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3544,7 +3555,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Isoch"
+        "text": "Isoch",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -3563,7 +3575,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Speed droop"
+        "text": "Speed droop",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3582,7 +3595,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Speed droop"
+        "text": "Speed droop",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -3618,7 +3632,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "pf"
+        "text": "pf",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3637,7 +3652,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "VDC"
+        "text": "VDC",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -3656,7 +3672,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Voltage droop"
+        "text": "Voltage droop",
+        "disabled": false
       },
       "style": {
         "fill": "#eef1f3",
@@ -3675,7 +3692,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Voltage droop"
+        "text": "Voltage droop",
+        "disabled": false
       },
       "style": {
         "fill": "#2fa84f",
@@ -4748,7 +4766,8 @@
       "w": 112,
       "h": 20,
       "props": {
-        "text": "Automatic derating"
+        "text": "Automatic derating",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",

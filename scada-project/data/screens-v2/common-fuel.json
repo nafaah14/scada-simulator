@@ -17,7 +17,8 @@
       "w": 100,
       "h": 30,
       "props": {
-        "text": "Select for\nprimary tank"
+        "text": "Select for\nprimary tank",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -116,7 +117,8 @@
       "w": 100,
       "h": 30,
       "props": {
-        "text": "Select for\nprimary tank"
+        "text": "Select for\nprimary tank",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -215,7 +217,8 @@
       "w": 100,
       "h": 30,
       "props": {
-        "text": "Select for\nprimary tank"
+        "text": "Select for\nprimary tank",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -314,7 +317,8 @@
       "w": 100,
       "h": 30,
       "props": {
-        "text": "Select for\nprimary tank"
+        "text": "Select for\nprimary tank",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -785,7 +789,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Select for main"
+        "text": "Select for main",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -1021,7 +1026,8 @@
       "w": 104,
       "h": 20,
       "props": {
-        "text": "Select for main"
+        "text": "Select for main",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -2702,7 +2708,8 @@
       "w": 130,
       "h": 30,
       "props": {
-        "text": "Shift+2\nLFO feeder control"
+        "text": "Shift+2\nLFO feeder control",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",

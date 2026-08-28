@@ -40,6 +40,22 @@
     "elements": 109
   },
   {
+    "screen_id": "Common.OilyWater",
+    "title": "Common — Oily water",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-oilywater.json",
+    "elements": 113
+  },
+  {
+    "screen_id": "Common.Cooling",
+    "title": "Common — Cooling (seawater)",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-cooling.json",
+    "elements": 352
+  },
+  {
     "screen_id": "G1.Temp",
     "title": "G1 — Temperatures",
     "unit": "G1",

@@ -128,6 +128,17 @@
       style: { stroke: '#3d4349', strokeWidth: 2, fill: 'transparent' },
       fields: ['stroke', 'strokeWidth', 'fill']
     },
+    /* The lettered circle the P&IDs hang on everything: M on a motor,
+       S on a switch, P/S on a pump, LT on a cooler. Bindable, because
+       most of them go red or green with the thing they sit on. */
+    bubble: {
+      label: 'Instrument bubble', group: 'Symbols', w: 24, h: 24, bind: true,
+      props: { text: 'M', state: 'normal', onState: 'alarm' },
+      style: { fill: '#ffffff', stroke: '#1d242b', strokeWidth: 1.5,
+               color: '#1d242b', fontSize: 11, bold: true },
+      fields: ['text', 'bubbleState', 'onState', 'fill', 'stroke', 'strokeWidth',
+               'color', 'fontSize', 'bold']
+    },
     isolator: {
       label: 'Isolator / earth', group: 'Symbols', w: 30, h: 32, bind: true,
       props: { closed: false, earth: true },
@@ -142,12 +153,13 @@
     },
     button: {
       label: 'Button', group: 'Symbols', w: 80, h: 24,
-      props: { text: 'Button' },
+      props: { text: 'Button', disabled: false },
       style: {
         fill: '#f6f8f9', stroke: '#c3cad2', strokeWidth: 1,
         color: '#3a4753', fontSize: 11, radius: 0
       },
-      fields: ['text', 'fill', 'stroke', 'strokeWidth', 'color', 'fontSize', 'radius']
+      fields: ['text', 'disabled', 'fill', 'stroke', 'strokeWidth', 'color',
+               'fontSize', 'radius']
     }
   };
 
@@ -367,6 +379,33 @@
                 stroke, 'stroke-width': sw * 0.7, 'vector-effect': 'non-scaling-stroke'
               }));
             }
+            break;
+          case 'vessel':
+            // upright cylinder — dosing tank, air receiver, filter pot
+            svg.appendChild(svgEl('rect', {
+              x: 1, y: 1, width: 98, height: 98, rx: 22, ry: 10, ...base }));
+            [14, 86].forEach(y => svg.appendChild(svgEl('line', {
+              x1: 1, y1: y, x2: 99, y2: y,
+              stroke, 'stroke-width': sw * 0.7, 'vector-effect': 'non-scaling-stroke'
+            })));
+            break;
+          case 'separator': {
+            // plate-pack separator — the coalescing stack with its inlet V
+            svg.appendChild(svgEl('rect', { x: 1, y: 1, width: 98, height: 98, ...base }));
+            [8, 16, 24, 32, 68, 76, 84, 92].forEach(x => svg.appendChild(svgEl('line', {
+              x1: x, y1: 4, x2: x, y2: 96,
+              stroke, 'stroke-width': sw * 0.7, 'vector-effect': 'non-scaling-stroke'
+            })));
+            svg.appendChild(svgEl('polyline', {
+              points: '43,4 50,52 57,4', fill: 'none',
+              stroke, 'stroke-width': sw * 1.4, 'vector-effect': 'non-scaling-stroke'
+            }));
+            break;
+          }
+          case 'volute':
+            // pump casing — flat suction face, volute bulge on the discharge
+            svg.appendChild(svgEl('path', {
+              d: 'M4,6 H48 A46,44 0 0 1 48,94 H4 Z', ...base }));
             break;
           case 'exchanger':
           default:
@@ -724,12 +763,48 @@
         i.style.background = s.fill || 'var(--bg-field)';
         i.style.border = border;
         i.style.borderRadius = (s.radius || 0) + 'px';
-        i.style.color = s.color || 'var(--text)';
+        // a command the operator may not give right now is drawn greyed,
+        // the way the real page greys Start while the pump is running
+        i.style.color = p.disabled ? '#9aa2ab' : (s.color || 'var(--text)');
         i.style.fontSize = (s.fontSize || 11) + 'px';
+        d.appendChild(i); break;
+      }
+      /* Lettered circle. Colour follows a bound digital when there is one,
+         so an S bubble goes red on its alarm and an M goes green when the
+         motor runs — which of those it means is props.onState. */
+      case 'bubble': {
+        const st = BUBBLE_STATE[bubbleStateFor(el, tags, p, opts)] || {};
+        const i = div('s-bubble');
+        i.style.background = st.fill || s.fill || '#ffffff';
+        i.style.border = (s.strokeWidth ?? 1.5) + 'px solid ' + (s.stroke || '#1d242b');
+        i.style.color = st.color || s.color || '#1d242b';
+        i.style.fontSize = (s.fontSize || 11) + 'px';
+        i.style.fontWeight = s.bold === false ? '400' : '700';
+        i.textContent = p.text || '';
         d.appendChild(i); break;
       }
     }
     return d;
+  }
+
+  /* Bubble colours. `normal` keeps whatever the style says, so an author
+     can draw a grey process bubble without fighting the state map. */
+  const BUBBLE_STATE = {
+    normal: {},
+    active: { fill: '#00a000', color: '#ffffff' },
+    alarm:  { fill: '#e01010', color: '#ffffff' },
+    warn:   { fill: '#ffe000', color: '#1a1a00' }
+  };
+
+  function bubbleStateFor(el, tags, p, opts) {
+    const base = p.state || 'normal';
+    if (!opts || !opts.showAlarms) return base;
+    const tag = lookup(el, tags);
+    if (!tag || tag.value == null) return base;
+    if (typeof tag.value === 'string' && BUBBLE_STATE[tag.value.toLowerCase()]) {
+      return tag.value.toLowerCase();
+    }
+    return resolveBool(el, tags, false, opts) ? (p.onState || 'alarm') : base;
   }
 
   /* A boolean-ish symbol prefers its bound digital tag at runtime and

@@ -216,9 +216,22 @@ export function builder() {
       ...(opt.name ? { name: opt.name } : {})
     }),
 
+    /* Lettered P&ID bubble — M, S, P, LT, G. */
+    bubble: (x, y, size, text, opt = {}) => push({
+      type: 'bubble', x, y, w: size, h: opt.h ?? size,
+      bind: { value: opt.tag || '' },
+      props: { text, state: opt.state || 'normal', onState: opt.onState || 'alarm' },
+      style: {
+        fill: opt.fill ?? '#ffffff', stroke: opt.stroke ?? '#1d242b',
+        strokeWidth: opt.strokeWidth ?? 1.5, color: opt.color ?? '#1d242b',
+        fontSize: opt.size ?? 10, bold: opt.bold !== false
+      },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
     button: (x, y, w, h, label, opt = {}) => push({
       type: 'button', x, y, w, h,
-      props: { text: label },
+      props: { text: label, disabled: !!opt.disabled },
       style: {
         fill: opt.fill ?? '#e4e7ea', stroke: opt.stroke ?? '#8a929b', strokeWidth: 1,
         color: opt.color ?? '#1d242b', fontSize: opt.size ?? 10, radius: 0

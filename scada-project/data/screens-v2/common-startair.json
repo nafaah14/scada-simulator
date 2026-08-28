@@ -91,7 +91,8 @@
       "w": 76,
       "h": 20,
       "props": {
-        "text": "Start"
+        "text": "Start",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -110,7 +111,8 @@
       "w": 76,
       "h": 20,
       "props": {
-        "text": "Stop"
+        "text": "Stop",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -539,7 +541,8 @@
       "w": 66,
       "h": 18,
       "props": {
-        "text": "Open"
+        "text": "Open",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -558,7 +561,8 @@
       "w": 66,
       "h": 18,
       "props": {
-        "text": "Close"
+        "text": "Close",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -802,7 +806,8 @@
       "w": 76,
       "h": 20,
       "props": {
-        "text": "Start"
+        "text": "Start",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
@@ -821,7 +826,8 @@
       "w": 76,
       "h": 20,
       "props": {
-        "text": "Stop"
+        "text": "Stop",
+        "disabled": false
       },
       "style": {
         "fill": "#e4e7ea",
