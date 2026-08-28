@@ -3650,7 +3650,9 @@
         "value": "G01_TURNING_GEAR"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",
@@ -3704,7 +3706,9 @@
         "value": "G01_EMERGENCY_STOP"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",
@@ -3758,7 +3762,9 @@
         "value": "G01_STOP_LEVER"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",
@@ -3795,7 +3801,9 @@
         "value": "G01_ALARM_MINOR"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",
@@ -3815,7 +3823,9 @@
         "value": "G01_ALARM_MAJOR"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",
@@ -3835,7 +3845,9 @@
         "value": "G01_ALARM_SLOWDOWN"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",
@@ -3855,7 +3867,9 @@
         "value": "G01_ALARM_LOADREDUCE"
       },
       "props": {
-        "shape": "circle"
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#2fa84f"
       },
       "style": {
         "fill": "#2fa84f",

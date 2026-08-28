@@ -1,5 +1,29 @@
 [
   {
+    "screen_id": "Common.Overview",
+    "title": "Common — Overview",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-overview.json",
+    "elements": 194
+  },
+  {
+    "screen_id": "Common.Fuel",
+    "title": "Common — Fuel",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-fuel.json",
+    "elements": 269
+  },
+  {
+    "screen_id": "Common.StartAir",
+    "title": "Common — Start air",
+    "unit": "COMMON",
+    "layout": "canvas",
+    "file": "common-startair.json",
+    "elements": 109
+  },
+  {
     "screen_id": "G1.Temp",
     "title": "G1 — Temperatures",
     "unit": "G1",
@@ -8,11 +32,19 @@
     "elements": 214
   },
   {
-    "screen_id": "G4.Control",
-    "title": "G4 - Control",
-    "unit": null,
-    "layout": "grid",
-    "file": "g4-control.json",
-    "elements": 0
+    "screen_id": "G1.Fuel",
+    "title": "G1 — Fuel",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-fuel.json",
+    "elements": 106
+  },
+  {
+    "screen_id": "G1.Control",
+    "title": "G1 — Control",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-control.json",
+    "elements": 181
   }
 ]

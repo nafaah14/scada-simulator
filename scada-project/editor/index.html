@@ -623,6 +623,16 @@ function buildField(el, f){
     case 'dash':        return field('Dash (0 = solid)', numInput(p.dash||0, set(p,'dash')));
     case 'bold':        return checkbox('Bold', !!s.bold, set(s,'bold'));
     case 'bevel':       return checkbox('Bevelled (3D)', !!p.bevel, set(p,'bevel'));
+    case 'dashed':      return checkbox('Dashed border', !!p.dashed, set(p,'dashed'));
+    case 'min':         return field('Min', numInput(p.min ?? 0, set(p,'min')));
+    case 'max':         return field('Max', numInput(p.max ?? 100, set(p,'max')));
+    case 'value':       return field('Value (unbound)', numInput(p.value ?? 0, set(p,'value')));
+    case 'marker':      return field('Max marker (blank = none)',
+                          textInput(p.marker == null ? '' : p.marker, v=>{
+                            snapshot(); p.marker = v===''?null:parseFloat(v); renderAll(); }));
+    case 'orientation': return field('Orientation', selectInput(
+                          [['vertical','Vertical'],['horizontal','Horizontal']],
+                          p.orientation||'vertical', set(p,'orientation')));
     case 'running':     return checkbox('Running', !!p.running, set(p,'running'));
     case 'open':        return checkbox('Open', !!p.open, set(p,'open'));
     case 'closed':      return checkbox('Closed', !!p.closed, set(p,'closed'));

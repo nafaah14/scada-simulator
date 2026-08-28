@@ -295,11 +295,11 @@ const $ = id => document.getElementById(id);
    `file:`   — a legacy standalone HTML mockup, shown in an iframe.
    Neither  — not modelled yet.                                       */
 const COMMON_PAGES = [
-  { id:"overview",    label:"Overview",     file:"screens/common-overview.html" },
+  { id:"overview",    label:"Overview",     screen:"Common.Overview" },
   { id:"electrical1", label:"Electrical 1" },
   { id:"electrical2", label:"Electrical 2" },
-  { id:"fuel",        label:"Fuel",         file:"screens/common-fuel.html" },
-  { id:"startair",    label:"Start air" },
+  { id:"fuel",        label:"Fuel",         screen:"Common.Fuel" },
+  { id:"startair",    label:"Start air",    screen:"Common.StartAir" },
   { id:"oilywater",   label:"Oily water" },
   { id:"cooling",     label:"Cooling" },
   { id:"water",       label:"Water" },
@@ -322,9 +322,9 @@ function enginePages(overrides){
 const UNITS = {
   Common: COMMON_PAGES,
   G1: enginePages({
-    temp:    { screen:"G1.Temp" },                  // ported to JSON
-    fuel:    { file:"screens/g1-fuel.html" },
-    control: { file:"screens/g4-control.html" }
+    temp:    { screen:"G1.Temp" },
+    fuel:    { screen:"G1.Fuel" },
+    control: { screen:"G1.Control" }
   }),
 };
 const UNIT_ORDER = ["Common","G1"];
@@ -386,6 +386,7 @@ function renderPageBar(){
 /* ---------------- content ------------------------------------------- */
 async function renderContent(){
   activeScreen = null;
+  contentArea.style.background = '';          // reset; canvas screens set their own
 
   if(currentTopTab === "Alarms")  return renderAlarmPage();
   if(currentTopTab !== "Processes"){
@@ -402,6 +403,9 @@ async function renderContent(){
       const doc = await ScadaStore.loadScreen(page.screen);
       activeScreen = doc;
       contentArea.innerHTML = '';
+      // the screen's own ground colour should fill the viewport, not just the
+      // canvas box — otherwise a light gutter frames a grey WOIS page
+      contentArea.style.background = doc.canvas.background || '';
       const host = document.createElement('div');
       host.className = 'canvas-host';
       contentArea.appendChild(host);
@@ -425,10 +429,13 @@ async function renderContent(){
     `<div class="placeholder-main">${currentUnit} — ${page.label} — not modelled in this build yet.</div>`;
 }
 
-/* Scale a fixed-size screen down when the window is narrower than it. */
+/* Fit a fixed-size screen inside the viewport. A WOIS page is designed to
+   be seen whole, so scale on whichever axis is tighter rather than
+   letting the operator scroll to find an alarm. */
 function fitScreen(host, doc){
-  const avail = contentArea.clientWidth - 4;
-  const scale = Math.min(1, avail / doc.canvas.width);
+  const availW = contentArea.clientWidth - 4;
+  const availH = contentArea.clientHeight - 4;
+  const scale = Math.min(1, availW / doc.canvas.width, availH / doc.canvas.height);
   host.style.transform = 'scale(' + scale + ')';
   host.style.width  = (doc.canvas.width * scale) + 'px';
   host.style.height = (doc.canvas.height * scale) + 'px';

@@ -32,7 +32,7 @@ const screens = new ScreenStore(DATA);
 screens.writeIndex();
 
 const sim = new Simulation(tags, { tickMs: TICK_MS });
-sim.init(['G1']);
+sim.init();                                  // all six gensets
 
 const alarms = new AlarmEngine(tags, DATA);
 

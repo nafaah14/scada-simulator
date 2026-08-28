@@ -28,6 +28,890 @@
     "note": "Plant-level tag shared across the overview and every genset's Control screen."
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_BUSTIE",
+    "logical_name": "COMMON_BUSTIE",
+    "description": "Bus tie breaker closed",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_FEEDER_P1",
+    "logical_name": "COMMON_FEEDER_P1",
+    "description": "Feeder unit pump P1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_FEEDER_P2",
+    "logical_name": "COMMON_FEEDER_P2",
+    "description": "Feeder unit pump P2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 5.5,
+      "lolo": 4.5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_INSTRUMENT_PRESS",
+    "logical_name": "COMMON_INSTRUMENT_PRESS",
+    "description": "Instrument air tank pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 7.1,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_MAIN_PUMP_A",
+    "logical_name": "COMMON_MAIN_PUMP_A",
+    "description": "LFO main transfer pump current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 0,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAD901_P1",
+    "logical_name": "COMMON_PAD901_P1",
+    "description": "LFO unloading pump P1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAD901_P1_V",
+    "logical_name": "COMMON_PAD901_P1_V",
+    "description": "LFO unloading pump P1 valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAD901_P2",
+    "logical_name": "COMMON_PAD901_P2",
+    "description": "LFO unloading pump P2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAD901_P2_V",
+    "logical_name": "COMMON_PAD901_P2_V",
+    "description": "LFO unloading pump P2 valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE901_LSH",
+    "logical_name": "COMMON_PAE901_LSH",
+    "description": "LFO storage tank 901 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE901_LSL",
+    "logical_name": "COMMON_PAE901_LSL",
+    "description": "LFO storage tank 901 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE901_T1",
+    "logical_name": "COMMON_PAE901_T1",
+    "description": "LFO storage tank 901 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE901_T2",
+    "logical_name": "COMMON_PAE901_T2",
+    "description": "LFO storage tank 901 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE901_T3",
+    "logical_name": "COMMON_PAE901_T3",
+    "description": "LFO storage tank 901 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE901_T4",
+    "logical_name": "COMMON_PAE901_T4",
+    "description": "LFO storage tank 901 — temperature 4",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE902_LSH",
+    "logical_name": "COMMON_PAE902_LSH",
+    "description": "LFO storage tank 902 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE902_LSL",
+    "logical_name": "COMMON_PAE902_LSL",
+    "description": "LFO storage tank 902 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE902_T1",
+    "logical_name": "COMMON_PAE902_T1",
+    "description": "LFO storage tank 902 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE902_T2",
+    "logical_name": "COMMON_PAE902_T2",
+    "description": "LFO storage tank 902 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE902_T3",
+    "logical_name": "COMMON_PAE902_T3",
+    "description": "LFO storage tank 902 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE902_T4",
+    "logical_name": "COMMON_PAE902_T4",
+    "description": "LFO storage tank 902 — temperature 4",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE903_LSH",
+    "logical_name": "COMMON_PAE903_LSH",
+    "description": "LFO storage tank 903 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE903_LSL",
+    "logical_name": "COMMON_PAE903_LSL",
+    "description": "LFO storage tank 903 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE903_T1",
+    "logical_name": "COMMON_PAE903_T1",
+    "description": "LFO storage tank 903 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE903_T2",
+    "logical_name": "COMMON_PAE903_T2",
+    "description": "LFO storage tank 903 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE903_T3",
+    "logical_name": "COMMON_PAE903_T3",
+    "description": "LFO storage tank 903 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE903_T4",
+    "logical_name": "COMMON_PAE903_T4",
+    "description": "LFO storage tank 903 — temperature 4",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE904_LSH",
+    "logical_name": "COMMON_PAE904_LSH",
+    "description": "LFO storage tank 904 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAE904_LSL",
+    "logical_name": "COMMON_PAE904_LSL",
+    "description": "LFO storage tank 904 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE904_T1",
+    "logical_name": "COMMON_PAE904_T1",
+    "description": "LFO storage tank 904 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE904_T2",
+    "logical_name": "COMMON_PAE904_T2",
+    "description": "LFO storage tank 904 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE904_T3",
+    "logical_name": "COMMON_PAE904_T3",
+    "description": "LFO storage tank 904 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PAE904_T4",
+    "logical_name": "COMMON_PAE904_T4",
+    "description": "LFO storage tank 904 — temperature 4",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAF901_PUMP",
+    "logical_name": "COMMON_PAF901_PUMP",
+    "description": "LFO transfer pump PAF901 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
     "tag_id": "COMMON_PAF901_PUMP_A",
     "logical_name": "COMMON_PAF901_TRANSFER_PUMP_CURRENT",
     "unit": "COMMON",
@@ -52,6 +936,1568 @@
     ],
     "trend_enabled": true,
     "note": "Pattern repeats: COMMON_PAF902_PUMP_A, COMMON_MAIN_PUMP_A."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAF901_V",
+    "logical_name": "COMMON_PAF901_V",
+    "description": "LFO transfer pump PAF901 discharge valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAF902_PUMP",
+    "logical_name": "COMMON_PAF902_PUMP",
+    "description": "LFO transfer pump PAF902 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PAF902_V",
+    "logical_name": "COMMON_PAF902_V",
+    "description": "LFO transfer pump PAF902 discharge valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_FILL_V",
+    "logical_name": "COMMON_PBF901_FILL_V",
+    "description": "LFO day tank 901 — fill valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_LSH",
+    "logical_name": "COMMON_PBF901_LSH",
+    "description": "LFO day tank 901 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_LSL",
+    "logical_name": "COMMON_PBF901_LSL",
+    "description": "LFO day tank 901 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_LSW",
+    "logical_name": "COMMON_PBF901_LSW",
+    "description": "LFO day tank 901 — level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_OUT_V",
+    "logical_name": "COMMON_PBF901_OUT_V",
+    "description": "LFO day tank 901 — transfer valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_T1",
+    "logical_name": "COMMON_PBF901_T1",
+    "description": "LFO day tank 901 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_T2",
+    "logical_name": "COMMON_PBF901_T2",
+    "description": "LFO day tank 901 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_T3",
+    "logical_name": "COMMON_PBF901_T3",
+    "description": "LFO day tank 901 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF901_V",
+    "logical_name": "COMMON_PBF901_V",
+    "description": "LFO day tank 901 — outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_FILL_V",
+    "logical_name": "COMMON_PBF902_FILL_V",
+    "description": "LFO day tank 902 — fill valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_LSH",
+    "logical_name": "COMMON_PBF902_LSH",
+    "description": "LFO day tank 902 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_LSL",
+    "logical_name": "COMMON_PBF902_LSL",
+    "description": "LFO day tank 902 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_LSW",
+    "logical_name": "COMMON_PBF902_LSW",
+    "description": "LFO day tank 902 — level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_OUT_V",
+    "logical_name": "COMMON_PBF902_OUT_V",
+    "description": "LFO day tank 902 — transfer valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_T1",
+    "logical_name": "COMMON_PBF902_T1",
+    "description": "LFO day tank 902 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_T2",
+    "logical_name": "COMMON_PBF902_T2",
+    "description": "LFO day tank 902 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_T3",
+    "logical_name": "COMMON_PBF902_T3",
+    "description": "LFO day tank 902 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF902_V",
+    "logical_name": "COMMON_PBF902_V",
+    "description": "LFO day tank 902 — outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_FILL_V",
+    "logical_name": "COMMON_PBF903_FILL_V",
+    "description": "LFO day tank 903 — fill valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_LSH",
+    "logical_name": "COMMON_PBF903_LSH",
+    "description": "LFO day tank 903 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_LSL",
+    "logical_name": "COMMON_PBF903_LSL",
+    "description": "LFO day tank 903 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_LSW",
+    "logical_name": "COMMON_PBF903_LSW",
+    "description": "LFO day tank 903 — level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_OUT_V",
+    "logical_name": "COMMON_PBF903_OUT_V",
+    "description": "LFO day tank 903 — transfer valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_T1",
+    "logical_name": "COMMON_PBF903_T1",
+    "description": "LFO day tank 903 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_T2",
+    "logical_name": "COMMON_PBF903_T2",
+    "description": "LFO day tank 903 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_T3",
+    "logical_name": "COMMON_PBF903_T3",
+    "description": "LFO day tank 903 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF903_V",
+    "logical_name": "COMMON_PBF903_V",
+    "description": "LFO day tank 903 — outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_FILL_V",
+    "logical_name": "COMMON_PBF904_FILL_V",
+    "description": "LFO day tank 904 — fill valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_LSH",
+    "logical_name": "COMMON_PBF904_LSH",
+    "description": "LFO day tank 904 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_LSL",
+    "logical_name": "COMMON_PBF904_LSL",
+    "description": "LFO day tank 904 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_LSW",
+    "logical_name": "COMMON_PBF904_LSW",
+    "description": "LFO day tank 904 — level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_OUT_V",
+    "logical_name": "COMMON_PBF904_OUT_V",
+    "description": "LFO day tank 904 — transfer valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_T1",
+    "logical_name": "COMMON_PBF904_T1",
+    "description": "LFO day tank 904 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_T2",
+    "logical_name": "COMMON_PBF904_T2",
+    "description": "LFO day tank 904 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_T3",
+    "logical_name": "COMMON_PBF904_T3",
+    "description": "LFO day tank 904 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF904_V",
+    "logical_name": "COMMON_PBF904_V",
+    "description": "LFO day tank 904 — outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_FILL_V",
+    "logical_name": "COMMON_PBF905_FILL_V",
+    "description": "LFO day tank 905 — fill valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_LSH",
+    "logical_name": "COMMON_PBF905_LSH",
+    "description": "LFO day tank 905 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_LSL",
+    "logical_name": "COMMON_PBF905_LSL",
+    "description": "LFO day tank 905 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_LSW",
+    "logical_name": "COMMON_PBF905_LSW",
+    "description": "LFO day tank 905 — level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_OUT_V",
+    "logical_name": "COMMON_PBF905_OUT_V",
+    "description": "LFO day tank 905 — transfer valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_T1",
+    "logical_name": "COMMON_PBF905_T1",
+    "description": "LFO day tank 905 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_T2",
+    "logical_name": "COMMON_PBF905_T2",
+    "description": "LFO day tank 905 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_T3",
+    "logical_name": "COMMON_PBF905_T3",
+    "description": "LFO day tank 905 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF905_V",
+    "logical_name": "COMMON_PBF905_V",
+    "description": "LFO day tank 905 — outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_FILL_V",
+    "logical_name": "COMMON_PBF906_FILL_V",
+    "description": "LFO day tank 906 — fill valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_LSH",
+    "logical_name": "COMMON_PBF906_LSH",
+    "description": "LFO day tank 906 — level switch high",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_LSL",
+    "logical_name": "COMMON_PBF906_LSL",
+    "description": "LFO day tank 906 — level switch low",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_LSW",
+    "logical_name": "COMMON_PBF906_LSW",
+    "description": "LFO day tank 906 — level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_OUT_V",
+    "logical_name": "COMMON_PBF906_OUT_V",
+    "description": "LFO day tank 906 — transfer valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_T1",
+    "logical_name": "COMMON_PBF906_T1",
+    "description": "LFO day tank 906 — temperature 1",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_T2",
+    "logical_name": "COMMON_PBF906_T2",
+    "description": "LFO day tank 906 — temperature 2",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_T3",
+    "logical_name": "COMMON_PBF906_T3",
+    "description": "LFO day tank 906 — temperature 3",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PBF906_V",
+    "logical_name": "COMMON_PBF906_V",
+    "description": "LFO day tank 906 — outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_CTRL_VOLTAGE",
+    "logical_name": "COMMON_PCA901_CTRL_VOLTAGE",
+    "description": "LFO feeder unit control voltage healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
   },
   {
     "tag_id": "COMMON_PCA901_FEEDER_CMD",
@@ -106,6 +2552,254 @@
     "note": "Feeds the per-genset booster flow tags shown on Common.Overview (G01_BOOSTER_FLOW etc.) — same physical flow, split downstream."
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 3.5,
+      "lolo": 2.5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_OUT_PRESS_A",
+    "logical_name": "COMMON_PCA901_OUT_PRESS_A",
+    "description": "LFO feeder discharge pressure A",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 4.5,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 3.5,
+      "lolo": 2.5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_OUT_PRESS_B",
+    "logical_name": "COMMON_PCA901_OUT_PRESS_B",
+    "description": "LFO feeder discharge pressure B",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 4.5,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_P1",
+    "logical_name": "COMMON_PCA901_P1",
+    "description": "LFO feeder pump P1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_P1_MODE",
+    "logical_name": "COMMON_PCA901_P1_MODE",
+    "description": "LFO feeder pump P1 in auto",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_P1_V",
+    "logical_name": "COMMON_PCA901_P1_V",
+    "description": "LFO feeder pump P1 suction valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_P2",
+    "logical_name": "COMMON_PCA901_P2",
+    "description": "LFO feeder pump P2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_P2_MODE",
+    "logical_name": "COMMON_PCA901_P2_MODE",
+    "description": "LFO feeder pump P2 in auto",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_P2_V",
+    "logical_name": "COMMON_PCA901_P2_V",
+    "description": "LFO feeder pump P2 suction valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_PCA901_SPEED_PCT",
+    "logical_name": "COMMON_PCA901_SPEED_PCT",
+    "description": "LFO feeder unit speed",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "speed",
+    "value": 49,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Overview",
+      "Common.Fuel",
+      "G1.Fuel"
+    ]
+  },
+  {
     "tag_id": "COMMON_PLANT_MVAR",
     "logical_name": "COMMON_PLANT_REACTIVE_POWER",
     "unit": "COMMON",
@@ -156,6 +2850,448 @@
     ],
     "trend_enabled": true,
     "note": "Computed/aggregate tag — sum of all running units' active power, not independently editable."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SERVICE_REMOTE",
+    "logical_name": "COMMON_SERVICE_REMOTE",
+    "description": "Service tank valve remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SERVICE_V",
+    "logical_name": "COMMON_SERVICE_V",
+    "description": "Service air outlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SLUDGE_LEVEL",
+    "logical_name": "COMMON_SLUDGE_LEVEL",
+    "description": "Sludge tank level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SLUDGE_PUMP",
+    "logical_name": "COMMON_SLUDGE_PUMP",
+    "description": "Sludge loading pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_SLUDGE_TEMP",
+    "logical_name": "COMMON_SLUDGE_TEMP",
+    "description": "Sludge tank temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SLUDGE_V1",
+    "logical_name": "COMMON_SLUDGE_V1",
+    "description": "Sludge pump suction valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_SLUDGE_V2",
+    "logical_name": "COMMON_SLUDGE_V2",
+    "description": "Sludge pump discharge valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_START_AIR_PRESS",
+    "logical_name": "COMMON_START_AIR_PRESS",
+    "description": "Starting air receiver pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.8,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_TCA901_C1",
+    "logical_name": "COMMON_TCA901_C1",
+    "description": "Instrument air compressor C1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_TCA901_C2",
+    "logical_name": "COMMON_TCA901_C2",
+    "description": "Instrument air compressor C2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_TCA901_REMOTE",
+    "logical_name": "COMMON_TCA901_REMOTE",
+    "description": "Instrument air unit remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 45,
+      "hi": 30,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_TCA901_TEMP",
+    "logical_name": "COMMON_TCA901_TEMP",
+    "description": "Instrument air discharge temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32.5,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_TRANSFER_PRESS",
+    "logical_name": "COMMON_TRANSFER_PRESS",
+    "description": "LFO transfer header pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 0.2,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_TSA901_C1",
+    "logical_name": "COMMON_TSA901_C1",
+    "description": "Starting air compressor C1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_TSA901_C2",
+    "logical_name": "COMMON_TSA901_C2",
+    "description": "Starting air compressor C2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "COMMON_TSA901_REMOTE",
+    "logical_name": "COMMON_TSA901_REMOTE",
+    "description": "Starting air unit remote permit",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "COMMON",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_UNLOAD_FLOW",
+    "logical_name": "COMMON_UNLOAD_FLOW",
+    "description": "LFO unloading flow",
+    "engineering_unit": "m3/h",
+    "data_type": "analog",
+    "category": "flow",
+    "value": 0,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
   },
   {
     "sensor_fault": false,
@@ -262,6 +3398,84 @@
     ]
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_AVR_CURRENT",
+    "logical_name": "G01_AVR_CURRENT",
+    "description": "AVR excitation current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 2.4,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_AVR_ON",
+    "logical_name": "G01_AVR_ON",
+    "description": "AVR in operation",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_AVR_VOLTAGE",
+    "logical_name": "G01_AVR_VOLTAGE",
+    "description": "AVR excitation voltage",
+    "engineering_unit": "V",
+    "data_type": "analog",
+    "category": "voltage",
+    "value": 48,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
     "tag_id": "G01_BOOSTER_FLOW",
     "logical_name": "G01_BOOSTER_FLOW_RATE",
     "unit": "G1",
@@ -288,6 +3502,345 @@
     "note": "Pattern repeats per unit: G02_BOOSTER_FLOW ... G06_BOOSTER_FLOW."
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BOOSTER_P1",
+    "logical_name": "G01_BOOSTER_P1",
+    "description": "Booster pump P1 running (G1)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BOOSTER_P2",
+    "logical_name": "G01_BOOSTER_P2",
+    "description": "Booster pump P2 running (G1)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BOOSTER_V",
+    "logical_name": "G01_BOOSTER_V",
+    "description": "Booster inlet valve (G1)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BREAKER",
+    "logical_name": "G01_BREAKER",
+    "description": "Generator breaker closed (G1)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview",
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BRK_PARALLEL",
+    "logical_name": "G01_BRK_PARALLEL",
+    "description": "Parallel operation",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BRK_SPRING",
+    "logical_name": "G01_BRK_SPRING",
+    "description": "Breaker spring charged",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_BRK_TRIP_HEALTHY",
+    "logical_name": "G01_BRK_TRIP_HEALTHY",
+    "description": "Breaker trip circuit healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_CIRC_PUMP1",
+    "logical_name": "G01_CIRC_PUMP1",
+    "description": "Circulation pump 1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_CIRC_PUMP2",
+    "logical_name": "G01_CIRC_PUMP2",
+    "description": "Circulation pump 2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 60,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CIRC_TEMP",
+    "logical_name": "G01_CIRC_TEMP",
+    "description": "Circulation loop temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 42,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_CIRC_V1",
+    "logical_name": "G01_CIRC_V1",
+    "description": "Circulation valve 1 open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_CIRC_V2",
+    "logical_name": "G01_CIRC_V2",
+    "description": "Circulation valve 2 open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_CLEAN_PUMP",
+    "logical_name": "G01_CLEAN_PUMP",
+    "description": "Clean leak pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
     "tag_id": "G01_CLEANLEAK_FLOW",
     "logical_name": "G01_CLEAN_LEAK_FUEL_FLOW",
     "unit": "G1",
@@ -312,6 +3865,136 @@
     ],
     "trend_enabled": true,
     "note": "Rising clean-leak flow over time is a classic early-fault indicator (injector/fuel valve wear) — good fault-injection candidate later."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_CLEANLEAK_LEVEL",
+    "logical_name": "G01_CLEANLEAK_LEVEL",
+    "description": "Clean leak tank level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CTRLPANEL_TEMP",
+    "logical_name": "G01_CTRLPANEL_TEMP",
+    "description": "Control panel BJA011 temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 36,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 900,
+      "hi": 820,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CURRENT_L1",
+    "logical_name": "G01_CURRENT_L1",
+    "description": "Generator current L1",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 512,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 900,
+      "hi": 820,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CURRENT_L2",
+    "logical_name": "G01_CURRENT_L2",
+    "description": "Generator current L2",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 512,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 900,
+      "hi": 820,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CURRENT_L3",
+    "logical_name": "G01_CURRENT_L3",
+    "description": "Generator current L3",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 512,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
   },
   {
     "sensor_fault": false,
@@ -359,7 +4042,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -385,7 +4068,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -411,7 +4094,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -437,7 +4120,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -463,7 +4146,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -515,7 +4198,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -541,7 +4224,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -567,7 +4250,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -593,7 +4276,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 410,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -619,7 +4302,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 402,
+    "value": 412,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -645,7 +4328,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 413,
+    "value": 414,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -671,7 +4354,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 400,
+    "value": 402,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -697,7 +4380,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 407,
+    "value": 400,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -723,7 +4406,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 404,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -749,7 +4432,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 407,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -775,7 +4458,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 398,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -801,7 +4484,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 406,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -827,7 +4510,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 395,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -853,7 +4536,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -879,7 +4562,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -905,7 +4588,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -931,7 +4614,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -957,7 +4640,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -983,7 +4666,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1009,7 +4692,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1035,7 +4718,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1061,7 +4744,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1087,7 +4770,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1113,7 +4796,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 109,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1139,7 +4822,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 109,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1165,7 +4848,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1191,7 +4874,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1217,7 +4900,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 108,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1243,7 +4926,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1269,7 +4952,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1321,7 +5004,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1347,7 +5030,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1373,7 +5056,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1399,7 +5082,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 86,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1425,7 +5108,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 86,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1451,7 +5134,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 86,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1477,7 +5160,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 78,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1503,7 +5186,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1529,7 +5212,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1555,7 +5238,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1581,7 +5264,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1607,7 +5290,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1659,7 +5342,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 398,
+    "value": 396,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1685,7 +5368,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1711,7 +5394,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 398,
+    "value": 415,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1737,7 +5420,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 401,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1763,7 +5446,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 407,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1789,7 +5472,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 411,
+    "value": 412,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1815,7 +5498,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 414,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1841,7 +5524,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 408,
+    "value": 396,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1867,7 +5550,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 402,
+    "value": 399,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1945,7 +5628,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1971,7 +5654,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -1997,7 +5680,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2023,7 +5706,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2049,7 +5732,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2075,7 +5758,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2101,7 +5784,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2127,7 +5810,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2153,7 +5836,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2179,7 +5862,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2205,7 +5888,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2231,7 +5914,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 109,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2257,7 +5940,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2283,7 +5966,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2309,7 +5992,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2335,7 +6018,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2361,7 +6044,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2387,10 +6070,88 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_DIRTY_PUMP",
+    "logical_name": "G01_DIRTY_PUMP",
+    "description": "Dirty leak pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_DIRTYLEAK_LEVEL",
+    "logical_name": "G01_DIRTYLEAK_LEVEL",
+    "description": "Dirty leak tank level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_DIRTYLEAK_TEMP",
+    "logical_name": "G01_DIRTYLEAK_TEMP",
+    "description": "Dirty leak tank temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 37,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
     ]
   },
   {
@@ -2710,6 +6471,136 @@
     "sensor_fault": false,
     "alarm_limits": {
       "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_INLET_PRESS_SENSOR",
+    "logical_name": "G01_INLET_PRESS_SENSOR",
+    "description": "Engine inlet pressure sensor healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_KVAR",
+    "logical_name": "G01_KVAR",
+    "description": "Gen. reactive power (G1)",
+    "engineering_unit": "kVAr",
+    "data_type": "analog",
+    "category": "power",
+    "value": 320,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_KW",
+    "logical_name": "G01_KW",
+    "description": "Gen. active power (G1)",
+    "engineering_unit": "kW",
+    "data_type": "analog",
+    "category": "power",
+    "value": 7880,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_LT_COUNT",
+    "logical_name": "G01_LT_COUNT",
+    "description": "LT loop counter",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "count",
+    "value": 749,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_LT_PUMP",
+    "logical_name": "G01_LT_PUMP",
+    "description": "LT pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
       "hi": 95,
       "lo": null,
       "lolo": null
@@ -2726,7 +6617,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2752,7 +6643,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 93,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2778,7 +6669,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 93,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2804,7 +6695,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 93,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2856,7 +6747,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2882,7 +6773,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2908,7 +6799,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2934,7 +6825,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 93,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2960,7 +6851,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -2986,7 +6877,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -3019,6 +6910,448 @@
     "trend_enabled": false
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_1",
+    "logical_name": "G01_MISC_1",
+    "description": "Miscellaneous status 1",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_10",
+    "logical_name": "G01_MISC_10",
+    "description": "Miscellaneous status 10",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_11",
+    "logical_name": "G01_MISC_11",
+    "description": "Miscellaneous status 11",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_12",
+    "logical_name": "G01_MISC_12",
+    "description": "Miscellaneous status 12",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_13",
+    "logical_name": "G01_MISC_13",
+    "description": "Miscellaneous status 13",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_14",
+    "logical_name": "G01_MISC_14",
+    "description": "Miscellaneous status 14",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_15",
+    "logical_name": "G01_MISC_15",
+    "description": "Miscellaneous status 15",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_16",
+    "logical_name": "G01_MISC_16",
+    "description": "Miscellaneous status 16",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_17",
+    "logical_name": "G01_MISC_17",
+    "description": "Miscellaneous status 17",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_2",
+    "logical_name": "G01_MISC_2",
+    "description": "Miscellaneous status 2",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_3",
+    "logical_name": "G01_MISC_3",
+    "description": "Miscellaneous status 3",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_4",
+    "logical_name": "G01_MISC_4",
+    "description": "Miscellaneous status 4",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_5",
+    "logical_name": "G01_MISC_5",
+    "description": "Miscellaneous status 5",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_6",
+    "logical_name": "G01_MISC_6",
+    "description": "Miscellaneous status 6",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_7",
+    "logical_name": "G01_MISC_7",
+    "description": "Miscellaneous status 7",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_8",
+    "logical_name": "G01_MISC_8",
+    "description": "Miscellaneous status 8",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MISC_9",
+    "logical_name": "G01_MISC_9",
+    "description": "Miscellaneous status 9",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
     "tag_id": "G01_MIXTANK_FLOW",
     "logical_name": "G01_BOOSTER_MIXTANK_FLOW",
     "unit": "G1",
@@ -3045,6 +7378,32 @@
     "note": "Should track G01_BOOSTER_FLOW_RATE shown on Common.Overview — same physical flow, viewed from the engine side vs plant side. Reconcile into one tag when wiring the backend."
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MIXTANK_LEVEL",
+    "logical_name": "G01_MIXTANK_LEVEL",
+    "description": "Mixing tank level switch",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
     "tag_id": "G01_MIXTANK_PRESS",
     "logical_name": "G01_BOOSTER_MIXTANK_PRESSURE",
     "unit": "G1",
@@ -3068,6 +7427,214 @@
       "G1.Fuel"
     ],
     "trend_enabled": true
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_MIXTANK_TEMP",
+    "logical_name": "G01_MIXTANK_TEMP",
+    "description": "Mixing tank temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 31.6,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MOUNT_L1",
+    "logical_name": "G01_MOUNT_L1",
+    "description": "Engine mount level switch 1",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MOUNT_L2",
+    "logical_name": "G01_MOUNT_L2",
+    "description": "Engine mount level switch 2",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_PF",
+    "logical_name": "G01_PF",
+    "description": "Gen. power factor (G1)",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "power",
+    "value": 1,
+    "unit": "G1",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_RELAY_P127",
+    "logical_name": "G01_RELAY_P127",
+    "description": "Protection relay P127 healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_RELAY_VAMP210",
+    "logical_name": "G01_RELAY_VAMP210",
+    "description": "Protection relay VAMP210 healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_RELAY_VAMP260",
+    "logical_name": "G01_RELAY_VAMP260",
+    "description": "Protection relay VAMP260 healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_RELAY_VAMP265",
+    "logical_name": "G01_RELAY_VAMP265",
+    "description": "Protection relay VAMP265 healthy",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
   },
   {
     "sensor_fault": false,
@@ -3120,6 +7687,526 @@
       "G1.Control"
     ],
     "trend_enabled": false
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_START_AIR_PRESS_A",
+    "logical_name": "G01_START_AIR_PRESS_A",
+    "description": "Starting air pressure A (G1)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G1",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_START_AIR_PRESS_B",
+    "logical_name": "G01_START_AIR_PRESS_B",
+    "description": "Starting air pressure B (G1)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G1",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_1",
+    "logical_name": "G01_STARTCOND_1",
+    "description": "Start condition 1",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_10",
+    "logical_name": "G01_STARTCOND_10",
+    "description": "Start condition 10",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_11",
+    "logical_name": "G01_STARTCOND_11",
+    "description": "Start condition 11",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_12",
+    "logical_name": "G01_STARTCOND_12",
+    "description": "Start condition 12",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_13",
+    "logical_name": "G01_STARTCOND_13",
+    "description": "Start condition 13",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_14",
+    "logical_name": "G01_STARTCOND_14",
+    "description": "Start condition 14",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_15",
+    "logical_name": "G01_STARTCOND_15",
+    "description": "Start condition 15",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_16",
+    "logical_name": "G01_STARTCOND_16",
+    "description": "Start condition 16",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_17",
+    "logical_name": "G01_STARTCOND_17",
+    "description": "Start condition 17",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_18",
+    "logical_name": "G01_STARTCOND_18",
+    "description": "Start condition 18",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_2",
+    "logical_name": "G01_STARTCOND_2",
+    "description": "Start condition 2",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_3",
+    "logical_name": "G01_STARTCOND_3",
+    "description": "Start condition 3",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_4",
+    "logical_name": "G01_STARTCOND_4",
+    "description": "Start condition 4",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_5",
+    "logical_name": "G01_STARTCOND_5",
+    "description": "Start condition 5",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_6",
+    "logical_name": "G01_STARTCOND_6",
+    "description": "Start condition 6",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_7",
+    "logical_name": "G01_STARTCOND_7",
+    "description": "Start condition 7",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_8",
+    "logical_name": "G01_STARTCOND_8",
+    "description": "Start condition 8",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_STARTCOND_9",
+    "logical_name": "G01_STARTCOND_9",
+    "description": "Start condition 9",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
   },
   {
     "sensor_fault": false,
@@ -3356,6 +8443,817 @@
     ]
   },
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 12.1,
+      "hi": null,
+      "lo": null,
+      "lolo": 9.9
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_VOLTAGE_U12",
+    "logical_name": "G01_VOLTAGE_U12",
+    "description": "Generator voltage U12",
+    "engineering_unit": "kV",
+    "data_type": "analog",
+    "category": "voltage",
+    "value": 11.02,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 12.1,
+      "hi": null,
+      "lo": null,
+      "lolo": 9.9
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_VOLTAGE_U23",
+    "logical_name": "G01_VOLTAGE_U23",
+    "description": "Generator voltage U23",
+    "engineering_unit": "kV",
+    "data_type": "analog",
+    "category": "voltage",
+    "value": 11.02,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 12.1,
+      "hi": null,
+      "lo": null,
+      "lolo": 9.9
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_VOLTAGE_U31",
+    "logical_name": "G01_VOLTAGE_U31",
+    "description": "Generator voltage U31",
+    "engineering_unit": "kV",
+    "data_type": "analog",
+    "category": "voltage",
+    "value": 11.02,
+    "unit": "G1",
+    "screens": [
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G02_BOOSTER_FLOW",
+    "logical_name": "G02_BOOSTER_FLOW",
+    "description": "Booster unit flow (G2)",
+    "engineering_unit": "kg/h",
+    "data_type": "analog",
+    "category": "flow",
+    "value": 1550,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_BOOSTER_P1",
+    "logical_name": "G02_BOOSTER_P1",
+    "description": "Booster pump P1 running (G2)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_BOOSTER_P2",
+    "logical_name": "G02_BOOSTER_P2",
+    "description": "Booster pump P2 running (G2)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_BOOSTER_V",
+    "logical_name": "G02_BOOSTER_V",
+    "description": "Booster inlet valve (G2)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_BREAKER",
+    "logical_name": "G02_BREAKER",
+    "description": "Generator breaker closed (G2)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview",
+      "G2.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G02_KVAR",
+    "logical_name": "G02_KVAR",
+    "description": "Gen. reactive power (G2)",
+    "engineering_unit": "kVAr",
+    "data_type": "analog",
+    "category": "power",
+    "value": 320,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G02_KW",
+    "logical_name": "G02_KW",
+    "description": "Gen. active power (G2)",
+    "engineering_unit": "kW",
+    "data_type": "analog",
+    "category": "power",
+    "value": 7880,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_PF",
+    "logical_name": "G02_PF",
+    "description": "Gen. power factor (G2)",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "power",
+    "value": 1,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_RUNNING",
+    "logical_name": "G02_RUNNING",
+    "description": "Engine running (G2)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G2",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G02_START_AIR_PRESS_A",
+    "logical_name": "G02_START_AIR_PRESS_A",
+    "description": "Starting air pressure A (G2)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G2",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G02_START_AIR_PRESS_B",
+    "logical_name": "G02_START_AIR_PRESS_B",
+    "description": "Starting air pressure B (G2)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G2",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G03_BOOSTER_FLOW",
+    "logical_name": "G03_BOOSTER_FLOW",
+    "description": "Booster unit flow (G3)",
+    "engineering_unit": "kg/h",
+    "data_type": "analog",
+    "category": "flow",
+    "value": 1550,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_BOOSTER_P1",
+    "logical_name": "G03_BOOSTER_P1",
+    "description": "Booster pump P1 running (G3)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_BOOSTER_P2",
+    "logical_name": "G03_BOOSTER_P2",
+    "description": "Booster pump P2 running (G3)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_BOOSTER_V",
+    "logical_name": "G03_BOOSTER_V",
+    "description": "Booster inlet valve (G3)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_BREAKER",
+    "logical_name": "G03_BREAKER",
+    "description": "Generator breaker closed (G3)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview",
+      "G3.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G03_KVAR",
+    "logical_name": "G03_KVAR",
+    "description": "Gen. reactive power (G3)",
+    "engineering_unit": "kVAr",
+    "data_type": "analog",
+    "category": "power",
+    "value": 320,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G03_KW",
+    "logical_name": "G03_KW",
+    "description": "Gen. active power (G3)",
+    "engineering_unit": "kW",
+    "data_type": "analog",
+    "category": "power",
+    "value": 7880,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_PF",
+    "logical_name": "G03_PF",
+    "description": "Gen. power factor (G3)",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "power",
+    "value": 1,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_RUNNING",
+    "logical_name": "G03_RUNNING",
+    "description": "Engine running (G3)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G03_START_AIR_PRESS_A",
+    "logical_name": "G03_START_AIR_PRESS_A",
+    "description": "Starting air pressure A (G3)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G3",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G03_START_AIR_PRESS_B",
+    "logical_name": "G03_START_AIR_PRESS_B",
+    "description": "Starting air pressure B (G3)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G3",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G04_BOOSTER_FLOW",
+    "logical_name": "G04_BOOSTER_FLOW",
+    "description": "Booster unit flow (G4)",
+    "engineering_unit": "kg/h",
+    "data_type": "analog",
+    "category": "flow",
+    "value": 0,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_BOOSTER_P1",
+    "logical_name": "G04_BOOSTER_P1",
+    "description": "Booster pump P1 running (G4)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_BOOSTER_P2",
+    "logical_name": "G04_BOOSTER_P2",
+    "description": "Booster pump P2 running (G4)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_BOOSTER_V",
+    "logical_name": "G04_BOOSTER_V",
+    "description": "Booster inlet valve (G4)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_BREAKER",
+    "logical_name": "G04_BREAKER",
+    "description": "Generator breaker closed (G4)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview",
+      "G4.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G04_KVAR",
+    "logical_name": "G04_KVAR",
+    "description": "Gen. reactive power (G4)",
+    "engineering_unit": "kVAr",
+    "data_type": "analog",
+    "category": "power",
+    "value": 0,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
     "tag_id": "G04_KW",
     "logical_name": "G04_GEN_ACTIVE_POWER",
     "unit": "G4",
@@ -3381,6 +9279,687 @@
     ],
     "trend_enabled": true,
     "note": "Shared with the existing G4.Control screen's active power readout — keep as one tag once wired, don't duplicate."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_PF",
+    "logical_name": "G04_PF",
+    "description": "Gen. power factor (G4)",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "power",
+    "value": 1,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_RUNNING",
+    "logical_name": "G04_RUNNING",
+    "description": "Engine running (G4)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G04_START_AIR_PRESS_A",
+    "logical_name": "G04_START_AIR_PRESS_A",
+    "description": "Starting air pressure A (G4)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 0.1,
+    "unit": "G4",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G04_START_AIR_PRESS_B",
+    "logical_name": "G04_START_AIR_PRESS_B",
+    "description": "Starting air pressure B (G4)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 0.1,
+    "unit": "G4",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G05_BOOSTER_FLOW",
+    "logical_name": "G05_BOOSTER_FLOW",
+    "description": "Booster unit flow (G5)",
+    "engineering_unit": "kg/h",
+    "data_type": "analog",
+    "category": "flow",
+    "value": 1550,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_BOOSTER_P1",
+    "logical_name": "G05_BOOSTER_P1",
+    "description": "Booster pump P1 running (G5)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_BOOSTER_P2",
+    "logical_name": "G05_BOOSTER_P2",
+    "description": "Booster pump P2 running (G5)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_BOOSTER_V",
+    "logical_name": "G05_BOOSTER_V",
+    "description": "Booster inlet valve (G5)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_BREAKER",
+    "logical_name": "G05_BREAKER",
+    "description": "Generator breaker closed (G5)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview",
+      "G5.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G05_KVAR",
+    "logical_name": "G05_KVAR",
+    "description": "Gen. reactive power (G5)",
+    "engineering_unit": "kVAr",
+    "data_type": "analog",
+    "category": "power",
+    "value": 320,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G05_KW",
+    "logical_name": "G05_KW",
+    "description": "Gen. active power (G5)",
+    "engineering_unit": "kW",
+    "data_type": "analog",
+    "category": "power",
+    "value": 7880,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_PF",
+    "logical_name": "G05_PF",
+    "description": "Gen. power factor (G5)",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "power",
+    "value": 1,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_RUNNING",
+    "logical_name": "G05_RUNNING",
+    "description": "Engine running (G5)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G05_START_AIR_PRESS_A",
+    "logical_name": "G05_START_AIR_PRESS_A",
+    "description": "Starting air pressure A (G5)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G5",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G05_START_AIR_PRESS_B",
+    "logical_name": "G05_START_AIR_PRESS_B",
+    "description": "Starting air pressure B (G5)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G5",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G06_BOOSTER_FLOW",
+    "logical_name": "G06_BOOSTER_FLOW",
+    "description": "Booster unit flow (G6)",
+    "engineering_unit": "kg/h",
+    "data_type": "analog",
+    "category": "flow",
+    "value": 1550,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_BOOSTER_P1",
+    "logical_name": "G06_BOOSTER_P1",
+    "description": "Booster pump P1 running (G6)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_BOOSTER_P2",
+    "logical_name": "G06_BOOSTER_P2",
+    "description": "Booster pump P2 running (G6)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_BOOSTER_V",
+    "logical_name": "G06_BOOSTER_V",
+    "description": "Booster inlet valve (G6)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_BREAKER",
+    "logical_name": "G06_BREAKER",
+    "description": "Generator breaker closed (G6)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview",
+      "G6.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G06_KVAR",
+    "logical_name": "G06_KVAR",
+    "description": "Gen. reactive power (G6)",
+    "engineering_unit": "kVAr",
+    "data_type": "analog",
+    "category": "power",
+    "value": 320,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G06_KW",
+    "logical_name": "G06_KW",
+    "description": "Gen. active power (G6)",
+    "engineering_unit": "kW",
+    "data_type": "analog",
+    "category": "power",
+    "value": 7880,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_PF",
+    "logical_name": "G06_PF",
+    "description": "Gen. power factor (G6)",
+    "engineering_unit": "",
+    "data_type": "analog",
+    "category": "power",
+    "value": 1,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_RUNNING",
+    "logical_name": "G06_RUNNING",
+    "description": "Engine running (G6)",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G06_START_AIR_PRESS_A",
+    "logical_name": "G06_START_AIR_PRESS_A",
+    "description": "Starting air pressure A (G6)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G6",
+    "screens": [
+      "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 18,
+      "lolo": 15
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G06_START_AIR_PRESS_B",
+    "logical_name": "G06_START_AIR_PRESS_B",
+    "description": "Starting air pressure B (G6)",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 27.6,
+    "unit": "G6",
+    "screens": [
+      "Common.StartAir"
+    ]
   },
   {
     "tag_id": "PAE904_LEVEL",
@@ -3432,6 +10011,58 @@
     ],
     "trend_enabled": true,
     "note": "Pattern repeats: PAF902_LEVEL, PAF903_LEVEL. PAE904_LEVEL is the 4th storage tank, toggled as 'primary' via COMMON_STORAGE_PRIMARY_SELECT."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 10,
+      "lolo": 5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "PAF902_LEVEL",
+    "logical_name": "PAF902_LEVEL",
+    "description": "LFO storage tank level (PAE 902)",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "level",
+    "value": 49,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 10,
+      "lolo": 5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "PAF903_LEVEL",
+    "logical_name": "PAF903_LEVEL",
+    "description": "LFO storage tank level (PAE 903)",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "level",
+    "value": 83,
+    "unit": "COMMON",
+    "screens": [
+      "Common.Fuel"
+    ]
   },
   {
     "tag_id": "PBF901_LEVEL",

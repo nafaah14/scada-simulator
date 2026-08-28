@@ -93,7 +93,7 @@
       };
 
       Store._sim = new Simulation(tagSource, { tickMs });
-      Store._sim.init((opts && opts.units) || ['G1']);
+      Store._sim.init((opts && opts.units) || undefined);   // default: all six
       Store._alarms = new AlarmEngine(tagSource);
 
       Store._simTimer = setInterval(() => {

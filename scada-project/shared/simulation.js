@@ -23,15 +23,19 @@ export class Simulation {
     this._changed = new Set();
   }
 
-  init(unitIds = ['G1']) {
+  init(unitIds = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6']) {
     for (const id of unitIds) {
+      // G4 sits stopped so the plant reads as a realistic mixed state —
+      // one unit out, the rest carrying load. This matches the standing
+      // Genset_4 alarm and the Start air reference page.
+      const stopped = id === 'G4';
       this.units.set(id, {
         id,
-        state: 'RUNNING',
+        state: stopped ? 'STOPPED' : 'RUNNING',
         stateT: 0,
-        load: 0.9,                    // fraction of rated
-        targetLoad: 0.9,
-        speed: 748
+        load: stopped ? 0 : 0.89,          // fraction of rated
+        targetLoad: stopped ? 0 : 0.89,
+        speed: stopped ? 0 : 748
       });
     }
   }
@@ -102,11 +106,50 @@ export class Simulation {
   tick() {
     this._changed.clear();
     for (const unit of this.units.values()) this._tickUnit(unit);
+    this._tickPlant();
     const changed = [...this._changed].map(id => {
       const t = this.tags.get(id);
       return { tag_id: id, value: t.value, sensor_fault: t.sensor_fault };
     });
     return changed;
+  }
+
+  /* Plant-wide equipment that isn't owned by a single genset: the fuel
+     train, day/storage tanks and the compressed-air systems. */
+  _tickPlant() {
+    let mw = 0, mvar = 0;
+    for (const u of this.units.values()) {
+      const p = u.id.replace('G', 'G0');
+      mw += this._get(`${p}_KW`) / 1000;
+      mvar += this._get(`${p}_KVAR`) / 1000;
+    }
+    this._set('COMMON_PLANT_MW', Math.round(mw * 10) / 10);
+    this._set('COMMON_PLANT_MVAR', Math.round(mvar * 10) / 10);
+    this._approach('COMMON_BUSBAR1_FREQ', 50, 0.3, 0.02);
+
+    // day tanks drain slowly and are topped up by the transfer pumps
+    for (let n = 901; n <= 906; n++) {
+      const lvl = this._get(`PBF${n}_LEVEL`);
+      const draw = 0.004 + Math.random() * 0.003;
+      this._set(`PBF${n}_LEVEL`, lvl > 20 ? lvl - draw : lvl + 0.6);
+      for (let k = 1; k <= 3; k++) this._approach(`COMMON_PBF${n}_T${k}`, 30, 0.05, 0.3);
+    }
+    for (let n = 901; n <= 904; n++) {
+      for (let k = 1; k <= 4; k++) this._approach(`COMMON_PAE${n}_T${k}`, 31, 0.04, 0.3);
+    }
+
+    // feeder unit holds discharge pressure
+    this._approach('PCA901_PRESS', 4.6, 0.2, 0.05);
+    this._approach('COMMON_PCA901_OUT_PRESS_A', 4.5, 0.2, 0.05);
+    this._approach('COMMON_PCA901_OUT_PRESS_B', 4.5, 0.2, 0.05);
+    this._approach('COMMON_PCA901_FLOW', 9.4, 0.15, 0.15);
+    this._approach('COMMON_TRANSFER_PRESS', 0.2, 0.2, 0.02);
+
+    // compressed air
+    this._approach('COMMON_TCA901_TEMP', 32.5, 0.1, 0.4);
+    this._approach('COMMON_INSTRUMENT_PRESS', 7.1, 0.15, 0.06);
+    this._approach('COMMON_START_AIR_PRESS', 27.8, 0.1, 0.08);
+    this._approach('COMMON_SLUDGE_TEMP', 30, 0.05, 0.2);
   }
 
   _tickUnit(u) {
@@ -134,13 +177,59 @@ export class Simulation {
     const load = u.load;
 
     this._set(`${p}_RUNNING`, u.state === 'RUNNING');
-    this._approach('SCA011ST103PV', u.speed, 0.5, 0.6);
 
-    /* ---- power ---- */
+    /* ---- power ----
+       A stopped unit reads exactly zero rather than drifting around it;
+       noise on a dead machine looks like a fault, not realism. */
     const rated = 8900;
-    this._approach('SCA011PW104PV', rated * load, 0.2, 25);
-    this._approach(`${p}_GEN_REACTIVE_POWER`, 340 * load, 0.2, 8);
-    this._set(`${p}_MAX_AVAIL_POWER`, 8924);
+    if (running) {
+      this._approach(`${p}_KW`, rated * load, 0.2, 25);
+      this._approach(`${p}_KVAR`, 360 * load, 0.2, 8);
+      this._approach(`${p}_BOOSTER_FLOW`, 1550 * (0.6 + 0.4 * load), 0.15, 12);
+    } else {
+      this._set(`${p}_KW`, 0);
+      this._set(`${p}_KVAR`, 0);
+      this._set(`${p}_BOOSTER_FLOW`, 0);
+    }
+    this._set(`${p}_PF`, running ? 1.0 : 0);
+    this._set(`${p}_BREAKER`, u.state === 'RUNNING');
+    this._set(`${p}_BOOSTER_V`, running);
+    this._set(`${p}_BOOSTER_P1`, running);
+
+    // Starting air is drawn down by a start and recharged while running.
+    // A stopped unit's receiver is left alone — an isolated engine keeps
+    // whatever pressure it was left with, which is what makes G4 read low.
+    if (running) {
+      for (const s of ['A', 'B']) {
+        const target = u.state === 'STARTING' ? 12 : 27.6;
+        this._approach(`${p}_START_AIR_PRESS_${s}`, target, 0.05, 0.06);
+      }
+    }
+
+    // G1 also carries the legacy per-unit tag ids used by its own pages
+    if (u.id === 'G1') {
+      this._approach('SCA011ST103PV', u.speed, 0.5, 0.6);
+      this._approach('SCA011PW104PV', rated * load, 0.2, 25);
+      this._approach(`${p}_GEN_REACTIVE_POWER`, 360 * load, 0.2, 8);
+      this._set(`${p}_MAX_AVAIL_POWER`, 8924);
+      for (const l of ['L1', 'L2', 'L3']) {
+        this._approach(`${p}_CURRENT_${l}`, running ? 575 * load : 0, 0.15, 6);
+      }
+      for (const l of ['U12', 'U23', 'U31']) {
+        this._approach(`${p}_VOLTAGE_${l}`, running ? 11.02 : 0, 0.2, 0.03);
+      }
+      this._approach(`${p}_AVR_CURRENT`, running ? 2.4 : 0, 0.1, 0.05);
+      this._approach(`${p}_AVR_VOLTAGE`, running ? 48 : 0, 0.1, 0.4);
+      this._approach(`${p}_MIXTANK_FLOW`, running ? 1513 * (0.6 + 0.4 * load) : 0, 0.15, 10);
+      this._approach(`${p}_MIXTANK_TEMP`, running ? 31.6 : 30, 0.08, 0.2);
+      this._approach(`${p}_MIXTANK_PRESS`, running ? 4.0 : 0, 0.15, 0.05);
+      this._approach(`${p}_CIRC_TEMP`, running ? 42 : 32, 0.06, 0.3);
+      this._approach(`${p}_CTRLPANEL_TEMP`, 36, 0.05, 0.3);
+      this._approach(`${p}_ENGINE_INLET_TEMP`, running ? 40 : 32, 0.08, 0.3);
+      this._approach(`${p}_ENGINE_INLET_PRESS`, running ? 8.8 : 0, 0.15, 0.08);
+      this._approach(`${p}_CLEANLEAK_FLOW`, running ? 13 : 0, 0.05, 0.4);
+      this._approach(`${p}_DIRTYLEAK_TEMP`, running ? 37 : 30, 0.05, 0.3);
+    }
 
     /* ---- cylinders ----
        Exhaust temperature tracks load; liners and bearings sit lower and

@@ -1,0 +1,3489 @@
+{
+  "screen_id": "G1.Control",
+  "title": "G1 — Control",
+  "unit": "G1",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1240,
+    "height": 740,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "x": 20,
+      "y": 20,
+      "w": 300,
+      "h": 430,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e8ebee",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Starting Conditions"
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "x": 20,
+      "y": 20,
+      "w": 300,
+      "h": 22,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ccd2d8",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s3",
+      "type": "text",
+      "x": 28,
+      "y": 26,
+      "w": 284,
+      "h": 13,
+      "props": {
+        "text": "Starting Conditions"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s4",
+      "type": "led",
+      "x": 32,
+      "y": 52,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_1"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s5",
+      "type": "text",
+      "x": 50,
+      "y": 51,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "LO press > 0.3 bar or Prelube in Auto"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s6",
+      "type": "led",
+      "x": 32,
+      "y": 73,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_2"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#a33",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s7",
+      "type": "text",
+      "x": 50,
+      "y": 72,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Fuel oil inlet pressure > 4.0 bar"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s8",
+      "type": "led",
+      "x": 32,
+      "y": 94,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_3"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s9",
+      "type": "text",
+      "x": 50,
+      "y": 93,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "HT- water temperature > 16 °C"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s10",
+      "type": "led",
+      "x": 32,
+      "y": 115,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_4"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#a33",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s11",
+      "type": "text",
+      "x": 50,
+      "y": 114,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Starting air pressure > 16 bar"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s12",
+      "type": "led",
+      "x": 32,
+      "y": 136,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_5"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s13",
+      "type": "text",
+      "x": 50,
+      "y": 135,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Control air pressure > 16 bar"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s14",
+      "type": "led",
+      "x": 32,
+      "y": 157,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_6"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s15",
+      "type": "text",
+      "x": 50,
+      "y": 156,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "AVR MCB closed"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s16",
+      "type": "led",
+      "x": 32,
+      "y": 178,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_7"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s17",
+      "type": "text",
+      "x": 50,
+      "y": 177,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Turning gear disengaged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s18",
+      "type": "led",
+      "x": 32,
+      "y": 199,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_8"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s19",
+      "type": "text",
+      "x": 50,
+      "y": 198,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Stop lever in running position"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s20",
+      "type": "led",
+      "x": 32,
+      "y": 220,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_9"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s21",
+      "type": "text",
+      "x": 50,
+      "y": 219,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Breaker conditions"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s22",
+      "type": "led",
+      "x": 32,
+      "y": 241,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_10"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s23",
+      "type": "text",
+      "x": 50,
+      "y": 240,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Engine stopped"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s24",
+      "type": "led",
+      "x": 32,
+      "y": 262,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_11"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s25",
+      "type": "text",
+      "x": 50,
+      "y": 261,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "ESM stop/shd. and autostop inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s26",
+      "type": "led",
+      "x": 32,
+      "y": 283,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_12"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s27",
+      "type": "text",
+      "x": 50,
+      "y": 282,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Engine room emerg. stop inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s28",
+      "type": "led",
+      "x": 32,
+      "y": 304,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_13"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s29",
+      "type": "text",
+      "x": 50,
+      "y": 303,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Control room emerg. stop inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s30",
+      "type": "led",
+      "x": 32,
+      "y": 325,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_14"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "x": 50,
+      "y": 324,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Power plant emerg. stop inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s32",
+      "type": "led",
+      "x": 32,
+      "y": 346,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_15"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s33",
+      "type": "text",
+      "x": 50,
+      "y": 345,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Breaker trip alarm inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s34",
+      "type": "led",
+      "x": 32,
+      "y": 367,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_16"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "x": 50,
+      "y": 366,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Engine shutdown alarm inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s36",
+      "type": "led",
+      "x": 32,
+      "y": 388,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_17"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s37",
+      "type": "text",
+      "x": 50,
+      "y": 387,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Start failure inactive"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s38",
+      "type": "led",
+      "x": 32,
+      "y": 409,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_STARTCOND_18"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#2fa84f",
+        "offColor": "#e5484d"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s39",
+      "type": "text",
+      "x": 50,
+      "y": 408,
+      "w": 258,
+      "h": 13,
+      "props": {
+        "text": "Soft energizing not active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s40",
+      "type": "rect",
+      "x": 336,
+      "y": 20,
+      "w": 300,
+      "h": 500,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e8ebee",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Start/Stop Sequence"
+    },
+    {
+      "id": "s41",
+      "type": "rect",
+      "x": 336,
+      "y": 20,
+      "w": 300,
+      "h": 22,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ccd2d8",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s42",
+      "type": "text",
+      "x": 344,
+      "y": 26,
+      "w": 284,
+      "h": 13,
+      "props": {
+        "text": "Start/Stop Sequence"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s43",
+      "type": "rect",
+      "x": 348,
+      "y": 52,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s44",
+      "type": "text",
+      "x": 362,
+      "y": 54,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Engine ready for start"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s45",
+      "type": "button",
+      "x": 362,
+      "y": 74,
+      "w": 150,
+      "h": 28,
+      "props": {
+        "text": "Start order\nCtrl+Insert"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s46",
+      "type": "rect",
+      "x": 348,
+      "y": 108,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s47",
+      "type": "text",
+      "x": 362,
+      "y": 110,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Start preparation"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s48",
+      "type": "button",
+      "x": 362,
+      "y": 130,
+      "w": 70,
+      "h": 20,
+      "props": {
+        "text": "Exec"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s49",
+      "type": "text",
+      "x": 362,
+      "y": 156,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Safety stop system — Ready"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s50",
+      "type": "rect",
+      "x": 348,
+      "y": 174,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s51",
+      "type": "text",
+      "x": 362,
+      "y": 176,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Starting"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s52",
+      "type": "rect",
+      "x": 348,
+      "y": 196,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s53",
+      "type": "text",
+      "x": 362,
+      "y": 198,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Idle running"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s54",
+      "type": "rect",
+      "x": 348,
+      "y": 218,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s55",
+      "type": "text",
+      "x": 362,
+      "y": 220,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Synchronizing"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s56",
+      "type": "rect",
+      "x": 348,
+      "y": 240,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s57",
+      "type": "text",
+      "x": 362,
+      "y": 242,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Loading"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s58",
+      "type": "rect",
+      "x": 348,
+      "y": 262,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s59",
+      "type": "text",
+      "x": 362,
+      "y": 264,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Normal operation"
+      },
+      "style": {
+        "color": "#0f1a12",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s60",
+      "type": "button",
+      "x": 362,
+      "y": 284,
+      "w": 150,
+      "h": 28,
+      "props": {
+        "text": "Stop order\nCtrl+Delete"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s61",
+      "type": "rect",
+      "x": 348,
+      "y": 318,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s62",
+      "type": "text",
+      "x": 362,
+      "y": 320,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Unloading"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s63",
+      "type": "rect",
+      "x": 348,
+      "y": 340,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s64",
+      "type": "text",
+      "x": 362,
+      "y": 342,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Cooling run"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s65",
+      "type": "rect",
+      "x": 348,
+      "y": 362,
+      "w": 6,
+      "h": 16,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#b6bdc4",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s66",
+      "type": "text",
+      "x": 362,
+      "y": 364,
+      "w": 240,
+      "h": 13,
+      "props": {
+        "text": "Engine stopped"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s67",
+      "type": "button",
+      "x": 362,
+      "y": 384,
+      "w": 150,
+      "h": 28,
+      "props": {
+        "text": "Shutdown reset\nCtrl+End"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s68",
+      "type": "text",
+      "x": 348,
+      "y": 470,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "Engine speed"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s69",
+      "type": "readout",
+      "x": 348,
+      "y": 484,
+      "w": 276,
+      "h": 24,
+      "bind": {
+        "value": "SCA011ST103PV"
+      },
+      "props": {
+        "text": "748 rpm",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s70",
+      "type": "rect",
+      "x": 652,
+      "y": 20,
+      "w": 250,
+      "h": 200,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e8ebee",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Breaker"
+    },
+    {
+      "id": "s71",
+      "type": "rect",
+      "x": 652,
+      "y": 20,
+      "w": 250,
+      "h": 22,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ccd2d8",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s72",
+      "type": "text",
+      "x": 660,
+      "y": 26,
+      "w": 234,
+      "h": 13,
+      "props": {
+        "text": "Breaker"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s73",
+      "type": "breaker",
+      "x": 700,
+      "y": 60,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "G01_BREAKER"
+      },
+      "props": {
+        "closed": true
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      },
+      "name": "Generator breaker"
+    },
+    {
+      "id": "s74",
+      "type": "text",
+      "x": 736,
+      "y": 62,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "Generator breaker"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s75",
+      "type": "led",
+      "x": 668,
+      "y": 100,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_BRK_TRIP_HEALTHY"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s76",
+      "type": "text",
+      "x": 686,
+      "y": 99,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Trp. circuit healthy"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s77",
+      "type": "led",
+      "x": 668,
+      "y": 120,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_BRK_SPRING"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s78",
+      "type": "text",
+      "x": 686,
+      "y": 119,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Breaker spring charged"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s79",
+      "type": "led",
+      "x": 668,
+      "y": 140,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_BRK_PARALLEL"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s80",
+      "type": "text",
+      "x": 686,
+      "y": 139,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Parallel operation"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s81",
+      "type": "led",
+      "x": 668,
+      "y": 160,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_AVR_ON"
+      },
+      "props": {
+        "shape": "square",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s82",
+      "type": "text",
+      "x": 686,
+      "y": 159,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "AVR in operation"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s83",
+      "type": "button",
+      "x": 668,
+      "y": 186,
+      "w": 218,
+      "h": 22,
+      "props": {
+        "text": "Breaker trip reset   Ctrl+Home"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s84",
+      "type": "rect",
+      "x": 652,
+      "y": 236,
+      "w": 560,
+      "h": 284,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e8ebee",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Generator Measurements"
+    },
+    {
+      "id": "s85",
+      "type": "rect",
+      "x": 652,
+      "y": 236,
+      "w": 560,
+      "h": 22,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ccd2d8",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s86",
+      "type": "text",
+      "x": 660,
+      "y": 242,
+      "w": 544,
+      "h": 13,
+      "props": {
+        "text": "Generator Measurements"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s87",
+      "type": "text",
+      "x": 668,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "P / Active"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s88",
+      "type": "gauge",
+      "x": 682,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "SCA011PW104PV"
+      },
+      "props": {
+        "min": 0,
+        "max": 9600,
+        "value": 7887,
+        "orientation": "vertical",
+        "marker": 8924
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s89",
+      "type": "readout",
+      "x": 664,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "SCA011PW104PV"
+      },
+      "props": {
+        "text": "7887 kW",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s90",
+      "type": "text",
+      "x": 740,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "Q / Reactive"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s91",
+      "type": "gauge",
+      "x": 754,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_GEN_REACTIVE_POWER"
+      },
+      "props": {
+        "min": -400,
+        "max": 800,
+        "value": 335,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s92",
+      "type": "readout",
+      "x": 736,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_GEN_REACTIVE_POWER"
+      },
+      "props": {
+        "text": "335 kVAr",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s93",
+      "type": "text",
+      "x": 824,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "Current L1"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s94",
+      "type": "gauge",
+      "x": 838,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_CURRENT_L1"
+      },
+      "props": {
+        "min": 0,
+        "max": 900,
+        "value": 512,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s95",
+      "type": "readout",
+      "x": 820,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_CURRENT_L1"
+      },
+      "props": {
+        "text": "512 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s96",
+      "type": "text",
+      "x": 896,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "Current L2"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s97",
+      "type": "gauge",
+      "x": 910,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_CURRENT_L2"
+      },
+      "props": {
+        "min": 0,
+        "max": 900,
+        "value": 512,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s98",
+      "type": "readout",
+      "x": 892,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_CURRENT_L2"
+      },
+      "props": {
+        "text": "512 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s99",
+      "type": "text",
+      "x": 968,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "Current L3"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s100",
+      "type": "gauge",
+      "x": 982,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_CURRENT_L3"
+      },
+      "props": {
+        "min": 0,
+        "max": 900,
+        "value": 512,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s101",
+      "type": "readout",
+      "x": 964,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_CURRENT_L3"
+      },
+      "props": {
+        "text": "512 A",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s102",
+      "type": "text",
+      "x": 1040,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "U12"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s103",
+      "type": "gauge",
+      "x": 1054,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_VOLTAGE_U12"
+      },
+      "props": {
+        "min": 0,
+        "max": 12,
+        "value": 11.02,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#d99418",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s104",
+      "type": "readout",
+      "x": 1036,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_VOLTAGE_U12"
+      },
+      "props": {
+        "text": "11.02 kV",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s105",
+      "type": "text",
+      "x": 1098,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "U23"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s106",
+      "type": "gauge",
+      "x": 1112,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_VOLTAGE_U23"
+      },
+      "props": {
+        "min": 0,
+        "max": 12,
+        "value": 11.02,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#d99418",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s107",
+      "type": "readout",
+      "x": 1094,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_VOLTAGE_U23"
+      },
+      "props": {
+        "text": "11.02 kV",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s108",
+      "type": "text",
+      "x": 1156,
+      "y": 268,
+      "w": 56,
+      "h": 13,
+      "props": {
+        "text": "U31"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s109",
+      "type": "gauge",
+      "x": 1170,
+      "y": 282,
+      "w": 28,
+      "h": 150,
+      "bind": {
+        "value": "G01_VOLTAGE_U31"
+      },
+      "props": {
+        "min": 0,
+        "max": 12,
+        "value": 11.02,
+        "orientation": "vertical",
+        "marker": null
+      },
+      "style": {
+        "fill": "#d99418",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s110",
+      "type": "readout",
+      "x": 1152,
+      "y": 440,
+      "w": 64,
+      "h": 20,
+      "bind": {
+        "value": "G01_VOLTAGE_U31"
+      },
+      "props": {
+        "text": "11.02 kV",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s111",
+      "type": "text",
+      "x": 668,
+      "y": 470,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "Frequency"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s112",
+      "type": "readout",
+      "x": 668,
+      "y": 484,
+      "w": 120,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_BUSBAR1_FREQ"
+      },
+      "props": {
+        "text": "50.00 Hz",
+        "unit": "",
+        "decimals": 2
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 12,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s113",
+      "type": "text",
+      "x": 820,
+      "y": 470,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "AVR"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s114",
+      "type": "readout",
+      "x": 820,
+      "y": 484,
+      "w": 90,
+      "h": 24,
+      "bind": {
+        "value": "G01_AVR_CURRENT"
+      },
+      "props": {
+        "text": "2.4 A",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 11,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s115",
+      "type": "readout",
+      "x": 918,
+      "y": 484,
+      "w": 90,
+      "h": 24,
+      "bind": {
+        "value": "G01_AVR_VOLTAGE"
+      },
+      "props": {
+        "text": "48 V",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 11,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s116",
+      "type": "rect",
+      "x": 20,
+      "y": 466,
+      "w": 300,
+      "h": 250,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e8ebee",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Mode"
+    },
+    {
+      "id": "s117",
+      "type": "rect",
+      "x": 20,
+      "y": 466,
+      "w": 300,
+      "h": 22,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ccd2d8",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s118",
+      "type": "text",
+      "x": 28,
+      "y": 472,
+      "w": 284,
+      "h": 13,
+      "props": {
+        "text": "Mode"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s119",
+      "type": "button",
+      "x": 32,
+      "y": 500,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Auto"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#fff",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s120",
+      "type": "button",
+      "x": 170,
+      "y": 500,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Manual"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s121",
+      "type": "button",
+      "x": 32,
+      "y": 528,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Remote"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#fff",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s122",
+      "type": "button",
+      "x": 170,
+      "y": 528,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Local"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s123",
+      "type": "button",
+      "x": 32,
+      "y": 556,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Grid mode"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#fff",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s124",
+      "type": "button",
+      "x": 170,
+      "y": 556,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Island mode"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s125",
+      "type": "text",
+      "x": 32,
+      "y": 588,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Engine control"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s126",
+      "type": "button",
+      "x": 32,
+      "y": 602,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "kW"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#fff",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s127",
+      "type": "button",
+      "x": 170,
+      "y": 602,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Speed droop"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s128",
+      "type": "text",
+      "x": 32,
+      "y": 634,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Generator control"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s129",
+      "type": "button",
+      "x": 32,
+      "y": 648,
+      "w": 84,
+      "h": 22,
+      "props": {
+        "text": "pf"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#fff",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s130",
+      "type": "button",
+      "x": 122,
+      "y": 648,
+      "w": 84,
+      "h": 22,
+      "props": {
+        "text": "Voltage droop"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s131",
+      "type": "button",
+      "x": 212,
+      "y": 648,
+      "w": 84,
+      "h": 22,
+      "props": {
+        "text": "VDC"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s132",
+      "type": "rect",
+      "x": 336,
+      "y": 536,
+      "w": 876,
+      "h": 180,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e8ebee",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Protection, Monitoring and Control"
+    },
+    {
+      "id": "s133",
+      "type": "rect",
+      "x": 336,
+      "y": 536,
+      "w": 876,
+      "h": 22,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#ccd2d8",
+        "stroke": "#9aa2ab",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s134",
+      "type": "text",
+      "x": 344,
+      "y": 542,
+      "w": 860,
+      "h": 13,
+      "props": {
+        "text": "Protection, Monitoring and Control"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s135",
+      "type": "rect",
+      "x": 350,
+      "y": 566,
+      "w": 88,
+      "h": 40,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "VAMP210"
+    },
+    {
+      "id": "s136",
+      "type": "led",
+      "x": 358,
+      "y": 578,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_RELAY_VAMP210"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s137",
+      "type": "text",
+      "x": 374,
+      "y": 578,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "VAMP210"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s138",
+      "type": "rect",
+      "x": 446,
+      "y": 566,
+      "w": 88,
+      "h": 40,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "VAMP265"
+    },
+    {
+      "id": "s139",
+      "type": "led",
+      "x": 454,
+      "y": 578,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_RELAY_VAMP265"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s140",
+      "type": "text",
+      "x": 470,
+      "y": 578,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "VAMP265"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s141",
+      "type": "rect",
+      "x": 542,
+      "y": 566,
+      "w": 88,
+      "h": 40,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "VAMP260"
+    },
+    {
+      "id": "s142",
+      "type": "led",
+      "x": 550,
+      "y": 578,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_RELAY_VAMP260"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s143",
+      "type": "text",
+      "x": 566,
+      "y": 578,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "VAMP260"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s144",
+      "type": "rect",
+      "x": 638,
+      "y": 566,
+      "w": 88,
+      "h": 40,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "P127"
+    },
+    {
+      "id": "s145",
+      "type": "led",
+      "x": 646,
+      "y": 578,
+      "w": 10,
+      "h": 10,
+      "bind": {
+        "value": "G01_RELAY_P127"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s146",
+      "type": "text",
+      "x": 662,
+      "y": 578,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "P127"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s147",
+      "type": "text",
+      "x": 350,
+      "y": 618,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Miscellaneous"
+      },
+      "style": {
+        "color": "#4a545e",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s148",
+      "type": "led",
+      "x": 350,
+      "y": 634,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_1"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s149",
+      "type": "text",
+      "x": 364,
+      "y": 632,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "MCB open in CFC"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s150",
+      "type": "led",
+      "x": 640,
+      "y": 634,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_2"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s151",
+      "type": "text",
+      "x": 654,
+      "y": 632,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "MCB open in CFE"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s152",
+      "type": "led",
+      "x": 930,
+      "y": 634,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_3"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s153",
+      "type": "text",
+      "x": 944,
+      "y": 632,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "MCB open in BJA"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s154",
+      "type": "led",
+      "x": 350,
+      "y": 650,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_4"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s155",
+      "type": "text",
+      "x": 364,
+      "y": 648,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "MCB open in main AVR circuit"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s156",
+      "type": "led",
+      "x": 640,
+      "y": 650,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_5"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s157",
+      "type": "text",
+      "x": 654,
+      "y": 648,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Synchronizing not activated"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s158",
+      "type": "led",
+      "x": 930,
+      "y": 650,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_6"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s159",
+      "type": "text",
+      "x": 944,
+      "y": 648,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Synchronizing failure"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s160",
+      "type": "led",
+      "x": 350,
+      "y": 666,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_7"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s161",
+      "type": "text",
+      "x": 364,
+      "y": 664,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Excitation failure"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s162",
+      "type": "led",
+      "x": 640,
+      "y": 666,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_8"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s163",
+      "type": "text",
+      "x": 654,
+      "y": 664,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Diff. prot. relay eng. shutdown"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s164",
+      "type": "led",
+      "x": 930,
+      "y": 666,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_9"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s165",
+      "type": "text",
+      "x": 944,
+      "y": 664,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Gen. prot. relay breaker trip"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s166",
+      "type": "led",
+      "x": 350,
+      "y": 682,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_10"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s167",
+      "type": "text",
+      "x": 364,
+      "y": 680,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Tripped to speed droop"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s168",
+      "type": "led",
+      "x": 640,
+      "y": 682,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_11"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s169",
+      "type": "text",
+      "x": 654,
+      "y": 680,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "AVR synch. disabled"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s170",
+      "type": "led",
+      "x": 930,
+      "y": 682,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_12"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s171",
+      "type": "text",
+      "x": 944,
+      "y": 680,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "AVR overvoltage"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s172",
+      "type": "led",
+      "x": 350,
+      "y": 698,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_13"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s173",
+      "type": "text",
+      "x": 364,
+      "y": 696,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Diode monitor trip"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s174",
+      "type": "led",
+      "x": 640,
+      "y": 698,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_14"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s175",
+      "type": "text",
+      "x": 654,
+      "y": 696,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Control voltage fault"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s176",
+      "type": "led",
+      "x": 930,
+      "y": 698,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_15"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s177",
+      "type": "text",
+      "x": 944,
+      "y": 696,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "LV circuit breaker open"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s178",
+      "type": "led",
+      "x": 350,
+      "y": 714,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_16"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s179",
+      "type": "text",
+      "x": 364,
+      "y": 712,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Engine idling too long"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s180",
+      "type": "led",
+      "x": 640,
+      "y": 714,
+      "w": 8,
+      "h": 8,
+      "bind": {
+        "value": "G01_MISC_17"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": "#e5484d",
+        "offColor": "#b6bdc4"
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#8a929b",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s181",
+      "type": "text",
+      "x": 654,
+      "y": 712,
+      "w": 272,
+      "h": 13,
+      "props": {
+        "text": "Busbar Voltage superv."
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    }
+  ]
+}

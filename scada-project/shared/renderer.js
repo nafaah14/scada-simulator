@@ -22,7 +22,8 @@
     rect: {
       label: 'Rectangle', group: 'Background', w: 160, h: 80,
       style: { fill: '#9aa2ab', stroke: '#5a6068', strokeWidth: 1, radius: 0, opacity: 1 },
-      fields: ['fill', 'stroke', 'strokeWidth', 'radius', 'opacity', 'bevel']
+      props: { bevel: false, dashed: false },
+      fields: ['fill', 'stroke', 'strokeWidth', 'radius', 'opacity', 'bevel', 'dashed']
     },
     line: {
       label: 'Line', group: 'Background', w: 120, h: 60,
@@ -54,9 +55,9 @@
     },
     led: {
       label: 'Status LED', group: 'Symbols', w: 12, h: 12, bind: true,
-      props: { shape: 'circle' },
+      props: { shape: 'circle', onColor: null, offColor: null },
       style: { fill: '#2fa84f', stroke: '#1c6b32', strokeWidth: 0 },
-      fields: ['shape', 'fill', 'stroke', 'strokeWidth']
+      fields: ['shape', 'fill', 'onColor', 'offColor', 'stroke', 'strokeWidth']
     },
     pump: {
       label: 'Pump', group: 'Symbols', w: 20, h: 20, bind: true,
@@ -93,6 +94,12 @@
       props: { closed: true },
       style: { fill: '#2fa84f', stroke: '#1c6b32', strokeWidth: 1 },
       fields: ['closed', 'fill', 'stroke', 'strokeWidth']
+    },
+    gauge: {
+      label: 'Gauge bar', group: 'Symbols', w: 26, h: 90, bind: true,
+      props: { min: 0, max: 100, value: 60, orientation: 'vertical', marker: null },
+      style: { fill: '#2fa84f', stroke: '#c3cad2', strokeWidth: 1 },
+      fields: ['min', 'max', 'value', 'orientation', 'marker', 'fill', 'stroke', 'strokeWidth']
     },
     button: {
       label: 'Button', group: 'Symbols', w: 80, h: 24,
@@ -188,7 +195,9 @@
       case 'rect': {
         const i = div('s-rect');
         i.style.background = s.fill || 'transparent';
-        i.style.border = border;
+        i.style.border = s.strokeWidth
+          ? s.strokeWidth + 'px ' + (p.dashed ? 'dashed' : 'solid') + ' ' + (s.stroke || '#000')
+          : 'none';
         i.style.borderRadius = (s.radius || 0) + 'px';
         if (s.opacity != null) i.style.opacity = s.opacity;
         if (p.bevel) {
@@ -257,11 +266,18 @@
         if (opts.showAlarms) {
           const tag = lookup(el, tags);
           if (tag) {
-            // digital tags drive the LED directly; analog ones use alarm state
             if (tag.data_type === 'digital') {
+              /* A digital LED means different things in different places —
+                 "Remote permit" true is healthy, "Emergency stop" true is
+                 not. So the element says which state is which rather than
+                 the renderer guessing: onColor when the tag is true,
+                 offColor when false. Defaults keep true = the styled
+                 colour, which reads as healthy. */
               const on = tag.value === true || tag.value === 1 ||
                          tag.value === 'ON' || tag.value === 'TRUE';
-              fill = on ? '#e5484d' : (s.fill || 'var(--green)');
+              fill = on
+                ? (p.onColor || s.fill || 'var(--green)')
+                : (p.offColor || '#9aa2ab');
             } else {
               const c = ALARM_COLOURS[alarmStateFor(tag)];
               if (c) fill = c.fill;
@@ -333,6 +349,38 @@
         i.style.background = closed ? (s.fill || 'var(--green)') : 'var(--bg-field)';
         i.style.border = (s.strokeWidth || 1) + 'px solid ' +
           (closed ? (s.stroke || '#1c6b32') : 'var(--border-light)');
+        d.appendChild(i); break;
+      }
+      case 'gauge': {
+        const i = div('s-gauge');
+        i.style.background = 'var(--bg-field)';
+        i.style.border = border;
+        const tag = lookup(el, tags);
+        const raw = (opts.showAlarms && tag && typeof tag.value === 'number')
+          ? tag.value : Number(p.value || 0);
+        const min = Number(p.min ?? 0), max = Number(p.max ?? 100);
+        const pct = Math.max(0, Math.min(100, ((raw - min) / ((max - min) || 1)) * 100));
+        const fill = div('gfill');
+        fill.style.background = s.fill || 'var(--green)';
+        if (p.orientation === 'horizontal') {
+          fill.style.left = '0'; fill.style.bottom = '0'; fill.style.top = '0';
+          fill.style.width = pct + '%'; fill.style.height = 'auto';
+        } else {
+          fill.style.left = '0'; fill.style.right = '0'; fill.style.bottom = '0';
+          fill.style.height = pct + '%';
+        }
+        i.appendChild(fill);
+        // the amber line is the max-available marker on P/Active Power
+        if (p.marker != null) {
+          const mPct = Math.max(0, Math.min(100,
+            ((Number(p.marker) - min) / ((max - min) || 1)) * 100));
+          const mk = div('gmark');
+          if (p.orientation === 'horizontal') { mk.style.left = mPct + '%'; mk.style.top = '0';
+            mk.style.bottom = '0'; mk.style.width = '2px'; }
+          else { mk.style.bottom = mPct + '%'; mk.style.left = '0'; mk.style.right = '0';
+            mk.style.height = '2px'; }
+          i.appendChild(mk);
+        }
         d.appendChild(i); break;
       }
       case 'button': {

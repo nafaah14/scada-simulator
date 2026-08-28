@@ -53,7 +53,7 @@ const digital = (tag_id, description, value = false, extra = {}) => make({
    screen today; the loop is written per-unit so G2-G6 come for free
    once their screens exist.
    ------------------------------------------------------------------ */
-const UNITS = ['G1'];
+const UNITS = ['G1'];   // only G1 has per-cylinder screens today
 const BANKS = ['A', 'B'];
 const CYLS = 10;                       // W20V32 — 20 cylinders, 10 per bank
 
@@ -165,6 +165,237 @@ for (const unit of UNITS) {
   digital(`${u}_ALARM_SLOWDOWN`, 'Slow down summary', false, { unit, screens });
   digital(`${u}_ALARM_LOADREDUCE`, 'Load reduction summary', false, { unit, screens });
   digital(`${u}_RUNNING`, 'Engine running', true, { unit, screens });
+}
+
+/* ---------------------------------------------------------------------
+   Plant-common instrumentation: fuel train, day/storage tanks, feeder
+   and transfer pumps, and the two compressed-air systems.
+   ------------------------------------------------------------------ */
+{
+  const common = { unit: 'COMMON' };
+
+  // six LFO day tanks (PBF 901-906) — level, temps, level switches, valves
+  for (let n = 901; n <= 906; n++) {
+    const t = `PBF${n}`;
+    const screens = ['Common.Overview', 'Common.Fuel'];
+    for (let k = 1; k <= 3; k++) {
+      analog(`COMMON_${t}_T${k}`, `LFO day tank ${n} — temperature ${k}`, '°C', 30,
+        'temperature', {
+          ...common, screens,
+          alarm_limits: { hihi: null, hi: 60, lo: null, lolo: null }
+        });
+    }
+    digital(`COMMON_${t}_LSW`, `LFO day tank ${n} — level switch`, false, { ...common, screens });
+    digital(`COMMON_${t}_LSH`, `LFO day tank ${n} — level switch high`, false, { ...common, screens });
+    digital(`COMMON_${t}_LSL`, `LFO day tank ${n} — level switch low`, false, { ...common, screens });
+    digital(`COMMON_${t}_V`, `LFO day tank ${n} — outlet valve`, true, { ...common, screens });
+    digital(`COMMON_${t}_FILL_V`, `LFO day tank ${n} — fill valve`, false, { ...common, screens });
+    digital(`COMMON_${t}_OUT_V`, `LFO day tank ${n} — transfer valve`, false, { ...common, screens });
+  }
+
+  // four LFO storage tanks (PAE 901-904)
+  for (let n = 901; n <= 904; n++) {
+    const t = `PAE${n}`;
+    const screens = ['Common.Fuel'];
+    for (let k = 1; k <= 4; k++) {
+      analog(`COMMON_${t}_T${k}`, `LFO storage tank ${n} — temperature ${k}`, '°C', 31,
+        'temperature', { ...common, screens });
+    }
+    digital(`COMMON_${t}_LSH`, `LFO storage tank ${n} — level switch high`, false,
+      { ...common, screens });
+    digital(`COMMON_${t}_LSL`, `LFO storage tank ${n} — level switch low`, false,
+      { ...common, screens });
+  }
+  analog('PAF902_LEVEL', 'LFO storage tank level (PAE 902)', '%', 49, 'level', {
+    ...common, screens: ['Common.Fuel'],
+    alarm_limits: { hihi: null, hi: null, lo: 10, lolo: 5 }
+  });
+  analog('PAF903_LEVEL', 'LFO storage tank level (PAE 903)', '%', 83, 'level', {
+    ...common, screens: ['Common.Fuel'],
+    alarm_limits: { hihi: null, hi: null, lo: 10, lolo: 5 }
+  });
+
+  // feeder unit PCA901
+  const feederScreens = ['Common.Overview', 'Common.Fuel', 'G1.Fuel'];
+  for (const p of ['P1', 'P2']) {
+    digital(`COMMON_PCA901_${p}`, `LFO feeder pump ${p} running`, p === 'P1',
+      { ...common, screens: feederScreens });
+    digital(`COMMON_PCA901_${p}_V`, `LFO feeder pump ${p} suction valve`, true,
+      { ...common, screens: feederScreens });
+    digital(`COMMON_PCA901_${p}_MODE`, `LFO feeder pump ${p} in auto`, true,
+      { ...common, screens: feederScreens });
+    digital(`COMMON_FEEDER_${p}`, `Feeder unit pump ${p} running`, p === 'P1',
+      { ...common, screens: ['Common.Overview'] });
+  }
+  digital('COMMON_PCA901_CTRL_VOLTAGE', 'LFO feeder unit control voltage healthy', true,
+    { ...common, screens: ['Common.Fuel'] });
+  analog('COMMON_PCA901_SPEED_PCT', 'LFO feeder unit speed', '%', 49, 'speed',
+    { ...common, screens: feederScreens });
+  analog('COMMON_PCA901_OUT_PRESS_A', 'LFO feeder discharge pressure A', 'bar', 4.5,
+    'pressure', { ...common, screens: ['Common.Fuel'],
+      alarm_limits: { hihi: null, hi: null, lo: 3.5, lolo: 2.5 } });
+  analog('COMMON_PCA901_OUT_PRESS_B', 'LFO feeder discharge pressure B', 'bar', 4.5,
+    'pressure', { ...common, screens: ['Common.Fuel'],
+      alarm_limits: { hihi: null, hi: null, lo: 3.5, lolo: 2.5 } });
+
+  // transfer + unloading pumps
+  for (const p of ['PAF901', 'PAF902']) {
+    digital(`COMMON_${p}_PUMP`, `LFO transfer pump ${p} running`, false,
+      { ...common, screens: ['Common.Fuel'] });
+    digital(`COMMON_${p}_V`, `LFO transfer pump ${p} discharge valve`, true,
+      { ...common, screens: ['Common.Fuel'] });
+  }
+  analog('COMMON_MAIN_PUMP_A', 'LFO main transfer pump current', 'A', 0, 'current',
+    { ...common, screens: ['Common.Fuel'] });
+  analog('COMMON_TRANSFER_PRESS', 'LFO transfer header pressure', 'bar', 0.2, 'pressure',
+    { ...common, screens: ['Common.Fuel'] });
+  analog('COMMON_UNLOAD_FLOW', 'LFO unloading flow', 'm3/h', 0, 'flow',
+    { ...common, screens: ['Common.Fuel'] });
+  for (const p of ['P1', 'P2']) {
+    digital(`COMMON_PAD901_${p}`, `LFO unloading pump ${p} running`, false,
+      { ...common, screens: ['Common.Fuel'] });
+    digital(`COMMON_PAD901_${p}_V`, `LFO unloading pump ${p} valve`, false,
+      { ...common, screens: ['Common.Fuel'] });
+  }
+
+  // sludge
+  analog('COMMON_SLUDGE_TEMP', 'Sludge tank temperature', '°C', 30, 'temperature',
+    { ...common, screens: ['Common.Fuel'] });
+  digital('COMMON_SLUDGE_LEVEL', 'Sludge tank level switch', false,
+    { ...common, screens: ['Common.Fuel'] });
+  digital('COMMON_SLUDGE_PUMP', 'Sludge loading pump running', false,
+    { ...common, screens: ['Common.Fuel'] });
+  digital('COMMON_SLUDGE_V1', 'Sludge pump suction valve', false,
+    { ...common, screens: ['Common.Fuel'] });
+  digital('COMMON_SLUDGE_V2', 'Sludge pump discharge valve', false,
+    { ...common, screens: ['Common.Fuel'] });
+
+  // compressed air
+  const airScreens = ['Common.StartAir'];
+  for (const c of ['C1', 'C2']) {
+    digital(`COMMON_TCA901_${c}`, `Instrument air compressor ${c} running`, true,
+      { ...common, screens: airScreens });
+    digital(`COMMON_TSA901_${c}`, `Starting air compressor ${c} running`, true,
+      { ...common, screens: airScreens });
+  }
+  digital('COMMON_TCA901_REMOTE', 'Instrument air unit remote permit', true,
+    { ...common, screens: airScreens });
+  digital('COMMON_TSA901_REMOTE', 'Starting air unit remote permit', true,
+    { ...common, screens: airScreens });
+  digital('COMMON_SERVICE_REMOTE', 'Service tank valve remote permit', true,
+    { ...common, screens: airScreens });
+  digital('COMMON_SERVICE_V', 'Service air outlet valve', true,
+    { ...common, screens: airScreens });
+  analog('COMMON_TCA901_TEMP', 'Instrument air discharge temperature', '°C', 32.5,
+    'temperature', { ...common, screens: airScreens,
+      alarm_limits: { hihi: 45, hi: 30, lo: null, lolo: null } });
+  analog('COMMON_INSTRUMENT_PRESS', 'Instrument air tank pressure', 'bar', 7.1, 'pressure',
+    { ...common, screens: airScreens,
+      alarm_limits: { hihi: null, hi: null, lo: 5.5, lolo: 4.5 } });
+  analog('COMMON_START_AIR_PRESS', 'Starting air receiver pressure', 'bar', 27.8, 'pressure',
+    { ...common, screens: airScreens,
+      alarm_limits: { hihi: null, hi: null, lo: 18, lolo: 15 } });
+
+  digital('COMMON_BUSTIE', 'Bus tie breaker closed', true,
+    { ...common, screens: ['Common.Overview'] });
+}
+
+/* ---------------------------------------------------------------------
+   Per-genset electrical + auxiliaries shown on the plant overview,
+   start-air page and the Control page. Written for all six units so the
+   remaining screens come for free as they are built.
+   ------------------------------------------------------------------ */
+for (let n = 1; n <= 6; n++) {
+  const u = `G${n}`, p = `G0${n}`;
+  const overview = ['Common.Overview'];
+  const ctrl = [`${u}.Control`];
+
+  analog(`${p}_KW`, `Gen. active power (${u})`, 'kW', n === 4 ? 0 : 7880, 'power',
+    { unit: u, screens: overview });
+  analog(`${p}_KVAR`, `Gen. reactive power (${u})`, 'kVAr', n === 4 ? 0 : 320, 'power',
+    { unit: u, screens: overview });
+  analog(`${p}_PF`, `Gen. power factor (${u})`, '', 1.0, 'power',
+    { unit: u, screens: overview, trend_enabled: false });
+  analog(`${p}_BOOSTER_FLOW`, `Booster unit flow (${u})`, 'kg/h', n === 4 ? 0 : 1550, 'flow',
+    { unit: u, screens: overview });
+  digital(`${p}_BREAKER`, `Generator breaker closed (${u})`, n !== 4,
+    { unit: u, screens: [...overview, ...ctrl] });
+  digital(`${p}_BOOSTER_V`, `Booster inlet valve (${u})`, n !== 4, { unit: u, screens: overview });
+  digital(`${p}_RUNNING`, `Engine running (${u})`, n !== 4,
+    { unit: u, screens: [...overview, 'Common.StartAir'] });
+  for (const q of ['P1', 'P2']) {
+    digital(`${p}_BOOSTER_${q}`, `Booster pump ${q} running (${u})`, q === 'P1' && n !== 4,
+      { unit: u, screens: overview });
+  }
+
+  // start air, two independent supplies per engine
+  for (const s of ['A', 'B']) {
+    analog(`${p}_START_AIR_PRESS_${s}`, `Starting air pressure ${s} (${u})`, 'bar',
+      n === 4 ? 0.1 : 27.6, 'pressure', {
+        unit: u, screens: ['Common.StartAir'],
+        alarm_limits: { hihi: null, hi: null, lo: 18, lolo: 15 }
+      });
+  }
+}
+
+/* G1 Control page detail */
+{
+  const u = 'G1', screens = ['G1.Control'];
+  for (let i = 1; i <= 18; i++) {
+    digital(`G01_STARTCOND_${i}`, `Start condition ${i}`, true, { unit: u, screens });
+  }
+  for (let i = 1; i <= 17; i++) {
+    digital(`G01_MISC_${i}`, `Miscellaneous status ${i}`, false, { unit: u, screens });
+  }
+  for (const l of ['L1', 'L2', 'L3']) {
+    analog(`G01_CURRENT_${l}`, `Generator current ${l}`, 'A', 512, 'current', {
+      unit: u, screens, alarm_limits: { hihi: 900, hi: 820, lo: null, lolo: null }
+    });
+  }
+  for (const l of ['U12', 'U23', 'U31']) {
+    analog(`G01_VOLTAGE_${l}`, `Generator voltage ${l}`, 'kV', 11.02, 'voltage', {
+      unit: u, screens, alarm_limits: { hihi: 12.1, hi: null, lo: null, lolo: 9.9 }
+    });
+  }
+  for (const r of ['VAMP210', 'VAMP265', 'VAMP260', 'P127']) {
+    digital(`G01_RELAY_${r}`, `Protection relay ${r} healthy`, true, { unit: u, screens });
+  }
+  digital('G01_BRK_TRIP_HEALTHY', 'Breaker trip circuit healthy', true, { unit: u, screens });
+  digital('G01_BRK_SPRING', 'Breaker spring charged', true, { unit: u, screens });
+  digital('G01_BRK_PARALLEL', 'Parallel operation', true, { unit: u, screens });
+  digital('G01_AVR_ON', 'AVR in operation', true, { unit: u, screens });
+  analog('G01_AVR_CURRENT', 'AVR excitation current', 'A', 2.4, 'current', { unit: u, screens });
+  analog('G01_AVR_VOLTAGE', 'AVR excitation voltage', 'V', 48, 'voltage', { unit: u, screens });
+}
+
+/* G1 Fuel page detail */
+{
+  const u = 'G1', screens = ['G1.Fuel'];
+  digital('G01_MIXTANK_LEVEL', 'Mixing tank level switch', false, { unit: u, screens });
+  analog('G01_MIXTANK_TEMP', 'Mixing tank temperature', '°C', 31.6, 'temperature',
+    { unit: u, screens });
+  analog('G01_CIRC_TEMP', 'Circulation loop temperature', '°C', 42, 'temperature',
+    { unit: u, screens, alarm_limits: { hihi: null, hi: 60, lo: null, lolo: null } });
+  analog('G01_CTRLPANEL_TEMP', 'Control panel BJA011 temperature', '°C', 36, 'temperature',
+    { unit: u, screens });
+  analog('G01_LT_COUNT', 'LT loop counter', '', 749, 'count',
+    { unit: u, screens, trend_enabled: false });
+  analog('G01_DIRTYLEAK_TEMP', 'Dirty leak tank temperature', '°C', 37, 'temperature',
+    { unit: u, screens });
+  digital('G01_DIRTYLEAK_LEVEL', 'Dirty leak tank level switch', false, { unit: u, screens });
+  digital('G01_CLEANLEAK_LEVEL', 'Clean leak tank level switch', false, { unit: u, screens });
+  for (const [t, d, v] of [
+    ['G01_CIRC_PUMP1', 'Circulation pump 1 running', true],
+    ['G01_CIRC_PUMP2', 'Circulation pump 2 running', false],
+    ['G01_CIRC_V1', 'Circulation valve 1 open', true],
+    ['G01_CIRC_V2', 'Circulation valve 2 open', true],
+    ['G01_LT_PUMP', 'LT pump running', true],
+    ['G01_DIRTY_PUMP', 'Dirty leak pump running', false],
+    ['G01_CLEAN_PUMP', 'Clean leak pump running', true],
+    ['G01_INLET_PRESS_SENSOR', 'Engine inlet pressure sensor healthy', true],
+    ['G01_MOUNT_L1', 'Engine mount level switch 1', false],
+    ['G01_MOUNT_L2', 'Engine mount level switch 2', false]
+  ]) digital(t, d, v, { unit: u, screens });
 }
 
 const list = [...out.values()].sort((a, b) => a.tag_id.localeCompare(b.tag_id));

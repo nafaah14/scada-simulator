@@ -1,0 +1,4881 @@
+{
+  "screen_id": "Common.Fuel",
+  "title": "Common — Fuel",
+  "unit": "COMMON",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1560,
+    "height": 900,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "x": 190,
+      "y": 60,
+      "w": 104,
+      "h": 132,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "LFO storage PAE 901"
+    },
+    {
+      "id": "s2",
+      "type": "readout",
+      "x": 196,
+      "y": 74,
+      "w": 62,
+      "h": 18,
+      "bind": {
+        "value": "PAF901_LEVEL"
+      },
+      "props": {
+        "text": "19 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s3",
+      "type": "readout",
+      "x": 196,
+      "y": 94,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE901_T1"
+      },
+      "props": {
+        "text": "34 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s4",
+      "type": "readout",
+      "x": 196,
+      "y": 113,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE901_T2"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s5",
+      "type": "readout",
+      "x": 196,
+      "y": 132,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE901_T3"
+      },
+      "props": {
+        "text": "32 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s6",
+      "type": "readout",
+      "x": 196,
+      "y": 151,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE901_T4"
+      },
+      "props": {
+        "text": "29 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s7",
+      "type": "text",
+      "x": 196,
+      "y": 174,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "800 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s8",
+      "type": "led",
+      "x": 280,
+      "y": 70,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE901_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s9",
+      "type": "led",
+      "x": 280,
+      "y": 170,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE901_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s10",
+      "type": "text",
+      "x": 190,
+      "y": 194,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "LFO storage tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s11",
+      "type": "text",
+      "x": 190,
+      "y": 204,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "PAE 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s12",
+      "type": "button",
+      "x": 14,
+      "y": 86,
+      "w": 100,
+      "h": 30,
+      "props": {
+        "text": "Select for\nprimary tank"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s13",
+      "type": "pipe",
+      "x": 294,
+      "y": 124.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s14",
+      "type": "pipe",
+      "x": 130,
+      "y": 98.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "x": 190,
+      "y": 226,
+      "w": 104,
+      "h": 132,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "LFO storage PAE 902"
+    },
+    {
+      "id": "s16",
+      "type": "readout",
+      "x": 196,
+      "y": 240,
+      "w": 62,
+      "h": 18,
+      "bind": {
+        "value": "PAF902_LEVEL"
+      },
+      "props": {
+        "text": "49 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s17",
+      "type": "readout",
+      "x": 196,
+      "y": 260,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE902_T1"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s18",
+      "type": "readout",
+      "x": 196,
+      "y": 279,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE902_T2"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s19",
+      "type": "readout",
+      "x": 196,
+      "y": 298,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE902_T3"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s20",
+      "type": "readout",
+      "x": 196,
+      "y": 317,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE902_T4"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s21",
+      "type": "text",
+      "x": 196,
+      "y": 340,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "800 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s22",
+      "type": "led",
+      "x": 280,
+      "y": 236,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE902_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s23",
+      "type": "led",
+      "x": 280,
+      "y": 336,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE902_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s24",
+      "type": "text",
+      "x": 190,
+      "y": 360,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "LFO storage tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s25",
+      "type": "text",
+      "x": 190,
+      "y": 370,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "PAE 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s26",
+      "type": "button",
+      "x": 14,
+      "y": 252,
+      "w": 100,
+      "h": 30,
+      "props": {
+        "text": "Select for\nprimary tank"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s27",
+      "type": "pipe",
+      "x": 294,
+      "y": 290.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s28",
+      "type": "pipe",
+      "x": 130,
+      "y": 264.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s29",
+      "type": "rect",
+      "x": 190,
+      "y": 392,
+      "w": 104,
+      "h": 132,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "LFO storage PAE 903"
+    },
+    {
+      "id": "s30",
+      "type": "readout",
+      "x": 196,
+      "y": 406,
+      "w": 62,
+      "h": 18,
+      "bind": {
+        "value": "PAF903_LEVEL"
+      },
+      "props": {
+        "text": "83 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s31",
+      "type": "readout",
+      "x": 196,
+      "y": 426,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE903_T1"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s32",
+      "type": "readout",
+      "x": 196,
+      "y": 445,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE903_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s33",
+      "type": "readout",
+      "x": 196,
+      "y": 464,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE903_T3"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s34",
+      "type": "readout",
+      "x": 196,
+      "y": 483,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE903_T4"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "x": 196,
+      "y": 506,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "800 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s36",
+      "type": "led",
+      "x": 280,
+      "y": 402,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE903_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s37",
+      "type": "led",
+      "x": 280,
+      "y": 502,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE903_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s38",
+      "type": "text",
+      "x": 190,
+      "y": 526,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "LFO storage tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s39",
+      "type": "text",
+      "x": 190,
+      "y": 536,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "PAE 903"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s40",
+      "type": "button",
+      "x": 14,
+      "y": 418,
+      "w": 100,
+      "h": 30,
+      "props": {
+        "text": "Select for\nprimary tank"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s41",
+      "type": "pipe",
+      "x": 294,
+      "y": 456.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s42",
+      "type": "pipe",
+      "x": 130,
+      "y": 430.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s43",
+      "type": "rect",
+      "x": 190,
+      "y": 558,
+      "w": 104,
+      "h": 132,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#3f8f4f",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "LFO storage PAE 904"
+    },
+    {
+      "id": "s44",
+      "type": "readout",
+      "x": 196,
+      "y": 572,
+      "w": 62,
+      "h": 18,
+      "bind": {
+        "value": "PAE904_LEVEL"
+      },
+      "props": {
+        "text": "29 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s45",
+      "type": "readout",
+      "x": 196,
+      "y": 592,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE904_T1"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s46",
+      "type": "readout",
+      "x": 196,
+      "y": 611,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE904_T2"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s47",
+      "type": "readout",
+      "x": 196,
+      "y": 630,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE904_T3"
+      },
+      "props": {
+        "text": "29 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s48",
+      "type": "readout",
+      "x": 196,
+      "y": 649,
+      "w": 62,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PAE904_T4"
+      },
+      "props": {
+        "text": "29 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s49",
+      "type": "text",
+      "x": 196,
+      "y": 672,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "800 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s50",
+      "type": "led",
+      "x": 280,
+      "y": 568,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE904_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s51",
+      "type": "led",
+      "x": 280,
+      "y": 668,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PAE904_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s52",
+      "type": "text",
+      "x": 190,
+      "y": 692,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "LFO storage tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s53",
+      "type": "text",
+      "x": 190,
+      "y": 702,
+      "w": 124,
+      "h": 13,
+      "props": {
+        "text": "PAE 904"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s54",
+      "type": "button",
+      "x": 14,
+      "y": 584,
+      "w": 100,
+      "h": 30,
+      "props": {
+        "text": "Select for\nprimary tank"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#8a929b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s55",
+      "type": "pipe",
+      "x": 294,
+      "y": 622.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s56",
+      "type": "pipe",
+      "x": 130,
+      "y": 596.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s57",
+      "type": "pipe",
+      "x": 352.5,
+      "y": 126,
+      "w": 3,
+      "h": 500,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s58",
+      "type": "pipe",
+      "x": 128.5,
+      "y": 100,
+      "w": 3,
+      "h": 640,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s59",
+      "type": "rect",
+      "x": 20,
+      "y": 706,
+      "w": 250,
+      "h": 118,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "LFO unloading\npump unit\nPAD 901",
+      "locked": true
+    },
+    {
+      "id": "s60",
+      "type": "text",
+      "x": 28,
+      "y": 712,
+      "w": 190,
+      "h": 39,
+      "props": {
+        "text": "LFO unloading\npump unit\nPAD 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s61",
+      "type": "valve",
+      "x": 66,
+      "y": 742,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PAD901_P1_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s62",
+      "type": "pump",
+      "x": 58,
+      "y": 756,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "COMMON_PAD901_P1"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s63",
+      "type": "rect",
+      "x": 60,
+      "y": 790,
+      "w": 22,
+      "h": 14,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#2c6ea0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s64",
+      "type": "text",
+      "x": 58,
+      "y": 806,
+      "w": 26,
+      "h": 13,
+      "props": {
+        "text": "1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s65",
+      "type": "pipe",
+      "x": 69.5,
+      "y": 720,
+      "w": 3,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s66",
+      "type": "valve",
+      "x": 130,
+      "y": 742,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PAD901_P2_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s67",
+      "type": "pump",
+      "x": 122,
+      "y": 756,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "COMMON_PAD901_P2"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s68",
+      "type": "rect",
+      "x": 124,
+      "y": 790,
+      "w": 22,
+      "h": 14,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#2c6ea0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s69",
+      "type": "text",
+      "x": 122,
+      "y": 806,
+      "w": 26,
+      "h": 13,
+      "props": {
+        "text": "2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s70",
+      "type": "pipe",
+      "x": 133.5,
+      "y": 720,
+      "w": 3,
+      "h": 36,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s71",
+      "type": "readout",
+      "x": 20,
+      "y": 676,
+      "w": 100,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_UNLOAD_FLOW"
+      },
+      "props": {
+        "text": "0.0 m3/h",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s72",
+      "type": "rect",
+      "x": 196,
+      "y": 760,
+      "w": 70,
+      "h": 48,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Control panel BJC951"
+    },
+    {
+      "id": "s73",
+      "type": "text",
+      "x": 198,
+      "y": 768,
+      "w": 66,
+      "h": 36,
+      "props": {
+        "text": "Control\nPanel\nBJC 951"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s74",
+      "type": "rect",
+      "x": 430,
+      "y": 300,
+      "w": 250,
+      "h": 130,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "LFO transfer\npump unit\nPAF 901",
+      "locked": true
+    },
+    {
+      "id": "s75",
+      "type": "text",
+      "x": 438,
+      "y": 306,
+      "w": 190,
+      "h": 39,
+      "props": {
+        "text": "LFO transfer\npump unit\nPAF 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s76",
+      "type": "button",
+      "x": 436,
+      "y": 352,
+      "w": 108,
+      "h": 20,
+      "props": {
+        "text": "Select for main"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 10,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s77",
+      "type": "pump",
+      "x": 452,
+      "y": 360,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "COMMON_PAF901_PUMP"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      },
+      "name": "Transfer pump PAF901"
+    },
+    {
+      "id": "s78",
+      "type": "text",
+      "x": 438,
+      "y": 356,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "P"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s79",
+      "type": "rect",
+      "x": 436,
+      "y": 372,
+      "w": 14,
+      "h": 14,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#2c6ea0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s80",
+      "type": "valve",
+      "x": 484,
+      "y": 366,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PAF901_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s81",
+      "type": "readout",
+      "x": 506,
+      "y": 356,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_PAF901_PUMP_A"
+      },
+      "props": {
+        "text": "0.0 A",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s82",
+      "type": "rect",
+      "x": 430,
+      "y": 448,
+      "w": 250,
+      "h": 130,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "LFO transfer\npump unit\nPAF 902",
+      "locked": true
+    },
+    {
+      "id": "s83",
+      "type": "text",
+      "x": 438,
+      "y": 454,
+      "w": 190,
+      "h": 39,
+      "props": {
+        "text": "LFO transfer\npump unit\nPAF 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s84",
+      "type": "button",
+      "x": 436,
+      "y": 500,
+      "w": 108,
+      "h": 20,
+      "props": {
+        "text": "Select for main"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#8a929b",
+        "fontSize": 10,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s85",
+      "type": "text",
+      "x": 548,
+      "y": 500,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "Main pump"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s86",
+      "type": "pump",
+      "x": 452,
+      "y": 508,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "COMMON_PAF902_PUMP"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      },
+      "name": "Transfer pump PAF902"
+    },
+    {
+      "id": "s87",
+      "type": "text",
+      "x": 438,
+      "y": 504,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "P"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s88",
+      "type": "rect",
+      "x": 436,
+      "y": 520,
+      "w": 14,
+      "h": 14,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#2c6ea0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s89",
+      "type": "valve",
+      "x": 484,
+      "y": 514,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PAF902_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s90",
+      "type": "readout",
+      "x": 506,
+      "y": 504,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_MAIN_PUMP_A"
+      },
+      "props": {
+        "text": "0.0 A",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s91",
+      "type": "pipe",
+      "x": 354,
+      "y": 370.5,
+      "w": 98,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s92",
+      "type": "pipe",
+      "x": 354,
+      "y": 518.5,
+      "w": 98,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s93",
+      "type": "pipe",
+      "x": 582,
+      "y": 370.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s94",
+      "type": "pipe",
+      "x": 582,
+      "y": 518.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s95",
+      "type": "pipe",
+      "x": 620.5,
+      "y": 372,
+      "w": 3,
+      "h": 148,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s96",
+      "type": "pipe",
+      "x": 622,
+      "y": 370.5,
+      "w": 60,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s97",
+      "type": "readout",
+      "x": 690,
+      "y": 356,
+      "w": 86,
+      "h": 22,
+      "bind": {
+        "value": "COMMON_TRANSFER_PRESS"
+      },
+      "props": {
+        "text": "0.2 bar",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s98",
+      "type": "pipe",
+      "x": 776,
+      "y": 370.5,
+      "w": 44,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s99",
+      "type": "rect",
+      "x": 830,
+      "y": 60,
+      "w": 330,
+      "h": 560,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Daily tank area 01",
+      "locked": true
+    },
+    {
+      "id": "s100",
+      "type": "text",
+      "x": 838,
+      "y": 66,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Daily tank area 01"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s101",
+      "type": "text",
+      "x": 1070,
+      "y": 66,
+      "w": 84,
+      "h": 13,
+      "props": {
+        "text": "PBF 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s102",
+      "type": "rect",
+      "x": 980,
+      "y": 110,
+      "w": 96,
+      "h": 118,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "PBF 901"
+    },
+    {
+      "id": "s103",
+      "type": "readout",
+      "x": 986,
+      "y": 124,
+      "w": 58,
+      "h": 18,
+      "bind": {
+        "value": "PBF901_LEVEL"
+      },
+      "props": {
+        "text": "78 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s104",
+      "type": "readout",
+      "x": 986,
+      "y": 144,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF901_T1"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s105",
+      "type": "readout",
+      "x": 986,
+      "y": 163,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF901_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s106",
+      "type": "text",
+      "x": 986,
+      "y": 210,
+      "w": 58,
+      "h": 13,
+      "props": {
+        "text": "25 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s107",
+      "type": "led",
+      "x": 1062,
+      "y": 120,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF901_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s108",
+      "type": "led",
+      "x": 1062,
+      "y": 202,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF901_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s109",
+      "type": "text",
+      "x": 980,
+      "y": 232,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "LFO day tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s110",
+      "type": "text",
+      "x": 980,
+      "y": 242,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "PBF 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s111",
+      "type": "text",
+      "x": 906,
+      "y": 134,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s112",
+      "type": "valve",
+      "x": 896,
+      "y": 148,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF901_FILL_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s113",
+      "type": "pipe",
+      "x": 854,
+      "y": 152.5,
+      "w": 42,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s114",
+      "type": "pipe",
+      "x": 911,
+      "y": 152.5,
+      "w": 69,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s115",
+      "type": "pipe",
+      "x": 1076,
+      "y": 168.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s116",
+      "type": "text",
+      "x": 1130,
+      "y": 150,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s117",
+      "type": "valve",
+      "x": 1126,
+      "y": 164,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF901_OUT_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s118",
+      "type": "rect",
+      "x": 980,
+      "y": 285,
+      "w": 96,
+      "h": 118,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "PBF 902"
+    },
+    {
+      "id": "s119",
+      "type": "readout",
+      "x": 986,
+      "y": 299,
+      "w": 58,
+      "h": 18,
+      "bind": {
+        "value": "PBF902_LEVEL"
+      },
+      "props": {
+        "text": "80 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s120",
+      "type": "readout",
+      "x": 986,
+      "y": 319,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF902_T1"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s121",
+      "type": "readout",
+      "x": 986,
+      "y": 338,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF902_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s122",
+      "type": "text",
+      "x": 986,
+      "y": 385,
+      "w": 58,
+      "h": 13,
+      "props": {
+        "text": "25 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s123",
+      "type": "led",
+      "x": 1062,
+      "y": 295,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF902_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s124",
+      "type": "led",
+      "x": 1062,
+      "y": 377,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF902_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s125",
+      "type": "text",
+      "x": 980,
+      "y": 407,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "LFO day tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s126",
+      "type": "text",
+      "x": 980,
+      "y": 417,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "PBF 902"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s127",
+      "type": "text",
+      "x": 906,
+      "y": 309,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s128",
+      "type": "valve",
+      "x": 896,
+      "y": 323,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF902_FILL_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s129",
+      "type": "pipe",
+      "x": 854,
+      "y": 327.5,
+      "w": 42,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s130",
+      "type": "pipe",
+      "x": 911,
+      "y": 327.5,
+      "w": 69,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s131",
+      "type": "pipe",
+      "x": 1076,
+      "y": 343.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s132",
+      "type": "text",
+      "x": 1130,
+      "y": 325,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s133",
+      "type": "valve",
+      "x": 1126,
+      "y": 339,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF902_OUT_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s134",
+      "type": "rect",
+      "x": 980,
+      "y": 460,
+      "w": 96,
+      "h": 118,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "PBF 903"
+    },
+    {
+      "id": "s135",
+      "type": "readout",
+      "x": 986,
+      "y": 474,
+      "w": 58,
+      "h": 18,
+      "bind": {
+        "value": "PBF903_LEVEL"
+      },
+      "props": {
+        "text": "60 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s136",
+      "type": "readout",
+      "x": 986,
+      "y": 494,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF903_T1"
+      },
+      "props": {
+        "text": "32 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s137",
+      "type": "readout",
+      "x": 986,
+      "y": 513,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF903_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s138",
+      "type": "text",
+      "x": 986,
+      "y": 560,
+      "w": 58,
+      "h": 13,
+      "props": {
+        "text": "25 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s139",
+      "type": "led",
+      "x": 1062,
+      "y": 470,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF903_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s140",
+      "type": "led",
+      "x": 1062,
+      "y": 552,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF903_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s141",
+      "type": "text",
+      "x": 980,
+      "y": 582,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "LFO day tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s142",
+      "type": "text",
+      "x": 980,
+      "y": 592,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "PBF 903"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s143",
+      "type": "text",
+      "x": 906,
+      "y": 484,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s144",
+      "type": "valve",
+      "x": 896,
+      "y": 498,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF903_FILL_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s145",
+      "type": "pipe",
+      "x": 854,
+      "y": 502.5,
+      "w": 42,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s146",
+      "type": "pipe",
+      "x": 911,
+      "y": 502.5,
+      "w": 69,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s147",
+      "type": "pipe",
+      "x": 1076,
+      "y": 518.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s148",
+      "type": "text",
+      "x": 1130,
+      "y": 500,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s149",
+      "type": "valve",
+      "x": 1126,
+      "y": 514,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF903_OUT_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s150",
+      "type": "pipe",
+      "x": 852.5,
+      "y": 154,
+      "w": 3,
+      "h": 350,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s151",
+      "type": "pipe",
+      "x": 1131.5,
+      "y": 170,
+      "w": 3,
+      "h": 350,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s152",
+      "type": "rect",
+      "x": 1180,
+      "y": 60,
+      "w": 330,
+      "h": 560,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Daily tank area 02",
+      "locked": true
+    },
+    {
+      "id": "s153",
+      "type": "text",
+      "x": 1188,
+      "y": 66,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Daily tank area 02"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s154",
+      "type": "text",
+      "x": 1420,
+      "y": 66,
+      "w": 84,
+      "h": 13,
+      "props": {
+        "text": "PBF 904"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s155",
+      "type": "rect",
+      "x": 1330,
+      "y": 110,
+      "w": 96,
+      "h": 118,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "PBF 904"
+    },
+    {
+      "id": "s156",
+      "type": "readout",
+      "x": 1336,
+      "y": 124,
+      "w": 58,
+      "h": 18,
+      "bind": {
+        "value": "PBF904_LEVEL"
+      },
+      "props": {
+        "text": "61 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s157",
+      "type": "readout",
+      "x": 1336,
+      "y": 144,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF904_T1"
+      },
+      "props": {
+        "text": "33 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s158",
+      "type": "readout",
+      "x": 1336,
+      "y": 163,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF904_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s159",
+      "type": "text",
+      "x": 1336,
+      "y": 210,
+      "w": 58,
+      "h": 13,
+      "props": {
+        "text": "25 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s160",
+      "type": "led",
+      "x": 1412,
+      "y": 120,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF904_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s161",
+      "type": "led",
+      "x": 1412,
+      "y": 202,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF904_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s162",
+      "type": "text",
+      "x": 1330,
+      "y": 232,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "LFO day tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s163",
+      "type": "text",
+      "x": 1330,
+      "y": 242,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "PBF 904"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s164",
+      "type": "text",
+      "x": 1256,
+      "y": 134,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s165",
+      "type": "valve",
+      "x": 1246,
+      "y": 148,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF904_FILL_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s166",
+      "type": "pipe",
+      "x": 1204,
+      "y": 152.5,
+      "w": 42,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s167",
+      "type": "pipe",
+      "x": 1261,
+      "y": 152.5,
+      "w": 69,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s168",
+      "type": "pipe",
+      "x": 1426,
+      "y": 168.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s169",
+      "type": "text",
+      "x": 1480,
+      "y": 150,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s170",
+      "type": "valve",
+      "x": 1476,
+      "y": 164,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF904_OUT_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s171",
+      "type": "rect",
+      "x": 1330,
+      "y": 285,
+      "w": 96,
+      "h": 118,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "PBF 905"
+    },
+    {
+      "id": "s172",
+      "type": "readout",
+      "x": 1336,
+      "y": 299,
+      "w": 58,
+      "h": 18,
+      "bind": {
+        "value": "PBF905_LEVEL"
+      },
+      "props": {
+        "text": "78 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s173",
+      "type": "readout",
+      "x": 1336,
+      "y": 319,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF905_T1"
+      },
+      "props": {
+        "text": "31 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s174",
+      "type": "readout",
+      "x": 1336,
+      "y": 338,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF905_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s175",
+      "type": "text",
+      "x": 1336,
+      "y": 385,
+      "w": 58,
+      "h": 13,
+      "props": {
+        "text": "25 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s176",
+      "type": "led",
+      "x": 1412,
+      "y": 295,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF905_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s177",
+      "type": "led",
+      "x": 1412,
+      "y": 377,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF905_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s178",
+      "type": "text",
+      "x": 1330,
+      "y": 407,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "LFO day tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s179",
+      "type": "text",
+      "x": 1330,
+      "y": 417,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "PBF 905"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s180",
+      "type": "text",
+      "x": 1256,
+      "y": 309,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s181",
+      "type": "valve",
+      "x": 1246,
+      "y": 323,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF905_FILL_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s182",
+      "type": "pipe",
+      "x": 1204,
+      "y": 327.5,
+      "w": 42,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s183",
+      "type": "pipe",
+      "x": 1261,
+      "y": 327.5,
+      "w": 69,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s184",
+      "type": "pipe",
+      "x": 1426,
+      "y": 343.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s185",
+      "type": "text",
+      "x": 1480,
+      "y": 325,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s186",
+      "type": "valve",
+      "x": 1476,
+      "y": 339,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF905_OUT_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s187",
+      "type": "rect",
+      "x": 1330,
+      "y": 460,
+      "w": 96,
+      "h": 118,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "PBF 906"
+    },
+    {
+      "id": "s188",
+      "type": "readout",
+      "x": 1336,
+      "y": 474,
+      "w": 58,
+      "h": 18,
+      "bind": {
+        "value": "PBF906_LEVEL"
+      },
+      "props": {
+        "text": "80 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s189",
+      "type": "readout",
+      "x": 1336,
+      "y": 494,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF906_T1"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s190",
+      "type": "readout",
+      "x": 1336,
+      "y": 513,
+      "w": 58,
+      "h": 17,
+      "bind": {
+        "value": "COMMON_PBF906_T2"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s191",
+      "type": "text",
+      "x": 1336,
+      "y": 560,
+      "w": 58,
+      "h": 13,
+      "props": {
+        "text": "25 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s192",
+      "type": "led",
+      "x": 1412,
+      "y": 470,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF906_LSH"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s193",
+      "type": "led",
+      "x": 1412,
+      "y": 552,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PBF906_LSL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s194",
+      "type": "text",
+      "x": 1330,
+      "y": 582,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "LFO day tank"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s195",
+      "type": "text",
+      "x": 1330,
+      "y": 592,
+      "w": 120,
+      "h": 13,
+      "props": {
+        "text": "PBF 906"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s196",
+      "type": "text",
+      "x": 1256,
+      "y": 484,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s197",
+      "type": "valve",
+      "x": 1246,
+      "y": 498,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF906_FILL_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s198",
+      "type": "pipe",
+      "x": 1204,
+      "y": 502.5,
+      "w": 42,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s199",
+      "type": "pipe",
+      "x": 1261,
+      "y": 502.5,
+      "w": 69,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s200",
+      "type": "pipe",
+      "x": 1426,
+      "y": 518.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s201",
+      "type": "text",
+      "x": 1480,
+      "y": 500,
+      "w": 14,
+      "h": 13,
+      "props": {
+        "text": "A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s202",
+      "type": "valve",
+      "x": 1476,
+      "y": 514,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PBF906_OUT_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s203",
+      "type": "pipe",
+      "x": 1202.5,
+      "y": 154,
+      "w": 3,
+      "h": 350,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s204",
+      "type": "pipe",
+      "x": 1481.5,
+      "y": 170,
+      "w": 3,
+      "h": 350,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s205",
+      "type": "pipe",
+      "x": 820,
+      "y": 152.5,
+      "w": 34,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s206",
+      "type": "pipe",
+      "x": 818.5,
+      "y": 154,
+      "w": 3,
+      "h": 218,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s207",
+      "type": "rect",
+      "x": 600,
+      "y": 650,
+      "w": 700,
+      "h": 175,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Feeder unit\nPCA901",
+      "locked": true
+    },
+    {
+      "id": "s208",
+      "type": "text",
+      "x": 608,
+      "y": 656,
+      "w": 190,
+      "h": 26,
+      "props": {
+        "text": "Feeder unit\nPCA901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 10,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s209",
+      "type": "led",
+      "x": 612,
+      "y": 700,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_PCA901_CTRL_VOLTAGE"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#2fa84f",
+        "stroke": "#1c6b32",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s210",
+      "type": "text",
+      "x": 630,
+      "y": 700,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Control voltage"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s211",
+      "type": "rect",
+      "x": 770,
+      "y": 692,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s212",
+      "type": "text",
+      "x": 790,
+      "y": 692,
+      "w": 160,
+      "h": 13,
+      "props": {
+        "text": "Slow start ctrl. active"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s213",
+      "type": "readout",
+      "x": 760,
+      "y": 716,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_PCA901_SPEED_PCT"
+      },
+      "props": {
+        "text": "50 %",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s214",
+      "type": "button",
+      "x": 1150,
+      "y": 654,
+      "w": 130,
+      "h": 30,
+      "props": {
+        "text": "Shift+2\nLFO feeder control"
+      },
+      "style": {
+        "fill": "#e4e7ea",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#1d242b",
+        "fontSize": 9,
+        "radius": 0
+      }
+    },
+    {
+      "id": "s215",
+      "type": "valve",
+      "x": 612,
+      "y": 741,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PCA901_P1_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s216",
+      "type": "rect",
+      "x": 660,
+      "y": 739,
+      "w": 16,
+      "h": 14,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#2c6ea0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s217",
+      "type": "rect",
+      "x": 806,
+      "y": 734,
+      "w": 24,
+      "h": 24,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s218",
+      "type": "text",
+      "x": 808,
+      "y": 738,
+      "w": 20,
+      "h": 13,
+      "props": {
+        "text": "≈"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s219",
+      "type": "text",
+      "x": 846,
+      "y": 724,
+      "w": 34,
+      "h": 13,
+      "props": {
+        "text": "Auto"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s220",
+      "type": "pump",
+      "x": 846,
+      "y": 734,
+      "w": 24,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_PCA901_P1"
+      },
+      "props": {
+        "running": true
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#2fa84f",
+        "strokeWidth": 2
+      },
+      "name": "Feeder pump 1"
+    },
+    {
+      "id": "s221",
+      "type": "text",
+      "x": 870,
+      "y": 750,
+      "w": 10,
+      "h": 13,
+      "props": {
+        "text": "1"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s222",
+      "type": "rect",
+      "x": 890,
+      "y": 738,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s223",
+      "type": "text",
+      "x": 908,
+      "y": 738,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "Motor heating"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s224",
+      "type": "readout",
+      "x": 1010,
+      "y": 736,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "PCA901_PRESS"
+      },
+      "props": {
+        "text": "4.6 bar",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s225",
+      "type": "pipe",
+      "x": 600,
+      "y": 744.5,
+      "w": 12,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s226",
+      "type": "pipe",
+      "x": 627,
+      "y": 744.5,
+      "w": 33,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s227",
+      "type": "pipe",
+      "x": 676,
+      "y": 744.5,
+      "w": 130,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s228",
+      "type": "pipe",
+      "x": 830,
+      "y": 744.5,
+      "w": 16,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s229",
+      "type": "pipe",
+      "x": 868,
+      "y": 744.5,
+      "w": 142,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s230",
+      "type": "pipe",
+      "x": 1086,
+      "y": 744.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s231",
+      "type": "valve",
+      "x": 612,
+      "y": 801,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_PCA901_P2_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s232",
+      "type": "rect",
+      "x": 660,
+      "y": 799,
+      "w": 16,
+      "h": 14,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3f8fce",
+        "stroke": "#2c6ea0",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s233",
+      "type": "rect",
+      "x": 806,
+      "y": 794,
+      "w": 24,
+      "h": 24,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s234",
+      "type": "text",
+      "x": 808,
+      "y": 798,
+      "w": 20,
+      "h": 13,
+      "props": {
+        "text": "≈"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 11,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s235",
+      "type": "text",
+      "x": 846,
+      "y": 784,
+      "w": 34,
+      "h": 13,
+      "props": {
+        "text": "Auto"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s236",
+      "type": "pump",
+      "x": 846,
+      "y": 794,
+      "w": 24,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_PCA901_P2"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#2fa84f",
+        "strokeWidth": 2
+      },
+      "name": "Feeder pump 2"
+    },
+    {
+      "id": "s237",
+      "type": "text",
+      "x": 870,
+      "y": 810,
+      "w": 10,
+      "h": 13,
+      "props": {
+        "text": "2"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s238",
+      "type": "rect",
+      "x": 890,
+      "y": 798,
+      "w": 12,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s239",
+      "type": "text",
+      "x": 908,
+      "y": 798,
+      "w": 110,
+      "h": 13,
+      "props": {
+        "text": "Motor heating"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s240",
+      "type": "readout",
+      "x": 1010,
+      "y": 796,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "PCA901_PRESS"
+      },
+      "props": {
+        "text": "4.6 bar",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s241",
+      "type": "pipe",
+      "x": 600,
+      "y": 804.5,
+      "w": 12,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s242",
+      "type": "pipe",
+      "x": 627,
+      "y": 804.5,
+      "w": 33,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s243",
+      "type": "pipe",
+      "x": 676,
+      "y": 804.5,
+      "w": 130,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s244",
+      "type": "pipe",
+      "x": 830,
+      "y": 804.5,
+      "w": 16,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s245",
+      "type": "pipe",
+      "x": 868,
+      "y": 804.5,
+      "w": 142,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s246",
+      "type": "pipe",
+      "x": 1086,
+      "y": 804.5,
+      "w": 40,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s247",
+      "type": "pipe",
+      "x": 1124.5,
+      "y": 746,
+      "w": 3,
+      "h": 60,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s248",
+      "type": "readout",
+      "x": 1150,
+      "y": 704,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_PCA901_OUT_PRESS_A"
+      },
+      "props": {
+        "text": "4.5 bar",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s249",
+      "type": "readout",
+      "x": 1150,
+      "y": 726,
+      "w": 76,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_PCA901_OUT_PRESS_B"
+      },
+      "props": {
+        "text": "4.5 bar",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s250",
+      "type": "readout",
+      "x": 1236,
+      "y": 726,
+      "w": 96,
+      "h": 20,
+      "bind": {
+        "value": "COMMON_PCA901_FLOW"
+      },
+      "props": {
+        "text": "9.4 m3/h",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s251",
+      "type": "pipe",
+      "x": 1126,
+      "y": 744.5,
+      "w": 210,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s252",
+      "type": "text",
+      "x": 1344,
+      "y": 736,
+      "w": 170,
+      "h": 24,
+      "props": {
+        "text": "▶ LFO to genset\nbooster units"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s253",
+      "type": "pipe",
+      "x": 600,
+      "y": 688.5,
+      "w": 0,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s254",
+      "type": "pipe",
+      "x": 598.5,
+      "y": 620,
+      "w": 3,
+      "h": 126,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s255",
+      "type": "rect",
+      "x": 560,
+      "y": 856,
+      "w": 92,
+      "h": 52,
+      "props": {
+        "bevel": true
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Sludge tank DDB901"
+    },
+    {
+      "id": "s256",
+      "type": "readout",
+      "x": 566,
+      "y": 866,
+      "w": 62,
+      "h": 18,
+      "bind": {
+        "value": "COMMON_SLUDGE_TEMP"
+      },
+      "props": {
+        "text": "30 °C",
+        "unit": "",
+        "decimals": null
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s257",
+      "type": "text",
+      "x": 566,
+      "y": 890,
+      "w": 62,
+      "h": 13,
+      "props": {
+        "text": "3 m³"
+      },
+      "style": {
+        "color": "#f2f4f6",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s258",
+      "type": "led",
+      "x": 638,
+      "y": 862,
+      "w": 12,
+      "h": 12,
+      "bind": {
+        "value": "COMMON_SLUDGE_LEVEL"
+      },
+      "props": {
+        "shape": "circle",
+        "onColor": null,
+        "offColor": null
+      },
+      "style": {
+        "fill": "#e9ecef",
+        "stroke": "#5a6068",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "id": "s259",
+      "type": "text",
+      "x": 560,
+      "y": 912,
+      "w": 140,
+      "h": 22,
+      "props": {
+        "text": "Sludge tank\nDDB 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s260",
+      "type": "rect",
+      "x": 700,
+      "y": 846,
+      "w": 220,
+      "h": 76,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Sludge loading\npump unit\nDDD 901",
+      "locked": true
+    },
+    {
+      "id": "s261",
+      "type": "text",
+      "x": 708,
+      "y": 852,
+      "w": 190,
+      "h": 39,
+      "props": {
+        "text": "Sludge loading\npump unit\nDDD 901"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s262",
+      "type": "valve",
+      "x": 722,
+      "y": 897,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_SLUDGE_V1"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s263",
+      "type": "pump",
+      "x": 748,
+      "y": 888,
+      "w": 24,
+      "h": 24,
+      "bind": {
+        "value": "COMMON_SLUDGE_PUMP"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s264",
+      "type": "valve",
+      "x": 786,
+      "y": 897,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "COMMON_SLUDGE_V2"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s265",
+      "type": "pipe",
+      "x": 652,
+      "y": 900.5,
+      "w": 70,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s266",
+      "type": "pipe",
+      "x": 737,
+      "y": 900.5,
+      "w": 11,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s267",
+      "type": "pipe",
+      "x": 772,
+      "y": 900.5,
+      "w": 14,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s268",
+      "type": "pipe",
+      "x": 801,
+      "y": 900.5,
+      "w": 160,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s269",
+      "type": "text",
+      "x": 966,
+      "y": 894,
+      "w": 30,
+      "h": 13,
+      "props": {
+        "text": "⟩"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 12,
+        "bold": false,
+        "align": "left"
+      }
+    }
+  ]
+}
