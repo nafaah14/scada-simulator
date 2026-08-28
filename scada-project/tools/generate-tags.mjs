@@ -442,6 +442,136 @@ for (let n = 1; n <= 6; n++) {
   ]) digital(t, d, v, { unit: u, screens });
 }
 
+
+/* ---------------------------------------------------------------------
+   G1 auxiliary systems: lube oil, cooling water, exhaust / charge air.
+   ------------------------------------------------------------------ */
+{
+  const u = 'G1';
+
+  // -------- lube oil --------
+  const lube = ['G1.Lube'];
+  analog('G01_LUBE_PRESS', 'Lube oil pressure to engine', 'bar', 4.6, 'pressure', {
+    unit: u, screens: lube,
+    alarm_limits: { hihi: null, hi: null, lo: 3.5, lolo: 2.8 },
+    shutdown_limits: { hi: null, lo: 2.5 }
+  });
+  analog('G01_LUBE_TEMP', 'Lube oil temperature to engine', '\u00b0C', 63, 'temperature', {
+    unit: u, screens: lube,
+    alarm_limits: { hihi: null, hi: 78, lo: null, lolo: null },
+    shutdown_limits: { hi: 85, lo: null }
+  });
+  analog('G01_LUBE_FILTER_DP', 'Lube oil filter differential pressure', 'bar', 0.7,
+    'pressure', { unit: u, screens: lube,
+      alarm_limits: { hihi: null, hi: 1.5, lo: null, lolo: null } });
+  analog('G01_LUBE_TCA_PRESS', 'TC A lube oil pressure', 'bar', 1.8, 'pressure',
+    { unit: u, screens: lube, alarm_limits: { hihi: null, hi: null, lo: 1.2, lolo: 0.9 } });
+  analog('G01_LUBE_TCB_PRESS', 'TC B lube oil pressure', 'bar', 1.7, 'pressure',
+    { unit: u, screens: lube, alarm_limits: { hihi: null, hi: null, lo: 1.2, lolo: 0.9 } });
+  analog('G01_CRANKCASE_PRESS', 'Crankcase pressure', 'mbar', -0.2, 'pressure', {
+    unit: u, screens: lube,
+    alarm_limits: { hihi: 3, hi: 1, lo: null, lolo: null },
+    shutdown_limits: { hi: 5, lo: null }
+  });
+  for (const [t, d, v] of [
+    ['G01_LUBE_PUMP_MAIN', 'Main lube oil pump running', true],
+    ['G01_LUBE_PUMP_STBY', 'Standby lube oil pump running', false],
+    ['G01_LUBE_FILTER_V', 'Lube oil filter inlet valve', true],
+    ['G01_SEP_FEED_PUMP', 'Lube oil separator feed pump running', true],
+    ['G01_SEP_SLUDGE_PUMP', 'Separator sludge pump running', false],
+    ['G01_SEP_V1', 'Separator inlet valve', true],
+    ['G01_OIL_MIST_FAN', 'Oil mist separator fan running', true],
+    ['G01_MOBILE_PUMP_V', 'Mobile pump connection valve', false]
+  ]) digital(t, d, v, { unit: u, screens: lube });
+
+  // -------- cooling water --------
+  const cool = ['G1.Cooling'];
+  analog('G01_HT_TEMP', 'HT water temperature to engine', '\u00b0C', 90, 'temperature', {
+    unit: u, screens: cool,
+    alarm_limits: { hihi: null, hi: 96, lo: null, lolo: null },
+    shutdown_limits: { hi: 100, lo: null }
+  });
+  analog('G01_HT_PRESS', 'HT water pressure', 'bar', 3.8, 'pressure',
+    { unit: u, screens: cool, alarm_limits: { hihi: null, hi: null, lo: 2.0, lolo: 1.5 } });
+  analog('G01_LT_TEMP', 'LT water temperature to engine', '\u00b0C', 46, 'temperature', {
+    unit: u, screens: cool,
+    alarm_limits: { hihi: null, hi: 55, lo: null, lolo: null }
+  });
+  analog('G01_LT_PRESS', 'LT water pressure', 'bar', 3.9, 'pressure',
+    { unit: u, screens: cool, alarm_limits: { hihi: null, hi: null, lo: 2.0, lolo: 1.5 } });
+  analog('G01_HT_VALVE_POS', 'HT temperature control valve position', '%', 78, 'position',
+    { unit: u, screens: cool });
+  analog('G01_LT_VALVE_POS', 'LT temperature control valve position', '%', 25, 'position',
+    { unit: u, screens: cool });
+  analog('G01_HT_JACKET_TEMP', 'HT water jacket outlet temperature', '\u00b0C', 74,
+    'temperature', { unit: u, screens: cool });
+  analog('G01_HT_RETURN_TEMP', 'HT water return temperature', '\u00b0C', 82, 'temperature',
+    { unit: u, screens: cool });
+  analog('G01_LT_RETURN_TEMP', 'LT water return temperature', '\u00b0C', 59, 'temperature',
+    { unit: u, screens: cool });
+  analog('G01_LT_SUPPLY_TEMP', 'LT water supply from central cooler', '\u00b0C', 32,
+    'temperature', { unit: u, screens: cool });
+  analog('G01_HT_OUT_A', 'HT water outlet bank A', '\u00b0C', 96, 'temperature',
+    { unit: u, screens: cool, alarm_limits: { hihi: null, hi: 102, lo: null, lolo: null } });
+  analog('G01_HT_OUT_B', 'HT water outlet bank B', '\u00b0C', 96, 'temperature',
+    { unit: u, screens: cool, alarm_limits: { hihi: null, hi: 102, lo: null, lolo: null } });
+  analog('G01_SW_PRESS', 'Sea water pressure', 'bar', 3.0, 'pressure',
+    { unit: u, screens: cool, alarm_limits: { hihi: null, hi: null, lo: 1.5, lolo: 1.0 } });
+  analog('G01_SW_TEMP', 'Sea water inlet temperature', '\u00b0C', 30, 'temperature',
+    { unit: u, screens: cool });
+  analog('G01_MED_IN_TEMP', 'MED unit inlet temperature', '\u00b0C', 42, 'temperature',
+    { unit: u, screens: cool, alarm_limits: { hihi: 40, hi: 36, lo: null, lolo: null } });
+  analog('G01_MED_OUT_TEMP', 'MED unit outlet temperature', '\u00b0C', 38, 'temperature',
+    { unit: u, screens: cool });
+  for (let i = 1; i <= 2; i++) {
+    analog(`G01_AUX_FAN_${i}_A`, `Aux ventilation fan ${i} current`, 'A', 32, 'current',
+      { unit: u, screens: cool });
+    digital(`G01_AUX_FAN_${i}`, `Aux ventilation fan ${i} running`, true,
+      { unit: u, screens: cool });
+    digital(`G01_SW_PUMP_${i}`, `Sea water pump ${i} running`, i === 1,
+      { unit: u, screens: cool });
+    digital(`G01_SW_PUMP_${i}_STBY`, `Sea water pump ${i} standby running`, false,
+      { unit: u, screens: cool });
+  }
+  digital('G01_MAINT_WATER_LEVEL', 'Maintenance water tank level', false,
+    { unit: u, screens: cool });
+  digital('G01_EXP_VESSEL_LEVEL', 'Expansion vessel level', false,
+    { unit: u, screens: cool });
+  for (const [t, d, v] of [
+    ['G01_HT_PUMP', 'HT circulating pump running', true],
+    ['G01_LT_PUMP', 'LT circulating pump running', true],
+    ['G01_PREHEATER_PUMP', 'Preheater pump running', false],
+    ['G01_FO_COOLER_PUMP', 'Fuel oil cooler pump running', true],
+    ['G01_MAINT_WATER_PUMP', 'Maintenance water pump running', false],
+    ['G01_HT_TC_VALVE', 'HT temperature control valve open', true],
+    ['G01_LT_TC_VALVE', 'LT temperature control valve open', true],
+    ['G01_SW_V1', 'Sea water valve 1 open', true],
+    ['G01_SW_V2', 'Sea water valve 2 open', true]
+  ]) digital(t, d, v, { unit: u, screens: cool });
+
+  // -------- exhaust / charge air --------
+  const exh = ['G1.Exhaust'];
+  analog('G01_CHARGE_AIR_PRESS', 'Charge air receiver pressure', 'bar', 2.77, 'pressure',
+    { unit: u, screens: exh });
+  analog('G01_CHARGE_AIR_TEMP', 'Charge air receiver temperature', '\u00b0C', 57,
+    'temperature', {
+      unit: u, screens: exh,
+      alarm_limits: { hihi: null, hi: 75, lo: null, lolo: null }
+    });
+  analog('G01_AIR_INTAKE_TEMP', 'Air intake temperature after filter', '\u00b0C', 33,
+    'temperature', { unit: u, screens: exh });
+  for (const v of ['V001', 'V002', 'V003', 'V004', 'V005', 'V006']) {
+    digital(`G01_TCWASH_${v}`, `Turbocharger wash valve ${v}`, false,
+      { unit: u, screens: exh });
+  }
+
+  // -------- shared ambient --------
+  analog('COMMON_AMBIENT_TEMP', 'Ambient temperature', '\u00b0C', 30.2, 'temperature',
+    { unit: 'COMMON', screens: [...exh, ...cool] });
+  analog('COMMON_ABS_HUMIDITY', 'Absolute humidity', 'g/kg', 19.1, 'humidity',
+    { unit: 'COMMON', screens: [...exh, ...cool] });
+}
+
 const list = [...out.values()].sort((a, b) => a.tag_id.localeCompare(b.tag_id));
 writeFileSync(join(TAGS_DIR, 'tags.generated.json'), JSON.stringify(list, null, 2) + '\n');
 console.log(`wrote tags.generated.json — ${list.length} tags ` +

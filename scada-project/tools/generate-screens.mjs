@@ -17,6 +17,9 @@ import { fileURLToPath } from 'node:url';
 import { g1Temp } from './screens/g1-temp.mjs';
 import { g1Fuel } from './screens/g1-fuel.mjs';
 import { g1Control } from './screens/g1-control.mjs';
+import { g1Lube } from './screens/g1-lube.mjs';
+import { g1Cooling } from './screens/g1-cooling.mjs';
+import { g1Exhaust } from './screens/g1-exhaust.mjs';
 import { commonOverview } from './screens/common-overview.mjs';
 import { commonFuel } from './screens/common-fuel.mjs';
 import { commonStartAir } from './screens/common-startair.mjs';
@@ -31,7 +34,10 @@ const ALL = [
   commonStartAir(),
   g1Temp(),
   g1Fuel(),
-  g1Control()
+  g1Control(),
+  g1Lube(),
+  g1Cooling(),
+  g1Exhaust()
 ];
 
 const only = process.argv.slice(2);

@@ -32,12 +32,36 @@
     "elements": 260
   },
   {
+    "screen_id": "G1.Cooling",
+    "title": "G1 — Cooling water",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-cooling.json",
+    "elements": 157
+  },
+  {
+    "screen_id": "G1.Exhaust",
+    "title": "G1 — Exhaust gas",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-exhaust.json",
+    "elements": 126
+  },
+  {
     "screen_id": "G1.Fuel",
     "title": "G1 — Fuel",
     "unit": "G1",
     "layout": "canvas",
     "file": "g1-fuel.json",
     "elements": 106
+  },
+  {
+    "screen_id": "G1.Lube",
+    "title": "G1 — Lube oil",
+    "unit": "G1",
+    "layout": "canvas",
+    "file": "g1-lube.json",
+    "elements": 79
   },
   {
     "screen_id": "G1.Temp",

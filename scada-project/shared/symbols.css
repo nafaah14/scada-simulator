@@ -91,6 +91,8 @@
   line-height: 1.25;
 }
 
+.s-shape { width: 100%; height: 100%; display: block; overflow: visible; }
+
 /* ---- genset ---- */
 .s-enginesvg { width: 100%; height: 100%; display: block; overflow: visible; }
 

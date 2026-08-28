@@ -1,5 +1,59 @@
 [
   {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_ABS_HUMIDITY",
+    "logical_name": "COMMON_ABS_HUMIDITY",
+    "description": "Absolute humidity",
+    "engineering_unit": "g/kg",
+    "data_type": "analog",
+    "category": "humidity",
+    "value": 19.1,
+    "unit": "COMMON",
+    "screens": [
+      "G1.Exhaust",
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "COMMON_AMBIENT_TEMP",
+    "logical_name": "COMMON_AMBIENT_TEMP",
+    "description": "Ambient temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30.2,
+    "unit": "COMMON",
+    "screens": [
+      "G1.Exhaust",
+      "G1.Cooling"
+    ]
+  },
+  {
     "tag_id": "COMMON_BUSBAR1_FREQ",
     "logical_name": "COMMON_BUSBAR1_FREQUENCY",
     "unit": "COMMON",
@@ -3362,6 +3416,32 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_AIR_INTAKE_TEMP",
+    "logical_name": "G01_AIR_INTAKE_TEMP",
+    "description": "Air intake temperature after filter",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 33,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": false,
     "generated": true,
     "tag_id": "G01_ALARM_LOADREDUCE",
@@ -3452,6 +3532,110 @@
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_AUX_FAN_1",
+    "logical_name": "G01_AUX_FAN_1",
+    "description": "Aux ventilation fan 1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_AUX_FAN_1_A",
+    "logical_name": "G01_AUX_FAN_1_A",
+    "description": "Aux ventilation fan 1 current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 32,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_AUX_FAN_2",
+    "logical_name": "G01_AUX_FAN_2",
+    "description": "Aux ventilation fan 2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_AUX_FAN_2_A",
+    "logical_name": "G01_AUX_FAN_2_A",
+    "description": "Aux ventilation fan 2 current",
+    "engineering_unit": "A",
+    "data_type": "analog",
+    "category": "current",
+    "value": 32,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
     ]
   },
   {
@@ -3837,6 +4021,58 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CHARGE_AIR_PRESS",
+    "logical_name": "G01_CHARGE_AIR_PRESS",
+    "description": "Charge air receiver pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 2.77,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 75,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CHARGE_AIR_TEMP",
+    "logical_name": "G01_CHARGE_AIR_TEMP",
+    "description": "Charge air receiver temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 57,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": false,
     "generated": true,
     "tag_id": "G01_CIRC_PUMP1",
@@ -4036,6 +4272,32 @@
   {
     "sensor_fault": false,
     "alarm_limits": {
+      "hihi": 3,
+      "hi": 1,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": 5,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_CRANKCASE_PRESS",
+    "logical_name": "G01_CRANKCASE_PRESS",
+    "description": "Crankcase pressure",
+    "engineering_unit": "mbar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": -0.2,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
       "hihi": null,
       "hi": null,
       "lo": null,
@@ -4157,7 +4419,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4183,7 +4445,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4209,7 +4471,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4235,7 +4497,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4261,7 +4523,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4313,7 +4575,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4339,7 +4601,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4365,7 +4627,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4417,7 +4679,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 405,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4443,7 +4705,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 408,
+    "value": 414,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4469,7 +4731,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 396,
+    "value": 414,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4495,7 +4757,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 409,
+    "value": 398,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4521,7 +4783,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 408,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4547,7 +4809,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 408,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4573,7 +4835,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 398,
+    "value": 407,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4599,7 +4861,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 402,
+    "value": 414,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4625,7 +4887,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 412,
+    "value": 411,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4651,7 +4913,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 395,
+    "value": 415,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4677,7 +4939,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4703,7 +4965,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4729,7 +4991,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4755,7 +5017,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4781,7 +5043,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4807,7 +5069,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4833,7 +5095,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4859,7 +5121,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4885,7 +5147,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4911,7 +5173,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4937,7 +5199,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4963,7 +5225,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5015,7 +5277,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 109,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5041,7 +5303,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 108,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5067,7 +5329,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5093,7 +5355,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5119,7 +5381,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5145,7 +5407,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5197,7 +5459,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 78,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5223,7 +5485,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 85,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5275,7 +5537,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5327,7 +5589,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5353,7 +5615,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 78,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5379,7 +5641,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 79,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5405,7 +5667,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5431,7 +5693,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 86,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5483,7 +5745,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 413,
+    "value": 397,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5509,7 +5771,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 414,
+    "value": 406,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5535,7 +5797,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 404,
+    "value": 406,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5561,7 +5823,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 407,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5587,7 +5849,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 414,
+    "value": 396,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5613,7 +5875,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 412,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5639,7 +5901,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 396,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5665,7 +5927,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 406,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5691,7 +5953,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 405,
+    "value": 401,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5717,7 +5979,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5743,7 +6005,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5769,7 +6031,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5795,7 +6057,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5821,7 +6083,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5847,7 +6109,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5873,7 +6135,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5899,7 +6161,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 120,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5925,7 +6187,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 118,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5951,7 +6213,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6003,7 +6265,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6029,7 +6291,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6055,7 +6317,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6081,7 +6343,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6107,7 +6369,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6159,7 +6421,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 113,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6185,7 +6447,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6211,7 +6473,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 109,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6399,6 +6661,58 @@
       "G1.Temp"
     ],
     "note": "Computed — mean of all 20 cylinder exhaust temps."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_EXP_VESSEL_LEVEL",
+    "logical_name": "G01_EXP_VESSEL_LEVEL",
+    "description": "Expansion vessel level",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_FO_COOLER_PUMP",
+    "logical_name": "G01_FO_COOLER_PUMP",
+    "description": "Fuel oil cooler pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
   },
   {
     "sensor_fault": false,
@@ -6620,6 +6934,240 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_JACKET_TEMP",
+    "logical_name": "G01_HT_JACKET_TEMP",
+    "description": "HT water jacket outlet temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 74,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 102,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_OUT_A",
+    "logical_name": "G01_HT_OUT_A",
+    "description": "HT water outlet bank A",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 96,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 102,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_OUT_B",
+    "logical_name": "G01_HT_OUT_B",
+    "description": "HT water outlet bank B",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 96,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 2,
+      "lolo": 1.5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_PRESS",
+    "logical_name": "G01_HT_PRESS",
+    "description": "HT water pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 3.8,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_HT_PUMP",
+    "logical_name": "G01_HT_PUMP",
+    "description": "HT circulating pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_RETURN_TEMP",
+    "logical_name": "G01_HT_RETURN_TEMP",
+    "description": "HT water return temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 82,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_HT_TC_VALVE",
+    "logical_name": "G01_HT_TC_VALVE",
+    "description": "HT temperature control valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 96,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": 100,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_TEMP",
+    "logical_name": "G01_HT_TEMP",
+    "description": "HT water temperature to engine",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 90,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_HT_VALVE_POS",
+    "logical_name": "G01_HT_VALVE_POS",
+    "description": "HT temperature control valve position",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "position",
+    "value": 78,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": false,
     "generated": true,
     "tag_id": "G01_INLET_PRESS_SENSOR",
@@ -6717,6 +7265,32 @@
     "alarm_limits": {
       "hihi": null,
       "hi": null,
+      "lo": 2,
+      "lolo": 1.5
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LT_PRESS",
+    "logical_name": "G01_LT_PRESS",
+    "description": "LT water pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 3.9,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
       "lo": null,
       "lolo": null
     },
@@ -6742,6 +7316,344 @@
     "sensor_fault": false,
     "alarm_limits": {
       "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LT_RETURN_TEMP",
+    "logical_name": "G01_LT_RETURN_TEMP",
+    "description": "LT water return temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 59,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LT_SUPPLY_TEMP",
+    "logical_name": "G01_LT_SUPPLY_TEMP",
+    "description": "LT water supply from central cooler",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 32,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_LT_TC_VALVE",
+    "logical_name": "G01_LT_TC_VALVE",
+    "description": "LT temperature control valve open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 55,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LT_TEMP",
+    "logical_name": "G01_LT_TEMP",
+    "description": "LT water temperature to engine",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 46,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LT_VALVE_POS",
+    "logical_name": "G01_LT_VALVE_POS",
+    "description": "LT temperature control valve position",
+    "engineering_unit": "%",
+    "data_type": "analog",
+    "category": "position",
+    "value": 25,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 1.5,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LUBE_FILTER_DP",
+    "logical_name": "G01_LUBE_FILTER_DP",
+    "description": "Lube oil filter differential pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 0.7,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_LUBE_FILTER_V",
+    "logical_name": "G01_LUBE_FILTER_V",
+    "description": "Lube oil filter inlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 3.5,
+      "lolo": 2.8
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": 2.5
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LUBE_PRESS",
+    "logical_name": "G01_LUBE_PRESS",
+    "description": "Lube oil pressure to engine",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 4.6,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_LUBE_PUMP_MAIN",
+    "logical_name": "G01_LUBE_PUMP_MAIN",
+    "description": "Main lube oil pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_LUBE_PUMP_STBY",
+    "logical_name": "G01_LUBE_PUMP_STBY",
+    "description": "Standby lube oil pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 1.2,
+      "lolo": 0.9
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LUBE_TCA_PRESS",
+    "logical_name": "G01_LUBE_TCA_PRESS",
+    "description": "TC A lube oil pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 1.8,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 1.2,
+      "lolo": 0.9
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LUBE_TCB_PRESS",
+    "logical_name": "G01_LUBE_TCB_PRESS",
+    "description": "TC B lube oil pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 1.7,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": 78,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": 85,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_LUBE_TEMP",
+    "logical_name": "G01_LUBE_TEMP",
+    "description": "Lube oil temperature to engine",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 63,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
       "hi": 95,
       "lo": null,
       "lolo": null
@@ -6758,7 +7670,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6784,7 +7696,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6810,7 +7722,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 88,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6836,7 +7748,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6914,7 +7826,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 90,
+    "value": 94,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6940,7 +7852,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 91,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6966,7 +7878,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 88,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6992,7 +7904,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 88,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -7018,10 +7930,62 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MAINT_WATER_LEVEL",
+    "logical_name": "G01_MAINT_WATER_LEVEL",
+    "description": "Maintenance water tank level",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_MAINT_WATER_PUMP",
+    "logical_name": "G01_MAINT_WATER_PUMP",
+    "description": "Maintenance water pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
     ]
   },
   {
@@ -7049,6 +8013,58 @@
       "G1.Control"
     ],
     "trend_enabled": false
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": 40,
+      "hi": 36,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_MED_IN_TEMP",
+    "logical_name": "G01_MED_IN_TEMP",
+    "description": "MED unit inlet temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 42,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_MED_OUT_TEMP",
+    "logical_name": "G01_MED_OUT_TEMP",
+    "description": "MED unit outlet temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 38,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
   },
   {
     "sensor_fault": false,
@@ -7687,6 +8703,32 @@
     },
     "trend_enabled": false,
     "generated": true,
+    "tag_id": "G01_MOBILE_PUMP_V",
+    "logical_name": "G01_MOBILE_PUMP_V",
+    "description": "Mobile pump connection valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
     "tag_id": "G01_MOUNT_L1",
     "logical_name": "G01_MOUNT_L1",
     "description": "Engine mount level switch 1",
@@ -7723,6 +8765,32 @@
     "unit": "G1",
     "screens": [
       "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_OIL_MIST_FAN",
+    "logical_name": "G01_OIL_MIST_FAN",
+    "description": "Oil mist separator fan running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
     ]
   },
   {
@@ -7827,6 +8895,32 @@
     "unit": "G1",
     "screens": [
       "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_PREHEATER_PUMP",
+    "logical_name": "G01_PREHEATER_PUMP",
+    "description": "Preheater pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
     ]
   },
   {
@@ -8036,6 +9130,84 @@
       "G1.Control"
     ],
     "trend_enabled": false
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SEP_FEED_PUMP",
+    "logical_name": "G01_SEP_FEED_PUMP",
+    "description": "Lube oil separator feed pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SEP_SLUDGE_PUMP",
+    "logical_name": "G01_SEP_SLUDGE_PUMP",
+    "description": "Separator sludge pump running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SEP_V1",
+    "logical_name": "G01_SEP_V1",
+    "description": "Separator inlet valve",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Lube"
+    ]
   },
   {
     "sensor_fault": false,
@@ -8698,6 +9870,214 @@
   {
     "sensor_fault": false,
     "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": 1.5,
+      "lolo": 1
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_SW_PRESS",
+    "logical_name": "G01_SW_PRESS",
+    "description": "Sea water pressure",
+    "engineering_unit": "bar",
+    "data_type": "analog",
+    "category": "pressure",
+    "value": 3,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SW_PUMP_1",
+    "logical_name": "G01_SW_PUMP_1",
+    "description": "Sea water pump 1 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SW_PUMP_1_STBY",
+    "logical_name": "G01_SW_PUMP_1_STBY",
+    "description": "Sea water pump 1 standby running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SW_PUMP_2",
+    "logical_name": "G01_SW_PUMP_2",
+    "description": "Sea water pump 2 running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SW_PUMP_2_STBY",
+    "logical_name": "G01_SW_PUMP_2_STBY",
+    "description": "Sea water pump 2 standby running",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": true,
+    "generated": true,
+    "tag_id": "G01_SW_TEMP",
+    "logical_name": "G01_SW_TEMP",
+    "description": "Sea water inlet temperature",
+    "engineering_unit": "°C",
+    "data_type": "analog",
+    "category": "temperature",
+    "value": 30,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SW_V1",
+    "logical_name": "G01_SW_V1",
+    "description": "Sea water valve 1 open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_SW_V2",
+    "logical_name": "G01_SW_V2",
+    "description": "Sea water valve 2 open",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": true,
+    "unit": "G1",
+    "screens": [
+      "G1.Cooling"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
       "hihi": 580,
       "hi": 540,
       "lo": null,
@@ -8850,6 +10230,162 @@
     ],
     "trend_enabled": true,
     "note": "Pattern repeats for TC A: G01_TCA_SPEED. Exhaust temps: G01_TCB_EXH_IN/OUT, G01_TCA_EXH_IN/OUT."
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_TCWASH_V001",
+    "logical_name": "G01_TCWASH_V001",
+    "description": "Turbocharger wash valve V001",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_TCWASH_V002",
+    "logical_name": "G01_TCWASH_V002",
+    "description": "Turbocharger wash valve V002",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_TCWASH_V003",
+    "logical_name": "G01_TCWASH_V003",
+    "description": "Turbocharger wash valve V003",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_TCWASH_V004",
+    "logical_name": "G01_TCWASH_V004",
+    "description": "Turbocharger wash valve V004",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_TCWASH_V005",
+    "logical_name": "G01_TCWASH_V005",
+    "description": "Turbocharger wash valve V005",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G01_TCWASH_V006",
+    "logical_name": "G01_TCWASH_V006",
+    "description": "Turbocharger wash valve V006",
+    "engineering_unit": null,
+    "data_type": "digital",
+    "category": "status",
+    "value": false,
+    "unit": "G1",
+    "screens": [
+      "G1.Exhaust"
+    ]
   },
   {
     "sensor_fault": false,

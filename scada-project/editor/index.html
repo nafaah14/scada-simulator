@@ -653,6 +653,16 @@ function buildField(el, f){
     case 'plate':       return field('Plate / tag no.', textInput(p.plate||'', set(p,'plate')));
     case 'switches':    return checkbox('Level switches', p.switches !== false, set(p,'switches'));
     case 'rows':        return rowsEditor(el, p);
+    case 'kind':        return field('Shape', selectInput(
+                          [['exchanger','Heat exchanger'],['filter','Filter'],
+                           ['diamond','Diamond'],['circle','Circle'],
+                           ['triangle-up','Triangle ▲'],['triangle-down','Triangle ▼'],
+                           ['triangle-right','Triangle ▶'],['triangle-left','Triangle ◀']],
+                          p.kind||'exchanger', set(p,'kind')));
+    case 'arrowDir':    return field('Direction', selectInput(
+                          [['right','▶ right'],['left','◀ left'],
+                           ['up','▲ up'],['down','▼ down']],
+                          p.dir||'right', set(p,'dir')));
     case 'running':     return checkbox('Running', !!p.running, set(p,'running'));
     case 'open':        return checkbox('Open', !!p.open, set(p,'open'));
     case 'closed':      return checkbox('Closed', !!p.closed, set(p,'closed'));

@@ -66,6 +66,25 @@ export function builder() {
       style: { stroke: opt.color ?? '#ffffff', strokeWidth: opt.t ?? 1 }
     }),
 
+    /* Process equipment outline: exchanger | filter | diamond | circle |
+       triangle-up | triangle-down | triangle-left | triangle-right */
+    shape: (x, y, w, h, kind, opt = {}) => push({
+      type: 'shape', x, y, w, h,
+      props: { kind },
+      style: {
+        fill: opt.fill ?? '#c9ced3', stroke: opt.stroke ?? '#3d4349',
+        strokeWidth: opt.strokeWidth ?? 1
+      },
+      ...(opt.name ? { name: opt.name } : {})
+    }),
+
+    /* Flow-direction marker sitting on a pipe run. */
+    arrow: (x, y, dir, opt = {}) => push({
+      type: 'arrow', x, y, w: opt.w ?? 11, h: opt.h ?? 11,
+      props: { dir },
+      style: { fill: opt.color ?? '#8a2f2f' }
+    }),
+
     /* ---- symbols ---- */
     ro: (x, y, w, h, text, tag, opt = {}) => push({
       type: 'readout', x, y, w, h,
@@ -198,7 +217,11 @@ export const C = {
   equipmentDark: '#8d959e',
   field: '#f6f8f9',
   fuel: '#8a2f2f',      // fuel oil piping
+  lube: '#8a2f2f',      // lube oil piping
   air: '#3050a0',       // compressed air piping
+  charge: '#0000c8',    // charge air
+  exhaust: '#f2e200',   // exhaust gas
+  cool: '#00a000',      // cooling water (HT / LT)
   water: '#2f7fb0',
   green: '#2fa84f',
   red: '#e5484d',

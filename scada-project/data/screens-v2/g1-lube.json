@@ -1,0 +1,1298 @@
+{
+  "screen_id": "G1.Lube",
+  "title": "G1 — Lube oil",
+  "unit": "G1",
+  "layout": "canvas",
+  "canvas": {
+    "width": 1160,
+    "height": 470,
+    "background": "#d2d6da"
+  },
+  "elements": [
+    {
+      "id": "s1",
+      "type": "text",
+      "x": 628,
+      "y": 30,
+      "w": 130,
+      "h": 13,
+      "props": {
+        "text": "Engine speed"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s2",
+      "type": "readout",
+      "x": 768,
+      "y": 26,
+      "w": 92,
+      "h": 20,
+      "bind": {
+        "value": "SCA011ST103PV"
+      },
+      "props": {
+        "text": "750 rpm",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s3",
+      "type": "text",
+      "x": 588,
+      "y": 54,
+      "w": 170,
+      "h": 13,
+      "props": {
+        "text": "Gen. active power"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "right"
+      }
+    },
+    {
+      "id": "s4",
+      "type": "readout",
+      "x": 768,
+      "y": 50,
+      "w": 92,
+      "h": 20,
+      "bind": {
+        "value": "SCA011PW104PV"
+      },
+      "props": {
+        "text": "8052 kW",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "right",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "x": 910,
+      "y": 34,
+      "w": 210,
+      "h": 68,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Oil mist separator QBF 021",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "text",
+      "x": 918,
+      "y": 40,
+      "w": 190,
+      "h": 13,
+      "props": {
+        "text": "Oil mist separator QBF 021"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s7",
+      "type": "pump",
+      "x": 984,
+      "y": 58,
+      "w": 28,
+      "h": 28,
+      "bind": {
+        "value": "G01_OIL_MIST_FAN"
+      },
+      "props": {
+        "running": true
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#2fa84f",
+        "strokeWidth": 2
+      },
+      "name": "Oil mist fan"
+    },
+    {
+      "id": "s8",
+      "type": "pipe",
+      "x": 939,
+      "y": 20,
+      "w": 2,
+      "h": 46,
+      "props": {},
+      "style": {
+        "fill": "#0000c8"
+      }
+    },
+    {
+      "id": "s9",
+      "type": "pipe",
+      "x": 940,
+      "y": 65,
+      "w": 44,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#0000c8"
+      }
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "x": 40,
+      "y": 120,
+      "w": 270,
+      "h": 300,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Lube oil separator QBB 021",
+      "locked": true
+    },
+    {
+      "id": "s11",
+      "type": "text",
+      "x": 48,
+      "y": 126,
+      "w": 200,
+      "h": 13,
+      "props": {
+        "text": "Lube oil separator QBB 021"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "x": 52,
+      "y": 146,
+      "w": 62,
+      "h": 40,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Control panel BJN021"
+    },
+    {
+      "id": "s13",
+      "type": "text",
+      "x": 54,
+      "y": 152,
+      "w": 58,
+      "h": 30,
+      "props": {
+        "text": "Control\nPanel\nBJN 021"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s14",
+      "type": "shape",
+      "x": 104,
+      "y": 226,
+      "w": 30,
+      "h": 30,
+      "props": {
+        "kind": "diamond"
+      },
+      "style": {
+        "fill": "#2f6fd0",
+        "stroke": "#1d4d96",
+        "strokeWidth": 1
+      },
+      "name": "Separator bowl"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "x": 140,
+      "y": 232,
+      "w": 20,
+      "h": 20,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 10,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s16",
+      "type": "text",
+      "x": 140,
+      "y": 237,
+      "w": 20,
+      "h": 13,
+      "props": {
+        "text": "M"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": true,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s17",
+      "type": "pump",
+      "x": 172,
+      "y": 230,
+      "w": 24,
+      "h": 24,
+      "bind": {
+        "value": "G01_SEP_FEED_PUMP"
+      },
+      "props": {
+        "running": true
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#2fa84f",
+        "strokeWidth": 2
+      },
+      "name": "Separator pump"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "x": 174,
+      "y": 258,
+      "w": 18,
+      "h": 12,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3aa0a8",
+        "stroke": "#2c7d84",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s19",
+      "type": "shape",
+      "x": 140,
+      "y": 190,
+      "w": 30,
+      "h": 24,
+      "props": {
+        "kind": "exchanger"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "Separator preheater"
+    },
+    {
+      "id": "s20",
+      "type": "valve",
+      "x": 106,
+      "y": 194,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "G01_SEP_V1"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s21",
+      "type": "pipe",
+      "x": 94,
+      "y": 198.5,
+      "w": 12,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s22",
+      "type": "pipe",
+      "x": 121,
+      "y": 198.5,
+      "w": 19,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s23",
+      "type": "pipe",
+      "x": 170,
+      "y": 198.5,
+      "w": 14,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s24",
+      "type": "pipe",
+      "x": 182.5,
+      "y": 200,
+      "w": 3,
+      "h": 30,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s25",
+      "type": "rect",
+      "x": 88,
+      "y": 288,
+      "w": 64,
+      "h": 34,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#9aa2ab",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Sludge space"
+    },
+    {
+      "id": "s26",
+      "type": "pipe",
+      "x": 117.5,
+      "y": 256,
+      "w": 3,
+      "h": 32,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s27",
+      "type": "pump",
+      "x": 110,
+      "y": 336,
+      "w": 22,
+      "h": 22,
+      "bind": {
+        "value": "G01_SEP_SLUDGE_PUMP"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#ffffff",
+        "stroke": "#2fa84f",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "s28",
+      "type": "pipe",
+      "x": 119.5,
+      "y": 322,
+      "w": 3,
+      "h": 14,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s29",
+      "type": "pipe",
+      "x": 132,
+      "y": 345.5,
+      "w": 38,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s30",
+      "type": "rect",
+      "x": 170,
+      "y": 332,
+      "w": 104,
+      "h": 30,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "x": 172,
+      "y": 338,
+      "w": 100,
+      "h": 20,
+      "props": {
+        "text": "To sludge\ncollecting system"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s32",
+      "type": "arrow",
+      "x": 276,
+      "y": 342,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s33",
+      "type": "pipe",
+      "x": 92.5,
+      "y": 200,
+      "w": 3,
+      "h": 190,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s34",
+      "type": "pipe",
+      "x": 94,
+      "y": 388.5,
+      "w": 700,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s35",
+      "type": "pipe",
+      "x": 94,
+      "y": 408.5,
+      "w": 700,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s36",
+      "type": "arrow",
+      "x": 430,
+      "y": 385,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "left"
+      },
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s37",
+      "type": "arrow",
+      "x": 430,
+      "y": 405,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s38",
+      "type": "rect",
+      "x": 340,
+      "y": 130,
+      "w": 700,
+      "h": 250,
+      "props": {
+        "dashed": true
+      },
+      "style": {
+        "fill": "transparent",
+        "stroke": "#6b7480",
+        "strokeWidth": 1,
+        "radius": 0
+      },
+      "name": "Engine 021",
+      "locked": true
+    },
+    {
+      "id": "s39",
+      "type": "text",
+      "x": 348,
+      "y": 136,
+      "w": 150,
+      "h": 13,
+      "props": {
+        "text": "Engine 021"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": true,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s40",
+      "type": "shape",
+      "x": 388,
+      "y": 156,
+      "w": 32,
+      "h": 30,
+      "props": {
+        "kind": "exchanger"
+      },
+      "style": {
+        "fill": "#c9ced3",
+        "stroke": "#3d4349",
+        "strokeWidth": 1
+      },
+      "name": "Lube oil cooler"
+    },
+    {
+      "id": "s41",
+      "type": "pipe",
+      "x": 356,
+      "y": 170,
+      "w": 32,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s42",
+      "type": "arrow",
+      "x": 370,
+      "y": 166,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s43",
+      "type": "pipe",
+      "x": 420,
+      "y": 170,
+      "w": 32,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s44",
+      "type": "arrow",
+      "x": 432,
+      "y": 166,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#00a000"
+      }
+    },
+    {
+      "id": "s45",
+      "type": "text",
+      "x": 458,
+      "y": 164,
+      "w": 90,
+      "h": 13,
+      "props": {
+        "text": "LT water"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9.5,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s46",
+      "type": "pipe",
+      "x": 402.5,
+      "y": 186,
+      "w": 3,
+      "h": 46,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s47",
+      "type": "pipe",
+      "x": 404,
+      "y": 230.5,
+      "w": 26,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s48",
+      "type": "valve",
+      "x": 430,
+      "y": 227,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "G01_LUBE_FILTER_V"
+      },
+      "props": {
+        "open": true
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s49",
+      "type": "pipe",
+      "x": 445,
+      "y": 230.5,
+      "w": 115,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s50",
+      "type": "readout",
+      "x": 516,
+      "y": 190,
+      "w": 84,
+      "h": 22,
+      "bind": {
+        "value": "G01_LUBE_FILTER_DP"
+      },
+      "props": {
+        "text": "0.7 bar",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s51",
+      "type": "rect",
+      "x": 552,
+      "y": 223,
+      "w": 20,
+      "h": 18,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#3aa0a8",
+        "stroke": "#2c7d84",
+        "strokeWidth": 1,
+        "radius": 0,
+        "opacity": 1
+      },
+      "name": "Filter"
+    },
+    {
+      "id": "s52",
+      "type": "pipe",
+      "x": 556.5,
+      "y": 212,
+      "w": 3,
+      "h": 20,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s53",
+      "type": "pipe",
+      "x": 572,
+      "y": 230.5,
+      "w": 252,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s54",
+      "type": "arrow",
+      "x": 660,
+      "y": 227,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "right"
+      },
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s55",
+      "type": "text",
+      "x": 700,
+      "y": 178,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "TC A"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s56",
+      "type": "readout",
+      "x": 740,
+      "y": 174,
+      "w": 84,
+      "h": 20,
+      "bind": {
+        "value": "G01_LUBE_TCA_PRESS"
+      },
+      "props": {
+        "text": "1.8 bar",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s57",
+      "type": "text",
+      "x": 700,
+      "y": 200,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "TC B"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s58",
+      "type": "readout",
+      "x": 740,
+      "y": 196,
+      "w": 84,
+      "h": 20,
+      "bind": {
+        "value": "G01_LUBE_TCB_PRESS"
+      },
+      "props": {
+        "text": "1.7 bar",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": false,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s59",
+      "type": "readout",
+      "x": 740,
+      "y": 222,
+      "w": 84,
+      "h": 22,
+      "bind": {
+        "value": "G01_LUBE_PRESS"
+      },
+      "props": {
+        "text": "4.6 bar",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s60",
+      "type": "readout",
+      "x": 740,
+      "y": 246,
+      "w": 84,
+      "h": 22,
+      "bind": {
+        "value": "G01_LUBE_TEMP"
+      },
+      "props": {
+        "text": "63 °C",
+        "unit": "",
+        "decimals": 0
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s61",
+      "type": "engine",
+      "x": 844,
+      "y": 208,
+      "w": 168,
+      "h": 60,
+      "bind": {
+        "value": "G01_STATE"
+      },
+      "props": {
+        "state": "running",
+        "text": "1",
+        "cylinders": 9
+      },
+      "style": {},
+      "name": "Genset 1"
+    },
+    {
+      "id": "s62",
+      "type": "readout",
+      "x": 908,
+      "y": 174,
+      "w": 96,
+      "h": 22,
+      "bind": {
+        "value": "G01_CRANKCASE_PRESS"
+      },
+      "props": {
+        "text": "-0.2 mbar",
+        "unit": "",
+        "decimals": 1
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#8a929b",
+        "strokeWidth": 1,
+        "color": "#111820",
+        "fontSize": 10.5,
+        "bold": true,
+        "align": "center",
+        "radius": 0
+      }
+    },
+    {
+      "id": "s63",
+      "type": "pipe",
+      "x": 939,
+      "y": 102,
+      "w": 2,
+      "h": 106,
+      "props": {},
+      "style": {
+        "fill": "#0000c8"
+      }
+    },
+    {
+      "id": "s64",
+      "type": "rect",
+      "x": 920,
+      "y": 268,
+      "w": 18,
+      "h": 18,
+      "props": {
+        "bevel": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 1,
+        "radius": 9,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "s65",
+      "type": "text",
+      "x": 920,
+      "y": 273,
+      "w": 18,
+      "h": 13,
+      "props": {
+        "text": "S"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "center"
+      }
+    },
+    {
+      "id": "s66",
+      "type": "text",
+      "x": 636,
+      "y": 292,
+      "w": 40,
+      "h": 13,
+      "props": {
+        "text": "Auto"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 9,
+        "bold": false,
+        "align": "left"
+      }
+    },
+    {
+      "id": "s67",
+      "type": "pump",
+      "x": 690,
+      "y": 286,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "G01_LUBE_PUMP_MAIN"
+      },
+      "props": {
+        "running": true
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      },
+      "name": "Main lube pump"
+    },
+    {
+      "id": "s68",
+      "type": "pump",
+      "x": 632,
+      "y": 306,
+      "w": 26,
+      "h": 26,
+      "bind": {
+        "value": "G01_LUBE_PUMP_STBY"
+      },
+      "props": {
+        "running": false
+      },
+      "style": {
+        "fill": "#f6f8f9",
+        "stroke": "#5a6068",
+        "strokeWidth": 2
+      },
+      "name": "Standby lube pump"
+    },
+    {
+      "id": "s69",
+      "type": "pipe",
+      "x": 716,
+      "y": 297.5,
+      "w": 108,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s70",
+      "type": "pipe",
+      "x": 822.5,
+      "y": 268,
+      "w": 3,
+      "h": 31,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s71",
+      "type": "pipe",
+      "x": 658,
+      "y": 297.5,
+      "w": 32,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s72",
+      "type": "pipe",
+      "x": 404,
+      "y": 317.5,
+      "w": 228,
+      "h": 3,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s73",
+      "type": "pipe",
+      "x": 402.5,
+      "y": 232,
+      "w": 3,
+      "h": 87,
+      "props": {},
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s74",
+      "type": "arrow",
+      "x": 500,
+      "y": 314,
+      "w": 11,
+      "h": 11,
+      "props": {
+        "dir": "left"
+      },
+      "style": {
+        "fill": "#8a2f2f"
+      }
+    },
+    {
+      "id": "s75",
+      "type": "pipe",
+      "x": 939,
+      "y": 286,
+      "w": 2,
+      "h": 96,
+      "props": {},
+      "style": {
+        "fill": "#0000c8"
+      }
+    },
+    {
+      "id": "s76",
+      "type": "valve",
+      "x": 933,
+      "y": 382,
+      "w": 15,
+      "h": 11,
+      "bind": {
+        "value": "G01_MOBILE_PUMP_V"
+      },
+      "props": {
+        "open": false
+      },
+      "style": {
+        "fill": "#2fa84f"
+      }
+    },
+    {
+      "id": "s77",
+      "type": "pipe",
+      "x": 939,
+      "y": 393,
+      "w": 2,
+      "h": 24,
+      "props": {},
+      "style": {
+        "fill": "#0000c8"
+      }
+    },
+    {
+      "id": "s78",
+      "type": "pipe",
+      "x": 918,
+      "y": 416,
+      "w": 44,
+      "h": 2,
+      "props": {},
+      "style": {
+        "fill": "#0000c8"
+      }
+    },
+    {
+      "id": "s79",
+      "type": "text",
+      "x": 892,
+      "y": 424,
+      "w": 130,
+      "h": 22,
+      "props": {
+        "text": "Connection for\nmobile pump"
+      },
+      "style": {
+        "color": "#1d242b",
+        "fontSize": 8.5,
+        "bold": false,
+        "align": "left"
+      }
+    }
+  ]
+}

@@ -36,6 +36,21 @@
       style: { fill: '#8a2f2f' },
       fields: ['fill']
     },
+    /* Process-equipment outlines that recur across the aux systems —
+       one type with a `kind`, rather than a type per shape. */
+    shape: {
+      label: 'Shape', group: 'Background', w: 30, h: 30,
+      props: { kind: 'exchanger' },
+      style: { fill: '#c9ced3', stroke: '#3d4349', strokeWidth: 1 },
+      fields: ['kind', 'fill', 'stroke', 'strokeWidth']
+    },
+    /* Flow direction marker that sits on a pipe run. */
+    arrow: {
+      label: 'Flow arrow', group: 'Background', w: 12, h: 12,
+      props: { dir: 'right' },
+      style: { fill: '#8a2f2f' },
+      fields: ['arrowDir', 'fill']
+    },
     text: {
       label: 'Text label', group: 'Background', w: 130, h: 16,
       props: { text: 'Label' },
@@ -297,6 +312,65 @@
         const i = div('s-rect');
         i.style.background = s.fill || 'var(--pipe)';
         d.appendChild(i); break;
+      }
+      case 'shape': {
+        const svg = svgEl('svg', {
+          class: 's-shape', viewBox: '0 0 100 100',
+          preserveAspectRatio: 'none', width: '100%', height: '100%'
+        });
+        const fill = s.fill || '#c9ced3';
+        const stroke = s.stroke || '#3d4349';
+        const sw = (s.strokeWidth ?? 1) * 1.6;      // viewBox is unit-scaled
+        const base = { fill, stroke, 'stroke-width': sw, 'vector-effect': 'non-scaling-stroke' };
+
+        switch (p.kind) {
+          case 'diamond':
+            svg.appendChild(svgEl('polygon', { points: '50,2 98,50 50,98 2,50', ...base }));
+            break;
+          case 'circle':
+            svg.appendChild(svgEl('ellipse', { cx: 50, cy: 50, rx: 48, ry: 48, ...base }));
+            break;
+          case 'triangle-up':
+            svg.appendChild(svgEl('polygon', { points: '50,2 98,98 2,98', ...base })); break;
+          case 'triangle-down':
+            svg.appendChild(svgEl('polygon', { points: '2,2 98,2 50,98', ...base })); break;
+          case 'triangle-right':
+            svg.appendChild(svgEl('polygon', { points: '2,2 98,50 2,98', ...base })); break;
+          case 'triangle-left':
+            svg.appendChild(svgEl('polygon', { points: '98,2 98,98 2,50', ...base })); break;
+          case 'filter':
+            // hatched box — an air/oil filter element
+            svg.appendChild(svgEl('rect', { x: 1, y: 1, width: 98, height: 98, ...base }));
+            for (let k = -100; k < 100; k += 22) {
+              svg.appendChild(svgEl('line', {
+                x1: k, y1: 100, x2: k + 100, y2: 0,
+                stroke, 'stroke-width': sw * 0.7, 'vector-effect': 'non-scaling-stroke'
+              }));
+            }
+            break;
+          case 'exchanger':
+          default:
+            // heat exchanger — box with the diagonal flow line
+            svg.appendChild(svgEl('rect', { x: 1, y: 1, width: 98, height: 98, ...base }));
+            svg.appendChild(svgEl('line', {
+              x1: 8, y1: 92, x2: 92, y2: 8,
+              stroke, 'stroke-width': sw, 'vector-effect': 'non-scaling-stroke'
+            }));
+            break;
+        }
+        d.appendChild(svg); break;
+      }
+      case 'arrow': {
+        const svg = svgEl('svg', {
+          class: 's-shape', viewBox: '0 0 100 100',
+          preserveAspectRatio: 'none', width: '100%', height: '100%'
+        });
+        const pts = {
+          right: '5,5 95,50 5,95', left: '95,5 5,50 95,95',
+          up: '50,5 95,95 5,95', down: '5,5 95,5 50,95'
+        }[p.dir || 'right'];
+        svg.appendChild(svgEl('polygon', { points: pts, fill: s.fill || 'var(--pipe)' }));
+        d.appendChild(svg); break;
       }
       case 'text': {
         const i = div('s-text');
