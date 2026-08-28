@@ -1,5 +1,50 @@
 # Symbol Library
 
+> **Current state (canvas screens).** The types below were the original
+> inventory. What actually ships now is the registry in
+> `shared/renderer.js` — `TYPES` — which the palette, the inspector and the
+> layers list are all generated from. Adding a symbol is one entry there
+> plus one `case` in `renderElement()`; nothing else needs touching.
+>
+> Shipping types: `rect`, `line`, `pipe`, `text`, `readout`, `led`, `pump`,
+> `valve`, `tank`, `engine`, `turbo`, `breaker`, `gauge`, `button`.
+
+## Equipment state and colour
+
+Colour is a property of **state**, not of a boolean, because any unit can be
+in any of these at any time and the operator reads the plant by colour:
+
+| State | Colour | Set by |
+|---|---|---|
+| `running` | green | the unit is running |
+| `stopped` | blue | the unit is stopped |
+| `maintenance` | yellow | the **Maintenance selector** on Common → Overview |
+| `trip` | red | a shutdown / trip |
+
+Breakers use the same idea: `closed` (green), `open` (white), `trip` (red).
+
+A stateful symbol binds one tag and reads it flexibly — a state string
+(`"RUNNING"`, `"MAINTENANCE"`…) or a plain running boolean both work, so
+screens keep rendering while the real tag list is still being settled.
+
+### `tank` — one element, not a pile of them
+
+A vessel is a single symbol carrying its own gable roof, vent, readout rows,
+red level column, level switches, capacity and name plate. The rows are
+**data** (`props.rows`, each `{tag, text, unit, decimals}`), so a 3-row day
+tank and a 5-row storage tank are the same symbol with a different list —
+and rows are editable in the inspector.
+
+### `engine` — the genset
+
+Drawn as it appears on the real HMI: turbo end, engine block with head /
+liner / crankcase detail, coupling, and the alternator carrying the unit
+number. `props.cylinders` controls how many are drawn; `props.state` (or the
+bound tag) picks the colour.
+
+---
+
+
 Every visual element across the 5 screens we've built so far reduces to one
 of the symbol types below. This is the inventory Claude Code should build as
 real React components — one component per type, each satisfying the "prop

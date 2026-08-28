@@ -40,26 +40,59 @@
   clip-path: polygon(0 0, 50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0%);
 }
 
-.s-tank { width: 100%; height: 100%; position: relative; overflow: hidden; }
-.s-tank .roof {
-  height: 22%; background: var(--vessel, #c7ccd1);
+/* ---- tank: gable roof + vent, readout rows, red level column ---- */
+.s-tank { width: 100%; height: 100%; position: relative; }
+.s-tank .tk-roof {
+  position: absolute; left: 0; right: 0; top: 0; height: 13px;
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  margin: 0 auto; width: 72%;
 }
-.s-tank .fillbar {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  background: var(--blue, #3f8fce); opacity: .5;
+.s-tank .tk-vent {
+  position: absolute; left: 34%; top: -6px; width: 11px; height: 9px;
+  border: 2px solid #3d4349; border-bottom: none; border-right: none;
+  border-top-left-radius: 7px;
 }
-.s-tank .cap {
-  position: absolute; left: 0; right: 0; bottom: 2px;
-  text-align: center; font-size: 9px; color: var(--text-dim, #7c8896);
+.s-tank .tk-body {
+  position: absolute; left: 0; right: 0; top: 12px; bottom: 0;
+  padding: 4px 4px 2px;
+}
+.s-tank .tk-rows {
+  position: absolute; left: 4px; top: 4px; right: 20px; bottom: 13px;
+  display: flex; flex-direction: column; gap: 1px;
+}
+.s-tank .tk-row {
+  flex: 1; min-height: 0;
+  background: #eceff1; border: 1px solid #6b7480;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #111820; overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+.s-tank .tk-cap {
+  position: absolute; right: 22px; bottom: 1px;
+  font-size: 8.5px; color: #f2f4f6;
+}
+.s-tank .tk-level {
+  position: absolute; right: 5px; top: 4px; bottom: 4px; width: 11px;
+  background: #d7dbdf; border: 1px solid #6b7480;
+}
+.s-tank .tk-fill {
+  position: absolute; left: 0; right: 0; bottom: 0; background: #b0201c;
+}
+.s-tank .tk-lsw {
+  position: absolute; right: -8px; width: 17px; height: 17px;
+  border-radius: 50%; border: 1px solid #3d4349; background: #d7dbdf;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: #1d242b;
+}
+.s-tank .tk-lsh { top: 14px; }
+.s-tank .tk-lsl { bottom: 4px; }
+.s-tank .tk-name {
+  position: absolute; left: 0; top: 100%; width: 130%;
+  padding-top: 2px; white-space: pre; font-size: 9px; color: #1d242b;
+  line-height: 1.25;
 }
 
-.s-engine {
-  width: 100%; height: 100%; border-radius: 2px;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 700;
-}
+/* ---- genset ---- */
+.s-enginesvg { width: 100%; height: 100%; display: block; overflow: visible; }
 
 .s-turbo {
   width: 100%; height: 100%;

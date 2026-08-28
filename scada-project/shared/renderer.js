@@ -72,16 +72,20 @@
       fields: ['open', 'fill']
     },
     tank: {
-      label: 'Tank', group: 'Symbols', w: 80, h: 70, bind: true,
-      props: { level: 60, caption: '' },
-      style: { fill: '#ffffff', stroke: '#c3cad2', strokeWidth: 1 },
-      fields: ['level', 'caption', 'fill', 'stroke', 'strokeWidth']
+      label: 'Tank', group: 'Symbols', w: 96, h: 118, bind: true,
+      props: {
+        level: 60, capacity: '25 m³', label: 'LFO day tank', plate: 'PBF 901',
+        switches: true,
+        rows: [{ tag: '', text: '78.4 %' }, { tag: '', text: '30 °C' }, { tag: '', text: '30 °C' }]
+      },
+      style: { fill: '#9aa2ab', stroke: '#3d4349', strokeWidth: 1 },
+      fields: ['rows', 'level', 'capacity', 'label', 'plate', 'switches', 'fill', 'stroke']
     },
     engine: {
-      label: 'Engine block', group: 'Symbols', w: 64, h: 24, bind: true,
-      props: { running: true, text: '' },
-      style: { fontSize: 11 },
-      fields: ['running', 'text', 'fontSize']
+      label: 'Genset', group: 'Symbols', w: 150, h: 54, bind: true,
+      props: { state: 'running', text: '1', cylinders: 9 },
+      style: {},
+      fields: ['state', 'text', 'cylinders']
     },
     turbo: {
       label: 'Turbocharger', group: 'Symbols', w: 24, h: 44, bind: true,
@@ -91,9 +95,9 @@
     },
     breaker: {
       label: 'Breaker', group: 'Symbols', w: 14, h: 14, bind: true,
-      props: { closed: true },
+      props: { state: 'closed' },
       style: { fill: '#2fa84f', stroke: '#1c6b32', strokeWidth: 1 },
-      fields: ['closed', 'fill', 'stroke', 'strokeWidth']
+      fields: ['breakerState', 'strokeWidth']
     },
     gauge: {
       label: 'Gauge bar', group: 'Symbols', w: 26, h: 90, bind: true,
@@ -114,6 +118,72 @@
 
   const SVG_NS = 'http://www.w3.org/2000/svg';
   function div(cls) { const d = document.createElement('div'); d.className = cls; return d; }
+  function svgEl(name, attrs) {
+    const n = document.createElementNS(SVG_NS, name);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  }
+
+  /* ---------- plant state model -------------------------------------
+     Equipment state drives colour everywhere on the HMI, so it lives
+     here rather than being hardcoded per screen. Any unit can be in any
+     of these at any time.                                             */
+  const EQUIP_STATE = {
+    running:     { body: '#00a000', trim: '#007a00', text: '#ffffff', label: 'Running' },
+    stopped:     { body: '#1f4fd8', trim: '#173da8', text: '#ffffff', label: 'Stopped' },
+    maintenance: { body: '#ffe000', trim: '#c9b000', text: '#1a1a00', label: 'Maintenance' },
+    trip:        { body: '#e01010', trim: '#a80c0c', text: '#ffffff', label: 'Shutdown / trip' },
+    unknown:     { body: '#9aa2ab', trim: '#6b7480', text: '#1d242b', label: 'Unknown' }
+  };
+
+  const BREAKER_STATE = {
+    closed:  { fill: '#00a000', stroke: '#007a00', label: 'Closed' },
+    open:    { fill: '#ffffff', stroke: '#5a6068', label: 'Open' },
+    trip:    { fill: '#e01010', stroke: '#a80c0c', label: 'Tripped' },
+    unknown: { fill: '#9aa2ab', stroke: '#6b7480', label: 'Unknown' }
+  };
+
+  /* Resolve equipment state from a bound tag. The tag may be a state
+     string ("RUNNING", "MAINTENANCE"…) or a plain running boolean, so
+     both wiring styles work while the real tag list is still settling. */
+  function resolveState(el, tags, allowed, fallback) {
+    const explicit = (el.props && el.props.state);
+    const tag = lookup(el, tags);
+    let v = tag ? tag.value : undefined;
+    if (v === undefined || v === null) v = explicit;
+    if (typeof v === 'string') {
+      const k = v.toLowerCase();
+      if (allowed[k]) return k;
+      if (k === 'run') return 'running';
+      if (k === 'stop' || k === 'off') return 'stopped';
+      if (k === 'shutdown' || k === 'tripped' || k === 'fault') return 'trip';
+      if (k === 'true') return allowed.running ? 'running' : 'closed';
+      if (k === 'false') return allowed.running ? 'stopped' : 'open';
+    }
+    if (typeof v === 'boolean') return v ? (allowed.running ? 'running' : 'closed')
+                                        : (allowed.running ? 'stopped' : 'open');
+    if (typeof v === 'number') return v !== 0 ? (allowed.running ? 'running' : 'closed')
+                                              : (allowed.running ? 'stopped' : 'open');
+    return allowed[explicit] ? explicit : fallback;
+  }
+
+  /* A tank row shows a live tag when bound, else its static text. */
+  function rowText(row, tags) {
+    if (!row) return '';
+    if (row.tag && tags) {
+      const t = (tags instanceof Map) ? tags.get(row.tag) : tags[row.tag];
+      if (t && t.value != null) {
+        let v = t.value;
+        if (typeof v === 'number') {
+          const dp = row.decimals != null ? row.decimals : (Number.isInteger(v) ? 0 : 1);
+          v = v.toFixed(dp);
+        }
+        const unit = row.unit || t.engineering_unit || '';
+        return unit ? v + ' ' + unit : String(v);
+      }
+    }
+    return row.text || '';
+  }
 
   /* ---------- alarm evaluation (shared with the server) -------------
      Returns the most severe state a value sits in, so a readout can
@@ -305,30 +375,124 @@
         i.style.background = open ? (s.fill || 'var(--green)') : 'var(--text-dim)';
         d.appendChild(i); break;
       }
+      /* A whole vessel in one element: gable roof with its vent, the
+         stacked readout rows, the level column with its two switches,
+         capacity, and the name plate. Rows are data (props.rows), so a
+         3-row day tank and a 5-row storage tank are the same symbol. */
       case 'tank': {
         const i = div('s-tank');
-        i.style.background = s.fill || 'var(--bg-panel)';
-        i.style.border = border;
-        i.appendChild(div('roof'));
-        const fill = div('fillbar');
+        const rows = Array.isArray(p.rows) ? p.rows : [];
+        const shell = s.fill || '#9aa2ab';
+
+        const roof = div('tk-roof');
+        roof.style.background = shell;
+        i.appendChild(roof);
+        const vent = div('tk-vent');
+        vent.style.borderColor = s.stroke || '#3d4349';
+        i.appendChild(vent);
+
+        const body = div('tk-body');
+        body.style.background = shell;
+        body.style.border = '1px solid ' + (s.stroke || '#3d4349');
+
+        const rowWrap = div('tk-rows');
+        rows.forEach(r => {
+          const rd = div('tk-row');
+          rd.textContent = rowText(r, tags);
+          if (r.tag) rd.dataset.tag = r.tag;
+          rowWrap.appendChild(rd);
+        });
+        body.appendChild(rowWrap);
+
+        if (p.capacity) {
+          const cap = div('tk-cap');
+          cap.textContent = p.capacity;
+          body.appendChild(cap);
+        }
+
+        // level column — red fill, the way the real page draws it
+        const col = div('tk-level');
         const tag = lookup(el, tags);
-        const lvl = (opts.showAlarms && tag && typeof tag.value === 'number')
-          ? tag.value : (p.level || 0);
+        const lvl = (tag && typeof tag.value === 'number') ? tag.value : (p.level || 0);
+        const fill = div('tk-fill');
         fill.style.height = Math.max(0, Math.min(100, lvl)) + '%';
-        i.appendChild(fill);
-        if (p.caption) { const c = div('cap'); c.textContent = p.caption; i.appendChild(c); }
+        col.appendChild(fill);
+        body.appendChild(col);
+        i.appendChild(body);
+
+        if (p.switches !== false) {
+          ['tk-lsh', 'tk-lsl'].forEach(cls => {
+            const sw = div('tk-lsw ' + cls);
+            sw.textContent = 'L';
+            i.appendChild(sw);
+          });
+        }
+
+        if (p.label || p.plate) {
+          const nm = div('tk-name');
+          nm.textContent = [p.label, p.plate].filter(Boolean).join('\n');
+          i.appendChild(nm);
+        }
         d.appendChild(i); break;
       }
+
+      /* The genset drawn as it appears on the real HMI: turbo end, engine
+         block with head/liner/crankcase detail, coupling, and alternator
+         carrying the unit number. Colour is the state, not a boolean —
+         any unit can be running, stopped, on maintenance or tripped. */
       case 'engine': {
-        const i = div('s-engine');
-        const running = resolveBool(el, tags, p.running, opts);
-        const a = running ? '#2fa84f' : '#3f8fce';
-        const b = running ? '#218040' : '#2c6ea0';
-        i.style.background =
-          'repeating-linear-gradient(90deg,' + a + ',' + a + ' 5px,' + b + ' 5px,' + b + ' 10px)';
-        i.style.fontSize = (s.fontSize || 11) + 'px';
-        i.textContent = p.text || '';
-        d.appendChild(i); break;
+        const state = resolveState(el, tags, EQUIP_STATE, p.state || 'running');
+        const c = EQUIP_STATE[state] || EQUIP_STATE.unknown;
+        const cyl = Math.max(4, Math.min(12, p.cylinders || 9));
+
+        const svg = svgEl('svg', {
+          class: 's-enginesvg', viewBox: '0 0 200 72',
+          preserveAspectRatio: 'none', width: '100%', height: '100%'
+        });
+        const g = svgEl('g', {});
+        const put = (n, a) => g.appendChild(svgEl(n, a));
+
+        // skid
+        put('rect', { x: 4, y: 62, width: 192, height: 8, fill: c.body, stroke: c.trim });
+        // turbocharger stack at the non-driving end
+        put('rect', { x: 6, y: 22, width: 14, height: 14, fill: c.body, stroke: c.trim });
+        put('rect', { x: 10, y: 14, width: 8, height: 8, fill: c.body, stroke: c.trim });
+        put('rect', { x: 4, y: 36, width: 20, height: 14, fill: c.body, stroke: c.trim });
+        put('polygon', { points: '24,50 24,62 14,62', fill: c.body, stroke: c.trim });
+        // engine block
+        put('rect', { x: 24, y: 20, width: 96, height: 42, fill: c.body, stroke: c.trim });
+        put('rect', { x: 118, y: 26, width: 12, height: 30, fill: c.body, stroke: c.trim });
+        // cylinder heads, liners, crankcase doors
+        const step = 88 / cyl;
+        for (let k = 0; k < cyl; k++) {
+          const x = 28 + k * step;
+          put('rect', { x, y: 22, width: step - 2.5, height: 9, fill: '#c9ced3', stroke: c.trim });
+          put('rect', { x, y: 36, width: step - 2.5, height: 6, fill: '#c9ced3', stroke: c.trim });
+          put('circle', { cx: x + (step - 2.5) / 2, cy: 52, r: 3.6,
+            fill: '#c9ced3', stroke: c.trim });
+        }
+        // coupling + alternator
+        put('rect', { x: 130, y: 38, width: 8, height: 12, fill: c.body, stroke: c.trim });
+        put('rect', { x: 138, y: 24, width: 54, height: 38, fill: c.body, stroke: c.trim });
+        put('rect', { x: 152, y: 16, width: 26, height: 10, fill: c.body, stroke: c.trim });
+        put('rect', { x: 141, y: 30, width: 12, height: 26, fill: '#c9ced3', stroke: c.trim });
+        put('rect', { x: 177, y: 30, width: 12, height: 26, fill: '#c9ced3', stroke: c.trim });
+        put('rect', { x: 192, y: 36, width: 6, height: 14, fill: c.body, stroke: c.trim });
+
+        if (p.text) {
+          const t = svgEl('text', {
+            x: 165, y: 48, 'text-anchor': 'middle',
+            'font-size': 17, 'font-weight': '700', fill: c.text,
+            'font-family': 'Segoe UI, Arial, sans-serif'
+          });
+          t.textContent = p.text;
+          g.appendChild(t);
+        }
+        svg.appendChild(g);
+        d.appendChild(svg);
+        d.dataset.state = state;
+        d.title = (p.text ? 'Genset ' + p.text + ' — ' : '') + c.label;
+        break;
       }
       case 'turbo': {
         const i = div('s-turbo');
@@ -345,11 +509,15 @@
       }
       case 'breaker': {
         const i = div('s-brk');
-        const closed = resolveBool(el, tags, p.closed, opts);
-        i.style.background = closed ? (s.fill || 'var(--green)') : 'var(--bg-field)';
-        i.style.border = (s.strokeWidth || 1) + 'px solid ' +
-          (closed ? (s.stroke || '#1c6b32') : 'var(--border-light)');
-        d.appendChild(i); break;
+        const state = resolveState(el, tags, BREAKER_STATE,
+          p.state || (p.closed === false ? 'open' : 'closed'));
+        const b = BREAKER_STATE[state] || BREAKER_STATE.unknown;
+        i.style.background = b.fill;
+        i.style.border = (s.strokeWidth || 1) + 'px solid ' + b.stroke;
+        d.appendChild(i);
+        d.dataset.state = state;
+        d.title = 'Breaker — ' + b.label;
+        break;
       }
       case 'gauge': {
         const i = div('s-gauge');

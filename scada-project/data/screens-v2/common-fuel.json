@@ -11,248 +11,62 @@
   "elements": [
     {
       "id": "s1",
-      "type": "rect",
+      "type": "tank",
       "x": 190,
       "y": 60,
       "w": 104,
       "h": 132,
+      "bind": {
+        "value": "PAF901_LEVEL"
+      },
       "props": {
-        "bevel": true
+        "level": 19,
+        "capacity": "800 m³",
+        "label": "LFO storage tank",
+        "plate": "PAE 901",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PAF901_LEVEL",
+            "text": "19 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE901_T1",
+            "text": "34 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE901_T2",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE901_T3",
+            "text": "32 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE901_T4",
+            "text": "29 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
         "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
+        "stroke": "#3d4349",
+        "strokeWidth": 1
       },
       "name": "LFO storage PAE 901"
     },
     {
       "id": "s2",
-      "type": "readout",
-      "x": 196,
-      "y": 74,
-      "w": 62,
-      "h": 18,
-      "bind": {
-        "value": "PAF901_LEVEL"
-      },
-      "props": {
-        "text": "19 %",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s3",
-      "type": "readout",
-      "x": 196,
-      "y": 94,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE901_T1"
-      },
-      "props": {
-        "text": "34 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s4",
-      "type": "readout",
-      "x": 196,
-      "y": 113,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE901_T2"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s5",
-      "type": "readout",
-      "x": 196,
-      "y": 132,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE901_T3"
-      },
-      "props": {
-        "text": "32 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s6",
-      "type": "readout",
-      "x": 196,
-      "y": 151,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE901_T4"
-      },
-      "props": {
-        "text": "29 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s7",
-      "type": "text",
-      "x": 196,
-      "y": 174,
-      "w": 62,
-      "h": 13,
-      "props": {
-        "text": "800 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s8",
-      "type": "led",
-      "x": 280,
-      "y": 70,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE901_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s9",
-      "type": "led",
-      "x": 280,
-      "y": 170,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE901_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s10",
-      "type": "text",
-      "x": 190,
-      "y": 194,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "LFO storage tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s11",
-      "type": "text",
-      "x": 190,
-      "y": 204,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "PAE 901"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s12",
       "type": "button",
       "x": 14,
       "y": 86,
@@ -271,7 +85,7 @@
       }
     },
     {
-      "id": "s13",
+      "id": "s3",
       "type": "pipe",
       "x": 294,
       "y": 124.5,
@@ -283,7 +97,7 @@
       }
     },
     {
-      "id": "s14",
+      "id": "s4",
       "type": "pipe",
       "x": 130,
       "y": 98.5,
@@ -295,249 +109,63 @@
       }
     },
     {
-      "id": "s15",
-      "type": "rect",
+      "id": "s5",
+      "type": "tank",
       "x": 190,
       "y": 226,
       "w": 104,
       "h": 132,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "LFO storage PAE 902"
-    },
-    {
-      "id": "s16",
-      "type": "readout",
-      "x": 196,
-      "y": 240,
-      "w": 62,
-      "h": 18,
       "bind": {
         "value": "PAF902_LEVEL"
       },
       "props": {
-        "text": "49 %",
-        "unit": "",
-        "decimals": null
+        "level": 49,
+        "capacity": "800 m³",
+        "label": "LFO storage tank",
+        "plate": "PAE 902",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PAF902_LEVEL",
+            "text": "49 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE902_T1",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE902_T2",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE902_T3",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE902_T4",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s17",
-      "type": "readout",
-      "x": 196,
-      "y": 260,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE902_T1"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s18",
-      "type": "readout",
-      "x": 196,
-      "y": 279,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE902_T2"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s19",
-      "type": "readout",
-      "x": 196,
-      "y": 298,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE902_T3"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s20",
-      "type": "readout",
-      "x": 196,
-      "y": 317,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE902_T4"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s21",
-      "type": "text",
-      "x": 196,
-      "y": 340,
-      "w": 62,
-      "h": 13,
-      "props": {
-        "text": "800 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s22",
-      "type": "led",
-      "x": 280,
-      "y": 236,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE902_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "LFO storage PAE 902"
     },
     {
-      "id": "s23",
-      "type": "led",
-      "x": 280,
-      "y": 336,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE902_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s24",
-      "type": "text",
-      "x": 190,
-      "y": 360,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "LFO storage tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s25",
-      "type": "text",
-      "x": 190,
-      "y": 370,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "PAE 902"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s26",
+      "id": "s6",
       "type": "button",
       "x": 14,
       "y": 252,
@@ -556,7 +184,7 @@
       }
     },
     {
-      "id": "s27",
+      "id": "s7",
       "type": "pipe",
       "x": 294,
       "y": 290.5,
@@ -568,7 +196,7 @@
       }
     },
     {
-      "id": "s28",
+      "id": "s8",
       "type": "pipe",
       "x": 130,
       "y": 264.5,
@@ -580,249 +208,63 @@
       }
     },
     {
-      "id": "s29",
-      "type": "rect",
+      "id": "s9",
+      "type": "tank",
       "x": 190,
       "y": 392,
       "w": 104,
       "h": 132,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "LFO storage PAE 903"
-    },
-    {
-      "id": "s30",
-      "type": "readout",
-      "x": 196,
-      "y": 406,
-      "w": 62,
-      "h": 18,
       "bind": {
         "value": "PAF903_LEVEL"
       },
       "props": {
-        "text": "83 %",
-        "unit": "",
-        "decimals": null
+        "level": 83,
+        "capacity": "800 m³",
+        "label": "LFO storage tank",
+        "plate": "PAE 903",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PAF903_LEVEL",
+            "text": "83 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE903_T1",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE903_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE903_T3",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE903_T4",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s31",
-      "type": "readout",
-      "x": 196,
-      "y": 426,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE903_T1"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s32",
-      "type": "readout",
-      "x": 196,
-      "y": 445,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE903_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s33",
-      "type": "readout",
-      "x": 196,
-      "y": 464,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE903_T3"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s34",
-      "type": "readout",
-      "x": 196,
-      "y": 483,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE903_T4"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s35",
-      "type": "text",
-      "x": 196,
-      "y": 506,
-      "w": 62,
-      "h": 13,
-      "props": {
-        "text": "800 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s36",
-      "type": "led",
-      "x": 280,
-      "y": 402,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE903_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "LFO storage PAE 903"
     },
     {
-      "id": "s37",
-      "type": "led",
-      "x": 280,
-      "y": 502,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE903_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s38",
-      "type": "text",
-      "x": 190,
-      "y": 526,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "LFO storage tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s39",
-      "type": "text",
-      "x": 190,
-      "y": 536,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "PAE 903"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s40",
+      "id": "s10",
       "type": "button",
       "x": 14,
       "y": 418,
@@ -841,7 +283,7 @@
       }
     },
     {
-      "id": "s41",
+      "id": "s11",
       "type": "pipe",
       "x": 294,
       "y": 456.5,
@@ -853,7 +295,7 @@
       }
     },
     {
-      "id": "s42",
+      "id": "s12",
       "type": "pipe",
       "x": 130,
       "y": 430.5,
@@ -865,249 +307,63 @@
       }
     },
     {
-      "id": "s43",
-      "type": "rect",
+      "id": "s13",
+      "type": "tank",
       "x": 190,
       "y": 558,
       "w": 104,
       "h": 132,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#3f8f4f",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "LFO storage PAE 904"
-    },
-    {
-      "id": "s44",
-      "type": "readout",
-      "x": 196,
-      "y": 572,
-      "w": 62,
-      "h": 18,
       "bind": {
         "value": "PAE904_LEVEL"
       },
       "props": {
-        "text": "29 %",
-        "unit": "",
-        "decimals": null
+        "level": 29,
+        "capacity": "800 m³",
+        "label": "LFO storage tank",
+        "plate": "PAE 904",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PAE904_LEVEL",
+            "text": "29 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE904_T1",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE904_T2",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE904_T3",
+            "text": "29 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PAE904_T4",
+            "text": "29 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s45",
-      "type": "readout",
-      "x": 196,
-      "y": 592,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE904_T1"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s46",
-      "type": "readout",
-      "x": 196,
-      "y": 611,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE904_T2"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s47",
-      "type": "readout",
-      "x": 196,
-      "y": 630,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE904_T3"
-      },
-      "props": {
-        "text": "29 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s48",
-      "type": "readout",
-      "x": 196,
-      "y": 649,
-      "w": 62,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PAE904_T4"
-      },
-      "props": {
-        "text": "29 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s49",
-      "type": "text",
-      "x": 196,
-      "y": 672,
-      "w": 62,
-      "h": 13,
-      "props": {
-        "text": "800 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s50",
-      "type": "led",
-      "x": 280,
-      "y": 568,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE904_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#3f8f4f",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "LFO storage PAE 904"
     },
     {
-      "id": "s51",
-      "type": "led",
-      "x": 280,
-      "y": 668,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PAE904_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s52",
-      "type": "text",
-      "x": 190,
-      "y": 692,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "LFO storage tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s53",
-      "type": "text",
-      "x": 190,
-      "y": 702,
-      "w": 124,
-      "h": 13,
-      "props": {
-        "text": "PAE 904"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s54",
+      "id": "s14",
       "type": "button",
       "x": 14,
       "y": 584,
@@ -1126,7 +382,7 @@
       }
     },
     {
-      "id": "s55",
+      "id": "s15",
       "type": "pipe",
       "x": 294,
       "y": 622.5,
@@ -1138,7 +394,7 @@
       }
     },
     {
-      "id": "s56",
+      "id": "s16",
       "type": "pipe",
       "x": 130,
       "y": 596.5,
@@ -1150,7 +406,7 @@
       }
     },
     {
-      "id": "s57",
+      "id": "s17",
       "type": "pipe",
       "x": 352.5,
       "y": 126,
@@ -1162,7 +418,7 @@
       }
     },
     {
-      "id": "s58",
+      "id": "s18",
       "type": "pipe",
       "x": 128.5,
       "y": 100,
@@ -1174,7 +430,7 @@
       }
     },
     {
-      "id": "s59",
+      "id": "s19",
       "type": "rect",
       "x": 20,
       "y": 706,
@@ -1193,7 +449,7 @@
       "locked": true
     },
     {
-      "id": "s60",
+      "id": "s20",
       "type": "text",
       "x": 28,
       "y": 712,
@@ -1210,7 +466,7 @@
       }
     },
     {
-      "id": "s61",
+      "id": "s21",
       "type": "valve",
       "x": 66,
       "y": 742,
@@ -1227,7 +483,7 @@
       }
     },
     {
-      "id": "s62",
+      "id": "s22",
       "type": "pump",
       "x": 58,
       "y": 756,
@@ -1246,7 +502,7 @@
       }
     },
     {
-      "id": "s63",
+      "id": "s23",
       "type": "rect",
       "x": 60,
       "y": 790,
@@ -1264,7 +520,7 @@
       }
     },
     {
-      "id": "s64",
+      "id": "s24",
       "type": "text",
       "x": 58,
       "y": 806,
@@ -1281,7 +537,7 @@
       }
     },
     {
-      "id": "s65",
+      "id": "s25",
       "type": "pipe",
       "x": 69.5,
       "y": 720,
@@ -1293,7 +549,7 @@
       }
     },
     {
-      "id": "s66",
+      "id": "s26",
       "type": "valve",
       "x": 130,
       "y": 742,
@@ -1310,7 +566,7 @@
       }
     },
     {
-      "id": "s67",
+      "id": "s27",
       "type": "pump",
       "x": 122,
       "y": 756,
@@ -1329,7 +585,7 @@
       }
     },
     {
-      "id": "s68",
+      "id": "s28",
       "type": "rect",
       "x": 124,
       "y": 790,
@@ -1347,7 +603,7 @@
       }
     },
     {
-      "id": "s69",
+      "id": "s29",
       "type": "text",
       "x": 122,
       "y": 806,
@@ -1364,7 +620,7 @@
       }
     },
     {
-      "id": "s70",
+      "id": "s30",
       "type": "pipe",
       "x": 133.5,
       "y": 720,
@@ -1376,7 +632,7 @@
       }
     },
     {
-      "id": "s71",
+      "id": "s31",
       "type": "readout",
       "x": 20,
       "y": 676,
@@ -1402,7 +658,7 @@
       }
     },
     {
-      "id": "s72",
+      "id": "s32",
       "type": "rect",
       "x": 196,
       "y": 760,
@@ -1421,7 +677,7 @@
       "name": "Control panel BJC951"
     },
     {
-      "id": "s73",
+      "id": "s33",
       "type": "text",
       "x": 198,
       "y": 768,
@@ -1438,7 +694,7 @@
       }
     },
     {
-      "id": "s74",
+      "id": "s34",
       "type": "rect",
       "x": 430,
       "y": 300,
@@ -1457,7 +713,7 @@
       "locked": true
     },
     {
-      "id": "s75",
+      "id": "s35",
       "type": "text",
       "x": 438,
       "y": 306,
@@ -1474,7 +730,7 @@
       }
     },
     {
-      "id": "s76",
+      "id": "s36",
       "type": "button",
       "x": 436,
       "y": 352,
@@ -1493,7 +749,7 @@
       }
     },
     {
-      "id": "s77",
+      "id": "s37",
       "type": "pump",
       "x": 452,
       "y": 360,
@@ -1513,7 +769,7 @@
       "name": "Transfer pump PAF901"
     },
     {
-      "id": "s78",
+      "id": "s38",
       "type": "text",
       "x": 438,
       "y": 356,
@@ -1530,7 +786,7 @@
       }
     },
     {
-      "id": "s79",
+      "id": "s39",
       "type": "rect",
       "x": 436,
       "y": 372,
@@ -1548,7 +804,7 @@
       }
     },
     {
-      "id": "s80",
+      "id": "s40",
       "type": "valve",
       "x": 484,
       "y": 366,
@@ -1565,7 +821,7 @@
       }
     },
     {
-      "id": "s81",
+      "id": "s41",
       "type": "readout",
       "x": 506,
       "y": 356,
@@ -1591,7 +847,7 @@
       }
     },
     {
-      "id": "s82",
+      "id": "s42",
       "type": "rect",
       "x": 430,
       "y": 448,
@@ -1610,7 +866,7 @@
       "locked": true
     },
     {
-      "id": "s83",
+      "id": "s43",
       "type": "text",
       "x": 438,
       "y": 454,
@@ -1627,7 +883,7 @@
       }
     },
     {
-      "id": "s84",
+      "id": "s44",
       "type": "button",
       "x": 436,
       "y": 500,
@@ -1646,7 +902,7 @@
       }
     },
     {
-      "id": "s85",
+      "id": "s45",
       "type": "text",
       "x": 548,
       "y": 500,
@@ -1663,7 +919,7 @@
       }
     },
     {
-      "id": "s86",
+      "id": "s46",
       "type": "pump",
       "x": 452,
       "y": 508,
@@ -1683,7 +939,7 @@
       "name": "Transfer pump PAF902"
     },
     {
-      "id": "s87",
+      "id": "s47",
       "type": "text",
       "x": 438,
       "y": 504,
@@ -1700,7 +956,7 @@
       }
     },
     {
-      "id": "s88",
+      "id": "s48",
       "type": "rect",
       "x": 436,
       "y": 520,
@@ -1718,7 +974,7 @@
       }
     },
     {
-      "id": "s89",
+      "id": "s49",
       "type": "valve",
       "x": 484,
       "y": 514,
@@ -1735,7 +991,7 @@
       }
     },
     {
-      "id": "s90",
+      "id": "s50",
       "type": "readout",
       "x": 506,
       "y": 504,
@@ -1761,7 +1017,7 @@
       }
     },
     {
-      "id": "s91",
+      "id": "s51",
       "type": "pipe",
       "x": 354,
       "y": 370.5,
@@ -1773,7 +1029,7 @@
       }
     },
     {
-      "id": "s92",
+      "id": "s52",
       "type": "pipe",
       "x": 354,
       "y": 518.5,
@@ -1785,7 +1041,7 @@
       }
     },
     {
-      "id": "s93",
+      "id": "s53",
       "type": "pipe",
       "x": 582,
       "y": 370.5,
@@ -1797,7 +1053,7 @@
       }
     },
     {
-      "id": "s94",
+      "id": "s54",
       "type": "pipe",
       "x": 582,
       "y": 518.5,
@@ -1809,7 +1065,7 @@
       }
     },
     {
-      "id": "s95",
+      "id": "s55",
       "type": "pipe",
       "x": 620.5,
       "y": 372,
@@ -1821,7 +1077,7 @@
       }
     },
     {
-      "id": "s96",
+      "id": "s56",
       "type": "pipe",
       "x": 622,
       "y": 370.5,
@@ -1833,7 +1089,7 @@
       }
     },
     {
-      "id": "s97",
+      "id": "s57",
       "type": "readout",
       "x": 690,
       "y": 356,
@@ -1859,7 +1115,7 @@
       }
     },
     {
-      "id": "s98",
+      "id": "s58",
       "type": "pipe",
       "x": 776,
       "y": 370.5,
@@ -1871,7 +1127,7 @@
       }
     },
     {
-      "id": "s99",
+      "id": "s59",
       "type": "rect",
       "x": 830,
       "y": 60,
@@ -1890,7 +1146,7 @@
       "locked": true
     },
     {
-      "id": "s100",
+      "id": "s60",
       "type": "text",
       "x": 838,
       "y": 66,
@@ -1907,7 +1163,7 @@
       }
     },
     {
-      "id": "s101",
+      "id": "s61",
       "type": "text",
       "x": 1070,
       "y": 66,
@@ -1924,197 +1180,51 @@
       }
     },
     {
-      "id": "s102",
-      "type": "rect",
+      "id": "s62",
+      "type": "tank",
       "x": 980,
       "y": 110,
       "w": 96,
-      "h": 118,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "PBF 901"
-    },
-    {
-      "id": "s103",
-      "type": "readout",
-      "x": 986,
-      "y": 124,
-      "w": 58,
-      "h": 18,
+      "h": 116,
       "bind": {
         "value": "PBF901_LEVEL"
       },
       "props": {
-        "text": "78 %",
-        "unit": "",
-        "decimals": null
+        "level": 78,
+        "capacity": "25 m³",
+        "label": "LFO day tank",
+        "plate": "PBF 901",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PBF901_LEVEL",
+            "text": "78 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF901_T1",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF901_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s104",
-      "type": "readout",
-      "x": 986,
-      "y": 144,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF901_T1"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s105",
-      "type": "readout",
-      "x": 986,
-      "y": 163,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF901_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s106",
-      "type": "text",
-      "x": 986,
-      "y": 210,
-      "w": 58,
-      "h": 13,
-      "props": {
-        "text": "25 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s107",
-      "type": "led",
-      "x": 1062,
-      "y": 120,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF901_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "PBF 901"
     },
     {
-      "id": "s108",
-      "type": "led",
-      "x": 1062,
-      "y": 202,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF901_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s109",
-      "type": "text",
-      "x": 980,
-      "y": 232,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "LFO day tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s110",
-      "type": "text",
-      "x": 980,
-      "y": 242,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "PBF 901"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s111",
+      "id": "s63",
       "type": "text",
       "x": 906,
       "y": 134,
@@ -2131,7 +1241,7 @@
       }
     },
     {
-      "id": "s112",
+      "id": "s64",
       "type": "valve",
       "x": 896,
       "y": 148,
@@ -2148,7 +1258,7 @@
       }
     },
     {
-      "id": "s113",
+      "id": "s65",
       "type": "pipe",
       "x": 854,
       "y": 152.5,
@@ -2160,7 +1270,7 @@
       }
     },
     {
-      "id": "s114",
+      "id": "s66",
       "type": "pipe",
       "x": 911,
       "y": 152.5,
@@ -2172,7 +1282,7 @@
       }
     },
     {
-      "id": "s115",
+      "id": "s67",
       "type": "pipe",
       "x": 1076,
       "y": 168.5,
@@ -2184,7 +1294,7 @@
       }
     },
     {
-      "id": "s116",
+      "id": "s68",
       "type": "text",
       "x": 1130,
       "y": 150,
@@ -2201,7 +1311,7 @@
       }
     },
     {
-      "id": "s117",
+      "id": "s69",
       "type": "valve",
       "x": 1126,
       "y": 164,
@@ -2218,197 +1328,51 @@
       }
     },
     {
-      "id": "s118",
-      "type": "rect",
+      "id": "s70",
+      "type": "tank",
       "x": 980,
       "y": 285,
       "w": 96,
-      "h": 118,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "PBF 902"
-    },
-    {
-      "id": "s119",
-      "type": "readout",
-      "x": 986,
-      "y": 299,
-      "w": 58,
-      "h": 18,
+      "h": 116,
       "bind": {
         "value": "PBF902_LEVEL"
       },
       "props": {
-        "text": "80 %",
-        "unit": "",
-        "decimals": null
+        "level": 80,
+        "capacity": "25 m³",
+        "label": "LFO day tank",
+        "plate": "PBF 902",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PBF902_LEVEL",
+            "text": "80 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF902_T1",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF902_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s120",
-      "type": "readout",
-      "x": 986,
-      "y": 319,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF902_T1"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s121",
-      "type": "readout",
-      "x": 986,
-      "y": 338,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF902_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s122",
-      "type": "text",
-      "x": 986,
-      "y": 385,
-      "w": 58,
-      "h": 13,
-      "props": {
-        "text": "25 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s123",
-      "type": "led",
-      "x": 1062,
-      "y": 295,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF902_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "PBF 902"
     },
     {
-      "id": "s124",
-      "type": "led",
-      "x": 1062,
-      "y": 377,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF902_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s125",
-      "type": "text",
-      "x": 980,
-      "y": 407,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "LFO day tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s126",
-      "type": "text",
-      "x": 980,
-      "y": 417,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "PBF 902"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s127",
+      "id": "s71",
       "type": "text",
       "x": 906,
       "y": 309,
@@ -2425,7 +1389,7 @@
       }
     },
     {
-      "id": "s128",
+      "id": "s72",
       "type": "valve",
       "x": 896,
       "y": 323,
@@ -2442,7 +1406,7 @@
       }
     },
     {
-      "id": "s129",
+      "id": "s73",
       "type": "pipe",
       "x": 854,
       "y": 327.5,
@@ -2454,7 +1418,7 @@
       }
     },
     {
-      "id": "s130",
+      "id": "s74",
       "type": "pipe",
       "x": 911,
       "y": 327.5,
@@ -2466,7 +1430,7 @@
       }
     },
     {
-      "id": "s131",
+      "id": "s75",
       "type": "pipe",
       "x": 1076,
       "y": 343.5,
@@ -2478,7 +1442,7 @@
       }
     },
     {
-      "id": "s132",
+      "id": "s76",
       "type": "text",
       "x": 1130,
       "y": 325,
@@ -2495,7 +1459,7 @@
       }
     },
     {
-      "id": "s133",
+      "id": "s77",
       "type": "valve",
       "x": 1126,
       "y": 339,
@@ -2512,197 +1476,51 @@
       }
     },
     {
-      "id": "s134",
-      "type": "rect",
+      "id": "s78",
+      "type": "tank",
       "x": 980,
       "y": 460,
       "w": 96,
-      "h": 118,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "PBF 903"
-    },
-    {
-      "id": "s135",
-      "type": "readout",
-      "x": 986,
-      "y": 474,
-      "w": 58,
-      "h": 18,
+      "h": 116,
       "bind": {
         "value": "PBF903_LEVEL"
       },
       "props": {
-        "text": "60 %",
-        "unit": "",
-        "decimals": null
+        "level": 60,
+        "capacity": "25 m³",
+        "label": "LFO day tank",
+        "plate": "PBF 903",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PBF903_LEVEL",
+            "text": "60 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF903_T1",
+            "text": "32 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF903_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s136",
-      "type": "readout",
-      "x": 986,
-      "y": 494,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF903_T1"
-      },
-      "props": {
-        "text": "32 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s137",
-      "type": "readout",
-      "x": 986,
-      "y": 513,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF903_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s138",
-      "type": "text",
-      "x": 986,
-      "y": 560,
-      "w": 58,
-      "h": 13,
-      "props": {
-        "text": "25 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s139",
-      "type": "led",
-      "x": 1062,
-      "y": 470,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF903_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "PBF 903"
     },
     {
-      "id": "s140",
-      "type": "led",
-      "x": 1062,
-      "y": 552,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF903_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s141",
-      "type": "text",
-      "x": 980,
-      "y": 582,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "LFO day tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s142",
-      "type": "text",
-      "x": 980,
-      "y": 592,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "PBF 903"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s143",
+      "id": "s79",
       "type": "text",
       "x": 906,
       "y": 484,
@@ -2719,7 +1537,7 @@
       }
     },
     {
-      "id": "s144",
+      "id": "s80",
       "type": "valve",
       "x": 896,
       "y": 498,
@@ -2736,7 +1554,7 @@
       }
     },
     {
-      "id": "s145",
+      "id": "s81",
       "type": "pipe",
       "x": 854,
       "y": 502.5,
@@ -2748,7 +1566,7 @@
       }
     },
     {
-      "id": "s146",
+      "id": "s82",
       "type": "pipe",
       "x": 911,
       "y": 502.5,
@@ -2760,7 +1578,7 @@
       }
     },
     {
-      "id": "s147",
+      "id": "s83",
       "type": "pipe",
       "x": 1076,
       "y": 518.5,
@@ -2772,7 +1590,7 @@
       }
     },
     {
-      "id": "s148",
+      "id": "s84",
       "type": "text",
       "x": 1130,
       "y": 500,
@@ -2789,7 +1607,7 @@
       }
     },
     {
-      "id": "s149",
+      "id": "s85",
       "type": "valve",
       "x": 1126,
       "y": 514,
@@ -2806,7 +1624,7 @@
       }
     },
     {
-      "id": "s150",
+      "id": "s86",
       "type": "pipe",
       "x": 852.5,
       "y": 154,
@@ -2818,7 +1636,7 @@
       }
     },
     {
-      "id": "s151",
+      "id": "s87",
       "type": "pipe",
       "x": 1131.5,
       "y": 170,
@@ -2830,7 +1648,7 @@
       }
     },
     {
-      "id": "s152",
+      "id": "s88",
       "type": "rect",
       "x": 1180,
       "y": 60,
@@ -2849,7 +1667,7 @@
       "locked": true
     },
     {
-      "id": "s153",
+      "id": "s89",
       "type": "text",
       "x": 1188,
       "y": 66,
@@ -2866,7 +1684,7 @@
       }
     },
     {
-      "id": "s154",
+      "id": "s90",
       "type": "text",
       "x": 1420,
       "y": 66,
@@ -2883,197 +1701,51 @@
       }
     },
     {
-      "id": "s155",
-      "type": "rect",
+      "id": "s91",
+      "type": "tank",
       "x": 1330,
       "y": 110,
       "w": 96,
-      "h": 118,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "PBF 904"
-    },
-    {
-      "id": "s156",
-      "type": "readout",
-      "x": 1336,
-      "y": 124,
-      "w": 58,
-      "h": 18,
+      "h": 116,
       "bind": {
         "value": "PBF904_LEVEL"
       },
       "props": {
-        "text": "61 %",
-        "unit": "",
-        "decimals": null
+        "level": 61,
+        "capacity": "25 m³",
+        "label": "LFO day tank",
+        "plate": "PBF 904",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PBF904_LEVEL",
+            "text": "61 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF904_T1",
+            "text": "33 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF904_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s157",
-      "type": "readout",
-      "x": 1336,
-      "y": 144,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF904_T1"
-      },
-      "props": {
-        "text": "33 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s158",
-      "type": "readout",
-      "x": 1336,
-      "y": 163,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF904_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s159",
-      "type": "text",
-      "x": 1336,
-      "y": 210,
-      "w": 58,
-      "h": 13,
-      "props": {
-        "text": "25 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s160",
-      "type": "led",
-      "x": 1412,
-      "y": 120,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF904_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "PBF 904"
     },
     {
-      "id": "s161",
-      "type": "led",
-      "x": 1412,
-      "y": 202,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF904_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s162",
-      "type": "text",
-      "x": 1330,
-      "y": 232,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "LFO day tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s163",
-      "type": "text",
-      "x": 1330,
-      "y": 242,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "PBF 904"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s164",
+      "id": "s92",
       "type": "text",
       "x": 1256,
       "y": 134,
@@ -3090,7 +1762,7 @@
       }
     },
     {
-      "id": "s165",
+      "id": "s93",
       "type": "valve",
       "x": 1246,
       "y": 148,
@@ -3107,7 +1779,7 @@
       }
     },
     {
-      "id": "s166",
+      "id": "s94",
       "type": "pipe",
       "x": 1204,
       "y": 152.5,
@@ -3119,7 +1791,7 @@
       }
     },
     {
-      "id": "s167",
+      "id": "s95",
       "type": "pipe",
       "x": 1261,
       "y": 152.5,
@@ -3131,7 +1803,7 @@
       }
     },
     {
-      "id": "s168",
+      "id": "s96",
       "type": "pipe",
       "x": 1426,
       "y": 168.5,
@@ -3143,7 +1815,7 @@
       }
     },
     {
-      "id": "s169",
+      "id": "s97",
       "type": "text",
       "x": 1480,
       "y": 150,
@@ -3160,7 +1832,7 @@
       }
     },
     {
-      "id": "s170",
+      "id": "s98",
       "type": "valve",
       "x": 1476,
       "y": 164,
@@ -3177,197 +1849,51 @@
       }
     },
     {
-      "id": "s171",
-      "type": "rect",
+      "id": "s99",
+      "type": "tank",
       "x": 1330,
       "y": 285,
       "w": 96,
-      "h": 118,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "PBF 905"
-    },
-    {
-      "id": "s172",
-      "type": "readout",
-      "x": 1336,
-      "y": 299,
-      "w": 58,
-      "h": 18,
+      "h": 116,
       "bind": {
         "value": "PBF905_LEVEL"
       },
       "props": {
-        "text": "78 %",
-        "unit": "",
-        "decimals": null
+        "level": 78,
+        "capacity": "25 m³",
+        "label": "LFO day tank",
+        "plate": "PBF 905",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PBF905_LEVEL",
+            "text": "78 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF905_T1",
+            "text": "31 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF905_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s173",
-      "type": "readout",
-      "x": 1336,
-      "y": 319,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF905_T1"
-      },
-      "props": {
-        "text": "31 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s174",
-      "type": "readout",
-      "x": 1336,
-      "y": 338,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF905_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s175",
-      "type": "text",
-      "x": 1336,
-      "y": 385,
-      "w": 58,
-      "h": 13,
-      "props": {
-        "text": "25 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s176",
-      "type": "led",
-      "x": 1412,
-      "y": 295,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF905_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "PBF 905"
     },
     {
-      "id": "s177",
-      "type": "led",
-      "x": 1412,
-      "y": 377,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF905_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s178",
-      "type": "text",
-      "x": 1330,
-      "y": 407,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "LFO day tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s179",
-      "type": "text",
-      "x": 1330,
-      "y": 417,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "PBF 905"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s180",
+      "id": "s100",
       "type": "text",
       "x": 1256,
       "y": 309,
@@ -3384,7 +1910,7 @@
       }
     },
     {
-      "id": "s181",
+      "id": "s101",
       "type": "valve",
       "x": 1246,
       "y": 323,
@@ -3401,7 +1927,7 @@
       }
     },
     {
-      "id": "s182",
+      "id": "s102",
       "type": "pipe",
       "x": 1204,
       "y": 327.5,
@@ -3413,7 +1939,7 @@
       }
     },
     {
-      "id": "s183",
+      "id": "s103",
       "type": "pipe",
       "x": 1261,
       "y": 327.5,
@@ -3425,7 +1951,7 @@
       }
     },
     {
-      "id": "s184",
+      "id": "s104",
       "type": "pipe",
       "x": 1426,
       "y": 343.5,
@@ -3437,7 +1963,7 @@
       }
     },
     {
-      "id": "s185",
+      "id": "s105",
       "type": "text",
       "x": 1480,
       "y": 325,
@@ -3454,7 +1980,7 @@
       }
     },
     {
-      "id": "s186",
+      "id": "s106",
       "type": "valve",
       "x": 1476,
       "y": 339,
@@ -3471,197 +1997,51 @@
       }
     },
     {
-      "id": "s187",
-      "type": "rect",
+      "id": "s107",
+      "type": "tank",
       "x": 1330,
       "y": 460,
       "w": 96,
-      "h": 118,
-      "props": {
-        "bevel": true
-      },
-      "style": {
-        "fill": "#9aa2ab",
-        "stroke": "#5a6068",
-        "strokeWidth": 1,
-        "radius": 0,
-        "opacity": 1
-      },
-      "name": "PBF 906"
-    },
-    {
-      "id": "s188",
-      "type": "readout",
-      "x": 1336,
-      "y": 474,
-      "w": 58,
-      "h": 18,
+      "h": 116,
       "bind": {
         "value": "PBF906_LEVEL"
       },
       "props": {
-        "text": "80 %",
-        "unit": "",
-        "decimals": null
+        "level": 80,
+        "capacity": "25 m³",
+        "label": "LFO day tank",
+        "plate": "PBF 906",
+        "switches": true,
+        "rows": [
+          {
+            "tag": "PBF906_LEVEL",
+            "text": "80 %",
+            "unit": "%",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF906_T1",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          },
+          {
+            "tag": "COMMON_PBF906_T2",
+            "text": "30 °C",
+            "unit": "°C",
+            "decimals": 0
+          }
+        ]
       },
       "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 10,
-        "bold": true,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s189",
-      "type": "readout",
-      "x": 1336,
-      "y": 494,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF906_T1"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s190",
-      "type": "readout",
-      "x": 1336,
-      "y": 513,
-      "w": 58,
-      "h": 17,
-      "bind": {
-        "value": "COMMON_PBF906_T2"
-      },
-      "props": {
-        "text": "30 °C",
-        "unit": "",
-        "decimals": null
-      },
-      "style": {
-        "fill": "#f6f8f9",
-        "stroke": "#8a929b",
-        "strokeWidth": 1,
-        "color": "#111820",
-        "fontSize": 9.5,
-        "bold": false,
-        "align": "center",
-        "radius": 0
-      }
-    },
-    {
-      "id": "s191",
-      "type": "text",
-      "x": 1336,
-      "y": 560,
-      "w": 58,
-      "h": 13,
-      "props": {
-        "text": "25 m³"
-      },
-      "style": {
-        "color": "#f2f4f6",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s192",
-      "type": "led",
-      "x": 1412,
-      "y": 470,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF906_LSH"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
+        "fill": "#9aa2ab",
+        "stroke": "#3d4349",
         "strokeWidth": 1
-      }
+      },
+      "name": "PBF 906"
     },
     {
-      "id": "s193",
-      "type": "led",
-      "x": 1412,
-      "y": 552,
-      "w": 12,
-      "h": 12,
-      "bind": {
-        "value": "COMMON_PBF906_LSL"
-      },
-      "props": {
-        "shape": "circle",
-        "onColor": null,
-        "offColor": null
-      },
-      "style": {
-        "fill": "#e9ecef",
-        "stroke": "#5a6068",
-        "strokeWidth": 1
-      }
-    },
-    {
-      "id": "s194",
-      "type": "text",
-      "x": 1330,
-      "y": 582,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "LFO day tank"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s195",
-      "type": "text",
-      "x": 1330,
-      "y": 592,
-      "w": 120,
-      "h": 13,
-      "props": {
-        "text": "PBF 906"
-      },
-      "style": {
-        "color": "#1d242b",
-        "fontSize": 8.5,
-        "bold": false,
-        "align": "left"
-      }
-    },
-    {
-      "id": "s196",
+      "id": "s108",
       "type": "text",
       "x": 1256,
       "y": 484,
@@ -3678,7 +2058,7 @@
       }
     },
     {
-      "id": "s197",
+      "id": "s109",
       "type": "valve",
       "x": 1246,
       "y": 498,
@@ -3695,7 +2075,7 @@
       }
     },
     {
-      "id": "s198",
+      "id": "s110",
       "type": "pipe",
       "x": 1204,
       "y": 502.5,
@@ -3707,7 +2087,7 @@
       }
     },
     {
-      "id": "s199",
+      "id": "s111",
       "type": "pipe",
       "x": 1261,
       "y": 502.5,
@@ -3719,7 +2099,7 @@
       }
     },
     {
-      "id": "s200",
+      "id": "s112",
       "type": "pipe",
       "x": 1426,
       "y": 518.5,
@@ -3731,7 +2111,7 @@
       }
     },
     {
-      "id": "s201",
+      "id": "s113",
       "type": "text",
       "x": 1480,
       "y": 500,
@@ -3748,7 +2128,7 @@
       }
     },
     {
-      "id": "s202",
+      "id": "s114",
       "type": "valve",
       "x": 1476,
       "y": 514,
@@ -3765,7 +2145,7 @@
       }
     },
     {
-      "id": "s203",
+      "id": "s115",
       "type": "pipe",
       "x": 1202.5,
       "y": 154,
@@ -3777,7 +2157,7 @@
       }
     },
     {
-      "id": "s204",
+      "id": "s116",
       "type": "pipe",
       "x": 1481.5,
       "y": 170,
@@ -3789,7 +2169,7 @@
       }
     },
     {
-      "id": "s205",
+      "id": "s117",
       "type": "pipe",
       "x": 820,
       "y": 152.5,
@@ -3801,7 +2181,7 @@
       }
     },
     {
-      "id": "s206",
+      "id": "s118",
       "type": "pipe",
       "x": 818.5,
       "y": 154,
@@ -3813,7 +2193,7 @@
       }
     },
     {
-      "id": "s207",
+      "id": "s119",
       "type": "rect",
       "x": 600,
       "y": 650,
@@ -3832,7 +2212,7 @@
       "locked": true
     },
     {
-      "id": "s208",
+      "id": "s120",
       "type": "text",
       "x": 608,
       "y": 656,
@@ -3849,7 +2229,7 @@
       }
     },
     {
-      "id": "s209",
+      "id": "s121",
       "type": "led",
       "x": 612,
       "y": 700,
@@ -3870,7 +2250,7 @@
       }
     },
     {
-      "id": "s210",
+      "id": "s122",
       "type": "text",
       "x": 630,
       "y": 700,
@@ -3887,7 +2267,7 @@
       }
     },
     {
-      "id": "s211",
+      "id": "s123",
       "type": "rect",
       "x": 770,
       "y": 692,
@@ -3905,7 +2285,7 @@
       }
     },
     {
-      "id": "s212",
+      "id": "s124",
       "type": "text",
       "x": 790,
       "y": 692,
@@ -3922,7 +2302,7 @@
       }
     },
     {
-      "id": "s213",
+      "id": "s125",
       "type": "readout",
       "x": 760,
       "y": 716,
@@ -3948,7 +2328,7 @@
       }
     },
     {
-      "id": "s214",
+      "id": "s126",
       "type": "button",
       "x": 1150,
       "y": 654,
@@ -3967,7 +2347,7 @@
       }
     },
     {
-      "id": "s215",
+      "id": "s127",
       "type": "valve",
       "x": 612,
       "y": 741,
@@ -3984,7 +2364,7 @@
       }
     },
     {
-      "id": "s216",
+      "id": "s128",
       "type": "rect",
       "x": 660,
       "y": 739,
@@ -4002,7 +2382,7 @@
       }
     },
     {
-      "id": "s217",
+      "id": "s129",
       "type": "rect",
       "x": 806,
       "y": 734,
@@ -4020,7 +2400,7 @@
       }
     },
     {
-      "id": "s218",
+      "id": "s130",
       "type": "text",
       "x": 808,
       "y": 738,
@@ -4037,7 +2417,7 @@
       }
     },
     {
-      "id": "s219",
+      "id": "s131",
       "type": "text",
       "x": 846,
       "y": 724,
@@ -4054,7 +2434,7 @@
       }
     },
     {
-      "id": "s220",
+      "id": "s132",
       "type": "pump",
       "x": 846,
       "y": 734,
@@ -4074,7 +2454,7 @@
       "name": "Feeder pump 1"
     },
     {
-      "id": "s221",
+      "id": "s133",
       "type": "text",
       "x": 870,
       "y": 750,
@@ -4091,7 +2471,7 @@
       }
     },
     {
-      "id": "s222",
+      "id": "s134",
       "type": "rect",
       "x": 890,
       "y": 738,
@@ -4109,7 +2489,7 @@
       }
     },
     {
-      "id": "s223",
+      "id": "s135",
       "type": "text",
       "x": 908,
       "y": 738,
@@ -4126,7 +2506,7 @@
       }
     },
     {
-      "id": "s224",
+      "id": "s136",
       "type": "readout",
       "x": 1010,
       "y": 736,
@@ -4152,7 +2532,7 @@
       }
     },
     {
-      "id": "s225",
+      "id": "s137",
       "type": "pipe",
       "x": 600,
       "y": 744.5,
@@ -4164,7 +2544,7 @@
       }
     },
     {
-      "id": "s226",
+      "id": "s138",
       "type": "pipe",
       "x": 627,
       "y": 744.5,
@@ -4176,7 +2556,7 @@
       }
     },
     {
-      "id": "s227",
+      "id": "s139",
       "type": "pipe",
       "x": 676,
       "y": 744.5,
@@ -4188,7 +2568,7 @@
       }
     },
     {
-      "id": "s228",
+      "id": "s140",
       "type": "pipe",
       "x": 830,
       "y": 744.5,
@@ -4200,7 +2580,7 @@
       }
     },
     {
-      "id": "s229",
+      "id": "s141",
       "type": "pipe",
       "x": 868,
       "y": 744.5,
@@ -4212,7 +2592,7 @@
       }
     },
     {
-      "id": "s230",
+      "id": "s142",
       "type": "pipe",
       "x": 1086,
       "y": 744.5,
@@ -4224,7 +2604,7 @@
       }
     },
     {
-      "id": "s231",
+      "id": "s143",
       "type": "valve",
       "x": 612,
       "y": 801,
@@ -4241,7 +2621,7 @@
       }
     },
     {
-      "id": "s232",
+      "id": "s144",
       "type": "rect",
       "x": 660,
       "y": 799,
@@ -4259,7 +2639,7 @@
       }
     },
     {
-      "id": "s233",
+      "id": "s145",
       "type": "rect",
       "x": 806,
       "y": 794,
@@ -4277,7 +2657,7 @@
       }
     },
     {
-      "id": "s234",
+      "id": "s146",
       "type": "text",
       "x": 808,
       "y": 798,
@@ -4294,7 +2674,7 @@
       }
     },
     {
-      "id": "s235",
+      "id": "s147",
       "type": "text",
       "x": 846,
       "y": 784,
@@ -4311,7 +2691,7 @@
       }
     },
     {
-      "id": "s236",
+      "id": "s148",
       "type": "pump",
       "x": 846,
       "y": 794,
@@ -4331,7 +2711,7 @@
       "name": "Feeder pump 2"
     },
     {
-      "id": "s237",
+      "id": "s149",
       "type": "text",
       "x": 870,
       "y": 810,
@@ -4348,7 +2728,7 @@
       }
     },
     {
-      "id": "s238",
+      "id": "s150",
       "type": "rect",
       "x": 890,
       "y": 798,
@@ -4366,7 +2746,7 @@
       }
     },
     {
-      "id": "s239",
+      "id": "s151",
       "type": "text",
       "x": 908,
       "y": 798,
@@ -4383,7 +2763,7 @@
       }
     },
     {
-      "id": "s240",
+      "id": "s152",
       "type": "readout",
       "x": 1010,
       "y": 796,
@@ -4409,7 +2789,7 @@
       }
     },
     {
-      "id": "s241",
+      "id": "s153",
       "type": "pipe",
       "x": 600,
       "y": 804.5,
@@ -4421,7 +2801,7 @@
       }
     },
     {
-      "id": "s242",
+      "id": "s154",
       "type": "pipe",
       "x": 627,
       "y": 804.5,
@@ -4433,7 +2813,7 @@
       }
     },
     {
-      "id": "s243",
+      "id": "s155",
       "type": "pipe",
       "x": 676,
       "y": 804.5,
@@ -4445,7 +2825,7 @@
       }
     },
     {
-      "id": "s244",
+      "id": "s156",
       "type": "pipe",
       "x": 830,
       "y": 804.5,
@@ -4457,7 +2837,7 @@
       }
     },
     {
-      "id": "s245",
+      "id": "s157",
       "type": "pipe",
       "x": 868,
       "y": 804.5,
@@ -4469,7 +2849,7 @@
       }
     },
     {
-      "id": "s246",
+      "id": "s158",
       "type": "pipe",
       "x": 1086,
       "y": 804.5,
@@ -4481,7 +2861,7 @@
       }
     },
     {
-      "id": "s247",
+      "id": "s159",
       "type": "pipe",
       "x": 1124.5,
       "y": 746,
@@ -4493,7 +2873,7 @@
       }
     },
     {
-      "id": "s248",
+      "id": "s160",
       "type": "readout",
       "x": 1150,
       "y": 704,
@@ -4519,7 +2899,7 @@
       }
     },
     {
-      "id": "s249",
+      "id": "s161",
       "type": "readout",
       "x": 1150,
       "y": 726,
@@ -4545,7 +2925,7 @@
       }
     },
     {
-      "id": "s250",
+      "id": "s162",
       "type": "readout",
       "x": 1236,
       "y": 726,
@@ -4571,7 +2951,7 @@
       }
     },
     {
-      "id": "s251",
+      "id": "s163",
       "type": "pipe",
       "x": 1126,
       "y": 744.5,
@@ -4583,7 +2963,7 @@
       }
     },
     {
-      "id": "s252",
+      "id": "s164",
       "type": "text",
       "x": 1344,
       "y": 736,
@@ -4600,7 +2980,7 @@
       }
     },
     {
-      "id": "s253",
+      "id": "s165",
       "type": "pipe",
       "x": 600,
       "y": 688.5,
@@ -4612,7 +2992,7 @@
       }
     },
     {
-      "id": "s254",
+      "id": "s166",
       "type": "pipe",
       "x": 598.5,
       "y": 620,
@@ -4624,7 +3004,7 @@
       }
     },
     {
-      "id": "s255",
+      "id": "s167",
       "type": "rect",
       "x": 560,
       "y": 856,
@@ -4643,7 +3023,7 @@
       "name": "Sludge tank DDB901"
     },
     {
-      "id": "s256",
+      "id": "s168",
       "type": "readout",
       "x": 566,
       "y": 866,
@@ -4669,7 +3049,7 @@
       }
     },
     {
-      "id": "s257",
+      "id": "s169",
       "type": "text",
       "x": 566,
       "y": 890,
@@ -4686,7 +3066,7 @@
       }
     },
     {
-      "id": "s258",
+      "id": "s170",
       "type": "led",
       "x": 638,
       "y": 862,
@@ -4707,7 +3087,7 @@
       }
     },
     {
-      "id": "s259",
+      "id": "s171",
       "type": "text",
       "x": 560,
       "y": 912,
@@ -4724,7 +3104,7 @@
       }
     },
     {
-      "id": "s260",
+      "id": "s172",
       "type": "rect",
       "x": 700,
       "y": 846,
@@ -4743,7 +3123,7 @@
       "locked": true
     },
     {
-      "id": "s261",
+      "id": "s173",
       "type": "text",
       "x": 708,
       "y": 852,
@@ -4760,7 +3140,7 @@
       }
     },
     {
-      "id": "s262",
+      "id": "s174",
       "type": "valve",
       "x": 722,
       "y": 897,
@@ -4777,7 +3157,7 @@
       }
     },
     {
-      "id": "s263",
+      "id": "s175",
       "type": "pump",
       "x": 748,
       "y": 888,
@@ -4796,7 +3176,7 @@
       }
     },
     {
-      "id": "s264",
+      "id": "s176",
       "type": "valve",
       "x": 786,
       "y": 897,
@@ -4813,7 +3193,7 @@
       }
     },
     {
-      "id": "s265",
+      "id": "s177",
       "type": "pipe",
       "x": 652,
       "y": 900.5,
@@ -4825,7 +3205,7 @@
       }
     },
     {
-      "id": "s266",
+      "id": "s178",
       "type": "pipe",
       "x": 737,
       "y": 900.5,
@@ -4837,7 +3217,7 @@
       }
     },
     {
-      "id": "s267",
+      "id": "s179",
       "type": "pipe",
       "x": 772,
       "y": 900.5,
@@ -4849,7 +3229,7 @@
       }
     },
     {
-      "id": "s268",
+      "id": "s180",
       "type": "pipe",
       "x": 801,
       "y": 900.5,
@@ -4861,7 +3241,7 @@
       }
     },
     {
-      "id": "s269",
+      "id": "s181",
       "type": "text",
       "x": 966,
       "y": 894,

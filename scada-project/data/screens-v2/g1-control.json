@@ -1349,10 +1349,10 @@
       "w": 26,
       "h": 26,
       "bind": {
-        "value": "G01_BREAKER"
+        "value": "G01_BREAKER_STATE"
       },
       "props": {
-        "closed": true
+        "state": "closed"
       },
       "style": {
         "fill": "#2fa84f",

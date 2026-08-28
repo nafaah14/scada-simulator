@@ -1305,19 +1305,18 @@
       "id": "s74",
       "type": "engine",
       "x": 1062,
-      "y": 266,
-      "w": 150,
-      "h": 68,
+      "y": 268,
+      "w": 160,
+      "h": 60,
       "bind": {
-        "value": "G01_RUNNING"
+        "value": "G01_STATE"
       },
       "props": {
-        "running": true,
-        "text": ""
+        "state": "running",
+        "text": "1",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 11
-      },
+      "style": {},
       "name": "Genset 1"
     },
     {

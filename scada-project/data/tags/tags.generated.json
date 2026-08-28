@@ -41,13 +41,18 @@
     },
     "trend_enabled": false,
     "generated": true,
-    "tag_id": "COMMON_BUSTIE",
-    "logical_name": "COMMON_BUSTIE",
-    "description": "Bus tie breaker closed",
+    "tag_id": "COMMON_BUSTIE_STATE",
+    "logical_name": "COMMON_BUSTIE_STATE",
+    "description": "Bus tie breaker state",
     "engineering_unit": null,
-    "data_type": "digital",
+    "data_type": "enum",
     "category": "status",
-    "value": true,
+    "value": "CLOSED",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
     "unit": "COMMON",
     "screens": [
       "Common.Overview"
@@ -3620,6 +3625,38 @@
     },
     "trend_enabled": false,
     "generated": true,
+    "tag_id": "G01_BREAKER_STATE",
+    "logical_name": "G01_BREAKER_STATE",
+    "description": "Generator breaker state (G1)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "CLOSED",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
+    "unit": "G1",
+    "screens": [
+      "Common.Overview",
+      "G1.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
     "tag_id": "G01_BRK_PARALLEL",
     "logical_name": "G01_BRK_PARALLEL",
     "description": "Parallel operation",
@@ -4042,7 +4079,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4068,7 +4105,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4094,7 +4131,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4120,7 +4157,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4146,7 +4183,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4198,7 +4235,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4224,7 +4261,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 82,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4250,7 +4287,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 84,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4276,7 +4313,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 410,
+    "value": 411,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4302,7 +4339,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 412,
+    "value": 398,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4328,7 +4365,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 414,
+    "value": 398,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4354,7 +4391,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 402,
+    "value": 396,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4380,7 +4417,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 400,
+    "value": 405,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4406,7 +4443,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 404,
+    "value": 407,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4432,7 +4469,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 405,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4458,7 +4495,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 398,
+    "value": 401,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4484,7 +4521,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 402,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4510,7 +4547,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 397,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4536,7 +4573,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4562,7 +4599,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4588,7 +4625,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4614,7 +4651,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 119,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4692,7 +4729,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 116,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4718,7 +4755,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4744,7 +4781,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4770,7 +4807,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 120,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4796,7 +4833,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4822,7 +4859,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 108,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4848,7 +4885,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 109,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4874,7 +4911,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4900,7 +4937,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4926,7 +4963,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -4978,7 +5015,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5004,7 +5041,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 109,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5030,7 +5067,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5056,7 +5093,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 81,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5082,7 +5119,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 86,
+    "value": 83,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5108,7 +5145,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 84,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5160,7 +5197,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 79,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5186,7 +5223,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 81,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5238,7 +5275,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 82,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5264,7 +5301,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 83,
+    "value": 80,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5290,7 +5327,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 80,
+    "value": 85,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5342,7 +5379,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 396,
+    "value": 412,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5368,7 +5405,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 409,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5394,7 +5431,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 415,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5420,7 +5457,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 415,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5446,7 +5483,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 407,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5472,7 +5509,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 412,
+    "value": 413,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5498,7 +5535,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 403,
+    "value": 406,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5524,7 +5561,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 396,
+    "value": 403,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5550,7 +5587,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 399,
+    "value": 412,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5576,7 +5613,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5602,7 +5639,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5628,7 +5665,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 117,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5654,7 +5691,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5680,7 +5717,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 119,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5706,7 +5743,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5732,7 +5769,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5758,7 +5795,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5784,7 +5821,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5810,7 +5847,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5836,7 +5873,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 111,
+    "value": 110,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5888,7 +5925,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 114,
+    "value": 117,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5914,7 +5951,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 118,
+    "value": 114,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5940,7 +5977,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 108,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5966,7 +6003,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 116,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -5992,7 +6029,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 110,
+    "value": 113,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6018,7 +6055,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 111,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6044,7 +6081,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 115,
+    "value": 112,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6070,7 +6107,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 112,
+    "value": 115,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6617,7 +6654,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6669,7 +6706,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 94,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6721,7 +6758,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 90,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6747,7 +6784,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 91,
+    "value": 92,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6773,7 +6810,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 91,
+    "value": 93,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6799,7 +6836,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 92,
+    "value": 89,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6825,7 +6862,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 93,
+    "value": 88,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -6851,7 +6888,7 @@
     "engineering_unit": "°C",
     "data_type": "analog",
     "category": "temperature",
-    "value": 89,
+    "value": 91,
     "unit": "G1",
     "screens": [
       "G1.Temp"
@@ -8222,6 +8259,40 @@
     },
     "trend_enabled": false,
     "generated": true,
+    "tag_id": "G01_STATE",
+    "logical_name": "G01_STATE",
+    "description": "Genset state (G1)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "RUNNING",
+    "states": [
+      "RUNNING",
+      "STOPPED",
+      "MAINTENANCE",
+      "TRIP"
+    ],
+    "unit": "G1",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir",
+      "G1.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
     "tag_id": "G01_STOP_LEVER",
     "logical_name": "G01_STOP_LEVER",
     "description": "Stop lever tripped",
@@ -8663,6 +8734,38 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_BREAKER_STATE",
+    "logical_name": "G02_BREAKER_STATE",
+    "description": "Generator breaker state (G2)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "CLOSED",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
+    "unit": "G2",
+    "screens": [
+      "Common.Overview",
+      "G2.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": true,
     "generated": true,
     "tag_id": "G02_KVAR",
@@ -8820,6 +8923,40 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G02_STATE",
+    "logical_name": "G02_STATE",
+    "description": "Genset state (G2)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "RUNNING",
+    "states": [
+      "RUNNING",
+      "STOPPED",
+      "MAINTENANCE",
+      "TRIP"
+    ],
+    "unit": "G2",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir",
+      "G2.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": true,
     "generated": true,
     "tag_id": "G03_BOOSTER_FLOW",
@@ -8933,6 +9070,38 @@
     "data_type": "digital",
     "category": "status",
     "value": true,
+    "unit": "G3",
+    "screens": [
+      "Common.Overview",
+      "G3.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_BREAKER_STATE",
+    "logical_name": "G03_BREAKER_STATE",
+    "description": "Generator breaker state (G3)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "CLOSED",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
     "unit": "G3",
     "screens": [
       "Common.Overview",
@@ -9108,6 +9277,40 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G03_STATE",
+    "logical_name": "G03_STATE",
+    "description": "Genset state (G3)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "RUNNING",
+    "states": [
+      "RUNNING",
+      "STOPPED",
+      "MAINTENANCE",
+      "TRIP"
+    ],
+    "unit": "G3",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir",
+      "G3.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": true,
     "generated": true,
     "tag_id": "G04_BOOSTER_FLOW",
@@ -9221,6 +9424,38 @@
     "data_type": "digital",
     "category": "status",
     "value": false,
+    "unit": "G4",
+    "screens": [
+      "Common.Overview",
+      "G4.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_BREAKER_STATE",
+    "logical_name": "G04_BREAKER_STATE",
+    "description": "Generator breaker state (G4)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "OPEN",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
     "unit": "G4",
     "screens": [
       "Common.Overview",
@@ -9397,6 +9632,40 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G04_STATE",
+    "logical_name": "G04_STATE",
+    "description": "Genset state (G4)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "STOPPED",
+    "states": [
+      "RUNNING",
+      "STOPPED",
+      "MAINTENANCE",
+      "TRIP"
+    ],
+    "unit": "G4",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir",
+      "G4.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": true,
     "generated": true,
     "tag_id": "G05_BOOSTER_FLOW",
@@ -9510,6 +9779,38 @@
     "data_type": "digital",
     "category": "status",
     "value": true,
+    "unit": "G5",
+    "screens": [
+      "Common.Overview",
+      "G5.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_BREAKER_STATE",
+    "logical_name": "G05_BREAKER_STATE",
+    "description": "Generator breaker state (G5)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "CLOSED",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
     "unit": "G5",
     "screens": [
       "Common.Overview",
@@ -9685,6 +9986,40 @@
       "hi": null,
       "lo": null
     },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G05_STATE",
+    "logical_name": "G05_STATE",
+    "description": "Genset state (G5)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "RUNNING",
+    "states": [
+      "RUNNING",
+      "STOPPED",
+      "MAINTENANCE",
+      "TRIP"
+    ],
+    "unit": "G5",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir",
+      "G5.Fuel"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
     "trend_enabled": true,
     "generated": true,
     "tag_id": "G06_BOOSTER_FLOW",
@@ -9798,6 +10133,38 @@
     "data_type": "digital",
     "category": "status",
     "value": true,
+    "unit": "G6",
+    "screens": [
+      "Common.Overview",
+      "G6.Control"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_BREAKER_STATE",
+    "logical_name": "G06_BREAKER_STATE",
+    "description": "Generator breaker state (G6)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "CLOSED",
+    "states": [
+      "CLOSED",
+      "OPEN",
+      "TRIP"
+    ],
     "unit": "G6",
     "screens": [
       "Common.Overview",
@@ -9959,6 +10326,40 @@
     "unit": "G6",
     "screens": [
       "Common.StartAir"
+    ]
+  },
+  {
+    "sensor_fault": false,
+    "alarm_limits": {
+      "hihi": null,
+      "hi": null,
+      "lo": null,
+      "lolo": null
+    },
+    "shutdown_limits": {
+      "hi": null,
+      "lo": null
+    },
+    "trend_enabled": false,
+    "generated": true,
+    "tag_id": "G06_STATE",
+    "logical_name": "G06_STATE",
+    "description": "Genset state (G6)",
+    "engineering_unit": null,
+    "data_type": "enum",
+    "category": "status",
+    "value": "RUNNING",
+    "states": [
+      "RUNNING",
+      "STOPPED",
+      "MAINTENANCE",
+      "TRIP"
+    ],
+    "unit": "G6",
+    "screens": [
+      "Common.Overview",
+      "Common.StartAir",
+      "G6.Fuel"
     ]
   },
   {

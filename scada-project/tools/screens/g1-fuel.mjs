@@ -98,7 +98,8 @@ export function g1Fuel() {
   B.ro(956, SPINE - 34, 66, 20, '40 °C', 'G01_ENGINE_INLET_TEMP', { bold: true, decimals: 0 });
   B.ro(956, SPINE - 10, 66, 20, '8.8 bar', 'G01_ENGINE_INLET_PRESS', { bold: true, decimals: 1 });
   B.pipeH(1022, SPINE, 40);
-  B.engine(1062, SPINE - 34, 150, 68, 'G01_RUNNING', { running: true, name: 'Genset 1' });
+  B.engine(1062, SPINE - 32, 160, 60, 'G01_STATE',
+    { state: 'running', text: '1', name: 'Genset 1' });
   B.led(1078, SPINE + 38, 'G01_MOUNT_L1', { w: 14, h: 14, fill: '#e9ecef', stroke: '#5a6068' });
   B.led(1186, SPINE + 38, 'G01_MOUNT_L2', { w: 14, h: 14, fill: '#e9ecef', stroke: '#5a6068' });
 

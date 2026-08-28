@@ -115,6 +115,14 @@ api.post('/sim/unit/:id/load', (req, res) => {
   const u = sim.setLoad(req.params.id, Number(req.body.load));
   return u ? res.json(u) : res.status(400).json({ error: 'Unknown unit' });
 });
+api.post('/sim/unit/:id/maintenance', (req, res) => {
+  const u = sim.setMaintenance(req.params.id, req.body.on !== false);
+  return u ? res.json(u) : res.status(400).json({ error: 'Unknown unit' });
+});
+api.post('/sim/unit/:id/trip', (req, res) => {
+  const u = req.body.reset ? sim.resetTrip(req.params.id) : sim.trip(req.params.id);
+  return u ? res.json(u) : res.status(400).json({ error: 'Unknown unit' });
+});
 api.post('/sim/fault', (req, res) => {
   const { tag_id, mode, value } = req.body || {};
   if (!tag_id || !mode) return res.status(400).json({ error: 'tag_id and mode are required' });

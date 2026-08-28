@@ -88,7 +88,8 @@ export function g1Control() {
 
   /* ---------- breaker ---------- */
   panel(652, 20, 250, 200, 'Breaker');
-  B.breaker(700, 60, 'G01_BREAKER', { size: 26, closed: true, name: 'Generator breaker' });
+  B.breaker(700, 60, 'G01_BREAKER_STATE',
+    { size: 26, state: 'closed', name: 'Generator breaker' });
   B.text(736, 62, 150, 'Generator breaker', { size: 9.5 });
   [['Trp. circuit healthy', 'G01_BRK_TRIP_HEALTHY'],
    ['Breaker spring charged', 'G01_BRK_SPRING'],

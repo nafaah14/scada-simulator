@@ -103,6 +103,11 @@
   .mini-btn:hover{border-color:var(--blue);}
   .mini-btn.danger:hover{border-color:var(--red);color:var(--red);}
   .empty-note{font-size:11px;color:var(--text-dim);line-height:1.55;}
+  .row-item{border:1px solid var(--border);background:var(--bg-field);
+    padding:5px;margin-bottom:5px;border-radius:2px;}
+  .row-head{display:flex;align-items:center;gap:6px;font-size:10px;
+    color:var(--text-dim);margin-bottom:3px;}
+  .row-head button{margin-left:auto;padding:1px 5px;}
   kbd{background:var(--bg-field);border:1px solid var(--border-light);border-bottom-width:2px;
     border-radius:3px;padding:0 4px;font-size:10px;font-family:inherit;}
 
@@ -633,6 +638,21 @@ function buildField(el, f){
     case 'orientation': return field('Orientation', selectInput(
                           [['vertical','Vertical'],['horizontal','Horizontal']],
                           p.orientation||'vertical', set(p,'orientation')));
+    case 'state':       return field('State', selectInput(
+                          [['running','Running (green)'],['stopped','Stopped (blue)'],
+                           ['maintenance','Maintenance (yellow)'],['trip','Shutdown / trip (red)']],
+                          p.state||'running', set(p,'state')));
+    case 'breakerState':return field('State', selectInput(
+                          [['closed','Closed (green)'],['open','Open (white)'],
+                           ['trip','Tripped (red)']],
+                          p.state||'closed', set(p,'state')));
+    case 'cylinders':   return field('Cylinders drawn', numInput(p.cylinders||9,
+                          set(p,'cylinders'), 4, 12));
+    case 'capacity':    return field('Capacity label', textInput(p.capacity||'', set(p,'capacity')));
+    case 'label':       return field('Name', textInput(p.label||'', set(p,'label')));
+    case 'plate':       return field('Plate / tag no.', textInput(p.plate||'', set(p,'plate')));
+    case 'switches':    return checkbox('Level switches', p.switches !== false, set(p,'switches'));
+    case 'rows':        return rowsEditor(el, p);
     case 'running':     return checkbox('Running', !!p.running, set(p,'running'));
     case 'open':        return checkbox('Open', !!p.open, set(p,'open'));
     case 'closed':      return checkbox('Closed', !!p.closed, set(p,'closed'));
@@ -711,6 +731,65 @@ function btnRow(defs){
   });
   return r;
 }
+/* Tank rows are data, so they get a real editor: add, remove, bind each
+   row to its own tag, and set the text it falls back to when unbound. */
+function rowsEditor(el, p){
+  const wrap = div('fld');
+  const l = document.createElement('label');
+  l.textContent = 'Rows (top to bottom)';
+  wrap.appendChild(l);
+
+  const rows = Array.isArray(p.rows) ? p.rows : (p.rows = []);
+  rows.forEach((row, i)=>{
+    const box = div('row-item');
+    const head = div('row-head');
+    head.textContent = 'Row ' + (i + 1);
+    const del = document.createElement('button');
+    del.className = 'mini-btn danger'; del.textContent = '✕';
+    del.style.flex = '0 0 24px';
+    del.addEventListener('click', ()=>{
+      snapshot(); rows.splice(i,1); renderAll();
+    });
+    head.appendChild(del);
+    box.appendChild(head);
+
+    const t = textInput(row.text || '', v=>{ snapshot(); row.text = v; renderAll(); });
+    t.placeholder = 'static text';
+    box.appendChild(t);
+
+    const sel = document.createElement('select');
+    const none = document.createElement('option');
+    none.value=''; none.textContent='— no tag —';
+    sel.appendChild(none);
+    [...ScadaStore.tags.values()]
+      .sort((a,b)=>a.tag_id.localeCompare(b.tag_id))
+      .forEach(tg=>{
+        const o = document.createElement('option');
+        o.value = tg.tag_id; o.textContent = tg.tag_id;
+        if(row.tag === tg.tag_id) o.selected = true;
+        sel.appendChild(o);
+      });
+    if(row.tag && !ScadaStore.tags.has(row.tag)){
+      const o = document.createElement('option');
+      o.value=row.tag; o.textContent=row.tag+' (not in tag DB)'; o.selected=true;
+      sel.appendChild(o);
+    }
+    sel.style.marginTop='3px';
+    sel.addEventListener('change', ()=>{ snapshot(); row.tag = sel.value; renderAll(); });
+    box.appendChild(sel);
+    wrap.appendChild(box);
+  });
+
+  const add = document.createElement('button');
+  add.className = 'mini-btn'; add.textContent = '+ Add row';
+  add.style.width = '100%';
+  add.addEventListener('click', ()=>{
+    snapshot(); rows.push({ tag:'', text:'0' }); renderAll();
+  });
+  wrap.appendChild(add);
+  return wrap;
+}
+
 function tagPicker(el){
   const wrap = document.createElement('div');
   const s = document.createElement('select');

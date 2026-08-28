@@ -20,21 +20,18 @@ export function commonFuel() {
   const SX = 190, SW = 104, SH = 132;
 
   STORAGE.forEach(t => {
-    B.rect(SX, t.y, SW, SH, {
-      fill: t.primary ? '#3f8f4f' : C.equipment, stroke: '#5a6068', bevel: true,
-      name: 'LFO storage ' + t.name
+    const key = t.name.replace(' ', '');
+    B.tank(SX, t.y, SW, SH, t.tag, {
+      level: t.pct, capacity: '800 m³', label: 'LFO storage tank', plate: t.name,
+      name: 'LFO storage ' + t.name,
+      fill: t.primary ? '#3f8f4f' : C.equipment,
+      rows: [
+        { tag: t.tag, text: t.pct + ' %', unit: '%', decimals: 0 },
+        ...t.temps.map((v, i) => ({
+          tag: `COMMON_${key}_T${i + 1}`, text: v + ' °C', unit: '°C', decimals: 0
+        }))
+      ]
     });
-    B.ro(SX + 6, t.y + 14, 62, 18, t.pct + ' %', t.tag, { size: 10, bold: true });
-    t.temps.forEach((v, i) =>
-      B.ro(SX + 6, t.y + 34 + i * 19, 62, 17, v + ' °C',
-        `COMMON_${t.name.replace(' ', '')}_T${i + 1}`, { size: 9.5 }));
-    B.text(SX + 6, t.y + 114, 62, '800 m³', { size: 8.5, color: '#f2f4f6' });
-    B.led(SX + SW - 14, t.y + 10, `COMMON_${t.name.replace(' ', '')}_LSH`,
-      { w: 12, h: 12, fill: '#e9ecef', stroke: '#5a6068' });
-    B.led(SX + SW - 14, t.y + SH - 22, `COMMON_${t.name.replace(' ', '')}_LSL`,
-      { w: 12, h: 12, fill: '#e9ecef', stroke: '#5a6068' });
-    B.text(SX, t.y + SH + 2, SW + 20, 'LFO storage tank', { size: 8.5 });
-    B.text(SX, t.y + SH + 12, SW + 20, t.name, { size: 8.5 });
 
     B.button(14, t.y + 26, 100, 30,
       t.primary ? 'Select for\nprimary tank' : 'Select for\nprimary tank',
@@ -107,19 +104,17 @@ export function commonFuel() {
 
     area.tanks.forEach((t, i) => {
       const [name, pct, temps, tag] = t;
+      const key = name.replace(' ', '');
       const y = 110 + i * 175, tx = area.x + 150;
-      B.rect(tx, y, 96, 118, { fill: C.equipment, stroke: '#5a6068', bevel: true, name });
-      B.ro(tx + 6, y + 14, 58, 18, pct + ' %', tag, { size: 10, bold: true });
-      temps.forEach((v, k) =>
-        B.ro(tx + 6, y + 34 + k * 19, 58, 17, v + ' °C',
-          `COMMON_${name.replace(' ', '')}_T${k + 1}`, { size: 9.5 }));
-      B.text(tx + 6, y + 100, 58, '25 m³', { size: 8.5, color: '#f2f4f6' });
-      B.led(tx + 82, y + 10, `COMMON_${name.replace(' ', '')}_LSH`,
-        { w: 12, h: 12, fill: '#e9ecef', stroke: '#5a6068' });
-      B.led(tx + 82, y + 92, `COMMON_${name.replace(' ', '')}_LSL`,
-        { w: 12, h: 12, fill: '#e9ecef', stroke: '#5a6068' });
-      B.text(tx, y + 122, 120, 'LFO day tank', { size: 8.5 });
-      B.text(tx, y + 132, 120, name, { size: 8.5 });
+      B.tank(tx, y, 96, 116, tag, {
+        level: pct, capacity: '25 m³', label: 'LFO day tank', plate: name, name,
+        rows: [
+          { tag, text: pct + ' %', unit: '%', decimals: 0 },
+          ...temps.map((v, k) => ({
+            tag: `COMMON_${key}_T${k + 1}`, text: v + ' °C', unit: '°C', decimals: 0
+          }))
+        ]
+      });
 
       // fill line in from the transfer header, with the auto valve
       B.text(area.x + 76, y + 24, 14, 'A', { size: 9, bold: true });

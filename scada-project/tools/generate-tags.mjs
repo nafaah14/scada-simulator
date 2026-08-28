@@ -296,8 +296,13 @@ for (const unit of UNITS) {
     { ...common, screens: airScreens,
       alarm_limits: { hihi: null, hi: null, lo: 18, lolo: 15 } });
 
-  digital('COMMON_BUSTIE', 'Bus tie breaker closed', true,
-    { ...common, screens: ['Common.Overview'] });
+  make({
+    tag_id: 'COMMON_BUSTIE_STATE', logical_name: 'COMMON_BUSTIE_STATE',
+    description: 'Bus tie breaker state',
+    engineering_unit: null, data_type: 'enum', category: 'status',
+    value: 'CLOSED', states: ['CLOSED', 'OPEN', 'TRIP'],
+    ...common, screens: ['Common.Overview'], trend_enabled: false
+  });
 }
 
 /* ---------------------------------------------------------------------
@@ -323,6 +328,26 @@ for (let n = 1; n <= 6; n++) {
   digital(`${p}_BOOSTER_V`, `Booster inlet valve (${u})`, n !== 4, { unit: u, screens: overview });
   digital(`${p}_RUNNING`, `Engine running (${u})`, n !== 4,
     { unit: u, screens: [...overview, 'Common.StartAir'] });
+
+  /* Equipment state drives colour across every screen. Any unit can be
+     in any of these at any time; maintenance is set from the Maintenance
+     selector on the overview, not by the engine itself. */
+  make({
+    tag_id: `${p}_STATE`, logical_name: `${p}_STATE`,
+    description: `Genset state (${u})`,
+    engineering_unit: null, data_type: 'enum', category: 'status',
+    value: n === 4 ? 'STOPPED' : 'RUNNING',
+    states: ['RUNNING', 'STOPPED', 'MAINTENANCE', 'TRIP'],
+    unit: u, screens: [...overview, 'Common.StartAir', `${u}.Fuel`], trend_enabled: false
+  });
+  make({
+    tag_id: `${p}_BREAKER_STATE`, logical_name: `${p}_BREAKER_STATE`,
+    description: `Generator breaker state (${u})`,
+    engineering_unit: null, data_type: 'enum', category: 'status',
+    value: n === 4 ? 'OPEN' : 'CLOSED',
+    states: ['CLOSED', 'OPEN', 'TRIP'],
+    unit: u, screens: [...overview, ...ctrl], trend_enabled: false
+  });
   for (const q of ['P1', 'P2']) {
     digital(`${p}_BOOSTER_${q}`, `Booster pump ${q} running (${u})`, q === 'P1' && n !== 4,
       { unit: u, screens: overview });

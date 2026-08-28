@@ -114,19 +114,33 @@ export function builder() {
       ...(opt.name ? { name: opt.name } : {})
     }),
 
+    /* A whole vessel in one element — rows are data, so a 3-row day tank
+       and a 5-row storage tank are the same symbol. */
     tank: (x, y, w, h, tag, opt = {}) => push({
       type: 'tank', x, y, w, h,
       bind: { value: tag || '' },
-      props: { level: opt.level ?? 60, caption: opt.caption ?? '' },
-      style: { fill: opt.fill ?? '#e9ecef', stroke: opt.stroke ?? '#5a6068', strokeWidth: 1 },
+      props: {
+        level: opt.level ?? 60,
+        capacity: opt.capacity ?? '',
+        label: opt.label ?? '',
+        plate: opt.plate ?? '',
+        switches: opt.switches !== false,
+        rows: opt.rows ?? []
+      },
+      style: { fill: opt.fill ?? '#9aa2ab', stroke: opt.stroke ?? '#3d4349', strokeWidth: 1 },
       ...(opt.name ? { name: opt.name } : {})
     }),
 
+    /* state: running | stopped | maintenance | trip */
     engine: (x, y, w, h, tag, opt = {}) => push({
       type: 'engine', x, y, w, h,
       bind: { value: tag || '' },
-      props: { running: opt.running !== false, text: opt.text ?? '' },
-      style: { fontSize: opt.size ?? 11 },
+      props: {
+        state: opt.state ?? (opt.running === false ? 'stopped' : 'running'),
+        text: opt.text ?? '',
+        cylinders: opt.cylinders ?? 9
+      },
+      style: {},
       ...(opt.name ? { name: opt.name } : {})
     }),
 
@@ -138,11 +152,12 @@ export function builder() {
       ...(opt.name ? { name: opt.name } : {})
     }),
 
+    /* state: closed | open | trip */
     breaker: (x, y, tag, opt = {}) => push({
       type: 'breaker', x, y, w: opt.size ?? 14, h: opt.size ?? 14,
       bind: { value: tag || '' },
-      props: { closed: opt.closed !== false },
-      style: { fill: opt.fill ?? '#2fa84f', stroke: '#1c6b32', strokeWidth: 1 },
+      props: { state: opt.state ?? (opt.closed === false ? 'open' : 'closed') },
+      style: { fill: '#2fa84f', stroke: '#1c6b32', strokeWidth: opt.strokeWidth ?? 1 },
       ...(opt.name ? { name: opt.name } : {})
     }),
 

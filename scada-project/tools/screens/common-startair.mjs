@@ -100,12 +100,12 @@ export function commonStartAir() {
   B.pipeV(RAIL_START, ROW[0] + 14, ROW[5] - ROW[0], AIR);
 
   const UNITS = [
-    { n: 1, a: '27.6 bar', b: '27.6 bar', run: true },
-    { n: 2, a: '27.6 bar', b: '27.6 bar', run: true },
-    { n: 3, a: '27.7 bar', b: '27.6 bar', run: true },
-    { n: 4, a: '0.0 bar', b: '0.2 bar', run: false, alarm: true },
-    { n: 5, a: '27.5 bar', b: '27.6 bar', run: true },
-    { n: 6, a: '27.6 bar', b: '27.6 bar', run: true }
+    { n: 1, a: '27.6 bar', b: '27.6 bar', state: 'running' },
+    { n: 2, a: '27.6 bar', b: '27.6 bar', state: 'running' },
+    { n: 3, a: '27.7 bar', b: '27.6 bar', state: 'running' },
+    { n: 4, a: '0.0 bar', b: '0.2 bar', state: 'stopped' },
+    { n: 5, a: '27.5 bar', b: '27.6 bar', state: 'running' },
+    { n: 6, a: '27.6 bar', b: '27.6 bar', state: 'running' }
   ];
 
   UNITS.forEach(u => {
@@ -118,8 +118,8 @@ export function commonStartAir() {
     B.pipeH(1038, y - 24, ENG_X - 1038, AIR);
     B.pipeH(1038, y + 4, ENG_X - 1038, AIR);
 
-    B.engine(ENG_X, y - 30, 130, 56, `${p}_RUNNING`,
-      { running: u.run, text: String(u.n), size: 12, name: 'Genset ' + u.n });
+    B.engine(ENG_X, y - 30, 150, 56, `${p}_STATE`,
+      { state: u.state, text: String(u.n), name: 'Genset ' + u.n });
   });
 
   return {
@@ -127,7 +127,7 @@ export function commonStartAir() {
     title: 'Common — Start air',
     unit: 'COMMON',
     layout: 'canvas',
-    canvas: { width: 1320, height: 680, background: C.ground },
+    canvas: { width: 1340, height: 680, background: C.ground },
     elements: B.elements
   };
 }

@@ -23,6 +23,39 @@ export class Simulation {
     this._changed = new Set();
   }
 
+  /* Any unit can be in any state; maintenance is an operator choice from
+     the overview's Maintenance selector, not something the engine enters
+     on its own. */
+  setMaintenance(unitId, on) {
+    const u = this.units.get(unitId);
+    if (!u) return null;
+    u.maintenance = !!on;
+    if (on) { u.state = 'STOPPED'; u.load = 0; u.speed = 0; }
+    return u;
+  }
+  trip(unitId) {
+    const u = this.units.get(unitId);
+    if (!u) return null;
+    u.tripped = true;
+    u.state = 'STOPPING';
+    return u;
+  }
+  resetTrip(unitId) {
+    const u = this.units.get(unitId);
+    if (!u) return null;
+    u.tripped = false;
+    return u;
+  }
+
+  /* The colour state shown on screen, derived from the machine state
+     plus the two operator-set flags. */
+  _equipState(u) {
+    if (u.maintenance) return 'MAINTENANCE';
+    if (u.tripped) return 'TRIP';
+    if (u.state === 'RUNNING' || u.state === 'STARTING') return 'RUNNING';
+    return 'STOPPED';
+  }
+
   init(unitIds = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6']) {
     for (const id of unitIds) {
       // G4 sits stopped so the plant reads as a realistic mixed state —
@@ -35,7 +68,9 @@ export class Simulation {
         stateT: 0,
         load: stopped ? 0 : 0.89,          // fraction of rated
         targetLoad: stopped ? 0 : 0.89,
-        speed: stopped ? 0 : 748
+        speed: stopped ? 0 : 748,
+        maintenance: false,
+        tripped: false
       });
     }
   }
@@ -150,6 +185,7 @@ export class Simulation {
     this._approach('COMMON_INSTRUMENT_PRESS', 7.1, 0.15, 0.06);
     this._approach('COMMON_START_AIR_PRESS', 27.8, 0.1, 0.08);
     this._approach('COMMON_SLUDGE_TEMP', 30, 0.05, 0.2);
+    this._set('COMMON_BUSTIE_STATE', 'CLOSED');
   }
 
   _tickUnit(u) {
@@ -177,6 +213,7 @@ export class Simulation {
     const load = u.load;
 
     this._set(`${p}_RUNNING`, u.state === 'RUNNING');
+    this._set(`${p}_STATE`, this._equipState(u));
 
     /* ---- power ----
        A stopped unit reads exactly zero rather than drifting around it;
@@ -193,6 +230,8 @@ export class Simulation {
     }
     this._set(`${p}_PF`, running ? 1.0 : 0);
     this._set(`${p}_BREAKER`, u.state === 'RUNNING');
+    this._set(`${p}_BREAKER_STATE`,
+      u.tripped ? 'TRIP' : (u.state === 'RUNNING' ? 'CLOSED' : 'OPEN'));
     this._set(`${p}_BOOSTER_V`, running);
     this._set(`${p}_BOOSTER_P1`, running);
 

@@ -4,7 +4,7 @@
   "unit": "COMMON",
   "layout": "canvas",
   "canvas": {
-    "width": 1320,
+    "width": 1340,
     "height": 680,
     "background": "#d2d6da"
   },
@@ -1218,18 +1218,17 @@
       "type": "engine",
       "x": 1120,
       "y": 90,
-      "w": 130,
+      "w": 150,
       "h": 56,
       "bind": {
-        "value": "G01_RUNNING"
+        "value": "G01_STATE"
       },
       "props": {
-        "running": true,
-        "text": "1"
+        "state": "running",
+        "text": "1",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 12
-      },
+      "style": {},
       "name": "Genset 1"
     },
     {
@@ -1337,18 +1336,17 @@
       "type": "engine",
       "x": 1120,
       "y": 188,
-      "w": 130,
+      "w": 150,
       "h": 56,
       "bind": {
-        "value": "G02_RUNNING"
+        "value": "G02_STATE"
       },
       "props": {
-        "running": true,
-        "text": "2"
+        "state": "running",
+        "text": "2",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 12
-      },
+      "style": {},
       "name": "Genset 2"
     },
     {
@@ -1456,18 +1454,17 @@
       "type": "engine",
       "x": 1120,
       "y": 286,
-      "w": 130,
+      "w": 150,
       "h": 56,
       "bind": {
-        "value": "G03_RUNNING"
+        "value": "G03_STATE"
       },
       "props": {
-        "running": true,
-        "text": "3"
+        "state": "running",
+        "text": "3",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 12
-      },
+      "style": {},
       "name": "Genset 3"
     },
     {
@@ -1575,18 +1572,17 @@
       "type": "engine",
       "x": 1120,
       "y": 384,
-      "w": 130,
+      "w": 150,
       "h": 56,
       "bind": {
-        "value": "G04_RUNNING"
+        "value": "G04_STATE"
       },
       "props": {
-        "running": false,
-        "text": "4"
+        "state": "stopped",
+        "text": "4",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 12
-      },
+      "style": {},
       "name": "Genset 4"
     },
     {
@@ -1694,18 +1690,17 @@
       "type": "engine",
       "x": 1120,
       "y": 482,
-      "w": 130,
+      "w": 150,
       "h": 56,
       "bind": {
-        "value": "G05_RUNNING"
+        "value": "G05_STATE"
       },
       "props": {
-        "running": true,
-        "text": "5"
+        "state": "running",
+        "text": "5",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 12
-      },
+      "style": {},
       "name": "Genset 5"
     },
     {
@@ -1813,18 +1808,17 @@
       "type": "engine",
       "x": 1120,
       "y": 580,
-      "w": 130,
+      "w": 150,
       "h": 56,
       "bind": {
-        "value": "G06_RUNNING"
+        "value": "G06_STATE"
       },
       "props": {
-        "running": true,
-        "text": "6"
+        "state": "running",
+        "text": "6",
+        "cylinders": 9
       },
-      "style": {
-        "fontSize": 12
-      },
+      "style": {},
       "name": "Genset 6"
     }
   ]
