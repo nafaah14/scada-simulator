@@ -468,10 +468,7 @@ function renderAlarmPage(){
       </table>
     </div>`;
   const btn = $('ackAllBtn');
-  if(btn) btn.addEventListener('click', async ()=>{
-    if(ScadaStore.mode !== 'live') return;
-    await fetch('/api/alarms/ack-all', {method:'POST'});
-  });
+  if(btn) btn.addEventListener('click', ()=>ScadaStore.ackAllAlarms());
 }
 
 /* ---------------- live updates --------------------------------------- */
@@ -514,14 +511,22 @@ ScadaStore.on('alarms', list=>{
 
 ScadaStore.on('status', s=>{
   const badge = $('connBadge');
-  badge.className = 'conn ' + (s.mode === 'live' ? (s.connected===false?'':'live') : 'static');
-  badge.querySelector('span').textContent =
-    s.mode === 'live'
-      ? (s.connected === false ? 'reconnecting…' : 'live')
-      : 'static data';
-  badge.title = s.mode === 'live'
-    ? 'Connected to the simulation server'
-    : 'No server — showing the committed snapshot. Run the server for live values.';
+  const label = badge.querySelector('span');
+  if(s.mode === 'live'){
+    const down = s.connected === false;
+    badge.className = 'conn ' + (down ? '' : 'live');
+    label.textContent = down ? 'reconnecting…' : 'live';
+    badge.title = 'Streaming from the simulation server';
+  } else if(s.mode === 'simulated'){
+    badge.className = 'conn live';
+    label.textContent = 'simulated';
+    badge.title = 'Running the simulation in this browser — your own independent plant. '
+      + (s.apiScreens ? 'Screens are saved server-side.' : 'Screens are saved in this browser.');
+  } else {
+    badge.className = 'conn static';
+    label.textContent = 'static data';
+    badge.title = 'No simulation — showing the committed snapshot.';
+  }
 });
 
 function updateHeader(){
@@ -563,10 +568,7 @@ function updateAlarmBanner(){
   $('alarmTag').textContent = worst.tag_id;
 }
 
-$('ackBtn').addEventListener('click', async ()=>{
-  if(ScadaStore.mode !== 'live') return;
-  await fetch('/api/alarms/ack-all', {method:'POST'});
-});
+$('ackBtn').addEventListener('click', ()=>ScadaStore.ackAllAlarms());
 
 /* ---------------- sensor popup ---------------------------------------- */
 let popTag = null;

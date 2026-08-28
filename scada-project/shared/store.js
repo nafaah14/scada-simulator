@@ -1,15 +1,25 @@
 /* =====================================================================
    SCADA DATA ACCESS
    ---------------------------------------------------------------------
-   One data layer for both the editor and the app shell, with two modes:
+   One data layer for both the editor and the app shell, with three modes:
 
-     live   — a backend is reachable: REST for config, WebSocket for
-              streaming tag values and alarms.
-     static — no backend (e.g. GitHub Pages): read the committed JSON
-              files directly. Everything still renders; nothing ticks.
+     live      — the Node backend is reachable: REST for config,
+                 WebSocket for streaming tag values and alarms.
+     simulated — no tick server, but the page runs the *same* simulation
+                 and alarm engine locally (shared/simulation.js and
+                 shared/alarm-engine.js). This is what static hosting
+                 like Cloudflare Pages gets: every viewer gets their own
+                 independent plant, which suits training — one trainee
+                 breaking things doesn't disturb another.
+     static    — simulation could not be started; render the committed
+                 snapshot and don't tick.
 
-   Mode is detected once at startup, so the same pages work whether or
-   not the server is running.
+   Screen persistence is separate from all of this: `apiScreens` is set
+   when *some* screen API exists (the Node server, or Cloudflare Pages
+   Functions), and saving then writes server-side rather than to
+   localStorage.
+
+   Mode is detected once at startup, so the same pages work in all cases.
    ===================================================================== */
 (function (global) {
   'use strict';
@@ -17,44 +27,111 @@
   const LS_SCREENS = 'scada.editor.screens.v1';
 
   const Store = {
-    mode: 'static',          // 'live' | 'static'
+    mode: 'static',          // 'live' | 'simulated' | 'static'
+    apiScreens: false,       // a screen API exists (Node server or Pages Functions)
     base: '',                // API base, e.g. '' when same-origin
     root: '..',              // path to scada-project/ from the calling page
     tags: new Map(),
     screenIndex: [],
     _socket: null,
+    _sim: null,
+    _alarms: null,
+    _simTimer: null,
     _listeners: { tags: [], alarms: [], status: [] }
   };
 
   /* ---------- boot -------------------------------------------------- */
   Store.init = async function (opts) {
     Object.assign(Store, opts || {});
+
+    // Which backend, if any, is answering?
+    let health = null;
     try {
       const res = await fetch(Store.base + '/api/health', { cache: 'no-store' });
-      if (res.ok) Store.mode = 'live';
-    } catch (e) {
-      Store.mode = 'static';
+      if (res.ok) health = await res.json();
+    } catch (e) { /* no backend at all */ }
+
+    if (health) {
+      // Only route screen writes to the API if that API can actually store
+      // them — Pages Functions without a KV binding report screens:false,
+      // and we fall back to localStorage rather than failing every save.
+      Store.apiScreens = health.screens !== false;
+      // The Node server ticks; Pages Functions cannot, and say so.
+      Store.mode = health.ticks === false ? 'simulated' : 'live';
     }
+
     await Store.loadTags();
     await Store.loadScreenIndex();
-    emit('status', { mode: Store.mode });
+
+    // The editor passes simulate:false — values shifting under the cursor
+    // while you position elements is a distraction, not a feature.
+    if (Store.mode !== 'live' && Store.simulate !== false) {
+      const ok = await Store.startLocalSimulation();
+      Store.mode = ok ? 'simulated' : 'static';
+    }
+
+    emit('status', { mode: Store.mode, apiScreens: Store.apiScreens });
     return Store.mode;
+  };
+
+  /* ---------- browser-side simulation --------------------------------
+     Uses the same engine modules the server runs, so behaviour and alarm
+     rules can't drift between hosted and local.                        */
+  Store.startLocalSimulation = async function (opts) {
+    if (Store._simTimer) return true;
+    if (!Store.tags.size) return false;
+    try {
+      const [{ Simulation }, { AlarmEngine }] = await Promise.all([
+        import(Store.root + '/shared/simulation.js'),
+        import(Store.root + '/shared/alarm-engine.js')
+      ]);
+
+      const tickMs = (opts && opts.tickMs) || 1000;
+      const tagSource = {
+        all: () => [...Store.tags.values()],
+        get: id => Store.tags.get(id)
+      };
+
+      Store._sim = new Simulation(tagSource, { tickMs });
+      Store._sim.init((opts && opts.units) || ['G1']);
+      Store._alarms = new AlarmEngine(tagSource);
+
+      Store._simTimer = setInterval(() => {
+        const changed = Store._sim.tick();
+        if (changed.length) emit('tags', changed);
+        const events = Store._alarms.scan();
+        if (events.length) emit('alarms', Store._alarms.activeList());
+      }, tickMs);
+      return true;
+    } catch (e) {
+      console.warn('[store] local simulation unavailable:', e.message);
+      return false;
+    }
+  };
+
+  Store.stopLocalSimulation = function () {
+    if (Store._simTimer) clearInterval(Store._simTimer);
+    Store._simTimer = null;
   };
 
   /* ---------- tags -------------------------------------------------- */
   Store.loadTags = async function () {
-    const url = Store.mode === 'live'
-      ? Store.base + '/api/tags'
-      : Store.root + '/data/tags/genset-tags.json';
-    try {
-      const res = await fetch(url, { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const list = await res.json();
-      Store.tags = new Map(list.map(t => [t.tag_id, t]));
-    } catch (e) {
-      console.warn('[store] tags unavailable:', e.message);
-      Store.tags = new Map();
+    // the expanded runtime set first, then the authored file as a fallback
+    const urls = Store.mode === 'live'
+      ? [Store.base + '/api/tags']
+      : [Store.root + '/data/tags/tags.generated.json',
+         Store.root + '/data/tags/genset-tags.json'];
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) continue;
+        const list = await res.json();
+        Store.tags = new Map(list.map(t => [t.tag_id, t]));
+        return Store.tags;
+      } catch (e) { /* try the next source */ }
     }
+    console.warn('[store] no tag database could be loaded');
+    Store.tags = new Map();
     return Store.tags;
   };
 
@@ -62,8 +139,13 @@
 
   Store.updateLimits = async function (tagId, patch) {
     if (Store.mode !== 'live') {
+      // applies to this browser's own simulation
       const t = Store.tags.get(tagId);
-      if (t) Object.assign(t, patch);
+      if (t) {
+        if (patch.alarm_limits) t.alarm_limits = { ...t.alarm_limits, ...patch.alarm_limits };
+        if (patch.shutdown_limits) t.shutdown_limits = { ...t.shutdown_limits, ...patch.shutdown_limits };
+        if (patch.sensor_fault !== undefined) t.sensor_fault = !!patch.sensor_fault;
+      }
       return t;
     }
     const res = await fetch(Store.base + '/api/tags/' + encodeURIComponent(tagId) + '/limits', {
@@ -79,11 +161,13 @@
 
   /* ---------- screens ----------------------------------------------- */
   Store.loadScreenIndex = async function () {
-    if (Store.mode === 'live') {
+    if (Store.apiScreens) {
       try {
         const res = await fetch(Store.base + '/api/screens', { cache: 'no-store' });
-        Store.screenIndex = await res.json();
-        return Store.screenIndex;
+        if (res.ok) {
+          Store.screenIndex = await res.json();
+          return Store.screenIndex;
+        }
       } catch (e) { console.warn('[store] screen index:', e.message); }
     }
     try {
@@ -104,7 +188,7 @@
   };
 
   Store.loadScreen = async function (screenId) {
-    if (Store.mode === 'live') {
+    if (Store.apiScreens) {
       const res = await fetch(Store.base + '/api/screens/' + encodeURIComponent(screenId),
         { cache: 'no-store' });
       if (res.ok) return await res.json();
@@ -119,14 +203,18 @@
   };
 
   Store.saveScreen = async function (doc) {
-    if (Store.mode === 'live') {
+    if (Store.apiScreens) {
       const res = await fetch(Store.base + '/api/screens/' + encodeURIComponent(doc.screen_id), {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(doc)
       });
-      if (!res.ok) throw new Error('Save failed (HTTP ' + res.status + ')');
-      return { where: 'server' };
+      if (!res.ok) {
+        const detail = await res.text().catch(() => '');
+        throw new Error('Save failed (HTTP ' + res.status + ') ' + detail.slice(0, 120));
+      }
+      const body = await res.json().catch(() => ({}));
+      return { where: body.where || 'server' };
     }
     const all = localScreens();
     all[doc.screen_id] = doc;
@@ -135,7 +223,7 @@
   };
 
   Store.deleteScreen = async function (screenId) {
-    if (Store.mode === 'live') {
+    if (Store.apiScreens) {
       await fetch(Store.base + '/api/screens/' + encodeURIComponent(screenId), { method: 'DELETE' });
     }
     const all = localScreens();
@@ -166,7 +254,7 @@
 
   /* ---------- live stream ------------------------------------------- */
   Store.connect = function () {
-    if (Store.mode !== 'live' || Store._socket) return;
+    if (Store.mode !== 'live' || Store._socket) return;   // simulated mode ticks locally
     const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
     const url = Store.base
       ? Store.base.replace(/^http/, 'ws') + '/ws'
@@ -221,15 +309,57 @@
 
   /* ---------- alarms ------------------------------------------------- */
   Store.getAlarms = async function () {
+    if (Store._alarms) return Store._alarms.activeList();
     if (Store.mode !== 'live') return [];
     try {
       const res = await fetch(Store.base + '/api/alarms', { cache: 'no-store' });
       return await res.json();
     } catch (e) { return []; }
   };
+
   Store.ackAlarm = async function (id) {
+    if (Store._alarms) {
+      Store._alarms.ack(id);
+      emit('alarms', Store._alarms.activeList());
+      return;
+    }
     if (Store.mode !== 'live') return;
     await fetch(Store.base + '/api/alarms/' + encodeURIComponent(id) + '/ack', { method: 'POST' });
+  };
+
+  Store.ackAllAlarms = async function () {
+    if (Store._alarms) {
+      Store._alarms.ackAll();
+      emit('alarms', Store._alarms.activeList());
+      return;
+    }
+    if (Store.mode !== 'live') return;
+    await fetch(Store.base + '/api/alarms/ack-all', { method: 'POST' });
+  };
+
+  /* Fault injection — drives this browser's simulation when local. */
+  Store.injectFault = async function (tagId, mode, value) {
+    if (Store._sim) return Store._sim.injectFault(tagId, mode, value);
+    if (Store.mode !== 'live') return [];
+    const res = await fetch(Store.base + '/api/sim/fault', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tag_id: tagId, mode, value })
+    });
+    const body = await res.json();
+    return body.faults || [];
+  };
+
+  Store.setUnitState = async function (unitId, state) {
+    if (Store._sim) return Store._sim.setUnitState(unitId, state);
+    if (Store.mode !== 'live') return null;
+    const res = await fetch(
+      Store.base + '/api/sim/unit/' + encodeURIComponent(unitId) + '/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ state })
+      });
+    return await res.json();
   };
 
   global.ScadaStore = Store;

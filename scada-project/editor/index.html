@@ -846,12 +846,15 @@ async function newScreen(){
   await refreshScreenList();
   renderAll();
 }
+const SAVE_MESSAGE = {
+  server: 'Saved to data/screens-v2/ — the app shell will pick it up',
+  'cloudflare-kv': 'Saved — live now for everyone on this site. Export to commit it to git.',
+  browser: 'Saved to this browser only (no screen API) — use Export to commit it'
+};
 async function save(){
   try{
     const r = await ScadaStore.saveScreen(screen);
-    toast(r.where === 'server'
-      ? 'Saved to data/screens-v2/ — the app shell will pick it up'
-      : 'Saved to this browser (no server) — use Export to commit it');
+    toast(SAVE_MESSAGE[r.where] || ('Saved (' + r.where + ')'));
     await refreshScreenList();
   }catch(e){ toast('Save failed: ' + e.message); }
 }
@@ -928,18 +931,20 @@ function toast(msg){
   toastTimer = setTimeout(()=>t.classList.remove('show'), 2600);
 }
 
+/* The editor cares about where a *save* lands, not whether the plant is
+   ticking — so this badge reflects screen storage, not simulation. */
 ScadaStore.on('status', s=>{
   const b = $('connBadge');
-  b.className = 'conn ' + (s.mode === 'live' ? 'live' : 'static');
-  b.querySelector('span').textContent = s.mode === 'live' ? 'server' : 'local only';
-  b.title = s.mode === 'live'
-    ? 'Saving writes JSON files into data/screens-v2/'
-    : 'No server — saves go to this browser. Use Export to commit a screen.';
+  b.className = 'conn ' + (s.apiScreens ? 'live' : 'static');
+  b.querySelector('span').textContent = s.apiScreens ? 'saves to server' : 'local only';
+  b.title = s.apiScreens
+    ? 'Saving stores the screen server-side — the app shell picks it up immediately'
+    : 'No screen API — saves go to this browser only. Use Export to commit a screen to git.';
 });
 
 /* ---------- boot ------------------------------------------------------------ */
 (async function init(){
-  await ScadaStore.init({ root: '..' });
+  await ScadaStore.init({ root: '..', simulate: false });
   renderPalette();
   const params = new URLSearchParams(location.search);
   const want = params.get('screen');

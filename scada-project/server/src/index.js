@@ -14,7 +14,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { TagStore } from './tags.js';
-import { Simulation } from './simulation.js';
+import { Simulation } from '../../shared/simulation.js';
 import { AlarmEngine } from './alarms.js';
 import { ScreenStore } from './screens.js';
 
@@ -43,8 +43,14 @@ app.use(express.json({ limit: '8mb' }));   // screen documents can be large
 const api = express.Router();
 
 api.get('/health', (_req, res) => res.json({
-  ok: true, tags: tags.tags.size, screens: screens.index().length,
-  tickMs: TICK_MS, units: sim.snapshotUnits()
+  ok: true,
+  runtime: 'node',
+  ticks: true,            // this server runs the simulation; clients don't
+  screens: true,          // screens persist to data/screens-v2/
+  tags: tags.tags.size,
+  screenCount: screens.index().length,
+  tickMs: TICK_MS,
+  units: sim.snapshotUnits()
 }));
 
 /* -- tags -- */

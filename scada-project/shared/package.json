@@ -1,0 +1,6 @@
+{
+  "name": "scada-shared",
+  "private": true,
+  "type": "module",
+  "description": "Engine modules shared by the Node server and the browser. simulation.js and alarm-engine.js are ES modules imported by both; renderer.js and store.js are classic browser scripts loaded via <script> and are not imported by Node."
+}
