@@ -45,53 +45,69 @@
   .canvas{height:calc(100% - 32px - 26px - 26px - 24px);padding:12px 16px;display:flex;gap:0;position:relative;overflow:auto;background:var(--bg-app);}
   html.embed .topbar, html.embed .unitbar, html.embed .pagebar { display:none; }
   html.embed .canvas { height: calc(100% - 24px); }
-  .zone{border-right:1px dashed var(--border-light);padding:18px 16px 10px;position:relative;flex:none;}
+  .zone{border-right:1px dashed var(--border-light);padding:18px 0 10px 0;position:relative;flex:none;}
   .zone:last-child{border-right:none;flex:1;}
-  .zone-label{position:absolute;top:-2px;left:16px;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;background:var(--bg-app);padding:0 4px;}
+  .zone-label{position:absolute;top:-2px;left:6px;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;background:var(--bg-app);padding:0 4px;z-index:3;}
+
+  /* generic pipe/valve/pump primitives, shared by every zone's diagram */
+  .diagram{position:relative;}
+  .pipe-h{position:absolute;height:3px;background:var(--pipe);z-index:1;}
+  .pipe-v{position:absolute;width:3px;background:var(--pipe);z-index:1;}
+  .valve-ic{position:absolute;width:15px;height:11px;background:var(--green);z-index:2;
+    clip-path:polygon(0 0,50% 50%,0 100%,100% 100%,50% 50%,100% 0%);}
+  .valve-ic.stopped{background:var(--text-dim);}
+  .pump2{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center;}
+  .pcirc{width:16px;height:16px;border-radius:50%;border:2px solid var(--green);background:var(--bg-panel);
+    display:flex;align-items:center;justify-content:center;margin:-2px 0;}
+  .pcirc.standby{border-color:var(--border-light);}
+  .pcirc .tri{width:0;height:0;border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:5px solid var(--green);}
+  .pcirc.standby .tri{border-left-color:var(--border-light);}
+  .pump2-sm{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center;}
+  .pcirc-sm{width:11px;height:11px;border-radius:50%;border:2px solid var(--green);background:var(--bg-panel);margin:-2px 0;display:flex;align-items:center;justify-content:center;}
+  .pcirc-sm.standby{border-color:var(--border-light);}
+  .pcirc-sm .tri{width:0;height:0;border-top:2px solid transparent;border-bottom:2px solid transparent;border-left:3px solid var(--green);}
+  .pcirc-sm.standby .tri{border-left-color:var(--border-light);}
 
   /* fuel tanks */
-  .tank-zone{width:250px;}
-  .tank-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
-  .tank{background:var(--bg-panel);border:1px solid var(--border-light);width:108px;cursor:pointer;}
+  .tank-zone{width:253px;padding-left:8px;}
+  .tank-diagram{width:245px;height:300px;margin-top:4px;}
+  .tank{position:absolute;background:var(--bg-panel);border:1px solid var(--border-light);width:96px;cursor:pointer;z-index:2;}
   .tank:hover{border-color:var(--blue);}
   .tank .row{display:flex;justify-content:space-between;padding:2px 6px;font-size:11px;border-bottom:1px dashed var(--border);}
   .tank .row:last-child{border-bottom:none;}
   .tank .pct{font-weight:700;color:var(--text-bright);}
   .tank .lvlbar{height:4px;background:var(--border);position:relative;}
   .tank .lvlbar i{position:absolute;left:0;top:0;bottom:0;background:var(--blue);}
-  .tank-label{font-size:9.5px;color:var(--text-dim);text-align:center;padding:2px 0;background:var(--bg-field);}
+  .tank-label{font-size:9px;color:var(--text-dim);text-align:center;padding:2px 0;background:var(--bg-field);}
 
-  /* feeder zone - simple connector lines */
-  .feeder-zone{width:70px;display:flex;align-items:center;justify-content:center;}
-  .feeder-line{width:2px;background:var(--pipe);height:210px;position:relative;}
-  .feeder-line i{position:absolute;left:-14px;width:30px;height:2px;background:var(--pipe);}
-  .valve{width:8px;height:8px;background:var(--green);border-radius:1px;position:absolute;left:-4px;}
+  /* feeder zone */
+  .feeder-zone{width:70px;}
+  .feeder-diagram{width:70px;height:300px;margin-top:4px;}
 
   /* booster zone */
-  .booster-zone{width:170px;}
-  .unit-row{display:flex;align-items:center;gap:8px;height:36px;}
-  .unit-row.gap-before{margin-top:18px;}
-  .pump-ic{width:20px;height:20px;border-radius:50%;border:2px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--green);flex:none;}
-  .pump-ic.stopped{border-color:var(--blue);color:var(--blue);}
-  .flow-box{background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;font-size:11.5px;cursor:pointer;flex:1;text-align:right;}
+  .booster-zone{width:190px;}
+  .booster-diagram{width:190px;height:300px;margin-top:4px;}
+  .flow-box{position:absolute;background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;font-size:11px;cursor:pointer;text-align:right;z-index:2;width:78px;}
   .flow-box:hover{border-color:var(--blue);}
+  .maint-btn{position:absolute;left:20px;top:308px;background:var(--bg-field);border:1px solid var(--border-light);padding:6px 14px;font-size:11.5px;cursor:pointer;z-index:2;}
 
   /* electrical zone */
-  .elec-zone{flex:1;min-width:520px;}
-  .elec-row{display:flex;align-items:center;gap:10px;height:36px;}
-  .elec-row.gap-before{margin-top:18px;}
-  .engine-ic{width:64px;height:22px;border-radius:3px;background:repeating-linear-gradient(90deg,#2fa84f,#2fa84f 4px,#218040 4px,#218040 8px);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;flex:none;}
+  .elec-zone{flex:1;min-width:620px;padding-left:0;}
+  .elec-diagram{width:620px;height:300px;margin-top:4px;}
+  .engine-ic{position:absolute;width:60px;height:22px;border-radius:2px;z-index:2;
+    background:repeating-linear-gradient(90deg,#2fa84f,#2fa84f 4px,#218040 4px,#218040 8px);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;}
   .engine-ic.stopped{background:repeating-linear-gradient(90deg,#3f8fce,#3f8fce 4px,#2c6ea0 4px,#2c6ea0 8px);}
-  .brk{width:14px;height:14px;background:var(--green);border:1px solid #1c6b32;flex:none;cursor:default;}
+  .brk{position:absolute;width:14px;height:14px;background:var(--green);border:1px solid #1c6b32;cursor:default;z-index:2;}
   .brk.open{background:var(--bg-field);border-color:var(--border-light);}
-  .readout-cluster{display:flex;gap:6px;}
-  .ro-box{background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;font-size:11.5px;text-align:right;cursor:pointer;min-width:70px;}
+  .ro-box{position:absolute;background:var(--bg-field);border:1px solid var(--border-light);padding:3px 8px;font-size:11px;text-align:right;cursor:pointer;width:64px;z-index:2;}
   .ro-box:hover{border-color:var(--blue);}
-  .bus-label{font-size:11px;color:var(--text-dim);margin-left:auto;}
-  .bustie{width:14px;height:14px;background:var(--green);border:1px solid #1c6b32;margin:6px auto;}
-  .plant-output{display:flex;gap:10px;margin-top:24px;align-items:center;}
-  .plant-output .ro-box{min-width:90px;font-weight:700;color:var(--text-bright);}
-  .maint-btn{margin-top:10px;background:var(--bg-field);border:1px solid var(--border-light);padding:6px 14px;font-size:11.5px;cursor:pointer;}
+  .bus-label{position:absolute;font-size:11px;color:var(--text-dim);z-index:2;}
+  .busline{position:absolute;width:3px;background:var(--border-light);z-index:1;}
+  .gnd{position:absolute;font-size:15px;color:var(--text-dim);z-index:2;line-height:1;}
+  .plant-output{position:absolute;left:118px;top:306px;display:flex;gap:10px;align-items:center;z-index:2;}
+  .plant-output .ro-box{position:static;width:auto;min-width:88px;font-weight:700;color:var(--text-bright);}
+  .plant-output .ro-box + .ro-box{margin-left:0;}
 
   /* status bar */
   .statusbar{display:flex;align-items:center;gap:14px;background:var(--bg-panel-head);border-top:1px solid var(--border);padding:3px 10px;height:24px;font-size:11.5px;color:var(--text-dim);position:relative;}
@@ -154,28 +170,22 @@
 <div class="canvas">
   <div class="zone tank-zone">
     <div class="zone-label">Fuel oil system</div>
-    <div class="tank-cols" id="tankGrid"></div>
+    <div class="diagram tank-diagram" id="tankDiagram"></div>
   </div>
 
   <div class="zone feeder-zone">
     <div class="zone-label">Feeder system</div>
-    <div class="feeder-line" id="feederLine"></div>
+    <div class="diagram feeder-diagram" id="feederDiagram"></div>
   </div>
 
   <div class="zone booster-zone">
     <div class="zone-label">Booster system</div>
-    <div id="boosterRows"></div>
-    <button class="maint-btn">Maintenance</button>
+    <div class="diagram booster-diagram" id="boosterDiagram"></div>
   </div>
 
   <div class="zone elec-zone">
     <div class="zone-label">Electrical system</div>
-    <div id="elecRows"></div>
-    <div class="plant-output">
-      <div class="ro-box" data-tag="COMMON_PLANT_MW">39.5 MW</div>
-      <div class="ro-box" data-tag="COMMON_PLANT_MVAR">1.6 MVAr</div>
-      <div class="ro-box" data-tag="COMMON_BUSBAR1_FREQ">50.00 Hz</div>
-    </div>
+    <div class="diagram elec-diagram" id="elecDiagram"></div>
   </div>
 </div>
 
@@ -220,6 +230,10 @@ const toolsBtn = document.getElementById('toolsBtn'), settingsPopup = document.g
 toolsBtn.addEventListener('click', e=>{ settingsPopup.classList.toggle('open'); e.stopPropagation(); });
 document.addEventListener('click', e=>{ if(!settingsPopup.contains(e.target) && e.target!==toolsBtn) settingsPopup.classList.remove('open'); });
 
+/* ============ small DOM helper ============ */
+function el(tag, cls, style, html_){ const e=document.createElement(tag); if(cls) e.className=cls; if(style) Object.assign(e.style,style); if(html_!==undefined) e.innerHTML=html_; return e; }
+function px(n){ return n+'px'; }
+
 /* ============ TAG DATA (mirrors data/tags/genset-tags.json subset) ============ */
 const tags = {
   PBF901_LEVEL:{desc:"LFO day tank level (PBF 901)", val:"78.4 %", limits:{hi:"N/A", lo:"20.0", lolo:"5.0"}},
@@ -245,36 +259,64 @@ const tags = {
   COMMON_BUSBAR1_FREQ:{desc:"Busbar 1 frequency", val:"50.00 Hz", limits:{hihi:"51.5", lolo:"48.5"}}
 };
 
-/* ============ BUILD TANKS ============ */
-const tankGrid = document.getElementById('tankGrid');
+/* ============ shared row geometry ============ */
+const ROW_Y = [30,80,130,180,230,280];   // booster + electrical rows, 6 gensets
+const TANK_ROW_Y = [40,140,240];         // fuel tank rows, 3 pairs
+const PUMP_Y = 140;                       // feeder pump / trunk branch height
+
+/* ============ FUEL TANKS + pipe network ============ */
+const tankDiagram = document.getElementById('tankDiagram');
 const tankData = [
-  {id:"PBF901_LEVEL", pct:78.4, t:[33,30,30], label:"LFO day tank\nPBF 901"},
-  {id:"PBF904_LEVEL", pct:61.3, t:[33,30,30], label:"LFO day tank\nPBF 904"},
-  {id:"PBF902_LEVEL", pct:80.1, t:[30,31,30], label:"LFO day tank\nPBF 902"},
-  {id:"PBF905_LEVEL", pct:78.1, t:[30,30,30], label:"LFO day tank\nPBF 905"},
-  {id:"PBF903_LEVEL", pct:60.7, t:[32,30,30], label:"LFO day tank\nPBF 903"},
-  {id:"PBF906_LEVEL", pct:80.1, t:[30,30,30], label:"LFO day tank\nPBF 906"},
+  {id:"PBF901_LEVEL", pct:78.4, t:[33,30,30], label:"LFO day tank<br>PBF 901"},
+  {id:"PBF904_LEVEL", pct:61.3, t:[33,30,30], label:"LFO day tank<br>PBF 904"},
+  {id:"PBF902_LEVEL", pct:80.1, t:[30,31,30], label:"LFO day tank<br>PBF 902"},
+  {id:"PBF905_LEVEL", pct:78.1, t:[30,30,30], label:"LFO day tank<br>PBF 905"},
+  {id:"PBF903_LEVEL", pct:60.7, t:[32,30,30], label:"LFO day tank<br>PBF 903"},
+  {id:"PBF906_LEVEL", pct:80.1, t:[30,30,30], label:"LFO day tank<br>PBF 906"},
 ];
-tankData.forEach(t=>{
-  const el = document.createElement('div'); el.className='tank'; el.dataset.tag=t.id;
-  el.innerHTML = `
+const TANK_W = 96, TANK_H = 88, TANK_GAP_X = 30, TANK_L = 0, TANK_R = TANK_L+TANK_W+TANK_GAP_X; // 0, 126
+const TRUNK_X = TANK_R+TANK_W+20; // 242
+
+function makeTank(t, x, y){
+  const cy = y+TANK_H/2;
+  const card = el('div','tank',{left:px(x),top:px(y),width:px(TANK_W)});
+  card.dataset.tag = t.id;
+  card.innerHTML = `
     <div class="row"><span class="pct">${t.pct} %</span><span>L</span></div>
     <div class="row"><span>${t.t[0]} °C</span></div>
     <div class="row"><span>${t.t[1]} °C</span></div>
     <div class="row"><span>${t.t[2]} °C</span></div>
     <div class="lvlbar"><i style="width:${t.pct}%"></i></div>
-    <div class="tank-label">${t.label.replace('\n','<br>')}</div>`;
-  tankGrid.appendChild(el);
-});
+    <div class="tank-label">${t.label}</div>`;
+  tankDiagram.appendChild(card);
+  return cy;
+}
 
-/* ============ FEEDER connector ticks ============ */
-const feederLine = document.getElementById('feederLine');
-[0,36,72,108,144,180].forEach((top,i)=>{
-  const v = document.createElement('i'); v.style.top = top+'px'; feederLine.appendChild(v);
+TANK_ROW_Y.forEach((rowY,r)=>{
+  const cy = rowY; // row center
+  const topL = cy - TANK_H/2, topR = topL;
+  makeTank(tankData[r*2], TANK_L, topL);
+  makeTank(tankData[r*2+1], TANK_R, topR);
+  // pipe across the gap between the two tanks, with a gate valve on it
+  tankDiagram.appendChild(el('div','pipe-h',{left:px(TANK_L+TANK_W),top:px(cy-1.5),width:px(TANK_GAP_X)}));
+  tankDiagram.appendChild(el('div','valve-ic',{left:px(TANK_L+TANK_W+(TANK_GAP_X-15)/2),top:px(cy-5.5)}));
+  // stub from right tank out to the trunk header
+  tankDiagram.appendChild(el('div','pipe-h',{left:px(TANK_R+TANK_W),top:px(cy-1.5),width:px(TRUNK_X-(TANK_R+TANK_W))}));
 });
+// vertical trunk header collecting all 3 rows
+tankDiagram.appendChild(el('div','pipe-v',{left:px(TRUNK_X),top:px(TANK_ROW_Y[0]),height:px(TANK_ROW_Y[2]-TANK_ROW_Y[0])}));
 
-/* ============ BOOSTER rows ============ */
-const boosterRows = document.getElementById('boosterRows');
+/* ============ FEEDER pump + connecting pipe ============ */
+const feederDiagram = document.getElementById('feederDiagram');
+const FEEDER_PUMP_X = 35;
+feederDiagram.appendChild(el('div','pipe-h',{left:px(0),top:px(PUMP_Y-1.5),width:px(FEEDER_PUMP_X-8)}));
+feederDiagram.appendChild(el('div','pipe-h',{left:px(FEEDER_PUMP_X+8),top:px(PUMP_Y-1.5),width:px(70-(FEEDER_PUMP_X+8))}));
+const feederPump = el('div','pump2',{left:px(FEEDER_PUMP_X-8),top:px(PUMP_Y-14)});
+feederPump.innerHTML = `<div class="pcirc"><div class="tri"></div></div><div class="pcirc standby"><div class="tri"></div></div>`;
+feederDiagram.appendChild(feederPump);
+
+/* ============ BOOSTER rows + pipe network ============ */
+const boosterDiagram = document.getElementById('boosterDiagram');
 const boosterData = [
   {tag:"G01_BOOSTER_FLOW", flow:"1479 kg/h", stopped:false},
   {tag:"G02_BOOSTER_FLOW", flow:"1519 kg/h", stopped:false},
@@ -283,14 +325,32 @@ const boosterData = [
   {tag:"G05_BOOSTER_FLOW", flow:"1450 kg/h", stopped:false},
   {tag:"G06_BOOSTER_FLOW", flow:"1506 kg/h", stopped:false},
 ];
-boosterData.forEach((b,i)=>{
-  const row = document.createElement('div'); row.className='unit-row'+(i===3?' gap-before':'');
-  row.innerHTML = `<div class="pump-ic ${b.stopped?'stopped':''}">${i+1}</div><div class="flow-box" data-tag="${b.tag}">${b.flow}</div>`;
-  boosterRows.appendChild(row);
-});
+const HEADER_X = 18;
+boosterDiagram.appendChild(el('div','pipe-v',{left:px(HEADER_X),top:px(ROW_Y[0]),height:px(ROW_Y[5]-ROW_Y[0])}));
+// feeder header enters the vertical trunk at PUMP_Y
+boosterDiagram.appendChild(el('div','pipe-h',{left:px(0),top:px(PUMP_Y-1.5),width:px(HEADER_X)}));
 
-/* ============ ELECTRICAL rows ============ */
-const elecRows = document.getElementById('elecRows');
+boosterData.forEach((b,i)=>{
+  const cy = ROW_Y[i];
+  boosterDiagram.appendChild(el('div','pipe-h',{left:px(HEADER_X),top:px(cy-1.5),width:px(14)}));
+  boosterDiagram.appendChild(el('div','valve-ic',{left:px(HEADER_X+14),top:px(cy-5.5)},null));
+  const valve = boosterDiagram.lastChild; if(b.stopped) valve.classList.add('stopped');
+  boosterDiagram.appendChild(el('div','pipe-h',{left:px(HEADER_X+29),top:px(cy-1.5),width:px(10)}));
+  const pump = el('div','pump2-sm',{left:px(HEADER_X+39),top:px(cy-11)});
+  pump.innerHTML = b.stopped
+    ? `<div class="pcirc-sm standby"><div class="tri"></div></div><div class="pcirc-sm standby"><div class="tri"></div></div>`
+    : `<div class="pcirc-sm"><div class="tri"></div></div><div class="pcirc-sm standby"><div class="tri"></div></div>`;
+  boosterDiagram.appendChild(pump);
+  boosterDiagram.appendChild(el('div','pipe-h',{left:px(HEADER_X+50),top:px(cy-1.5),width:px(12)}));
+  const flow = el('div','flow-box',{left:px(HEADER_X+62),top:px(cy-9)},b.flow);
+  flow.dataset.tag = b.tag;
+  boosterDiagram.appendChild(flow);
+  boosterDiagram.appendChild(el('div','pipe-h',{left:px(HEADER_X+62+78),top:px(cy-1.5),width:px(190-(HEADER_X+62+78))}));
+});
+boosterDiagram.appendChild(el('div','maint-btn',null,'Maintenance'));
+
+/* ============ ELECTRICAL rows + pipe network ============ */
+const elecDiagram = document.getElementById('elecDiagram');
 const elecData = [
   {n:1, kwTag:"SCA011PW104PV", kw:"7887 kW", kvar:"335 kVAr", closed:true, bus:"Busbar 1"},
   {n:2, kwTag:"G02_KW", kw:"7883 kW", kvar:"299 kVAr", closed:true, bus:""},
@@ -299,42 +359,64 @@ const elecData = [
   {n:5, kwTag:"G05_KW", kw:"7875 kW", kvar:"315 kVAr", closed:true, bus:"Busbar 2"},
   {n:6, kwTag:"G06_KW", kw:"7894 kW", kvar:"307 kVAr", closed:true, bus:""},
 ];
+const ENGINE_X = 20, BRK_X = ENGINE_X+70, RO_X = BRK_X+24, BUS_X = RO_X+3*74+16;
+
 elecData.forEach((e,i)=>{
-  const row = document.createElement('div'); row.className='elec-row'+(i===3?' gap-before':'');
-  row.innerHTML = `
-    <div class="engine-ic ${e.stopped?'stopped':''}">${e.n}</div>
-    <div class="brk ${e.closed?'':'open'}"></div>
-    <div class="readout-cluster">
-      <div class="ro-box" data-tag="${e.kwTag}">${e.kw}</div>
-      <div class="ro-box">${e.kvar}</div>
-      <div class="ro-box">1.00 cos phi</div>
-    </div>
-    ${e.bus?`<span class="bus-label">${e.bus}</span>`:''}
-  `;
-  elecRows.appendChild(row);
-  if(i===2){
-    const tie = document.createElement('div'); tie.style.display='flex'; tie.style.justifyContent='flex-end'; tie.style.paddingRight='60px';
-    tie.innerHTML = `<div class="bustie" title="Bus tie breaker"></div>`;
-    elecRows.appendChild(tie);
-  }
+  const cy = ROW_Y[i];
+  // incoming pipe from the booster zone's flow-box
+  elecDiagram.appendChild(el('div','pipe-h',{left:px(0),top:px(cy-1.5),width:px(ENGINE_X)}));
+  const eng = el('div','engine-ic',{left:px(ENGINE_X),top:px(cy-11)},String(e.n));
+  if(e.stopped) eng.classList.add('stopped');
+  elecDiagram.appendChild(eng);
+  elecDiagram.appendChild(el('div','pipe-h',{left:px(ENGINE_X+60),top:px(cy-1.5),width:px(BRK_X-(ENGINE_X+60))}));
+  const brk = el('div','brk',{left:px(BRK_X),top:px(cy-7)});
+  if(!e.closed) brk.classList.add('open');
+  elecDiagram.appendChild(brk);
+  elecDiagram.appendChild(el('div','pipe-h',{left:px(BRK_X+14),top:px(cy-1.5),width:px(RO_X-(BRK_X+14))}));
+  const kwBox = el('div','ro-box',{left:px(RO_X),top:px(cy-9)},e.kw); kwBox.dataset.tag = e.kwTag;
+  const kvarBox = el('div','ro-box',{left:px(RO_X+70),top:px(cy-9)},e.kvar);
+  const pfBox = el('div','ro-box',{left:px(RO_X+140),top:px(cy-9),width:'72px'},'1.00 cos phi');
+  elecDiagram.appendChild(kwBox); elecDiagram.appendChild(kvarBox); elecDiagram.appendChild(pfBox);
+  if(e.bus) elecDiagram.appendChild(el('div','bus-label',{left:px(BUS_X+8),top:px(cy-6)},e.bus));
 });
+
+// bus tie breaker between row 3 and row 4 (busbar 1 / busbar 2 boundary)
+const tieY = (ROW_Y[2]+ROW_Y[3])/2;
+elecDiagram.appendChild(el('div','brk',{left:px(BRK_X),top:px(tieY-6),width:'12px',height:'12px'},null));
+elecDiagram.appendChild(el('div','pipe-v',{left:px(BRK_X+6-1.5),top:px(ROW_Y[2]+8),height:px(tieY-6-(ROW_Y[2]+8))}));
+elecDiagram.appendChild(el('div','pipe-v',{left:px(BRK_X+6-1.5),top:px(tieY+6),height:px(ROW_Y[3]-8-(tieY+6))}));
+
+// decorative single-line busbar continuing off to the right, with earth symbols at each busbar tap
+elecDiagram.appendChild(el('div','busline',{left:px(BUS_X),top:px(ROW_Y[0]),height:px(ROW_Y[5]-ROW_Y[0])}));
+[0,3].forEach(i=>{
+  elecDiagram.appendChild(el('div','pipe-h',{left:px(RO_X+140+72),top:px(ROW_Y[i]-1.5),width:px(BUS_X-(RO_X+140+72))}));
+  elecDiagram.appendChild(el('div','gnd',{left:px(BUS_X+6),top:px(ROW_Y[i]-8)},'&#9178;'));
+});
+
+// plant totals below the row stack
+const plant = el('div','plant-output');
+plant.innerHTML = `
+  <div class="ro-box" data-tag="COMMON_PLANT_MW">39.5 MW</div>
+  <div class="ro-box" data-tag="COMMON_PLANT_MVAR">1.6 MVAr</div>
+  <div class="ro-box" data-tag="COMMON_BUSBAR1_FREQ">50.00 Hz</div>`;
+elecDiagram.appendChild(plant);
 
 /* ============ TAG POPUP ============ */
 const tagPop = document.getElementById('tagPop');
 document.addEventListener('click', (e)=>{
-  const el = e.target.closest('[data-tag]');
-  if(!el){ if(!tagPop.contains(e.target)) tagPop.classList.remove('open'); return; }
-  const t = tags[el.dataset.tag];
+  const el2 = e.target.closest('[data-tag]');
+  if(!el2){ if(!tagPop.contains(e.target)) tagPop.classList.remove('open'); return; }
+  const t = tags[el2.dataset.tag];
   if(!t) return;
   document.getElementById('tpDesc').textContent = t.desc;
-  document.getElementById('tpId').textContent = el.dataset.tag;
+  document.getElementById('tpId').textContent = el2.dataset.tag;
   document.getElementById('tpValue').textContent = t.val;
   const limitsEl = document.getElementById('tpLimits');
   limitsEl.innerHTML = '';
   Object.entries(t.limits||{}).forEach(([k,v])=>{
     limitsEl.innerHTML += `<span>${k.toUpperCase()}:</span><input value="${v}">`;
   });
-  const rect = el.getBoundingClientRect();
+  const rect = el2.getBoundingClientRect();
   let left = rect.right + 10, top = rect.top;
   if(left + 260 > window.innerWidth) left = rect.left - 260;
   if(top + 200 > window.innerHeight) top = window.innerHeight - 210;

@@ -41,31 +41,48 @@
   .tc-box .val:hover{color:var(--blue);}
   .tc-label{font-size:10px;color:var(--text-dim);margin-bottom:4px;font-weight:700;}
 
-  .engine-col{flex:1;display:flex;flex-direction:column;gap:8px;}
+  .engine-col{flex:1;display:flex;flex-direction:column;gap:6px;}
   .bank{display:flex;align-items:center;gap:6px;}
-  .turbo-circ{width:34px;height:34px;border-radius:50%;background:var(--green);flex:none;}
+  .turbo-circ{width:34px;height:34px;border-radius:50%;flex:none;position:relative;overflow:hidden;
+    background:conic-gradient(var(--green) 0deg 180deg, #9aa2ab 180deg 360deg);
+    border:2px solid #5a6068;box-shadow:inset 0 0 0 2px var(--bg-panel);cursor:pointer;}
+  .turbo-circ::after{content:'';position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;background:var(--bg-panel);transform:translate(-50%,-50%);}
   .cyl-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;flex:1;}
   .cyl-hdr{font-size:9px;text-align:center;color:var(--text-dim);}
   .cyl-cell{background:var(--bg-field);border:1px solid var(--border-light);font-size:10.5px;text-align:center;padding:2px 0;cursor:pointer;}
   .cyl-cell:hover{border-color:var(--blue);}
+  .cyl-cell.pair{display:flex;flex-direction:column;line-height:1.25;padding:1px 0;}
+  .cyl-cell.pair span:first-child{border-bottom:1px dashed var(--border);}
+  .cyl-t{display:flex;align-items:center;justify-content:center;gap:2px;}
+  .cyl-t .tcirc{width:11px;height:11px;border-radius:50%;border:1px solid var(--border-light);font-size:7px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);flex:none;}
+  .cyl-s{display:flex;align-items:center;justify-content:center;}
+  .cyl-s .scirc{width:9px;height:9px;border-radius:50%;background:var(--green);cursor:pointer;}
+  .cyl-s .scirc.fault{background:var(--red);}
   .row-label{font-size:9px;color:var(--text-dim);width:70px;flex:none;text-align:right;padding-right:4px;}
-  .block-bar{height:60px;background:linear-gradient(#9aa2ab,#767e87);border:1px solid #5a6068;display:grid;grid-template-columns:repeat(11,1fr);align-items:center;margin:2px 0;}
+  .block-bar{height:60px;background:linear-gradient(#9aa2ab,#767e87);border:1px solid #5a6068;display:grid;grid-template-columns:repeat(11,1fr);column-gap:2px;align-items:center;margin:2px 0;box-shadow:inset 0 2px 4px rgba(255,255,255,.35),inset 0 -3px 6px rgba(0,0,0,.3);}
   .block-bar span{color:#fff;font-size:10px;text-align:center;font-weight:600;}
-  .thrust-box{font-size:9px;color:var(--text-dim);text-align:center;}
+  .thrust-col{width:56px;flex:none;text-align:center;}
+  .thrust-box{font-size:9px;color:var(--text-dim);text-align:center;background:var(--bg-panel);border:1px solid var(--border-light);padding:4px 2px;cursor:pointer;}
+  .thrust-box .v{font-weight:700;color:var(--text-bright);font-size:11px;}
 
   .annot{font-size:9px;color:var(--text-dim);text-align:right;padding:2px 4px;}
 
-  .gen-col{width:170px;flex:none;}
+  .gen-col{width:190px;flex:none;}
   .gen-box{background:var(--bg-panel);border:1px solid var(--border-light);padding:8px;}
   .gen-title{font-weight:700;font-size:11.5px;color:var(--text-bright);margin-bottom:6px;display:flex;justify-content:space-between;}
   .gen-title .amb{cursor:pointer;background:var(--bg-field);border:1px solid var(--border-light);padding:1px 6px;font-size:10.5px;}
-  .gen-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10.5px;margin-bottom:8px;}
-  .gen-cell{background:var(--bg-field);border:1px solid var(--border-light);padding:4px;text-align:center;cursor:pointer;}
+  .gen-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;font-size:10.5px;margin-bottom:6px;}
+  .gen-cell{background:var(--bg-field);border:1px solid var(--border-light);padding:4px 2px;text-align:center;cursor:pointer;}
   .gen-cell:hover{border-color:var(--blue);}
-  .gen-cell .lbl{color:var(--text-dim);font-size:9px;}
+  .gen-cell.wide{grid-column:1/4;}
+  .gen-cell .lbl{color:var(--text-dim);font-size:8.5px;}
   .gen-cell .v{font-weight:700;color:var(--text-bright);}
-  .gen-icons{display:flex;gap:4px;justify-content:center;margin-top:4px;}
-  .gen-icons span{width:16px;height:14px;border:1px solid var(--border-light);background:var(--bg-field);font-size:8px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);}
+  .gen-foot{text-align:center;font-size:10.5px;color:var(--text-dim);cursor:pointer;margin-bottom:6px;}
+  .gen-icons{display:flex;gap:6px;justify-content:center;align-items:flex-end;}
+  .toggle-ic{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:8.5px;color:var(--text-dim);}
+  .toggle-ic .sw{width:22px;height:14px;border:1px solid var(--border-light);background:var(--bg-field);border-radius:2px;position:relative;}
+  .toggle-ic .sw i{position:absolute;left:2px;top:2px;width:8px;height:8px;border-radius:50%;background:var(--green);}
+  .gen-scirc{width:10px;height:10px;border-radius:50%;background:var(--green);cursor:pointer;}
 
   .summary-bar{height:40px;display:flex;align-items:center;gap:24px;padding:0 18px;background:var(--bg-panel);border-top:1px solid var(--border);}
   .summary-item{display:flex;align-items:center;gap:8px;font-size:11px;}
@@ -136,57 +153,65 @@
   </div>
 
   <div class="engine-col">
-    <div class="annot" id="bearingLabelTop">&#9679; Bearing temperatures [°C]</div>
+    <div class="annot" id="bearingLabelTop">&#9679; Exhaust gas temp. [outlet/inlet, °C] &nbsp;·&nbsp; Big end bearing [°C] &nbsp;·&nbsp; Sensor status</div>
 
     <!-- Bank B -->
     <div class="bank">
-      <div class="turbo-circ"></div>
+      <div class="turbo-circ" title="TC B"></div>
       <div style="flex:1;">
         <div class="cyl-grid" id="bHeaders"></div>
-        <div class="cyl-grid" id="bBearing" style="margin-top:2px;"></div>
         <div style="font-size:9px;color:var(--text-dim);margin:3px 0 1px;">Exhaust gas temperatures [°C]</div>
         <div class="cyl-grid" id="bExh"></div>
-        <div class="cyl-grid" id="bLiner1" style="margin-top:2px;"></div>
-        <div class="cyl-grid" id="bBigend" style="margin-top:2px;"></div>
+        <div class="cyl-grid" id="bBigend" style="margin-top:3px;"></div>
+        <div class="cyl-grid" id="bStatus" style="margin-top:3px;"></div>
+        <div class="cyl-grid" id="bBearing" style="margin-top:3px;"></div>
       </div>
-      <div class="turbo-circ"></div>
+      <div class="turbo-circ" title="TC B"></div>
     </div>
 
     <div style="display:flex;align-items:center;gap:6px;">
       <div style="width:34px;"></div>
       <div class="block-bar" id="blockBar"></div>
-      <div style="width:34px;"></div>
+      <div class="thrust-col">
+        <div class="thrust-box" data-tag="G01_THRUST_BRG"><div class="v">80 °C</div>Thrust brg.</div>
+      </div>
     </div>
 
     <!-- Bank A -->
     <div class="bank">
-      <div class="turbo-circ"></div>
+      <div class="turbo-circ" title="TC A"></div>
       <div style="flex:1;">
-        <div class="cyl-grid" id="aLiner1"></div>
-        <div class="cyl-grid" id="aBigend" style="margin-top:2px;"></div>
-        <div class="cyl-grid" id="aExh" style="margin-top:2px;"></div>
-        <div style="font-size:9px;color:var(--text-dim);margin:1px 0 3px;">Exhaust gas temperatures [°C]</div>
         <div class="cyl-grid" id="aBearing"></div>
-        <div class="cyl-grid" id="aHeaders" style="margin-top:2px;"></div>
+        <div class="cyl-grid" id="aStatus" style="margin-top:3px;"></div>
+        <div class="cyl-grid" id="aBigend" style="margin-top:3px;"></div>
+        <div class="cyl-grid" id="aExh" style="margin-top:3px;"></div>
+        <div style="font-size:9px;color:var(--text-dim);margin:1px 0 3px;">Exhaust gas temperatures [°C]</div>
+        <div class="cyl-grid" id="aHeaders"></div>
       </div>
-      <div class="turbo-circ"></div>
+      <div class="turbo-circ" title="TC A"></div>
     </div>
 
-    <div class="annot" id="bearingLabelBottom">&#9679; Big end bearing temperatures [°C] · Cylinder liner 1/2 [°C]</div>
+    <div class="annot" id="bearingLabelBottom">&#9679; Bearing temperatures [°C] — rows closest to the engine block on both banks</div>
   </div>
 
   <div class="gen-col">
     <div class="gen-box">
       <div class="gen-title">Generator <span class="amb" data-tag="G01_GEN_AMBIENT">36 °C</span></div>
       <div class="gen-grid">
-        <div class="gen-cell" data-tag="G01_GEN_WINDING_U"><div class="lbl">Winding U</div><div class="v">92 °C</div></div>
+        <div class="gen-cell wide" data-tag="G01_GEN_WINDING_U"><div class="lbl">Winding U</div><div class="v">92 °C</div></div>
         <div class="gen-cell" data-tag="G01_GEN_BEARING_D"><div class="lbl">Bearing D</div><div class="v">77 °C</div></div>
         <div class="gen-cell" data-tag="G01_GEN_WINDING_V"><div class="lbl">Winding V</div><div class="v">95 °C</div></div>
         <div class="gen-cell" data-tag="G01_GEN_BEARING_ND"><div class="lbl">Bearing ND</div><div class="v">75 °C</div></div>
-        <div class="gen-cell" data-tag="G01_GEN_WINDING_W" style="grid-column:1/3;"><div class="lbl">Winding W</div><div class="v">93 °C</div></div>
+        <div class="gen-cell wide" data-tag="G01_GEN_WINDING_W"><div class="lbl">Winding W</div><div class="v">93 °C</div></div>
       </div>
-      <div style="text-align:center;font-size:10.5px;color:var(--text-dim);">59 °C</div>
-      <div class="gen-icons"><span>&#8635;</span><span>&#9776;</span><span>&#9670;</span><span>S</span><span>S</span><span>S</span></div>
+      <div class="gen-foot" data-tag="G01_GEN_COOLING_AIR">59 °C</div>
+      <div class="gen-icons">
+        <div class="toggle-ic"><div class="sw" data-tag="G01_GEN_TURN_MODE"><i></i></div>Turn</div>
+        <div class="toggle-ic"><div class="sw" data-tag="G01_GEN_LEVER_MODE"><i></i></div>Lever</div>
+        <div class="gen-scirc" data-tag="G01_GEN_STATUS_1" title="Status"></div>
+        <div class="gen-scirc" data-tag="G01_GEN_STATUS_2" title="Status"></div>
+        <div class="gen-scirc" data-tag="G01_GEN_STATUS_3" title="Status"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -257,22 +282,60 @@ function fillGrid(id, values, tagPrefix, unit, headerRow){
     el.appendChild(cell);
   });
 }
+function fillPairGrid(id, topValues, botValues, tagPrefix, unit){
+  const el = document.getElementById(id);
+  topValues.forEach((v,i)=>{
+    const cell = document.createElement('div');
+    cell.className = 'cyl-cell pair';
+    cell.dataset.tag = tagPrefix+'_'+(i+1); cell.dataset.val = v+(unit||'')+' / '+botValues[i]+(unit||'');
+    cell.innerHTML = `<span>${v}${unit||''}</span><span>${botValues[i]}${unit||''}</span>`;
+    el.appendChild(cell);
+  });
+}
+function fillTGrid(id, values, tagPrefix, unit){
+  const el = document.getElementById(id);
+  values.forEach((v,i)=>{
+    const cell = document.createElement('div');
+    cell.className = 'cyl-cell cyl-t';
+    cell.dataset.tag = tagPrefix+'_'+(i+1); cell.dataset.val = v+(unit||'');
+    cell.innerHTML = `<span class="tcirc">T</span><span>${v}${unit||''}</span>`;
+    el.appendChild(cell);
+  });
+}
+function fillStatusGrid(id, count, tagPrefix, faultAt){
+  const el = document.getElementById(id);
+  for(let i=0;i<count;i++){
+    const cell = document.createElement('div');
+    cell.className = 'cyl-s';
+    const isFault = faultAt!==undefined && i===faultAt;
+    cell.innerHTML = `<span class="scirc${isFault?' fault':''}" data-tag="${tagPrefix}_${i+1}" data-val="${isFault?'FAULT':'OK'}"></span>`;
+    el.appendChild(cell);
+  }
+}
 fillGrid('bHeaders', bHead, null, null, true);
+fillPairGrid('bExh', bExh, bLiner1, 'G01_CYL_B_EXH', '');
+fillTGrid('bBigend', bBigend, 'G01_CYL_B_BIGEND', '°C');
+fillStatusGrid('bStatus', 10, 'G01_CYL_B_SENSOR');
 fillGrid('bBearing', bBearing, 'G01_CYL_B_BRG', '°C');
-fillGrid('bExh', bExh, 'G01_CYL_B_EXH', '°C');
-fillGrid('bLiner1', bLiner1, 'G01_CYL_B_LINER1', '°C');
-fillGrid('bBigend', bBigend, 'G01_CYL_B_BIGEND', '°C');
-fillGrid('aLiner1', aLiner1, 'G01_CYL_A_LINER1', '°C');
-fillGrid('aBigend', aBigend, 'G01_CYL_A_BIGEND', '°C');
-fillGrid('aExh', aExh, 'G01_CYL_A_EXH', '°C');
+
 fillGrid('aBearing', aBearing, 'G01_CYL_A_BRG', '°C');
+fillStatusGrid('aStatus', 10, 'G01_CYL_A_SENSOR', 6);
+fillTGrid('aBigend', aBigend, 'G01_CYL_A_BIGEND', '°C');
+fillPairGrid('aExh', aExh, aLiner1, 'G01_CYL_A_EXH', '');
 fillGrid('aHeaders', aHead, null, null, true);
 
 const blockBar = document.getElementById('blockBar');
-for(let i=11;i>=1;i--){ const s=document.createElement('span'); s.textContent = i===1?'80\n0':i; blockBar.appendChild(s); }
+for(let i=11;i>=1;i--){ const s=document.createElement('span'); s.textContent = i; blockBar.appendChild(s); }
 
 /* ===== hero tags (fully described) + generic pattern tags ===== */
 const tags = {
+  G01_THRUST_BRG:{desc:"Thrust bearing temperature", val:"80 °C"},
+  G01_GEN_COOLING_AIR:{desc:"Generator cooling air temperature", val:"59 °C"},
+  G01_GEN_TURN_MODE:{desc:"Turning gear engaged", val:"Disengaged"},
+  G01_GEN_LEVER_MODE:{desc:"Local/remote lever position", val:"Remote"},
+  G01_GEN_STATUS_1:{desc:"Generator protection relay 1 status", val:"Healthy"},
+  G01_GEN_STATUS_2:{desc:"Generator protection relay 2 status", val:"Healthy"},
+  G01_GEN_STATUS_3:{desc:"Generator protection relay 3 status", val:"Healthy"},
   G01_TCB_EXH_OUT:{desc:"TC B — exhaust gas temp outlet", val:"340 °C"},
   G01_TCB_EXH_IN:{desc:"TC B — exhaust gas temp inlet", val:"508 °C"},
   G01_TCB_SPEED:{desc:"TC B — turbocharger speed", val:"25160 rpm"},
