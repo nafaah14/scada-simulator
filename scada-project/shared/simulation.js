@@ -169,8 +169,11 @@ export class Simulation {
       this._set(`PBF${n}_LEVEL`, lvl > 20 ? lvl - draw : lvl + 0.6);
       for (let k = 1; k <= 3; k++) this._approach(`COMMON_PBF${n}_T${k}`, 30, 0.05, 0.3);
     }
+    // storage tanks stratify: warmest at the top, coolest at the bottom
     for (let n = 901; n <= 904; n++) {
-      for (let k = 1; k <= 4; k++) this._approach(`COMMON_PAE${n}_T${k}`, 31, 0.04, 0.3);
+      for (let k = 1; k <= 4; k++) {
+        this._approach(`COMMON_PAE${n}_T${k}`, 34 - (k - 1) * 1.5, 0.04, 0.25);
+      }
     }
 
     // feeder unit holds discharge pressure

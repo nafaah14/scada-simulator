@@ -244,6 +244,8 @@ for (const unit of UNITS) {
       { ...common, screens: ['Common.Fuel'] });
     digital(`COMMON_${p}_V`, `LFO transfer pump ${p} discharge valve`, true,
       { ...common, screens: ['Common.Fuel'] });
+    analog(`COMMON_${p}_PUMP_A`, `LFO transfer pump ${p} current`, 'A', 0, 'current',
+      { ...common, screens: ['Common.Fuel'] });
   }
   analog('COMMON_MAIN_PUMP_A', 'LFO main transfer pump current', 'A', 0, 'current',
     { ...common, screens: ['Common.Fuel'] });
@@ -366,10 +368,10 @@ for (let n = 1; n <= 6; n++) {
 /* G1 Control page detail */
 {
   const u = 'G1', screens = ['G1.Control'];
-  for (let i = 1; i <= 18; i++) {
-    digital(`G01_STARTCOND_${i}`, `Start condition ${i}`, true, { unit: u, screens });
+  for (let i = 1; i <= 19; i++) {
+    digital(`G01_STARTCOND_${i}`, `Start condition ${i}`, false, { unit: u, screens });
   }
-  for (let i = 1; i <= 17; i++) {
+  for (let i = 1; i <= 20; i++) {
     digital(`G01_MISC_${i}`, `Miscellaneous status ${i}`, false, { unit: u, screens });
   }
   for (const l of ['L1', 'L2', 'L3']) {
@@ -386,6 +388,23 @@ for (let n = 1; n <= 6; n++) {
     digital(`G01_RELAY_${r}`, `Protection relay ${r} healthy`, true, { unit: u, screens });
   }
   digital('G01_BRK_TRIP_HEALTHY', 'Breaker trip circuit healthy', true, { unit: u, screens });
+  digital('G01_VOLT_SUPERV', 'Generator voltage supervision healthy', true, { unit: u, screens });
+  digital('G01_CB_AVAILABLE', 'Circuit breaker available', true, { unit: u, screens });
+  for (const sub of ['READY', 'PREVIOUS_FAILED']) {
+    digital(`G01_SEQ_${sub}`, `Start preparation — ${sub.toLowerCase().replace('_', ' ')}`,
+      sub === 'READY', { unit: u, screens });
+  }
+  analog('G01_AVR_RATIO', 'Main AVR ratio', '', 1.88, 'ratio', { unit: u, screens });
+  analog('G01_POWER_SETPOINT', 'Active power setpoint', 'kW', 6762, 'power',
+    { unit: u, screens });
+  analog('G01_PF_SETPOINT', 'Power factor setpoint', '', 1.0, 'power', { unit: u, screens });
+  analog('G01_PF_ACTUAL', 'Power factor actual', '', 1.0, 'power', { unit: u, screens });
+  analog('G01_ACTIVE_ENERGY', 'Active energy', 'kWh', 33172463, 'energy',
+    { unit: u, screens, trend_enabled: false });
+  analog('G01_REACTIVE_ENERGY_EXPORT', 'Reactive energy export', 'kVArh', 4852413, 'energy',
+    { unit: u, screens, trend_enabled: false });
+  analog('G01_REACTIVE_ENERGY_IMPORT', 'Reactive energy import', 'kVArh', 302486, 'energy',
+    { unit: u, screens, trend_enabled: false });
   digital('G01_BRK_SPRING', 'Breaker spring charged', true, { unit: u, screens });
   digital('G01_BRK_PARALLEL', 'Parallel operation', true, { unit: u, screens });
   digital('G01_AVR_ON', 'AVR in operation', true, { unit: u, screens });
