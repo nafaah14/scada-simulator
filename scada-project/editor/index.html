@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCADA Screen Editor</title>
+<style>
+  :root{ font-size:14px; }
+  :root{
+    --green:#2fa84f; --red:#e5484d; --amber:#d99418; --orange:#f47b20; --blue:#3f8fce;
+    --bg-app:#eef1f4; --bg-panel:#ffffff; --bg-panel-head:#f2f4f6; --bg-field:#f6f8f9;
+    --border:#d7dce2; --border-light:#c3cad2; --text:#3a4753; --text-dim:#7c8896; --text-bright:#172029;
+    --pipe:#8a2f2f; --vessel:#c7ccd1; --chrome:#12181f; --chrome-2:#1a222c; --chrome-text:#8a94a0;
+    --sel:#2f7fd6;
+  }
+  :root[data-theme="dark"]{
+    --bg-app:#0b0f14; --bg-panel:#131a22; --bg-panel-head:#1a222c; --bg-field:#0e141b;
+    --border:#2b3542; --border-light:#3a4553; --text:#c8d2dc; --text-dim:#8994a1; --text-bright:#eef3f7;
+    --pipe:#b45050; --vessel:#3a4350;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;background:var(--bg-app);color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;overflow:hidden;}
+  button,input,select{font-family:inherit;color:inherit;}
+  button{cursor:pointer;}
+  .num{font-family:"Consolas","SF Mono",monospace;}
+
+  /* ============ APP CHROME ============ */
+  .app{display:flex;flex-direction:column;height:100%;}
+  .toolbar{display:flex;align-items:center;gap:6px;background:linear-gradient(#161d25,#12181f);
+    border-bottom:1px solid #232c36;padding:0 10px;height:40px;flex:none;color:var(--chrome-text);}
+  .toolbar .brand{font-weight:700;font-size:12px;letter-spacing:.5px;color:#e7ecf1;margin-right:6px;}
+  .tb-sep{width:1px;height:22px;background:#2b3542;margin:0 4px;}
+  .tb-btn{background:#1c242e;border:1px solid #2b3542;color:#c2cbd5;font-size:11.5px;
+    padding:5px 10px;border-radius:3px;}
+  .tb-btn:hover{background:#25303c;border-color:#3a4553;}
+  .tb-btn.on{background:var(--orange);border-color:var(--orange);color:#1a1005;font-weight:700;}
+  .tb-btn:disabled{opacity:.4;cursor:default;}
+  .tb-label{font-size:11px;color:#6f7d8b;}
+  .tb-select{background:#1c242e;border:1px solid #2b3542;color:#c2cbd5;font-size:11.5px;padding:4px 6px;border-radius:3px;}
+  .tb-right{margin-left:auto;display:flex;align-items:center;gap:6px;}
+
+  .body{display:flex;flex:1;min-height:0;}
+
+  /* ============ PALETTE ============ */
+  .palette{width:150px;flex:none;background:var(--bg-panel);border-right:1px solid var(--border);
+    overflow-y:auto;padding:8px;}
+  .pal-group{font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-dim);
+    margin:10px 0 5px;font-weight:700;}
+  .pal-group:first-child{margin-top:0;}
+  .pal-item{display:flex;align-items:center;gap:7px;width:100%;background:var(--bg-field);
+    border:1px solid var(--border-light);padding:5px 7px;font-size:11px;margin-bottom:3px;
+    border-radius:3px;text-align:left;}
+  .pal-item:hover{border-color:var(--blue);background:var(--bg-panel-head);}
+  .pal-ic{width:18px;height:14px;flex:none;display:flex;align-items:center;justify-content:center;}
+
+  /* ============ CANVAS AREA ============ */
+  .stage{flex:1;min-width:0;overflow:auto;background:var(--bg-app);position:relative;padding:20px;}
+  .canvas-wrap{position:relative;transform-origin:0 0;}
+  #canvas{position:relative;background:var(--bg-app);border:1px solid var(--border-light);
+    box-shadow:0 2px 14px rgba(0,0,0,.09);overflow:hidden;}
+  #canvas.grid{background-image:
+      linear-gradient(to right, rgba(127,140,155,.16) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(127,140,155,.16) 1px, transparent 1px);
+    background-size:10px 10px;}
+  .el{position:absolute;}
+  .mode-edit .el{cursor:move;}
+  .mode-edit .el.locked{cursor:not-allowed;}
+  .el.selected{outline:1.5px solid var(--sel);outline-offset:1px;}
+  .handle{position:absolute;width:8px;height:8px;background:#fff;border:1.5px solid var(--sel);
+    border-radius:1px;z-index:9999;}
+  .handle.nw{cursor:nwse-resize;} .handle.ne{cursor:nesw-resize;}
+  .handle.sw{cursor:nesw-resize;} .handle.se{cursor:nwse-resize;}
+  .marquee{position:absolute;border:1px dashed var(--sel);background:rgba(47,127,214,.09);z-index:9998;}
+
+  /* ============ SYMBOL RENDERING ============ */
+  .s-rect{width:100%;height:100%;}
+  .s-text{width:100%;height:100%;display:flex;align-items:center;white-space:pre;overflow:hidden;}
+  .s-readout{width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;padding:0 4px;}
+  .s-led{width:100%;height:100%;}
+  .s-pump{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .s-pump .tri{width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;}
+  .s-valve{width:100%;height:100%;clip-path:polygon(0 0,50% 50%,0 100%,100% 100%,50% 50%,100% 0%);}
+  .s-engine{width:100%;height:100%;border-radius:2px;display:flex;align-items:center;
+    justify-content:center;color:#fff;font-weight:700;}
+  .s-tank{width:100%;height:100%;position:relative;overflow:hidden;}
+  .s-tank .roof{height:22%;background:var(--vessel);clip-path:polygon(50% 0,100% 100%,0 100%);
+    margin:0 auto;width:72%;}
+  .s-tank .fillbar{position:absolute;left:0;right:0;bottom:0;background:var(--blue);opacity:.5;}
+  .s-tank .cap{position:absolute;left:0;right:0;bottom:2px;text-align:center;font-size:9px;color:var(--text-dim);}
+  .s-turbo{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;
+    justify-content:space-around;border-radius:3px;padding:2px;}
+  .s-turbo i{width:70%;height:42%;border-radius:50%;border:1px solid #5a6068;display:block;}
+  .s-brk{width:100%;height:100%;}
+  .s-btn{width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;}
+  .s-line{width:100%;height:100%;display:block;overflow:visible;}
+
+  /* ============ INSPECTOR ============ */
+  .inspector{width:250px;flex:none;background:var(--bg-panel);border-left:1px solid var(--border);
+    overflow-y:auto;display:flex;flex-direction:column;}
+  .insp-head{background:var(--bg-panel-head);padding:7px 10px;font-weight:700;font-size:10px;
+    letter-spacing:.6px;text-transform:uppercase;border-bottom:1px solid var(--border);
+    color:var(--text-dim);position:sticky;top:0;z-index:2;}
+  .insp-body{padding:9px 10px;}
+  .fld{margin-bottom:8px;}
+  .fld > label{display:block;font-size:10px;color:var(--text-dim);margin-bottom:3px;}
+  .fld input[type=text],.fld input[type=number],.fld select,.fld textarea{
+    width:100%;background:var(--bg-field);border:1px solid var(--border-light);
+    padding:4px 6px;font-size:11.5px;border-radius:2px;}
+  .fld textarea{resize:vertical;min-height:46px;font-family:inherit;}
+  .fld input[type=color]{width:100%;height:26px;padding:1px;background:var(--bg-field);
+    border:1px solid var(--border-light);border-radius:2px;}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{outline:1.5px solid var(--blue);outline-offset:-1px;}
+  .fld-row{display:flex;gap:6px;}
+  .fld-row .fld{flex:1;margin-bottom:8px;}
+  .fld-check{display:flex;align-items:center;gap:6px;font-size:11.5px;margin-bottom:8px;}
+  .btn-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;}
+  .mini-btn{flex:1;background:var(--bg-field);border:1px solid var(--border-light);
+    font-size:10.5px;padding:4px 5px;border-radius:2px;white-space:nowrap;}
+  .mini-btn:hover{border-color:var(--blue);}
+  .mini-btn.danger:hover{border-color:var(--red);color:var(--red);}
+  .empty-note{font-size:11px;color:var(--text-dim);line-height:1.55;}
+  kbd{background:var(--bg-field);border:1px solid var(--border-light);border-bottom-width:2px;
+    border-radius:3px;padding:0 4px;font-size:10px;font-family:inherit;}
+
+  /* layers */
+  .layers{border-top:1px solid var(--border);margin-top:auto;}
+  .layer-list{max-height:190px;overflow-y:auto;}
+  .layer{display:flex;align-items:center;gap:5px;padding:3px 9px;font-size:11px;cursor:pointer;
+    border-bottom:1px solid var(--bg-panel-head);}
+  .layer:hover{background:var(--bg-panel-head);}
+  .layer.sel{background:#e2edf9;color:var(--text-bright);}
+  :root[data-theme="dark"] .layer.sel{background:#1d304a;}
+  .layer .lt{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .layer .ltype{font-size:9px;color:var(--text-dim);}
+  .layer .eye{font-size:10px;color:var(--text-dim);width:14px;text-align:center;}
+
+  /* status */
+  .statusbar{height:24px;flex:none;display:flex;align-items:center;gap:14px;
+    background:var(--bg-panel-head);border-top:1px solid var(--border);padding:0 10px;
+    font-size:11px;color:var(--text-dim);}
+  .statusbar .sp{margin-left:auto;}
+
+  /* preview mode hides editor chrome */
+  .mode-preview .palette,.mode-preview .inspector{display:none;}
+  .mode-preview .handle,.mode-preview .marquee{display:none;}
+  .mode-preview #canvas{box-shadow:none;}
+  .mode-preview .el.selected{outline:none;}
+
+  .toast{position:fixed;bottom:34px;left:50%;transform:translateX(-50%);
+    background:var(--chrome);color:#e7ecf1;font-size:11.5px;padding:7px 14px;border-radius:3px;
+    box-shadow:0 3px 14px rgba(0,0,0,.3);z-index:10000;opacity:0;pointer-events:none;
+    transition:opacity .18s;}
+  .toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<div class="app mode-edit" id="app">
+
+  <div class="toolbar">
+    <span class="brand">SCADA EDITOR</span>
+    <select class="tb-select" id="screenSel" title="Screen"></select>
+    <button class="tb-btn" id="btnNew">New</button>
+    <button class="tb-btn" id="btnRename">Rename</button>
+    <div class="tb-sep"></div>
+    <button class="tb-btn" id="btnSave">Save</button>
+    <button class="tb-btn" id="btnExport">Export</button>
+    <button class="tb-btn" id="btnImport">Import</button>
+    <div class="tb-sep"></div>
+    <button class="tb-btn" id="btnUndo" title="Ctrl+Z">Undo</button>
+    <button class="tb-btn" id="btnRedo" title="Ctrl+Shift+Z">Redo</button>
+    <div class="tb-sep"></div>
+    <button class="tb-btn on" id="btnGrid" title="Snap to grid">Grid 10</button>
+    <span class="tb-label">Zoom</span>
+    <select class="tb-select" id="zoomSel">
+      <option value="0.5">50%</option><option value="0.75">75%</option>
+      <option value="1" selected>100%</option><option value="1.25">125%</option>
+      <option value="1.5">150%</option>
+    </select>
+    <div class="tb-right">
+      <button class="tb-btn" id="btnTheme">Dark</button>
+      <button class="tb-btn" id="btnMode">Preview</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="palette" id="palette"></div>
+
+    <div class="stage" id="stage">
+      <div class="canvas-wrap" id="canvasWrap">
+        <div id="canvas" class="grid"></div>
+      </div>
+    </div>
+
+    <div class="inspector">
+      <div class="insp-head" id="inspHead">Properties</div>
+      <div class="insp-body" id="inspBody"></div>
+      <div class="layers">
+        <div class="insp-head">Layers <span style="float:right;text-transform:none;letter-spacing:0;"
+          id="layerCount"></span></div>
+        <div class="layer-list" id="layerList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="statusbar">
+    <span id="statLeft">Ready</span>
+    <span class="sp num" id="statPos">—</span>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<input type="file" id="fileInput" accept="application/json" style="display:none">
+
+<script>
+/* =====================================================================
+   SCADA SCREEN EDITOR
+   ---------------------------------------------------------------------
+   Screens are plain JSON documents (layout:"canvas") holding a flat,
+   paint-ordered list of absolutely positioned elements. The same
+   renderElement() below serves both the editor and Preview mode, so a
+   screen looks identical in the editor and in the runtime app.
+
+   Element shape:
+     { id, type, x, y, w, h, name?, locked?, hidden?,
+       bind: { value: "<tag_id>" },     // symbols that read a tag
+       props: {...},                    // per-type config
+       style: {...} }                   // fill/stroke/font/etc.
+   ===================================================================== */
+
+const GRID = 10;
+const LS_SCREENS = 'scada.editor.screens.v1';
+const LS_LAST    = 'scada.editor.lastScreen';
+
+/* ---------- element type registry --------------------------------- */
+/* Each type declares its default box/props and which inspector fields
+   it exposes. Adding a new symbol = adding one entry here + a branch in
+   renderElement(). */
+const TYPES = {
+  rect:    { label:'Rectangle', group:'Background', w:160, h:80,
+             style:{fill:'#9aa2ab', stroke:'#5a6068', strokeWidth:1, radius:0, opacity:1},
+             fields:['fill','stroke','strokeWidth','radius','opacity','bevel'] },
+  line:    { label:'Line', group:'Background', w:120, h:60,
+             style:{stroke:'#7c8896', strokeWidth:1},
+             props:{dir:'tl-br', dash:0},
+             fields:['stroke','strokeWidth','dir','dash'] },
+  pipe:    { label:'Pipe', group:'Background', w:140, h:3,
+             style:{fill:'#8a2f2f'},
+             fields:['fill'] },
+  text:    { label:'Text label', group:'Background', w:130, h:16,
+             props:{text:'Label'},
+             style:{color:'#3a4753', fontSize:11, bold:false, align:'left'},
+             fields:['text','color','fontSize','bold','align'] },
+
+  readout: { label:'Readout', group:'Symbols', w:60, h:20, bind:true,
+             props:{text:'0', unit:'', decimals:null},
+             style:{fill:'#f6f8f9', stroke:'#c3cad2', strokeWidth:1, color:'#172029',
+                    fontSize:11, bold:false, align:'center', radius:0},
+             fields:['text','unit','fill','stroke','strokeWidth','color','fontSize','bold','align','radius'] },
+  led:     { label:'Status LED', group:'Symbols', w:12, h:12, bind:true,
+             props:{shape:'circle'},
+             style:{fill:'#2fa84f', stroke:'#1c6b32', strokeWidth:0},
+             fields:['shape','fill','stroke','strokeWidth'] },
+  pump:    { label:'Pump', group:'Symbols', w:20, h:20, bind:true,
+             props:{running:true},
+             style:{fill:'#ffffff', stroke:'#2fa84f', strokeWidth:2},
+             fields:['running','fill','stroke','strokeWidth'] },
+  valve:   { label:'Valve', group:'Symbols', w:15, h:11, bind:true,
+             props:{open:true},
+             style:{fill:'#2fa84f'},
+             fields:['open','fill'] },
+  tank:    { label:'Tank', group:'Symbols', w:80, h:70, bind:true,
+             props:{level:60, caption:''},
+             style:{fill:'#ffffff', stroke:'#c3cad2', strokeWidth:1},
+             fields:['level','caption','fill','stroke','strokeWidth'] },
+  engine:  { label:'Engine block', group:'Symbols', w:64, h:24, bind:true,
+             props:{running:true, text:''},
+             style:{fontSize:11},
+             fields:['running','text','fontSize'] },
+  turbo:   { label:'Turbocharger', group:'Symbols', w:24, h:44, bind:true,
+             props:{running:true},
+             style:{fill:'#e7ebef', stroke:'#5a6068', strokeWidth:1},
+             fields:['running','fill','stroke','strokeWidth'] },
+  breaker: { label:'Breaker', group:'Symbols', w:14, h:14, bind:true,
+             props:{closed:true},
+             style:{fill:'#2fa84f', stroke:'#1c6b32', strokeWidth:1},
+             fields:['closed','fill','stroke','strokeWidth'] },
+  button:  { label:'Button', group:'Symbols', w:80, h:24,
+             props:{text:'Button'},
+             style:{fill:'#f6f8f9', stroke:'#c3cad2', strokeWidth:1, color:'#3a4753',
+                    fontSize:11, radius:0},
+             fields:['text','fill','stroke','strokeWidth','color','fontSize','radius'] }
+};
+
+/* ---------- app state --------------------------------------------- */
+let screens = {};          // screen_id -> screen doc
+let screen  = null;        // active doc
+let selection = [];        // element ids
+let undoStack = [], redoStack = [];
+let snap = true, zoom = 1, mode = 'edit';
+let tagIndex = [];         // from genset-tags.json
+
+const $ = id => document.getElementById(id);
+const canvas = $('canvas');
+
+/* =====================================================================
+   PERSISTENCE
+   ===================================================================== */
+function loadScreens(){
+  try{
+    const raw = localStorage.getItem(LS_SCREENS);
+    if(raw) screens = JSON.parse(raw);
+  }catch(e){ console.warn('Could not read saved screens', e); }
+  if(!screens || !Object.keys(screens).length){
+    screens = { 'G1.Temp': seedG1Temp() };
+  }
+}
+function saveScreens(){
+  try{
+    localStorage.setItem(LS_SCREENS, JSON.stringify(screens));
+    localStorage.setItem(LS_LAST, screen.screen_id);
+    toast('Saved "'+screen.screen_id+'" to this browser');
+  }catch(e){ toast('Save failed: '+e.message); }
+}
+
+/* =====================================================================
+   UNDO / REDO  (snapshot-based — simple and reliable)
+   ===================================================================== */
+function snapshot(){
+  undoStack.push(JSON.stringify(screen));
+  if(undoStack.length > 60) undoStack.shift();
+  redoStack.length = 0;
+  refreshUndoButtons();
+}
+function undo(){
+  if(!undoStack.length) return;
+  redoStack.push(JSON.stringify(screen));
+  screen = JSON.parse(undoStack.pop());
+  screens[screen.screen_id] = screen;
+  selection = selection.filter(id => findEl(id));
+  renderAll(); refreshUndoButtons();
+}
+function redo(){
+  if(!redoStack.length) return;
+  undoStack.push(JSON.stringify(screen));
+  screen = JSON.parse(redoStack.pop());
+  screens[screen.screen_id] = screen;
+  selection = selection.filter(id => findEl(id));
+  renderAll(); refreshUndoButtons();
+}
+function refreshUndoButtons(){
+  $('btnUndo').disabled = !undoStack.length;
+  $('btnRedo').disabled = !redoStack.length;
+}
+
+/* =====================================================================
+   ELEMENT HELPERS
+   ===================================================================== */
+let idSeq = 1;
+function nextId(){
+  let id;
+  do { id = 'e'+(idSeq++); } while(screen && screen.elements.some(e=>e.id===id));
+  return id;
+}
+function findEl(id){ return screen.elements.find(e=>e.id===id); }
+function selectedEls(){ return selection.map(findEl).filter(Boolean); }
+
+function makeEl(type, x, y, overrides){
+  const t = TYPES[type];
+  const el = {
+    id: nextId(), type,
+    x: Math.round(x), y: Math.round(y), w: t.w, h: t.h,
+    props: JSON.parse(JSON.stringify(t.props || {})),
+    style: JSON.parse(JSON.stringify(t.style || {}))
+  };
+  if(t.bind) el.bind = { value: '' };
+  return Object.assign(el, overrides || {});
+}
+function addElement(type){
+  snapshot();
+  // drop new elements near the top-left of the current viewport
+  const stage = $('stage');
+  const x = snapV((stage.scrollLeft + 40) / zoom);
+  const y = snapV((stage.scrollTop + 40) / zoom);
+  const el = makeEl(type, x, y);
+  screen.elements.push(el);
+  selection = [el.id];
+  renderAll();
+}
+function snapV(v){ return snap ? Math.round(v/GRID)*GRID : Math.round(v); }
+
+/* =====================================================================
+   RENDERING  — shared by editor and preview
+   ===================================================================== */
+function renderElement(el){
+  const d = document.createElement('div');
+  d.className = 'el';
+  d.dataset.id = el.id;
+  d.style.left = el.x+'px'; d.style.top = el.y+'px';
+  d.style.width = el.w+'px'; d.style.height = el.h+'px';
+  if(el.hidden) d.style.display = 'none';
+  if(el.locked) d.classList.add('locked');
+  const s = el.style || {}, p = el.props || {};
+  const border = (s.strokeWidth ? s.strokeWidth+'px solid '+(s.stroke||'#000') : 'none');
+
+  switch(el.type){
+    case 'rect': {
+      const i = div('s-rect');
+      i.style.background = s.fill || 'transparent';
+      i.style.border = border;
+      i.style.borderRadius = (s.radius||0)+'px';
+      if(s.opacity != null) i.style.opacity = s.opacity;
+      if(p.bevel) i.style.boxShadow = 'inset 0 2px 4px rgba(255,255,255,.35), inset 0 -3px 6px rgba(0,0,0,.28)';
+      d.appendChild(i); break;
+    }
+    case 'line': {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('class','s-line');
+      svg.setAttribute('width', el.w); svg.setAttribute('height', el.h);
+      const ln = document.createElementNS('http://www.w3.org/2000/svg','line');
+      const pts = { 'tl-br':[0,0,el.w,el.h], 'bl-tr':[0,el.h,el.w,0],
+                    'h':[0,el.h/2,el.w,el.h/2], 'v':[el.w/2,0,el.w/2,el.h] }[p.dir||'tl-br'];
+      ln.setAttribute('x1',pts[0]); ln.setAttribute('y1',pts[1]);
+      ln.setAttribute('x2',pts[2]); ln.setAttribute('y2',pts[3]);
+      ln.setAttribute('stroke', s.stroke||'#7c8896');
+      ln.setAttribute('stroke-width', s.strokeWidth||1);
+      if(p.dash) ln.setAttribute('stroke-dasharray', p.dash+' '+p.dash);
+      svg.appendChild(ln); d.appendChild(svg); break;
+    }
+    case 'pipe': {
+      const i = div('s-rect');
+      i.style.background = s.fill || 'var(--pipe)';
+      d.appendChild(i); break;
+    }
+    case 'text': {
+      const i = div('s-text');
+      i.textContent = p.text || '';
+      i.style.color = s.color || 'var(--text)';
+      i.style.fontSize = (s.fontSize||11)+'px';
+      i.style.fontWeight = s.bold ? '700' : '400';
+      i.style.justifyContent = {left:'flex-start',center:'center',right:'flex-end'}[s.align||'left'];
+      d.appendChild(i); break;
+    }
+    case 'readout': {
+      const i = div('s-readout');
+      i.textContent = displayValue(el);
+      i.style.background = s.fill || 'var(--bg-field)';
+      i.style.border = border;
+      i.style.borderRadius = (s.radius||0)+'px';
+      i.style.color = s.color || 'var(--text-bright)';
+      i.style.fontSize = (s.fontSize||11)+'px';
+      i.style.fontWeight = s.bold ? '700' : '400';
+      i.style.justifyContent = {left:'flex-start',center:'center',right:'flex-end'}[s.align||'center'];
+      d.appendChild(i); break;
+    }
+    case 'led': {
+      const i = div('s-led');
+      i.style.background = s.fill || 'var(--green)';
+      i.style.border = border;
+      i.style.borderRadius = (p.shape==='square') ? '1px' : '50%';
+      d.appendChild(i); break;
+    }
+    case 'pump': {
+      const i = div('s-pump');
+      const col = p.running ? (s.stroke||'var(--green)') : 'var(--border-light)';
+      i.style.background = s.fill || 'var(--bg-panel)';
+      i.style.border = (s.strokeWidth||2)+'px solid '+col;
+      const t = div('tri');
+      t.style.borderLeft = '6px solid '+col;
+      i.appendChild(t); d.appendChild(i); break;
+    }
+    case 'valve': {
+      const i = div('s-valve');
+      i.style.background = p.open ? (s.fill||'var(--green)') : 'var(--text-dim)';
+      d.appendChild(i); break;
+    }
+    case 'tank': {
+      const i = div('s-tank');
+      i.style.background = s.fill || 'var(--bg-panel)';
+      i.style.border = border;
+      const roof = div('roof'); i.appendChild(roof);
+      const fill = div('fillbar');
+      fill.style.height = Math.max(0, Math.min(100, p.level||0))+'%';
+      i.appendChild(fill);
+      if(p.caption){ const c = div('cap'); c.textContent = p.caption; i.appendChild(c); }
+      d.appendChild(i); break;
+    }
+    case 'engine': {
+      const i = div('s-engine');
+      const a = p.running ? '#2fa84f' : '#3f8fce', b = p.running ? '#218040' : '#2c6ea0';
+      i.style.background = `repeating-linear-gradient(90deg,${a},${a} 5px,${b} 5px,${b} 10px)`;
+      i.style.fontSize = (s.fontSize||11)+'px';
+      i.textContent = p.text || '';
+      d.appendChild(i); break;
+    }
+    case 'turbo': {
+      const i = div('s-turbo');
+      i.style.background = s.fill || '#e7ebef';
+      i.style.border = border;
+      const col = p.running ? 'var(--green)' : '#9aa2ab';
+      for(let k=0;k<2;k++){
+        const c = document.createElement('i');
+        c.style.background = `linear-gradient(180deg, ${col} 50%, #d3d8dd 50%)`;
+        i.appendChild(c);
+      }
+      d.appendChild(i); break;
+    }
+    case 'breaker': {
+      const i = div('s-brk');
+      i.style.background = p.closed ? (s.fill||'var(--green)') : 'var(--bg-field)';
+      i.style.border = (s.strokeWidth||1)+'px solid '+(p.closed ? (s.stroke||'#1c6b32') : 'var(--border-light)');
+      d.appendChild(i); break;
+    }
+    case 'button': {
+      const i = div('s-btn');
+      i.textContent = p.text || '';
+      i.style.background = s.fill || 'var(--bg-field)';
+      i.style.border = border;
+      i.style.borderRadius = (s.radius||0)+'px';
+      i.style.color = s.color || 'var(--text)';
+      i.style.fontSize = (s.fontSize||11)+'px';
+      d.appendChild(i); break;
+    }
+  }
+  return d;
+}
+function div(cls){ const d = document.createElement('div'); d.className = cls; return d; }
+
+/* A bound element shows the live tag value when one exists, otherwise
+   whatever static text the element carries. That way a screen still
+   reads correctly before the backend is wired up. */
+function displayValue(el){
+  const p = el.props||{};
+  const tagId = el.bind && el.bind.value;
+  if(tagId){
+    const t = tagIndex.find(t=>t.tag_id===tagId);
+    if(t && t.value != null){
+      let v = t.value;
+      if(typeof v === 'number' && p.decimals != null) v = v.toFixed(p.decimals);
+      return v + (p.unit ? ' '+p.unit : (t.engineering_unit ? ' '+t.engineering_unit : ''));
+    }
+  }
+  return (p.text||'') + (p.unit ? ' '+p.unit : '');
+}
+
+function renderAll(){
+  canvas.style.width  = screen.canvas.width+'px';
+  canvas.style.height = screen.canvas.height+'px';
+  canvas.style.background = screen.canvas.background || 'var(--bg-app)';
+  canvas.classList.toggle('grid', snap && mode==='edit');
+  canvas.innerHTML = '';
+  screen.elements.forEach(el=>{
+    const node = renderElement(el);
+    if(mode==='edit' && selection.includes(el.id)) node.classList.add('selected');
+    canvas.appendChild(node);
+  });
+  if(mode==='edit') drawHandles();
+  renderInspector();
+  renderLayers();
+  $('statLeft').textContent = screen.screen_id+' — '+screen.elements.length+' elements'
+    + (selection.length ? ', '+selection.length+' selected' : '');
+}
+
+function drawHandles(){
+  const els = selectedEls().filter(e=>!e.locked);
+  if(els.length !== 1) return;            // resize handles only for a single selection
+  const el = els[0];
+  [['nw',0,0],['ne',1,0],['sw',0,1],['se',1,1]].forEach(([k,fx,fy])=>{
+    const h = div('handle '+k);
+    h.style.left = (el.x + fx*el.w - 4)+'px';
+    h.style.top  = (el.y + fy*el.h - 4)+'px';
+    h.dataset.handle = k;
+    canvas.appendChild(h);
+  });
+}
+
+/* =====================================================================
+   SELECTION + DRAG + RESIZE
+   ===================================================================== */
+let drag = null;
+
+canvas.addEventListener('mousedown', e=>{
+  if(mode!=='edit') return;
+  const pt = canvasPoint(e);
+
+  // resize handle?
+  if(e.target.dataset.handle){
+    const el = selectedEls()[0];
+    drag = { kind:'resize', handle:e.target.dataset.handle, start:pt,
+             orig:{x:el.x,y:el.y,w:el.w,h:el.h}, id:el.id, moved:false };
+    e.preventDefault(); return;
+  }
+
+  const node = e.target.closest('.el');
+  if(node){
+    const el = findEl(node.dataset.id);
+    if(el.locked){ e.preventDefault(); return; }
+    if(e.shiftKey){
+      selection.includes(el.id) ? selection = selection.filter(i=>i!==el.id)
+                                : selection.push(el.id);
+    } else if(!selection.includes(el.id)){
+      selection = [el.id];
+    }
+    renderAll();
+    drag = { kind:'move', start:pt, moved:false,
+             orig: selectedEls().map(x=>({id:x.id,x:x.x,y:x.y})) };
+    e.preventDefault(); return;
+  }
+
+  // empty canvas → marquee select
+  if(!e.shiftKey){ selection = []; renderAll(); }
+  drag = { kind:'marquee', start:pt, moved:false };
+  e.preventDefault();
+});
+
+window.addEventListener('mousemove', e=>{
+  if(mode==='edit'){
+    const p = canvasPoint(e);
+    $('statPos').textContent = Math.round(p.x)+', '+Math.round(p.y);
+  }
+  if(!drag) return;
+  const pt = canvasPoint(e);
+  const dx = pt.x - drag.start.x, dy = pt.y - drag.start.y;
+  if(Math.abs(dx)>1 || Math.abs(dy)>1) drag.moved = true;
+
+  if(drag.kind==='move'){
+    if(!drag.snapped){ snapshot(); drag.snapped = true; }
+    drag.orig.forEach(o=>{
+      const el = findEl(o.id);
+      el.x = snapV(o.x + dx); el.y = snapV(o.y + dy);
+    });
+    renderAll();
+  }
+  else if(drag.kind==='resize'){
+    if(!drag.snapped){ snapshot(); drag.snapped = true; }
+    const el = findEl(drag.id), o = drag.orig, h = drag.handle;
+    let x=o.x, y=o.y, w=o.w, hh=o.h;
+    if(h.includes('e')) w = Math.max(2, snapV(o.w + dx));
+    if(h.includes('s')) hh = Math.max(2, snapV(o.h + dy));
+    if(h.includes('w')){ const nx = snapV(o.x + dx); w = Math.max(2, o.x + o.w - nx); x = nx; }
+    if(h.includes('n')){ const ny = snapV(o.y + dy); hh = Math.max(2, o.y + o.h - ny); y = ny; }
+    Object.assign(el, {x,y,w,h:hh});
+    renderAll();
+  }
+  else if(drag.kind==='marquee'){
+    let m = $('marqueeBox');
+    if(!m){ m = div('marquee'); m.id='marqueeBox'; canvas.appendChild(m); }
+    const x = Math.min(drag.start.x, pt.x), y = Math.min(drag.start.y, pt.y);
+    m.style.left=x+'px'; m.style.top=y+'px';
+    m.style.width=Math.abs(dx)+'px'; m.style.height=Math.abs(dy)+'px';
+  }
+});
+
+window.addEventListener('mouseup', e=>{
+  if(!drag) return;
+  if(drag.kind==='marquee'){
+    const pt = canvasPoint(e);
+    const x1=Math.min(drag.start.x,pt.x), y1=Math.min(drag.start.y,pt.y);
+    const x2=Math.max(drag.start.x,pt.x), y2=Math.max(drag.start.y,pt.y);
+    const m = $('marqueeBox'); if(m) m.remove();
+    if(drag.moved){
+      const hit = screen.elements.filter(el=>!el.locked && !el.hidden &&
+        el.x < x2 && el.x+el.w > x1 && el.y < y2 && el.y+el.h > y1).map(el=>el.id);
+      selection = e.shiftKey ? [...new Set([...selection,...hit])] : hit;
+    }
+    renderAll();
+  }
+  // a move/resize that never actually moved shouldn't leave an undo entry
+  if(drag.snapped && !drag.moved){ undoStack.pop(); refreshUndoButtons(); }
+  drag = null;
+});
+
+function canvasPoint(e){
+  const r = canvas.getBoundingClientRect();
+  return { x:(e.clientX-r.left)/zoom, y:(e.clientY-r.top)/zoom };
+}
+
+/* =====================================================================
+   KEYBOARD
+   ===================================================================== */
+window.addEventListener('keydown', e=>{
+  const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
+  if(typing) return;
+  const ctrl = e.ctrlKey || e.metaKey;
+
+  if(ctrl && e.key.toLowerCase()==='z'){ e.preventDefault(); e.shiftKey ? redo() : undo(); return; }
+  if(ctrl && e.key.toLowerCase()==='y'){ e.preventDefault(); redo(); return; }
+  if(ctrl && e.key.toLowerCase()==='s'){ e.preventDefault(); saveScreens(); return; }
+  if(ctrl && e.key.toLowerCase()==='d'){ e.preventDefault(); duplicateSelection(); return; }
+  if(ctrl && e.key.toLowerCase()==='a'){
+    e.preventDefault();
+    selection = screen.elements.filter(el=>!el.locked).map(el=>el.id);
+    renderAll(); return;
+  }
+  if(mode!=='edit') return;
+
+  if(e.key==='Delete' || e.key==='Backspace'){ e.preventDefault(); deleteSelection(); return; }
+  if(e.key==='Escape'){ selection=[]; renderAll(); return; }
+
+  const nudge = {ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];
+  if(nudge && selection.length){
+    e.preventDefault();
+    const step = e.shiftKey ? GRID : 1;
+    snapshot();
+    selectedEls().forEach(el=>{ el.x += nudge[0]*step; el.y += nudge[1]*step; });
+    renderAll();
+  }
+});
+
+function deleteSelection(){
+  if(!selection.length) return;
+  snapshot();
+  screen.elements = screen.elements.filter(el=>!selection.includes(el.id));
+  selection = [];
+  renderAll();
+}
+function duplicateSelection(){
+  if(!selection.length) return;
+  snapshot();
+  const copies = selectedEls().map(el=>{
+    const c = JSON.parse(JSON.stringify(el));
+    c.id = nextId(); c.x += GRID; c.y += GRID;
+    return c;
+  });
+  screen.elements.push(...copies);
+  selection = copies.map(c=>c.id);
+  renderAll();
+}
+
+/* =====================================================================
+   ALIGN / DISTRIBUTE / Z-ORDER
+   ===================================================================== */
+function align(how){
+  const els = selectedEls(); if(els.length<2) return;
+  snapshot();
+  const L=Math.min(...els.map(e=>e.x)), R=Math.max(...els.map(e=>e.x+e.w));
+  const T=Math.min(...els.map(e=>e.y)), B=Math.max(...els.map(e=>e.y+e.h));
+  els.forEach(e=>{
+    if(how==='left')   e.x = L;
+    if(how==='right')  e.x = R - e.w;
+    if(how==='hcenter')e.x = Math.round((L+R)/2 - e.w/2);
+    if(how==='top')    e.y = T;
+    if(how==='bottom') e.y = B - e.h;
+    if(how==='vcenter')e.y = Math.round((T+B)/2 - e.h/2);
+  });
+  renderAll();
+}
+function distribute(axis){
+  const els = selectedEls(); if(els.length<3) return;
+  snapshot();
+  const k = axis==='h' ? 'x' : 'y', d = axis==='h' ? 'w' : 'h';
+  els.sort((a,b)=>a[k]-b[k]);
+  const first=els[0], last=els[els.length-1];
+  const span = (last[k]+last[d]) - first[k];
+  const total = els.reduce((s,e)=>s+e[d],0);
+  const gap = (span-total)/(els.length-1);
+  let cur = first[k];
+  els.forEach(e=>{ e[k]=Math.round(cur); cur += e[d]+gap; });
+  renderAll();
+}
+function zorder(how){
+  const els = selectedEls(); if(!els.length) return;
+  snapshot();
+  const rest = screen.elements.filter(e=>!selection.includes(e.id));
+  if(how==='front') screen.elements = [...rest, ...els];
+  if(how==='back')  screen.elements = [...els, ...rest];
+  if(how==='fwd' || how==='bwd'){
+    const arr = screen.elements, step = how==='fwd' ? 1 : -1;
+    const idxs = els.map(e=>arr.indexOf(e)).sort((a,b)=> step>0 ? b-a : a-b);
+    idxs.forEach(i=>{
+      const j = i+step;
+      if(j>=0 && j<arr.length){ [arr[i],arr[j]] = [arr[j],arr[i]]; }
+    });
+  }
+  renderAll();
+}
+
+/* =====================================================================
+   INSPECTOR
+   ===================================================================== */
+function renderInspector(){
+  const body = $('inspBody'), head = $('inspHead');
+  body.innerHTML = '';
+  const els = selectedEls();
+
+  if(!els.length){
+    head.textContent = 'Screen';
+    body.appendChild(field('Screen id', textInput(screen.screen_id, v=>{
+      if(!v || (v!==screen.screen_id && screens[v])) return renderAll();
+      snapshot();
+      delete screens[screen.screen_id];
+      screen.screen_id = v; screens[v] = screen;
+      renderScreenList(); renderAll();
+    })));
+    body.appendChild(field('Title', textInput(screen.title||'', v=>{ screen.title=v; })));
+    const row = div('fld-row');
+    row.appendChild(field('Width', numInput(screen.canvas.width, v=>{
+      snapshot(); screen.canvas.width=v; renderAll(); })));
+    row.appendChild(field('Height', numInput(screen.canvas.height, v=>{
+      snapshot(); screen.canvas.height=v; renderAll(); })));
+    body.appendChild(row);
+    body.appendChild(field('Background', colorInput(screen.canvas.background||'#eef1f4', v=>{
+      snapshot(); screen.canvas.background=v; renderAll(); })));
+    const note = div('empty-note');
+    note.innerHTML = 'Click an element to edit it.<br><br>'+
+      '<kbd>Shift</kbd>+click or drag a box to multi-select · '+
+      '<kbd>Del</kbd> remove · <kbd>Ctrl</kbd>+<kbd>D</kbd> duplicate · '+
+      '<kbd>Ctrl</kbd>+<kbd>Z</kbd> undo · arrows nudge (<kbd>Shift</kbd> = 10px) · '+
+      '<kbd>Ctrl</kbd>+<kbd>S</kbd> save';
+    body.appendChild(note);
+    return;
+  }
+
+  if(els.length > 1){
+    head.textContent = els.length+' elements selected';
+    body.appendChild(sectionLabel('Align'));
+    body.appendChild(btnRow([
+      ['Left',()=>align('left')],['Center',()=>align('hcenter')],['Right',()=>align('right')]]));
+    body.appendChild(btnRow([
+      ['Top',()=>align('top')],['Middle',()=>align('vcenter')],['Bottom',()=>align('bottom')]]));
+    body.appendChild(sectionLabel('Distribute'));
+    body.appendChild(btnRow([
+      ['Horizontally',()=>distribute('h')],['Vertically',()=>distribute('v')]]));
+    body.appendChild(sectionLabel('Order'));
+    body.appendChild(btnRow([['To front',()=>zorder('front')],['To back',()=>zorder('back')]]));
+    body.appendChild(sectionLabel('Edit'));
+    body.appendChild(btnRow([['Duplicate',duplicateSelection],
+      ['Delete',deleteSelection,'danger']]));
+    // let common style fields apply across a mixed selection
+    body.appendChild(sectionLabel('Apply to all selected'));
+    body.appendChild(field('Font size', numInput('', v=>{
+      snapshot(); els.forEach(e=>{ if(e.style) e.style.fontSize=v; }); renderAll(); })));
+    body.appendChild(field('Text colour', colorInput('#3a4753', v=>{
+      snapshot(); els.forEach(e=>{ if(e.style) e.style.color=v; }); renderAll(); })));
+    body.appendChild(field('Fill', colorInput('#f6f8f9', v=>{
+      snapshot(); els.forEach(e=>{ if(e.style) e.style.fill=v; }); renderAll(); })));
+    return;
+  }
+
+  /* ---- single element ---- */
+  const el = els[0], def = TYPES[el.type];
+  head.textContent = def.label;
+
+  body.appendChild(field('Name', textInput(el.name||'', v=>{ el.name=v; renderLayers(); })));
+
+  const pos = div('fld-row');
+  pos.appendChild(field('X', numInput(el.x, v=>{ snapshot(); el.x=v; renderAll(); })));
+  pos.appendChild(field('Y', numInput(el.y, v=>{ snapshot(); el.y=v; renderAll(); })));
+  body.appendChild(pos);
+  const size = div('fld-row');
+  size.appendChild(field('W', numInput(el.w, v=>{ snapshot(); el.w=v; renderAll(); })));
+  size.appendChild(field('H', numInput(el.h, v=>{ snapshot(); el.h=v; renderAll(); })));
+  body.appendChild(size);
+
+  if(def.bind){
+    body.appendChild(sectionLabel('Tag binding'));
+    body.appendChild(field('Tag', tagPicker(el)));
+    const t = tagIndex.find(t=>t.tag_id===(el.bind&&el.bind.value));
+    if(t){
+      const n = div('empty-note');
+      n.innerHTML = '<b>'+esc(t.description)+'</b><br>'+
+        'Live value: '+esc(String(t.value))+' '+esc(t.engineering_unit||'');
+      body.appendChild(n);
+    }
+  }
+
+  const fields = def.fields || [];
+  if(fields.length) body.appendChild(sectionLabel('Appearance'));
+  fields.forEach(f=>{
+    const node = buildField(el, f);
+    if(node) body.appendChild(node);
+  });
+
+  body.appendChild(sectionLabel('Order'));
+  body.appendChild(btnRow([['To front',()=>zorder('front')],['Forward',()=>zorder('fwd')]]));
+  body.appendChild(btnRow([['To back',()=>zorder('back')],['Backward',()=>zorder('bwd')]]));
+
+  body.appendChild(sectionLabel('Element'));
+  const lock = checkbox('Locked (not selectable on canvas)', !!el.locked, v=>{
+    el.locked=v; renderAll(); });
+  body.appendChild(lock);
+  body.appendChild(checkbox('Hidden', !!el.hidden, v=>{ el.hidden=v; renderAll(); }));
+  body.appendChild(btnRow([['Duplicate',duplicateSelection],['Delete',deleteSelection,'danger']]));
+}
+
+/* Builds one inspector control for a named field on an element. */
+function buildField(el, f){
+  const s = el.style || (el.style={}), p = el.props || (el.props={});
+  const set = (obj,k)=>(v)=>{ snapshot(); obj[k]=v; renderAll(); };
+  switch(f){
+    case 'text':        return field('Text', textInput(p.text||'', set(p,'text')));
+    case 'unit':        return field('Unit suffix', textInput(p.unit||'', set(p,'unit')));
+    case 'caption':     return field('Caption', textInput(p.caption||'', set(p,'caption')));
+    case 'fill':        return field('Fill', colorInput(s.fill||'#ffffff', set(s,'fill')));
+    case 'stroke':      return field('Border colour', colorInput(s.stroke||'#c3cad2', set(s,'stroke')));
+    case 'color':       return field('Text colour', colorInput(s.color||'#3a4753', set(s,'color')));
+    case 'strokeWidth': return field('Border width', numInput(s.strokeWidth??1, set(s,'strokeWidth')));
+    case 'radius':      return field('Corner radius', numInput(s.radius||0, set(s,'radius')));
+    case 'fontSize':    return field('Font size', numInput(s.fontSize||11, set(s,'fontSize')));
+    case 'opacity':     return field('Opacity', numInput(s.opacity??1, set(s,'opacity'), 0, 1, 0.05));
+    case 'level':       return field('Level %', numInput(p.level||0, set(p,'level'), 0, 100));
+    case 'dash':        return field('Dash (0 = solid)', numInput(p.dash||0, set(p,'dash')));
+    case 'bold':        return checkbox('Bold', !!s.bold, set(s,'bold'));
+    case 'bevel':       return checkbox('Bevelled (3D)', !!p.bevel, set(p,'bevel'));
+    case 'running':     return checkbox('Running', !!p.running, set(p,'running'));
+    case 'open':        return checkbox('Open', !!p.open, set(p,'open'));
+    case 'closed':      return checkbox('Closed', !!p.closed, set(p,'closed'));
+    case 'align':       return field('Align', selectInput(
+                          [['left','Left'],['center','Center'],['right','Right']],
+                          s.align||'left', set(s,'align')));
+    case 'shape':       return field('Shape', selectInput(
+                          [['circle','Circle'],['square','Square']], p.shape||'circle', set(p,'shape')));
+    case 'dir':         return field('Direction', selectInput(
+                          [['tl-br','↘ diagonal'],['bl-tr','↗ diagonal'],
+                           ['h','— horizontal'],['v','| vertical']], p.dir||'tl-br', set(p,'dir')));
+  }
+  return null;
+}
+
+/* ---- small control factories ---- */
+function field(labelText, control){
+  const w = div('fld');
+  const l = document.createElement('label'); l.textContent = labelText;
+  w.appendChild(l); w.appendChild(control);
+  return w;
+}
+function sectionLabel(t){
+  const d = div('pal-group'); d.textContent = t; d.style.marginTop='12px'; return d;
+}
+function textInput(val, onChange){
+  const i = document.createElement('input');
+  i.type='text'; i.value = val;
+  i.addEventListener('change', ()=>onChange(i.value));
+  return i;
+}
+function numInput(val, onChange, min, max, step){
+  const i = document.createElement('input');
+  i.type='number'; i.value = val;
+  if(min!=null) i.min=min; if(max!=null) i.max=max; i.step = step||1;
+  i.addEventListener('change', ()=>{
+    const v = parseFloat(i.value);
+    if(!isNaN(v)) onChange(v);
+  });
+  return i;
+}
+function colorInput(val, onChange){
+  const i = document.createElement('input');
+  i.type='color'; i.value = toHex(val);
+  i.addEventListener('input', ()=>onChange(i.value));
+  return i;
+}
+function selectInput(opts, val, onChange){
+  const s = document.createElement('select');
+  opts.forEach(([v,l])=>{
+    const o = document.createElement('option'); o.value=v; o.textContent=l;
+    if(v===val) o.selected = true;
+    s.appendChild(o);
+  });
+  s.addEventListener('change', ()=>onChange(s.value));
+  return s;
+}
+function checkbox(labelText, val, onChange){
+  const w = div('fld-check');
+  const i = document.createElement('input'); i.type='checkbox'; i.checked = val;
+  i.addEventListener('change', ()=>onChange(i.checked));
+  const l = document.createElement('label'); l.textContent = labelText;
+  l.style.cursor='pointer';
+  l.addEventListener('click', ()=>{ i.checked=!i.checked; onChange(i.checked); });
+  w.appendChild(i); w.appendChild(l);
+  return w;
+}
+function btnRow(defs){
+  const r = div('btn-row');
+  defs.forEach(([label, fn, cls])=>{
+    const b = document.createElement('button');
+    b.className = 'mini-btn'+(cls?' '+cls:'');
+    b.textContent = label;
+    b.addEventListener('click', fn);
+    r.appendChild(b);
+  });
+  return r;
+}
+function tagPicker(el){
+  const wrap = document.createElement('div');
+  const s = document.createElement('select');
+  const none = document.createElement('option');
+  none.value=''; none.textContent='— none (static text) —';
+  s.appendChild(none);
+  tagIndex.forEach(t=>{
+    const o = document.createElement('option');
+    o.value = t.tag_id;
+    o.textContent = t.tag_id+' · '+t.description;
+    if(el.bind && el.bind.value===t.tag_id) o.selected = true;
+    s.appendChild(o);
+  });
+  // a tag not present in the DB yet still needs to round-trip
+  const cur = el.bind && el.bind.value;
+  if(cur && !tagIndex.some(t=>t.tag_id===cur)){
+    const o = document.createElement('option');
+    o.value=cur; o.textContent=cur+' · (not in tag DB)'; o.selected=true;
+    s.appendChild(o);
+  }
+  s.addEventListener('change', ()=>{
+    snapshot(); el.bind = el.bind||{}; el.bind.value = s.value; renderAll();
+  });
+  wrap.appendChild(s);
+  const manual = textInput(cur||'', v=>{
+    snapshot(); el.bind = el.bind||{}; el.bind.value = v; renderAll();
+  });
+  manual.placeholder = 'or type a tag id';
+  manual.style.marginTop='4px';
+  wrap.appendChild(manual);
+  return wrap;
+}
+function toHex(c){
+  if(!c) return '#000000';
+  if(c.startsWith('#')) return c.length===4
+    ? '#'+[...c.slice(1)].map(x=>x+x).join('') : c;
+  return '#000000';
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, m=>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
+
+/* =====================================================================
+   LAYERS
+   ===================================================================== */
+function renderLayers(){
+  const list = $('layerList');
+  list.innerHTML = '';
+  $('layerCount').textContent = screen.elements.length;
+  // topmost first, so the list reads like the visual stack
+  [...screen.elements].reverse().forEach(el=>{
+    const row = div('layer'+(selection.includes(el.id)?' sel':''));
+    const eye = div('eye'); eye.textContent = el.hidden ? '○' : (el.locked ? '⊘' : '●');
+    eye.title = el.hidden ? 'Hidden' : (el.locked ? 'Locked' : 'Visible');
+    eye.addEventListener('click', ev=>{ ev.stopPropagation(); el.hidden=!el.hidden; renderAll(); });
+    const t = div('lt');
+    t.textContent = el.name || labelFor(el);
+    const ty = div('ltype'); ty.textContent = el.type;
+    row.appendChild(eye); row.appendChild(t); row.appendChild(ty);
+    row.addEventListener('click', e=>{
+      if(e.shiftKey){ selection.includes(el.id)
+        ? selection = selection.filter(i=>i!==el.id) : selection.push(el.id); }
+      else selection = [el.id];
+      renderAll();
+    });
+    list.appendChild(row);
+  });
+}
+function labelFor(el){
+  const p = el.props||{};
+  if(el.bind && el.bind.value) return el.bind.value;
+  if(p.text) return p.text;
+  if(p.caption) return p.caption;
+  return el.type+' '+el.id;
+}
+
+/* =====================================================================
+   PALETTE
+   ===================================================================== */
+function renderPalette(){
+  const pal = $('palette');
+  pal.innerHTML = '';
+  const groups = {};
+  Object.entries(TYPES).forEach(([k,t])=>{
+    (groups[t.group] = groups[t.group]||[]).push([k,t]);
+  });
+  Object.entries(groups).forEach(([g, items])=>{
+    const gl = div('pal-group'); gl.textContent = g; pal.appendChild(gl);
+    items.forEach(([k,t])=>{
+      const b = document.createElement('button');
+      b.className = 'pal-item';
+      const ic = div('pal-ic');
+      ic.appendChild(paletteIcon(k));
+      b.appendChild(ic);
+      b.appendChild(document.createTextNode(t.label));
+      b.addEventListener('click', ()=>addElement(k));
+      pal.appendChild(b);
+    });
+  });
+}
+function paletteIcon(type){
+  const mini = makeEl(type, 0, 0);
+  const scale = { rect:[16,11], line:[16,11], pipe:[16,3], text:[16,11], readout:[18,11],
+                  led:[9,9], pump:[13,13], valve:[13,9], tank:[11,13], engine:[18,10],
+                  turbo:[9,15], breaker:[10,10], button:[18,11] }[type] || [16,11];
+  mini.w = scale[0]; mini.h = scale[1];
+  if(mini.props) { mini.props.text = ''; mini.props.caption=''; }
+  const node = renderElement(mini);
+  node.style.position='relative'; node.style.left='0'; node.style.top='0';
+  return node;
+}
+
+/* =====================================================================
+   SCREEN LIST / IMPORT / EXPORT
+   ===================================================================== */
+function renderScreenList(){
+  const sel = $('screenSel');
+  sel.innerHTML = '';
+  Object.keys(screens).sort().forEach(id=>{
+    const o = document.createElement('option');
+    o.value=id; o.textContent=id;
+    if(screen && id===screen.screen_id) o.selected = true;
+    sel.appendChild(o);
+  });
+}
+function openScreen(id){
+  screen = screens[id];
+  selection = []; undoStack.length=0; redoStack.length=0;
+  refreshUndoButtons();
+  renderScreenList(); renderAll();
+}
+function newScreen(){
+  const id = prompt('New screen id (e.g. G2.Temp):', 'New.Screen');
+  if(!id) return;
+  if(screens[id]) return toast('A screen with that id already exists');
+  screens[id] = { screen_id:id, title:id, layout:'canvas',
+                  canvas:{width:1400, height:760, background:'#eef1f4'}, elements:[] };
+  openScreen(id);
+}
+function exportScreen(){
+  const blob = new Blob([JSON.stringify(screen, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = screen.screen_id.replace(/[^\w.-]/g,'_')+'.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('Exported '+a.download);
+}
+function importScreen(file){
+  const r = new FileReader();
+  r.onload = ()=>{
+    try{
+      const doc = JSON.parse(r.result);
+      if(!doc.screen_id || !Array.isArray(doc.elements)) throw new Error('Not a screen document');
+      doc.canvas = doc.canvas || {width:1400,height:760};
+      screens[doc.screen_id] = doc;
+      openScreen(doc.screen_id);
+      toast('Imported '+doc.screen_id);
+    }catch(e){ toast('Import failed: '+e.message); }
+  };
+  r.readAsText(file);
+}
+
+/* =====================================================================
+   TAG DATABASE
+   ===================================================================== */
+async function loadTags(){
+  try{
+    const res = await fetch('../data/tags/genset-tags.json');
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    tagIndex = await res.json();
+    $('statLeft').textContent = 'Loaded '+tagIndex.length+' tags';
+  }catch(e){
+    tagIndex = [];
+    console.warn('Tag DB not loaded (serve over http:// to enable):', e.message);
+  }
+}
+
+/* =====================================================================
+   SEED: G1.Temp as a canvas screen
+   ---------------------------------------------------------------------
+   Drawn the way the real WOIS page is: the engine + alternator outline
+   sits on the background layer, and every measurement is a readout
+   placed on top of it. Rows run outer -> centre per cylinder:
+   exhaust gas, liner 1, liner 2, big end bearing, then the main bearing
+   row on the crankshaft centreline shared by both banks.
+   ===================================================================== */
+function seedG1Temp(){
+  const els = [];
+  let seq = 0;
+  const id = ()=> 's'+(++seq);
+  const add = (o)=>{ els.push(Object.assign({id:id()}, o)); return els[els.length-1]; };
+
+  const rect = (x,y,w,h,fill,stroke,extra)=>add(Object.assign(
+    {type:'rect',x,y,w,h,style:{fill,stroke:stroke||'#5a6068',strokeWidth:1,radius:0,opacity:1},props:{}},extra||{}));
+  const text = (x,y,w,t,opt)=>add({type:'text',x,y,w,h:(opt&&opt.h)||14,
+    props:{text:t}, style:Object.assign({color:'#3a4753',fontSize:9.5,bold:false,align:'left'},(opt&&opt.style)||{}),
+    name:(opt&&opt.name)});
+  const ro = (x,y,w,h,t,tag,opt)=>add({type:'readout',x,y,w,h,
+    bind:{value:tag||''}, props:{text:t,unit:(opt&&opt.unit)||''},
+    style:Object.assign({fill:'#f6f8f9',stroke:'#c3cad2',strokeWidth:1,color:'#172029',
+      fontSize:10.5,bold:false,align:'center',radius:0},(opt&&opt.style)||{})});
+
+  /* --- geometry --- */
+  const COL_X = i => 210 + i*55, COL_W = 50;
+  const BLOCK_L = 170, BLOCK_W = 628;
+
+  /* ---------- background: engine outline ---------- */
+  rect(200,112,568,80,'#9aa2ab','#5a6068',{name:'Bank B head',props:{bevel:true},locked:true});
+  rect(BLOCK_L,192,BLOCK_W,212,'#9aa2ab','#5a6068',{name:'Engine block',props:{bevel:true},locked:true});
+  rect(200,404,568,80,'#9aa2ab','#5a6068',{name:'Bank A head',props:{bevel:true},locked:true});
+  rect(798,192,62,212,'#9aa2ab','#5a6068',{name:'Thrust housing',props:{bevel:true},locked:true});
+  rect(860,278,44,26,'#8d959e','#5a6068',{name:'Coupling',locked:true});
+  rect(904,186,252,196,'#9aa2ab','#5a6068',{name:'Alternator',props:{bevel:true},locked:true});
+  rect(1156,214,14,60,'#8d959e','#5a6068',{name:'Alternator foot R',locked:true});
+  rect(890,214,14,60,'#8d959e','#5a6068',{name:'Alternator foot L',locked:true});
+
+  /* ---------- turbochargers (non-driving end) ---------- */
+  add({type:'turbo',x:178,y:126,w:26,h:50,bind:{value:''},props:{running:true},
+       style:{fill:'#e7ebef',stroke:'#5a6068',strokeWidth:1},name:'TC B rotor'});
+  add({type:'turbo',x:178,y:418,w:26,h:50,bind:{value:''},props:{running:true},
+       style:{fill:'#e7ebef',stroke:'#5a6068',strokeWidth:1},name:'TC A rotor'});
+
+  /* ---------- bank B ---------- */
+  const bHead=["B10","B9","B8","B7","B6","B5","B4","B3","B2","B1"];
+  const bExh=[408,405,395,407,398,398,397,407,408,405];
+  const bLin1=[116,115,115,114,115,115,113,112,117,113];
+  const bLin2=[112,113,114,113,113,112,110,112,117,108];
+  const bBig=[79,80,78,78,83,81,79,80,78,77];
+  for(let i=0;i<10;i++){
+    text(COL_X(i),118,COL_W,bHead[i],{h:13,style:{fontSize:10,bold:true,align:'center',color:'#1d242b'}});
+    ro(COL_X(i),136,COL_W,20,bExh[i]+'°C','G01_CYL_B_EXH_'+(10-i));
+    ro(COL_X(i),199,COL_W,20,bLin1[i]+'°C','G01_CYL_B_LINER1_'+(10-i));
+    ro(COL_X(i),221,COL_W,20,bLin2[i]+'°C','G01_CYL_B_LINER2_'+(10-i));
+    ro(COL_X(i),243,COL_W,20,bBig[i]+'°C','G01_CYL_B_BIGEND_'+(10-i));
+  }
+  text(300,162,220,'Exhaust gas temperatures [°C]',
+    {h:12,style:{fontSize:9.5,align:'center',color:'#22282e'}});
+
+  /* ---------- main bearings (crankshaft centreline) ---------- */
+  const mainBrg=[88,92,93,92,92,93,90,91,92,90,90];
+  for(let i=0;i<11;i++){
+    const x = 182 + i*54;
+    ro(x,283,48,20,mainBrg[i]+'°C','G01_MAIN_BRG_'+(11-i));
+    text(x,306,48,String(11-i),{h:11,style:{fontSize:9,align:'center',color:'#2a3138'}});
+  }
+
+  /* ---------- bank A ---------- */
+  const aHead=["A10","A9","A8","A7","A6","A5","A4","A3","A2","A1"];
+  const aExh=[398,393,383,409,391,399,399,405,395,405];
+  const aLin1=[112,114,117,120,116,119,116,114,119,111];
+  const aLin2=[111,113,114,115,113,117,114,110,118,112];
+  const aBig=[83,86,82,84,84,80,79,86,90,83];
+  for(let i=0;i<10;i++){
+    ro(COL_X(i),325,COL_W,20,aBig[i]+'°C','G01_CYL_A_BIGEND_'+(10-i));
+    ro(COL_X(i),347,COL_W,20,aLin1[i]+'°C','G01_CYL_A_LINER1_'+(10-i));
+    ro(COL_X(i),369,COL_W,20,aLin2[i]+'°C','G01_CYL_A_LINER2_'+(10-i));
+    ro(COL_X(i),428,COL_W,20,aExh[i]+'°C','G01_CYL_A_EXH_'+(10-i));
+    text(COL_X(i),452,COL_W,aHead[i],{h:13,style:{fontSize:10,bold:true,align:'center',color:'#1d242b'}});
+  }
+  text(300,410,220,'Exhaust gas temperatures [°C]',
+    {h:12,style:{fontSize:9.5,align:'center',color:'#22282e'}});
+
+  /* ---------- thrust bearing ---------- */
+  text(802,262,54,'Thrust',{h:12,style:{fontSize:9.5,align:'center',bold:true,color:'#1d242b'}});
+  ro(804,283,50,20,'80°C','G01_THRUST_BRG');
+  text(804,306,50,'0',{h:11,style:{fontSize:9,align:'center',color:'#2a3138'}});
+
+  /* ---------- alternator ---------- */
+  text(904,194,252,'Generator',{h:15,style:{fontSize:12,bold:true,align:'center',color:'#1d242b'}});
+  text(990,216,80,'Winding U',{h:12,style:{fontSize:9.5,align:'center',bold:true,color:'#22282e'}});
+  ro(990,230,80,22,'92 °C','G01_GEN_WINDING_U',{style:{fontSize:11,bold:true}});
+  text(916,268,72,'Bearing D',{h:12,style:{fontSize:9.5,align:'center',bold:true,color:'#22282e'}});
+  ro(916,282,72,22,'77 °C','G01_GEN_BEARING_D',{style:{fontSize:11,bold:true}});
+  text(996,268,72,'Winding V',{h:12,style:{fontSize:9.5,align:'center',bold:true,color:'#22282e'}});
+  ro(996,282,72,22,'95 °C','G01_GEN_WINDING_V',{style:{fontSize:11,bold:true}});
+  text(1076,268,72,'Bearing ND',{h:12,style:{fontSize:9.5,align:'center',bold:true,color:'#22282e'}});
+  ro(1076,282,72,22,'75 °C','G01_GEN_BEARING_ND',{style:{fontSize:11,bold:true}});
+  text(990,318,80,'Winding W',{h:12,style:{fontSize:9.5,align:'center',bold:true,color:'#22282e'}});
+  ro(990,332,80,22,'93 °C','G01_GEN_WINDING_W',{style:{fontSize:11,bold:true}});
+  ro(1176,186,60,22,'36 °C','G01_GEN_AIR_INTAKE',{style:{fontSize:11,bold:true}});
+  text(1176,168,60,'Air intake',{h:12,style:{fontSize:9,align:'center'}});
+  ro(1176,388,60,22,'59 °C','G01_GEN_AIR_EXIT',{style:{fontSize:11,bold:true}});
+  text(1176,410,60,'Air exit',{h:12,style:{fontSize:9,align:'center'}});
+  rect(1122,346,26,26,'#f6f8f9','#5a6068',{name:'Excitation'});
+
+  /* ---------- status signals under the alternator ---------- */
+  const statuses = [['Turn','G01_TURNING_GEAR'],['E-stop','G01_EMERGENCY_STOP'],
+                    ['Lever','G01_STOP_LEVER']];
+  statuses.forEach(([lbl,tag],i)=>{
+    const x = 906 + i*46;
+    rect(x,398,40,20,'#f6f8f9','#8a94a0',{name:lbl+' switch'});
+    text(x,420,40,lbl,{h:12,style:{fontSize:9,align:'center'}});
+  });
+  [['Minor alarm','G01_ALARM_MINOR'],['Major alarm','G01_ALARM_MAJOR'],
+   ['Slow down','G01_ALARM_SLOWDOWN'],['Load reduction','G01_ALARM_LOADREDUCE']]
+   .forEach(([lbl,tag],i)=>{
+    add({type:'led',x:1050+i*22,y:402,w:14,h:14,bind:{value:tag},
+         props:{shape:'circle'},style:{fill:'#2fa84f',stroke:'#1c6b32',strokeWidth:1},name:lbl});
+  });
+
+  /* ---------- turbocharger data boxes ---------- */
+  text(30,44,150,'TC B',{h:13,style:{fontSize:10,bold:true}});
+  ro(30,58,90,20,'340 °C','G01_TCB_EXH_OUT',{style:{align:'right'}});
+  text(126,58,150,'Exh. gas temp outlet',{h:20,style:{fontSize:9.5}});
+  ro(30,80,90,20,'508 °C','G01_TCB_EXH_IN',{style:{align:'right'}});
+  text(126,80,150,'Exh. gas temp inlet',{h:20,style:{fontSize:9.5}});
+  ro(30,102,90,20,'25160 rpm','G01_TCB_SPEED',{style:{align:'right'}});
+  text(126,102,150,'Speed',{h:20,style:{fontSize:9.5}});
+
+  ro(30,486,90,20,'25000 rpm','G01_TCA_SPEED',{style:{align:'right'}});
+  text(126,486,150,'Speed',{h:20,style:{fontSize:9.5}});
+  ro(30,508,90,20,'497 °C','G01_TCA_EXH_IN',{style:{align:'right'}});
+  text(126,508,150,'Exh. gas temp inlet',{h:20,style:{fontSize:9.5}});
+  ro(30,530,90,20,'336 °C','G01_TCA_EXH_OUT',{style:{align:'right'}});
+  text(126,530,150,'Exh. gas temp outlet',{h:20,style:{fontSize:9.5}});
+  text(30,552,150,'TC A',{h:13,style:{fontSize:10,bold:true}});
+
+  /* ---------- leader-line annotations ---------- */
+  const leaders = [
+    [790,56,'Cylinder liner 2 temperature [°C]', 770,60, 640,225],
+    [790,74,'Cylinder liner 1 temperature [°C]', 770,78, 640,205],
+    [790,98,'Big end bearing temperatures [°C]', 770,102, 640,250],
+    [790,478,'Big end bearing temperatures [°C]', 770,486, 640,332],
+    [790,500,'Cylinder liner 1 temperature [°C]', 770,506, 640,352],
+    [790,522,'Cylinder liner 2 temperature [°C]', 770,528, 640,374]
+  ];
+  leaders.forEach(([tx,ty,label,lx,ly,ex,ey])=>{
+    add({type:'led',x:tx-12,y:ty+2,w:8,h:8,bind:{value:''},props:{shape:'square'},
+         style:{fill:'#ffffff',stroke:'#5a6068',strokeWidth:1}});
+    text(tx,ty,210,label,{h:14,style:{fontSize:9.5}});
+    const x = Math.min(lx,ex), y = Math.min(ly,ey);
+    add({type:'line',x,y,w:Math.abs(lx-ex),h:Math.abs(ly-ey),
+         props:{dir: (ly<ey)?'tl-br':'bl-tr', dash:0},
+         style:{stroke:'#ffffff',strokeWidth:1}});
+  });
+  add({type:'led',x:22,y:290,w:8,h:8,bind:{value:''},props:{shape:'square'},
+       style:{fill:'#ffffff',stroke:'#5a6068',strokeWidth:1}});
+  text(34,286,160,'Bearing temperatures [°C]',{h:14,style:{fontSize:9.5}});
+  add({type:'line',x:150,y:293,w:32,h:0,props:{dir:'h',dash:0},
+       style:{stroke:'#ffffff',strokeWidth:1}});
+
+  /* ---------- averages + summary ---------- */
+  ro(430,504,66,20,'400 °C','G01_EXH_AVG_TEMP',{style:{bold:true}});
+  text(502,504,180,'Exhaust gas avg. temp.',{h:20,style:{fontSize:10}});
+
+  rect(150,578,600,92,'#f2f4f6','#c3cad2',{name:'Summary panel'});
+  text(164,592,170,'Engine speed',{h:16,style:{fontSize:10.5}});
+  ro(336,590,96,20,'747 rpm','SCA011ST103PV',{style:{align:'right'}});
+  text(164,616,170,'Running hours',{h:16,style:{fontSize:10.5}});
+  ro(336,614,96,20,'5869 h','G01_RUNNING_HOURS',{style:{align:'right'}});
+  text(452,592,170,'Gen. active power',{h:16,style:{fontSize:10.5}});
+  ro(624,590,110,20,'8034 kW','SCA011PW104PV',{style:{align:'right'}});
+  text(452,616,170,'Gen. reactive power',{h:16,style:{fontSize:10.5}});
+  ro(624,614,110,20,'303 kVAr','G01_GEN_REACTIVE_POWER',{style:{align:'right'}});
+  text(452,640,170,'Max available eng. power',{h:16,style:{fontSize:10.5}});
+  ro(624,638,110,20,'8924 kW','G01_MAX_AVAIL_POWER',{style:{align:'right'}});
+
+  return {
+    screen_id:'G1.Temp', title:'WOIS - Stelco 5th | G1 - Temp', layout:'canvas',
+    canvas:{width:1400, height:700, background:'#d4d8dc'},
+    elements: els
+  };
+}
+
+/* =====================================================================
+   WIRING
+   ===================================================================== */
+$('btnNew').addEventListener('click', newScreen);
+$('btnRename').addEventListener('click', ()=>{
+  const id = prompt('Rename screen to:', screen.screen_id);
+  if(!id || id===screen.screen_id) return;
+  if(screens[id]) return toast('That id is already taken');
+  delete screens[screen.screen_id];
+  screen.screen_id = id; screens[id] = screen;
+  renderScreenList(); renderAll();
+});
+$('btnSave').addEventListener('click', saveScreens);
+$('btnExport').addEventListener('click', exportScreen);
+$('btnImport').addEventListener('click', ()=>$('fileInput').click());
+$('fileInput').addEventListener('change', e=>{
+  if(e.target.files[0]) importScreen(e.target.files[0]);
+  e.target.value='';
+});
+$('btnUndo').addEventListener('click', undo);
+$('btnRedo').addEventListener('click', redo);
+$('screenSel').addEventListener('change', e=>openScreen(e.target.value));
+$('btnGrid').addEventListener('click', ()=>{
+  snap = !snap;
+  $('btnGrid').classList.toggle('on', snap);
+  $('btnGrid').textContent = snap ? 'Grid 10' : 'Grid off';
+  renderAll();
+});
+$('zoomSel').addEventListener('change', e=>{
+  zoom = parseFloat(e.target.value);
+  $('canvasWrap').style.transform = 'scale('+zoom+')';
+  $('canvasWrap').style.width  = (screen.canvas.width*zoom)+'px';
+  $('canvasWrap').style.height = (screen.canvas.height*zoom)+'px';
+});
+$('btnMode').addEventListener('click', ()=>{
+  mode = mode==='edit' ? 'preview' : 'edit';
+  $('app').className = 'app mode-'+mode;
+  $('btnMode').textContent = mode==='edit' ? 'Preview' : 'Edit';
+  $('btnMode').classList.toggle('on', mode==='preview');
+  if(mode==='preview') selection=[];
+  renderAll();
+});
+$('btnTheme').addEventListener('click', ()=>{
+  const dark = document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme', dark?'light':'dark');
+  $('btnTheme').textContent = dark ? 'Dark' : 'Light';
+});
+
+let toastTimer;
+function toast(msg){
+  const t = $('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+
+/* ---------- boot ---------- */
+(async function init(){
+  loadScreens();
+  await loadTags();
+  renderPalette();
+  const params = new URLSearchParams(location.search);
+  const want = params.get('screen') || localStorage.getItem(LS_LAST);
+  openScreen(screens[want] ? want : Object.keys(screens)[0]);
+  if(params.get('mode')==='preview') $('btnMode').click();
+  refreshUndoButtons();
+})();
+</script>
+</body>
+</html>
